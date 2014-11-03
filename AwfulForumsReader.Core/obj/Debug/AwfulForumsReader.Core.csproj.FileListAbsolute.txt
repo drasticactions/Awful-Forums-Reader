@@ -11,3 +11,16 @@ C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\bin\D
 C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\obj\Debug\AwfulForumsReader.Core.dll
 C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\obj\Debug\AwfulForumsReader.Core.pdb
 C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\obj\Debug\AwfulForumsReader.Core.csprojResolveAssemblyReference.cache
+C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader.Core\bin\Debug\AwfulForumsReader.Core.dll
+C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader.Core\bin\Debug\AwfulForumsReader.Core.pdb
+C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader.Core\bin\Debug\HtmlAgilityPack-PCL.dll
+C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader.Core\bin\Debug\Newtonsoft.Json.dll
+C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader.Core\bin\Debug\PCLStorage.Abstractions.dll
+C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader.Core\bin\Debug\PCLStorage.dll
+C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader.Core\bin\Debug\HtmlAgilityPack-PCL.xml
+C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader.Core\bin\Debug\Newtonsoft.Json.xml
+C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader.Core\bin\Debug\PCLStorage.xml
+C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader.Core\bin\Debug\PCLStorage.Abstractions.xml
+C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader.Core\obj\Debug\AwfulForumsReader.Core.dll
+C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader.Core\obj\Debug\AwfulForumsReader.Core.pdb
+C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader.Core\obj\Debug\AwfulForumsReader.Core.csprojResolveAssemblyReference.cache

@@ -92,12 +92,12 @@
       <RootProperty Name="Children" />
       <RootProperty Name="RequestedTheme" />
       <RootProperty Name="ColumnDefinitions" />
+      <RootProperty Name="Visibility" />
       <RootProperty Name="Transitions" />
       <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Visibility" />
       <RootProperty Name="MinHeight" />
       <RootProperty Name="IsRightTapEnabled" />
       <RootMethod Name="GetRow" />
@@ -124,6 +124,10 @@
       <RootProperty Name="Orientation" />
       <RootProperty Name="Width" />
       <RootProperty Name="VerticalAlignment" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Canvas">
+      <RootMethod Name="GetZIndex" />
+      <RootMethod Name="SetZIndex" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="Padding" />
@@ -208,6 +212,18 @@
       <RootProperty Name="CommandParameter" />
       <RootProperty Name="Text" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressBar">
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="IsIndeterminate" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Visibility" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
+      <RootProperty Name="Fill" />
+      <RootProperty Name="Opacity" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Margin" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
       <RootProperty Name="IsEnabled" />
       <RootProperty Name="Label" />
@@ -233,11 +249,6 @@
       <RootMethod Name="SetAutomationId" />
       <RootMethod Name="GetItemType" />
       <RootMethod Name="SetItemType" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ProgressBar">
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="IsIndeterminate" />
-      <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="AwfulForumsReader.Pages.BookmarksPage" />
     <RootType FullName="AwfulForumsReader.ViewModels.LoginPageViewModel" />
@@ -276,11 +287,6 @@
       <RootProperty Name="IsSourceGrouped" />
       <RootProperty Name="Source" />
       <RootProperty Name="ItemsPath" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
-      <RootProperty Name="Fill" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.VisualStateManager">
       <RootMethod Name="GetVisualStateGroups" />

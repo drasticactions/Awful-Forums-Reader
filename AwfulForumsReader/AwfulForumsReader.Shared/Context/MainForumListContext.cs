@@ -28,7 +28,11 @@ namespace AwfulForumsReader.Context
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<ForumThreadEntity>(b => b.Key(thread => thread.ThreadId));
+            builder.Entity<ForumThreadEntity>(b =>
+            {
+                b.Key(thread => thread.Id);
+            });
+            builder.Model.GetEntityType(typeof (ForumThreadEntity)).GetProperty("Id").GenerateValueOnAdd = true;
 
             builder.Entity<ForumEntity>(b =>
             {

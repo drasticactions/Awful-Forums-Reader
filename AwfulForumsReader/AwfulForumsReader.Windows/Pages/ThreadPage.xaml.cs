@@ -58,7 +58,6 @@ namespace AwfulForumsReader.Pages
         /// session. The state will be null the first time a page is visited.</param>
         private async void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            await _vm.GetForumPostsAsync(_forumThread);
         }
 
         /// <summary>

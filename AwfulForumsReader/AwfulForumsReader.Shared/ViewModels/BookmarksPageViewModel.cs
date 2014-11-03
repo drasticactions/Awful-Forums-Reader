@@ -4,12 +4,15 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Storage;
+using Windows.UI.Xaml.Automation.Peers;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Context;
 using AwfulForumsReader.Core.Entity;
 using AwfulForumsReader.Core.Manager;
 using AwfulForumsReader.Core.Tools;
+using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.ViewModels
 {
@@ -20,6 +23,7 @@ namespace AwfulForumsReader.ViewModels
         private AddOrRemoveBookmarkCommand _addOrRemoveBookmarkCommand = new AddOrRemoveBookmarkCommand();
         private UnreadThreadCommand _unreadThreadCommand = new UnreadThreadCommand();
         private LastPageCommand _lastPageCommand = new LastPageCommand();
+        private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
 
         public AddOrRemoveBookmarkCommand AddOrRemoveBookmark
         {
@@ -71,9 +75,9 @@ namespace AwfulForumsReader.ViewModels
             }
         }
 
-        public async Task Initialize()
+        private async Task<List<ForumThreadEntity>>  GetBookmarkedThreadsAsync()
         {
-            BookmarkedThreads = new ObservableCollection<ForumThreadEntity>();
+            var bookmarkThreads = new List<ForumThreadEntity>();
             var threadManager = new ThreadManager();
             var forum = new ForumEntity()
             {
@@ -87,10 +91,7 @@ namespace AwfulForumsReader.ViewModels
             while (!hasItems)
             {
                 var bookmarks = await threadManager.GetBookmarksAsync(forum, pageNumber);
-                foreach (var bookmark in bookmarks)
-                {
-                    BookmarkedThreads.Add(bookmark);
-                }
+                bookmarkThreads.AddRange(bookmarks);
                 if (bookmarks.Any())
                 {
                     hasItems = true;
@@ -100,18 +101,75 @@ namespace AwfulForumsReader.ViewModels
                     pageNumber++;
                 }
             }
+            return bookmarkThreads;
+        }
+
+        public async Task Initialize()
+        {
+            IsLoading = true;
+            BookmarkedThreads = new ObservableCollection<ForumThreadEntity>();
+            DateTime refreshDate = DateTime.UtcNow;
+            if (_localSettings.Values.ContainsKey("RefreshBookmarks"))
+            {
+                refreshDate = (DateTime) _localSettings.Values["RefreshBookmarks"];
+            }
+            using (var db = new MainForumListContext())
+            {
+                BookmarkedThreads = db.BookmarkThreads.ToObservableCollection();
+            }
+            if (!BookmarkedThreads.Any() || refreshDate < (DateTime.UtcNow.AddHours(-1.00)))
+            {
+                await Refresh();
+            }
+            IsLoading = false;
+        }
+
+        private async Task Refresh()
+        {
+            IsLoading = true;
+            List<ForumThreadEntity> updatedBookmarkList;
+            try
+            {
+                updatedBookmarkList = await GetBookmarkedThreadsAsync();
+            }
+            catch (Exception ex)
+            {
+                AwfulDebugger.SendMessageDialogAsync("Could not get bookmarks", ex);
+                return;
+            }
+           
+            foreach (var bookmark in updatedBookmarkList)
+            {
+                if (BookmarkedThreads.Any(node => node.ThreadId == bookmark.ThreadId))
+                {
+                    var oldThread = BookmarkedThreads.First(node => node.ThreadId.Equals(bookmark.ThreadId));
+                    var oldIndex = BookmarkedThreads.IndexOf(oldThread);
+                    BookmarkedThreads.Move(oldIndex, updatedBookmarkList.IndexOf(bookmark));
+                }
+                else
+                {
+                    BookmarkedThreads.Add(bookmark);
+                }
+            }
+
             using (var db = new MainForumListContext())
             {
                 var all = from c in db.BookmarkThreads select c;
                 db.BookmarkThreads.RemoveRange(all);
-                db.SaveChanges();
-                foreach (var bookmark in BookmarkedThreads)
-                {
-                    db.BookmarkThreads.Add(bookmark);
-                }
-                db.SaveChanges();
+                await db.SaveChangesAsync();
             }
+            foreach (ForumThreadEntity t in BookmarkedThreads)
+            {
+                using (var db = new MainForumListContext())
+                {
 
+                    await db.BookmarkThreads.AddAsync(t);
+
+                    await db.SaveChangesAsync();
+                }
+            }
+            _localSettings.Values["RefreshBookmarks"] = DateTime.UtcNow;
+            IsLoading = false;
         }
 
         public void UpdateThreadList()

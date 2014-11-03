@@ -11,8 +11,8 @@ namespace AwfulForumsReader.Commands
         public async override void Execute(object parameter)
         {
             var threadViewModel = Locator.ViewModels.BookmarksPageVm;
-            await threadViewModel.Initialize();
             App.RootFrame.Navigate(typeof(BookmarksPage));
+            await threadViewModel.Initialize();
         }
     }
 }

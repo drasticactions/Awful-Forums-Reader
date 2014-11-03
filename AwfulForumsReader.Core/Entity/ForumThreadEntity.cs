@@ -10,6 +10,8 @@ namespace AwfulForumsReader.Core.Entity
 {
     public class ForumThreadEntity
     {
+        public Guid Id { get; set; }
+
         public string Name { get; set; }
 
         public string Location { get; set; }
