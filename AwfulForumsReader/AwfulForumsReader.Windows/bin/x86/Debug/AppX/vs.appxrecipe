@@ -26,7 +26,7 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x86\Debug\AwfulForumsReader.Windows.exe">
       <PackagePath>AwfulForumsReader.Windows.exe</PackagePath>
-      <Modified>2014-11-03T19:41:15.176</Modified>
+      <Modified>2014-11-03T19:49:34.450</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactions.dll">
       <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
@@ -2453,7 +2453,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x86\Debug\Pages\BookmarksPage.xbf">
       <PackagePath>Pages\BookmarksPage.xbf</PackagePath>
-      <Modified>2014-11-03T19:41:14.748</Modified>
+      <Modified>2014-11-03T19:49:34.071</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x86\Debug\Pages\LoginPage.xbf">
       <PackagePath>Pages\LoginPage.xbf</PackagePath>
@@ -2465,7 +2465,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x86\Debug\Pages\ThreadListPage.xbf">
       <PackagePath>Pages\ThreadListPage.xbf</PackagePath>
-      <Modified>2014-11-03T15:46:53.990</Modified>
+      <Modified>2014-11-03T19:49:34.074</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x86\Debug\Pages\ThreadPage.xbf">
       <PackagePath>Pages\ThreadPage.xbf</PackagePath>
@@ -2581,7 +2581,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-11-03T19:40:09.170</Modified>
+      <Modified>2014-11-03T19:49:35.291</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
