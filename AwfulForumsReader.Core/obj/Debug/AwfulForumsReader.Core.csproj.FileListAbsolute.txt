@@ -1,0 +1,13 @@
+C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\bin\Debug\AwfulForumsReader.Core.dll
+C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\bin\Debug\AwfulForumsReader.Core.pdb
+C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\bin\Debug\HtmlAgilityPack-PCL.dll
+C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\bin\Debug\PCLStorage.Abstractions.dll
+C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\bin\Debug\PCLStorage.dll
+C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\bin\Debug\HtmlAgilityPack-PCL.xml
+C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\bin\Debug\PCLStorage.xml
+C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\bin\Debug\PCLStorage.Abstractions.xml
+C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\obj\Debug\AwfulForumsReader.Core.dll
+C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\obj\Debug\AwfulForumsReader.Core.pdb
+C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\obj\Debug\AwfulForumsReader.Core.csprojResolveAssemblyReference.cache

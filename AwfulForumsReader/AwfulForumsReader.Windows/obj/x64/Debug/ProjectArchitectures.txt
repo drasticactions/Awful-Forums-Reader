@@ -1,0 +1,2 @@
+C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\AwfulForumsReader.Core.csproj;neutral
+C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\AwfulForumsReader.Windows.csproj;x64

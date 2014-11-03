@@ -1,0 +1,26 @@
+﻿<Application
+    x:Class="AwfulForumsReader.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AwfulForumsReader"
+    xmlns:tools="using:AwfulForumsReader.Tools"
+    xmlns:system="using:System"
+    xmlns:locator="using:AwfulForumsReader.Locator">
+
+    <Application.Resources>
+        <tools:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <locator:ViewModels x:Name="Locator" />
+        <SolidColorBrush x:Key="AwfulBlue" Color="#FF1E72C9"/>
+        <tools:SubforumHeaderColorConverter x:Key="SubforumHeaderColorConverter" />
+        <tools:AddOrRemoveFavoriteTextConverter x:Key="AddOrRemoveFavoriteTextConverter" />
+        <tools:RatingVisibilityConverter x:Key="RatingVisibilityConverter" />
+        <tools:ThreadHeaderColorConverter x:Key="ThreadHeaderColorConverter" />
+        <tools:RepliesSinceLastOpenedColorConverter x:Key="RepliesSinceLastOpenedColorConverter" />
+        <tools:BookmarkTextConverter x:Key="BookmarkTextConverter" />
+        <tools:InvertBooleanConverter x:Key="InvertBooleanConverter" />
+        <tools:HasSeenThreadConverter x:Key="HasSeenThreadConverter" />
+        <tools:ForwardButtonEnableConverter x:Key="ForwardButtonEnableConverter" />
+        <tools:BackButtonEnableConverter x:Key="BackButtonEnableConverter" />
+        <tools:TotalPageConverter x:Key="TotalPageConverter" />
+    </Application.Resources>
+</Application>

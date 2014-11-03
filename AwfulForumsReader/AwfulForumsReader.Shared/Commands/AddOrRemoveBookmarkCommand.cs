@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using Windows.UI.Popups;
+using AwfulForumsReader.Common;
+using AwfulForumsReader.Core.Entity;
+using AwfulForumsReader.Core.Manager;
+using AwfulForumsReader.Core.Tools;
+
+namespace AwfulForumsReader.Commands
+{
+    public class AddOrRemoveBookmarkCommand : AlwaysExecutableCommand
+    {
+        public async override void Execute(object parameter)
+        {
+            var thread = parameter as ForumThreadEntity;
+            if (thread == null)
+                return;
+            var threadManager = new ThreadManager();
+            if (thread.IsBookmark)
+            {
+                await threadManager.RemoveBookmarkAsync(thread.ThreadId);
+                return;
+            }
+            await threadManager.AddBookmarkAsync(thread.ThreadId);
+            var msgDlg2 =
+                   new MessageDialog(string.Format("'{0}' has been added to your bookmarks! I love you!{1}{2}",
+                       thread.Name, Environment.NewLine, Constants.Ascii1))
+                   {
+                       DefaultCommandIndex = 1
+                   };
+            await msgDlg2.ShowAsync();
+        }
+    }
+}

@@ -1,0 +1,2474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>WIN-3I90CAB6KLL</Machine>
+    <WindowsUser>Timothy</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|x64</SolutionConfiguration>
+    <PackageArchitecture>x64</PackageArchitecture>
+    <PackageIdentityName>51b18b23-69ed-4b53-8198-772714ec2e34</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\obj\x64\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>12BBA449FB0455BBBAED5DA79173133BED7063271C3BB7117D74129D6ACE22A0</RegisteredManifestChecksum>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x64\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-11-01T23:31:03.992</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x64\Debug\AwfulForumsReader.Windows.exe">
+      <PackagePath>AwfulForumsReader.Windows.exe</PackagePath>
+      <Modified>2014-11-01T23:31:02.495</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactions.dll">
+      <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
+      <Modified>2014-04-29T18:23:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactivity.dll">
+      <PackagePath>Microsoft.Xaml.Interactivity.dll</PackagePath>
+      <Modified>2014-04-29T18:23:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\Autofac.3.5.2\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Autofac.dll">
+      <PackagePath>Autofac.dll</PackagePath>
+      <Modified>2014-11-01T17:05:52.919</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\bin\Debug\AwfulForumsReader.Core.dll">
+      <PackagePath>AwfulForumsReader.Core.dll</PackagePath>
+      <Modified>2014-11-01T23:29:29.175</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\EntityFramework.7.0.0-beta2-11520\lib\portable-net451+win81+wpa81\EntityFramework.dll">
+      <PackagePath>EntityFramework.dll</PackagePath>
+      <Modified>2014-11-01T16:44:27.124</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\EntityFramework.Migrations.7.0.0-beta2-11520\lib\portable-net451+win81+wpa81\EntityFramework.Migrations.dll">
+      <PackagePath>EntityFramework.Migrations.dll</PackagePath>
+      <Modified>2014-11-01T16:44:27.580</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\EntityFramework.Relational.7.0.0-beta2-11520\lib\portable-net451+win81+wpa81\EntityFramework.Relational.dll">
+      <PackagePath>EntityFramework.Relational.dll</PackagePath>
+      <Modified>2014-11-01T16:44:27.378</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\EntityFramework.SQLite.7.0.0-beta2-11520\lib\portable-net451+win81+wpa81\EntityFramework.SQLite.dll">
+      <PackagePath>EntityFramework.SQLite.dll</PackagePath>
+      <Modified>2014-11-01T16:44:28.099</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\Microsoft.Data.SQLite.1.0.0-beta2-10510\lib\portable-net451+win81+wpa81\Microsoft.Data.SQLite.dll">
+      <PackagePath>Microsoft.Data.SQLite.dll</PackagePath>
+      <Modified>2014-11-01T16:44:27.886</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\Microsoft.Framework.ConfigurationModel.1.0.0-beta2-10512\lib\portable-net451+win81+wpa81\Microsoft.Framework.ConfigurationModel.dll">
+      <PackagePath>Microsoft.Framework.ConfigurationModel.dll</PackagePath>
+      <Modified>2014-11-01T16:44:26.296</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\Microsoft.Framework.DependencyInjection.1.0.0-beta2-10529\lib\portable-net451+win81+wpa81\Microsoft.Framework.DependencyInjection.dll">
+      <PackagePath>Microsoft.Framework.DependencyInjection.dll</PackagePath>
+      <Modified>2014-11-01T16:44:26.549</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\Microsoft.Framework.Logging.1.0.0-beta2-10509\lib\portable-net451+win81+wpa81\Microsoft.Framework.Logging.dll">
+      <PackagePath>Microsoft.Framework.Logging.dll</PackagePath>
+      <Modified>2014-11-01T16:44:26.037</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\Microsoft.Framework.Logging.Interfaces.1.0.0-beta2-10509\lib\portable-net451+win81+wpa81\Microsoft.Framework.Logging.Interfaces.dll">
+      <PackagePath>Microsoft.Framework.Logging.Interfaces.dll</PackagePath>
+      <Modified>2014-11-01T16:44:25.837</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\Microsoft.Framework.OptionsModel.1.0.0-beta2-10507\lib\portable-net451+win81+wpa81\Microsoft.Framework.OptionsModel.dll">
+      <PackagePath>Microsoft.Framework.OptionsModel.dll</PackagePath>
+      <Modified>2014-11-01T16:44:26.754</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\PCLStorage.1.0.0\lib\portable-win8+wpa81\PCLStorage.Abstractions.dll">
+      <PackagePath>PCLStorage.Abstractions.dll</PackagePath>
+      <Modified>2014-11-01T15:58:56.846</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\PCLStorage.1.0.0\lib\portable-win8+wpa81\PCLStorage.dll">
+      <PackagePath>PCLStorage.dll</PackagePath>
+      <Modified>2014-11-01T15:58:56.854</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\Remotion.Linq.1.15.15.0\lib\portable-net45+wp80+wpa81+win\Remotion.Linq.dll">
+      <PackagePath>Remotion.Linq.dll</PackagePath>
+      <Modified>2014-11-01T16:44:26.803</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\System.Collections.Immutable.1.1.32-beta\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll">
+      <PackagePath>System.Collections.Immutable.dll</PackagePath>
+      <Modified>2014-11-01T16:44:26.867</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\System.Data.Common.1.0.0-beta2-10490\lib\portable-net451+win81+wpa81\System.Data.Common.dll">
+      <PackagePath>System.Data.Common.dll</PackagePath>
+      <Modified>2014-11-01T16:44:25.352</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\packages\Ix-Async.1.2.3-beta\lib\portable-windows8+net45+wp8+wpa81\System.Interactive.Async.dll">
+      <PackagePath>System.Interactive.Async.dll</PackagePath>
+      <Modified>2014-11-01T16:44:25.462</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader.Core\bin\Debug\HtmlAgilityPack-PCL.dll">
+      <PackagePath>HtmlAgilityPack-PCL.dll</PackagePath>
+      <Modified>2014-11-01T15:54:47.397</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\SQLite.WinRT81\3.8.7.1\Redist\Debug\x64\sqlite3.dll">
+      <PackagePath>sqlite3.dll</PackagePath>
+      <Modified>2014-11-01T03:00:02.034</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\Assets\BadgeLogo.scale-100.png">
+      <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-10-22T01:06:38.320</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\Assets\BadgeLogo.scale-140.png">
+      <PackagePath>Assets\BadgeLogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-10-22T01:06:38.320</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\Assets\BadgeLogo.scale-180.png">
+      <PackagePath>Assets\BadgeLogo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-10-22T01:06:38.321</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-10-22T01:06:38.324</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-10-22T01:06:38.331</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-10-22T01:06:38.332</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\Assets\Square310x310Logo.scale-100.png">
+      <PackagePath>Assets\Square310x310Logo.scale-100.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.702</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-10-22T01:06:38.332</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\Assets\Wide310x150Logo.scale-100.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-10-22T01:06:38.702</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\Assets\Wide310x150Logo.scale-140.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-10-22T01:06:38.703</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\Assets\Wide310x150Logo.scale-180.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-10-22T01:06:38.704</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\Assets\Wide310x150Logo.scale-80.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-10-22T01:06:38.704</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\Login\Dontrel-Awful2.png">
+      <PackagePath>Assets\Login\Dontrel-Awful2.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.323</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\MainForumsPage\grenadesm.png">
+      <PackagePath>Assets\MainForumsPage\grenadesm.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.733</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\adtrw-hokutonoken.png">
+      <PackagePath>Assets\ThreadTags\adtrw-hokutonoken.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.383</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\adtrw.png">
+      <PackagePath>Assets\ThreadTags\adtrw.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.383</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ai-cycles.png">
+      <PackagePath>Assets\ThreadTags\ai-cycles.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.384</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ai-mods.png">
+      <PackagePath>Assets\ThreadTags\ai-mods.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.385</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\AICA-TAG-60s.png">
+      <PackagePath>Assets\ThreadTags\AICA-TAG-60s.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.343</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\AICA-TAG-70s.png">
+      <PackagePath>Assets\ThreadTags\AICA-TAG-70s.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.344</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\AICA-TAG-80s.png">
+      <PackagePath>Assets\ThreadTags\AICA-TAG-80s.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.345</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\AICA-TAG-classic.png">
+      <PackagePath>Assets\ThreadTags\AICA-TAG-classic.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.346</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\AICA-TAG-newride.png">
+      <PackagePath>Assets\ThreadTags\AICA-TAG-newride.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.346</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\AICA-TAG-race.png">
+      <PackagePath>Assets\ThreadTags\AICA-TAG-race.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.347</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\AICA-TAG-trip.png">
+      <PackagePath>Assets\ThreadTags\AICA-TAG-trip.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.348</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ama.png">
+      <PackagePath>Assets\ThreadTags\ama.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.385</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ap-1999.png">
+      <PackagePath>Assets\ThreadTags\ap-1999.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.386</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\art.png">
+      <PackagePath>Assets\ThreadTags\art.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.386</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\asktell-jobs.png">
+      <PackagePath>Assets\ThreadTags\asktell-jobs.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.387</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\asktell-lifestyle.png">
+      <PackagePath>Assets\ThreadTags\asktell-lifestyle.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.387</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\asktell-travel.png">
+      <PackagePath>Assets\ThreadTags\asktell-travel.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.388</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\attention.png">
+      <PackagePath>Assets\ThreadTags\attention.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.388</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\audio.png">
+      <PackagePath>Assets\ThreadTags\audio.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.389</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bb-author.png">
+      <PackagePath>Assets\ThreadTags\bb-author.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.390</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bb-classics.png">
+      <PackagePath>Assets\ThreadTags\bb-classics.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.390</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bb-fantasy.png">
+      <PackagePath>Assets\ThreadTags\bb-fantasy.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.391</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bb-foreign.png">
+      <PackagePath>Assets\ThreadTags\bb-foreign.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.391</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bb-nonfiction.png">
+      <PackagePath>Assets\ThreadTags\bb-nonfiction.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.392</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\books.png">
+      <PackagePath>Assets\ThreadTags\books.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.392</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bs-diablo.png">
+      <PackagePath>Assets\ThreadTags\bs-diablo.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.393</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bs-starcraft.png">
+      <PackagePath>Assets\ThreadTags\bs-starcraft.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.394</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bss-con.png">
+      <PackagePath>Assets\ThreadTags\bss-con.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.394</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bss-discussion.png">
+      <PackagePath>Assets\ThreadTags\bss-discussion.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.395</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bss-fanboy.png">
+      <PackagePath>Assets\ThreadTags\bss-fanboy.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.396</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bss-indie.png">
+      <PackagePath>Assets\ThreadTags\bss-indie.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.397</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bss-manga.png">
+      <PackagePath>Assets\ThreadTags\bss-manga.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.397</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bss-new.png">
+      <PackagePath>Assets\ThreadTags\bss-new.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.398</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bss-review.png">
+      <PackagePath>Assets\ThreadTags\bss-review.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.398</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bss-shipping.png">
+      <PackagePath>Assets\ThreadTags\bss-shipping.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.399</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bss-swag.png">
+      <PackagePath>Assets\ThreadTags\bss-swag.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.400</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\bss-webcomic.png">
+      <PackagePath>Assets\ThreadTags\bss-webcomic.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.400</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-anti.png">
+      <PackagePath>Assets\ThreadTags\byob-anti.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.401</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-cheer.png">
+      <PackagePath>Assets\ThreadTags\byob-cheer.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.401</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-chill.png">
+      <PackagePath>Assets\ThreadTags\byob-chill.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.402</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-dent.png">
+      <PackagePath>Assets\ThreadTags\byob-dent.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.402</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-dont.png">
+      <PackagePath>Assets\ThreadTags\byob-dont.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.403</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-excuse.png">
+      <PackagePath>Assets\ThreadTags\byob-excuse.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.404</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-explosion.png">
+      <PackagePath>Assets\ThreadTags\byob-explosion.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.404</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-fluff.png">
+      <PackagePath>Assets\ThreadTags\byob-fluff.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.405</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-friends.png">
+      <PackagePath>Assets\ThreadTags\byob-friends.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.405</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-fuckyou.png">
+      <PackagePath>Assets\ThreadTags\byob-fuckyou.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.406</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-gents.png">
+      <PackagePath>Assets\ThreadTags\byob-gents.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.407</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-grouch.png">
+      <PackagePath>Assets\ThreadTags\byob-grouch.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.407</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-grumpy.png">
+      <PackagePath>Assets\ThreadTags\byob-grumpy.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.408</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-pizzatime.png">
+      <PackagePath>Assets\ThreadTags\byob-pizzatime.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.409</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-post.png">
+      <PackagePath>Assets\ThreadTags\byob-post.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.409</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-safespace.png">
+      <PackagePath>Assets\ThreadTags\byob-safespace.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.410</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-salt.png">
+      <PackagePath>Assets\ThreadTags\byob-salt.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.410</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-secrets.png">
+      <PackagePath>Assets\ThreadTags\byob-secrets.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.411</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-shocking.png">
+      <PackagePath>Assets\ThreadTags\byob-shocking.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.412</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-slax.png">
+      <PackagePath>Assets\ThreadTags\byob-slax.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.413</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-slayer.png">
+      <PackagePath>Assets\ThreadTags\byob-slayer.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.413</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-sore.png">
+      <PackagePath>Assets\ThreadTags\byob-sore.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.414</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-soulja.png">
+      <PackagePath>Assets\ThreadTags\byob-soulja.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.415</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-treasure.png">
+      <PackagePath>Assets\ThreadTags\byob-treasure.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.415</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-trip.png">
+      <PackagePath>Assets\ThreadTags\byob-trip.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.416</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-unbyob.png">
+      <PackagePath>Assets\ThreadTags\byob-unbyob.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.417</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-xfile.png">
+      <PackagePath>Assets\ThreadTags\byob-xfile.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.417</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob-zimboe.png">
+      <PackagePath>Assets\ThreadTags\byob-zimboe.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.418</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\byob.png">
+      <PackagePath>Assets\ThreadTags\byob.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.418</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\CA-TAG-CA-atb.png">
+      <PackagePath>Assets\ThreadTags\CA-TAG-CA-atb.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.348</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\CA-TAG-CA-dirtmoto.png">
+      <PackagePath>Assets\ThreadTags\CA-TAG-CA-dirtmoto.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.349</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\CA-TAG-CA-roadbike.png">
+      <PackagePath>Assets\ThreadTags\CA-TAG-CA-roadbike.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.349</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\CA-TAG-CA-streetmoto.png">
+      <PackagePath>Assets\ThreadTags\CA-TAG-CA-streetmoto.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.350</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cars.png">
+      <PackagePath>Assets\ThreadTags\cars.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.419</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cc-critique.png">
+      <PackagePath>Assets\ThreadTags\cc-critique.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.419</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cc-daily.png">
+      <PackagePath>Assets\ThreadTags\cc-daily.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.420</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cc-design.png">
+      <PackagePath>Assets\ThreadTags\cc-design.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.420</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cc-fiction.png">
+      <PackagePath>Assets\ThreadTags\cc-fiction.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.421</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cc-film.png">
+      <PackagePath>Assets\ThreadTags\cc-film.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.422</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cc-poetry.png">
+      <PackagePath>Assets\ThreadTags\cc-poetry.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.422</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cc-project.png">
+      <PackagePath>Assets\ThreadTags\cc-project.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.423</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cc-tutorial.png">
+      <PackagePath>Assets\ThreadTags\cc-tutorial.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.423</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cc-writing.png">
+      <PackagePath>Assets\ThreadTags\cc-writing.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.424</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cc_design.png">
+      <PackagePath>Assets\ThreadTags\cc_design.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.424</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cd_action.png">
+      <PackagePath>Assets\ThreadTags\cd_action.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.425</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cd_classic.png">
+      <PackagePath>Assets\ThreadTags\cd_classic.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.426</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cd_comedy.png">
+      <PackagePath>Assets\ThreadTags\cd_comedy.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.426</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cd_director.png">
+      <PackagePath>Assets\ThreadTags\cd_director.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.427</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cd_drama.png">
+      <PackagePath>Assets\ThreadTags\cd_drama.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.427</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cd_horror2.png">
+      <PackagePath>Assets\ThreadTags\cd_horror2.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.428</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cd_hype.png">
+      <PackagePath>Assets\ThreadTags\cd_hype.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.429</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cd_scifi.png">
+      <PackagePath>Assets\ThreadTags\cd_scifi.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.430</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cell-cdma.png">
+      <PackagePath>Assets\ThreadTags\cell-cdma.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.430</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cell-gsm.png">
+      <PackagePath>Assets\ThreadTags\cell-gsm.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.431</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\chooch.png">
+      <PackagePath>Assets\ThreadTags\chooch.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.431</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\coc-binbash.png">
+      <PackagePath>Assets\ThreadTags\coc-binbash.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.432</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\coc-c.png">
+      <PackagePath>Assets\ThreadTags\coc-c.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.433</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\coc-db.png">
+      <PackagePath>Assets\ThreadTags\coc-db.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.433</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\coc-java.png">
+      <PackagePath>Assets\ThreadTags\coc-java.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.434</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\coc-theory.png">
+      <PackagePath>Assets\ThreadTags\coc-theory.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.435</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\coc-web.png">
+      <PackagePath>Assets\ThreadTags\coc-web.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.435</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\computers.png">
+      <PackagePath>Assets\ThreadTags\computers.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.436</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\coupon-coupon.png">
+      <PackagePath>Assets\ThreadTags\coupon-coupon.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.436</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\coupon-free.png">
+      <PackagePath>Assets\ThreadTags\coupon-free.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.437</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\coupon-instore.png">
+      <PackagePath>Assets\ThreadTags\coupon-instore.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.438</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\coupon-nonus.png">
+      <PackagePath>Assets\ThreadTags\coupon-nonus.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.438</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\cps-android.png">
+      <PackagePath>Assets\ThreadTags\cps-android.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.439</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-9-11.png">
+      <PackagePath>Assets\ThreadTags\dd-9-11.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.439</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-africa.png">
+      <PackagePath>Assets\ThreadTags\dd-africa.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.441</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-asia.png">
+      <PackagePath>Assets\ThreadTags\dd-asia.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.442</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-dems.png">
+      <PackagePath>Assets\ThreadTags\dd-dems.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.442</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-economics.png">
+      <PackagePath>Assets\ThreadTags\dd-economics.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.443</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-environment.png">
+      <PackagePath>Assets\ThreadTags\dd-environment.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.444</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-europe.png">
+      <PackagePath>Assets\ThreadTags\dd-europe.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.445</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-fox.png">
+      <PackagePath>Assets\ThreadTags\dd-fox.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.446</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-GOP.png">
+      <PackagePath>Assets\ThreadTags\dd-GOP.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.440</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-gotcha.png">
+      <PackagePath>Assets\ThreadTags\dd-gotcha.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.447</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-history.png">
+      <PackagePath>Assets\ThreadTags\dd-history.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.448</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-law.png">
+      <PackagePath>Assets\ThreadTags\dd-law.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.448</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-notracist.png">
+      <PackagePath>Assets\ThreadTags\dd-notracist.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.449</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-offmeds.png">
+      <PackagePath>Assets\ThreadTags\dd-offmeds.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.450</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-philosophy.png">
+      <PackagePath>Assets\ThreadTags\dd-philosophy.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.450</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-religion.png">
+      <PackagePath>Assets\ThreadTags\dd-religion.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.451</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\dd-war.png">
+      <PackagePath>Assets\ThreadTags\dd-war.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.452</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ddrd-dota.png">
+      <PackagePath>Assets\ThreadTags\ddrd-dota.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.453</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ddrd-fuel.png">
+      <PackagePath>Assets\ThreadTags\ddrd-fuel.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.453</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ddrd-gameboy.png">
+      <PackagePath>Assets\ThreadTags\ddrd-gameboy.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.454</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ddrd-lol.png">
+      <PackagePath>Assets\ThreadTags\ddrd-lol.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.455</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ddrd-minus.png">
+      <PackagePath>Assets\ThreadTags\ddrd-minus.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.456</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ddrd-neogeo.png">
+      <PackagePath>Assets\ThreadTags\ddrd-neogeo.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.456</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ddrd-scsa.png">
+      <PackagePath>Assets\ThreadTags\ddrd-scsa.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.457</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ddrd-souls.png">
+      <PackagePath>Assets\ThreadTags\ddrd-souls.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.458</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\diy-advice.png">
+      <PackagePath>Assets\ThreadTags\diy-advice.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.459</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\diy-homeimprove.png">
+      <PackagePath>Assets\ThreadTags\diy-homeimprove.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.459</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\diy-robots.png">
+      <PackagePath>Assets\ThreadTags\diy-robots.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.460</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\diy-step.png">
+      <PackagePath>Assets\ThreadTags\diy-step.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.460</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\diy-tips.png">
+      <PackagePath>Assets\ThreadTags\diy-tips.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.461</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\diy-tools.png">
+      <PackagePath>Assets\ThreadTags\diy-tools.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.462</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\diy-wood.png">
+      <PackagePath>Assets\ThreadTags\diy-wood.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.463</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\Dorkroom-K-ROCK.png">
+      <PackagePath>Assets\ThreadTags\Dorkroom-K-ROCK.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.351</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\Dorkroom-silkysmooth.png">
+      <PackagePath>Assets\ThreadTags\Dorkroom-silkysmooth.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.351</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\drugs.png">
+      <PackagePath>Assets\ThreadTags\drugs.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.463</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\en.png">
+      <PackagePath>Assets\ThreadTags\en.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.464</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\event.png">
+      <PackagePath>Assets\ThreadTags\event.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.464</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\flame.png">
+      <PackagePath>Assets\ThreadTags\flame.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.465</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\food.png">
+      <PackagePath>Assets\ThreadTags\food.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.466</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fruity.png">
+      <PackagePath>Assets\ThreadTags\fruity.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.466</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-alas.png">
+      <PackagePath>Assets\ThreadTags\fyad-alas.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.467</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-archery.png">
+      <PackagePath>Assets\ThreadTags\fyad-archery.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.467</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-atheist.png">
+      <PackagePath>Assets\ThreadTags\fyad-atheist.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.468</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-bapes.png">
+      <PackagePath>Assets\ThreadTags\fyad-bapes.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.468</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-bats.png">
+      <PackagePath>Assets\ThreadTags\fyad-bats.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.469</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-blaagh.png">
+      <PackagePath>Assets\ThreadTags\fyad-blaagh.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.469</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-blades.png">
+      <PackagePath>Assets\ThreadTags\fyad-blades.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.470</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-blogs.png">
+      <PackagePath>Assets\ThreadTags\fyad-blogs.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.470</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-brews.png">
+      <PackagePath>Assets\ThreadTags\fyad-brews.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.471</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-burn.png">
+      <PackagePath>Assets\ThreadTags\fyad-burn.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.472</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-cats.png">
+      <PackagePath>Assets\ThreadTags\fyad-cats.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.472</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-champion.png">
+      <PackagePath>Assets\ThreadTags\fyad-champion.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.473</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-cockfights.png">
+      <PackagePath>Assets\ThreadTags\fyad-cockfights.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.473</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-dirigibles.png">
+      <PackagePath>Assets\ThreadTags\fyad-dirigibles.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.474</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-dogfights.png">
+      <PackagePath>Assets\ThreadTags\fyad-dogfights.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.475</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-eggs.png">
+      <PackagePath>Assets\ThreadTags\fyad-eggs.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.475</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-falconry.png">
+      <PackagePath>Assets\ThreadTags\fyad-falconry.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.476</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-flannel.png">
+      <PackagePath>Assets\ThreadTags\fyad-flannel.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.476</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-framed.png">
+      <PackagePath>Assets\ThreadTags\fyad-framed.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.477</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-ghostride.png">
+      <PackagePath>Assets\ThreadTags\fyad-ghostride.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.478</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-ghosts.png">
+      <PackagePath>Assets\ThreadTags\fyad-ghosts.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.479</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-hark.png">
+      <PackagePath>Assets\ThreadTags\fyad-hark.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.479</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-hogyanker.png">
+      <PackagePath>Assets\ThreadTags\fyad-hogyanker.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.480</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-horses.png">
+      <PackagePath>Assets\ThreadTags\fyad-horses.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.481</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-hunting.png">
+      <PackagePath>Assets\ThreadTags\fyad-hunting.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.481</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-imgay.png">
+      <PackagePath>Assets\ThreadTags\fyad-imgay.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.482</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-lovecum.png">
+      <PackagePath>Assets\ThreadTags\fyad-lovecum.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.483</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-madmax.png">
+      <PackagePath>Assets\ThreadTags\fyad-madmax.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.483</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-magician.png">
+      <PackagePath>Assets\ThreadTags\fyad-magician.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.484</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-menopause.png">
+      <PackagePath>Assets\ThreadTags\fyad-menopause.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.484</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-moof.png">
+      <PackagePath>Assets\ThreadTags\fyad-moof.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.485</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-mystery.png">
+      <PackagePath>Assets\ThreadTags\fyad-mystery.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.486</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-nilbog.png">
+      <PackagePath>Assets\ThreadTags\fyad-nilbog.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.486</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-otherforums.png">
+      <PackagePath>Assets\ThreadTags\fyad-otherforums.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.487</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-parroty.png">
+      <PackagePath>Assets\ThreadTags\fyad-parroty.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.488</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-puns.png">
+      <PackagePath>Assets\ThreadTags\fyad-puns.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.489</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\FYAD-redants.png">
+      <PackagePath>Assets\ThreadTags\FYAD-redants.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.352</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-robocop.png">
+      <PackagePath>Assets\ThreadTags\fyad-robocop.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.489</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-salad.png">
+      <PackagePath>Assets\ThreadTags\fyad-salad.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.490</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-sandwich.png">
+      <PackagePath>Assets\ThreadTags\fyad-sandwich.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.490</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-smallthread.png">
+      <PackagePath>Assets\ThreadTags\fyad-smallthread.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.491</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-socks.png">
+      <PackagePath>Assets\ThreadTags\fyad-socks.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.492</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-space.png">
+      <PackagePath>Assets\ThreadTags\fyad-space.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.492</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-speedrun.png">
+      <PackagePath>Assets\ThreadTags\fyad-speedrun.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.493</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-spiny.png">
+      <PackagePath>Assets\ThreadTags\fyad-spiny.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.493</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-starcraft.png">
+      <PackagePath>Assets\ThreadTags\fyad-starcraft.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.494</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-suts.png">
+      <PackagePath>Assets\ThreadTags\fyad-suts.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.495</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-thing.png">
+      <PackagePath>Assets\ThreadTags\fyad-thing.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.496</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-thuggery.png">
+      <PackagePath>Assets\ThreadTags\fyad-thuggery.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.497</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-tim.png">
+      <PackagePath>Assets\ThreadTags\fyad-tim.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.497</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-toucan.png">
+      <PackagePath>Assets\ThreadTags\fyad-toucan.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.498</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-tree.png">
+      <PackagePath>Assets\ThreadTags\fyad-tree.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.499</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-troll.png">
+      <PackagePath>Assets\ThreadTags\fyad-troll.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.499</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-trout.png">
+      <PackagePath>Assets\ThreadTags\fyad-trout.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.500</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-wiki.png">
+      <PackagePath>Assets\ThreadTags\fyad-wiki.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.500</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-words.png">
+      <PackagePath>Assets\ThreadTags\fyad-words.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.501</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-yourrights.png">
+      <PackagePath>Assets\ThreadTags\fyad-yourrights.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.502</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-yuck.png">
+      <PackagePath>Assets\ThreadTags\fyad-yuck.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.502</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\fyad-zounds.png">
+      <PackagePath>Assets\ThreadTags\fyad-zounds.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.503</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\games-360.png">
+      <PackagePath>Assets\ThreadTags\games-360.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.504</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\games-360ps3tag.png">
+      <PackagePath>Assets\ThreadTags\games-360ps3tag.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.504</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\games-3ds.png">
+      <PackagePath>Assets\ThreadTags\games-3ds.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.505</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\games-ds.png">
+      <PackagePath>Assets\ThreadTags\games-ds.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.505</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\games-letsplay.png">
+      <PackagePath>Assets\ThreadTags\games-letsplay.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.506</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\games-ps3.png">
+      <PackagePath>Assets\ThreadTags\games-ps3.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.507</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\games-ps4.png">
+      <PackagePath>Assets\ThreadTags\games-ps4.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.507</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\games-psp.png">
+      <PackagePath>Assets\ThreadTags\games-psp.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.508</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\Games-vita.png">
+      <PackagePath>Assets\ThreadTags\Games-vita.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.352</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\games-wii.png">
+      <PackagePath>Assets\ThreadTags\games-wii.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.509</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\games-wiiu.png">
+      <PackagePath>Assets\ThreadTags\games-wiiu.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.509</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\games-xbone.png">
+      <PackagePath>Assets\ThreadTags\games-xbone.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.510</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\games.png">
+      <PackagePath>Assets\ThreadTags\games.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.511</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gip-airforce.png">
+      <PackagePath>Assets\ThreadTags\gip-airforce.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gip-army.png">
+      <PackagePath>Assets\ThreadTags\gip-army.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gip-EMT4.png">
+      <PackagePath>Assets\ThreadTags\gip-EMT4.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.512</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gip-firetruck.png">
+      <PackagePath>Assets\ThreadTags\gip-firetruck.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.514</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gip-marines.png">
+      <PackagePath>Assets\ThreadTags\gip-marines.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.515</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gip-money.png">
+      <PackagePath>Assets\ThreadTags\gip-money.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.516</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gip-navy2.png">
+      <PackagePath>Assets\ThreadTags\gip-navy2.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.517</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gip-pew.png">
+      <PackagePath>Assets\ThreadTags\gip-pew.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.517</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gip-police3.png">
+      <PackagePath>Assets\ThreadTags\gip-police3.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.518</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gip-uscg.png">
+      <PackagePath>Assets\ThreadTags\gip-uscg.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.518</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gip.png">
+      <PackagePath>Assets\ThreadTags\gip.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.519</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\goonmeet.png">
+      <PackagePath>Assets\ThreadTags\goonmeet.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.520</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gross.png">
+      <PackagePath>Assets\ThreadTags\gross.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.520</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\guns-airsoft.png">
+      <PackagePath>Assets\ThreadTags\guns-airsoft.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.521</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\guns-ammo.png">
+      <PackagePath>Assets\ThreadTags\guns-ammo.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.521</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\guns-ccw.png">
+      <PackagePath>Assets\ThreadTags\guns-ccw.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.522</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\guns-hunting.png">
+      <PackagePath>Assets\ThreadTags\guns-hunting.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.523</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\guns-milsurp.png">
+      <PackagePath>Assets\ThreadTags\guns-milsurp.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.523</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\guns-ohshi.png">
+      <PackagePath>Assets\ThreadTags\guns-ohshi.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.524</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\guns-paintball.png">
+      <PackagePath>Assets\ThreadTags\guns-paintball.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.524</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\guns-review.png">
+      <PackagePath>Assets\ThreadTags\guns-review.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.525</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\guns.png">
+      <PackagePath>Assets\ThreadTags\guns.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.526</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gws-bread.png">
+      <PackagePath>Assets\ThreadTags\gws-bread.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.526</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gws-dessert.png">
+      <PackagePath>Assets\ThreadTags\gws-dessert.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.527</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gws-diet.png">
+      <PackagePath>Assets\ThreadTags\gws-diet.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.528</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gws-drink.png">
+      <PackagePath>Assets\ThreadTags\gws-drink.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.528</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gws-fish.png">
+      <PackagePath>Assets\ThreadTags\gws-fish.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.529</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gws-local.png">
+      <PackagePath>Assets\ThreadTags\gws-local.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.530</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gws-meat.png">
+      <PackagePath>Assets\ThreadTags\gws-meat.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.531</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gws-snacks.png">
+      <PackagePath>Assets\ThreadTags\gws-snacks.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.531</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gws-soup.png">
+      <PackagePath>Assets\ThreadTags\gws-soup.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.532</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\gws-veggie.png">
+      <PackagePath>Assets\ThreadTags\gws-veggie.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.533</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\hell-boot.png">
+      <PackagePath>Assets\ThreadTags\hell-boot.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.533</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\hell-fuckthis.png">
+      <PackagePath>Assets\ThreadTags\hell-fuckthis.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.534</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\hell-glomp.png">
+      <PackagePath>Assets\ThreadTags\hell-glomp.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.534</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\hell-hive.png">
+      <PackagePath>Assets\ThreadTags\hell-hive.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.535</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\hell-jabroni.png">
+      <PackagePath>Assets\ThreadTags\hell-jabroni.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.536</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\hell-jorts.png">
+      <PackagePath>Assets\ThreadTags\hell-jorts.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.536</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\hell-miso.png">
+      <PackagePath>Assets\ThreadTags\hell-miso.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.537</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\hell-spergin.png">
+      <PackagePath>Assets\ThreadTags\hell-spergin.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.537</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\hell-stfu.png">
+      <PackagePath>Assets\ThreadTags\hell-stfu.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.538</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\hell-suck.png">
+      <PackagePath>Assets\ThreadTags\hell-suck.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.539</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\hell-tim.png">
+      <PackagePath>Assets\ThreadTags\hell-tim.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.539</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\hell-whore.png">
+      <PackagePath>Assets\ThreadTags\hell-whore.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.540</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\help.png">
+      <PackagePath>Assets\ThreadTags\help.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.541</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\humor.png">
+      <PackagePath>Assets\ThreadTags\humor.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.541</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon-30-attnmod.png">
+      <PackagePath>Assets\ThreadTags\icon-30-attnmod.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.542</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon-31-hotthread.png">
+      <PackagePath>Assets\ThreadTags\icon-31-hotthread.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.542</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon-37-selling.png">
+      <PackagePath>Assets\ThreadTags\icon-37-selling.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.543</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon-38-buying.png">
+      <PackagePath>Assets\ThreadTags\icon-38-buying.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.544</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon-41-game-xbox.png">
+      <PackagePath>Assets\ThreadTags\icon-41-game-xbox.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.544</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon-42-game-ps2.png">
+      <PackagePath>Assets\ThreadTags\icon-42-game-ps2.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.545</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon-43-game-gamecube.png">
+      <PackagePath>Assets\ThreadTags\icon-43-game-gamecube.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.546</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon-44-game-gba.png">
+      <PackagePath>Assets\ThreadTags\icon-44-game-gba.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.546</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon-45-game-pc.png">
+      <PackagePath>Assets\ThreadTags\icon-45-game-pc.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.547</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon-46-trading.png">
+      <PackagePath>Assets\ThreadTags\icon-46-trading.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.548</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon-52-trading.png">
+      <PackagePath>Assets\ThreadTags\icon-52-trading.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.548</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon-59-lobster.png">
+      <PackagePath>Assets\ThreadTags\icon-59-lobster.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.549</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon-60-pig.png">
+      <PackagePath>Assets\ThreadTags\icon-60-pig.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.549</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon-61-comics.png">
+      <PackagePath>Assets\ThreadTags\icon-61-comics.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.550</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon-dear_richard.png">
+      <PackagePath>Assets\ThreadTags\icon-dear_richard.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.550</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon-honk.png">
+      <PackagePath>Assets\ThreadTags\icon-honk.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.551</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\icon23-banme.png">
+      <PackagePath>Assets\ThreadTags\icon23-banme.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.552</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lan-asia.png">
+      <PackagePath>Assets\ThreadTags\lan-asia.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.552</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lan-canada.png">
+      <PackagePath>Assets\ThreadTags\lan-canada.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.553</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lan-europe.png">
+      <PackagePath>Assets\ThreadTags\lan-europe.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.554</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lan-international.png">
+      <PackagePath>Assets\ThreadTags\lan-international.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.554</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lan-midwest.png">
+      <PackagePath>Assets\ThreadTags\lan-midwest.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.555</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lan-ne.png">
+      <PackagePath>Assets\ThreadTags\lan-ne.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.555</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lan-nw.png">
+      <PackagePath>Assets\ThreadTags\lan-nw.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.556</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lan-south.png">
+      <PackagePath>Assets\ThreadTags\lan-south.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.557</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lan-sw.png">
+      <PackagePath>Assets\ThreadTags\lan-sw.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.557</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lan-west.png">
+      <PackagePath>Assets\ThreadTags\lan-west.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.558</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-24yu5af.png">
+      <PackagePath>Assets\ThreadTags\LF-24yu5af.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.353</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-25tjf47.png">
+      <PackagePath>Assets\ThreadTags\LF-25tjf47.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.354</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-29qdqgy.png">
+      <PackagePath>Assets\ThreadTags\LF-29qdqgy.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.354</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-2mfbryu.png">
+      <PackagePath>Assets\ThreadTags\LF-2mfbryu.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.355</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-2wqxulw.png">
+      <PackagePath>Assets\ThreadTags\LF-2wqxulw.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.355</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-9287.png">
+      <PackagePath>Assets\ThreadTags\lf-9287.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.558</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-amerika.png">
+      <PackagePath>Assets\ThreadTags\lf-amerika.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.559</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-arecountry.png">
+      <PackagePath>Assets\ThreadTags\lf-arecountry.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.559</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-article.png">
+      <PackagePath>Assets\ThreadTags\LF-article.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.357</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-BiCurious.png">
+      <PackagePath>Assets\ThreadTags\LF-BiCurious.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.356</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-burden.png">
+      <PackagePath>Assets\ThreadTags\lf-burden.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.560</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-choom.png">
+      <PackagePath>Assets\ThreadTags\lf-choom.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.561</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-dad.png">
+      <PackagePath>Assets\ThreadTags\LF-dad.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.357</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-dji.png">
+      <PackagePath>Assets\ThreadTags\lf-dji.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.561</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-eu.png">
+      <PackagePath>Assets\ThreadTags\lf-eu.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.562</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-eurabia.png">
+      <PackagePath>Assets\ThreadTags\lf-eurabia.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.563</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-fem_LF_tag2.png">
+      <PackagePath>Assets\ThreadTags\LF-fem_LF_tag2.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.358</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-fff.png">
+      <PackagePath>Assets\ThreadTags\lf-fff.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.563</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-fuckit3.png">
+      <PackagePath>Assets\ThreadTags\lf-fuckit3.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.564</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-fuckshitdamntag2.png">
+      <PackagePath>Assets\ThreadTags\LF-fuckshitdamntag2.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.358</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-gay2.png">
+      <PackagePath>Assets\ThreadTags\LF-gay2.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.359</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-gipper.png">
+      <PackagePath>Assets\ThreadTags\lf-gipper.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.565</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-gitrdun2.png">
+      <PackagePath>Assets\ThreadTags\LF-gitrdun2.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.359</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-gooddog.png">
+      <PackagePath>Assets\ThreadTags\lf-gooddog.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.565</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-gotmine.png">
+      <PackagePath>Assets\ThreadTags\lf-gotmine.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.566</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-hansen2.png">
+      <PackagePath>Assets\ThreadTags\lf-hansen2.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.566</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-iraq.png">
+      <PackagePath>Assets\ThreadTags\LF-iraq.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.360</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-japan_clean_fast.png">
+      <PackagePath>Assets\ThreadTags\LF-japan_clean_fast.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.361</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-laters.png">
+      <PackagePath>Assets\ThreadTags\lf-laters.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.567</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-legacy.png">
+      <PackagePath>Assets\ThreadTags\LF-legacy.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.361</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-marx.png">
+      <PackagePath>Assets\ThreadTags\lf-marx.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.568</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-migra.png">
+      <PackagePath>Assets\ThreadTags\lf-migra.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.568</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-nazisrael2.png">
+      <PackagePath>Assets\ThreadTags\LF-nazisrael2.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.362</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-pcc6-2-32-576.png">
+      <PackagePath>Assets\ThreadTags\LF-pcc6-2-32-576.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.363</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-pennybags.png">
+      <PackagePath>Assets\ThreadTags\LF-pennybags.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.363</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-perspective_1.png">
+      <PackagePath>Assets\ThreadTags\LF-perspective_1.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.364</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-purestrain2.png">
+      <PackagePath>Assets\ThreadTags\LF-purestrain2.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.365</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-race2.png">
+      <PackagePath>Assets\ThreadTags\lf-race2.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.569</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\LF-rungop.png">
+      <PackagePath>Assets\ThreadTags\LF-rungop.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.365</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-trains.png">
+      <PackagePath>Assets\ThreadTags\lf-trains.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.569</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lf-whites.png">
+      <PackagePath>Assets\ThreadTags\lf-whites.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.570</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\link.png">
+      <PackagePath>Assets\ThreadTags\link.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.570</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lp-adventure.png">
+      <PackagePath>Assets\ThreadTags\lp-adventure.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.571</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lp-fps.png">
+      <PackagePath>Assets\ThreadTags\lp-fps.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.572</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lp-romhack.png">
+      <PackagePath>Assets\ThreadTags\lp-romhack.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.572</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lp-rpg.png">
+      <PackagePath>Assets\ThreadTags\lp-rpg.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.573</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lp-strategy.png">
+      <PackagePath>Assets\ThreadTags\lp-strategy.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.573</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\lp-text.png">
+      <PackagePath>Assets\ThreadTags\lp-text.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.574</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ml-acoustic.png">
+      <PackagePath>Assets\ThreadTags\ml-acoustic.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.575</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ml-amps.png">
+      <PackagePath>Assets\ThreadTags\ml-amps.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.575</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ml-bass.png">
+      <PackagePath>Assets\ThreadTags\ml-bass.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.576</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ml-contest.png">
+      <PackagePath>Assets\ThreadTags\ml-contest.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.576</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ml-drums.png">
+      <PackagePath>Assets\ThreadTags\ml-drums.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.577</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ml-dumbass.png">
+      <PackagePath>Assets\ThreadTags\ml-dumbass.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.578</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ml-feedback.png">
+      <PackagePath>Assets\ThreadTags\ml-feedback.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.578</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ml-gear.png">
+      <PackagePath>Assets\ThreadTags\ml-gear.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.579</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ml-guitar.png">
+      <PackagePath>Assets\ThreadTags\ml-guitar.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.580</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ml-recording.png">
+      <PackagePath>Assets\ThreadTags\ml-recording.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.580</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ml-theory.png">
+      <PackagePath>Assets\ThreadTags\ml-theory.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.581</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ml-voice.png">
+      <PackagePath>Assets\ThreadTags\ml-voice.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.582</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\mods-expert.png">
+      <PackagePath>Assets\ThreadTags\mods-expert.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.582</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\movies.png">
+      <PackagePath>Assets\ThreadTags\movies.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.583</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\music.png">
+      <PackagePath>Assets\ThreadTags\music.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.583</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\newbie.png">
+      <PackagePath>Assets\ThreadTags\newbie.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.584</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\news.png">
+      <PackagePath>Assets\ThreadTags\news.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.585</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\nmd-classical.png">
+      <PackagePath>Assets\ThreadTags\nmd-classical.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.585</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\nmd-country.png">
+      <PackagePath>Assets\ThreadTags\nmd-country.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.586</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\nmd-electronic.png">
+      <PackagePath>Assets\ThreadTags\nmd-electronic.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.586</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\nmd-hiphop.png">
+      <PackagePath>Assets\ThreadTags\nmd-hiphop.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.587</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\nmd-jazz.png">
+      <PackagePath>Assets\ThreadTags\nmd-jazz.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.588</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\nmd-metal.png">
+      <PackagePath>Assets\ThreadTags\nmd-metal.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.588</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\nmd-pop.png">
+      <PackagePath>Assets\ThreadTags\nmd-pop.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.589</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\nmd-punk.png">
+      <PackagePath>Assets\ThreadTags\nmd-punk.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.590</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\nmd-rock.png">
+      <PackagePath>Assets\ThreadTags\nmd-rock.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.590</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\nmd-tour.png">
+      <PackagePath>Assets\ThreadTags\nmd-tour.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.591</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\nmd-us.png">
+      <PackagePath>Assets\ThreadTags\nmd-us.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.591</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\nmd-world.png">
+      <PackagePath>Assets\ThreadTags\nmd-world.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.592</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ouya.png">
+      <PackagePath>Assets\ThreadTags\ouya.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.592</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-ant.png">
+      <PackagePath>Assets\ThreadTags\phiz-ant.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.593</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-aoki.png">
+      <PackagePath>Assets\ThreadTags\phiz-aoki.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.594</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-crabcore.png">
+      <PackagePath>Assets\ThreadTags\phiz-crabcore.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.594</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-dad.png">
+      <PackagePath>Assets\ThreadTags\phiz-dad.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.595</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-dollas.png">
+      <PackagePath>Assets\ThreadTags\phiz-dollas.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.596</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-donk.png">
+      <PackagePath>Assets\ThreadTags\phiz-donk.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.596</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-dontlike.png">
+      <PackagePath>Assets\ThreadTags\phiz-dontlike.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.597</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-emo.png">
+      <PackagePath>Assets\ThreadTags\phiz-emo.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.597</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-grind.png">
+      <PackagePath>Assets\ThreadTags\phiz-grind.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.598</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-irony.png">
+      <PackagePath>Assets\ThreadTags\phiz-irony.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.599</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-kayne.png">
+      <PackagePath>Assets\ThreadTags\phiz-kayne.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.599</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-kermit.png">
+      <PackagePath>Assets\ThreadTags\phiz-kermit.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.600</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-phag.png">
+      <PackagePath>Assets\ThreadTags\phiz-phag.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.600</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-powerband.png">
+      <PackagePath>Assets\ThreadTags\phiz-powerband.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.601</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-prince.png">
+      <PackagePath>Assets\ThreadTags\phiz-prince.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.602</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-rap.png">
+      <PackagePath>Assets\ThreadTags\phiz-rap.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.602</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-robojax.png">
+      <PackagePath>Assets\ThreadTags\phiz-robojax.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.603</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-rockist.png">
+      <PackagePath>Assets\ThreadTags\phiz-rockist.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.603</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-sincere.png">
+      <PackagePath>Assets\ThreadTags\phiz-sincere.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.604</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-smugwave.png">
+      <PackagePath>Assets\ThreadTags\phiz-smugwave.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.605</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-style.png">
+      <PackagePath>Assets\ThreadTags\phiz-style.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.605</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-sucks.png">
+      <PackagePath>Assets\ThreadTags\phiz-sucks.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.606</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\phiz-vampire.png">
+      <PackagePath>Assets\ThreadTags\phiz-vampire.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.606</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\photos.png">
+      <PackagePath>Assets\ThreadTags\photos.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.607</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\photoshop.png">
+      <PackagePath>Assets\ThreadTags\photoshop.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.608</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\pi-birds.png">
+      <PackagePath>Assets\ThreadTags\pi-birds.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.608</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\pi-bugs.png">
+      <PackagePath>Assets\ThreadTags\pi-bugs.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.609</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\pi-caged.png">
+      <PackagePath>Assets\ThreadTags\pi-caged.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.609</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\pi-cats.png">
+      <PackagePath>Assets\ThreadTags\pi-cats.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.610</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\pi-dogs.png">
+      <PackagePath>Assets\ThreadTags\pi-dogs.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.611</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\pi-fish.png">
+      <PackagePath>Assets\ThreadTags\pi-fish.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.611</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\pi-herps.png">
+      <PackagePath>Assets\ThreadTags\pi-herps.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.612</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\politics.png">
+      <PackagePath>Assets\ThreadTags\politics.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.613</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\poll.png">
+      <PackagePath>Assets\ThreadTags\poll.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.613</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\psp-grappling.png">
+      <PackagePath>Assets\ThreadTags\psp-grappling.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.614</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\psp-itstime.png">
+      <PackagePath>Assets\ThreadTags\psp-itstime.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.615</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\psp-japan.png">
+      <PackagePath>Assets\ThreadTags\psp-japan.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.615</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\psp-k1.png">
+      <PackagePath>Assets\ThreadTags\psp-k1.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.616</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\psp-mma.png">
+      <PackagePath>Assets\ThreadTags\psp-mma.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.616</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\psp-pride.png">
+      <PackagePath>Assets\ThreadTags\psp-pride.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.617</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\psp-rumble.png">
+      <PackagePath>Assets\ThreadTags\psp-rumble.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.618</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\psp-thonglor.png">
+      <PackagePath>Assets\ThreadTags\psp-thonglor.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.618</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\psp-tuf.png">
+      <PackagePath>Assets\ThreadTags\psp-tuf.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.619</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\psp-ufc.png">
+      <PackagePath>Assets\ThreadTags\psp-ufc.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.620</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\qcs-green.png">
+      <PackagePath>Assets\ThreadTags\qcs-green.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.620</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\question.png">
+      <PackagePath>Assets\ThreadTags\question.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.621</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\rant.png">
+      <PackagePath>Assets\ThreadTags\rant.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.621</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\repeat.png">
+      <PackagePath>Assets\ThreadTags\repeat.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.622</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\request.png">
+      <PackagePath>Assets\ThreadTags\request.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.623</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\RP-20a6zc0.png">
+      <PackagePath>Assets\ThreadTags\RP-20a6zc0.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.369</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\RP-carling.png">
+      <PackagePath>Assets\ThreadTags\RP-carling.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.371</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\RP-championship.png">
+      <PackagePath>Assets\ThreadTags\RP-championship.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.372</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\RP-epl.png">
+      <PackagePath>Assets\ThreadTags\RP-epl.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.372</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\RP-facup.png">
+      <PackagePath>Assets\ThreadTags\RP-facup.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.373</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\RP-fifa.png">
+      <PackagePath>Assets\ThreadTags\RP-fifa.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.374</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\RP-league.png">
+      <PackagePath>Assets\ThreadTags\RP-league.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.374</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\RP-LFP.png">
+      <PackagePath>Assets\ThreadTags\RP-LFP.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.370</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\RP-ligue1.png">
+      <PackagePath>Assets\ThreadTags\RP-ligue1.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.375</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\RP-mls_tag.png">
+      <PackagePath>Assets\ThreadTags\RP-mls_tag.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.376</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\RP-MOTD_TAG.png">
+      <PackagePath>Assets\ThreadTags\RP-MOTD_TAG.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.370</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\RP-nonleague.png">
+      <PackagePath>Assets\ThreadTags\RP-nonleague.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.377</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\RP-seriea.png">
+      <PackagePath>Assets\ThreadTags\RP-seriea.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.377</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\RP-spl.png">
+      <PackagePath>Assets\ThreadTags\RP-spl.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.378</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\RP-uefa_tag.png">
+      <PackagePath>Assets\ThreadTags\RP-uefa_tag.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.379</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sadev-bugs.png">
+      <PackagePath>Assets\ThreadTags\sadev-bugs.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.623</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sam-clothing.png">
+      <PackagePath>Assets\ThreadTags\sam-clothing.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.624</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\samartd-interestcheck.png">
+      <PackagePath>Assets\ThreadTags\samartd-interestcheck.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.625</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\samartd-organs.png">
+      <PackagePath>Assets\ThreadTags\samartd-organs.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.626</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\samartd-potions.png">
+      <PackagePath>Assets\ThreadTags\samartd-potions.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.626</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\samartd-water.png">
+      <PackagePath>Assets\ThreadTags\samartd-water.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.627</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sap-language.png">
+      <PackagePath>Assets\ThreadTags\sap-language.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.627</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sas-fantasy.png">
+      <PackagePath>Assets\ThreadTags\sas-fantasy.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.628</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sas-hockey2.png">
+      <PackagePath>Assets\ThreadTags\sas-hockey2.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.629</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\school.png">
+      <PackagePath>Assets\ThreadTags\school.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.630</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\science.png">
+      <PackagePath>Assets\ThreadTags\science.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.630</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\serious.png">
+      <PackagePath>Assets\ThreadTags\serious.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.631</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sex.png">
+      <PackagePath>Assets\ThreadTags\sex.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.631</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\shitpost.png">
+      <PackagePath>Assets\ThreadTags\shitpost.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.632</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\shsc-apple.png">
+      <PackagePath>Assets\ThreadTags\shsc-apple.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.632</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\shsc-bsd.png">
+      <PackagePath>Assets\ThreadTags\shsc-bsd.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.633</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\shsc-code.png">
+      <PackagePath>Assets\ThreadTags\shsc-code.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.634</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\shsc-hardware.png">
+      <PackagePath>Assets\ThreadTags\shsc-hardware.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.634</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\shsc-laptop.png">
+      <PackagePath>Assets\ThreadTags\shsc-laptop.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.635</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\shsc-linux.png">
+      <PackagePath>Assets\ThreadTags\shsc-linux.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.635</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\shsc-networking.png">
+      <PackagePath>Assets\ThreadTags\shsc-networking.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.636</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\shsc-sysadmin.png">
+      <PackagePath>Assets\ThreadTags\shsc-sysadmin.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.636</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\shsc-win.png">
+      <PackagePath>Assets\ThreadTags\shsc-win.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.637</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sports-boxing.png">
+      <PackagePath>Assets\ThreadTags\sports-boxing.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.638</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sports-golf.png">
+      <PackagePath>Assets\ThreadTags\sports-golf.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.638</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sports-mlb.png">
+      <PackagePath>Assets\ThreadTags\sports-mlb.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.639</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sports-nascar.png">
+      <PackagePath>Assets\ThreadTags\sports-nascar.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.639</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sports-nba.png">
+      <PackagePath>Assets\ThreadTags\sports-nba.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.640</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sports-ncaa.png">
+      <PackagePath>Assets\ThreadTags\sports-ncaa.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.641</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sports-nfl.png">
+      <PackagePath>Assets\ThreadTags\sports-nfl.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.642</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sports-nhl.png">
+      <PackagePath>Assets\ThreadTags\sports-nhl.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.642</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sports-soccer.png">
+      <PackagePath>Assets\ThreadTags\sports-soccer.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.643</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sports-sylvia.png">
+      <PackagePath>Assets\ThreadTags\sports-sylvia.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.644</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sports-wwe.png">
+      <PackagePath>Assets\ThreadTags\sports-wwe.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.645</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\sports.png">
+      <PackagePath>Assets\ThreadTags\sports.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.645</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\steam.png">
+      <PackagePath>Assets\ThreadTags\steam.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.646</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\stupid.png">
+      <PackagePath>Assets\ThreadTags\stupid.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.647</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tag-thrad.png">
+      <PackagePath>Assets\ThreadTags\tag-thrad.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.647</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tava-analog.png">
+      <PackagePath>Assets\ThreadTags\tava-analog.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.648</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tava-cables.png">
+      <PackagePath>Assets\ThreadTags\tava-cables.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.649</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tava-cellphone.png">
+      <PackagePath>Assets\ThreadTags\tava-cellphone.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.649</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tava-gadget.png">
+      <PackagePath>Assets\ThreadTags\tava-gadget.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.650</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tava-headphones.png">
+      <PackagePath>Assets\ThreadTags\tava-headphones.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.650</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tava-highdef.png">
+      <PackagePath>Assets\ThreadTags\tava-highdef.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.651</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tava-mp3.png">
+      <PackagePath>Assets\ThreadTags\tava-mp3.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.651</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tava-speakers.png">
+      <PackagePath>Assets\ThreadTags\tava-speakers.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.652</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tava-vintage.png">
+      <PackagePath>Assets\ThreadTags\tava-vintage.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.653</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tcc-acid.png">
+      <PackagePath>Assets\ThreadTags\tcc-acid.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.653</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tcc-addiction.png">
+      <PackagePath>Assets\ThreadTags\tcc-addiction.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.654</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tcc-busted.png">
+      <PackagePath>Assets\ThreadTags\tcc-busted.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.654</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tcc-downers.png">
+      <PackagePath>Assets\ThreadTags\tcc-downers.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.655</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tcc-halluc.png">
+      <PackagePath>Assets\ThreadTags\tcc-halluc.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.655</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tcc-research.png">
+      <PackagePath>Assets\ThreadTags\tcc-research.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.656</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tcc-rx.png">
+      <PackagePath>Assets\ThreadTags\tcc-rx.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.656</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tcc-shrooms.png">
+      <PackagePath>Assets\ThreadTags\tcc-shrooms.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.657</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tcc-trip_report.png">
+      <PackagePath>Assets\ThreadTags\tcc-trip_report.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.657</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tcc-txt.png">
+      <PackagePath>Assets\ThreadTags\tcc-txt.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.658</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tcc-uppers.png">
+      <PackagePath>Assets\ThreadTags\tcc-uppers.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.659</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tcc-weed.png">
+      <PackagePath>Assets\ThreadTags\tcc-weed.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.659</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tech.png">
+      <PackagePath>Assets\ThreadTags\tech.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.660</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\terrordome.png">
+      <PackagePath>Assets\ThreadTags\terrordome.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.661</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tfr-box.png">
+      <PackagePath>Assets\ThreadTags\tfr-box.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.661</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tg-boardgames.png">
+      <PackagePath>Assets\ThreadTags\tg-boardgames.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.662</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tg-cards.png">
+      <PackagePath>Assets\ThreadTags\tg-cards.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.663</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tg-d20.png">
+      <PackagePath>Assets\ThreadTags\tg-d20.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.664</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tg-dd.png">
+      <PackagePath>Assets\ThreadTags\tg-dd.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.664</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tg-gurps.png">
+      <PackagePath>Assets\ThreadTags\tg-gurps.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.665</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tg-mafia.png">
+      <PackagePath>Assets\ThreadTags\tg-mafia.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.666</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tg-poker.png">
+      <PackagePath>Assets\ThreadTags\tg-poker.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.666</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tg-recruiting.png">
+      <PackagePath>Assets\ThreadTags\tg-recruiting.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.667</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tg-starwars.png">
+      <PackagePath>Assets\ThreadTags\tg-starwars.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.668</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tg-story.png">
+      <PackagePath>Assets\ThreadTags\tg-story.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.668</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tg-wargames.png">
+      <PackagePath>Assets\ThreadTags\tg-wargames.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.669</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tma.png">
+      <PackagePath>Assets\ThreadTags\tma.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.669</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\trp-laliga.png">
+      <PackagePath>Assets\ThreadTags\trp-laliga.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.670</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tv.png">
+      <PackagePath>Assets\ThreadTags\tv.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.671</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tviv-bluray.png">
+      <PackagePath>Assets\ThreadTags\tviv-bluray.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.671</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tviv-cable.png">
+      <PackagePath>Assets\ThreadTags\tviv-cable.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.672</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tviv-cartoon.png">
+      <PackagePath>Assets\ThreadTags\tviv-cartoon.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.673</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tviv-classic.png">
+      <PackagePath>Assets\ThreadTags\tviv-classic.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.673</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tviv-competition.png">
+      <PackagePath>Assets\ThreadTags\tviv-competition.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.674</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tviv-dvd.png">
+      <PackagePath>Assets\ThreadTags\tviv-dvd.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.674</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tviv-on-demand.png">
+      <PackagePath>Assets\ThreadTags\tviv-on-demand.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.675</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tviv-reality.png">
+      <PackagePath>Assets\ThreadTags\tviv-reality.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.676</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\tviv-spoilers.png">
+      <PackagePath>Assets\ThreadTags\tviv-spoilers.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.676</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\unfunny.png">
+      <PackagePath>Assets\ThreadTags\unfunny.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.677</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\video.png">
+      <PackagePath>Assets\ThreadTags\video.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.678</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\weird.png">
+      <PackagePath>Assets\ThreadTags\weird.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.678</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\whine.png">
+      <PackagePath>Assets\ThreadTags\whine.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.679</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\wrestlehut-ecw.png">
+      <PackagePath>Assets\ThreadTags\wrestlehut-ecw.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.680</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\wrestlehut-global.png">
+      <PackagePath>Assets\ThreadTags\wrestlehut-global.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.680</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\wrestlehut-indy.png">
+      <PackagePath>Assets\ThreadTags\wrestlehut-indy.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.681</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\wrestlehut-thunder.png">
+      <PackagePath>Assets\ThreadTags\wrestlehut-thunder.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.682</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\wrestlehut-tna.png">
+      <PackagePath>Assets\ThreadTags\wrestlehut-tna.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.682</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\wrestling-raw.png">
+      <PackagePath>Assets\ThreadTags\wrestling-raw.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.683</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\wrestling-roh.png">
+      <PackagePath>Assets\ThreadTags\wrestling-roh.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.684</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\wrestling-sd.png">
+      <PackagePath>Assets\ThreadTags\wrestling-sd.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.684</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ww-denim.png">
+      <PackagePath>Assets\ThreadTags\ww-denim.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.685</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\YCS-01.png">
+      <PackagePath>Assets\ThreadTags\YCS-01.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.380</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\YCS-02.png">
+      <PackagePath>Assets\ThreadTags\YCS-02.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.380</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\YCS-04.png">
+      <PackagePath>Assets\ThreadTags\YCS-04.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.381</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\YCS-05.png">
+      <PackagePath>Assets\ThreadTags\YCS-05.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.382</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ycs-achieve.png">
+      <PackagePath>Assets\ThreadTags\ycs-achieve.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.685</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ycs-emotion.png">
+      <PackagePath>Assets\ThreadTags\ycs-emotion.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.686</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ycs-girl.png">
+      <PackagePath>Assets\ThreadTags\ycs-girl.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.686</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ycs-goomba.png">
+      <PackagePath>Assets\ThreadTags\ycs-goomba.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.687</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ycs-jap.png">
+      <PackagePath>Assets\ThreadTags\ycs-jap.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.688</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ycs-jc.png">
+      <PackagePath>Assets\ThreadTags\ycs-jc.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.688</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ycs-letsgo.png">
+      <PackagePath>Assets\ThreadTags\ycs-letsgo.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.689</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ycs-link.png">
+      <PackagePath>Assets\ThreadTags\ycs-link.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.690</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ycs-metal.png">
+      <PackagePath>Assets\ThreadTags\ycs-metal.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.690</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ycs-ps3.png">
+      <PackagePath>Assets\ThreadTags\ycs-ps3.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.691</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ycs-redring.png">
+      <PackagePath>Assets\ThreadTags\ycs-redring.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.692</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ycs-sega.png">
+      <PackagePath>Assets\ThreadTags\ycs-sega.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.692</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ycs-taint.png">
+      <PackagePath>Assets\ThreadTags\ycs-taint.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.693</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\ycs-violence.png">
+      <PackagePath>Assets\ThreadTags\ycs-violence.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.693</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\yospos-blurit.png">
+      <PackagePath>Assets\ThreadTags\yospos-blurit.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.694</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\YOSPOS-DOS.png">
+      <PackagePath>Assets\ThreadTags\YOSPOS-DOS.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.382</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\yospos-hackersafe.png">
+      <PackagePath>Assets\ThreadTags\yospos-hackersafe.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.695</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\yospos-janitor.png">
+      <PackagePath>Assets\ThreadTags\yospos-janitor.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.696</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\yospos-netscape.png">
+      <PackagePath>Assets\ThreadTags\yospos-netscape.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.696</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\yospos-web20.png">
+      <PackagePath>Assets\ThreadTags\yospos-web20.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.697</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\yp-amiga859.png">
+      <PackagePath>Assets\ThreadTags\yp-amiga859.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.698</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\yp-apple.png">
+      <PackagePath>Assets\ThreadTags\yp-apple.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.698</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\yp-bsod.png">
+      <PackagePath>Assets\ThreadTags\yp-bsod.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.699</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\yp-c64.png">
+      <PackagePath>Assets\ThreadTags\yp-c64.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.700</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\yp-gnugpl.png">
+      <PackagePath>Assets\ThreadTags\yp-gnugpl.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.700</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\yp-snowcrash971.png">
+      <PackagePath>Assets\ThreadTags\yp-snowcrash971.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.701</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\yp-tubes296.png">
+      <PackagePath>Assets\ThreadTags\yp-tubes296.png</PackagePath>
+      <Modified>2014-10-22T01:06:38.701</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Shared\Assets\ThreadTags\license.txt">
+      <PackagePath>Assets\ThreadTags\license.txt</PackagePath>
+      <Modified>2014-10-22T01:06:38.367</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x64\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2014-11-01T23:31:02.250</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x64\Debug\Pages\LoginPage.xbf">
+      <PackagePath>Pages\LoginPage.xbf</PackagePath>
+      <Modified>2014-11-01T23:31:02.251</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x64\Debug\Pages\MainForumsPage.xbf">
+      <PackagePath>Pages\MainForumsPage.xbf</PackagePath>
+      <Modified>2014-11-01T23:31:02.253</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x64\Debug\AwfulForumsReader.Windows.xr.xml">
+      <PackagePath>AwfulForumsReader.Windows.xr.xml</PackagePath>
+      <Modified>2014-11-01T23:31:02.200</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Timothy\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x64\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2014-11-01T23:31:03.862</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\">
+      <Name>Microsoft.VCLibs.120.00.Debug</Name>
+      <Version>12.0.21005.1</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.120.00.Debug, MinVersion = 12.0.21005.1</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\.\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.12.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\">
+      <Name>Microsoft.VCLibs.120.00.Debug</Name>
+      <Version>12.0.21005.1</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.120.00.Debug, MinVersion = 12.0.21005.1</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.12.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\">
+      <Name>Microsoft.VCLibs.120.00.Debug</Name>
+      <Version>12.0.21005.1</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.120.00.Debug, MinVersion = 12.0.21005.1</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.12.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>
