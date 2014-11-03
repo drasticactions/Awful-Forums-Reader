@@ -23,6 +23,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\LastPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToBookmarksCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToThreadListPageCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshBookmarkListCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\UnreadThreadCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\AlwaysExecutableCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\AsyncDelegateCommand.cs" />

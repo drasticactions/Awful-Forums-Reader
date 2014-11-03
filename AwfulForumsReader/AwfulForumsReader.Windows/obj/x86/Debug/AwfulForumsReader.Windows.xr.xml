@@ -22,6 +22,7 @@
     <RootPropertyPathName Name="UnreadCommand" />
     <RootPropertyPathName Name="ThreadId" />
     <RootPropertyPathName Name="IsLoading" />
+    <RootPropertyPathName Name="RefreshBookmarkListCommand" />
     <RootPropertyPathName Name="NavigationHelper" />
     <RootPropertyPathName Name="GoBackCommand" />
     <RootPropertyPathName Name="ClickLoginButtonCommand" />
@@ -230,7 +231,19 @@
       <RootProperty Name="Icon" />
       <RootProperty Name="Visibility" />
     </RootType>
+    <RootType FullName="WinRT.Triggers.Interactions">
+      <RootMethod Name="GetTriggers" />
+      <RootMethod Name="SetTriggers" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon" />
+    <RootType FullName="WinRT.Triggers.EventTrigger">
+      <RootProperty Name="EventName" />
+      <RootProperty Name="TriggerActions" />
+    </RootType>
+    <RootType FullName="WinRT.Triggers.InvokeCommandAction">
+      <RootProperty Name="Command" />
+      <RootProperty Name="PassEventArgsToCommand" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Command" />
       <RootProperty Name="Style" />
@@ -323,10 +336,6 @@
       <RootProperty Name="GroupStyle" />
       <RootProperty Name="Margin" />
     </RootType>
-    <RootType FullName="WinRT.Triggers.Interactions">
-      <RootMethod Name="GetTriggers" />
-      <RootMethod Name="SetTriggers" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.GroupStyle">
       <RootProperty Name="HeaderTemplate" />
       <RootProperty Name="Panel" />
@@ -334,14 +343,6 @@
     <RootType FullName="Windows.UI.Xaml.Controls.VariableSizedWrapGrid">
       <RootProperty Name="Orientation" />
       <RootProperty Name="Margin" />
-    </RootType>
-    <RootType FullName="WinRT.Triggers.EventTrigger">
-      <RootProperty Name="EventName" />
-      <RootProperty Name="TriggerActions" />
-    </RootType>
-    <RootType FullName="WinRT.Triggers.InvokeCommandAction">
-      <RootProperty Name="Command" />
-      <RootProperty Name="PassEventArgsToCommand" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PathIcon">
       <RootProperty Name="Data" />

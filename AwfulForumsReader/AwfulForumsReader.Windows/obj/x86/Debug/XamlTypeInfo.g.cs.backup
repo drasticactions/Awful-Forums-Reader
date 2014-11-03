@@ -174,32 +174,32 @@ namespace AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo
             _typeNameTable[22] = "Microsoft.Xaml.Interactivity.ActionCollection";
             _typeNameTable[23] = "String";
             _typeNameTable[24] = "AwfulForumsReader.Tools.OpenMenuFlyoutAction";
-            _typeNameTable[25] = "AwfulForumsReader.Pages.BookmarksPage";
-            _typeNameTable[26] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[27] = "AwfulForumsReader.Common.ObservableDictionary";
-            _typeNameTable[28] = "AwfulForumsReader.Common.NavigationHelper";
-            _typeNameTable[29] = "AwfulForumsReader.ViewModels.LoginPageViewModel";
-            _typeNameTable[30] = "AwfulForumsReader.Common.NotifierBase";
-            _typeNameTable[31] = "Boolean";
-            _typeNameTable[32] = "AwfulForumsReader.Common.AsyncDelegateCommand";
-            _typeNameTable[33] = "AwfulForumsReader.Pages.LoginPage";
-            _typeNameTable[34] = "WinRT.Triggers.Interactions";
-            _typeNameTable[35] = "WinRT.Triggers.TriggerCollection";
-            _typeNameTable[36] = "WinRT.Triggers.AttachableCollection`1<WinRT.Triggers.Trigger>";
-            _typeNameTable[37] = "Windows.UI.Xaml.FrameworkElement";
-            _typeNameTable[38] = "WinRT.Triggers.Trigger";
-            _typeNameTable[39] = "WinRT.Triggers.AssociatableElement";
-            _typeNameTable[40] = "WinRT.Triggers.AttachableCollection`1<WinRT.Triggers.TriggerAction>";
-            _typeNameTable[41] = "WinRT.Triggers.TriggerAction";
-            _typeNameTable[42] = "WinRT.Triggers.AttachableCollection`1<WinRT.Triggers.Condition>";
-            _typeNameTable[43] = "WinRT.Triggers.Condition";
-            _typeNameTable[44] = "WinRT.Triggers.ConditionOperator";
-            _typeNameTable[45] = "System.Enum";
-            _typeNameTable[46] = "System.ValueType";
-            _typeNameTable[47] = "WinRT.Triggers.EventTrigger";
-            _typeNameTable[48] = "WinRT.Triggers.EventHookingTrigger";
-            _typeNameTable[49] = "WinRT.Triggers.InvokeCommandAction";
-            _typeNameTable[50] = "System.Windows.Input.ICommand";
+            _typeNameTable[25] = "WinRT.Triggers.Interactions";
+            _typeNameTable[26] = "WinRT.Triggers.TriggerCollection";
+            _typeNameTable[27] = "WinRT.Triggers.AttachableCollection`1<WinRT.Triggers.Trigger>";
+            _typeNameTable[28] = "Windows.UI.Xaml.FrameworkElement";
+            _typeNameTable[29] = "WinRT.Triggers.Trigger";
+            _typeNameTable[30] = "WinRT.Triggers.AssociatableElement";
+            _typeNameTable[31] = "WinRT.Triggers.AttachableCollection`1<WinRT.Triggers.TriggerAction>";
+            _typeNameTable[32] = "WinRT.Triggers.TriggerAction";
+            _typeNameTable[33] = "WinRT.Triggers.AttachableCollection`1<WinRT.Triggers.Condition>";
+            _typeNameTable[34] = "WinRT.Triggers.Condition";
+            _typeNameTable[35] = "WinRT.Triggers.ConditionOperator";
+            _typeNameTable[36] = "System.Enum";
+            _typeNameTable[37] = "System.ValueType";
+            _typeNameTable[38] = "WinRT.Triggers.EventTrigger";
+            _typeNameTable[39] = "WinRT.Triggers.EventHookingTrigger";
+            _typeNameTable[40] = "WinRT.Triggers.InvokeCommandAction";
+            _typeNameTable[41] = "System.Windows.Input.ICommand";
+            _typeNameTable[42] = "Boolean";
+            _typeNameTable[43] = "AwfulForumsReader.Pages.BookmarksPage";
+            _typeNameTable[44] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[45] = "AwfulForumsReader.Common.ObservableDictionary";
+            _typeNameTable[46] = "AwfulForumsReader.Common.NavigationHelper";
+            _typeNameTable[47] = "AwfulForumsReader.ViewModels.LoginPageViewModel";
+            _typeNameTable[48] = "AwfulForumsReader.Common.NotifierBase";
+            _typeNameTable[49] = "AwfulForumsReader.Common.AsyncDelegateCommand";
+            _typeNameTable[50] = "AwfulForumsReader.Pages.LoginPage";
             _typeNameTable[51] = "AwfulForumsReader.Pages.MainForumsPage";
             _typeNameTable[52] = "AwfulForumsReader.Pages.ThreadListPage";
             _typeNameTable[53] = "AwfulForumsReader.ViewModels.ThreadPageViewModel";
@@ -237,32 +237,32 @@ namespace AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo
             _typeTable[22] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
             _typeTable[23] = typeof(global::System.String);
             _typeTable[24] = typeof(global::AwfulForumsReader.Tools.OpenMenuFlyoutAction);
-            _typeTable[25] = typeof(global::AwfulForumsReader.Pages.BookmarksPage);
-            _typeTable[26] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[27] = typeof(global::AwfulForumsReader.Common.ObservableDictionary);
-            _typeTable[28] = typeof(global::AwfulForumsReader.Common.NavigationHelper);
-            _typeTable[29] = typeof(global::AwfulForumsReader.ViewModels.LoginPageViewModel);
-            _typeTable[30] = typeof(global::AwfulForumsReader.Common.NotifierBase);
-            _typeTable[31] = typeof(global::System.Boolean);
-            _typeTable[32] = typeof(global::AwfulForumsReader.Common.AsyncDelegateCommand);
-            _typeTable[33] = typeof(global::AwfulForumsReader.Pages.LoginPage);
-            _typeTable[34] = typeof(global::WinRT.Triggers.Interactions);
-            _typeTable[35] = typeof(global::WinRT.Triggers.TriggerCollection);
-            _typeTable[36] = typeof(global::WinRT.Triggers.AttachableCollection<global::WinRT.Triggers.Trigger>);
-            _typeTable[37] = typeof(global::Windows.UI.Xaml.FrameworkElement);
-            _typeTable[38] = typeof(global::WinRT.Triggers.Trigger);
-            _typeTable[39] = typeof(global::WinRT.Triggers.AssociatableElement);
-            _typeTable[40] = typeof(global::WinRT.Triggers.AttachableCollection<global::WinRT.Triggers.TriggerAction>);
-            _typeTable[41] = typeof(global::WinRT.Triggers.TriggerAction);
-            _typeTable[42] = typeof(global::WinRT.Triggers.AttachableCollection<global::WinRT.Triggers.Condition>);
-            _typeTable[43] = typeof(global::WinRT.Triggers.Condition);
-            _typeTable[44] = typeof(global::WinRT.Triggers.ConditionOperator);
-            _typeTable[45] = typeof(global::System.Enum);
-            _typeTable[46] = typeof(global::System.ValueType);
-            _typeTable[47] = typeof(global::WinRT.Triggers.EventTrigger);
-            _typeTable[48] = typeof(global::WinRT.Triggers.EventHookingTrigger);
-            _typeTable[49] = typeof(global::WinRT.Triggers.InvokeCommandAction);
-            _typeTable[50] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[25] = typeof(global::WinRT.Triggers.Interactions);
+            _typeTable[26] = typeof(global::WinRT.Triggers.TriggerCollection);
+            _typeTable[27] = typeof(global::WinRT.Triggers.AttachableCollection<global::WinRT.Triggers.Trigger>);
+            _typeTable[28] = typeof(global::Windows.UI.Xaml.FrameworkElement);
+            _typeTable[29] = typeof(global::WinRT.Triggers.Trigger);
+            _typeTable[30] = typeof(global::WinRT.Triggers.AssociatableElement);
+            _typeTable[31] = typeof(global::WinRT.Triggers.AttachableCollection<global::WinRT.Triggers.TriggerAction>);
+            _typeTable[32] = typeof(global::WinRT.Triggers.TriggerAction);
+            _typeTable[33] = typeof(global::WinRT.Triggers.AttachableCollection<global::WinRT.Triggers.Condition>);
+            _typeTable[34] = typeof(global::WinRT.Triggers.Condition);
+            _typeTable[35] = typeof(global::WinRT.Triggers.ConditionOperator);
+            _typeTable[36] = typeof(global::System.Enum);
+            _typeTable[37] = typeof(global::System.ValueType);
+            _typeTable[38] = typeof(global::WinRT.Triggers.EventTrigger);
+            _typeTable[39] = typeof(global::WinRT.Triggers.EventHookingTrigger);
+            _typeTable[40] = typeof(global::WinRT.Triggers.InvokeCommandAction);
+            _typeTable[41] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[42] = typeof(global::System.Boolean);
+            _typeTable[43] = typeof(global::AwfulForumsReader.Pages.BookmarksPage);
+            _typeTable[44] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[45] = typeof(global::AwfulForumsReader.Common.ObservableDictionary);
+            _typeTable[46] = typeof(global::AwfulForumsReader.Common.NavigationHelper);
+            _typeTable[47] = typeof(global::AwfulForumsReader.ViewModels.LoginPageViewModel);
+            _typeTable[48] = typeof(global::AwfulForumsReader.Common.NotifierBase);
+            _typeTable[49] = typeof(global::AwfulForumsReader.Common.AsyncDelegateCommand);
+            _typeTable[50] = typeof(global::AwfulForumsReader.Pages.LoginPage);
             _typeTable[51] = typeof(global::AwfulForumsReader.Pages.MainForumsPage);
             _typeTable[52] = typeof(global::AwfulForumsReader.Pages.ThreadListPage);
             _typeTable[53] = typeof(global::AwfulForumsReader.ViewModels.ThreadPageViewModel);
@@ -325,17 +325,17 @@ namespace AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo
         private object Activate_21_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
         private object Activate_22_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
         private object Activate_24_OpenMenuFlyoutAction() { return new global::AwfulForumsReader.Tools.OpenMenuFlyoutAction(); }
-        private object Activate_25_BookmarksPage() { return new global::AwfulForumsReader.Pages.BookmarksPage(); }
-        private object Activate_27_ObservableDictionary() { return new global::AwfulForumsReader.Common.ObservableDictionary(); }
-        private object Activate_29_LoginPageViewModel() { return new global::AwfulForumsReader.ViewModels.LoginPageViewModel(); }
-        private object Activate_33_LoginPage() { return new global::AwfulForumsReader.Pages.LoginPage(); }
-        private object Activate_35_TriggerCollection() { return new global::WinRT.Triggers.TriggerCollection(); }
-        private object Activate_36_AttachableCollection() { return new global::WinRT.Triggers.AttachableCollection<global::WinRT.Triggers.Trigger>(); }
-        private object Activate_40_AttachableCollection() { return new global::WinRT.Triggers.AttachableCollection<global::WinRT.Triggers.TriggerAction>(); }
-        private object Activate_42_AttachableCollection() { return new global::WinRT.Triggers.AttachableCollection<global::WinRT.Triggers.Condition>(); }
-        private object Activate_43_Condition() { return new global::WinRT.Triggers.Condition(); }
-        private object Activate_47_EventTrigger() { return new global::WinRT.Triggers.EventTrigger(); }
-        private object Activate_49_InvokeCommandAction() { return new global::WinRT.Triggers.InvokeCommandAction(); }
+        private object Activate_26_TriggerCollection() { return new global::WinRT.Triggers.TriggerCollection(); }
+        private object Activate_27_AttachableCollection() { return new global::WinRT.Triggers.AttachableCollection<global::WinRT.Triggers.Trigger>(); }
+        private object Activate_31_AttachableCollection() { return new global::WinRT.Triggers.AttachableCollection<global::WinRT.Triggers.TriggerAction>(); }
+        private object Activate_33_AttachableCollection() { return new global::WinRT.Triggers.AttachableCollection<global::WinRT.Triggers.Condition>(); }
+        private object Activate_34_Condition() { return new global::WinRT.Triggers.Condition(); }
+        private object Activate_38_EventTrigger() { return new global::WinRT.Triggers.EventTrigger(); }
+        private object Activate_40_InvokeCommandAction() { return new global::WinRT.Triggers.InvokeCommandAction(); }
+        private object Activate_43_BookmarksPage() { return new global::AwfulForumsReader.Pages.BookmarksPage(); }
+        private object Activate_45_ObservableDictionary() { return new global::AwfulForumsReader.Common.ObservableDictionary(); }
+        private object Activate_47_LoginPageViewModel() { return new global::AwfulForumsReader.ViewModels.LoginPageViewModel(); }
+        private object Activate_50_LoginPage() { return new global::AwfulForumsReader.Pages.LoginPage(); }
         private object Activate_51_MainForumsPage() { return new global::AwfulForumsReader.Pages.MainForumsPage(); }
         private object Activate_52_ThreadListPage() { return new global::AwfulForumsReader.Pages.ThreadListPage(); }
         private object Activate_53_ThreadPageViewModel() { return new global::AwfulForumsReader.ViewModels.ThreadPageViewModel(); }
@@ -354,36 +354,36 @@ namespace AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
-        private void MapAdd_27_ObservableDictionary(object instance, object key, object item)
-        {
-            var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
-            var newKey = (global::System.String)key;
-            var newItem = (global::System.Object)item;
-            collection.Add(newKey, newItem);
-        }
-        private void VectorAdd_35_TriggerCollection(object instance, object item)
+        private void VectorAdd_26_TriggerCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::WinRT.Triggers.Trigger>)instance;
             var newItem = (global::WinRT.Triggers.Trigger)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_36_AttachableCollection(object instance, object item)
+        private void VectorAdd_27_AttachableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::WinRT.Triggers.Trigger>)instance;
             var newItem = (global::WinRT.Triggers.Trigger)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_40_AttachableCollection(object instance, object item)
+        private void VectorAdd_31_AttachableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::WinRT.Triggers.TriggerAction>)instance;
             var newItem = (global::WinRT.Triggers.TriggerAction)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_42_AttachableCollection(object instance, object item)
+        private void VectorAdd_33_AttachableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::WinRT.Triggers.Condition>)instance;
             var newItem = (global::WinRT.Triggers.Condition)item;
             collection.Add(newItem);
+        }
+        private void MapAdd_45_ObservableDictionary(object instance, object key, object item)
+        {
+            var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
+            var newKey = (global::System.String)key;
+            var newItem = (global::System.Object)item;
+            collection.Add(newKey, newItem);
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
@@ -559,138 +559,74 @@ namespace AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 25:   //  AwfulForumsReader.Pages.BookmarksPage
-                userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_25_BookmarksPage;
-                userType.AddMemberName("DefaultViewModel");
-                userType.AddMemberName("NavigationHelper");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 26:   //  Windows.UI.Xaml.Controls.Page
-                xamlType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 27:   //  AwfulForumsReader.Common.ObservableDictionary
-                userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.DictionaryAdd = MapAdd_27_ObservableDictionary;
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 28:   //  AwfulForumsReader.Common.NavigationHelper
-                userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 29:   //  AwfulForumsReader.ViewModels.LoginPageViewModel
-                userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("AwfulForumsReader.Common.NotifierBase"));
-                userType.Activator = Activate_29_LoginPageViewModel;
-                userType.AddMemberName("IsLoading");
-                userType.AddMemberName("UserName");
-                userType.AddMemberName("Password");
-                userType.AddMemberName("CanClickLoginButton");
-                userType.AddMemberName("ClickLoginButtonCommand");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 30:   //  AwfulForumsReader.Common.NotifierBase
-                userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 31:   //  Boolean
-                xamlType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 32:   //  AwfulForumsReader.Common.AsyncDelegateCommand
-                userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 33:   //  AwfulForumsReader.Pages.LoginPage
-                userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_33_LoginPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 34:   //  WinRT.Triggers.Interactions
+            case 25:   //  WinRT.Triggers.Interactions
                 userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.AddMemberName("Triggers");
                 xamlType = userType;
                 break;
 
-            case 35:   //  WinRT.Triggers.TriggerCollection
+            case 26:   //  WinRT.Triggers.TriggerCollection
                 userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinRT.Triggers.AttachableCollection`1<WinRT.Triggers.Trigger>"));
-                userType.CollectionAdd = VectorAdd_35_TriggerCollection;
+                userType.CollectionAdd = VectorAdd_26_TriggerCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 36:   //  WinRT.Triggers.AttachableCollection`1<WinRT.Triggers.Trigger>
+            case 27:   //  WinRT.Triggers.AttachableCollection`1<WinRT.Triggers.Trigger>
                 userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.FrameworkElement"));
-                userType.Activator = Activate_36_AttachableCollection;
-                userType.CollectionAdd = VectorAdd_36_AttachableCollection;
+                userType.Activator = Activate_27_AttachableCollection;
+                userType.CollectionAdd = VectorAdd_27_AttachableCollection;
                 xamlType = userType;
                 break;
 
-            case 37:   //  Windows.UI.Xaml.FrameworkElement
+            case 28:   //  Windows.UI.Xaml.FrameworkElement
                 xamlType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 38:   //  WinRT.Triggers.Trigger
+            case 29:   //  WinRT.Triggers.Trigger
                 userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinRT.Triggers.AssociatableElement"));
                 userType.SetContentPropertyName("WinRT.Triggers.Trigger.TriggerActions");
                 userType.AddMemberName("TriggerActions");
                 xamlType = userType;
                 break;
 
-            case 39:   //  WinRT.Triggers.AssociatableElement
+            case 30:   //  WinRT.Triggers.AssociatableElement
                 userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.FrameworkElement"));
                 userType.AddMemberName("AssociatedObject");
                 xamlType = userType;
                 break;
 
-            case 40:   //  WinRT.Triggers.AttachableCollection`1<WinRT.Triggers.TriggerAction>
+            case 31:   //  WinRT.Triggers.AttachableCollection`1<WinRT.Triggers.TriggerAction>
                 userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.FrameworkElement"));
-                userType.CollectionAdd = VectorAdd_40_AttachableCollection;
+                userType.CollectionAdd = VectorAdd_31_AttachableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 41:   //  WinRT.Triggers.TriggerAction
+            case 32:   //  WinRT.Triggers.TriggerAction
                 userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinRT.Triggers.AssociatableElement"));
                 userType.SetContentPropertyName("WinRT.Triggers.TriggerAction.Conditions");
                 userType.AddMemberName("Conditions");
                 xamlType = userType;
                 break;
 
-            case 42:   //  WinRT.Triggers.AttachableCollection`1<WinRT.Triggers.Condition>
+            case 33:   //  WinRT.Triggers.AttachableCollection`1<WinRT.Triggers.Condition>
                 userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.FrameworkElement"));
-                userType.CollectionAdd = VectorAdd_42_AttachableCollection;
+                userType.CollectionAdd = VectorAdd_33_AttachableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 43:   //  WinRT.Triggers.Condition
+            case 34:   //  WinRT.Triggers.Condition
                 userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinRT.Triggers.AssociatableElement"));
-                userType.Activator = Activate_43_Condition;
+                userType.Activator = Activate_34_Condition;
                 userType.AddMemberName("Operator");
                 userType.AddMemberName("LeftOperand");
                 userType.AddMemberName("RightOperand");
                 xamlType = userType;
                 break;
 
-            case 44:   //  WinRT.Triggers.ConditionOperator
+            case 35:   //  WinRT.Triggers.ConditionOperator
                 userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Equals", global::WinRT.Triggers.ConditionOperator.Equals);
                 userType.AddEnumValue("NotEquals", global::WinRT.Triggers.ConditionOperator.NotEquals);
@@ -701,44 +637,108 @@ namespace AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 45:   //  System.Enum
+            case 36:   //  System.Enum
                 userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 xamlType = userType;
                 break;
 
-            case 46:   //  System.ValueType
+            case 37:   //  System.ValueType
                 userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
-            case 47:   //  WinRT.Triggers.EventTrigger
+            case 38:   //  WinRT.Triggers.EventTrigger
                 userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinRT.Triggers.EventHookingTrigger"));
-                userType.Activator = Activate_47_EventTrigger;
+                userType.Activator = Activate_38_EventTrigger;
                 userType.SetContentPropertyName("WinRT.Triggers.Trigger.TriggerActions");
                 userType.AddMemberName("EventName");
                 userType.AddMemberName("SourceObject");
                 xamlType = userType;
                 break;
 
-            case 48:   //  WinRT.Triggers.EventHookingTrigger
+            case 39:   //  WinRT.Triggers.EventHookingTrigger
                 userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinRT.Triggers.Trigger"));
                 userType.SetContentPropertyName("WinRT.Triggers.Trigger.TriggerActions");
                 xamlType = userType;
                 break;
 
-            case 49:   //  WinRT.Triggers.InvokeCommandAction
+            case 40:   //  WinRT.Triggers.InvokeCommandAction
                 userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinRT.Triggers.TriggerAction"));
-                userType.Activator = Activate_49_InvokeCommandAction;
+                userType.Activator = Activate_40_InvokeCommandAction;
                 userType.SetContentPropertyName("WinRT.Triggers.TriggerAction.Conditions");
                 userType.AddMemberName("Command");
-                userType.AddMemberName("PassEventArgsToCommand");
                 userType.AddMemberName("CommandParameter");
+                userType.AddMemberName("PassEventArgsToCommand");
                 xamlType = userType;
                 break;
 
-            case 50:   //  System.Windows.Input.ICommand
+            case 41:   //  System.Windows.Input.ICommand
                 userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 42:   //  Boolean
+                xamlType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 43:   //  AwfulForumsReader.Pages.BookmarksPage
+                userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_43_BookmarksPage;
+                userType.AddMemberName("DefaultViewModel");
+                userType.AddMemberName("NavigationHelper");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 44:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 45:   //  AwfulForumsReader.Common.ObservableDictionary
+                userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.DictionaryAdd = MapAdd_45_ObservableDictionary;
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 46:   //  AwfulForumsReader.Common.NavigationHelper
+                userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 47:   //  AwfulForumsReader.ViewModels.LoginPageViewModel
+                userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("AwfulForumsReader.Common.NotifierBase"));
+                userType.Activator = Activate_47_LoginPageViewModel;
+                userType.AddMemberName("IsLoading");
+                userType.AddMemberName("UserName");
+                userType.AddMemberName("Password");
+                userType.AddMemberName("CanClickLoginButton");
+                userType.AddMemberName("ClickLoginButtonCommand");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 48:   //  AwfulForumsReader.Common.NotifierBase
+                userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 49:   //  AwfulForumsReader.Common.AsyncDelegateCommand
+                userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 50:   //  AwfulForumsReader.Pages.LoginPage
+                userType = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_50_LoginPage;
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
@@ -939,168 +939,168 @@ namespace AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.AssociatedObject;
         }
-        private object get_8_BookmarksPage_DefaultViewModel(object instance)
-        {
-            var that = (global::AwfulForumsReader.Pages.BookmarksPage)instance;
-            return that.DefaultViewModel;
-        }
-        private object get_9_BookmarksPage_NavigationHelper(object instance)
-        {
-            var that = (global::AwfulForumsReader.Pages.BookmarksPage)instance;
-            return that.NavigationHelper;
-        }
-        private object get_10_LoginPageViewModel_IsLoading(object instance)
-        {
-            var that = (global::AwfulForumsReader.ViewModels.LoginPageViewModel)instance;
-            return that.IsLoading;
-        }
-        private void set_10_LoginPageViewModel_IsLoading(object instance, object Value)
-        {
-            var that = (global::AwfulForumsReader.ViewModels.LoginPageViewModel)instance;
-            that.IsLoading = (global::System.Boolean)Value;
-        }
-        private object get_11_LoginPageViewModel_UserName(object instance)
-        {
-            var that = (global::AwfulForumsReader.ViewModels.LoginPageViewModel)instance;
-            return that.UserName;
-        }
-        private void set_11_LoginPageViewModel_UserName(object instance, object Value)
-        {
-            var that = (global::AwfulForumsReader.ViewModels.LoginPageViewModel)instance;
-            that.UserName = (global::System.String)Value;
-        }
-        private object get_12_LoginPageViewModel_Password(object instance)
-        {
-            var that = (global::AwfulForumsReader.ViewModels.LoginPageViewModel)instance;
-            return that.Password;
-        }
-        private void set_12_LoginPageViewModel_Password(object instance, object Value)
-        {
-            var that = (global::AwfulForumsReader.ViewModels.LoginPageViewModel)instance;
-            that.Password = (global::System.String)Value;
-        }
-        private object get_13_LoginPageViewModel_CanClickLoginButton(object instance)
-        {
-            var that = (global::AwfulForumsReader.ViewModels.LoginPageViewModel)instance;
-            return that.CanClickLoginButton;
-        }
-        private object get_14_LoginPageViewModel_ClickLoginButtonCommand(object instance)
-        {
-            var that = (global::AwfulForumsReader.ViewModels.LoginPageViewModel)instance;
-            return that.ClickLoginButtonCommand;
-        }
-        private object get_15_Interactions_Triggers(object instance)
+        private object get_8_Interactions_Triggers(object instance)
         {
             return global::WinRT.Triggers.Interactions.GetTriggers((global::Windows.UI.Xaml.DependencyObject)instance);
         }
-        private void set_15_Interactions_Triggers(object instance, object Value)
+        private void set_8_Interactions_Triggers(object instance, object Value)
         {
             global::WinRT.Triggers.Interactions.SetTriggers((global::Windows.UI.Xaml.DependencyObject)instance, (global::WinRT.Triggers.TriggerCollection)Value);
         }
-        private object get_16_Trigger_TriggerActions(object instance)
+        private object get_9_Trigger_TriggerActions(object instance)
         {
             var that = (global::WinRT.Triggers.Trigger)instance;
             return that.TriggerActions;
         }
-        private void set_16_Trigger_TriggerActions(object instance, object Value)
+        private void set_9_Trigger_TriggerActions(object instance, object Value)
         {
             var that = (global::WinRT.Triggers.Trigger)instance;
             that.TriggerActions = (global::WinRT.Triggers.AttachableCollection<global::WinRT.Triggers.TriggerAction>)Value;
         }
-        private object get_17_TriggerAction_Conditions(object instance)
+        private object get_10_TriggerAction_Conditions(object instance)
         {
             var that = (global::WinRT.Triggers.TriggerAction)instance;
             return that.Conditions;
         }
-        private void set_17_TriggerAction_Conditions(object instance, object Value)
+        private void set_10_TriggerAction_Conditions(object instance, object Value)
         {
             var that = (global::WinRT.Triggers.TriggerAction)instance;
             that.Conditions = (global::WinRT.Triggers.AttachableCollection<global::WinRT.Triggers.Condition>)Value;
         }
-        private object get_18_Condition_Operator(object instance)
+        private object get_11_Condition_Operator(object instance)
         {
             var that = (global::WinRT.Triggers.Condition)instance;
             return that.Operator;
         }
-        private void set_18_Condition_Operator(object instance, object Value)
+        private void set_11_Condition_Operator(object instance, object Value)
         {
             var that = (global::WinRT.Triggers.Condition)instance;
             that.Operator = (global::WinRT.Triggers.ConditionOperator)Value;
         }
-        private object get_19_Condition_LeftOperand(object instance)
+        private object get_12_Condition_LeftOperand(object instance)
         {
             var that = (global::WinRT.Triggers.Condition)instance;
             return that.LeftOperand;
         }
-        private void set_19_Condition_LeftOperand(object instance, object Value)
+        private void set_12_Condition_LeftOperand(object instance, object Value)
         {
             var that = (global::WinRT.Triggers.Condition)instance;
             that.LeftOperand = (global::System.Object)Value;
         }
-        private object get_20_Condition_RightOperand(object instance)
+        private object get_13_Condition_RightOperand(object instance)
         {
             var that = (global::WinRT.Triggers.Condition)instance;
             return that.RightOperand;
         }
-        private void set_20_Condition_RightOperand(object instance, object Value)
+        private void set_13_Condition_RightOperand(object instance, object Value)
         {
             var that = (global::WinRT.Triggers.Condition)instance;
             that.RightOperand = (global::System.Object)Value;
         }
-        private object get_21_AssociatableElement_AssociatedObject(object instance)
+        private object get_14_AssociatableElement_AssociatedObject(object instance)
         {
             var that = (global::WinRT.Triggers.AssociatableElement)instance;
             return that.AssociatedObject;
         }
-        private object get_22_EventTrigger_EventName(object instance)
+        private object get_15_EventTrigger_EventName(object instance)
         {
             var that = (global::WinRT.Triggers.EventTrigger)instance;
             return that.EventName;
         }
-        private void set_22_EventTrigger_EventName(object instance, object Value)
+        private void set_15_EventTrigger_EventName(object instance, object Value)
         {
             var that = (global::WinRT.Triggers.EventTrigger)instance;
             that.EventName = (global::System.String)Value;
         }
-        private object get_23_EventTrigger_SourceObject(object instance)
+        private object get_16_EventTrigger_SourceObject(object instance)
         {
             var that = (global::WinRT.Triggers.EventTrigger)instance;
             return that.SourceObject;
         }
-        private void set_23_EventTrigger_SourceObject(object instance, object Value)
+        private void set_16_EventTrigger_SourceObject(object instance, object Value)
         {
             var that = (global::WinRT.Triggers.EventTrigger)instance;
             that.SourceObject = (global::System.Object)Value;
         }
-        private object get_24_InvokeCommandAction_Command(object instance)
+        private object get_17_InvokeCommandAction_Command(object instance)
         {
             var that = (global::WinRT.Triggers.InvokeCommandAction)instance;
             return that.Command;
         }
-        private void set_24_InvokeCommandAction_Command(object instance, object Value)
+        private void set_17_InvokeCommandAction_Command(object instance, object Value)
         {
             var that = (global::WinRT.Triggers.InvokeCommandAction)instance;
             that.Command = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_25_InvokeCommandAction_PassEventArgsToCommand(object instance)
-        {
-            var that = (global::WinRT.Triggers.InvokeCommandAction)instance;
-            return that.PassEventArgsToCommand;
-        }
-        private void set_25_InvokeCommandAction_PassEventArgsToCommand(object instance, object Value)
-        {
-            var that = (global::WinRT.Triggers.InvokeCommandAction)instance;
-            that.PassEventArgsToCommand = (global::System.Boolean)Value;
-        }
-        private object get_26_InvokeCommandAction_CommandParameter(object instance)
+        private object get_18_InvokeCommandAction_CommandParameter(object instance)
         {
             var that = (global::WinRT.Triggers.InvokeCommandAction)instance;
             return that.CommandParameter;
         }
-        private void set_26_InvokeCommandAction_CommandParameter(object instance, object Value)
+        private void set_18_InvokeCommandAction_CommandParameter(object instance, object Value)
         {
             var that = (global::WinRT.Triggers.InvokeCommandAction)instance;
             that.CommandParameter = (global::System.Object)Value;
+        }
+        private object get_19_InvokeCommandAction_PassEventArgsToCommand(object instance)
+        {
+            var that = (global::WinRT.Triggers.InvokeCommandAction)instance;
+            return that.PassEventArgsToCommand;
+        }
+        private void set_19_InvokeCommandAction_PassEventArgsToCommand(object instance, object Value)
+        {
+            var that = (global::WinRT.Triggers.InvokeCommandAction)instance;
+            that.PassEventArgsToCommand = (global::System.Boolean)Value;
+        }
+        private object get_20_BookmarksPage_DefaultViewModel(object instance)
+        {
+            var that = (global::AwfulForumsReader.Pages.BookmarksPage)instance;
+            return that.DefaultViewModel;
+        }
+        private object get_21_BookmarksPage_NavigationHelper(object instance)
+        {
+            var that = (global::AwfulForumsReader.Pages.BookmarksPage)instance;
+            return that.NavigationHelper;
+        }
+        private object get_22_LoginPageViewModel_IsLoading(object instance)
+        {
+            var that = (global::AwfulForumsReader.ViewModels.LoginPageViewModel)instance;
+            return that.IsLoading;
+        }
+        private void set_22_LoginPageViewModel_IsLoading(object instance, object Value)
+        {
+            var that = (global::AwfulForumsReader.ViewModels.LoginPageViewModel)instance;
+            that.IsLoading = (global::System.Boolean)Value;
+        }
+        private object get_23_LoginPageViewModel_UserName(object instance)
+        {
+            var that = (global::AwfulForumsReader.ViewModels.LoginPageViewModel)instance;
+            return that.UserName;
+        }
+        private void set_23_LoginPageViewModel_UserName(object instance, object Value)
+        {
+            var that = (global::AwfulForumsReader.ViewModels.LoginPageViewModel)instance;
+            that.UserName = (global::System.String)Value;
+        }
+        private object get_24_LoginPageViewModel_Password(object instance)
+        {
+            var that = (global::AwfulForumsReader.ViewModels.LoginPageViewModel)instance;
+            return that.Password;
+        }
+        private void set_24_LoginPageViewModel_Password(object instance, object Value)
+        {
+            var that = (global::AwfulForumsReader.ViewModels.LoginPageViewModel)instance;
+            that.Password = (global::System.String)Value;
+        }
+        private object get_25_LoginPageViewModel_CanClickLoginButton(object instance)
+        {
+            var that = (global::AwfulForumsReader.ViewModels.LoginPageViewModel)instance;
+            return that.CanClickLoginButton;
+        }
+        private object get_26_LoginPageViewModel_ClickLoginButtonCommand(object instance)
+        {
+            var that = (global::AwfulForumsReader.ViewModels.LoginPageViewModel)instance;
+            return that.ClickLoginButtonCommand;
         }
         private object get_27_ThreadListPage_DefaultViewModel(object instance)
         {
@@ -1261,131 +1261,131 @@ namespace AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo
                 xamlMember.Getter = get_7_EventTriggerBehavior_AssociatedObject;
                 xamlMember.SetIsReadOnly();
                 break;
-            case "AwfulForumsReader.Pages.BookmarksPage.DefaultViewModel":
-                userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AwfulForumsReader.Pages.BookmarksPage");
-                xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "AwfulForumsReader.Common.ObservableDictionary");
-                xamlMember.Getter = get_8_BookmarksPage_DefaultViewModel;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "AwfulForumsReader.Pages.BookmarksPage.NavigationHelper":
-                userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AwfulForumsReader.Pages.BookmarksPage");
-                xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "NavigationHelper", "AwfulForumsReader.Common.NavigationHelper");
-                xamlMember.Getter = get_9_BookmarksPage_NavigationHelper;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "AwfulForumsReader.ViewModels.LoginPageViewModel.IsLoading":
-                userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AwfulForumsReader.ViewModels.LoginPageViewModel");
-                xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "IsLoading", "Boolean");
-                xamlMember.Getter = get_10_LoginPageViewModel_IsLoading;
-                xamlMember.Setter = set_10_LoginPageViewModel_IsLoading;
-                break;
-            case "AwfulForumsReader.ViewModels.LoginPageViewModel.UserName":
-                userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AwfulForumsReader.ViewModels.LoginPageViewModel");
-                xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "UserName", "String");
-                xamlMember.Getter = get_11_LoginPageViewModel_UserName;
-                xamlMember.Setter = set_11_LoginPageViewModel_UserName;
-                break;
-            case "AwfulForumsReader.ViewModels.LoginPageViewModel.Password":
-                userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AwfulForumsReader.ViewModels.LoginPageViewModel");
-                xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "Password", "String");
-                xamlMember.Getter = get_12_LoginPageViewModel_Password;
-                xamlMember.Setter = set_12_LoginPageViewModel_Password;
-                break;
-            case "AwfulForumsReader.ViewModels.LoginPageViewModel.CanClickLoginButton":
-                userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AwfulForumsReader.ViewModels.LoginPageViewModel");
-                xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "CanClickLoginButton", "Boolean");
-                xamlMember.Getter = get_13_LoginPageViewModel_CanClickLoginButton;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "AwfulForumsReader.ViewModels.LoginPageViewModel.ClickLoginButtonCommand":
-                userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AwfulForumsReader.ViewModels.LoginPageViewModel");
-                xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "ClickLoginButtonCommand", "AwfulForumsReader.Common.AsyncDelegateCommand");
-                xamlMember.Getter = get_14_LoginPageViewModel_ClickLoginButtonCommand;
-                xamlMember.SetIsReadOnly();
-                break;
             case "WinRT.Triggers.Interactions.Triggers":
                 userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRT.Triggers.Interactions");
                 xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "Triggers", "WinRT.Triggers.TriggerCollection");
                 xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
                 xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_15_Interactions_Triggers;
-                xamlMember.Setter = set_15_Interactions_Triggers;
+                xamlMember.Getter = get_8_Interactions_Triggers;
+                xamlMember.Setter = set_8_Interactions_Triggers;
                 break;
             case "WinRT.Triggers.Trigger.TriggerActions":
                 userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRT.Triggers.Trigger");
                 xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "TriggerActions", "WinRT.Triggers.AttachableCollection`1<WinRT.Triggers.TriggerAction>");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_16_Trigger_TriggerActions;
-                xamlMember.Setter = set_16_Trigger_TriggerActions;
+                xamlMember.Getter = get_9_Trigger_TriggerActions;
+                xamlMember.Setter = set_9_Trigger_TriggerActions;
                 break;
             case "WinRT.Triggers.TriggerAction.Conditions":
                 userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRT.Triggers.TriggerAction");
                 xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "Conditions", "WinRT.Triggers.AttachableCollection`1<WinRT.Triggers.Condition>");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_17_TriggerAction_Conditions;
-                xamlMember.Setter = set_17_TriggerAction_Conditions;
+                xamlMember.Getter = get_10_TriggerAction_Conditions;
+                xamlMember.Setter = set_10_TriggerAction_Conditions;
                 break;
             case "WinRT.Triggers.Condition.Operator":
                 userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRT.Triggers.Condition");
                 xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "Operator", "WinRT.Triggers.ConditionOperator");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_18_Condition_Operator;
-                xamlMember.Setter = set_18_Condition_Operator;
+                xamlMember.Getter = get_11_Condition_Operator;
+                xamlMember.Setter = set_11_Condition_Operator;
                 break;
             case "WinRT.Triggers.Condition.LeftOperand":
                 userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRT.Triggers.Condition");
                 xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "LeftOperand", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_19_Condition_LeftOperand;
-                xamlMember.Setter = set_19_Condition_LeftOperand;
+                xamlMember.Getter = get_12_Condition_LeftOperand;
+                xamlMember.Setter = set_12_Condition_LeftOperand;
                 break;
             case "WinRT.Triggers.Condition.RightOperand":
                 userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRT.Triggers.Condition");
                 xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "RightOperand", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_20_Condition_RightOperand;
-                xamlMember.Setter = set_20_Condition_RightOperand;
+                xamlMember.Getter = get_13_Condition_RightOperand;
+                xamlMember.Setter = set_13_Condition_RightOperand;
                 break;
             case "WinRT.Triggers.AssociatableElement.AssociatedObject":
                 userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRT.Triggers.AssociatableElement");
                 xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.FrameworkElement");
-                xamlMember.Getter = get_21_AssociatableElement_AssociatedObject;
+                xamlMember.Getter = get_14_AssociatableElement_AssociatedObject;
                 xamlMember.SetIsReadOnly();
                 break;
             case "WinRT.Triggers.EventTrigger.EventName":
                 userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRT.Triggers.EventTrigger");
                 xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "EventName", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_22_EventTrigger_EventName;
-                xamlMember.Setter = set_22_EventTrigger_EventName;
+                xamlMember.Getter = get_15_EventTrigger_EventName;
+                xamlMember.Setter = set_15_EventTrigger_EventName;
                 break;
             case "WinRT.Triggers.EventTrigger.SourceObject":
                 userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRT.Triggers.EventTrigger");
                 xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "SourceObject", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_23_EventTrigger_SourceObject;
-                xamlMember.Setter = set_23_EventTrigger_SourceObject;
+                xamlMember.Getter = get_16_EventTrigger_SourceObject;
+                xamlMember.Setter = set_16_EventTrigger_SourceObject;
                 break;
             case "WinRT.Triggers.InvokeCommandAction.Command":
                 userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRT.Triggers.InvokeCommandAction");
                 xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "Command", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_24_InvokeCommandAction_Command;
-                xamlMember.Setter = set_24_InvokeCommandAction_Command;
-                break;
-            case "WinRT.Triggers.InvokeCommandAction.PassEventArgsToCommand":
-                userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRT.Triggers.InvokeCommandAction");
-                xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "PassEventArgsToCommand", "Boolean");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_25_InvokeCommandAction_PassEventArgsToCommand;
-                xamlMember.Setter = set_25_InvokeCommandAction_PassEventArgsToCommand;
+                xamlMember.Getter = get_17_InvokeCommandAction_Command;
+                xamlMember.Setter = set_17_InvokeCommandAction_Command;
                 break;
             case "WinRT.Triggers.InvokeCommandAction.CommandParameter":
                 userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRT.Triggers.InvokeCommandAction");
                 xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "CommandParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_26_InvokeCommandAction_CommandParameter;
-                xamlMember.Setter = set_26_InvokeCommandAction_CommandParameter;
+                xamlMember.Getter = get_18_InvokeCommandAction_CommandParameter;
+                xamlMember.Setter = set_18_InvokeCommandAction_CommandParameter;
+                break;
+            case "WinRT.Triggers.InvokeCommandAction.PassEventArgsToCommand":
+                userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRT.Triggers.InvokeCommandAction");
+                xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "PassEventArgsToCommand", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_19_InvokeCommandAction_PassEventArgsToCommand;
+                xamlMember.Setter = set_19_InvokeCommandAction_PassEventArgsToCommand;
+                break;
+            case "AwfulForumsReader.Pages.BookmarksPage.DefaultViewModel":
+                userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AwfulForumsReader.Pages.BookmarksPage");
+                xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "AwfulForumsReader.Common.ObservableDictionary");
+                xamlMember.Getter = get_20_BookmarksPage_DefaultViewModel;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "AwfulForumsReader.Pages.BookmarksPage.NavigationHelper":
+                userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AwfulForumsReader.Pages.BookmarksPage");
+                xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "NavigationHelper", "AwfulForumsReader.Common.NavigationHelper");
+                xamlMember.Getter = get_21_BookmarksPage_NavigationHelper;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "AwfulForumsReader.ViewModels.LoginPageViewModel.IsLoading":
+                userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AwfulForumsReader.ViewModels.LoginPageViewModel");
+                xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "IsLoading", "Boolean");
+                xamlMember.Getter = get_22_LoginPageViewModel_IsLoading;
+                xamlMember.Setter = set_22_LoginPageViewModel_IsLoading;
+                break;
+            case "AwfulForumsReader.ViewModels.LoginPageViewModel.UserName":
+                userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AwfulForumsReader.ViewModels.LoginPageViewModel");
+                xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "UserName", "String");
+                xamlMember.Getter = get_23_LoginPageViewModel_UserName;
+                xamlMember.Setter = set_23_LoginPageViewModel_UserName;
+                break;
+            case "AwfulForumsReader.ViewModels.LoginPageViewModel.Password":
+                userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AwfulForumsReader.ViewModels.LoginPageViewModel");
+                xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "Password", "String");
+                xamlMember.Getter = get_24_LoginPageViewModel_Password;
+                xamlMember.Setter = set_24_LoginPageViewModel_Password;
+                break;
+            case "AwfulForumsReader.ViewModels.LoginPageViewModel.CanClickLoginButton":
+                userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AwfulForumsReader.ViewModels.LoginPageViewModel");
+                xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "CanClickLoginButton", "Boolean");
+                xamlMember.Getter = get_25_LoginPageViewModel_CanClickLoginButton;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "AwfulForumsReader.ViewModels.LoginPageViewModel.ClickLoginButtonCommand":
+                userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AwfulForumsReader.ViewModels.LoginPageViewModel");
+                xamlMember = new global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlMember(this, "ClickLoginButtonCommand", "AwfulForumsReader.Common.AsyncDelegateCommand");
+                xamlMember.Getter = get_26_LoginPageViewModel_ClickLoginButtonCommand;
+                xamlMember.SetIsReadOnly();
                 break;
             case "AwfulForumsReader.Pages.ThreadListPage.DefaultViewModel":
                 userType = (global::AwfulForumsReader.AwfulForumsReader_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AwfulForumsReader.Pages.ThreadListPage");

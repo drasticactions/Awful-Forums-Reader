@@ -12,6 +12,7 @@
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:tools="using:AwfulForumsReader.Tools"
+    xmlns:triggers="using:WinRT.Triggers"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -61,7 +62,13 @@
             <StackPanel Grid.Row="0" Background="#FFC5C5C5" HorizontalAlignment="Right" Grid.Column="0"
                         Margin="0,0,0,0">
                 <AppBarButton x:Name="RefreshBarButton" IsEnabled="{Binding IsLoading, Converter={StaticResource InvertBooleanConverter}}"
-                              Label="Refresh" Icon="Refresh" />
+                              Label="Refresh" Icon="Refresh">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="Click">
+                            <triggers:InvokeCommandAction Command="{Binding RefreshBookmarkListCommand}"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                </AppBarButton>
                 <AppBarButton x:Name="ReturnToMainButton" Label="Return to Main Forums">
                     <AppBarButton.Icon>
                         <SymbolIcon/>

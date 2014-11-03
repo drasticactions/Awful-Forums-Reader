@@ -24,6 +24,13 @@ namespace AwfulForumsReader.ViewModels
         private UnreadThreadCommand _unreadThreadCommand = new UnreadThreadCommand();
         private LastPageCommand _lastPageCommand = new LastPageCommand();
         private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
+        private RefreshBookmarkListCommand _refreshBookmarkListCommand = new RefreshBookmarkListCommand();
+
+        public RefreshBookmarkListCommand RefreshBookmarkListCommand
+        {
+            get { return _refreshBookmarkListCommand; }
+            set { _refreshBookmarkListCommand = value; }
+        }
 
         public AddOrRemoveBookmarkCommand AddOrRemoveBookmark
         {
@@ -111,7 +118,8 @@ namespace AwfulForumsReader.ViewModels
             DateTime refreshDate = DateTime.UtcNow;
             if (_localSettings.Values.ContainsKey("RefreshBookmarks"))
             {
-                refreshDate = (DateTime) _localSettings.Values["RefreshBookmarks"];
+                var dateString = (string)_localSettings.Values["RefreshBookmarks"];
+                refreshDate = DateTime.Parse(dateString);
             }
             using (var db = new MainForumListContext())
             {
@@ -124,7 +132,7 @@ namespace AwfulForumsReader.ViewModels
             IsLoading = false;
         }
 
-        private async Task Refresh()
+        public async Task Refresh()
         {
             IsLoading = true;
             List<ForumThreadEntity> updatedBookmarkList;
@@ -137,20 +145,8 @@ namespace AwfulForumsReader.ViewModels
                 AwfulDebugger.SendMessageDialogAsync("Could not get bookmarks", ex);
                 return;
             }
-           
-            foreach (var bookmark in updatedBookmarkList)
-            {
-                if (BookmarkedThreads.Any(node => node.ThreadId == bookmark.ThreadId))
-                {
-                    var oldThread = BookmarkedThreads.First(node => node.ThreadId.Equals(bookmark.ThreadId));
-                    var oldIndex = BookmarkedThreads.IndexOf(oldThread);
-                    BookmarkedThreads.Move(oldIndex, updatedBookmarkList.IndexOf(bookmark));
-                }
-                else
-                {
-                    BookmarkedThreads.Add(bookmark);
-                }
-            }
+
+            BookmarkedThreads = updatedBookmarkList.ToObservableCollection();
 
             using (var db = new MainForumListContext())
             {
@@ -168,7 +164,7 @@ namespace AwfulForumsReader.ViewModels
                     await db.SaveChangesAsync();
                 }
             }
-            _localSettings.Values["RefreshBookmarks"] = DateTime.UtcNow;
+            _localSettings.Values["RefreshBookmarks"] = DateTime.UtcNow.ToString();
             IsLoading = false;
         }
 
