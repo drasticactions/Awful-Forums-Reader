@@ -25,6 +25,13 @@ namespace AwfulForumsReader.ViewModels
         private LastPageCommand _lastPageCommand = new LastPageCommand();
         private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
         private RefreshBookmarkListCommand _refreshBookmarkListCommand = new RefreshBookmarkListCommand();
+        private NavigateToMainForumPageCommand _navigateToMainForumPageCommand = new NavigateToMainForumPageCommand();
+
+        public NavigateToMainForumPageCommand NavigateToMainForumPageCommand
+        {
+            get { return _navigateToMainForumPageCommand; }
+            set { _navigateToMainForumPageCommand = value; }
+        }
 
         public RefreshBookmarkListCommand RefreshBookmarkListCommand
         {
