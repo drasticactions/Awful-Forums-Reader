@@ -21,6 +21,19 @@ namespace AwfulForumsReader.ViewModels
         private ObservableCollection<ForumCategoryEntity> _forumGroupList;
         private ObservableCollection<ForumCategoryEntity> _favoriteForumGroupList;
         private bool _isLoading;
+        private NavigateToSettingsCommand _navigateToSettingsCommand = new NavigateToSettingsCommand();
+        private LogoutCommand _logoutCommand = new LogoutCommand();
+        public LogoutCommand LogoutCommand
+        {
+            get { return _logoutCommand; }
+            set { _logoutCommand = value; }
+        }
+
+        public NavigateToSettingsCommand NavigateToSettingsCommand
+        {
+            get { return _navigateToSettingsCommand; }
+            set { _navigateToSettingsCommand = value; }
+        }
 
         public MainForumsPageViewModel()
         {
@@ -90,37 +103,39 @@ namespace AwfulForumsReader.ViewModels
 
         public async Task GetFavoriteForums()
         {
+            List<ForumEntity> forumEntities;
             using (var db = new MainForumListContext())
             {
-                var forumEntities = await db.Forums.Where(node => node.IsBookmarks).ToListAsync();
-                var favorites = ForumGroupList.FirstOrDefault(node => node.Name.Equals("Favorites"));
-                if (!forumEntities.Any())
+                forumEntities = await db.Forums.Where(node => node.IsBookmarks).ToListAsync();
+            }
+            var favorites = ForumGroupList.FirstOrDefault(node => node.Name.Equals("Favorites"));
+            if (!forumEntities.Any())
+            {
+                if (favorites != null)
                 {
-                    if (favorites != null)
-                    {
-                        ForumGroupList.Remove(favorites);
-                    }
-                    OnPropertyChanged("ForumGroupList");
-                    return;
-                }
-
-                _favoritesEntity = new ForumCategoryEntity
-                {
-                    Name = "Favorites",
-                    Location = string.Format(Constants.ForumPage, "forumid=48"),
-                    ForumList = forumEntities
-                };
-
-                if (favorites == null)
-                {
-                    ForumGroupList.Insert(0, _favoritesEntity);
-                }
-                else
-                {
-                    favorites.ForumList = forumEntities;
+                    ForumGroupList.Remove(favorites);
                 }
                 OnPropertyChanged("ForumGroupList");
+                return;
             }
+
+            _favoritesEntity = new ForumCategoryEntity
+            {
+                Name = "Favorites",
+                Location = string.Format(Constants.ForumPage, "forumid=48"),
+                ForumList = forumEntities
+            };
+
+            if (favorites == null)
+            {
+                ForumGroupList.Insert(0, _favoritesEntity);
+            }
+            else
+            {
+                ForumGroupList.RemoveAt(0);
+                ForumGroupList.Insert(0, _favoritesEntity);
+            }
+            OnPropertyChanged("ForumGroupList");
         }
 
         private async Task GetMainPageForumsAsync()

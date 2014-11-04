@@ -37,6 +37,8 @@
     <RootPropertyPathName Name="ForumGroupList" />
     <RootPropertyPathName Name="FavoriteForumGroupList" />
     <RootPropertyPathName Name="NavigateToThreadListPageCommand" />
+    <RootPropertyPathName Name="LogoutCommand" />
+    <RootPropertyPathName Name="NavigateToSettingsCommand" />
     <RootPropertyPathName Name="NavigateToBookmarks" />
     <RootPropertyPathName Name="ThreadListPageVm" />
     <RootPropertyPathName Name="SubForumEntities" />
@@ -45,6 +47,8 @@
     <RootPropertyPathName Name="UnreadThread" />
     <RootPropertyPathName Name="LastPage" />
     <RootPropertyPathName Name="Description" />
+    <RootPropertyPathName Name="RefreshThreadListCommand" />
+    <RootPropertyPathName Name="NavigateToNewThreadCommand" />
     <RootPropertyPathName Name="ForumEntity" />
     <RootPropertyPathName Name="ForumThreadEntity" />
     <RootPropertyPathName Name="CurrentPage" />
@@ -120,8 +124,9 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Children" />
       <RootProperty Name="Orientation" />
-      <RootProperty Name="Width" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Style" />
+      <RootProperty Name="Width" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition">
@@ -265,6 +270,24 @@
       <RootMethod Name="SetItemType" />
     </RootType>
     <RootType FullName="AwfulForumsReader.Pages.BookmarksPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.SettingsFlyout">
+      <RootProperty Name="HeaderBackground" />
+      <RootProperty Name="Title" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
+      <RootEvent Name="Toggled" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="SelectedIndex" />
+      <RootProperty Name="Items" />
+      <RootEvent Name="SelectionChanged" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem">
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="AwfulForumsReader.Pages.ForumSettingsFlyout" />
     <RootType FullName="AwfulForumsReader.ViewModels.LoginPageViewModel" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="ZoomMode" />

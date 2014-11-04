@@ -32,10 +32,6 @@ namespace AwfulForumsReader.Tools
         public object Convert(object value, Type targetType, object parameter, string language)
         {
             var item = value as ForumEntity;
-            if (item != null && item.IsBookmarks)
-            {
-                return new SolidColorBrush(Colors.Gold);
-            }
             return item != null && item.IsSubforum
                 ? new SolidColorBrush(Colors.DarkGray)
                 : new SolidColorBrush(Color.FromArgb(255, 65, 91, 100));

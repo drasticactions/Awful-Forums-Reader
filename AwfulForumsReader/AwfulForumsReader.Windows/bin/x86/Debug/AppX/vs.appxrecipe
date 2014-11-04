@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x86\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-11-03T19:40:09.419</Modified>
+      <Modified>2014-11-03T21:41:17.965</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x86\Debug\AwfulForumsReader.Windows.exe">
       <PackagePath>AwfulForumsReader.Windows.exe</PackagePath>
-      <Modified>2014-11-03T19:49:34.450</Modified>
+      <Modified>2014-11-03T22:12:09.428</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactions.dll">
       <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
@@ -42,7 +42,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader.Core\bin\Debug\AwfulForumsReader.Core.dll">
       <PackagePath>AwfulForumsReader.Core.dll</PackagePath>
-      <Modified>2014-11-03T17:37:32.405</Modified>
+      <Modified>2014-11-03T21:59:14.767</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\packages\EntityFramework.7.0.0-beta2-11520\lib\portable-net451+win81+wpa81\EntityFramework.dll">
       <PackagePath>EntityFramework.dll</PackagePath>
@@ -2453,7 +2453,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x86\Debug\Pages\BookmarksPage.xbf">
       <PackagePath>Pages\BookmarksPage.xbf</PackagePath>
-      <Modified>2014-11-03T19:49:34.071</Modified>
+      <Modified>2014-11-03T20:53:24.514</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x86\Debug\Pages\ForumSettingsFlyout.xbf">
+      <PackagePath>Pages\ForumSettingsFlyout.xbf</PackagePath>
+      <Modified>2014-11-03T21:27:25.101</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x86\Debug\Pages\LoginPage.xbf">
       <PackagePath>Pages\LoginPage.xbf</PackagePath>
@@ -2461,11 +2465,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x86\Debug\Pages\MainForumsPage.xbf">
       <PackagePath>Pages\MainForumsPage.xbf</PackagePath>
-      <Modified>2014-11-03T15:46:53.985</Modified>
+      <Modified>2014-11-03T22:11:11.469</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x86\Debug\Pages\ThreadListPage.xbf">
       <PackagePath>Pages\ThreadListPage.xbf</PackagePath>
-      <Modified>2014-11-03T19:49:34.074</Modified>
+      <Modified>2014-11-03T20:53:24.516</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x86\Debug\Pages\ThreadPage.xbf">
       <PackagePath>Pages\ThreadPage.xbf</PackagePath>
@@ -2473,7 +2477,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x86\Debug\AwfulForumsReader.Windows.xr.xml">
       <PackagePath>AwfulForumsReader.Windows.xr.xml</PackagePath>
-      <Modified>2014-11-03T19:41:14.711</Modified>
+      <Modified>2014-11-03T21:41:16.866</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\packages\WinRTXamlToolkit.Windows.1.7.4.0\lib\netcore451\WinRTXamlToolkit\WinRTXamlToolkit.xr.xml">
       <PackagePath>WinRTXamlToolkit\WinRTXamlToolkit.xr.xml</PackagePath>
@@ -2581,7 +2585,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-11-03T19:49:35.291</Modified>
+      <Modified>2014-11-03T22:11:12.803</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

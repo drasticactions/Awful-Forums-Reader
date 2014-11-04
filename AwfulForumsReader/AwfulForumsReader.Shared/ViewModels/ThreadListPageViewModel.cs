@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Context;
@@ -19,7 +20,20 @@ namespace AwfulForumsReader.ViewModels
         private AddOrRemoveBookmarkCommand _addOrRemoveBookmarkCommand = new AddOrRemoveBookmarkCommand();
         private UnreadThreadCommand _unreadThreadCommand = new UnreadThreadCommand();
         private LastPageCommand _lastPageCommand = new LastPageCommand();
+        private RefreshThreadListCommand _refreshThreadListCommand = new RefreshThreadListCommand();
+        private NavigateToNewThreadCommand _navigateToNewThreadCommand = new NavigateToNewThreadCommand();
 
+        public NavigateToNewThreadCommand NavigateToNewThreadCommand
+        {
+            get { return _navigateToNewThreadCommand; }
+            set { _navigateToNewThreadCommand = value; }
+        }
+
+        public RefreshThreadListCommand RefreshThreadListCommand
+        {
+            get { return _refreshThreadListCommand; }
+            set { _refreshThreadListCommand = value; }
+        }
 
         public AddOrRemoveBookmarkCommand AddOrRemoveBookmark
         {
@@ -75,7 +89,7 @@ namespace AwfulForumsReader.ViewModels
         {
             SubForumEntities = new ObservableCollection<ForumEntity>();
             ForumEntity = forumEntity;
-            ForumPageScrollingCollection = new PageScrollingCollection(forumEntity, 1);
+            Refresh();
             using (var db = new MainForumListContext())
             {
                 var forumList = db.Forums.Where(node => node.ParentForumId == forumEntity.ForumId).ToList();
@@ -85,6 +99,11 @@ namespace AwfulForumsReader.ViewModels
                 }
             }
 
+        }
+
+        public void Refresh()
+        {
+            ForumPageScrollingCollection = new PageScrollingCollection(ForumEntity, 1);
         }
 
         public void UpdateThreadList()

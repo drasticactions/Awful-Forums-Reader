@@ -1,0 +1,76 @@
+﻿<SettingsFlyout
+    x:Class="AwfulForumsReader.Pages.ForumSettingsFlyout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AwfulForumsReader.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    HeaderBackground="{StaticResource AwfulBlue}"
+    Title="App Settings"
+    d:DesignWidth="346">
+
+    <!-- This StackPanel acts as a root panel for vertical layout of the content sections -->
+    <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+        <!-- The StackPanel(s) below define individual content sections -->
+
+        <StackPanel Style="{StaticResource SettingsFlyoutSectionStyle}">
+
+            <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Enable Bookmark Live Tiles" />
+
+            <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
+                <TextBlock.Text>
+                    If enabled, the bookmarks page will be scanned every 15 minutes for new
+                    posts, and update the Awful Forum Reader's live tile with the post count.
+                </TextBlock.Text>
+            </TextBlock>
+
+            <ToggleSwitch x:Name="BookmarkLiveTiles" Toggled="BookmarkLiveTiles_Toggled" />
+
+            <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Launch Bookmarks Page On Startup" />
+
+            <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
+                <TextBlock.Text>
+                    If enabled, the bookmarks page will be launched on startup.
+                </TextBlock.Text>
+            </TextBlock>
+
+            <ToggleSwitch x:Name="LoadBookmarksOnLoadSwitch" Toggled="LoadBookmarksOnLoadSwitch_OnToggled" />
+
+            <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Auto-Refresh Bookmarks" />
+
+            <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
+                <TextBlock.Text>
+                    Refresh bookmarks when navigating back from a bookmarked thread.
+                </TextBlock.Text>
+            </TextBlock>
+
+            <ToggleSwitch x:Name="AutoReloadSwitch" Toggled="AutoReloadSwitch_OnToggled" />
+
+            <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Sort Bookmarks" />
+
+            <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
+                <TextBlock.Text>
+                    Set how threads are sorted in the bookmarks view.
+                </TextBlock.Text>
+            </TextBlock>
+
+            <ComboBox HorizontalAlignment="Stretch" x:Name="FilterComboBox"  SelectedIndex="0" SelectionChanged="FilterComboBox_OnSelectionChanged" Grid.Row="2">
+                <ComboBoxItem Content="Forums Default"/>
+                <ComboBoxItem Content="Most Unread First"/>
+            </ComboBox>
+
+            <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Dark Mode" />
+
+            <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
+                <TextBlock.Text>
+                    Enables the dark theme for forum threads.
+                </TextBlock.Text>
+            </TextBlock>
+
+            <ToggleSwitch x:Name="DarkLightThemeSwitch" Toggled="DarkLightThemeSwitch_OnToggled" />
+
+        </StackPanel>
+    </StackPanel>
+</SettingsFlyout>

@@ -8,6 +8,9 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+#if WINDOWS_APP
+using Windows.UI.ApplicationSettings;
+#endif
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -59,6 +62,25 @@ namespace AwfulForumsReader
 
             Container = AutoFacConfiguration.Configure();
         }
+
+#if WINDOWS_APP 
+        protected override void OnWindowCreated(WindowCreatedEventArgs args)
+        {
+            SettingsPane.GetForCurrentView().CommandsRequested += OnCommandsRequested;
+        }
+
+        private void OnCommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
+        {
+            args.Request.ApplicationCommands.Add(new SettingsCommand(
+                "App Settings", "App Settings", (handler) => ShowAppSettingsFlyout()));
+        }
+
+        public static void ShowAppSettingsFlyout()
+        {
+           ForumSettingsFlyout flyout = new ForumSettingsFlyout();
+            flyout.Show();
+        }
+#endif
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points

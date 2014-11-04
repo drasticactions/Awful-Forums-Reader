@@ -10,6 +10,11 @@ namespace AwfulForumsReader.Commands
         public async override void Execute(object parameter)
         {
             var forumEntity = (ForumEntity) parameter;
+            forumEntity.IsBookmarks = !forumEntity.IsBookmarks;
+            var realForumList =
+                Locator.ViewModels.MainForumsPageVm.ForumGroupList.Where(node => !node.Name.Equals("Favorites")).SelectMany(node => node.ForumList);
+            forumEntity = realForumList.FirstOrDefault(node => node.ForumId == forumEntity.ForumId);
+            forumEntity.IsBookmarks = !forumEntity.IsBookmarks;
             using (var db = new MainForumListContext())
             {
                 var forum = db.Forums.FirstOrDefault(node => node.ForumId == forumEntity.ForumId);
@@ -17,12 +22,11 @@ namespace AwfulForumsReader.Commands
                 {
                     return;
                 }
-                forumEntity.IsBookmarks = !forumEntity.IsBookmarks;
+                
                 forum.IsBookmarks = !forum.IsBookmarks;
                 await db.SaveChangesAsync();
-                await Locator.ViewModels.MainForumsPageVm.GetFavoriteForums();
             }
-            
+            await Locator.ViewModels.MainForumsPageVm.GetFavoriteForums();
         }
     }
 }
