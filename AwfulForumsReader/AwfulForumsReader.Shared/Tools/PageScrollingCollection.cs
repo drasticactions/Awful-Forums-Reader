@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.UI.Xaml.Data;
-using AwfulForumsReader.Context;
+using AwfulForumsReader.Database.Context;
 using AwfulForumsReader.Core.Entity;
 using System.ComponentModel;
 using AwfulForumsReader.Core.Manager;

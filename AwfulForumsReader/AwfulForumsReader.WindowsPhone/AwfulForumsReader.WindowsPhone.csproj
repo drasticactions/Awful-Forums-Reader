@@ -215,6 +215,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\AwfulFormsReader.Database\AwfulForumsReader.Database.csproj">
+      <Project>{bec97e80-260d-4908-a190-0c193d80190e}</Project>
+      <Name>AwfulForumsReader.Database</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\AwfulForumsReader.Core\AwfulForumsReader.Core.csproj">
       <Project>{bd27a175-04ec-42fe-a9c1-006458e2bb41}</Project>
       <Name>AwfulForumsReader.Core</Name>

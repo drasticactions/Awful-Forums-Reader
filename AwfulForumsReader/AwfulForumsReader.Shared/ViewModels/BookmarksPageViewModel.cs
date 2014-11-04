@@ -8,7 +8,7 @@ using Windows.Storage;
 using Windows.UI.Xaml.Automation.Peers;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Context;
+using AwfulForumsReader.Database.Context;
 using AwfulForumsReader.Core.Entity;
 using AwfulForumsReader.Core.Manager;
 using AwfulForumsReader.Core.Tools;
@@ -26,6 +26,13 @@ namespace AwfulForumsReader.ViewModels
         private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
         private RefreshBookmarkListCommand _refreshBookmarkListCommand = new RefreshBookmarkListCommand();
         private NavigateToMainForumPageCommand _navigateToMainForumPageCommand = new NavigateToMainForumPageCommand();
+        private AddThreadToNotificationTableCommand _addThreadToNotificationTableCommand = new AddThreadToNotificationTableCommand();
+
+        public AddThreadToNotificationTableCommand AddThreadToNotificationTableCommand
+        {
+            get { return _addThreadToNotificationTableCommand; }
+            set { _addThreadToNotificationTableCommand = value; }
+        }
 
         public NavigateToMainForumPageCommand NavigateToMainForumPageCommand
         {

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Context;
+using AwfulForumsReader.Database.Context;
 using AwfulForumsReader.Core.Entity;
 using AwfulForumsReader.Core.Manager;
 using AwfulForumsReader.Core.Tools;

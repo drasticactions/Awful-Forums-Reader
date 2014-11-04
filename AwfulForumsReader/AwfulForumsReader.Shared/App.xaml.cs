@@ -21,7 +21,7 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using Autofac;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Context;
+using AwfulForumsReader.Database.Context;
 using AwfulForumsReader.Core;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
@@ -54,6 +54,13 @@ namespace AwfulForumsReader
             RequestedTheme = ApplicationTheme.Light;
 #endif
             using (var db = new MainForumListContext())
+            {
+                // Migrations are not yet enabled in EF7, so use an
+                // API to create the database if it doesn't exist
+                db.Database.EnsureCreated();
+            }
+
+            using (var db = new NotifyThreadListContext())
             {
                 // Migrations are not yet enabled in EF7, so use an
                 // API to create the database if it doesn't exist

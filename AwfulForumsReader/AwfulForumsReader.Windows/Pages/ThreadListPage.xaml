@@ -123,7 +123,7 @@
                 </Grid>
                 <ListView x:Name="ForumThreadList"
                       HorizontalAlignment="Stretch" 
-                      IsSwipeEnabled="True" Grid.Column="2"
+                      IsSwipeEnabled="True" 
                       ItemsSource="{Binding Source={StaticResource ForumThreadViewSource}}" SelectionMode="None"
                       IsItemClickEnabled="True">
                     <ListView.ItemContainerStyle>

@@ -20,6 +20,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveBookmarkCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveFavoriteCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\AddThreadToNotificationTableCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\LastPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\LogoutCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToBookmarksCommand.cs" />
@@ -37,7 +38,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\AsyncDelegateCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\AutoFacConfiguration.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\NotifierBase.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Context\MainForumListContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Locator\ViewModels.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\AddOrRemoveFavoriteTextConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\AwfulDebugger.cs" />
