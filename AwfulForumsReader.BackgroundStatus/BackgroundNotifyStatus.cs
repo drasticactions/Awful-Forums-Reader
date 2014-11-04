@@ -33,15 +33,9 @@ namespace AwfulForumsReader.BackgroundStatus
 
         private async Task Update(IBackgroundTaskInstance taskInstance)
         {
-            var forumCategory = new ForumEntity()
-            {
-                Name = "Bookmarks",
-                IsSubforum = false,
-                IsBookmarks = true,
-                Location = Constants.UserCp
-            };
+            var bookmarkManager = new BookmarkManager();
 
-            var forumThreadEntities = await _threadManager.GetBookmarksAsync(forumCategory, 1);
+            var forumThreadEntities = await bookmarkManager.RefreshBookmarkedThreads();
             CreateBookmarkLiveTiles(forumThreadEntities);
 
             var notificationManager = new NotificationManager();
