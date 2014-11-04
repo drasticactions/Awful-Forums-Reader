@@ -20,7 +20,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveBookmarkCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveFavoriteCommand.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Commands\AddThreadToNotificationTableCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveThreadToNotificationTableCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\LastPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\LogoutCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToBookmarksCommand.cs" />
@@ -42,6 +42,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\AddOrRemoveFavoriteTextConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\AwfulDebugger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BackButtonEnableConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\BackgroundTaskUtils.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BookmarkTextConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BooleanToVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\ForwardButtonEnableConverter.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\HtmlFormater.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\InvertBooleanConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\LinqExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\NotifyThreadTextConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\OpenMenuFlyoutAction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\PageScrollingCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\PrivateMessageScrollingCollection.cs" />

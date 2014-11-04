@@ -22,5 +22,6 @@
         <tools:ForwardButtonEnableConverter x:Key="ForwardButtonEnableConverter" />
         <tools:BackButtonEnableConverter x:Key="BackButtonEnableConverter" />
         <tools:TotalPageConverter x:Key="TotalPageConverter" />
+        <tools:NotifyThreadTextConverter x:Key="NotifyThreadTextConverter" />
     </Application.Resources>
 </Application>

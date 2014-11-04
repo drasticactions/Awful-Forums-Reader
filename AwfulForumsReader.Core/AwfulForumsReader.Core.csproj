@@ -57,6 +57,7 @@
     <Compile Include="Manager\PrivateMessageManager.cs" />
     <Compile Include="Manager\ThreadManager.cs" />
     <Compile Include="Manager\WebManager.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\Constants.cs" />
     <Compile Include="Tools\CookieSerializer.cs" />

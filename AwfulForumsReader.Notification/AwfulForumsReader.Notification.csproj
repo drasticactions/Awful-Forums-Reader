@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{07569AF0-5C62-4048-8834-0CC376DB77F5}</ProjectGuid>
-    <OutputType>winmdobj</OutputType>
+    <ProjectGuid>{47409EAB-FFBD-49C9-8296-E39B47F4EA74}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AwfulForumsReader.BackgroundStatus</RootNamespace>
-    <AssemblyName>AwfulForumsReader.BackgroundStatus</AssemblyName>
+    <RootNamespace>AwfulForumsReader.Notification</RootNamespace>
+    <AssemblyName>AwfulForumsReader.Notification</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -33,22 +33,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\AwfulFormsReader.Database\AwfulForumsReader.Database.csproj">
-      <Project>{bec97e80-260d-4908-a190-0c193d80190e}</Project>
-      <Name>AwfulForumsReader.Database</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AwfulForumsReader.Core\AwfulForumsReader.Core.csproj">
       <Project>{bd27a175-04ec-42fe-a9c1-006458e2bb41}</Project>
       <Name>AwfulForumsReader.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AwfulForumsReader.Notification\AwfulForumsReader.Notification.csproj">
-      <Project>{47409eab-ffbd-49c9-8296-e39b47f4ea74}</Project>
-      <Name>AwfulForumsReader.Notification</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -56,7 +45,7 @@
     <TargetPlatform Include="Windows, Version=8.1" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackgroundNotifyStatus.cs" />
+    <Compile Include="NotifyStatusTile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

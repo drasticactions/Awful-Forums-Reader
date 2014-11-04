@@ -26,9 +26,9 @@ namespace AwfulForumsReader.ViewModels
         private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
         private RefreshBookmarkListCommand _refreshBookmarkListCommand = new RefreshBookmarkListCommand();
         private NavigateToMainForumPageCommand _navigateToMainForumPageCommand = new NavigateToMainForumPageCommand();
-        private AddThreadToNotificationTableCommand _addThreadToNotificationTableCommand = new AddThreadToNotificationTableCommand();
+        private AddOrRemoveThreadToNotificationTableCommand _addThreadToNotificationTableCommand = new AddOrRemoveThreadToNotificationTableCommand();
 
-        public AddThreadToNotificationTableCommand AddThreadToNotificationTableCommand
+        public AddOrRemoveThreadToNotificationTableCommand AddThreadToNotificationTableCommand
         {
             get { return _addThreadToNotificationTableCommand; }
             set { _addThreadToNotificationTableCommand = value; }

@@ -28,7 +28,7 @@ namespace AwfulForumsReader.Database.Context
             {
                 b.Key(thread => thread.Id);
             });
-            builder.Model.GetEntityType(typeof (ForumThreadEntity)).GetProperty("Id").GenerateValueOnAdd = true;
+            builder.Model.GetEntityType(typeof(ForumThreadEntity)).GetProperty("Id").GenerateValueOnAdd = true;
 
             builder.Entity<ForumEntity>(b =>
             {

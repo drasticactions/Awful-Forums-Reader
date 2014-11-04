@@ -19,7 +19,6 @@ namespace AwfulForumsReader.Database.Commands
             {
                 return false;
             }
-
             await _notifyThreadListContext.NotifyThreads.AddAsync(threadEntity);
             await _notifyThreadListContext.SaveChangesAsync();
             return true;
@@ -35,6 +34,16 @@ namespace AwfulForumsReader.Database.Commands
             _notifyThreadListContext.NotifyThreads.Remove(thread);
             await _notifyThreadListContext.SaveChangesAsync();
             return true;
+        }
+
+        public bool IsInList(ForumThreadEntity threadEntity)
+        {
+            return _notifyThreadListContext.NotifyThreads.Any(node => node.ThreadId == threadEntity.ThreadId);
+        }
+
+        public async Task<List<ForumThreadEntity>> GetNotifyThreadListAsync()
+        {
+            return await _notifyThreadListContext.NotifyThreads.ToListAsync();
         }
     }
 }

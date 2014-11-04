@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Navigation;
 using AwfulForumsReader.Core.Tools;
 
 // The Settings Flyout item template is documented at http://go.microsoft.com/fwlink/?LinkId=273769
+using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.Pages
 {
@@ -60,14 +61,14 @@ namespace AwfulForumsReader.Pages
             if (toggleSwitch == null) return;
             if (toggleSwitch.IsOn)
             {
-                //// Run bookmark live tile creator every 15 minutes.
-                //// TODO: Change 15 to user selectable value.
-                //BackgroundTaskUtils.UnregisterBackgroundTasks(BackgroundTaskUtils.BackgroundTaskName);
-                //BackgroundTaskRegistration task = await
-                //    BackgroundTaskUtils.RegisterBackgroundTask(BackgroundTaskUtils.BackgroundTaskEntryPoint,
-                //        BackgroundTaskUtils.BackgroundTaskName,
-                //        new TimeTrigger(15, false),
-                //        null);
+                // Run bookmark live tile creator every 15 minutes.
+                // TODO: Change 15 to user selectable value.
+                BackgroundTaskUtils.UnregisterBackgroundTasks(BackgroundTaskUtils.BackgroundTaskName);
+                BackgroundTaskRegistration task = await
+                    BackgroundTaskUtils.RegisterBackgroundTask(BackgroundTaskUtils.BackgroundTaskEntryPoint,
+                        BackgroundTaskUtils.BackgroundTaskName,
+                        new TimeTrigger(15, false),
+                        null);
                 _localSettings.Values[Constants.BookmarkBackground] = true;
             }
             else
