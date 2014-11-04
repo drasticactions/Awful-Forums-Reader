@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
+using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Core.Entity;
 using AwfulForumsReader.Core.Manager;
@@ -15,6 +16,14 @@ namespace AwfulForumsReader.ViewModels
     public class ThreadPageViewModel : NotifierBase
     {
         private ForumThreadEntity _forumThreadEntity;
+        private ThreadDomContentLoadedCommand _threadDomContentLoadedCommand = new ThreadDomContentLoadedCommand();
+        public ThreadDomContentLoadedCommand ThreadDomContentLoadedCommand
+        {
+            get { return _threadDomContentLoadedCommand; }
+            set { _threadDomContentLoadedCommand = value; }
+        }
+
+        private List<ForumThreadEntity> _linkedThreads = new List<ForumThreadEntity>(); 
 
         private bool _isLoading;
 
@@ -28,6 +37,16 @@ namespace AwfulForumsReader.ViewModels
             set
             {
                 SetProperty(ref _pageNumbers, value);
+                OnPropertyChanged();
+            }
+        }
+
+        public List<ForumThreadEntity> LinkedThreads
+        {
+            get { return _linkedThreads; }
+            set
+            {
+                SetProperty(ref _linkedThreads, value);
                 OnPropertyChanged();
             }
         }
@@ -62,8 +81,14 @@ namespace AwfulForumsReader.ViewModels
             }
         }
 
-        public async Task GetForumPostsAsync(ForumThreadEntity forumThreadEntity)
+        public async Task GetForumPostsAsync()
         {
+            if (ForumThreadEntity == null)
+            {
+                AwfulDebugger.SendMessageDialogAsync("Something went wrong...",
+                    new Exception("ForumThreadEntity is null."));
+                return;
+            }
 IsLoading = true;
             bool isSuccess;
             string errorMessage = string.Empty;
@@ -71,7 +96,7 @@ IsLoading = true;
             var postList = new List<ForumPostEntity>();
             try
             {
-                postList = await postManager.GetThreadPostsAsync(forumThreadEntity);
+                postList = await postManager.GetThreadPostsAsync(ForumThreadEntity);
                 isSuccess = true;
             }
             catch (Exception ex)
@@ -86,21 +111,22 @@ IsLoading = true;
                 return;
             }
 #if WINDOWS_PHONE_APP
-            forumThreadEntity.PlatformIdentifier = PlatformIdentifier.WindowsPhone;
+            ForumThreadEntity.PlatformIdentifier = PlatformIdentifier.WindowsPhone;
 #else
-            forumThreadEntity.PlatformIdentifier = PlatformIdentifier.Windows8;
+            ForumThreadEntity.PlatformIdentifier = PlatformIdentifier.Windows8;
 #endif
             try
             {
-                GetDarkModeSetting(forumThreadEntity);
-                Html = await HtmlFormater.FormatThreadHtml(forumThreadEntity, postList);
-                ForumThreadEntity = forumThreadEntity;
-                PageNumbers = Enumerable.Range(1, forumThreadEntity.TotalPages).ToArray();
+                GetDarkModeSetting(ForumThreadEntity);
+                Html = await HtmlFormater.FormatThreadHtml(ForumThreadEntity, postList);
+                ForumThreadEntity = ForumThreadEntity;
+                PageNumbers = Enumerable.Range(1, ForumThreadEntity.TotalPages).ToArray();
             }
             catch (Exception ex)
             {
                 AwfulDebugger.SendMessageDialogAsync("An error occured creating the thread HTML", ex);
             }
+            IsLoading = false;
         }
 
         private void GetDarkModeSetting(ForumThreadEntity forumThreadEntity)

@@ -27,6 +27,14 @@ namespace AwfulForumsReader.ViewModels
         private RefreshBookmarkListCommand _refreshBookmarkListCommand = new RefreshBookmarkListCommand();
         private NavigateToMainForumPageCommand _navigateToMainForumPageCommand = new NavigateToMainForumPageCommand();
         private AddOrRemoveThreadToNotificationTableCommand _addThreadToNotificationTableCommand = new AddOrRemoveThreadToNotificationTableCommand();
+        private NavigateToThreadPageCommand _navigateToThreadPageCommand = new NavigateToThreadPageCommand();
+
+        public NavigateToThreadPageCommand NavigateToThreadPageCommand
+        {
+            get { return _navigateToThreadPageCommand; }
+            set { _navigateToThreadPageCommand = value; }
+        }
+
 
         public AddOrRemoveThreadToNotificationTableCommand AddThreadToNotificationTableCommand
         {

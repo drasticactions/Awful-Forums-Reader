@@ -1,11 +1,14 @@
 ﻿using AwfulForumsReader.Common;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -13,9 +16,15 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using AwfulForumsReader.Commands;
+using AwfulForumsReader.Core.Entity;
+using AwfulForumsReader.Core.Manager;
+using AwfulForumsReader.Notification;
+using AwfulForumsReader.Tools;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 using AwfulForumsReader.ViewModels;
+using Newtonsoft.Json;
 
 namespace AwfulForumsReader.Pages
 {
@@ -25,8 +34,10 @@ namespace AwfulForumsReader.Pages
     public sealed partial class ThreadPage : Page
     {
         private ThreadPageViewModel _vm;
+        private int _zoomSize;
         private NavigationHelper navigationHelper;
-
+        private ThreadManager _threadManager = new ThreadManager();
+        private ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
         /// <summary>
         /// NavigationHelper is used on each page to aid in navigation and 
         /// process lifetime management
@@ -41,6 +52,7 @@ namespace AwfulForumsReader.Pages
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
+            ThreadFullView.ScriptNotify += WebViewNotifyCommand.WebView_ScriptNotify;
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
         }
@@ -78,8 +90,8 @@ namespace AwfulForumsReader.Pages
         /// NavigationHelper to respond to the page's navigation methods.
         /// 
         /// Page specific logic should be placed in event handlers for the  
-        /// <see cref="GridCS.Common.NavigationHelper.LoadState"/>
-        /// and <see cref="GridCS.Common.NavigationHelper.SaveState"/>.
+        /// <see cref="Common.NavigationHelper.LoadState"/>
+        /// and <see cref="Common.NavigationHelper.SaveState"/>.
         /// The navigation parameter is available in the LoadState method 
         /// in addition to page state preserved during an earlier session.
 
@@ -95,5 +107,6 @@ namespace AwfulForumsReader.Pages
         }
 
         #endregion
+
     }
 }

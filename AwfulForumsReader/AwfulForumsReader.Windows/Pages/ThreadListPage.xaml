@@ -126,6 +126,12 @@
                       IsSwipeEnabled="True" 
                       ItemsSource="{Binding Source={StaticResource ForumThreadViewSource}}" SelectionMode="None"
                       IsItemClickEnabled="True">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="ItemClick">
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToThreadPageCommand}"
+                                                                  PassEventArgsToCommand="True" />
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch" />

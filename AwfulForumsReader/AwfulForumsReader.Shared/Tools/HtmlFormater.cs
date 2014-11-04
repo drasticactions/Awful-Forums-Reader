@@ -21,7 +21,7 @@ namespace AwfulForumsReader.Tools
 
         public static async Task<string> FormatThreadHtml(ForumThreadEntity forumThreadEntity, List<ForumPostEntity> postEntities)
         {
-            string html = await PathIO.ReadTextAsync("ms-appx:///Assets/thread.html");
+            string html = await PathIO.ReadTextAsync("ms-appx:///Assets/Website/thread.html");
 
             var doc2 = new HtmlDocument();
 
@@ -33,14 +33,14 @@ namespace AwfulForumsReader.Tools
             switch (forumThreadEntity.PlatformIdentifier)
             {
                 case PlatformIdentifier.WindowsPhone:
-                    head.InnerHtml += "<link href=\"ms-appx-web:///Assets/WindowsPhone-Default.css\" type=\"text/css\" media=\"all\" rel=\"stylesheet\">";
+                    head.InnerHtml += "<link href=\"ms-appx-web:///Assets/Website/CSS/WindowsPhone-Default.css\" type=\"text/css\" media=\"all\" rel=\"stylesheet\">";
                     break;
             }
 
             switch (forumThreadEntity.ForumId)
             {
                 case 219:
-                    head.InnerHtml += "<link href=\"ms-appx-web:///Assets/219.css\" type=\"text/css\" media=\"all\" rel=\"stylesheet\">";
+                    head.InnerHtml += "<link href=\"ms-appx-web:///Assets/Website/CSS/219.css\" type=\"text/css\" media=\"all\" rel=\"stylesheet\">";
                     break;
                 case 26:
                     break;

@@ -70,7 +70,7 @@
                               Label="Refresh" Icon="Refresh">
                     <triggers:Interactions.Triggers>
                         <triggers:EventTrigger EventName="Click">
-                            <triggers:InvokeCommandAction Command="{Binding RefreshBookmarkListCommand}"/>
+                            <triggers:InvokeCommandAction PassEventArgsToCommand="True" Command="{Binding RefreshBookmarkListCommand}"/>
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>
@@ -91,6 +91,12 @@
                       IsSwipeEnabled="True" Grid.Column="1"
                       ItemsSource="{Binding  BookmarkedThreads}" SelectionMode="None"
                       IsItemClickEnabled="True">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="ItemClick">
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToThreadPageCommand}"
+                                                                  PassEventArgsToCommand="True" />
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <VirtualizingStackPanel>

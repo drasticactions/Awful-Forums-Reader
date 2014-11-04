@@ -42,5 +42,10 @@ namespace AwfulForumsReader.Locator
         {
             get { return App.Container.Resolve<PrivateMessageListViewModel>(); }
         }
+
+        public static ThreadPageViewModel ThreadPageVm
+        {
+            get { return App.Container.Resolve<ThreadPageViewModel>(); }
+        }
     }
 }

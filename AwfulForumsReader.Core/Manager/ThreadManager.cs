@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -92,6 +93,7 @@ namespace AwfulForumsReader.Core.Manager
                 ParseThreadHtml(threadEntity, threadNode);
                 forumThreadList.Add(threadEntity);
             }
+
             return forumThreadList;
         }
 
@@ -455,6 +457,7 @@ namespace AwfulForumsReader.Core.Manager
             {
                 throw new ForumListParsingFailedException(string.Format("Failed to parse 'Store thread icon' element {0}", exception));
             }
+
         }
 
         public async Task<bool> MarkThreadUnreadAsync(long threadId)

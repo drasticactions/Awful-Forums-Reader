@@ -67,6 +67,13 @@ namespace AwfulForumsReader
                 db.Database.EnsureCreated();
             }
 
+            using (var db = new LinkedThreadListContext())
+            {
+                // Migrations are not yet enabled in EF7, so use an
+                // API to create the database if it doesn't exist
+                db.Database.EnsureCreated();
+            }
+
             Container = AutoFacConfiguration.Configure();
         }
 

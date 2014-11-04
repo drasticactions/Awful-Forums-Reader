@@ -30,10 +30,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToPrivateMessageListPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToSettingsCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToThreadListPageCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToThreadPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshBookmarkListCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshPrivateMessageListCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshThreadListCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\ThreadDomContentLoadedCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\UnreadThreadCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\WebViewNotifyCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\AlwaysExecutableCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\AsyncDelegateCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\AutoFacConfiguration.cs" />
@@ -60,6 +63,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\SubforumBodyColorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\SubforumFontColorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\SubforumHeaderColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\ThreadCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\ThreadHeaderColorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\TotalPageConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\WebViewHelper.cs" />
@@ -74,6 +78,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ThreadPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\forumThread.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\jquery.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="$(MSBuildThisFileDirectory)Assets\Login\Dontrel-Awful2.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\MainForumsPage\bookmarkicon3 - big.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\MainForumsPage\bookmarkicon3.png" />
@@ -639,14 +649,31 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\yp-gnugpl.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\yp-snowcrash971.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\yp-tubes296.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\threadTemplate.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\url.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\219.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\26.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bbcode.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\forum-thread.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\ui-light-new.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\WindowsPhone-Default.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Website\thread.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\README.md" />
+    <None Include="$(MSBuildThisFileDirectory)local\jquery.min.js" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)UserControls\ImageLoader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Assets\Website\Javascript\" />
   </ItemGroup>
 </Project>
