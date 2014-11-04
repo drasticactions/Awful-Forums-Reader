@@ -47,7 +47,6 @@
                     AutomationProperties.ItemType="Navigation Button" RequestedTheme="Dark" />
             <TextBlock x:Name="pageTitle" d:Text="{Binding ForumEntity.Name, Source={d:DesignData /SampleData/ThreadListPageViewModelSampleData.xaml}}" Text="Bookmarks" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1"
                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Center" />
-            <ProgressBar Grid.Column="1" VerticalAlignment="Bottom" IsIndeterminate="True" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         </Grid>
         <Grid RequestedTheme="Light" Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -56,21 +55,22 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" Background="#FFC5C5C5" HorizontalAlignment="Right" Grid.Column="0"
                         Margin="0,0,0,0">
-                <AppBarButton x:Name="RefreshBarButton" IsEnabled="{Binding IsLoading, Converter={StaticResource InvertBooleanConverter}}"
-                              Label="Refresh" Icon="Refresh">
-                    <triggers:Interactions.Triggers>
-                        <triggers:EventTrigger EventName="Click">
-                            <triggers:InvokeCommandAction Command="{Binding RefreshBookmarkListCommand}"/>
-                        </triggers:EventTrigger>
-                    </triggers:Interactions.Triggers>
-                </AppBarButton>
-                <AppBarButton x:Name="ReturnToMainButton" Label="Return to Main Forums">
+
+                <AppBarButton x:Name="ReturnToMainButton" IsEnabled="{Binding IsLoading, Converter={StaticResource InvertBooleanConverter}}" Label="Return to Main Forums">
                     <AppBarButton.Icon>
                         <SymbolIcon/>
                     </AppBarButton.Icon>
                     <triggers:Interactions.Triggers>
                         <triggers:EventTrigger EventName="Click">
                             <triggers:InvokeCommandAction Command="{Binding NavigateToMainForumPageCommand}"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                </AppBarButton>
+                <AppBarButton x:Name="RefreshBarButton" IsEnabled="{Binding IsLoading, Converter={StaticResource InvertBooleanConverter}}"
+                              Label="Refresh" Icon="Refresh">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="Click">
+                            <triggers:InvokeCommandAction Command="{Binding RefreshBookmarkListCommand}"/>
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>

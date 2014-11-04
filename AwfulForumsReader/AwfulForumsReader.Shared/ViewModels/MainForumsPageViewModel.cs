@@ -23,6 +23,14 @@ namespace AwfulForumsReader.ViewModels
         private bool _isLoading;
         private NavigateToSettingsCommand _navigateToSettingsCommand = new NavigateToSettingsCommand();
         private LogoutCommand _logoutCommand = new LogoutCommand();
+        private NavigateToPrivateMessageListPageCommand _navigateToPrivateMessageListPageCommand = new NavigateToPrivateMessageListPageCommand();
+
+        public NavigateToPrivateMessageListPageCommand NavigateToPrivateMessageListPageCommand
+        {
+            get { return _navigateToPrivateMessageListPageCommand; }
+            set { _navigateToPrivateMessageListPageCommand = value; }
+        }
+
         public LogoutCommand LogoutCommand
         {
             get { return _logoutCommand; }

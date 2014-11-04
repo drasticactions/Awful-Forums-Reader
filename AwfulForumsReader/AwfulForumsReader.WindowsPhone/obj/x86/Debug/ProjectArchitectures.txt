@@ -1,2 +1,0 @@
-C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader.Core\AwfulForumsReader.Core.csproj;neutral
-C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.WindowsPhone\AwfulForumsReader.WindowsPhone.csproj;x86

@@ -38,9 +38,9 @@ namespace AwfulForumsReader.Locator
             get { return App.Container.Resolve<BookmarksPageViewModel>(); }
         }
 
-        //public static PrivateMessageViewModel PrivateMessageVm
-        //{
-        //    get { return App.Container.Resolve<PrivateMessageViewModel>(); }
-        //}
+        public static PrivateMessageListViewModel PrivateMessageVm
+        {
+            get { return App.Container.Resolve<PrivateMessageListViewModel>(); }
+        }
     }
 }

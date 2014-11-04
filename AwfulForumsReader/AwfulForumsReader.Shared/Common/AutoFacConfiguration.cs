@@ -18,6 +18,7 @@ namespace AwfulForumsReader.Common
             builder.RegisterType<MainForumsPageViewModel>().SingleInstance();
             builder.RegisterType<ThreadListPageViewModel>().SingleInstance();
             builder.RegisterType<BookmarksPageViewModel>().SingleInstance();
+            builder.RegisterType<PrivateMessageListViewModel>().SingleInstance();
             //builder.RegisterType<PrivateMessageViewModel>().SingleInstance();
 
             builder.RegisterType<MainForumsPage>();
