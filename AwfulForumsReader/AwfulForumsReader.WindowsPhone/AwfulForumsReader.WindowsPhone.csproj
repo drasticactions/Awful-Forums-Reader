@@ -92,6 +92,9 @@
     <Compile Include="Pages\PrivateMessageList.xaml.cs">
       <DependentUpon>PrivateMessageList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PrivateMessageListPage.xaml.cs">
+      <DependentUpon>PrivateMessageListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PrivateMessagePage.xaml.cs">
       <DependentUpon>PrivateMessagePage.xaml</DependentUpon>
     </Compile>
@@ -131,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PrivateMessageList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PrivateMessageListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
