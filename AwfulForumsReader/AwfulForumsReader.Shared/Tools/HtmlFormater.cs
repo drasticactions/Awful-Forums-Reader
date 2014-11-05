@@ -50,9 +50,11 @@ namespace AwfulForumsReader.Tools
             HtmlNode bodyNode = doc2.DocumentNode.Descendants("body").FirstOrDefault();
 
             string threadHtml = string.Empty;
-            int seenCount = 1;
             if (postEntities == null) return WebUtility.HtmlDecode(WebUtility.HtmlDecode(doc2.DocumentNode.OuterHtml));
-            for (int index = 0; index < postEntities.Count; index++)
+
+            int seenCount = 1;
+            
+            for (int index = forumThreadEntity.ScrollToPost; index < postEntities.Count; index++)
             {
                 ForumPostEntity post = postEntities[index];
                 if (seenCount > 2)
@@ -84,6 +86,42 @@ namespace AwfulForumsReader.Tools
 
             bodyNode.InnerHtml = threadHtml;
             return doc2.DocumentNode.OuterHtml;
+        }
+
+        private static string ParsePosts(int startingCount, List<ForumPostEntity> postEntities)
+        {
+            int seenCount = 1;
+            string threadHtml = string.Empty;
+            for (int index = 0; index < postEntities.Count; index++)
+            {
+                ForumPostEntity post = postEntities[index];
+                if (seenCount > 2)
+                    seenCount = 1;
+                string hasSeen = post.HasSeen ? string.Concat("seen", seenCount) : string.Concat("postCount", seenCount);
+                seenCount++;
+                string userAvatar = string.Empty;
+                if (!string.IsNullOrEmpty(post.User.AvatarLink))
+                    userAvatar = string.Concat("<img src=\"", post.User.AvatarLink,
+                        "\" alt=\"\" class=\"av\" border=\"0\">");
+                string username =
+                    string.Format(
+                        "<h2 class=\"text article-title win-type-ellipsis\"><span class=\"author\">{0}</span><h2>",
+                        post.User.Username);
+                string postData =
+                    string.Format(
+                        "<h4 class=\"text article-title win-type-ellipsis\"><span class=\"registered\">{0}</span><h4>",
+                        post.PostDate);
+                string postBody = string.Format("<div class=\"postbody\">{0}</div>", post.PostHtml);
+                string userInfo = string.Format("<div class=\"userinfo\">{0}{1}</div>", username, postData);
+                string postButtons = CreateButtons(post);
+
+                string footer = string.Format("<tr class=\"postbar\"><td class=\"postlinks\">{0}</td></tr>", postButtons);
+                threadHtml +=
+                    string.Format(
+                        "<div class={6} id={4}><div id={5}><div id=\"threadView\"><header>{0}{1}</header><article><div class=\"article-content\">{2}</div></article><footer>{3}</footer></div></div></div>",
+                        userAvatar, userInfo, postBody, footer, string.Concat("\"pti", index + 1, "\""), string.Concat("\"postId", post.PostId, "\""), string.Concat("\"", hasSeen, "\""));
+            }
+            return threadHtml;
         }
 
         private static string CreateButtons(ForumPostEntity post)
