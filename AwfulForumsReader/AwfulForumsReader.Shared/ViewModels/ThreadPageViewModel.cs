@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace AwfulForumsReader.ViewModels
             set { _threadDomContentLoadedCommand = value; }
         }
 
-        private List<ForumThreadEntity> _linkedThreads = new List<ForumThreadEntity>(); 
+        private ObservableCollection<ForumThreadEntity> _linkedThreads = new ObservableCollection<ForumThreadEntity>(); 
 
         private bool _isLoading;
 
@@ -41,7 +42,7 @@ namespace AwfulForumsReader.ViewModels
             }
         }
 
-        public List<ForumThreadEntity> LinkedThreads
+        public ObservableCollection<ForumThreadEntity> LinkedThreads
         {
             get { return _linkedThreads; }
             set

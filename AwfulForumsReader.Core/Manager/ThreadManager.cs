@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using AwfulForumsReader.Core.Entity;
 using AwfulForumsReader.Core.Exceptions;
@@ -44,6 +45,81 @@ namespace AwfulForumsReader.Core.Manager
                         Constants.RemoveBookmark, threadId
                         ));
             return true;
+        }
+
+        private void ParseFromThread(ForumThreadEntity threadEntity, HtmlDocument threadDocument)
+        {
+            var title = threadDocument.DocumentNode.Descendants("title").FirstOrDefault();
+
+            if (title != null)
+            {
+                threadEntity.Name = title.InnerText;
+            }
+
+            var threadIdNode = threadDocument.DocumentNode.Descendants("body").First();
+            threadEntity.ThreadId = Convert.ToInt64(threadIdNode.GetAttributeValue("data-thread", string.Empty));
+
+            threadEntity.Location = string.Format(Constants.ThreadPage, threadEntity.ThreadId);
+            var pageNavigationNode = threadDocument.DocumentNode.Descendants("div").FirstOrDefault(node => node.GetAttributeValue("class", string.Empty).Equals("pages top"));
+            if (string.IsNullOrWhiteSpace(pageNavigationNode.InnerHtml))
+            {
+                threadEntity.TotalPages = 1;
+                threadEntity.CurrentPage = 1;
+            }
+            else
+            {
+                var lastPageNode = pageNavigationNode.Descendants("a").FirstOrDefault(node => node.GetAttributeValue("title", string.Empty).Equals("Last page"));
+                if (lastPageNode != null)
+                {
+                    string urlHref = lastPageNode.GetAttributeValue("href", string.Empty);
+                    var query = Extensions.ParseQueryString(urlHref);
+                    threadEntity.TotalPages = Convert.ToInt32(query["pagenumber"]);
+                }
+
+                var pageSelector = pageNavigationNode.Descendants("select").FirstOrDefault();
+
+                var selectedPage = pageSelector.Descendants("option")
+                    .FirstOrDefault(node => node.GetAttributeValue("selected", string.Empty).Equals("selected"));
+
+                threadEntity.CurrentPage = Convert.ToInt32(selectedPage.GetAttributeValue("value", string.Empty));
+            }
+        }
+
+        public async Task GetThreadInfo(ForumThreadEntity forumThread, string url)
+        {
+            WebManager.Result result = await _webManager.GetData(url);
+            HtmlDocument doc = result.Document;
+            try
+            {
+                ParseFromThread(forumThread, doc);
+            }
+            catch (Exception exception)
+            {
+                throw new Exception("Error parsing thread", exception);
+            }
+
+            try
+            {
+                string responseUri = result.AbsoluteUri;
+                string[] test = responseUri.Split('#');
+                if (test.Length > 1 && test[1].Contains("pti"))
+                {
+                    forumThread.ScrollToPost = Int32.Parse(Regex.Match(responseUri.Split('#')[1], @"\d+").Value) - 1;
+                    forumThread.ScrollToPostString = string.Concat("#", responseUri.Split('#')[1]);
+                }
+
+                var query = Extensions.ParseQueryString(url);
+
+                if (query.ContainsKey("pagenumber"))
+                {
+                    forumThread.CurrentPage = Convert.ToInt32(query["pagenumber"]);
+                }
+            }
+            catch (Exception exception)
+            {
+                throw new Exception("Error parsing thread", exception);
+            }
+
         }
 
         public async Task<ObservableCollection<ForumThreadEntity>> GetBookmarksAsync(ForumEntity forumCategory, int page)

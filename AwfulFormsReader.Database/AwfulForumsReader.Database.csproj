@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Commands\BookmarkManager.cs" />
     <Compile Include="Commands\NotificationManager.cs" />
+    <Compile Include="Commands\TabManager.cs" />
     <Compile Include="Context\LinkedThreadListContext.cs" />
     <Compile Include="Context\MainForumListContext.cs" />
     <Compile Include="Context\NotifyThreadListContext.cs" />

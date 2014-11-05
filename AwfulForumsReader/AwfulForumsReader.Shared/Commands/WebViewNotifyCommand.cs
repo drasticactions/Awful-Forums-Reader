@@ -5,7 +5,12 @@ using System.Text;
 using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
+using AwfulForumsReader.Core.Entity;
+using AwfulForumsReader.Core.Manager;
+using AwfulForumsReader.Core.Tools;
+using AwfulForumsReader.Database.Commands;
 using AwfulForumsReader.Notification;
+using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
 using Newtonsoft.Json;
 
@@ -91,7 +96,24 @@ namespace AwfulForumsReader.Commands
                         }
                         break;
                     case "openThread":
+                         var query = Extensions.ParseQueryString(command.Id);
+                        if (query.ContainsKey("action") && query["action"].Equals("showPost"))
+                        {
+                            //var postManager = new PostManager();
+                            //var html = await postManager.GetPost(Convert.ToInt32(query["postid"]));
+                            return;
+                        }
+                        var threadManager = new ThreadManager();
+                        var newThreadEntity = new ForumThreadEntity();
+                        await threadManager.GetThreadInfo(newThreadEntity, command.Id);
 
+                        var tabManager = new TabManager();
+                        await tabManager.AddThreadToTabListAsync(newThreadEntity);
+                        Locator.ViewModels.ThreadPageVm.LinkedThreads.Add(newThreadEntity);
+
+                        Locator.ViewModels.ThreadPageVm.ForumThreadEntity = newThreadEntity;
+                        Locator.ViewModels.ThreadPageVm.Html = null;
+                        await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
                         break;
                     default:
                         var msgDlg = new MessageDialog("Not working yet!")
