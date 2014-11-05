@@ -19,11 +19,16 @@ namespace AwfulForumsReader.Commands
             var args = parameter as RoutedEventArgs;
             if (args == null)
             {
-                AwfulDebugger.SendMessageDialogAsync("Thread navigation failed!:(", new Exception("Arguments are null"));
+                await AwfulDebugger.SendMessageDialogAsync("Thread navigation failed!:(", new Exception("Arguments are null"));
                 return;
             }
             
             var appButton = args.OriginalSource as AppBarButton;
+            if (appButton == null)
+            {
+                // TODO: If this is somehow null, throw an error and tell the user.
+                return;
+            }
             var thread = appButton.DataContext as ForumThreadEntity;
             if (thread == null)
                 return;

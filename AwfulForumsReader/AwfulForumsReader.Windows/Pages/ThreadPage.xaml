@@ -139,14 +139,43 @@
                     </AppBarButton.Flyout>
                 </AppBarButton>
                 <AppBarButton  IsEnabled="{Binding IsLoading, Converter={StaticResource InvertBooleanConverter}}" x:Name="GoToLastPostButton" 
-                              Label="Go To Last Post On Page" Icon="Download" />
-                <AppBarButton x:Name="ReplyButton" Label="Reply" Icon="Upload"
-                               />
+                              Label="Go To Last Post On Page" Icon="Download">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="Click">
+                            <triggers:InvokeCommandAction Command="{Binding ScrollToBottomThreadPageCommand}" CommandParameter="{Binding Source, Source={StaticResource ThreadWebView}}" PassEventArgsToCommand="True"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                </AppBarButton>
+                <AppBarButton x:Name="ReplyButton" Label="Reply" Icon="Upload">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="Click">
+                            <triggers:InvokeCommandAction Command="{Binding RefreshThreadPageCommand}" PassEventArgsToCommand="True"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                </AppBarButton>
                 <AppBarButton x:Name="BackButton" IsEnabled="{Binding ForumThreadEntity, Converter={StaticResource BackButtonEnableConverter}, Mode=TwoWay }" Label="Back Page"
-                              Icon="Back" />
+                              Icon="Back">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="Click">
+                            <triggers:InvokeCommandAction Command="{Binding BackThreadPageCommand}" PassEventArgsToCommand="True"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                </AppBarButton>
                 <AppBarButton x:Name="ForwardButton" IsEnabled="{Binding ForumThreadEntity, Converter={StaticResource ForwardButtonEnableConverter}, Mode=TwoWay}" Label="Forward Page"
-                              Icon="Forward" />
-                <AppBarButton x:Name="RefreshButton" Icon="Refresh" Label="Refresh" />
+                              Icon="Forward">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="Click">
+                            <triggers:InvokeCommandAction Command="{Binding ForwardThreadPageCommand}" PassEventArgsToCommand="True"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                </AppBarButton>
+                <AppBarButton x:Name="RefreshButton" Icon="Refresh" Label="Refresh">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="Click">
+                            <triggers:InvokeCommandAction Command="{Binding RefreshThreadPageCommand}" PassEventArgsToCommand="True"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                </AppBarButton>
 
             </StackPanel>
             <Grid Grid.Column="1">

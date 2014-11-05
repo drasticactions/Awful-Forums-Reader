@@ -20,6 +20,41 @@ namespace AwfulForumsReader.ViewModels
         private ThreadDomContentLoadedCommand _threadDomContentLoadedCommand = new ThreadDomContentLoadedCommand();
         private ChangeTabsCommand _changeTabsCommand = new ChangeTabsCommand();
         private RemoveTabCommand _removeTabCommand = new RemoveTabCommand();
+        private NavigateToNewReplyCommand _navigateToNewReplyCommand = new NavigateToNewReplyCommand();
+        private ScrollToBottomThreadPageCommand _scrollToBottomThreadPageCommand = new ScrollToBottomThreadPageCommand();
+        private ForwardThreadPageCommand _forwardThreadPageCommand = new ForwardThreadPageCommand();
+        private BackThreadPageCommand _backThreadPageCommand = new BackThreadPageCommand();
+        private RefreshThreadPageCommand _refreshThreadPageCommand = new RefreshThreadPageCommand();
+
+        public RefreshThreadPageCommand RefreshThreadPageCommand
+        {
+            get { return _refreshThreadPageCommand; }
+            set { _refreshThreadPageCommand = value; }
+        }
+
+        public BackThreadPageCommand BackThreadPageCommand
+        {
+            get { return _backThreadPageCommand; }
+            set { _backThreadPageCommand = value; }
+        }
+
+        public ForwardThreadPageCommand ForwardThreadPageCommand
+        {
+            get { return _forwardThreadPageCommand; }
+            set { _forwardThreadPageCommand = value; }
+        }
+
+        public ScrollToBottomThreadPageCommand ScrollToBottomThreadPageCommand
+        {
+            get { return _scrollToBottomThreadPageCommand; }
+            set { _scrollToBottomThreadPageCommand = value; }
+        }
+
+        public NavigateToNewReplyCommand NavigateToNewReplyCommand
+        {
+            get { return _navigateToNewReplyCommand; }
+            set { _navigateToNewReplyCommand = value; }
+        }
 
         public RemoveTabCommand RemoveTabCommand
         {

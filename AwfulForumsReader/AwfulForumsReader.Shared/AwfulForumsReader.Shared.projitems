@@ -21,12 +21,15 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveBookmarkCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveFavoriteCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveThreadToNotificationTableCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\BackThreadPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\ChangeTabsCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\ForwardThreadPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\LastPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\LogoutCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToBookmarksCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToMainForumPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToNewPrivateMessagePageCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToNewReplyCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToNewThreadCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToPrivateMessageListPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToSettingsCommand.cs" />
@@ -35,7 +38,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshBookmarkListCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshPrivateMessageListCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshThreadListCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshThreadPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RemoveTabCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\ScrollToBottomThreadPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\ThreadDomContentLoadedCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\UnreadThreadCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\WebViewNotifyCommand.cs" />
