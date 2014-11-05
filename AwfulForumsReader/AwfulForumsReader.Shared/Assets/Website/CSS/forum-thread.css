@@ -1,4 +1,9 @@
-﻿#thread ul.profilelinks {
+﻿#showHiddenPostsButton {
+    width: 100%;
+    margin: 5px;
+}
+
+#thread ul.profilelinks {
     display: inline;
     list-style: none;
     margin: 0;

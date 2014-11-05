@@ -49,50 +49,39 @@ namespace AwfulForumsReader.Tools
 
             HtmlNode bodyNode = doc2.DocumentNode.Descendants("body").FirstOrDefault();
 
-            string threadHtml = string.Empty;
             if (postEntities == null) return WebUtility.HtmlDecode(WebUtility.HtmlDecode(doc2.DocumentNode.OuterHtml));
 
-            int seenCount = 1;
-            
-            for (int index = forumThreadEntity.ScrollToPost; index < postEntities.Count; index++)
-            {
-                ForumPostEntity post = postEntities[index];
-                if (seenCount > 2)
-                    seenCount = 1;
-                string hasSeen = post.HasSeen ? string.Concat("seen", seenCount) : string.Concat("postCount", seenCount);
-                seenCount++;
-                string userAvatar = string.Empty;
-                if (!string.IsNullOrEmpty(post.User.AvatarLink))
-                    userAvatar = string.Concat("<img src=\"", post.User.AvatarLink,
-                        "\" alt=\"\" class=\"av\" border=\"0\">");
-                string username =
-                    string.Format(
-                        "<h2 class=\"text article-title win-type-ellipsis\"><span class=\"author\">{0}</span><h2>",
-                        post.User.Username);
-                string postData =
-                    string.Format(
-                        "<h4 class=\"text article-title win-type-ellipsis\"><span class=\"registered\">{0}</span><h4>",
-                        post.PostDate);
-                string postBody = string.Format("<div class=\"postbody\">{0}</div>", post.PostHtml);
-                string userInfo = string.Format("<div class=\"userinfo\">{0}{1}</div>", username, postData);
-                string postButtons = CreateButtons(post);
+            string threadHtml = string.Empty;
 
-                string footer = string.Format("<tr class=\"postbar\"><td class=\"postlinks\">{0}</td></tr>", postButtons);
-                threadHtml +=
-                    string.Format(
-                        "<div class={6} id={4}><div id={5}><div id=\"threadView\"><header>{0}{1}</header><article><div class=\"article-content\">{2}</div></article><footer>{3}</footer></div></div></div>",
-                        userAvatar, userInfo, postBody, footer, string.Concat("\"pti", index + 1, "\""), string.Concat("\"postId", post.PostId, "\""), string.Concat("\"", hasSeen, "\""));
+            if (forumThreadEntity.ScrollToPost > 1)
+            {
+                threadHtml = "<div><div id=\"showPosts\">";
+
+                var clickHandler = string.Format("window.ForumCommand('showPosts', '{0}')", "true");
+
+                string showThreadsButton = HtmlButtonBuilder.CreateSubmitButton(string.Format("Show {0} Previous Posts", forumThreadEntity.ScrollToPost - 1), clickHandler, "showHiddenPostsButton");
+
+                threadHtml += showThreadsButton;
+
+                threadHtml += "</div><div style=\"display: none;\" id=\"hiddenPosts\">";
+                threadHtml += ParsePosts(0, forumThreadEntity.ScrollToPost, postEntities);
+                threadHtml += "</div>";
+                threadHtml += ParsePosts(forumThreadEntity.ScrollToPost, postEntities.Count, postEntities);
+            }
+            else
+            {
+                threadHtml += ParsePosts(0, postEntities.Count, postEntities);
             }
 
             bodyNode.InnerHtml = threadHtml;
             return doc2.DocumentNode.OuterHtml;
         }
 
-        private static string ParsePosts(int startingCount, List<ForumPostEntity> postEntities)
+        private static string ParsePosts(int startingCount, int endCount, List<ForumPostEntity> postEntities)
         {
             int seenCount = 1;
             string threadHtml = string.Empty;
-            for (int index = 0; index < postEntities.Count; index++)
+            for (int index = startingCount; index < endCount; index++)
             {
                 ForumPostEntity post = postEntities[index];
                 if (seenCount > 2)
@@ -128,15 +117,15 @@ namespace AwfulForumsReader.Tools
         {
             var clickHandler = string.Format("window.ForumCommand('quote', '{0}')", post.PostId);
 
-            string quoteButton = HtmlButtonBuilder.CreateSubmitButton("Quote", clickHandler);
+            string quoteButton = HtmlButtonBuilder.CreateSubmitButton("Quote", clickHandler, string.Empty);
 
             clickHandler = string.Format("window.ForumCommand('edit', '{0}')", post.PostId);
 
-            string editButton = HtmlButtonBuilder.CreateSubmitButton("Edit", clickHandler);
+            string editButton = HtmlButtonBuilder.CreateSubmitButton("Edit", clickHandler, string.Empty);
 
             clickHandler = string.Format("window.ForumCommand('markAsLastRead', '{0}')", post.PostIndex);
 
-            string markAsLastReadButton = HtmlButtonBuilder.CreateSubmitButton("Last Read", clickHandler);
+            string markAsLastReadButton = HtmlButtonBuilder.CreateSubmitButton("Last Read", clickHandler, string.Empty);
 
             return post.User.IsCurrentUserPost
                     ? string.Concat("<ul class=\"profilelinks\">",

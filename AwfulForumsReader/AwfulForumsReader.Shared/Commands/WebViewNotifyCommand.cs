@@ -36,6 +36,9 @@ namespace AwfulForumsReader.Commands
                 var command = JsonConvert.DeserializeObject<ThreadCommand>(stringJson);
                 switch (command.Command)
                 {
+                    case "showPosts":
+                        await webview.InvokeScriptAsync("ShowHiddenPosts", new[] {string.Empty});
+                        break;
                     case "profile":
                         //Frame.Navigate(typeof(UserProfileView), command.Id);
                         break;
