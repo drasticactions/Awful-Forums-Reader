@@ -315,19 +315,23 @@ namespace AwfulForumsReader.Core.Manager
 
         private void ParseThreadRating(ForumThreadEntity threadEntity, HtmlNode threadNode)
         {
-            threadEntity.RatingImage =
-    threadNode.Descendants("td")
-        .Any(node => node.GetAttributeValue("class", string.Empty).Contains("rating")) &&
-    threadNode.Descendants("td")
-        .FirstOrDefault(node => node.GetAttributeValue("class", string.Empty).Equals("rating"))
-        .Descendants("img")
-        .Any()
-        ? threadNode.Descendants("td")
-            .FirstOrDefault(node => node.GetAttributeValue("class", string.Empty).Equals("rating"))
-            .Descendants("img")
-            .FirstOrDefault()
-            .GetAttributeValue("src", string.Empty)
-        : null;
+            var threadRatingUrl = threadNode.Descendants("td")
+                .Any(node => node.GetAttributeValue("class", string.Empty).Contains("rating")) &&
+                                  threadNode.Descendants("td")
+                                      .FirstOrDefault(
+                                          node => node.GetAttributeValue("class", string.Empty).Equals("rating"))
+                                      .Descendants("img")
+                                      .Any()
+                ? threadNode.Descendants("td")
+                    .FirstOrDefault(node => node.GetAttributeValue("class", string.Empty).Equals("rating"))
+                    .Descendants("img")
+                    .FirstOrDefault()
+                    .GetAttributeValue("src", string.Empty) : null;
+
+            if (!string.IsNullOrEmpty(threadRatingUrl))
+            {
+                threadEntity.RatingImage = string.Format("/Assets/ThreadRatings/{0}.png", Path.GetFileNameWithoutExtension(threadRatingUrl));
+            }
         }
 
         private void ParseThreadTotalPages(ForumThreadEntity threadEntity)

@@ -95,6 +95,11 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\MainForumsPage\bookmarkicon3 - big.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\MainForumsPage\bookmarkicon3.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\MainForumsPage\grenadesm.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadRatings\1stars.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadRatings\2stars.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadRatings\3stars.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadRatings\4stars.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadRatings\5stars.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\adtrw-hokutonoken.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\adtrw.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\ai-cycles.png" />
@@ -675,6 +680,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\jquery.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="$(MSBuildThisFileDirectory)Assets\ThreadRatings\rating.psd" />
     <None Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\README.md" />
     <None Include="$(MSBuildThisFileDirectory)local\jquery.min.js" />
   </ItemGroup>

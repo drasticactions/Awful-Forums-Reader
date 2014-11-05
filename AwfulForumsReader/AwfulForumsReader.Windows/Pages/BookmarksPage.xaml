@@ -159,8 +159,8 @@
                                         </StackPanel>
                                         <Border
                                         Visibility="{Binding RatingImage, Converter={StaticResource RatingVisibilityConverter}}"
-                                        HorizontalAlignment="Left" Margin="0,0,0,0" Background="Transparent" Width="46"
-                                        Height="20">
+                                        HorizontalAlignment="Left" Margin="0,5,0,5" Background="Transparent" Width="60"
+                                        Height="26">
                                             <userControls:ImageLoader Source="{Binding RatingImage}" />
                                         </Border>
                                     </StackPanel>
