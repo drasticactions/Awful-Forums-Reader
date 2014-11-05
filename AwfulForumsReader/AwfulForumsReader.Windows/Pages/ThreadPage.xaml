@@ -56,14 +56,14 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" HorizontalAlignment="Right" Background="#FFC5C5C5">
-                <Button HorizontalAlignment="Stretch" x:Name="CurrentPageButton" IsEnabled="{Binding IsLoading, Converter={StaticResource InvertBooleanConverter}}" Content="{Binding ForumThreadEntity.CurrentPage}">
+                <Button HorizontalAlignment="Stretch" Height="35" x:Name="CurrentPageButton" IsEnabled="{Binding IsLoading, Converter={StaticResource InvertBooleanConverter}}" Content="{Binding ForumThreadEntity.CurrentPage}">
                     <Button.Flyout>
                         <Flyout Placement="Left">
                             <StackPanel>
                                 <Viewbox Margin="5" Height="40">
                                     <TextBlock Text="{Binding ForumThreadEntity, Converter={StaticResource TotalPageConverter}}"/>
                                 </Viewbox>
-                                <controls:NumericUpDown Height="40"/>
+                                <TextBox InputScope="Number" Margin="5" x:Name="PageNumberTextBox"/>
                                 <Button Margin="5" x:Name="PageNumberButton" Content="Change Page"/>
                             </StackPanel>
                         </Flyout>
@@ -72,7 +72,13 @@
                 <AppBarButton Label="Thread Tabs" Icon="World">
                     <AppBarButton.Flyout>
                         <Flyout Placement="Right">
-                            <ListView Width="300" ItemsSource="{Binding LinkedThreads}">
+                            <ListView Width="300" SelectionMode="None" IsItemClickEnabled="True" ItemsSource="{Binding LinkedThreads}">
+                                <triggers:Interactions.Triggers>
+                                    <triggers:EventTrigger EventName="ItemClick">
+                                        <triggers:InvokeCommandAction Command="{Binding ChangeTabsCommand}"
+                                                                  PassEventArgsToCommand="True" />
+                                    </triggers:EventTrigger>
+                                </triggers:Interactions.Triggers>
                                 <ListView.ItemContainerStyle>
                                     <Style TargetType="ListViewItem">
                                         <Setter Property="HorizontalContentAlignment" Value="Stretch" />

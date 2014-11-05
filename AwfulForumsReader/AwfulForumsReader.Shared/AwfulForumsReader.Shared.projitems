@@ -21,6 +21,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveBookmarkCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveFavoriteCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveThreadToNotificationTableCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\ChangeTabsCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\LastPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\LogoutCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToBookmarksCommand.cs" />
@@ -224,6 +225,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\diy-tips.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\diy-tools.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\diy-wood.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\dontrel.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\Dorkroom-K-ROCK.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\Dorkroom-silkysmooth.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\drugs.png" />

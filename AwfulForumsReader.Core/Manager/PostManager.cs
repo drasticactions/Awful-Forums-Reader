@@ -42,33 +42,8 @@ namespace AwfulForumsReader.Core.Manager
 
             var forumThreadPosts = new List<ForumPostEntity>();
 
-            HtmlDocument doc;
-            WebManager.Result result;
-            try
-            {
-                result = await _webManager.GetData(url);
-                doc = result.Document;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(string.Format("Failed to download thread data. {0}", ex.Message));
-            }
-
-            try
-            {
-                string responseUri = result.AbsoluteUri;
-                string[] test = responseUri.Split('#');
-                if (test.Length > 1 && test[1].Contains("pti"))
-                {
-                    forumThread.ScrollToPost = Int32.Parse(Regex.Match(responseUri.Split('#')[1], @"\d+").Value) - 1;
-                    forumThread.ScrollToPostString = string.Concat("#", responseUri.Split('#')[1]);
-                }
-            }
-            catch (Exception)
-            {
-                Debug.WriteLine("Failed to parse post id.");
-            }
-
+            var threadManager = new ThreadManager();
+            var doc = await threadManager.GetThreadInfo(forumThread, url);
 
             try
             {

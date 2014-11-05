@@ -18,6 +18,14 @@ namespace AwfulForumsReader.ViewModels
     {
         private ForumThreadEntity _forumThreadEntity;
         private ThreadDomContentLoadedCommand _threadDomContentLoadedCommand = new ThreadDomContentLoadedCommand();
+        private ChangeTabsCommand _changeTabsCommand = new ChangeTabsCommand();
+
+        public ChangeTabsCommand ChangeTabsCommand
+        {
+            get { return _changeTabsCommand; }
+            set { _changeTabsCommand = value; }
+        }
+
         public ThreadDomContentLoadedCommand ThreadDomContentLoadedCommand
         {
             get { return _threadDomContentLoadedCommand; }

@@ -53,7 +53,7 @@ namespace AwfulForumsReader.Core.Manager
 
             if (title != null)
             {
-                threadEntity.Name = title.InnerText;
+                threadEntity.Name = title.InnerText.Replace(" - The Something Awful Forums", string.Empty);
             }
 
             var threadIdNode = threadDocument.DocumentNode.Descendants("body").First();
@@ -85,7 +85,7 @@ namespace AwfulForumsReader.Core.Manager
             }
         }
 
-        public async Task GetThreadInfo(ForumThreadEntity forumThread, string url)
+        public async Task<HtmlDocument> GetThreadInfo(ForumThreadEntity forumThread, string url)
         {
             WebManager.Result result = await _webManager.GetData(url);
             HtmlDocument doc = result.Document;
@@ -120,6 +120,7 @@ namespace AwfulForumsReader.Core.Manager
                 throw new Exception("Error parsing thread", exception);
             }
 
+            return doc;
         }
 
         public async Task<ObservableCollection<ForumThreadEntity>> GetBookmarksAsync(ForumEntity forumCategory, int page)

@@ -103,17 +103,18 @@ namespace AwfulForumsReader.Commands
                             //var html = await postManager.GetPost(Convert.ToInt32(query["postid"]));
                             return;
                         }
-                        var threadManager = new ThreadManager();
-                        var newThreadEntity = new ForumThreadEntity();
-                        await threadManager.GetThreadInfo(newThreadEntity, command.Id);
+                        Locator.ViewModels.ThreadPageVm.IsLoading = true;
+                        var newThreadEntity = new ForumThreadEntity()
+                        {
+                            Location = command.Id
+                        };
+                        Locator.ViewModels.ThreadPageVm.ForumThreadEntity = newThreadEntity;
+
+                        await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
 
                         var tabManager = new TabManager();
                         await tabManager.AddThreadToTabListAsync(newThreadEntity);
                         Locator.ViewModels.ThreadPageVm.LinkedThreads.Add(newThreadEntity);
-
-                        Locator.ViewModels.ThreadPageVm.ForumThreadEntity = newThreadEntity;
-                        Locator.ViewModels.ThreadPageVm.Html = null;
-                        await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
                         break;
                     default:
                         var msgDlg = new MessageDialog("Not working yet!")
