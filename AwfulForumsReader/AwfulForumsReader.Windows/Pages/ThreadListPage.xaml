@@ -158,11 +158,19 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="60" />
                                     </Grid.ColumnDefinitions>
-                                    <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}"
-                                        Grid.Column="0" Width="60" Height="60">
-                                        <userControls:ImageLoader Source="{Binding ImageIconLocation}"
-                                           AutomationProperties.Name="{Binding Title}" />
-                                    </Border>
+                                    <Grid Grid.Column="0">
+                                        <StackPanel Orientation="Vertical">
+                                            <Border Margin="0,5,0,0" Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}" Width="60" Height="60">
+                                                <userControls:ImageLoader Source="{Binding ImageIconLocation}" />
+                                            </Border>
+                                            <Border
+                                        Visibility="{Binding RatingImage, Converter={StaticResource RatingVisibilityConverter}}"
+                                        HorizontalAlignment="Left" Margin="10,0,0,5"  Background="Transparent" Width="60"
+                                        Height="26">
+                                                <userControls:ImageLoader Source="{Binding RatingImage}" />
+                                            </Border>
+                                        </StackPanel>
+                                    </Grid>
                                     <Grid Grid.Column="1" >
                                         <userControls:ImageLoader Margin="0,0,10,0" Source="{Binding StoreImageIconLocation}"
                                            AutomationProperties.Name="{Binding Title}" />
@@ -182,12 +190,6 @@
                                             <TextBlock Text="Killed By:" Margin="0,0,0,0" />
                                             <TextBlock Text="{Binding KilledBy}" Margin="5,0,0,0" />
                                         </StackPanel>
-                                        <Border
-                                        Visibility="{Binding RatingImage, Converter={StaticResource RatingVisibilityConverter}}"
-                                        HorizontalAlignment="Left" Margin="0,5,0,5" Background="Transparent" Width="60"
-                                        Height="26">
-                                            <userControls:ImageLoader Source="{Binding RatingImage}" />
-                                        </Border>
                                     </StackPanel>
                                     <Border Margin="5" x:Name="ReplySinceLastOpenedCount"
                                         Visibility="{Binding HasBeenViewed, Converter={StaticResource BooleanToVisibilityConverter}}"
