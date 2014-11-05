@@ -59,7 +59,7 @@ namespace AwfulForumsReader.Tools
 
                 var clickHandler = string.Format("window.ForumCommand('showPosts', '{0}')", "true");
 
-                string showThreadsButton = HtmlButtonBuilder.CreateSubmitButton(string.Format("Show {0} Previous Posts", forumThreadEntity.ScrollToPost - 1), clickHandler, "showHiddenPostsButton");
+                string showThreadsButton = HtmlButtonBuilder.CreateSubmitButton(string.Format("Show {0} Previous Posts", forumThreadEntity.ScrollToPost), clickHandler, "showHiddenPostsButton");
 
                 threadHtml += showThreadsButton;
 
