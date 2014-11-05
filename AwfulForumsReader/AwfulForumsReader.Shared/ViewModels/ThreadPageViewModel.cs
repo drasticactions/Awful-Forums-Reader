@@ -19,6 +19,13 @@ namespace AwfulForumsReader.ViewModels
         private ForumThreadEntity _forumThreadEntity;
         private ThreadDomContentLoadedCommand _threadDomContentLoadedCommand = new ThreadDomContentLoadedCommand();
         private ChangeTabsCommand _changeTabsCommand = new ChangeTabsCommand();
+        private RemoveTabCommand _removeTabCommand = new RemoveTabCommand();
+
+        public RemoveTabCommand RemoveTabCommand
+        {
+            get { return _removeTabCommand; }
+            set { _removeTabCommand = value; }
+        }
 
         public ChangeTabsCommand ChangeTabsCommand
         {

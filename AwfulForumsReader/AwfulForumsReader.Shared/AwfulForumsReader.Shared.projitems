@@ -35,6 +35,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshBookmarkListCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshPrivateMessageListCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshThreadListCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\RemoveTabCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\ThreadDomContentLoadedCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\UnreadThreadCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\WebViewNotifyCommand.cs" />
