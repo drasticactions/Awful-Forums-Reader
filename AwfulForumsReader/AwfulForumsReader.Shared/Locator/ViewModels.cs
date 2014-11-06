@@ -23,6 +23,11 @@ namespace AwfulForumsReader.Locator
             get { return App.Container.Resolve<MainForumsPageViewModel>(); }
         }
 
+
+        public static BbCodeListPageViewModel BbCodeListVm
+        {
+            get { return App.Container.Resolve<BbCodeListPageViewModel>(); }
+        }
         public static NewThreadReplyPageViewModel NewThreadReplyVm
         {
             get { return App.Container.Resolve<NewThreadReplyPageViewModel>(); }

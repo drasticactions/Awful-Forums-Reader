@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Entity\BbCodeCategoryEntity.cs" />
     <Compile Include="Entity\ForumCategoryEntity.cs" />
     <Compile Include="Entity\ForumEntity.cs" />
     <Compile Include="Entity\ForumPostEntity.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="Interface\ILocalStorageManager.cs" />
     <Compile Include="Interface\IWebManager.cs" />
     <Compile Include="Manager\AuthenticationManager.cs" />
+    <Compile Include="Manager\BbCodeManager.cs" />
     <Compile Include="Manager\ForumManager.cs" />
     <Compile Include="Manager\ForumUserManager.cs" />
     <Compile Include="Manager\LocalStorageManager.cs" />

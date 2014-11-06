@@ -1,5 +1,6 @@
 ﻿using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Common;
+using AwfulForumsReader.Pages;
 
 namespace AwfulForumsReader.Commands
 {
@@ -12,6 +13,9 @@ namespace AwfulForumsReader.Commands
             {
                 return;
             }
+            Locator.ViewModels.BbCodeListVm.ReplyBox = replyText;
+             Locator.ViewModels.BbCodeListVm.Initialize();
+            App.RootFrame.Navigate(typeof (BbCodeListPage));
         }
     }
 }

@@ -23,6 +23,7 @@ namespace AwfulForumsReader.Common
             builder.RegisterType<NewThreadReplyPageViewModel>().SingleInstance();
             builder.RegisterType<NewThreadPageViewModel>().SingleInstance();
             builder.RegisterType<PostIconListPageViewModel>().SingleInstance();
+            builder.RegisterType<BbCodeListPageViewModel>().SingleInstance();
             //builder.RegisterType<PrivateMessageViewModel>().SingleInstance();
 
             builder.RegisterType<MainForumsPage>();

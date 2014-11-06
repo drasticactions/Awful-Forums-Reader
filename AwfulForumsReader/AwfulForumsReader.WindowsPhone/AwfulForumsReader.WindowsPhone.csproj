@@ -80,6 +80,9 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Pages\BbCodeListPage.xaml.cs">
+      <DependentUpon>BbCodeListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BookmarksPage.xaml.cs">
       <DependentUpon>BookmarksPage.xaml</DependentUpon>
     </Compile>
@@ -89,8 +92,14 @@
     <Compile Include="Pages\MainForumsPage.xaml.cs">
       <DependentUpon>MainForumsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\NewThreadPage.xaml.cs">
+      <DependentUpon>NewThreadPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\NewThreadReplyPage.xaml.cs">
       <DependentUpon>NewThreadReplyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PostIconListPage.xaml.cs">
+      <DependentUpon>PostIconListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PrivateMessageList.xaml.cs">
       <DependentUpon>PrivateMessageList.xaml</DependentUpon>
@@ -124,6 +133,10 @@
     <Content Include="Assets\WideLogo.scale-240.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Pages\BbCodeListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\BookmarksPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -136,7 +149,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\NewThreadPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\NewThreadReplyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PostIconListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -107,6 +107,9 @@
     <Compile Include="Common\ObservableDictionary.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Pages\BbCodeListPage.xaml.cs">
+      <DependentUpon>BbCodeListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BookmarksPage.xaml.cs">
       <DependentUpon>BookmarksPage.xaml</DependentUpon>
     </Compile>
@@ -169,6 +172,10 @@
     <Content Include="Assets\Wide310x150Logo.scale-80.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Pages\BbCodeListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\BookmarksPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
