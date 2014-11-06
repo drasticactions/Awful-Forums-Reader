@@ -23,10 +23,20 @@ namespace AwfulForumsReader.Locator
             get { return App.Container.Resolve<MainForumsPageViewModel>(); }
         }
 
-        //public static ThreadViewModel ThreadVm
-        //{
-        //    get { return App.Container.Resolve<ThreadViewModel>(); }
-        //}
+        public static NewThreadReplyPageViewModel NewThreadReplyVm
+        {
+            get { return App.Container.Resolve<NewThreadReplyPageViewModel>(); }
+        }
+
+        public static PostIconListPageViewModel PostIconListPageVm
+        {
+            get { return App.Container.Resolve<PostIconListPageViewModel>(); }
+        }
+
+        public static NewThreadPageViewModel NewThreadVm
+        {
+            get { return App.Container.Resolve<NewThreadPageViewModel>(); }
+        }
 
         public static ThreadListPageViewModel ThreadListPageVm
         {

@@ -119,6 +119,15 @@
     <Compile Include="Pages\MainForumsPage.xaml.cs">
       <DependentUpon>MainForumsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\NewThreadPage.xaml.cs">
+      <DependentUpon>NewThreadPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewThreadReplyPage.xaml.cs">
+      <DependentUpon>NewThreadReplyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PostIconListPage.xaml.cs">
+      <DependentUpon>PostIconListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PrivateMessageListPage.xaml.cs">
       <DependentUpon>PrivateMessageListPage.xaml</DependentUpon>
     </Compile>
@@ -173,6 +182,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MainForumsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NewThreadPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NewThreadReplyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PostIconListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

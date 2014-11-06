@@ -67,7 +67,7 @@
                 <AppBarButton x:Name="AddThreadButton" Icon="Add" Label="New Thread">
                     <triggers:Interactions.Triggers>
                         <triggers:EventTrigger EventName="Click">
-                            <triggers:InvokeCommandAction Command="{Binding NavigateToNewThreadCommand}"/>
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToNewThreadCommand}" PassEventArgsToCommand="True"/>
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>

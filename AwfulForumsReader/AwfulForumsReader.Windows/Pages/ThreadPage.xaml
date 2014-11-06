@@ -149,7 +149,7 @@
                 <AppBarButton x:Name="ReplyButton" Label="Reply" Icon="Upload">
                     <triggers:Interactions.Triggers>
                         <triggers:EventTrigger EventName="Click">
-                            <triggers:InvokeCommandAction Command="{Binding RefreshThreadPageCommand}" PassEventArgsToCommand="True"/>
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToNewReplyCommand}" PassEventArgsToCommand="True"/>
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>
