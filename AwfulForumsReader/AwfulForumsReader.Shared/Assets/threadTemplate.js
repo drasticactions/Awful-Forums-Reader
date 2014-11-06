@@ -25,6 +25,11 @@ var ScrollToDiv = function (pti) {
     }
 };
 
+var ShowHiddenPosts = function() {
+    $('#showPosts').hide();
+    $('#hiddenPosts').show('slow');
+};
+
 var ScrollToTable = function (pti) {
     var table = $('table[data-idx=' + "'" + pti + "'" + ']');
     if (table.length > 0) {

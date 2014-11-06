@@ -13,12 +13,12 @@ namespace AwfulForumsReader.Tools
         /// <param name="buttonName">Name of button.</param>
         /// <param name="buttonClick">Click handler to be applied to button.</param>
         /// <returns>HTML Submit Button String.</returns>
-        public static string CreateSubmitButton(string buttonName, string buttonClick)
+        public static string CreateSubmitButton(string buttonName, string buttonClick, string id)
         {
             return WebUtility.HtmlDecode(
                        string.Format(
-                           "<li><input type=\"submit\" value=\"{0}\" onclick=\"{1}\";></input></li>",
-                           buttonName, buttonClick));
+                           "<li><input id=\"{2}\" type=\"submit\" value=\"{0}\" onclick=\"{1}\";></input></li>",
+                           buttonName, buttonClick, id));
         }
     }
 }
