@@ -16,7 +16,7 @@ using Newtonsoft.Json;
 
 namespace AwfulForumsReader.Commands
 {
-    public class WebViewNotifyCommand
+    public class WebViewLastPostNotifyCommand
     {
         private static int _zoomSize;
         private static readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
@@ -51,12 +51,22 @@ namespace AwfulForumsReader.Commands
                         //Frame.Navigate(typeof(RapSheetView), command.Id);
                         break;
                     case "quote":
-                        var navigateToNewReplyViaQuoteCommand = new NavigateToNewReplyViaQuoteCommand();
-                        navigateToNewReplyViaQuoteCommand.Execute(command.Id);
+                        try
+                        {
+                            var replyManager = new ReplyManager();
+                            string quoteString = await replyManager.GetQuoteString(Convert.ToInt64(command.Id));
+                            quoteString = string.Concat(Environment.NewLine, quoteString);
+                            string replyText = string.IsNullOrEmpty(Locator.ViewModels.LastPostPageVm.ReplyBox.Text) ? string.Empty : Locator.ViewModels.LastPostPageVm.ReplyBox.Text;
+                            if (replyText != null) Locator.ViewModels.NewThreadReplyVm.PostBody = replyText.Insert(Locator.ViewModels.LastPostPageVm.ReplyBox.Text.Length, quoteString);
+                            App.RootFrame.GoBack();
+                        }
+                        catch(Exception ex)
+                        {
+                            AwfulDebugger.SendMessageDialogAsync("Failed to quote post", ex);
+                        }
                         break;
                     case "edit":
-                        var navigateToEditPostPageCommand = new NavigateToEditPostPageCommand();
-                        navigateToEditPostPageCommand.Execute(command.Id);
+                        //Frame.Navigate(typeof(EditReplyPage), command.Id);
                         break;
                     case "scrollToPost":
                         try
@@ -90,36 +100,10 @@ namespace AwfulForumsReader.Commands
                         }
                         break;
                     case "setFont":
-                        if (_localSettings.Values.ContainsKey("zoomSize"))
-                        {
-                            _zoomSize = Convert.ToInt32(_localSettings.Values["zoomSize"]);
-                            webview.InvokeScriptAsync("ResizeWebviewFont", new[] { _zoomSize.ToString() });
-                        }
-                        else
-                        {
-                            // _zoomSize = 20;
-                        }
+
                         break;
                     case "openThread":
-                         var query = Extensions.ParseQueryString(command.Id);
-                        if (query.ContainsKey("action") && query["action"].Equals("showPost"))
-                        {
-                            //var postManager = new PostManager();
-                            //var html = await postManager.GetPost(Convert.ToInt32(query["postid"]));
-                            return;
-                        }
-                        Locator.ViewModels.ThreadPageVm.IsLoading = true;
-                        var newThreadEntity = new ForumThreadEntity()
-                        {
-                            Location = command.Id
-                        };
-                        Locator.ViewModels.ThreadPageVm.ForumThreadEntity = newThreadEntity;
-
-                        await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
-
-                        var tabManager = new TabManager();
-                        await tabManager.AddThreadToTabListAsync(newThreadEntity);
-                        Locator.ViewModels.ThreadPageVm.LinkedThreads.Add(newThreadEntity);
+                       
                         break;
                     default:
                         var msgDlg = new MessageDialog("Not working yet!")

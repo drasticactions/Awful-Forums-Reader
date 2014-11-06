@@ -13,12 +13,58 @@ namespace AwfulForumsReader.ViewModels
         private bool _isLoading;
         private ImgurAddImageCommand _imgurAddImageCommand = new ImgurAddImageCommand();
         private NavigateToPostIconPageCommand _navigateToPostIconPageCommand = new NavigateToPostIconPageCommand();
-        private NavigateToPreviewThreadCommand _navigateToPreviewThreadCommand = new NavigateToPreviewThreadCommand();
+        private NavigateToNewThreadPreviewCommand _navigateToPreviewThreadCommand = new NavigateToNewThreadPreviewCommand();
         private NavigateToBbCodePageCommand _navigateToBbCodePageCommand = new NavigateToBbCodePageCommand();
         private NavigateToSmiliesPageCommand _navigateToSmiliesPageCommand = new NavigateToSmiliesPageCommand();
         private PostThreadReplyCommand _postThreadReplyCommand = new PostThreadReplyCommand();
-        private ForumThreadEntity _forumThreadEntity;
+        private NavigateToLastPostPageCommand _navigateToLastPostPageCommand = new NavigateToLastPostPageCommand();
+        private NavigateToEditThreadPreviewCommand _navigateToEditThreadPreviewCommand = new NavigateToEditThreadPreviewCommand();
+        private ForumReplyEntity _forumReplyEntity;
+        private EditThreadReplyCommand _editThreadReplyCommand = new EditThreadReplyCommand();
 
+        public NavigateToEditThreadPreviewCommand NavigateToEditThreadPreviewCommand
+        {
+            get { return _navigateToEditThreadPreviewCommand; }
+            set { _navigateToEditThreadPreviewCommand = value; }
+        }
+
+        public EditThreadReplyCommand EditThreadReplyCommand
+        {
+            get { return _editThreadReplyCommand; }
+            set { _editThreadReplyCommand = value; }
+        }
+
+        public bool IsEdit { get; set; }
+        public ForumReplyEntity ForumReplyEntity
+        {
+            get { return _forumReplyEntity; }
+            set
+            {
+                SetProperty(ref _forumReplyEntity, value);
+                OnPropertyChanged();
+            }
+        }
+
+
+
+        public NavigateToLastPostPageCommand NavigateToLastPostPageCommand
+        {
+            get { return _navigateToLastPostPageCommand; }
+            set { _navigateToLastPostPageCommand = value; }
+        }
+
+        private ForumThreadEntity _forumThreadEntity;
+        private string _postBody;
+
+        public string PostBody
+        {
+            get { return _postBody; }
+            set
+            {
+                SetProperty(ref _postBody, value);
+                OnPropertyChanged();
+            }
+        }
         public ForumThreadEntity ForumThreadEntity
         {
             get { return _forumThreadEntity; }
@@ -47,7 +93,7 @@ namespace AwfulForumsReader.ViewModels
             set { _navigateToBbCodePageCommand = value; }
         }
 
-        public NavigateToPreviewThreadCommand NavigateToPreviewThreadCommand
+        public NavigateToNewThreadPreviewCommand NavigateToPreviewThreadCommand
         {
             get { return _navigateToPreviewThreadCommand; }
             set { _navigateToPreviewThreadCommand = value; }

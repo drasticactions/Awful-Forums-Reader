@@ -25,7 +25,7 @@ namespace AwfulForumsReader.ViewModels
         private ForwardThreadPageCommand _forwardThreadPageCommand = new ForwardThreadPageCommand();
         private BackThreadPageCommand _backThreadPageCommand = new BackThreadPageCommand();
         private RefreshThreadPageCommand _refreshThreadPageCommand = new RefreshThreadPageCommand();
-
+        public int QuoteId { get; set; }
         public RefreshThreadPageCommand RefreshThreadPageCommand
         {
             get { return _refreshThreadPageCommand; }

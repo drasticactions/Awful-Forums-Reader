@@ -1,7 +1,7 @@
 ﻿<Page
     x:Name="pageRoot"
-    x:Class="AwfulForumsReader.Pages.BbCodeListPage"
-    DataContext="{Binding Source={StaticResource Locator}, Path=BbCodeListVm}"
+    x:Class="AwfulForumsReader.Pages.SmiliesPage"
+    DataContext="{Binding Source={StaticResource Locator}, Path=SmiliesPageVm}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:AwfulForumsReader.Pages"
@@ -16,10 +16,10 @@
         <x:String x:Key="AppName">My Application</x:String>
         <CollectionViewSource
             x:Name="ForumViewSource"
-            Source="{Binding BbCodeList}"
-            d:Source="{Binding BbCodeList}"
+            Source="{Binding SmileCategoryList}"
+            d:Source="{Binding SmileCategoryList}"
             IsSourceGrouped="True"
-            ItemsPath="BbCodes" />
+            ItemsPath="SmileList" />
     </Page.Resources>
 
     <!--
@@ -39,7 +39,7 @@
         </Grid.RowDefinitions>
 
         <!-- Back button and page title -->
-        <Grid x:Name="grid1" Background="{StaticResource AwfulBlue}" RequestedTheme="Dark">
+        <Grid RequestedTheme="Dark" Background="{StaticResource AwfulBlue}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="120" />
                 <ColumnDefinition Width="*" />
@@ -51,11 +51,35 @@
                     HorizontalAlignment="Center"
                     AutomationProperties.Name="Back"
                     AutomationProperties.AutomationId="BackButton"
-                    AutomationProperties.ItemType="Navigation Button" RequestedTheme="Dark" />
-            <TextBlock x:Name="pageTitle" Text="BB Code" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1"
+                    AutomationProperties.ItemType="Navigation Button" />
+            <TextBlock x:Name="pageTitle" Text="Smilies" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1"
                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Center" />
-        </Grid>  
+        </Grid>
         <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <SearchBox x:Name="FilterBox" Margin="15" Width="300" PlaceholderText="Filter..." HorizontalAlignment="Left" Grid.Row="0">
+                <triggers:Interactions.Triggers>
+                    <triggers:EventTrigger EventName="SuggestionsRequested">
+                        <triggers:InvokeCommandAction Command="{Binding SmiliesFilterOnSuggestedQuery}"
+                                                                  PassEventArgsToCommand="True" />
+                    </triggers:EventTrigger>
+                    <triggers:EventTrigger EventName="QuerySubmitted">
+                        <triggers:InvokeCommandAction Command="{Binding SmiliesFilterOnSubmittedQuery}"
+                                                                  PassEventArgsToCommand="True" />
+                    </triggers:EventTrigger>
+                    <triggers:EventTrigger EventName="QueryChanged">
+                        <triggers:InvokeCommandAction Command="{Binding SmiliesFilterOnChangedQuery}"
+                                                                  PassEventArgsToCommand="True" />
+                    </triggers:EventTrigger>
+                </triggers:Interactions.Triggers>
+            </SearchBox>
+            <Grid Canvas.ZIndex="1" Grid.Row="1" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" >
+                <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Height="50"/>
+                <Rectangle Fill="White" Opacity=".5"/>
+            </Grid>
             <GridView
                 x:Name="ItemGridView"
                 Margin="15"
@@ -68,7 +92,7 @@
                 HorizontalAlignment="Stretch">
                 <triggers:Interactions.Triggers>
                     <triggers:EventTrigger EventName="ItemClick">
-                        <triggers:InvokeCommandAction Command="{Binding AddBbCodeToTextboxCommand}"
+                        <triggers:InvokeCommandAction Command="{Binding SmiliesFilterOnItemClick}"
                                                                   PassEventArgsToCommand="True" />
                     </triggers:EventTrigger>
                 </triggers:Interactions.Triggers>
@@ -90,16 +114,13 @@
                     <GroupStyle>
                         <GroupStyle.HeaderTemplate>
                             <DataTemplate>
-                                <Grid Margin="1,0,0,6">
-                                    <Button Foreground="{StaticResource ApplicationHeaderForegroundThemeBrush}"
-                                            AutomationProperties.Name="Group Title"
-                                            Style="{StaticResource TextBlockButtonStyle}">
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="{Binding Name}" Margin="3,-7,10,10"
-                                                       Style="{StaticResource SubheaderTextBlockStyle}"
-                                                       TextWrapping="NoWrap" />
-                                        </StackPanel>
-                                    </Button>
+                                <Grid Margin="5,0,0,5" Width="225">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="{Binding Name}" Style="{StaticResource SubheaderTextBlockStyle}" Foreground="Black" VerticalAlignment="Center"/>
+                                    <Rectangle Grid.Row="1" Fill="GreenYellow" Height="1" Margin="0,7,0,0"/>
                                 </Grid>
                             </DataTemplate>
                         </GroupStyle.HeaderTemplate>

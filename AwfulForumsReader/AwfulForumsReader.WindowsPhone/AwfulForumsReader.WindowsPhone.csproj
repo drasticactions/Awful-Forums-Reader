@@ -86,6 +86,9 @@
     <Compile Include="Pages\BookmarksPage.xaml.cs">
       <DependentUpon>BookmarksPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\LastPostPage.xaml.cs">
+      <DependentUpon>LastPostPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,9 @@
     </Compile>
     <Compile Include="Pages\PostIconListPage.xaml.cs">
       <DependentUpon>PostIconListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PreviewThreadPage.xaml.cs">
+      <DependentUpon>PreviewThreadPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PrivateMessageList.xaml.cs">
       <DependentUpon>PrivateMessageList.xaml</DependentUpon>
@@ -141,6 +147,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\LastPostPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -158,6 +168,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PostIconListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PreviewThreadPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

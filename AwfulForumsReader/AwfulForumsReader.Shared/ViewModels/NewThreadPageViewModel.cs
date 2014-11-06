@@ -13,12 +13,47 @@ namespace AwfulForumsReader.ViewModels
         private bool _isLoading;
         private ImgurAddImageCommand _imgurAddImageCommand = new ImgurAddImageCommand();
         private NavigateToPostIconPageCommand _navigateToPostIconPageCommand = new NavigateToPostIconPageCommand();
-        private NavigateToPreviewThreadCommand _navigateToPreviewThreadCommand = new NavigateToPreviewThreadCommand();
+        private NavigateToNewThreadPreviewCommand _navigateToPreviewThreadCommand = new NavigateToNewThreadPreviewCommand();
         private NavigateToBbCodePageCommand _navigateToBbCodePageCommand = new NavigateToBbCodePageCommand();
         private NavigateToSmiliesPageCommand _navigateToSmiliesPageCommand = new NavigateToSmiliesPageCommand();
-        private PostThreadReplyCommand _postThreadReplyCommand = new PostThreadReplyCommand();
+        private PostNewThreadCommand _postNewThreadCommand = new PostNewThreadCommand();
+
+
         private ForumEntity _forumEntity;
         private PostIconEntity _postIcon;
+        private NewThreadEntity _newThreadEntity;
+        private string _postBody;
+        private string _postSubject;
+
+        public NewThreadEntity NewThreadEntity
+        {
+            get { return _newThreadEntity; }
+            set
+            {
+                SetProperty(ref _newThreadEntity, value);
+                OnPropertyChanged();
+            }
+        }
+
+        public string PostSubject
+        {
+            get { return _postSubject; }
+            set
+            {
+                SetProperty(ref _postSubject, value);
+                OnPropertyChanged();
+            }
+        }
+
+        public string PostBody
+        {
+            get { return _postBody; }
+            set
+            {
+                SetProperty(ref _postBody, value);
+                OnPropertyChanged();
+            }
+        }
 
         public PostIconEntity PostIcon
         {
@@ -40,10 +75,10 @@ namespace AwfulForumsReader.ViewModels
             }
         }
 
-        public PostThreadReplyCommand PostThreadReplyCommand
+        public PostNewThreadCommand PostNewThreadReplyCommand
         {
-            get { return _postThreadReplyCommand; }
-            set { _postThreadReplyCommand = value; }
+            get { return _postNewThreadCommand; }
+            set { _postNewThreadCommand = value; }
         }
 
         public NavigateToSmiliesPageCommand NavigateToSmiliesPageCommand
@@ -58,7 +93,7 @@ namespace AwfulForumsReader.ViewModels
             set { _navigateToBbCodePageCommand = value; }
         }
 
-        public NavigateToPreviewThreadCommand NavigateToPreviewThreadCommand
+        public NavigateToNewThreadPreviewCommand NavigateToPreviewThreadCommand
         {
             get { return _navigateToPreviewThreadCommand; }
             set { _navigateToPreviewThreadCommand = value; }

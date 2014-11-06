@@ -69,6 +69,13 @@
                         </Flyout>
                     </Button.Flyout>
                 </Button>
+                <AppBarButton x:Name="ReplyButton" Label="Reply" Icon="Upload">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="Click">
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToNewReplyCommand}" PassEventArgsToCommand="True"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                </AppBarButton>
                 <AppBarButton Label="Thread Tabs" Icon="World">
                     <AppBarButton.Flyout>
                         <Flyout Placement="Right">
@@ -146,13 +153,7 @@
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>
-                <AppBarButton x:Name="ReplyButton" Label="Reply" Icon="Upload">
-                    <triggers:Interactions.Triggers>
-                        <triggers:EventTrigger EventName="Click">
-                            <triggers:InvokeCommandAction Command="{Binding NavigateToNewReplyCommand}" PassEventArgsToCommand="True"/>
-                        </triggers:EventTrigger>
-                    </triggers:Interactions.Triggers>
-                </AppBarButton>
+                
                 <AppBarButton x:Name="BackButton" IsEnabled="{Binding ForumThreadEntity, Converter={StaticResource BackButtonEnableConverter}, Mode=TwoWay }" Label="Back Page"
                               Icon="Back">
                     <triggers:Interactions.Triggers>

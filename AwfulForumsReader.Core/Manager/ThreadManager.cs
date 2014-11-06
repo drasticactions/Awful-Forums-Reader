@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -548,6 +550,81 @@ namespace AwfulForumsReader.Core.Manager
                         Constants.ResetSeen, threadId
                         ));
             return true;
+        }
+
+        public async Task<string> CreateNewThreadPreview(NewThreadEntity newThreadEntity)
+        {
+            if (newThreadEntity == null)
+                return string.Empty;
+            var form = new MultipartFormDataContent
+            {
+                {new StringContent("postthread"), "action"},
+                {new StringContent(newThreadEntity.Forum.ForumId.ToString(CultureInfo.InvariantCulture)), "forumid"},
+                {new StringContent(newThreadEntity.FormKey), "formkey"},
+                {new StringContent(newThreadEntity.FormCookie), "form_cookie"},
+                {new StringContent(newThreadEntity.PostIcon.Id.ToString(CultureInfo.InvariantCulture)), "iconid"},
+                {new StringContent(Extensions.HtmlEncode(newThreadEntity.Subject)), "subject"},
+                {new StringContent(Extensions.HtmlEncode(newThreadEntity.Content)), "message"},
+                {new StringContent(newThreadEntity.ParseUrl.ToString()), "parseurl"},
+                {new StringContent("Submit Post"), "submit"},
+                {new StringContent("Preview Post"), "preview"}
+            };
+
+            // We post to SA the same way we would for a normal reply, but instead of getting a redirect back to the
+            // thread, we'll get redirected to back to the reply screen with the preview message on it.
+            // From here we can parse that preview and return it to the user.
+            try
+            {
+                HttpResponseMessage response = await _webManager.PostFormData(Constants.NewThreadBase, form);
+                Stream stream = await response.Content.ReadAsStreamAsync();
+                using (var reader = new StreamReader(stream))
+                {
+                    string html = reader.ReadToEnd();
+                    var doc = new HtmlDocument();
+                    doc.LoadHtml(html);
+                    HtmlNode[] replyNodes = doc.DocumentNode.Descendants("div").ToArray();
+
+                    HtmlNode previewNode =
+                        replyNodes.FirstOrDefault(node => node.GetAttributeValue("class", "").Equals("inner postbody"));
+                    return previewNode == null ? string.Empty : FixPostHtml(previewNode.OuterHtml);
+                }
+            }
+            catch (Exception exception)
+            {
+                throw new Exception("Failed to get preview HTML", exception);
+            }
+        }
+
+        private static string FixPostHtml(String postHtml)
+        {
+            // TODO: Remove Windows specific header.
+            return "<!DOCTYPE html><html>" + Constants.HtmlHeader + "<body>" + postHtml + "</body></html>";
+        }
+
+        public async Task<bool> CreateNewThreadAsync(NewThreadEntity newThreadEntity)
+        {
+            if (newThreadEntity == null)
+                return false;
+            var form = new MultipartFormDataContent
+            {
+                {new StringContent("postthread"), "action"},
+                {new StringContent(newThreadEntity.Forum.ForumId.ToString(CultureInfo.InvariantCulture)), "forumid"},
+                {new StringContent(newThreadEntity.FormKey), "formkey"},
+                {new StringContent(newThreadEntity.FormCookie), "form_cookie"},
+                {new StringContent(newThreadEntity.PostIcon.Id.ToString(CultureInfo.InvariantCulture)), "iconid"},
+                {new StringContent(Extensions.HtmlEncode(newThreadEntity.Subject)), "subject"},
+                {new StringContent(Extensions.HtmlEncode(newThreadEntity.Content)), "message"},
+                {new StringContent(newThreadEntity.ParseUrl.ToString()), "parseurl"},
+                {new StringContent("Submit Reply"), "submit"}
+            };
+            HttpResponseMessage response = await _webManager.PostFormData(Constants.NewThreadBase, form);
+
+            return response.IsSuccessStatusCode;
+        }
+
+        public async Task MarkPostAsLastReadAs(ForumThreadEntity forumThreadEntity, int index)
+        {
+            await _webManager.GetData(string.Format(Constants.LastRead, index, forumThreadEntity.ThreadId));
         }
     }
 }

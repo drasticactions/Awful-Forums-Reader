@@ -18,9 +18,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\AddBbCodeToTextboxCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveBookmarkCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveFavoriteCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveThreadToNotificationTableCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\AddSmilieToTextBoxCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\BackThreadPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\ChangeTabsCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\ForwardThreadPageCommand.cs" />
@@ -29,18 +31,20 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\LogoutCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToBbCodePageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToBookmarksCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToLastPostPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToMainForumPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToNewPrivateMessagePageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToNewReplyCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToNewThreadCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToNewThreadPreviewCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToPostIconPageCommand.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToPreviewThreadCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToPrivateMessageListPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToSettingsCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToSmiliesPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToThreadListPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToThreadPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\PickPostIconCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\PostNewThreadCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\PostThreadReplyCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshBookmarkListCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshPrivateMessageListCommand.cs" />
@@ -48,8 +52,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshThreadPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RemoveTabCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\ScrollToBottomThreadPageCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\SmiliesFilterOnSuggestedQuery.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\ThreadDomContentLoadedCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\UnreadThreadCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\WebViewLastPostNotifyCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\WebViewNotifyCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\AlwaysExecutableCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\AsyncDelegateCommand.cs" />
@@ -76,6 +82,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\PrivateMessageScrollingCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\RatingVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\RepliesSinceLastOpenedColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\ReplyBoxLocation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\SubforumBodyColorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\SubforumFontColorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\SubforumHeaderColorConverter.cs" />
@@ -89,12 +96,15 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BbCodeListPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BookmarksPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LastPostPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainForumsPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NewThreadPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NewThreadReplyPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PostIconListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PreviewThreadPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PrivateMessageListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SmiliesPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ThreadListPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ThreadPageViewModel.cs" />
   </ItemGroup>

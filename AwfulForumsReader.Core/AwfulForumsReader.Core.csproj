@@ -38,6 +38,7 @@
     <Compile Include="Entity\ForumCategoryEntity.cs" />
     <Compile Include="Entity\ForumEntity.cs" />
     <Compile Include="Entity\ForumPostEntity.cs" />
+    <Compile Include="Entity\ForumReplyEntity.cs" />
     <Compile Include="Entity\ForumThreadEntity.cs" />
     <Compile Include="Entity\ForumUserEntity.cs" />
     <Compile Include="Entity\ImgurEntity.cs" />
@@ -46,6 +47,7 @@
     <Compile Include="Entity\PostIconCategoryEntity.cs" />
     <Compile Include="Entity\PostIconEntity.cs" />
     <Compile Include="Entity\PrivateMessageEntity.cs" />
+    <Compile Include="Entity\SmileCategoryEntity.cs" />
     <Compile Include="Exceptions\ForumListParsingFailedException.cs" />
     <Compile Include="Exceptions\LoginFailedException.cs" />
     <Compile Include="Exceptions\WebManagerException.cs" />
@@ -60,6 +62,8 @@
     <Compile Include="Manager\PostIconManager.cs" />
     <Compile Include="Manager\PostManager.cs" />
     <Compile Include="Manager\PrivateMessageManager.cs" />
+    <Compile Include="Manager\ReplyManager.cs" />
+    <Compile Include="Manager\SmileManager.cs" />
     <Compile Include="Manager\ThreadManager.cs" />
     <Compile Include="Manager\WebManager.cs" />
     <Compile Include="Properties\Annotations.cs" />

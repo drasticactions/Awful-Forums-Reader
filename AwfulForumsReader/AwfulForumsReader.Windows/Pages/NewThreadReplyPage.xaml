@@ -66,6 +66,16 @@
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>
+                <AppBarButton x:Name="LastPostsButton" Label="Last Post">
+                    <AppBarButton.Icon>
+                        <PathIcon Data="M30.5263175964355,22.3684215545654L30.5263175964355,25.7894744873047 25.7894744873047,30.0000019073486 21.0526313781738,25.5263175964355 21.0526313781738,22.3684215545654 24.2105274200439,25.1527900695801 24.2105274200439,18.684211730957 23.7762432098389,16.5331172943115 22.5919094085693,14.7765140533447 20.8353061676025,13.5921792984009 18.684211730957,13.1578950881958 16.5331172943115,13.5921792984009 14.7765140533447,14.7765140533447 13.5921792984009,16.5331172943115 13.1578950881958,18.684211730957 13.5682468414307,20.7778129577637 14.6907634735107,22.5042381286621 16.3626346588135,23.7006893157959 18.4210529327393,24.2043685913086 18.4210529327393,27.3645267486572 15.1332426071167,26.6116199493408 12.4576187133789,24.7377433776855 10.6584491729736,22.0071811676025 10,18.684211730957 10.682448387146,15.3039245605469 12.5435466766357,12.5435466766357 15.3039245605469,10.682448387146 18.684211730957,10 22.0644989013672,10.682448387146 24.8248748779297,12.5435466766357 26.6859741210938,15.3039245605469 27.3684215545654,18.684211730957 27.3684215545654,25.1973686218262 30.5263175964355,22.3684215545654z"/>
+                    </AppBarButton.Icon>
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="Click">
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToLastPostPageCommand}" CommandParameter="{Binding Source, Source={StaticResource ThreadReplyText}}" PassEventArgsToCommand="True"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                </AppBarButton>
                 <AppBarButton x:Name="SimilesButton" Label="Smilies">
                     <AppBarButton.Icon>
                         <SymbolIcon/>
@@ -92,7 +102,7 @@
                     </AppBarButton.Icon>
                     <triggers:Interactions.Triggers>
                         <triggers:EventTrigger EventName="Click">
-                            <triggers:InvokeCommandAction Command="{Binding  NavigateToPreviewThreadCommand}" CommandParameter="{Binding Source, Source={StaticResource ThreadReplyText}}" PassEventArgsToCommand="True"/>
+                            <triggers:InvokeCommandAction Command="{Binding  NavigateToEditThreadPreviewCommand}" CommandParameter="{Binding Source, Source={StaticResource ThreadReplyText}}" PassEventArgsToCommand="True"/>
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>
@@ -116,8 +126,12 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBox IsSpellCheckEnabled="True" AcceptsReturn="True" Grid.Row="1"
-                             HorizontalAlignment="Stretch" Margin="15" FontSize="20" x:Name="ReplyText" TextWrapping="Wrap" />
+                <Grid Canvas.ZIndex="1" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" >
+                    <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Height="50"/>
+                    <Rectangle Fill="White" Opacity=".5"/>
+                </Grid>
+                <TextBox IsSpellCheckEnabled="True" AcceptsReturn="True"
+                             HorizontalAlignment="Stretch" Margin="15" FontSize="20" x:Name="ReplyText" Text="{Binding PostBody, Mode=TwoWay}" TextWrapping="Wrap" />
             </Grid>
         </Grid>
     </Grid>

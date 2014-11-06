@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
+using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Core.Entity;
 using AwfulForumsReader.Core.Manager;
@@ -17,6 +18,13 @@ namespace AwfulForumsReader.ViewModels
         private bool _isLoading;
         private TextBox _replyBox;
         private ObservableCollection<BbCodeCategoryEntity> _bbCodeList = new ObservableCollection<BbCodeCategoryEntity>();
+        private AddBbCodeToTextboxCommand _addBbCodeToTextboxCommand = new AddBbCodeToTextboxCommand();
+        public ReplyBoxLocation ReplyBoxLocation { get; set; }
+        public AddBbCodeToTextboxCommand AddBbCodeToTextboxCommand
+        {
+            get { return _addBbCodeToTextboxCommand; }
+            set { _addBbCodeToTextboxCommand = value; }
+        }
 
         public ObservableCollection<BbCodeCategoryEntity> BbCodeList
         {

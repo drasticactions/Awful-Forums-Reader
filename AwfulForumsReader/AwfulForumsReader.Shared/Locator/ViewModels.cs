@@ -18,9 +18,24 @@ namespace AwfulForumsReader.Locator
             }
         }
 
+        public static SmiliesPageViewModel SmiliesPageVm
+        {
+            get { return App.Container.Resolve<SmiliesPageViewModel>(); }
+        }
+
+        public static LastPostPageViewModel LastPostPageVm
+        {
+            get { return App.Container.Resolve<LastPostPageViewModel>(); }
+        }
+
         public static MainForumsPageViewModel MainForumsPageVm
         {
             get { return App.Container.Resolve<MainForumsPageViewModel>(); }
+        }
+
+        public static PreviewThreadPageViewModel PreviewThreadPageVm
+        {
+            get { return App.Container.Resolve<PreviewThreadPageViewModel>(); }
         }
 
 

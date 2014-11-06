@@ -8,27 +8,20 @@ namespace AwfulForumsReader.Core.Entity
 {
     public class BbCodeCategoryEntity
     {
-        public BbCodeCategoryEntity(string category, List<BbCodeEntity> bbCodes)
+        public BbCodeCategoryEntity()
         {
-            BbCodes = bbCodes;
-            Category = category;
+            BbCodes = new List<BbCodeEntity>();
         }
 
-        public List<BbCodeEntity> BbCodes { get; private set; }
+        public virtual ICollection<BbCodeEntity> BbCodes { get; set; }
 
-        public string Category { get; private set; }
+        public string Name { get; set; }
     }
 
     public class BbCodeEntity
     {
-        public BbCodeEntity(string title, string code)
-        {
-            Title = title;
-            Code = code;
-        }
+        public string Title { get; set; }
 
-        public string Title { get; private set; }
-
-        public string Code { get; private set; }
+        public string Code { get; set; }
     }
 }
