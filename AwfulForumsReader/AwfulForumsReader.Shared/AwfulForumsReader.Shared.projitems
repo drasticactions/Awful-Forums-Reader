@@ -40,6 +40,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToSmiliesPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToThreadListPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToThreadPageCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\PickPostIconCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\PostThreadReplyCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshBookmarkListCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshPrivateMessageListCommand.cs" />

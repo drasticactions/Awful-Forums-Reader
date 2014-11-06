@@ -18,6 +18,17 @@ namespace AwfulForumsReader.ViewModels
         private NavigateToSmiliesPageCommand _navigateToSmiliesPageCommand = new NavigateToSmiliesPageCommand();
         private PostThreadReplyCommand _postThreadReplyCommand = new PostThreadReplyCommand();
         private ForumEntity _forumEntity;
+        private PostIconEntity _postIcon;
+
+        public PostIconEntity PostIcon
+        {
+            get { return _postIcon; }
+            set
+            {
+                SetProperty(ref _postIcon, value);
+                OnPropertyChanged();
+            }
+        }
 
         public ForumEntity ForumEntity
         {

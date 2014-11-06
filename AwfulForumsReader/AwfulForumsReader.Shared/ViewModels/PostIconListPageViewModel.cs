@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
+using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Core.Entity;
 using AwfulForumsReader.Core.Manager;
@@ -19,6 +20,13 @@ namespace AwfulForumsReader.ViewModels
         private ObservableCollection<PostIconEntity> _postIconEntities = new ObservableCollection<PostIconEntity>();
         private ForumEntity _forumEntity;
         private TextBox _replyBox;
+        private PickPostIconCommand _pickPostIconCommand = new PickPostIconCommand();
+
+        public PickPostIconCommand PickPostIconCommand
+        {
+            get { return _pickPostIconCommand; }
+            set { _pickPostIconCommand = value; }
+        }
 
         public TextBox ReplyBox
         {
@@ -58,6 +66,7 @@ namespace AwfulForumsReader.ViewModels
 
         public async Task Initialize()
         {
+            
             ForumEntity = Locator.ViewModels.ThreadListPageVm.ForumEntity;
             if (PostIconEntities == null || !PostIconEntities.Any())
             {

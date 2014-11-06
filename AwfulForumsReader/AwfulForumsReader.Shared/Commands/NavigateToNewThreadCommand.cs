@@ -4,6 +4,7 @@ using System.Text;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Common;
+using AwfulForumsReader.Core.Entity;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
 using AwfulForumsReader.ViewModels;
@@ -32,6 +33,12 @@ namespace AwfulForumsReader.Commands
             if (vm == null)
                 return;
             Locator.ViewModels.NewThreadVm.ForumEntity = vm.ForumEntity;
+            Locator.ViewModels.NewThreadVm.PostIcon = new PostIconEntity()
+            {
+                Id = 0,
+                ImageUrl = "/Assets/ThreadTags/shitpost.png",
+                Title = "Shit Post"
+            };
             App.RootFrame.Navigate(typeof (NewThreadPage));
         }
     }

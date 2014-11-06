@@ -8,6 +8,7 @@
     xmlns:common="using:AwfulForumsReader.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:triggers="using:WinRT.Triggers"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -59,6 +60,12 @@
                 IsSwipeEnabled="false"
                 IsItemClickEnabled="True"
                 HorizontalAlignment="Stretch">
+                <triggers:Interactions.Triggers>
+                    <triggers:EventTrigger EventName="ItemClick">
+                        <triggers:InvokeCommandAction Command="{Binding PickPostIconCommand}"
+                                                                  PassEventArgsToCommand="True" />
+                    </triggers:EventTrigger>
+                </triggers:Interactions.Triggers>
                 <GridView.ItemTemplate>
                     <DataTemplate>
                         <Grid HorizontalAlignment="Left" Width="125" Height="180">
