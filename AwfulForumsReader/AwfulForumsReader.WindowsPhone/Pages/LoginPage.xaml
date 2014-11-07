@@ -28,10 +28,17 @@
         <Grid Grid.Row="1" x:Name="ContentRoot">
             <StackPanel VerticalAlignment="Top" Margin="15">
                 <ProgressBar IsIndeterminate="True" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter} }"></ProgressBar>
-                <TextBox Name="Username" PlaceholderText="Username" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-                <PasswordBox  Name="Password" PlaceholderText="Password" Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <TextBox Name="Username" Header="Username" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <PasswordBox  Name="Password" Header="Password" Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
                 <Button Command="{Binding ClickLoginButtonCommand}" x:Name="LoginButton" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Content="Login"/>
-                <Image Source="../Assets/Login/Dontrel-Awful2.png"/>
+                <Grid Margin="15">
+                    <TextBlock HorizontalAlignment="Center" Style="{StaticResource HeaderTextBlockStyle}"  TextAlignment="Center" TextWrapping="WrapWholeWords"
+                       FontSize="30" Margin="0,0,0,25" VerticalAlignment="Center">
+                    <Run Text="I fully support this product and / or service. This guy's the Thembi Mahwayi of Something Awful™"/>
+                    <LineBreak />
+                    <Run Text="-Lowtax"></Run>
+                    </TextBlock>
+                </Grid>
             </StackPanel>
         </Grid>
     </Grid>
