@@ -63,8 +63,14 @@
                                 <Viewbox Margin="5" Height="40">
                                     <TextBlock Text="{Binding ForumThreadEntity, Converter={StaticResource TotalPageConverter}}"/>
                                 </Viewbox>
-                                <TextBox InputScope="Number" Margin="5" x:Name="PageNumberTextBox"/>
-                                <Button Margin="5" x:Name="PageNumberButton" Content="Change Page"/>
+                                <TextBox InputScope="Number" Text="{Binding PageSelection, Mode=TwoWay}" Margin="5" x:Name="PageNumberTextBox"/>
+                                <Button Margin="5" x:Name="PageNumberButton" Content="Change Page">
+                                    <triggers:Interactions.Triggers>
+                                        <triggers:EventTrigger EventName="Click">
+                                            <triggers:InvokeCommandAction Command="{Binding ChangePageThreadCommand}" PassEventArgsToCommand="True"/>
+                                        </triggers:EventTrigger>
+                                    </triggers:Interactions.Triggers>
+                                </Button>
                             </StackPanel>
                         </Flyout>
                     </Button.Flyout>

@@ -12,6 +12,13 @@ namespace AwfulForumsReader.ViewModels
         private PrivateMessageScrollingCollection _privateMessageScrollingCollection;
         private NavigateToNewPrivateMessagePageCommand _navigateToNewPrivateMessagePageCommand = new NavigateToNewPrivateMessagePageCommand();
         private RefreshPrivateMessageListCommand _refreshPrivateMessageListCommand = new RefreshPrivateMessageListCommand();
+        private NavigateToPrivateMessagePageCommand _navigateToPrivateMessagePageCommand = new NavigateToPrivateMessagePageCommand();
+
+        public NavigateToPrivateMessagePageCommand NavigateToPrivateMessagePageCommand
+        {
+            get { return _navigateToPrivateMessagePageCommand; }
+            set { _navigateToPrivateMessagePageCommand = value; }
+        }
 
         public RefreshPrivateMessageListCommand RefreshPrivateMessageListCommand
         {

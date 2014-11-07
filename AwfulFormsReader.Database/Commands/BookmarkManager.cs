@@ -49,6 +49,14 @@ namespace AwfulForumsReader.Database.Commands
             return updatedBookmarkList;
         }
 
+        public async Task<ForumThreadEntity> GetBookmarkThreadAsync(long threadId)
+        {
+            using (var db = new MainForumListContext())
+            {
+               return await db.BookmarkThreads.FirstOrDefaultAsync(node => node.ThreadId == threadId);
+            }
+        }
+
         private async Task<List<ForumThreadEntity>> GetBookmarkedThreadsAsync()
         {
             var bookmarkThreads = new List<ForumThreadEntity>();

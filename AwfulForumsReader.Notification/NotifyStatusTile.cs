@@ -49,7 +49,7 @@ namespace AwfulForumsReader.Notification
             }
             imageElement[0].Attributes[1].NodeValue = imageName;
             IXmlNode toastNode = notificationXml.SelectSingleNode("/toast");
-            string test = "{" + string.Format("type:'toast'") + "}";
+            string test = "{" + string.Format("type:'toast', 'threadId':{0}", forumThread.ThreadId) + "}";
             var xmlElement = (XmlElement)toastNode;
             if (xmlElement != null) xmlElement.SetAttribute("launch", test);
             var toastNotification = new ToastNotification(notificationXml);

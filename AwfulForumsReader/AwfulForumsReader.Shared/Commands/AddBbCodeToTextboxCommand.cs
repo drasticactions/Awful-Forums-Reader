@@ -43,6 +43,9 @@ namespace AwfulForumsReader.Commands
                 case ReplyBoxLocation.NewReply:
                     Locator.ViewModels.NewThreadReplyVm.PostBody = Locator.ViewModels.BbCodeListVm.ReplyBox.Text;
                     break;
+                    case ReplyBoxLocation.PrivateMessage:
+                    Locator.ViewModels.NewPrivateMessagePageVm.PostBody = Locator.ViewModels.BbCodeListVm.ReplyBox.Text;
+                    break;
                 default:
                     throw new Exception("Unsupported type");
             }

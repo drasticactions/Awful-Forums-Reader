@@ -87,6 +87,12 @@
                 <ListView RequestedTheme="Light"  x:Name="PrivateMessageList" ItemsSource="{Binding PrivateMessageScrollingCollection}"
                       HorizontalAlignment="Stretch" IsSwipeEnabled="True" Grid.Column="0" SelectionMode="Extended"
                       IsItemClickEnabled="True">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="ItemClick">
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToPrivateMessagePageCommand}"
+                                                                  PassEventArgsToCommand="True" />
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch" />

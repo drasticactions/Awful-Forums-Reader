@@ -64,20 +64,20 @@ namespace AwfulForumsReader.Tools
                 threadHtml += showThreadsButton;
 
                 threadHtml += "</div><div style=\"display: none;\" id=\"hiddenPosts\">";
-                threadHtml += ParsePosts(0, forumThreadEntity.ScrollToPost, postEntities);
+                threadHtml += ParsePosts(0, forumThreadEntity.ScrollToPost, postEntities, forumThreadEntity.IsPrivateMessage);
                 threadHtml += "</div>";
-                threadHtml += ParsePosts(forumThreadEntity.ScrollToPost, postEntities.Count, postEntities);
+                threadHtml += ParsePosts(forumThreadEntity.ScrollToPost, postEntities.Count, postEntities, forumThreadEntity.IsPrivateMessage);
             }
             else
             {
-                threadHtml += ParsePosts(0, postEntities.Count, postEntities);
+                threadHtml += ParsePosts(0, postEntities.Count, postEntities, forumThreadEntity.IsPrivateMessage);
             }
 
             bodyNode.InnerHtml = threadHtml;
             return doc2.DocumentNode.OuterHtml;
         }
 
-        private static string ParsePosts(int startingCount, int endCount, List<ForumPostEntity> postEntities)
+        private static string ParsePosts(int startingCount, int endCount, List<ForumPostEntity> postEntities, bool isPrivateMessage)
         {
             int seenCount = 1;
             string threadHtml = string.Empty;
@@ -104,7 +104,11 @@ namespace AwfulForumsReader.Tools
                 string userInfo = string.Format("<div class=\"userinfo\">{0}{1}</div>", username, postData);
                 string postButtons = CreateButtons(post);
 
-                string footer = string.Format("<tr class=\"postbar\"><td class=\"postlinks\">{0}</td></tr>", postButtons);
+                string footer = string.Empty;
+                if (!isPrivateMessage)
+                {
+                    footer = string.Format("<tr class=\"postbar\"><td class=\"postlinks\">{0}</td></tr>", postButtons);
+                }
                 threadHtml +=
                     string.Format(
                         "<div class={6} id={4}><div id={5}><div id=\"threadView\"><header>{0}{1}</header><article><div class=\"article-content\">{2}</div></article><footer>{3}</footer></div></div></div>",

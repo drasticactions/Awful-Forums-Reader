@@ -64,13 +64,20 @@ namespace AwfulForumsReader.ViewModels
             }
         }
 
+        public ReplyBoxLocation ReplyBoxLocation { get; set; }
+
         public async Task Initialize()
         {
             
             ForumEntity = Locator.ViewModels.ThreadListPageVm.ForumEntity;
-            if (PostIconEntities == null || !PostIconEntities.Any())
+            if ((PostIconEntities == null || !PostIconEntities.Any()) && ForumEntity != null)
             {
                 var test = await _postIconManager.GetPostIcons(ForumEntity);
+                PostIconEntities = test.First().List.ToObservableCollection();
+            }
+            else
+            {
+                var test = await _postIconManager.GetPmPostIcons();
                 PostIconEntities = test.First().List.ToObservableCollection();
             }
         }

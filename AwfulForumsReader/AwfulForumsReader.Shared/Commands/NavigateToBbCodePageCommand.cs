@@ -28,6 +28,12 @@ namespace AwfulForumsReader.Commands
                 Locator.ViewModels.BbCodeListVm.ReplyBoxLocation = ReplyBoxLocation.NewReply;
             }
 
+            var test3 = replyText.DataContext as NewPrivateMessageViewModel;
+            if (test3 != null)
+            {
+                Locator.ViewModels.SmiliesPageVm.ReplyBoxLocation = ReplyBoxLocation.PrivateMessage;
+            }
+
             Locator.ViewModels.BbCodeListVm.ReplyBox = replyText;
              Locator.ViewModels.BbCodeListVm.Initialize();
             App.RootFrame.Navigate(typeof (BbCodeListPage));

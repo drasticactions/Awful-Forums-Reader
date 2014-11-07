@@ -5,6 +5,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Core.Entity;
+using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.Commands
 {
@@ -22,7 +23,16 @@ namespace AwfulForumsReader.Commands
             {
                 return;
             }
-            Locator.ViewModels.NewThreadVm.PostIcon = postIcon;
+
+            switch (Locator.ViewModels.PostIconListPageVm.ReplyBoxLocation)
+            {
+                case ReplyBoxLocation.NewThread:
+                    Locator.ViewModels.NewThreadVm.PostIcon = postIcon;
+                    break;
+                    case ReplyBoxLocation.PrivateMessage:
+                    Locator.ViewModels.NewPrivateMessagePageVm.PostIcon = postIcon;
+                    break;
+            }
             App.RootFrame.GoBack();
         }
     }

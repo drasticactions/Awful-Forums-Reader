@@ -65,6 +65,6 @@ namespace AwfulForumsReader.Core.Entity
         public PlatformIdentifier PlatformIdentifier { get; set; } 
 
         public ObservableCollection<ForumPostEntity> ForumPosts { get; set; }
-
+        public bool IsPrivateMessage { get; set; }
     }
 }

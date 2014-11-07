@@ -18,6 +18,16 @@ namespace AwfulForumsReader.Locator
             }
         }
 
+        public static NewPrivateMessageViewModel NewPrivateMessagePageVm
+        {
+            get { return App.Container.Resolve<NewPrivateMessageViewModel>(); }
+        }
+
+        public static PrivateMessagePageViewModel PrivateMessagePageVm
+        {
+            get { return App.Container.Resolve<PrivateMessagePageViewModel>(); }
+        }
+
         public static SmiliesPageViewModel SmiliesPageVm
         {
             get { return App.Container.Resolve<SmiliesPageViewModel>(); }

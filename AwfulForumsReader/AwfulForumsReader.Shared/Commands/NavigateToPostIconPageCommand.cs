@@ -4,6 +4,8 @@ using System.Text;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Pages;
+using AwfulForumsReader.Tools;
+using AwfulForumsReader.ViewModels;
 
 namespace AwfulForumsReader.Commands
 {
@@ -15,6 +17,17 @@ namespace AwfulForumsReader.Commands
             if (replyText == null)
             {
                 return;
+            }
+            var test = replyText.DataContext as NewThreadPageViewModel;
+            if (test != null)
+            {
+                Locator.ViewModels.SmiliesPageVm.ReplyBoxLocation = ReplyBoxLocation.NewThread;
+            }
+
+            var test3 = replyText.DataContext as NewPrivateMessageViewModel;
+            if (test3 != null)
+            {
+                Locator.ViewModels.PostIconListPageVm.ReplyBoxLocation = ReplyBoxLocation.PrivateMessage;
             }
 
             Locator.ViewModels.PostIconListPageVm.ReplyBox = replyText;

@@ -24,6 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveThreadToNotificationTableCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddSmilieToTextBoxCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\BackThreadPageCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\ChangePageThreadCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\ChangeTabsCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\ForwardThreadPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\ImgurAddImageCommand.cs" />
@@ -39,6 +40,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToNewThreadPreviewCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToPostIconPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToPrivateMessageListPageCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToPrivateMessagePageCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToReplyPrivateMessagePageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToSettingsCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToSmiliesPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToThreadListPageCommand.cs" />
@@ -52,6 +55,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RefreshThreadPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RemoveTabCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\ScrollToBottomThreadPageCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\SendPrivateMessageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\SmiliesFilterOnSuggestedQuery.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\ThreadDomContentLoadedCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\UnreadThreadCommand.cs" />
@@ -66,6 +70,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\AwfulDebugger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BackButtonEnableConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BackgroundTaskUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\BookmarkSorting.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BookmarkTextConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BooleanToVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\ForwardButtonEnableConverter.cs" />
@@ -88,6 +93,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\SubforumHeaderColorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\ThreadCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\ThreadHeaderColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\ToastNotificationArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\TotalPageConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\UploadManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\WebViewHelper.cs" />
@@ -99,11 +105,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LastPostPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainForumsPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NewPrivateMessageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NewThreadPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NewThreadReplyPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PostIconListPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PreviewThreadPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PrivateMessageListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PrivateMessagePageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SmiliesPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ThreadListPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ThreadPageViewModel.cs" />

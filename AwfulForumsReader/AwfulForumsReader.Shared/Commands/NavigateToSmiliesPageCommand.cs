@@ -31,6 +31,12 @@ namespace AwfulForumsReader.Commands
                 Locator.ViewModels.SmiliesPageVm.ReplyBoxLocation = ReplyBoxLocation.NewReply;
             }
 
+            var test3 = replyText.DataContext as NewPrivateMessageViewModel;
+            if (test3 != null)
+            {
+                Locator.ViewModels.SmiliesPageVm.ReplyBoxLocation = ReplyBoxLocation.PrivateMessage;
+            }
+
             Locator.ViewModels.SmiliesPageVm.ReplyBox = replyText;
             App.RootFrame.Navigate(typeof(SmiliesPage));
             await Locator.ViewModels.SmiliesPageVm.Initialize();

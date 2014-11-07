@@ -128,6 +128,9 @@
     <Compile Include="Pages\MainForumsPage.xaml.cs">
       <DependentUpon>MainForumsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\NewPrivateMessagePage.xaml.cs">
+      <DependentUpon>NewPrivateMessagePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\NewThreadPage.xaml.cs">
       <DependentUpon>NewThreadPage.xaml</DependentUpon>
     </Compile>
@@ -209,6 +212,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MainForumsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NewPrivateMessagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

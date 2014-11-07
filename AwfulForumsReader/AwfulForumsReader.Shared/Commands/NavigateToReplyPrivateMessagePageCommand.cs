@@ -7,13 +7,13 @@ using AwfulForumsReader.Pages;
 
 namespace AwfulForumsReader.Commands
 {
-    public class NavigateToNewPrivateMessagePageCommand : AlwaysExecutableCommand
+    public class NavigateToReplyPrivateMessagePageCommand : AlwaysExecutableCommand
     {
         public override void Execute(object parameter)
         {
             var vm = Locator.ViewModels.NewPrivateMessagePageVm;
-            vm.PostRecipient = string.Empty;
-            vm.PostSubject = string.Empty;
+            vm.PostRecipient = Locator.ViewModels.PrivateMessagePageVm.PrivateMessageEntity.Sender;
+            vm.PostSubject = "Re: " + Locator.ViewModels.PrivateMessagePageVm.PrivateMessageEntity.Title;
             vm.PostBody = string.Empty;
             vm.PostIcon = new PostIconEntity()
             {
@@ -21,9 +21,8 @@ namespace AwfulForumsReader.Commands
                 ImageUrl = "/Assets/ThreadTags/shitpost.png",
                 Title = "Shit Post"
             };
-            vm.PostRecipient = string.Empty;
 
-            App.RootFrame.Navigate(typeof (NewPrivateMessagePage));
+            App.RootFrame.Navigate(typeof(NewPrivateMessagePage));
         }
     }
 }

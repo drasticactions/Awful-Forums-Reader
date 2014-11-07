@@ -95,9 +95,9 @@ namespace AwfulForumsReader.Core.Manager
             }
             else if (!string.IsNullOrEmpty(postId) && postId.Contains("post"))
             {
-                post.PostId =
-                    Int64.Parse(postNode.GetAttributeValue("id", string.Empty)
-                        .Replace("post", string.Empty));
+                var testString = postNode.GetAttributeValue("id", string.Empty)
+                    .Replace("post", string.Empty);
+                post.PostId = !string.IsNullOrEmpty(testString) ? Int64.Parse(testString) : 0;
             }
             else
             {

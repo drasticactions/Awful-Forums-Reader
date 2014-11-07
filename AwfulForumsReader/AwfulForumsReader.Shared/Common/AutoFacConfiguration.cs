@@ -14,6 +14,8 @@ namespace AwfulForumsReader.Common
             var builder = new ContainerBuilder();
 
             // Register View Models
+            builder.RegisterType<NewPrivateMessageViewModel>().SingleInstance();
+            builder.RegisterType<PrivateMessagePageViewModel>().SingleInstance();
             builder.RegisterType<LastPostPageViewModel>().SingleInstance();
             builder.RegisterType<SmiliesPageViewModel>().SingleInstance();
             builder.RegisterType<MainForumsPageViewModel>().SingleInstance();
