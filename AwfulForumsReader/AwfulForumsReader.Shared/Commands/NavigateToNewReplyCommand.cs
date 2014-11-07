@@ -33,9 +33,11 @@ namespace AwfulForumsReader.Commands
 
             if (vm == null)
                 return;
+
+            Locator.ViewModels.NewThreadReplyVm.PostBody = string.Empty;
+            Locator.ViewModels.NewThreadReplyVm.ForumThreadEntity = vm.ForumThreadEntity;
             App.RootFrame.Navigate(typeof(NewThreadReplyPage));
             Locator.ViewModels.NewThreadReplyVm.IsLoading = true;
-            Locator.ViewModels.NewThreadReplyVm.ForumThreadEntity = vm.ForumThreadEntity;
             try
             {
                 var replyManager = new ReplyManager();
@@ -57,9 +59,10 @@ namespace AwfulForumsReader.Commands
         {
             long id = Int64.Parse((string)parameter);
             var vm = Locator.ViewModels.ThreadPageVm;
-
+            
             if (vm == null)
                 return;
+            Locator.ViewModels.NewThreadReplyVm.PostBody = string.Empty;
             Locator.ViewModels.NewThreadReplyVm.IsEdit = true;
             Locator.ViewModels.NewThreadReplyVm.ForumThreadEntity = vm.ForumThreadEntity;
 

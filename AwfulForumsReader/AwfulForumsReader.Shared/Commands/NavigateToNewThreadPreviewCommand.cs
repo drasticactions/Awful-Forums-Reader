@@ -30,11 +30,9 @@ namespace AwfulForumsReader.Commands
         {
             var vm = Locator.ViewModels.NewThreadReplyVm;
             var newVm = Locator.ViewModels.PreviewThreadPageVm;
-            var replyManager = new ReplyManager();
             vm.ForumReplyEntity.Message = vm.PostBody;
-            string result = await replyManager.CreatePreviewEditPost(vm.ForumReplyEntity);
             App.RootFrame.Navigate(typeof(PreviewThreadPage));
-            await newVm.CreateReplyPreview(vm.ForumReplyEntity);
+            await newVm.CreateReplyPreview(vm.ForumReplyEntity, vm.IsEdit);
 
         }
     }

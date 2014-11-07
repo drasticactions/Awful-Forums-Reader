@@ -19,20 +19,13 @@ namespace AwfulForumsReader.ViewModels
         private ObservableCollection<SmileCategoryEntity> _smileCategoryList = new ObservableCollection<SmileCategoryEntity>();
         public ReplyBoxLocation ReplyBoxLocation { get; set; }
         private TextBox _replyBox;
+#if WINDOWS_APP
         private SmiliesFilterOnSuggestedQuery _smiliesFilterOnSuggestedQuery = new SmiliesFilterOnSuggestedQuery();
         private SmiliesFilterOnChangedQuery _smiliesFilterOnChangedQuery = new SmiliesFilterOnChangedQuery();
         private SmiliesFilterOnSubmittedQuery _smiliesFilterOnSubmittedQuery = new SmiliesFilterOnSubmittedQuery();
         private SmiliesFilterOnItemClick _smiliesFilterOnItemClick = new SmiliesFilterOnItemClick();
-        public bool IsLoading
-        {
-            get { return _isLoading; }
-            set
-            {
-                SetProperty(ref _isLoading, value);
-                OnPropertyChanged();
-            }
-        }
-        public SmiliesFilterOnItemClick SmiliesFilterOnItemClick
+
+                public SmiliesFilterOnItemClick SmiliesFilterOnItemClick
         {
             get { return _smiliesFilterOnItemClick; }
             set { _smiliesFilterOnItemClick = value; }
@@ -54,6 +47,16 @@ namespace AwfulForumsReader.ViewModels
         {
             get { return _smiliesFilterOnSuggestedQuery; }
             set { _smiliesFilterOnSuggestedQuery = value; }
+        }
+#endif
+        public bool IsLoading
+        {
+            get { return _isLoading; }
+            set
+            {
+                SetProperty(ref _isLoading, value);
+                OnPropertyChanged();
+            }
         }
 
         private readonly SmileManager _smileManager = new SmileManager();

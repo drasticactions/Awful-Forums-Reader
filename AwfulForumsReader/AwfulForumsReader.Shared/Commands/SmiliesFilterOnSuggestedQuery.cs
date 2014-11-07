@@ -9,6 +9,7 @@ using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.Commands
 {
+#if WINDOWS_APP
     public class SmiliesFilterOnSuggestedQuery : AlwaysExecutableCommand
     {
         public override void Execute(object parameter)
@@ -133,4 +134,5 @@ namespace AwfulForumsReader.Commands
             vm.SmileCategoryList = fakeSmileCategoryList.ToObservableCollection();
         }
     }
+#endif
 }

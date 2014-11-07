@@ -120,8 +120,11 @@ namespace AwfulForumsReader
             if (!string.IsNullOrEmpty(launchString))
             {
                 var arguments = JsonConvert.DeserializeObject<ToastNotificationArgs>(launchString);
-                var bookmarkCommand = new NavigateToBookmarksCommand();
-                bookmarkCommand.Execute(Convert.ToInt64(arguments.threadId));
+                if (arguments != null && arguments.threadId > 0)
+                {
+                    var bookmarkCommand = new NavigateToBookmarksCommand();
+                    bookmarkCommand.Execute(Convert.ToInt64(arguments.threadId));
+                }
             }
 #if WINDOWS_APP
             SettingsPane.GetForCurrentView().CommandsRequested += SettingCharmManager_CommandsRequested;

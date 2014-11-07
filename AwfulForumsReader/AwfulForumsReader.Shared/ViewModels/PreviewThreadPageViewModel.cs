@@ -66,11 +66,19 @@ namespace AwfulForumsReader.ViewModels
             IsLoading = false;
         }
 
-        public async Task CreateReplyPreview(ForumReplyEntity forumReplyEntity)
+        public async Task CreateReplyPreview(ForumReplyEntity forumReplyEntity, bool isEdit)
         {
             IsLoading = true;
             var replyManager = new ReplyManager();
-            string result = await replyManager.CreatePreviewEditPost(forumReplyEntity);
+            string result;
+            if (isEdit)
+            {
+                result = await replyManager.CreatePreviewEditPost(forumReplyEntity);
+            }
+            else
+            {
+                result = await replyManager.CreatePreviewPost(forumReplyEntity);
+            }
             try
             {
                 if (!string.IsNullOrEmpty(result))
