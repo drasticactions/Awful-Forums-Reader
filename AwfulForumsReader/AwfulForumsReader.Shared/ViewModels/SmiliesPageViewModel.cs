@@ -19,17 +19,18 @@ namespace AwfulForumsReader.ViewModels
         private ObservableCollection<SmileCategoryEntity> _smileCategoryList = new ObservableCollection<SmileCategoryEntity>();
         public ReplyBoxLocation ReplyBoxLocation { get; set; }
         private TextBox _replyBox;
-#if WINDOWS_APP
-        private SmiliesFilterOnSuggestedQuery _smiliesFilterOnSuggestedQuery = new SmiliesFilterOnSuggestedQuery();
-        private SmiliesFilterOnChangedQuery _smiliesFilterOnChangedQuery = new SmiliesFilterOnChangedQuery();
-        private SmiliesFilterOnSubmittedQuery _smiliesFilterOnSubmittedQuery = new SmiliesFilterOnSubmittedQuery();
         private SmiliesFilterOnItemClick _smiliesFilterOnItemClick = new SmiliesFilterOnItemClick();
 
-                public SmiliesFilterOnItemClick SmiliesFilterOnItemClick
+        public SmiliesFilterOnItemClick SmiliesFilterOnItemClick
         {
             get { return _smiliesFilterOnItemClick; }
             set { _smiliesFilterOnItemClick = value; }
         }
+#if WINDOWS_APP
+        private SmiliesFilterOnSuggestedQuery _smiliesFilterOnSuggestedQuery = new SmiliesFilterOnSuggestedQuery();
+        private SmiliesFilterOnChangedQuery _smiliesFilterOnChangedQuery = new SmiliesFilterOnChangedQuery();
+        private SmiliesFilterOnSubmittedQuery _smiliesFilterOnSubmittedQuery = new SmiliesFilterOnSubmittedQuery();
+       
 
         public SmiliesFilterOnSubmittedQuery SmiliesFilterOnSubmittedQuery
         {

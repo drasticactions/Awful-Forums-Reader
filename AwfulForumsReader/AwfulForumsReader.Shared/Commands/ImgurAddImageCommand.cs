@@ -49,7 +49,6 @@ namespace AwfulForumsReader.Commands
             string imgLink = string.Format("[TIMG]{0}[/TIMG]", result.data.link);
             replyText.Text = replyText.Text.Insert(replyText.Text.Length, imgLink);
 #endif
-
         }
     }
 }

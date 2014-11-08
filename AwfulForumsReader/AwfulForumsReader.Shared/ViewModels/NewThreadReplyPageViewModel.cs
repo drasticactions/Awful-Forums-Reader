@@ -54,6 +54,7 @@ namespace AwfulForumsReader.ViewModels
         }
 
         private ForumThreadEntity _forumThreadEntity;
+
         private string _postBody;
 
         public string PostBody

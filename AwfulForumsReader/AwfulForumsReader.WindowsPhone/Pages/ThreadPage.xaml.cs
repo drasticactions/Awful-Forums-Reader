@@ -34,7 +34,7 @@ namespace AwfulForumsReader.Pages
             this.InitializeComponent();
 
             this.navigationHelper = new NavigationHelper(this);
-            ThreadWebView.ScriptNotify += WebViewNotifyCommand.WebView_ScriptNotify;
+            ThreadFullView.ScriptNotify += WebViewNotifyCommand.WebView_ScriptNotify;
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
         }

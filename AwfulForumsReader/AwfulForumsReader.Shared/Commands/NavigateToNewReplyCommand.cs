@@ -49,6 +49,8 @@ namespace AwfulForumsReader.Commands
                 AwfulDebugger.SendMessageDialogAsync("Can't reply in this thread.", ex);
                 App.RootFrame.GoBack();
             }
+
+
             Locator.ViewModels.NewThreadReplyVm.IsLoading = false;
         }
     }

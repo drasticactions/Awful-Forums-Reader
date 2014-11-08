@@ -1,12 +1,18 @@
 ﻿using AwfulForumsReader.Common;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
+using Windows.Storage;
+using Windows.Storage.Pickers;
+using Windows.Storage.Streams;
+using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -15,6 +21,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using AwfulForumsReader.Core.Entity;
+using AwfulForumsReader.Tools;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -107,5 +115,52 @@ namespace AwfulForumsReader.Pages
         }
 
         #endregion
+
+
+        private void ImageUploadButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var openPicker = new FileOpenPicker
+            {
+                ViewMode = PickerViewMode.Thumbnail,
+                SuggestedStartLocation = PickerLocationId.PicturesLibrary
+            };
+            openPicker.FileTypeFilter.Add(".jpg");
+            openPicker.FileTypeFilter.Add(".jpeg");
+            openPicker.FileTypeFilter.Add(".png");
+            openPicker.FileTypeFilter.Add(".gif");
+            openPicker.PickSingleFileAndContinue();
+        }
+
+        public async void ContinueFileOpenPicker(FileOpenPickerContinuationEventArgs fileOpenPickerContinuationEventArgs)
+        {
+            if (fileOpenPickerContinuationEventArgs.Files == null) return;
+            var file = fileOpenPickerContinuationEventArgs.Files.First();
+            if (file == null) return;
+            LoadingProgressBar.Visibility = Visibility.Visible;
+            IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.Read);
+            ImgurEntity result = null;
+            try
+            {
+                result = await UploadManager.UploadImgur(stream);
+            }
+            catch (Exception)
+            {
+
+                Debug.WriteLine("Error with Imgur *SHOCK*");
+            }
+            if (result == null)
+            {
+                var msgDlg = new MessageDialog("Something went wrong with the upload. My heart bleeds for you.");
+                msgDlg.ShowAsync();
+                LoadingProgressBar.Visibility = Visibility.Collapsed;
+                return;
+            }
+
+            // We have got an image up on Imgur! Time to get it into the reply box!
+
+            string imgLink = string.Format("[TIMG]{0}[/TIMG]", result.data.link);
+            ReplyText.Text = ReplyText.Text.Insert(ReplyText.Text.Length, imgLink);
+            LoadingProgressBar.Visibility = Visibility.Collapsed;
+        }
     }
 }

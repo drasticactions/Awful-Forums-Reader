@@ -128,7 +128,7 @@
         <!-- Title Panel -->
         <Grid Background="#FF1E72C9" RequestedTheme="Dark" Grid.Row="0">
             <StackPanel VerticalAlignment="Center" Grid.Row="0">
-                <TextBlock Margin="5" Text="{Binding ForumTitle}" Style="{ThemeResource TitleTextBlockStyle}" TextTrimming="CharacterEllipsis" Typography.Capitals="SmallCaps"/>
+                <TextBlock Margin="5" Text="{Binding ForumEntity.Name}" Style="{ThemeResource TitleTextBlockStyle}" TextTrimming="CharacterEllipsis" Typography.Capitals="SmallCaps"/>
             </StackPanel>
         </Grid>
 
@@ -185,6 +185,13 @@
     </Grid>
     <Page.BottomAppBar>
         <CommandBar>
+            <AppBarButton x:Name="AddThreadButton" Icon="Add" Label="New Thread">
+                <triggers:Interactions.Triggers>
+                    <triggers:EventTrigger EventName="Click">
+                        <triggers:InvokeCommandAction Command="{Binding NavigateToNewThreadCommand}" PassEventArgsToCommand="True"/>
+                    </triggers:EventTrigger>
+                </triggers:Interactions.Triggers>
+            </AppBarButton>
             <AppBarButton Label="Refresh" x:Name="RefreshButton" Icon="Refresh">
                 <triggers:Interactions.Triggers>
                     <triggers:EventTrigger EventName="Click">

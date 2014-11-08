@@ -70,7 +70,7 @@
                     <DataTemplate>
                         <Grid HorizontalAlignment="Left" Width="125" Height="180">
                             <StackPanel VerticalAlignment="Bottom" Background="#FFF0F0F0">
-                                <Border Height="120" Background="#FF415B64">
+                                <Border Height="120" Background="{StaticResource AwfulBlue}">
                                     <Image Source="{Binding ImageUrl}" Stretch="None"
                                            AutomationProperties.Name="{Binding Title}" />
                                 </Border>

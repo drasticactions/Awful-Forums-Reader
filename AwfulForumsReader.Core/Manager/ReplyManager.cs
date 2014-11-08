@@ -91,7 +91,7 @@ namespace AwfulForumsReader.Core.Manager
             }
             catch (Exception)
             {
-                return null;
+                throw new InvalidOperationException("Could not parse newReply form data.");
             }
         }
 

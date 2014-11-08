@@ -67,7 +67,38 @@ namespace AwfulForumsReader.Commands
             App.RootFrame.GoBack();
         }
     }
-
+    public class SmiliesFilterOnChangedQuery : AlwaysExecutableCommand
+    {
+        public override void Execute(object parameter)
+        {
+            var args = parameter as SearchBoxQueryChangedEventArgs;
+            if (args == null)
+            {
+                return;
+            }
+            var vm = Locator.ViewModels.SmiliesPageVm;
+            string queryText = args.QueryText;
+            if (string.IsNullOrEmpty(queryText))
+            {
+                vm.SmileCategoryList = vm.FullSmileCategoryEntities;
+                return;
+            }
+            var result = vm.SmileCategoryList.SelectMany(
+                smileCategory => smileCategory.SmileList.Where(smile => smile.Title.Equals(queryText))).FirstOrDefault();
+            if (result != null) return;
+            var searchList = vm.FullSmileCategoryEntities.SelectMany(
+                smileCategory => smileCategory.SmileList.Where(smile => smile.Title.Contains(queryText)));
+            List<SmileEntity> smileListEntities = searchList.ToList();
+            var searchSmileCategory = new SmileCategoryEntity()
+            {
+                Name = "Search",
+                SmileList = smileListEntities
+            };
+            var fakeSmileCategoryList = new List<SmileCategoryEntity> { searchSmileCategory };
+            vm.SmileCategoryList = fakeSmileCategoryList.ToObservableCollection();
+        }
+    }
+#endif
     public class SmiliesFilterOnItemClick : AlwaysExecutableCommand
     {
         public override void Execute(object parameter)
@@ -102,37 +133,4 @@ namespace AwfulForumsReader.Commands
 
         }
     }
-
-    public class SmiliesFilterOnChangedQuery : AlwaysExecutableCommand
-    {
-        public override void Execute(object parameter)
-        {
-            var args = parameter as SearchBoxQueryChangedEventArgs;
-            if (args == null)
-            {
-                return;
-            }
-            var vm = Locator.ViewModels.SmiliesPageVm;
-            string queryText = args.QueryText;
-            if (string.IsNullOrEmpty(queryText))
-            {
-                vm.SmileCategoryList = vm.FullSmileCategoryEntities;
-                return;
-            }
-            var result = vm.SmileCategoryList.SelectMany(
-                smileCategory => smileCategory.SmileList.Where(smile => smile.Title.Equals(queryText))).FirstOrDefault();
-            if (result != null) return;
-            var searchList = vm.FullSmileCategoryEntities.SelectMany(
-                smileCategory => smileCategory.SmileList.Where(smile => smile.Title.Contains(queryText)));
-            List<SmileEntity> smileListEntities = searchList.ToList();
-            var searchSmileCategory = new SmileCategoryEntity()
-            {
-                Name = "Search",
-                SmileList = smileListEntities
-            };
-            var fakeSmileCategoryList = new List<SmileCategoryEntity> { searchSmileCategory };
-            vm.SmileCategoryList = fakeSmileCategoryList.ToObservableCollection();
-        }
-    }
-#endif
 }
