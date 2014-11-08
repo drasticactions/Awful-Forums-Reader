@@ -116,16 +116,6 @@ namespace AwfulForumsReader
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
-            string launchString = e.Arguments;
-            if (!string.IsNullOrEmpty(launchString))
-            {
-                var arguments = JsonConvert.DeserializeObject<ToastNotificationArgs>(launchString);
-                if (arguments != null && arguments.threadId > 0)
-                {
-                    var bookmarkCommand = new NavigateToBookmarksCommand();
-                    bookmarkCommand.Execute(Convert.ToInt64(arguments.threadId));
-                }
-            }
 #if WINDOWS_APP
             SettingsPane.GetForCurrentView().CommandsRequested += SettingCharmManager_CommandsRequested;
 #endif
@@ -148,6 +138,17 @@ namespace AwfulForumsReader
 
                 // Place the frame in the current Window
                 Window.Current.Content = RootFrame;
+            }
+
+            string launchString = e.Arguments;
+            if (!string.IsNullOrEmpty(launchString))
+            {
+                var arguments = JsonConvert.DeserializeObject<ToastNotificationArgs>(launchString);
+                if (arguments != null && arguments.threadId > 0)
+                {
+                    var bookmarkCommand = new NavigateToBookmarksCommand();
+                    bookmarkCommand.Execute(Convert.ToInt64(arguments.threadId));
+                }
             }
 
             if (RootFrame.Content == null)

@@ -1,0 +1,4 @@
+MainPackage=C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\ARM\Release\AwfulForumsReader.Windows_3.0.0.4_Bundle\AwfulForumsReader.Windows_3.0.0.4_ARM.appx
+SymbolPackage=C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\AppPackages\AwfulForumsReader.Windows_3.0.0.4_Test\AwfulForumsReader.Windows_3.0.0.4_ARM.appxsym
+ResourcePack=C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\ARM\Release\AwfulForumsReader.Windows_3.0.0.4_Bundle\AwfulForumsReader.Windows_3.0.0.4_scale-140.appx
+ResourcePack=C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.Windows\bin\ARM\Release\AwfulForumsReader.Windows_3.0.0.4_Bundle\AwfulForumsReader.Windows_3.0.0.4_scale-180.appx

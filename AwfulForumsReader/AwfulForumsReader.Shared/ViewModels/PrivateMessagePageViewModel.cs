@@ -6,6 +6,7 @@ using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Core.Entity;
 using AwfulForumsReader.Core.Manager;
+using AwfulForumsReader.Core.Tools;
 using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.ViewModels
@@ -55,15 +56,27 @@ namespace AwfulForumsReader.ViewModels
 
         public async Task GetPrivateMessageHtml()
         {
+            IsLoading = true;
             var privateMessageManager = new PrivateMessageManager();
             var postEntity = await privateMessageManager.GetPrivateMessageAsync(PrivateMessageEntity.MessageUrl);
             await FormatPmHtml(postEntity);
+            IsLoading = false;
         }
 
         private async Task FormatPmHtml(ForumPostEntity postEntity)
         {
             var list = new List<ForumPostEntity> {postEntity};
-            Html = await HtmlFormater.FormatThreadHtml(new ForumThreadEntity(){IsPrivateMessage = true}, list);
+            var thread = new ForumThreadEntity()
+            {
+                IsPrivateMessage = true
+            };
+
+#if WINDOWS_PHONE_APP
+            thread.PlatformIdentifier = PlatformIdentifier.WindowsPhone;
+#else
+            thread.PlatformIdentifier = PlatformIdentifier.Windows8;
+#endif
+            Html = await HtmlFormater.FormatThreadHtml(thread, list);
         }
     }
 }

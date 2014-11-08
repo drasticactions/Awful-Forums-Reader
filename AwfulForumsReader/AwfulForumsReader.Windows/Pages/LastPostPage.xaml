@@ -10,7 +10,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:triggers="using:WinRT.Triggers"
     xmlns:tools="using:AwfulForumsReader.Tools"
-    xmlns:behaviors="using:JulMar.Windows.Behaviors"
+    xmlns:behaviors="using:JulMar.Behaviors"
     mc:Ignorable="d">
 
     <Page.Resources>

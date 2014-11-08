@@ -39,7 +39,9 @@ namespace AwfulForumsReader.Tools
             }
             catch (Exception ex)
             {
-                throw new Exception(string.Format("Error getting thread list {0}", ex));
+                HasMoreItems = false;
+                IsLoading = false;
+                return new LoadMoreItemsResult { Count = count };
             }
 
             foreach (ForumThreadEntity forumThreadEntity in forumThreadEntities.Where(forumThreadEntity => !forumThreadEntity.IsAnnouncement))

@@ -8,8 +8,8 @@
     xmlns:common="using:AwfulForumsReader.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:behaviors="using:JulMar.Windows.Behaviors"
     xmlns:triggers="using:WinRT.Triggers"
+    xmlns:behaviors="using:JulMar.Behaviors"
     mc:Ignorable="d">
 
     <Page.Resources>

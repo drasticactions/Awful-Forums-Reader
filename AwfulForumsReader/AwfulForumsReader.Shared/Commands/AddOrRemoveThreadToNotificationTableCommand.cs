@@ -37,11 +37,11 @@ namespace AwfulForumsReader.Commands
 
             if (result && !isInList)
             {
-                NotifyStatusTile.CreateToastNotification(string.Format("You will now be notified when \"{0}\" is updated.", thread.Name));
+                NotifyStatusTile.CreateToastNotification("Added Notification",string.Format("\"{0}\"", thread.Name));
             }
             else if (result)
             {
-                NotifyStatusTile.CreateToastNotification(string.Format("Thread status notification for \"{0}\" is now removed.", thread.Name));   
+                NotifyStatusTile.CreateToastNotification("Remove Notification", string.Format("\"{0}\"", thread.Name));
             }
 
             Locator.ViewModels.BookmarksPageVm.UpdateThreadList();

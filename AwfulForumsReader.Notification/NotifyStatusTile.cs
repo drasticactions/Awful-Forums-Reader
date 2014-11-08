@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using Windows.Data.Xml.Dom;
 using Windows.Networking.Connectivity;
@@ -36,11 +37,12 @@ namespace AwfulForumsReader.Notification
         public static void CreateToastNotification(ForumThreadEntity forumThread)
         {
             XmlDocument notificationXml =
-                ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastImageAndText01);
+                ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastImageAndText02);
             XmlNodeList toastElements = notificationXml.GetElementsByTagName("text");
             toastElements[0].AppendChild(
-                notificationXml.CreateTextNode(string.Format("\"{0}\" has {1} unread replies!", forumThread.Name,
-                    forumThread.RepliesSinceLastOpened)));
+                notificationXml.CreateTextNode(string.Format("\"{0}\"", forumThread.Name)));
+            toastElements[1].AppendChild(
+                notificationXml.CreateTextNode(string.Format(" has {0} replies.", forumThread.RepliesSinceLastOpened)));
             XmlNodeList imageElement = notificationXml.GetElementsByTagName("image");
             string imageName = string.Empty;
             if (string.IsNullOrEmpty(imageName))
@@ -53,16 +55,23 @@ namespace AwfulForumsReader.Notification
             var xmlElement = (XmlElement)toastNode;
             if (xmlElement != null) xmlElement.SetAttribute("launch", test);
             var toastNotification = new ToastNotification(notificationXml);
+            var nameProperty = toastNotification.GetType().GetRuntimeProperties().FirstOrDefault(x => x.Name == "Tag");
+            if (nameProperty != null)
+            {
+                nameProperty.SetValue(toastNotification, forumThread.ThreadId.ToString());
+            }
             ToastNotificationManager.CreateToastNotifier().Show(toastNotification);
         }
 
-        public static void CreateToastNotification(string text)
+        public static void CreateToastNotification(string header, string text)
         {
             XmlDocument notificationXml =
-    ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastImageAndText01);
+    ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastImageAndText02);
             XmlNodeList toastElements = notificationXml.GetElementsByTagName("text");
             toastElements[0].AppendChild(
-                notificationXml.CreateTextNode(text));
+                notificationXml.CreateTextNode(header));
+            toastElements[1].AppendChild(
+                 notificationXml.CreateTextNode(text));
             XmlNodeList imageElement = notificationXml.GetElementsByTagName("image");
             string imageName = string.Empty;
             if (string.IsNullOrEmpty(imageName))
