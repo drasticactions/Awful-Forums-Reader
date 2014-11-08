@@ -78,9 +78,9 @@
                 </interactivity:Interaction.Behaviors>
                 <FlyoutBase.AttachedFlyout>
                     <MenuFlyout>
-                        <MenuFlyoutItem Command="{Binding DataContext.LastPage, ElementName=ForumThreadList}"  CommandParameter="{Binding}" Text="Go to Last Page"/>
+                        <MenuFlyoutItem Command="{Binding DataContext.NavigateToLastPageInThreadPageCommand, ElementName=ForumThreadList}"  CommandParameter="{Binding}" Text="Go to Last Page"/>
                         <MenuFlyoutItem Command="{Binding DataContext.AddThreadToNotificationTableCommand, ElementName=ForumThreadList}"  CommandParameter="{Binding}" Text="{Binding Converter={StaticResource NotifyThreadTextConverter}}"/>
-                        <MenuFlyoutItem Command="{Binding DataContext.UnreadThread, ElementName=ForumThreadList}"  CommandParameter="{Binding ThreadId}" Text="Unread"/>
+                        <MenuFlyoutItem Command="{Binding DataContext.UnreadThread, ElementName=ForumThreadList}"  CommandParameter="{Binding}" Text="Unread"/>
                         <MenuFlyoutItem Command="{Binding DataContext.AddOrRemoveBookmark, ElementName=ForumThreadList}" CommandParameter="{Binding}" Text="{Binding IsBookmark, Converter={StaticResource BookmarkTextConverter}}"/>
                     </MenuFlyout>
                 </FlyoutBase.AttachedFlyout>

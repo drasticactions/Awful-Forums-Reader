@@ -23,6 +23,13 @@ namespace AwfulForumsReader.ViewModels
         private RefreshThreadListCommand _refreshThreadListCommand = new RefreshThreadListCommand();
         private NavigateToNewThreadCommand _navigateToNewThreadCommand = new NavigateToNewThreadCommand();
         private NavigateToThreadPageCommand _navigateToThreadPageCommand = new NavigateToThreadPageCommand();
+        private NavigateToLastPageInThreadPageCommand _navigateToLastPageInThreadPageCommand = new NavigateToLastPageInThreadPageCommand();
+
+        public NavigateToLastPageInThreadPageCommand NavigateToLastPageInThreadPageCommand
+        {
+            get { return _navigateToLastPageInThreadPageCommand; }
+            set { _navigateToLastPageInThreadPageCommand = value; }
+        }
 
         public NavigateToThreadPageCommand NavigateToThreadPageCommand
         {
