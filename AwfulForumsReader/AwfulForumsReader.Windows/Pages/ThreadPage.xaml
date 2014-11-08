@@ -75,7 +75,7 @@
                         </Flyout>
                     </Button.Flyout>
                 </Button>
-                <AppBarButton x:Name="ReplyButton" Label="Reply" Icon="Upload">
+                <AppBarButton x:Name="ReplyButton" Label="Reply" Icon="Edit">
                     <triggers:Interactions.Triggers>
                         <triggers:EventTrigger EventName="Click">
                             <triggers:InvokeCommandAction Command="{Binding NavigateToNewReplyCommand}" PassEventArgsToCommand="True"/>
