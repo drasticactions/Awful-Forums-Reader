@@ -13,7 +13,7 @@ namespace AwfulForumsReader.Commands
     {
         public async override void Execute(object parameter)
         {
-             var replyText = parameter as TextBox;
+            var replyText = parameter as TextBox;
             if (replyText == null)
             {
                 return;

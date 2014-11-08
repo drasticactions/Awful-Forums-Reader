@@ -37,6 +37,31 @@ namespace AwfulForumsReader.Commands
         }
     }
 
+    public class NavigateToLastPageInThreadPageCommand : AlwaysExecutableCommand
+    {
+        public async override void Execute(object parameter)
+        {
+            var thread = parameter as ForumThreadEntity;
+            if (thread == null)
+            {
+                AwfulDebugger.SendMessageDialogAsync("Thread navigation failed!:(", new Exception("Arguments are null"));
+                return;
+            }
+
+            var tabManager = new TabManager();
+            await tabManager.RemoveAllThreadsFromTabList();
+            await tabManager.AddThreadToTabListAsync(thread);
+            var tabThreads = await tabManager.GetAllTabThreads();
+            Locator.ViewModels.ThreadPageVm.LinkedThreads = tabThreads.ToObservableCollection();
+            
+            thread.CurrentPage = thread.TotalPages;
+            Locator.ViewModels.ThreadPageVm.ForumThreadEntity = thread;
+            Locator.ViewModels.ThreadPageVm.Html = null;
+            App.RootFrame.Navigate(typeof(ThreadPage));
+            await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
+        }
+    }
+
     public class NavigateToThreadPageViaToastCommand : AlwaysExecutableCommand
     {
         public async override void Execute(object parameter)

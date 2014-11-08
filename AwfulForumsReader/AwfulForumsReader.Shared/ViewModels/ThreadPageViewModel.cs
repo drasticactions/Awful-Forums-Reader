@@ -17,6 +17,7 @@ namespace AwfulForumsReader.ViewModels
     public class ThreadPageViewModel : NotifierBase
     {
         private ForumThreadEntity _forumThreadEntity;
+        private AddOrRemoveBookmarkCommand _addOrRemoveBookmarkCommand = new AddOrRemoveBookmarkCommand();
         private ThreadDomContentLoadedCommand _threadDomContentLoadedCommand = new ThreadDomContentLoadedCommand();
         private ChangeTabsCommand _changeTabsCommand = new ChangeTabsCommand();
         private RemoveTabCommand _removeTabCommand = new RemoveTabCommand();
@@ -26,6 +27,16 @@ namespace AwfulForumsReader.ViewModels
         private BackThreadPageCommand _backThreadPageCommand = new BackThreadPageCommand();
         private RefreshThreadPageCommand _refreshThreadPageCommand = new RefreshThreadPageCommand();
         private ChangePageThreadCommand _changePageThreadCommand = new ChangePageThreadCommand();
+
+        public AddOrRemoveBookmarkCommand AddOrRemoveBookmark
+        {
+            get { return _addOrRemoveBookmarkCommand; }
+            set
+            {
+                SetProperty(ref _addOrRemoveBookmarkCommand, value);
+                OnPropertyChanged();
+            }
+        }
 
         public ChangePageThreadCommand ChangePageThreadCommand
         {

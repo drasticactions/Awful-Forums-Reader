@@ -9,6 +9,7 @@
     xmlns:tools="using:AwfulForumsReader.Tools"
     xmlns:triggers="using:WinRT.Triggers"
     xmlns:behaviors="using:JulMar.Behaviors"
+    xmlns:userControls="using:AwfulForumsReader.UserControls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Transitions>
@@ -61,6 +62,13 @@
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>
+                <AppBarButton Label="{Binding ForumThreadEntity.IsBookmark, Converter={StaticResource BookmarkTextConverter}, Mode=TwoWay}" >
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="Click">
+                            <triggers:InvokeCommandAction Command="{Binding AddOrRemoveBookmark, Mode=TwoWay}"  CommandParameter="{Binding ForumThreadEntity}" PassEventArgsToCommand="True"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                </AppBarButton>
                 <AppBarButton HorizontalAlignment="Stretch" x:Name="CurrentPageButton" Label="Change Page">
                     <Button.Flyout>
                         <Flyout Placement="Left">
@@ -79,6 +87,75 @@
                             </StackPanel>
                         </Flyout>
                     </Button.Flyout>
+                </AppBarButton>
+                <AppBarButton Label="Thread Tabs" Icon="World">
+                    <AppBarButton.Flyout>
+                        <Flyout Placement="Right">
+                            <ListView x:Name="ThreadLinkedView" Width="300" SelectionMode="None" IsItemClickEnabled="True" ItemsSource="{Binding LinkedThreads}">
+                                <triggers:Interactions.Triggers>
+                                    <triggers:EventTrigger EventName="ItemClick">
+                                        <triggers:InvokeCommandAction Command="{Binding ChangeTabsCommand}"
+                                                                  PassEventArgsToCommand="True" />
+                                    </triggers:EventTrigger>
+                                </triggers:Interactions.Triggers>
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="ListViewItem">
+                                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="60"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <AppBarButton Label="Close" IsCompact="True" VerticalAlignment="Center" HorizontalAlignment="Left" Icon="Remove">
+                                                <triggers:Interactions.Triggers>
+                                                    <triggers:EventTrigger EventName="Click">
+                                                        <triggers:InvokeCommandAction Command="{Binding DataContext.RemoveTabCommand, ElementName=ThreadLinkedView}" PassEventArgsToCommand="True"/>
+                                                    </triggers:EventTrigger>
+                                                </triggers:Interactions.Triggers>
+                                            </AppBarButton>
+                                            <Grid Grid.Column="1" Background="#F1F1F1">
+                                                <Grid.Transitions>
+                                                    <TransitionCollection>
+                                                        <EntranceThemeTransition/>
+                                                    </TransitionCollection>
+                                                </Grid.Transitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <Grid Grid.Row="0" Height="5"
+                                  Background="{Binding Converter={StaticResource ThreadHeaderColorConverter}}" />
+                                                <Grid Grid.Row="1">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="80" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}"
+                                        Grid.Column="0" Margin="5" Width="60" Height="60">
+                                                        <userControls:ImageLoader Source="{Binding ImageIconLocation}"
+                                           AutomationProperties.Name="{Binding Title}" />
+                                                    </Border>
+                                                    <Grid Grid.Column="1" >
+                                                        <userControls:ImageLoader Margin="0,0,10,0" Source="{Binding StoreImageIconLocation}"
+                                           AutomationProperties.Name="{Binding Title}" />
+                                                    </Grid>
+                                                    <StackPanel Grid.Column="2">
+                                                        <TextBlock x:Name="ThreadTitle" Foreground="Black" TextWrapping="Wrap"
+                                               Text="{Binding Name}" />
+                                                    </StackPanel>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Flyout>
+                    </AppBarButton.Flyout>
                 </AppBarButton>
             </CommandBar.SecondaryCommands>
             <AppBarButton Label="Back" Icon="Back" IsEnabled="{Binding ForumThreadEntity, Converter={StaticResource BackButtonEnableConverter} }">
@@ -110,5 +187,6 @@
                 </triggers:Interactions.Triggers>
             </AppBarButton>
         </CommandBar>
+        
     </Page.BottomAppBar>
 </Page>

@@ -28,7 +28,13 @@ namespace AwfulForumsReader.ViewModels
         private NavigateToMainForumPageCommand _navigateToMainForumPageCommand = new NavigateToMainForumPageCommand();
         private AddOrRemoveThreadToNotificationTableCommand _addThreadToNotificationTableCommand = new AddOrRemoveThreadToNotificationTableCommand();
         private NavigateToThreadPageCommand _navigateToThreadPageCommand = new NavigateToThreadPageCommand();
+        private NavigateToLastPageInThreadPageCommand _navigateToLastPageInThreadPageCommand = new NavigateToLastPageInThreadPageCommand();
 
+        public NavigateToLastPageInThreadPageCommand NavigateToLastPageInThreadPageCommand
+        {
+            get { return _navigateToLastPageInThreadPageCommand; }
+            set { _navigateToLastPageInThreadPageCommand = value; }
+        }
         public NavigateToThreadPageCommand NavigateToThreadPageCommand
         {
             get { return _navigateToThreadPageCommand; }
