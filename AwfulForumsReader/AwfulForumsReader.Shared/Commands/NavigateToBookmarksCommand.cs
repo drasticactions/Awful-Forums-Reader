@@ -28,8 +28,6 @@ namespace AwfulForumsReader.Commands
             {
                 App.RootFrame.Navigate(typeof(BookmarksPage));
             }
-            var threadViewModel = Locator.ViewModels.BookmarksPageVm;
-            await threadViewModel.Initialize();
         }
     }
 }

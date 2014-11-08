@@ -65,7 +65,7 @@ namespace AwfulForumsReader.Pages
         /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested and
         /// a dictionary of state preserved by this page during an earlier
         /// session.  The state will be null the first time a page is visited.</param>
-        private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
+        private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
         }
 
@@ -96,8 +96,10 @@ namespace AwfulForumsReader.Pages
         /// </summary>
         /// <param name="e">Provides data for navigation methods and event
         /// handlers that cannot cancel the navigation request.</param>
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
+            var threadViewModel = Locator.ViewModels.BookmarksPageVm;
+            await threadViewModel.Initialize();
             this.navigationHelper.OnNavigatedTo(e);
         }
 
