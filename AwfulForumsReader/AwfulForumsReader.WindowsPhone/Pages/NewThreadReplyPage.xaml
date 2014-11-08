@@ -10,16 +10,19 @@
     xmlns:behaviors="using:JulMar.Behaviors"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-<Page.Resources>
+    <Page.Resources>
         <behaviors:NameScopeBinding x:Key="ThreadReplyText" Source="{Binding ElementName=ReplyText}" />
     </Page.Resources>
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <SlideNavigationTransitionInfo/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
     <Grid x:Name="LayoutRoot">
-
-        <Grid.ChildrenTransitions>
-            <TransitionCollection>
-                <EntranceThemeTransition/>
-            </TransitionCollection>
-        </Grid.ChildrenTransitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -36,7 +39,7 @@
         <!--TODO: Content should be placed within the following grid-->
         <Grid Grid.Row="1" x:Name="ContentRoot">
             <ProgressBar x:Name="LoadingProgressBar" VerticalAlignment="Top" IsIndeterminate="True" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter} }"/>
-            <TextBox AcceptsReturn="True" TextWrapping="Wrap" IsSpellCheckEnabled="True" x:Name="ReplyTextBox" Margin="15" VerticalAlignment="Stretch"/>
+            <TextBox x:Name="ReplyText" Text="{Binding PostBody, Mode=TwoWay}" AcceptsReturn="True" TextWrapping="Wrap" IsSpellCheckEnabled="True" Margin="15" VerticalAlignment="Stretch"/>
         </Grid>
     </Grid>
     <Page.BottomAppBar>
@@ -57,7 +60,7 @@
                 </AppBarButton.Icon>
                 <triggers:Interactions.Triggers>
                     <triggers:EventTrigger EventName="Click">
-                        <triggers:InvokeCommandAction Command="{Binding NavigateToSmiliesPageCommand}" CommandParameter="{Binding Source, Source={StaticResource ThreadReplyText}}" PassEventArgsToCommand="True"/>
+                        <triggers:InvokeCommandAction Command="{Binding  NavigateToSmiliesPageCommand}" CommandParameter="{Binding Source, Source={StaticResource ThreadReplyText}}" PassEventArgsToCommand="True"/>
                     </triggers:EventTrigger>
                 </triggers:Interactions.Triggers>
             </AppBarButton>
@@ -92,15 +95,10 @@
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>
-                <AppBarButton x:Name="ImageUploadButton" Label="Imgur">
+                <AppBarButton Click="ImageUploadButton_OnClick" x:Name="ImageUploadButton" Label="Imgur">
                     <AppBarButton.Icon>
                         <PathIcon Data="M7.89473724365234,12.105263710022L32.1052627563477,12.105263710022 32.1052627563477,27.8947372436523 7.89473724365234,27.8947372436523 7.89473724365234,12.105263710022z M9.47368431091309,13.6842107772827L9.47368431091309,26.3157901763916 30.5263175964355,26.3157901763916 30.5263175964355,13.6842107772827 9.47368431091309,13.6842107772827z M13.6842107772827,25.2631587982178L16.8859481811523,21.7543697357178 18.5526313781738,23.4210529327393 25.2193164825439,16.7543697357178 27.7193164825439,19.2543697357178 29.4736862182617,17.3684215545654 29.4736862182617,25.2631587982178 13.6842107772827,25.2631587982178z M14.7806844711304,15.7456321716309L14.5187368392944,17.0431137084961 13.8043823242188,18.1026458740234 12.7448492050171,18.8170013427734 11.4473686218262,19.0789489746094 10.5263156890869,18.9473686218262 10.5263156890869,14.7368431091309 14.5613689422607,14.7368431091309 14.7806844711304,15.7456321716309z"/>
                     </AppBarButton.Icon>
-                    <triggers:Interactions.Triggers>
-                        <triggers:EventTrigger EventName="Click">
-                            <triggers:InvokeCommandAction Command="{Binding ImgurAddImageCommand}" CommandParameter="{Binding Source, Source={StaticResource ThreadReplyText}}" PassEventArgsToCommand="True"/>
-                        </triggers:EventTrigger>
-                    </triggers:Interactions.Triggers>
                 </AppBarButton>
             </CommandBar.SecondaryCommands>
         </CommandBar>

@@ -82,6 +82,54 @@ namespace AwfulForumsReader
 
             Container = AutoFacConfiguration.Configure();
         }
+#if WINDOWS_PHONE_APP
+        protected override void OnActivated(IActivatedEventArgs args)
+        {
+            var rootFrame = Window.Current.Content as Frame;
+            if (rootFrame == null)
+            {
+                base.OnActivated(args);
+                return;
+            }
+
+            // Return to Reply Page with image.
+
+            var replyPage = rootFrame.Content as NewThreadReplyPage;
+            if (replyPage != null && args is FileOpenPickerContinuationEventArgs)
+            {
+                replyPage.ContinueFileOpenPicker(args as FileOpenPickerContinuationEventArgs);
+            }
+
+            var editPage = rootFrame.Content as EditPostPage;
+            if (editPage != null && args is FileOpenPickerContinuationEventArgs)
+            {
+                editPage.ContinueFileOpenPicker(args as FileOpenPickerContinuationEventArgs);
+            }
+
+            var newThreadPage = rootFrame.Content as NewThreadPage;
+            if (newThreadPage != null && args is FileOpenPickerContinuationEventArgs)
+            {
+                newThreadPage.ContinueFileOpenPicker(args as FileOpenPickerContinuationEventArgs);
+            }
+
+            var newPmPage = rootFrame.Content as NewPrivateMessagePage;
+            if (newPmPage != null && args is FileOpenPickerContinuationEventArgs)
+            {
+                newPmPage.ContinueFileOpenPicker(args as FileOpenPickerContinuationEventArgs);
+            }
+
+
+            // Voice command!111!!!11!
+
+            if (args.Kind == ActivationKind.VoiceCommand)
+            {
+                VoiceCommandActivatedEventArgs vcArgs = (VoiceCommandActivatedEventArgs)args;
+                //rootFrame.Navigate(typeof(VoiceHandlePage), vcArgs);
+            }
+            base.OnActivated(args);
+
+        }
+#endif
 
 #if WINDOWS_APP 
         protected override void OnWindowCreated(WindowCreatedEventArgs args)

@@ -103,4 +103,22 @@
             </Grid>
         </Grid>
     </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="AddThreadButton" Icon="Add" Label="New Thread">
+                <triggers:Interactions.Triggers>
+                    <triggers:EventTrigger EventName="Click">
+                        <triggers:InvokeCommandAction Command="{Binding NavigateToNewPrivateMessagePageCommand}" PassEventArgsToCommand="True"/>
+                    </triggers:EventTrigger>
+                </triggers:Interactions.Triggers>
+            </AppBarButton>
+            <AppBarButton Label="Refresh" x:Name="RefreshButton" Icon="Refresh">
+                <triggers:Interactions.Triggers>
+                    <triggers:EventTrigger EventName="Click">
+                        <triggers:InvokeCommandAction Command="{Binding RefreshPrivateMessageListCommand}"/>
+                    </triggers:EventTrigger>
+                </triggers:Interactions.Triggers>
+            </AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

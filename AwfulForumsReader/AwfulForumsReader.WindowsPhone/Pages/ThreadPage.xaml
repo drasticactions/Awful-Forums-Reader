@@ -42,7 +42,7 @@
         <Grid Grid.Row="1" x:Name="ContentRoot">
             <ProgressRing  IsActive="{Binding IsLoading}" Height="100" Width="100" Canvas.ZIndex="5"/>
             <Rectangle Canvas.ZIndex="1" Fill="{StaticResource PhoneBackgroundBrush}" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-            <WebView x:Name="ThreadWebView" tools:WebViewHelper.Html="{Binding Html}">
+            <WebView x:Name="ThreadFullView" tools:WebViewHelper.Html="{Binding Html}">
                 <triggers:Interactions.Triggers>
                     <triggers:EventTrigger EventName="NavigationCompleted">
                         <triggers:InvokeCommandAction CommandParameter="{Binding Source, Source={StaticResource ThreadWebView}}" PassEventArgsToCommand="True" Command="{Binding ThreadDomContentLoadedCommand}"/>

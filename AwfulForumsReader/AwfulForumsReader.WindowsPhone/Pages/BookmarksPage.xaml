@@ -148,6 +148,15 @@
                     </triggers:EventTrigger>
                 </triggers:Interactions.Triggers>
             </AppBarButton>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Name="ReturnToMainButton" IsEnabled="{Binding IsLoading, Converter={StaticResource InvertBooleanConverter}}" Label="Return to Main Forums">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="Click">
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToMainForumPageCommand}"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                </AppBarButton>
+            </CommandBar.SecondaryCommands>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>
