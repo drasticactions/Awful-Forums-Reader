@@ -8,6 +8,12 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
+using Windows.System;
+using Windows.UI.Popups;
+using AwfulForumsReader.Commands;
+using AwfulForumsReader.Tools;
+using Newtonsoft.Json;
 #if WINDOWS_APP
 using Windows.UI.ApplicationSettings;
 #endif
@@ -110,7 +116,9 @@ namespace AwfulForumsReader
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
-
+#if WINDOWS_APP
+            SettingsPane.GetForCurrentView().CommandsRequested += SettingCharmManager_CommandsRequested;
+#endif
             RootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -130,6 +138,17 @@ namespace AwfulForumsReader
 
                 // Place the frame in the current Window
                 Window.Current.Content = RootFrame;
+            }
+
+            string launchString = e.Arguments;
+            if (!string.IsNullOrEmpty(launchString))
+            {
+                var arguments = JsonConvert.DeserializeObject<ToastNotificationArgs>(launchString);
+                if (arguments != null && arguments.threadId > 0)
+                {
+                    var bookmarkCommand = new NavigateToBookmarksCommand();
+                    bookmarkCommand.Execute(Convert.ToInt64(arguments.threadId));
+                }
             }
 
             if (RootFrame.Content == null)
@@ -162,9 +181,19 @@ namespace AwfulForumsReader
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    if (!RootFrame.Navigate(typeof(MainForumsPage), e.Arguments))
+                    var localSettings = ApplicationData.Current.LocalSettings;
+                    if (localSettings.Values.ContainsKey(Constants.BookmarkStartup) &&
+                        (bool)localSettings.Values[Constants.BookmarkStartup])
                     {
-                        throw new Exception("Failed to create initial page");
+                        var command = new NavigateToBookmarksCommand();
+                        command.Execute(null);
+                    }
+                    else
+                    {
+                        if (!RootFrame.Navigate(typeof(MainForumsPage), e.Arguments))
+                        {
+                            throw new Exception("Failed to create initial page");
+                        }
                     }
                 }
             }
@@ -184,6 +213,21 @@ namespace AwfulForumsReader
             var RootFrame = sender as Frame;
             RootFrame.ContentTransitions = this.transitions ?? new TransitionCollection() { new NavigationThemeTransition() };
             RootFrame.Navigated -= this.RootFrame_FirstNavigated;
+        }
+#endif
+
+#if WINDOWS_APP
+        private void SettingCharmManager_CommandsRequested(SettingsPane sender,
+    SettingsPaneCommandsRequestedEventArgs args)
+        {
+            args.Request.ApplicationCommands.Add(new SettingsCommand("privacypolicy", "Privacy Policy",
+                OpenPrivacyPolicy));
+        }
+
+        private async void OpenPrivacyPolicy(IUICommand command)
+        {
+            var uri = new Uri("https://sites.google.com/site/awfulforumsreader/");
+            await Launcher.LaunchUriAsync(uri);
         }
 #endif
 

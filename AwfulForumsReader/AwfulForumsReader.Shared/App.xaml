@@ -23,5 +23,7 @@
         <tools:BackButtonEnableConverter x:Key="BackButtonEnableConverter" />
         <tools:TotalPageConverter x:Key="TotalPageConverter" />
         <tools:NotifyThreadTextConverter x:Key="NotifyThreadTextConverter" />
+        <tools:NewThreadReplyTitleConverter x:Key="NewThreadReplyTitleConverter" />
+        <tools:NewThreadTitleConverter x:Key="NewThreadTitleConverter" />
     </Application.Resources>
 </Application>

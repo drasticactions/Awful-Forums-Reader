@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using AwfulForumsReader.Common;
+using AwfulForumsReader.Pages;
 
 namespace AwfulForumsReader.Commands
 {
@@ -11,6 +12,9 @@ namespace AwfulForumsReader.Commands
         {
 #if WINDOWS_APP
            App.ShowAppSettingsFlyout();
+#endif
+#if WINDOWS_PHONE_APP
+            App.RootFrame.Navigate(typeof (SettingsPage));
 #endif
         }
     }

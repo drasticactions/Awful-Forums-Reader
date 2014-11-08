@@ -5,10 +5,159 @@
     xmlns:local="using:AwfulForumsReader.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:tools="using:AwfulForumsReader.Tools"
+    xmlns:triggers="using:WinRT.Triggers"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d"
+    x:Name="pageRoot"
+    DataContext="{Binding Source={StaticResource Locator}, Path=MainForumsPageVm}"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <interactivity:Interaction.Behaviors>
+        <tools:StatusBarBehavior IsVisible="True" 
+                                 BackgroundColor="#FF1E72C9"
+                                 ForegroundColor="White"/>
+    </interactivity:Interaction.Behaviors>
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <ContinuumNavigationTransitionInfo>
+                    </ContinuumNavigationTransitionInfo>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+    <Page.Resources>
+        <CollectionViewSource
+            x:Name="ForumViewSource"
+            Source="{Binding ForumGroupList}"
+            IsSourceGrouped="true"
+            d:Source="{Binding ForumGroupList}"
+            ItemsPath="ForumList" />
+        <DataTemplate x:Key="ForumTemplate">
+            <Grid Width="350" Margin="5" HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Background="{Binding Converter={StaticResource SubforumHeaderColorConverter}}"/>
+                <Grid Grid.Row="1" VerticalAlignment="Bottom" Background="#FFF0F0F0">
+                    <TextBlock Text="{Binding Name}" TextAlignment="Left" Foreground="Black"
+                                           Style="{StaticResource TitleTextBlockStyle}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"  Height="30" Margin="15"  />
+                </Grid>
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Holding">
+                        <tools:OpenMenuFlyoutAction />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+                <FlyoutBase.AttachedFlyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Command="{Binding DataContext.AddAsFavorite, ElementName=pageRoot}"  CommandParameter="{Binding}" Text="{Binding Converter={StaticResource AddOrRemoveFavoriteTextConverter}}"/>
+                    </MenuFlyout>
+                </FlyoutBase.AttachedFlyout>
+            </Grid>
 
-    <Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="HeaderTemplate">
+            <Grid Margin="5,0,0,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="{Binding Name}" Style="{StaticResource SubheaderTextBlockStyle}" Foreground="{ThemeResource ApplicationHeaderForegroundThemeBrush}" VerticalAlignment="Center"/>
+                <Rectangle Grid.Row="1" Fill="GreenYellow" Height="1" Margin="0,7,0,0"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid x:Name="LayoutRoot">
 
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="0" x:Name="ContentRoot" Margin="19,9.5,19,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <ProgressBar HorizontalAlignment="Stretch" VerticalAlignment="Top" IsIndeterminate="True" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <ListView
+                            Grid.Row="1"
+                AutomationProperties.AutomationId="ItemGridView"
+                AutomationProperties.Name="Grouped Items"
+                Visibility="Visible"
+                ItemsSource="{Binding Source={StaticResource ForumViewSource}}"
+                SelectionMode="None"
+                IsSwipeEnabled="False"
+                ItemTemplate="{StaticResource ForumTemplate}"
+                IsItemClickEnabled="True">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.GroupStyle>
+                        <GroupStyle HeaderTemplate="{StaticResource HeaderTemplate}">
+                            <GroupStyle.Panel>
+                                <ItemsPanelTemplate>
+                                    <VariableSizedWrapGrid Orientation="Vertical"/>
+                                </ItemsPanelTemplate>
+                            </GroupStyle.Panel>
+                        </GroupStyle>
+                    </ListView.GroupStyle>
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="ItemClick">
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToThreadListPageCommand}"
+                                                  PassEventArgsToCommand="True" />
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                </ListView>
+            </Grid>
+        </Grid>
     </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="BookmarkButton"  Label="Bookmarks">
+                <AppBarButton.Icon>
+                    <PathIcon Data="M20,15.6250009536743L20.8724021911621,13.9025888442993 22.1354274749756,12.861328125 23.6328258514404,12.362060546875 25.2083492279053,12.265625 26.7057456970215,12.432861328125 27.9687690734863,12.724609375 28.8411636352539,13.001708984375 29.1666851043701,13.125 29.1666316986084,14.1666851043701 29.1666316986084,14.7766847610474 30.8333168029785,14.3750524520874 30.8332633972168,27.0833702087402 30.436128616333,27.106969833374 29.3749351501465,27.1940422058105 27.8449954986572,27.3690052032471 26.041618347168,27.656270980835 22.3958072662354,28.6653785705566 20.9439964294434,29.4360504150391 20,30.4166851043701 19.0559825897217,29.4360504150391 17.604154586792,28.6653785705566 13.958309173584,27.656270980835 12.1549196243286,27.3690052032471 10.6249685287476,27.1940422058105 9.56376838684082,27.106969833374 9.1666316986084,27.0833702087402 9.1666316986084,14.3750009536743 10.8333158493042,14.77663230896 10.8333158493042,14.1666851043701 10.8333158493042,13.1250524520874 11.1588363647461,13.0017595291138 12.0312328338623,12.7246532440186 13.2942543029785,12.432897567749 14.791651725769,12.2656517028809 16.3671741485596,12.3620777130127 17.864574432373,12.8613367080688 19.1275978088379,13.9025907516479 20,15.6250009536743z M28.3332633972168,24.8028430938721L28.3333168029785,14.4011058807373 26.4518070220947,14.0675487518311 24.5312385559082,13.8617372512817 22.5325489044189,14.4485187530518 21.4917049407959,15.2468957901001 20.4166831970215,16.4927387237549 20.4166316986084,27.4819469451904 21.9314212799072,26.4026222229004 24.0398559570313,25.7265396118164 26.3158359527588,25.2583847045898 28.3332633972168,24.8028430938721z M11.6666316986084,14.4011058807373L11.6666316986084,24.8028430938721 13.6840600967407,25.2583847045898 15.9600458145142,25.7265396118164 18.0684967041016,26.4026222229004 19.5833168029785,27.4819469451904 19.5833168029785,16.4927387237549 18.5082950592041,15.2468957901001 17.4674510955811,14.4485187530518 15.4687576293945,13.8617372512817 13.5481719970703,14.0675487518311 11.6666316986084,14.4011058807373z"/>
+                </AppBarButton.Icon>
+                <triggers:Interactions.Triggers>
+                    <triggers:EventTrigger EventName="Click">
+                        <triggers:InvokeCommandAction Command="{Binding NavigateToBookmarks}"/>
+                    </triggers:EventTrigger>
+                </triggers:Interactions.Triggers>
+            </AppBarButton>
+            <AppBarButton x:Name="PrivateMessagesButton" Label="Private Messages">
+                <AppBarButton.Icon>
+                    <PathIcon Data="M17.3684215545654,26.8421058654785L19.1666831970215,32.5 12.6315793991089,26.8421058654785 10,26.8421058654785 10,11.5789480209351 30.0000019073486,11.5789480209351 30.0000019073486,26.8421058654785 17.3684215545654,26.8421058654785z M13.8289480209351,22.0723686218262L14.9848432540894,21.5546321868896 15.4000005722046,20.5421047210693 15.0671062469482,19.6499996185303 13.8289480209351,18.8368434906006 13.8289480209351,16.9407901763916 15.0223684310913,17.2947368621826 15.0223684310913,16.4144744873047 13.8289480209351,16.184211730957 13.8289480209351,15.4605264663696 13.3236846923828,15.4605264663696 13.3236846923828,16.2000007629395 12.217737197876,16.7368431091309 11.7815790176392,17.7960529327393 12.0671052932739,18.6927909851074 13.3236846923828,19.5184211730957 13.3236846923828,21.3486843109131 12.5197372436523,21.2006855010986 11.8394746780396,20.8342113494873 11.8394746780396,21.7513160705566 13.3236846923828,22.1052646636963 13.3236846923828,22.9644737243652 13.8289480209351,22.9644737243652 13.8289480209351,22.0723686218262z M13.3236846923828,18.6013164520264L12.801947593689,18.2112102508545 12.6539478302002,17.7131576538086 12.8348426818848,17.2243690490723 13.3236846923828,16.9618434906006 13.3236846923828,18.6013164520264z M13.8289480209351,19.7407894134521L14.5289478302002,20.5960540771484 13.8289480209351,21.3236846923828 13.8289480209351,19.7407894134521z M20.7157897949219,17.792106628418L19.7789497375488,17.792106628418 20.1078968048096,16.2092113494873 19.4578952789307,16.2092113494873 19.1210536956787,17.792106628418 18.1263160705566,17.792106628418 18.4500007629395,16.2092113494873 17.788158416748,16.2092113494873 17.4592113494873,17.792106628418 16.456579208374,17.792106628418 16.3368434906006,18.3671054840088 17.3407897949219,18.3671054840088 17.1144752502441,19.5026321411133 16.1605262756348,19.5026321411133 16.0447368621826,20.0776309967041 16.9868431091309,20.0776309967041 16.6657905578613,21.6000003814697 17.3197383880615,21.6000003814697 17.6407909393311,20.0776309967041 18.6355285644531,20.0776309967041 18.3065795898438,21.6000003814697 18.9605274200439,21.6000003814697 19.2973690032959,20.0776309967041 20.292106628418,20.0776309967041 20.4368438720703,19.5026321411133 19.417106628418,19.5026321411133 19.6552639007568,18.3671054840088 20.5881595611572,18.3671054840088 20.7157897949219,17.792106628418z M19.0052642822266,18.3671054840088L18.7631587982178,19.5026321411133 17.7552642822266,19.5026321411133 18.0026340484619,18.3671054840088 19.0052642822266,18.3671054840088z M22.6092109680176,16.2092113494873L21.6421051025391,16.2092113494873 21.7500019073486,20.3697376251221 22.5302639007568,20.3697376251221 22.6092109680176,16.2092113494873z M22.1526317596436,22.1868419647217L22.5657901763916,22.0289478302002 22.7407913208008,21.6447372436523 22.5657901763916,21.2460536956787 22.1526317596436,21.081579208374 21.7328948974609,21.2460536956787 21.5605278015137,21.6447372436523 21.7328948974609,22.0289478302002 22.1526317596436,22.1868419647217z M28.2934226989746,20.0078945159912L28.2934226989746,19.330265045166 26.668420791626,19.330265045166 26.668420791626,17.7013168334961 25.9907894134521,17.7013168334961 25.9907894134521,19.330265045166 24.3657894134521,19.330265045166 24.3657894134521,20.0078945159912 25.9907894134521,20.0078945159912 25.9907894134521,21.6328964233398 26.668420791626,21.6328964233398 26.668420791626,20.0078945159912 28.2934226989746,20.0078945159912z"/>
+                </AppBarButton.Icon>
+                <triggers:Interactions.Triggers>
+                    <triggers:EventTrigger EventName="Click">
+                        <triggers:InvokeCommandAction Command="{Binding NavigateToPrivateMessageListPageCommand}"/>
+                    </triggers:EventTrigger>
+                </triggers:Interactions.Triggers>
+            </AppBarButton>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="Refresh Forum List" x:Name="RefreshButton" Icon="Refresh"/>
+                <AppBarButton Label="Settings">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="Click">
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToSettingsCommand}"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                </AppBarButton>
+                <AppBarButton Label="Fulfill Your Dreams" IsCompact="True"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

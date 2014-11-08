@@ -33,5 +33,10 @@ namespace AwfulForumsReader.Pages
             VisualStateManager.GoToState(this, e.NewSize.Width <= e.NewSize.Height ? "SnappedState" : "DefaultLayout",
                 true);
         }
+
+        private void MainForumListFull_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

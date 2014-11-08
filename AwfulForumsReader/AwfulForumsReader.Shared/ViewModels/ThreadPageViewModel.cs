@@ -25,7 +25,27 @@ namespace AwfulForumsReader.ViewModels
         private ForwardThreadPageCommand _forwardThreadPageCommand = new ForwardThreadPageCommand();
         private BackThreadPageCommand _backThreadPageCommand = new BackThreadPageCommand();
         private RefreshThreadPageCommand _refreshThreadPageCommand = new RefreshThreadPageCommand();
+        private ChangePageThreadCommand _changePageThreadCommand = new ChangePageThreadCommand();
 
+        public ChangePageThreadCommand ChangePageThreadCommand
+        {
+            get { return _changePageThreadCommand; }
+            set { _changePageThreadCommand = value; }
+        }
+
+        private string _pageSelection;
+
+        public string PageSelection
+        {
+            get { return _pageSelection; }
+            set
+            {
+                SetProperty(ref _pageSelection, value);
+                OnPropertyChanged();
+            }
+        }
+
+        public int QuoteId { get; set; }
         public RefreshThreadPageCommand RefreshThreadPageCommand
         {
             get { return _refreshThreadPageCommand; }

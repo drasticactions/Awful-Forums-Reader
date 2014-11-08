@@ -1,0 +1,532 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MvvmHelpers.WP</name>
+    </assembly>
+    <members>
+        <member name="T:JulMar.UI.MessageVisualizer">
+            <summary>
+            This class implements the IMessageVisualizer for iOS
+            </summary>
+        </member>
+        <member name="M:JulMar.UI.MessageVisualizer.ShowAsync(System.String,System.String)">
+            <summary>
+            ShowAsync is used for simple notifications with an OK button.
+            </summary>
+            <param name="message">The content to display in the notification.</param>
+            <param name="title">The optional title to be shown</param>
+        </member>
+        <member name="M:JulMar.UI.MessageVisualizer.ShowAsync(System.String,System.String,JulMar.Interfaces.MessageVisualizerOptions)">
+            <summary>
+            Display a notification to the user with options.
+            </summary>
+            <param name="message"></param>
+            <param name="title"></param>
+            <param name="visualizerOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JulMar.Converters.ArrayToStringConverter">
+            <summary>
+            This converts an array of objects to a string with a given separator.  The default
+            separator is a comma, but it can be changed through a property.
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.ArrayToStringConverter.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.ArrayToStringConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:JulMar.Converters.ArrayToStringConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="P:JulMar.Converters.ArrayToStringConverter.Separator">
+            <summary>
+            Separator to use when joining strings
+            </summary>
+        </member>
+        <member name="T:JulMar.Converters.DebugConverter">
+            <summary>
+            This provides a debugging output for a binding converter
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.DebugConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Outputs all parameters to the debug console.
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:JulMar.Converters.DebugConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="P:JulMar.Converters.DebugConverter.Header">
+            <summary>
+            Header to add to string
+            </summary>
+        </member>
+        <member name="T:JulMar.Converters.DoubleToIntegerConverter">
+            <summary>
+            This converts a double into an integer value, rounding the value off.
+            It is useful when providing textual versions of scrollbar or slider values (on a tooltip).
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.DoubleToIntegerConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:JulMar.Converters.DoubleToIntegerConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="T:JulMar.Converters.IntegerToBooleanConverter">
+            <summary>
+            Converts an integer value into a boolean true/false
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.IntegerToBooleanConverter.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.IntegerToBooleanConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:JulMar.Converters.IntegerToBooleanConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="P:JulMar.Converters.IntegerToBooleanConverter.ZeroTreatment">
+            <summary>
+            Mapping for zero to Visibility.  Defaults to Collapsed.
+            </summary>
+        </member>
+        <member name="P:JulMar.Converters.IntegerToBooleanConverter.NonzeroTreatment">
+            <summary>
+            Mapping for non-zero to Visibility.  Defaults to Visible.
+            </summary>
+        </member>
+        <member name="T:JulMar.Converters.MathConverter">
+            <summary>
+            This provides a simple Math converter which supports to add/subtract/multiply/divide by a constant.
+            The operation can be "+", "-", "*" and "%".
+            </summary>
+            <example>
+            <![CDATA[
+                <me:MathConverter x:Key="mathCvt" />
+                <TextBlock Text="{Binding ElementName=slider, Path=Value, Converter={StaticResource mathCvt}, ConverterParameter=+1}" />
+            ]]>
+            </example>
+        </member>
+        <member name="M:JulMar.Converters.MathConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+            <param name="value">The value produced by the binding source.</param><param name="targetType">The type of the binding target property.</param><param name="parameter">The converter parameter to use.</param><param name="culture">The culture to use in the converter.</param>
+        </member>
+        <member name="M:JulMar.Converters.MathConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+            <param name="value">The value that is produced by the binding target.</param><param name="targetType">The type to convert to.</param><param name="parameter">The converter parameter to use.</param><param name="culture">The culture to use in the converter.</param>
+        </member>
+        <member name="P:JulMar.Converters.MathConverter.Operation">
+            <summary>
+            Operation to set - used if no parameter is passed.
+            </summary>
+        </member>
+        <member name="T:JulMar.Converters.NotBooleanConverter">
+            <summary>
+            This converter reverses a Boolean value (True == False, False == True).
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.NotBooleanConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:JulMar.Converters.NotBooleanConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="T:JulMar.Converters.NullBooleanConverter">
+            <summary>
+            This converts an object value to a boolean
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.NullBooleanConverter.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.NullBooleanConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:JulMar.Converters.NullBooleanConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="P:JulMar.Converters.NullBooleanConverter.NullTreatment">
+            <summary>
+            Mapping value for null - defaults to false.
+            </summary>
+        </member>
+        <member name="P:JulMar.Converters.NullBooleanConverter.NonNullTreatment">
+            <summary>
+            Mapping value for non-null, defaults to true.
+            </summary>
+        </member>
+        <member name="T:JulMar.Converters.NullOrEmptyBooleanConverter">
+            <summary>
+            This converts an object value to a boolean
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.NullOrEmptyBooleanConverter.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.NullOrEmptyBooleanConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:JulMar.Converters.NullOrEmptyBooleanConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="P:JulMar.Converters.NullOrEmptyBooleanConverter.EmptyTreatment">
+            <summary>
+            Mapping value for null - defaults to false.
+            </summary>
+        </member>
+        <member name="P:JulMar.Converters.NullOrEmptyBooleanConverter.NotEmptyTreatment">
+            <summary>
+            Mapping value for non-null, defaults to true.
+            </summary>
+        </member>
+        <member name="T:JulMar.Converters.NumericToDoubleConverter">
+            <summary>
+            This converts any numeric type to a double.  It is primarily used in template bindings where an integer value
+            is bound to a RangeBase.Value property which requires a double.
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.NumericToDoubleConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:JulMar.Converters.NumericToDoubleConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="T:JulMar.Converters.ToStringConverter">
+            <summary>
+            This converts anything to a string using the ToString method. This is useful if you 
+            want to do simple formatting but the element is not a String (StringFormat only works with string types)
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.ToStringConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:JulMar.Converters.ToStringConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="T:JulMar.Converters.DelegateValueConverter">
+            <summary>
+            An IValueConverter instance based on delegates.
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.DelegateValueConverter.#ctor(System.Func{System.Object,System.Type,System.Object,System.String,System.Object},System.Func{System.Object,System.Type,System.Object,System.String,System.Object})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="convertFunc">Convert func.</param>
+            <param name="convertBackFunc">Convert back func.</param>
+        </member>
+        <member name="M:JulMar.Converters.DelegateValueConverter.Windows#UI#Xaml#Data#IValueConverter#Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+            <param name="value">The value produced by the binding source.</param><param name="targetType">The type of the binding target property.</param><param name="parameter">The converter parameter to use.</param><param name="culture">The culture to use in the converter.</param>
+        </member>
+        <member name="M:JulMar.Converters.DelegateValueConverter.Windows#UI#Xaml#Data#IValueConverter#ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+            <param name="value">The value that is produced by the binding target.</param><param name="targetType">The type to convert to.</param><param name="parameter">The converter parameter to use.</param><param name="culture">The culture to use in the converter.</param>
+        </member>
+        <member name="P:JulMar.Converters.DelegateValueConverter.Convert">
+            <summary>
+            Conversion delegate
+            </summary>
+        </member>
+        <member name="P:JulMar.Converters.DelegateValueConverter.ConvertBack">
+            <summary>
+            Convert Back delegate
+            </summary>
+        </member>
+        <member name="T:JulMar.Converters.BooleanToBrushConverter">
+            <summary>
+            This converts a Boolean value to a Brush
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.BooleanToBrushConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:JulMar.Converters.BooleanToBrushConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="P:JulMar.Converters.BooleanToBrushConverter.TrueBrush">
+            <summary>
+            Mapping for True value
+            </summary>
+        </member>
+        <member name="P:JulMar.Converters.BooleanToBrushConverter.FalseBrush">
+            <summary>
+            Mapping for False value
+            </summary>
+        </member>
+        <member name="T:JulMar.Converters.BooleanToVisibilityConverter">
+            <summary>
+            This converts a Boolean to a Visibility.  It supports mapping the conversions.
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.BooleanToVisibilityConverter.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.BooleanToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:JulMar.Converters.BooleanToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="P:JulMar.Converters.BooleanToVisibilityConverter.TrueTreatment">
+            <summary>
+            Mapping for True to Visibility.  Defaults to Visible.
+            </summary>
+        </member>
+        <member name="P:JulMar.Converters.BooleanToVisibilityConverter.FalseTreatment">
+            <summary>
+            Mapping for False to Visibility.  Defaults to Collapsed.
+            </summary>
+        </member>
+        <member name="T:JulMar.Converters.IntegerToVisibilityConverter">
+            <summary>
+            This converts an integer value to a Visibility type.
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.IntegerToVisibilityConverter.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.IntegerToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:JulMar.Converters.IntegerToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="P:JulMar.Converters.IntegerToVisibilityConverter.ZeroTreatment">
+            <summary>
+            Mapping for zero to Visibility.  Defaults to Collapsed.
+            </summary>
+        </member>
+        <member name="P:JulMar.Converters.IntegerToVisibilityConverter.NonzeroTreatment">
+            <summary>
+            Mapping for non-zero to Visibility.  Defaults to Visible.
+            </summary>
+        </member>
+        <member name="T:JulMar.Converters.NullOrEmptyVisibilityConverter">
+            <summary>
+            This converts object presence to visibility.
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.NullOrEmptyVisibilityConverter.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.NullOrEmptyVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:JulMar.Converters.NullOrEmptyVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="P:JulMar.Converters.NullOrEmptyVisibilityConverter.EmptyTreatment">
+            <summary>
+            Visibility conversion when object is null.  Defaults to hidden.
+            </summary>
+        </member>
+        <member name="P:JulMar.Converters.NullOrEmptyVisibilityConverter.NotEmptyTreatment">
+            <summary>
+            Visibility conversion when object is non-null.  Defaults to visible.
+            </summary>
+        </member>
+        <member name="T:JulMar.Converters.NullVisibilityConverter">
+            <summary>
+            This converts object presence to visibility.
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.NullVisibilityConverter.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:JulMar.Converters.NullVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:JulMar.Converters.NullVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a value. 
+            </summary>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="P:JulMar.Converters.NullVisibilityConverter.NullTreatment">
+            <summary>
+            Visibility conversion when object is null.  Defaults to hidden.
+            </summary>
+        </member>
+        <member name="P:JulMar.Converters.NullVisibilityConverter.NonNullTreatment">
+            <summary>
+            Visibility conversion when object is non-null.  Defaults to visible.
+            </summary>
+        </member>
+    </members>
+</doc>

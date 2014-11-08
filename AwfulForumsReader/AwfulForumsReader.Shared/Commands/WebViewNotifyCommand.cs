@@ -51,10 +51,12 @@ namespace AwfulForumsReader.Commands
                         //Frame.Navigate(typeof(RapSheetView), command.Id);
                         break;
                     case "quote":
-                        //Frame.Navigate(typeof(ReplyView), command.Id);
+                        var navigateToNewReplyViaQuoteCommand = new NavigateToNewReplyViaQuoteCommand();
+                        navigateToNewReplyViaQuoteCommand.Execute(command.Id);
                         break;
                     case "edit":
-                        //Frame.Navigate(typeof(EditReplyPage), command.Id);
+                        var navigateToEditPostPageCommand = new NavigateToEditPostPageCommand();
+                        navigateToEditPostPageCommand.Execute(command.Id);
                         break;
                     case "scrollToPost":
                         try
@@ -76,11 +78,11 @@ namespace AwfulForumsReader.Commands
                     case "markAsLastRead":
                         try
                         {
-
-                            //await _threadManager.MarkPostAsLastReadAs(_forumThread, Convert.ToInt32(command.Id));
+                            var threadManager = new ThreadManager();
+                            await threadManager.MarkPostAsLastReadAs(Locator.ViewModels.ThreadPageVm.ForumThreadEntity, Convert.ToInt32(command.Id));
                             int nextPost = Convert.ToInt32(command.Id) + 1;
                             await webview.InvokeScriptAsync("ScrollToDiv", new[] { string.Concat("#postId", nextPost.ToString()) });
-                            NotifyStatusTile.CreateToastNotification("Post marked as last read! Now smash this computer and live your life!");
+                            NotifyStatusTile.CreateToastNotification("Last Read", "Post marked as last read.");
                         }
                         catch (Exception ex)
                         {

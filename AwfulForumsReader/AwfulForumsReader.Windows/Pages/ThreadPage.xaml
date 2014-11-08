@@ -13,8 +13,8 @@
     xmlns:tools="using:AwfulForumsReader.Tools"
     xmlns:triggers="using:WinRT.Triggers"
     xmlns:awfulForumsReader="using:AwfulForumsReader"
-    xmlns:behaviors="using:JulMar.Windows.Behaviors"
     xmlns:userControls="using:AwfulForumsReader.UserControls"
+    xmlns:behaviors="using:JulMar.Behaviors"
     mc:Ignorable="d">
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
@@ -63,12 +63,25 @@
                                 <Viewbox Margin="5" Height="40">
                                     <TextBlock Text="{Binding ForumThreadEntity, Converter={StaticResource TotalPageConverter}}"/>
                                 </Viewbox>
-                                <TextBox InputScope="Number" Margin="5" x:Name="PageNumberTextBox"/>
-                                <Button Margin="5" x:Name="PageNumberButton" Content="Change Page"/>
+                                <TextBox InputScope="Number" Text="{Binding PageSelection, Mode=TwoWay}" Margin="5" x:Name="PageNumberTextBox"/>
+                                <Button Margin="5" x:Name="PageNumberButton" Content="Change Page">
+                                    <triggers:Interactions.Triggers>
+                                        <triggers:EventTrigger EventName="Click">
+                                            <triggers:InvokeCommandAction Command="{Binding ChangePageThreadCommand}" PassEventArgsToCommand="True"/>
+                                        </triggers:EventTrigger>
+                                    </triggers:Interactions.Triggers>
+                                </Button>
                             </StackPanel>
                         </Flyout>
                     </Button.Flyout>
                 </Button>
+                <AppBarButton x:Name="ReplyButton" Label="Reply" Icon="Upload">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="Click">
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToNewReplyCommand}" PassEventArgsToCommand="True"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                </AppBarButton>
                 <AppBarButton Label="Thread Tabs" Icon="World">
                     <AppBarButton.Flyout>
                         <Flyout Placement="Right">
@@ -146,13 +159,7 @@
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>
-                <AppBarButton x:Name="ReplyButton" Label="Reply" Icon="Upload">
-                    <triggers:Interactions.Triggers>
-                        <triggers:EventTrigger EventName="Click">
-                            <triggers:InvokeCommandAction Command="{Binding RefreshThreadPageCommand}" PassEventArgsToCommand="True"/>
-                        </triggers:EventTrigger>
-                    </triggers:Interactions.Triggers>
-                </AppBarButton>
+                
                 <AppBarButton x:Name="BackButton" IsEnabled="{Binding ForumThreadEntity, Converter={StaticResource BackButtonEnableConverter}, Mode=TwoWay }" Label="Back Page"
                               Icon="Back">
                     <triggers:Interactions.Triggers>

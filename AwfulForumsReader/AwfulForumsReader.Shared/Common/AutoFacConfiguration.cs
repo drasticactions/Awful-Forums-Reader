@@ -14,13 +14,20 @@ namespace AwfulForumsReader.Common
             var builder = new ContainerBuilder();
 
             // Register View Models
-            //builder.RegisterType<ThreadViewModel>().SingleInstance();
+            builder.RegisterType<NewPrivateMessageViewModel>().SingleInstance();
+            builder.RegisterType<PrivateMessagePageViewModel>().SingleInstance();
+            builder.RegisterType<LastPostPageViewModel>().SingleInstance();
+            builder.RegisterType<SmiliesPageViewModel>().SingleInstance();
             builder.RegisterType<MainForumsPageViewModel>().SingleInstance();
             builder.RegisterType<ThreadListPageViewModel>().SingleInstance();
             builder.RegisterType<BookmarksPageViewModel>().SingleInstance();
             builder.RegisterType<PrivateMessageListViewModel>().SingleInstance();
             builder.RegisterType<ThreadPageViewModel>().SingleInstance();
-            //builder.RegisterType<PrivateMessageViewModel>().SingleInstance();
+            builder.RegisterType<NewThreadReplyPageViewModel>().SingleInstance();
+            builder.RegisterType<NewThreadPageViewModel>().SingleInstance();
+            builder.RegisterType<PostIconListPageViewModel>().SingleInstance();
+            builder.RegisterType<BbCodeListPageViewModel>().SingleInstance();
+            builder.RegisterType<PreviewThreadPageViewModel>().SingleInstance();
 
             builder.RegisterType<MainForumsPage>();
             return builder.Build();

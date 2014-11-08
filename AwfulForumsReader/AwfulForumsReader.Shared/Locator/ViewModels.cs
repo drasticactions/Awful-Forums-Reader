@@ -18,15 +18,55 @@ namespace AwfulForumsReader.Locator
             }
         }
 
+        public static NewPrivateMessageViewModel NewPrivateMessagePageVm
+        {
+            get { return App.Container.Resolve<NewPrivateMessageViewModel>(); }
+        }
+
+        public static PrivateMessagePageViewModel PrivateMessagePageVm
+        {
+            get { return App.Container.Resolve<PrivateMessagePageViewModel>(); }
+        }
+
+        public static SmiliesPageViewModel SmiliesPageVm
+        {
+            get { return App.Container.Resolve<SmiliesPageViewModel>(); }
+        }
+
+        public static LastPostPageViewModel LastPostPageVm
+        {
+            get { return App.Container.Resolve<LastPostPageViewModel>(); }
+        }
+
         public static MainForumsPageViewModel MainForumsPageVm
         {
             get { return App.Container.Resolve<MainForumsPageViewModel>(); }
         }
 
-        //public static ThreadViewModel ThreadVm
-        //{
-        //    get { return App.Container.Resolve<ThreadViewModel>(); }
-        //}
+        public static PreviewThreadPageViewModel PreviewThreadPageVm
+        {
+            get { return App.Container.Resolve<PreviewThreadPageViewModel>(); }
+        }
+
+
+        public static BbCodeListPageViewModel BbCodeListVm
+        {
+            get { return App.Container.Resolve<BbCodeListPageViewModel>(); }
+        }
+        public static NewThreadReplyPageViewModel NewThreadReplyVm
+        {
+            get { return App.Container.Resolve<NewThreadReplyPageViewModel>(); }
+        }
+
+        public static PostIconListPageViewModel PostIconListPageVm
+        {
+            get { return App.Container.Resolve<PostIconListPageViewModel>(); }
+        }
+
+        public static NewThreadPageViewModel NewThreadVm
+        {
+            get { return App.Container.Resolve<NewThreadPageViewModel>(); }
+        }
 
         public static ThreadListPageViewModel ThreadListPageVm
         {

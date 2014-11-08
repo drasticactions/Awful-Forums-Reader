@@ -130,14 +130,25 @@ namespace AwfulForumsReader.ViewModels
                     pageNumber++;
                 }
             }
-            return bookmarkThreads;
+
+            if (!_localSettings.Values.ContainsKey(Constants.BookmarkDefault)) return bookmarkThreads;
+            var sorting = (BookmarkSorting)_localSettings.Values[Constants.BookmarkDefault];
+            if (sorting != BookmarkSorting.MostUnreadOnTop) return bookmarkThreads;
+            var newBookmarks =bookmarkThreads.OrderByDescending(node => node.RepliesSinceLastOpened);
+            return newBookmarks.ToList();
         }
+
+        public bool AutoRefresh { get; set; }
 
         public async Task Initialize()
         {
             IsLoading = true;
             BookmarkedThreads = new ObservableCollection<ForumThreadEntity>();
             DateTime refreshDate = DateTime.UtcNow;
+            if (_localSettings.Values.ContainsKey(Constants.AutoRefresh))
+            {
+                AutoRefresh = (bool)_localSettings.Values[Constants.AutoRefresh];
+            }
             if (_localSettings.Values.ContainsKey("RefreshBookmarks"))
             {
                 var dateString = (string)_localSettings.Values["RefreshBookmarks"];
@@ -147,7 +158,7 @@ namespace AwfulForumsReader.ViewModels
             {
                 BookmarkedThreads = db.BookmarkThreads.ToObservableCollection();
             }
-            if (!BookmarkedThreads.Any() || refreshDate < (DateTime.UtcNow.AddHours(-1.00)))
+            if ((!BookmarkedThreads.Any() || refreshDate < (DateTime.UtcNow.AddHours(-1.00))) || AutoRefresh)
             {
                 await Refresh();
             }
