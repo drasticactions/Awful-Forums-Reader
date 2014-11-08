@@ -30,7 +30,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
         <!-- Back button and page title -->
@@ -50,7 +50,7 @@
             <TextBlock x:Name="pageTitle" d:Text="{Binding ForumThreadEntity.Name, Source={d:DesignData /SampleData/ThreadListPageViewModelSampleData.xaml}}" Text="{Binding ForumThreadEntity.Name}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1"
                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Center" />
         </Grid>
-        <Grid x:Name="ThreadGrid" RequestedTheme="Light" Grid.Row="1" Margin="0,0,5,0">
+        <Grid x:Name="ThreadGrid" RequestedTheme="Light" Grid.Row="1" Margin="0,0,5,0" Grid.RowSpan="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="*"/>
@@ -146,7 +146,7 @@
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>
-                <AppBarButton x:Name="ReplyButton" Label="Reply" Icon="Upload">
+                <AppBarButton x:Name="ReplyButton" Label="Reply" Icon="Edit">
                     <triggers:Interactions.Triggers>
                         <triggers:EventTrigger EventName="Click">
                             <triggers:InvokeCommandAction Command="{Binding RefreshThreadPageCommand}" PassEventArgsToCommand="True"/>
