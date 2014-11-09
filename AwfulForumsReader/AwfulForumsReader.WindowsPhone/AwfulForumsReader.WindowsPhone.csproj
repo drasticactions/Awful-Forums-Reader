@@ -15,6 +15,9 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{76F1466A-8B6D-4E39-A767-685A06062A39};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SynthesizeLinkMetadata>true</SynthesizeLinkMetadata>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>arm</AppxBundlePlatforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -252,18 +255,21 @@
     <Reference Include="Microsoft.Framework.OptionsModel">
       <HintPath>..\..\packages\Microsoft.Framework.OptionsModel.1.0.0-beta2-10507\lib\portable-net451+win81+wpa81\Microsoft.Framework.OptionsModel.dll</HintPath>
     </Reference>
-    <Reference Include="MvvmHelpers.Bootstrap">
-      <HintPath>..\..\packages\MVVMHelpers.PCL.1.0.140602\lib\wpa81\MvvmHelpers.Bootstrap.dll</HintPath>
+    <Reference Include="MvvmHelpers.Bootstrap, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\MvvmHelpers.Bootstrap.dll</HintPath>
     </Reference>
-    <Reference Include="MvvmHelpers.Core">
-      <HintPath>..\..\packages\MVVMHelpers.PCL.1.0.140602\lib\wpa81\MvvmHelpers.Core.dll</HintPath>
+    <Reference Include="MvvmHelpers.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\MvvmHelpers.Core.dll</HintPath>
     </Reference>
-    <Reference Include="MvvmHelpers.WinRT">
-      <HintPath>..\..\packages\MVVMHelpers.PCL.1.0.140602\lib\win8\MvvmHelpers.WinRT.dll</HintPath>
+    <Reference Include="MvvmHelpers.WinRT, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\MvvmHelpers.WinRT.dll</HintPath>
     </Reference>
-    <Reference Include="MvvmHelpers.WP">
-      <HintPath>..\..\packages\MVVMHelpers.PCL.1.0.140602\lib\wpa81\MvvmHelpers.WP.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="MvvmHelpers.WP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\MvvmHelpers.WP.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.6\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
@@ -329,7 +335,6 @@
     <Content Include="Assets\BadgeLogo.scale-100.png" />
     <Content Include="Assets\BadgeLogo.scale-140.png" />
     <Content Include="Assets\BadgeLogo.scale-240.png" />
-    <Content Include="Assets\Logo.png" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\Logo.scale-240.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
@@ -340,6 +345,7 @@
     <Content Include="Assets\StoreLogo.scale-240.png" />
     <Content Include="Assets\Website\CSS\forum-thread.css" />
     <Content Include="Assets\WideLogo.scale-240.png" />
+    <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
