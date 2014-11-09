@@ -19,8 +19,10 @@ namespace AwfulForumsReader.Commands
             if (thread.IsBookmark)
             {
                 await threadManager.RemoveBookmarkAsync(thread.ThreadId);
+                thread.IsBookmark = !thread.IsBookmark;
                 return;
             }
+            thread.IsBookmark = !thread.IsBookmark;
             await threadManager.AddBookmarkAsync(thread.ThreadId);
             var msgDlg2 =
                    new MessageDialog(string.Format("'{0}' has been added to your bookmarks! I love you!{1}{2}",

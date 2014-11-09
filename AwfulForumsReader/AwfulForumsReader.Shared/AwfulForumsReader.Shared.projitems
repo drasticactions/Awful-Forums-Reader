@@ -19,6 +19,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddBbCodeToTextboxCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\AddIgnoredUserPostCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveBookmarkCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveFavoriteCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveThreadToNotificationTableCommand.cs" />
@@ -500,6 +501,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\nmd-tour.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\nmd-us.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\nmd-world.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\noicon.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\ouya.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\phiz-ant.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\phiz-aoki.png" />

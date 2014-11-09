@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="4de1caa7-1573-4af2-9e28-d90594f6a304" Publisher="CN=Timothy" Version="1.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="4de1caa7-1573-4af2-9e28-d90594f6a304" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="52978DrasticActions.AwfulForumsReader" Publisher="CN=49056560-3A92-41D0-8509-DF4FE44F646C" Version="4.5.0.3" />
+  <mp:PhoneIdentity PhoneProductId="e80eb6b6-e26b-4a50-bcc0-2df254d0626b" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>AwfulForumsReader.WindowsPhone</DisplayName>
-    <PublisherDisplayName>Timothy</PublisherDisplayName>
+    <DisplayName>Awful Forums Reader</DisplayName>
+    <PublisherDisplayName>ティム・ミラー</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>
@@ -20,7 +20,7 @@
         <m3:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\BadgeLogo.png" />
         <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png">
         </m3:DefaultTile>
-        <m3:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#1E72C9" />
+        <m3:SplashScreen Image="Assets\SplashScreen.png" />
       </m3:VisualElements>
       <Extensions>
         <Extension Category="windows.backgroundTasks" EntryPoint="AwfulForumsReader.BackgroundStatus.BackgroundNotifyStatus">

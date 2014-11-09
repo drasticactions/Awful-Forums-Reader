@@ -16,11 +16,16 @@ using Newtonsoft.Json;
 
 namespace AwfulForumsReader.Commands
 {
+    public class WebViewCollection
+    {
+        public WebView WebView { get; set; }
+        public string PostId { get; set; }
+    }
+
     public class WebViewNotifyCommand
     {
         private static int _zoomSize;
         private static readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
-        
         public static async void WebView_ScriptNotify(object sender, NotifyEventArgs e)
         {
             var webview = sender as WebView;
@@ -43,6 +48,20 @@ namespace AwfulForumsReader.Commands
                         //Frame.Navigate(typeof(UserProfileView), command.Id);
                         break;
                     case "openPost":
+                        var addIgnoredUserPostCommand = new AddIgnoredUserPostCommand();
+                        var test = new WebViewCollection()
+                        {
+                            PostId = command.Id,
+                            WebView = webview
+                        };
+                        try
+                        {
+                            addIgnoredUserPostCommand.Execute(test);
+                        }
+                        catch (Exception ex)
+                        {
+                            AwfulDebugger.SendMessageDialogAsync("Error getting post", ex);
+                        }
                         break;
                     case "post_history":
                         //Frame.Navigate(typeof(UserPostHistoryPage), command.Id);
@@ -111,7 +130,8 @@ namespace AwfulForumsReader.Commands
                         Locator.ViewModels.ThreadPageVm.IsLoading = true;
                         var newThreadEntity = new ForumThreadEntity()
                         {
-                            Location = command.Id
+                            Location = command.Id,
+                            ImageIconLocation = "/Assets/ThreadTags/noicon.png"
                         };
                         Locator.ViewModels.ThreadPageVm.ForumThreadEntity = newThreadEntity;
 

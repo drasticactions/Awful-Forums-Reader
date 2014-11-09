@@ -41,7 +41,7 @@
             <ProgressBar x:Name="LoadingProgressBar" VerticalAlignment="Top" IsIndeterminate="True" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter} }"/>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="170"/>
+                    <RowDefinition Height="200"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <StackPanel Margin="15" Grid.Row="0">

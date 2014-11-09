@@ -100,7 +100,7 @@ namespace AwfulForumsReader.Tools
                     string.Format(
                         "<h4 class=\"text article-title win-type-ellipsis\"><span class=\"registered\">{0}</span><h4>",
                         post.PostDate);
-                string postBody = string.Format("<div class=\"postbody\">{0}</div>", post.PostHtml);
+                string postBody = string.Format("<div id=\"{1}\" class=\"postbody\">{0}</div>", post.PostHtml, post.PostId);
                 string userInfo = string.Format("<div class=\"userinfo\">{0}{1}</div>", username, postData);
                 string postButtons = CreateButtons(post);
 

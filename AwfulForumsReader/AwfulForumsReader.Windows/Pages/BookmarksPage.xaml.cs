@@ -91,8 +91,10 @@ namespace AwfulForumsReader.Pages
         /// The navigation parameter is available in the LoadState method 
         /// in addition to page state preserved during an earlier session.
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
+            var threadViewModel = Locator.ViewModels.BookmarksPageVm;
+            await threadViewModel.Initialize();
             navigationHelper.OnNavigatedTo(e);
         }
 

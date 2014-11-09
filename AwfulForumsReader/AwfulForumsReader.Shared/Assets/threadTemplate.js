@@ -39,8 +39,16 @@ var ScrollToTable = function (pti) {
     }
 };
 
+var AddPostToThread = function(postId, postHtml) {
+    $('#' + postId).html(postHtml);
+};
+
 var OpenLink = function(link) {
     var hostname = $.url('hostname', link);
+    if (hostname == "about") {
+        ForumCommand('openPost', link);
+        return false;
+    }
     // If the link is not for another SA thread, open it in IE.
     if (hostname != 'forums.somethingawful.com' && hostname != "") {
         return true;

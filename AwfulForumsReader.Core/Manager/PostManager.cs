@@ -27,6 +27,29 @@ namespace AwfulForumsReader.Core.Manager
         {
         }
 
+        public async Task<ForumPostEntity> GetPost(int postId)
+        {
+            try
+            {
+                string url = string.Format(Constants.ShowPost, postId);
+                WebManager.Result result = await _webManager.GetData(url);
+                HtmlDocument doc = result.Document;
+                HtmlNode threadNode =
+                    doc.DocumentNode.Descendants("div")
+                        .FirstOrDefault(node => node.GetAttributeValue("id", string.Empty).Contains("thread"));
+                HtmlNode postNode =
+                    threadNode.Descendants("table")
+                        .FirstOrDefault(node => node.GetAttributeValue("class", string.Empty).Contains("post"));
+                var post = new ForumPostEntity();
+                ParsePost(post, postNode);
+                return post;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error getting post", ex );
+            }
+        }
+
         public async Task<List<ForumPostEntity>> GetThreadPostsAsync(ForumThreadEntity forumThread)
         {
             string url = forumThread.Location;
