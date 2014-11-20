@@ -15,18 +15,12 @@ namespace AwfulForumsReader.Common
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            handler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         protected virtual void RaiseEvent<TArgs>(EventHandler<TArgs> handler, TArgs args)
         {
-            if (handler != null)
-            {
-                handler(this, args);
-            }
+            handler?.Invoke(this, args);
         }
 
         protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] String propertyName = null)

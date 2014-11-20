@@ -24,41 +24,17 @@ namespace AwfulForumsReader.ViewModels
         private UnreadThreadCommand _unreadThreadCommand = new UnreadThreadCommand();
         private LastPageCommand _lastPageCommand = new LastPageCommand();
         private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
-        private RefreshBookmarkListCommand _refreshBookmarkListCommand = new RefreshBookmarkListCommand();
-        private NavigateToMainForumPageCommand _navigateToMainForumPageCommand = new NavigateToMainForumPageCommand();
-        private AddOrRemoveThreadToNotificationTableCommand _addThreadToNotificationTableCommand = new AddOrRemoveThreadToNotificationTableCommand();
-        private NavigateToThreadPageCommand _navigateToThreadPageCommand = new NavigateToThreadPageCommand();
-        private NavigateToLastPageInThreadPageCommand _navigateToLastPageInThreadPageCommand = new NavigateToLastPageInThreadPageCommand();
 
-        public NavigateToLastPageInThreadPageCommand NavigateToLastPageInThreadPageCommand
-        {
-            get { return _navigateToLastPageInThreadPageCommand; }
-            set { _navigateToLastPageInThreadPageCommand = value; }
-        }
-        public NavigateToThreadPageCommand NavigateToThreadPageCommand
-        {
-            get { return _navigateToThreadPageCommand; }
-            set { _navigateToThreadPageCommand = value; }
-        }
+        public NavigateToLastPageInThreadPageCommand NavigateToLastPageInThreadPageCommand { get; set; } = new NavigateToLastPageInThreadPageCommand();
+
+        public NavigateToThreadPageCommand NavigateToThreadPageCommand { get; set; } = new NavigateToThreadPageCommand();
 
 
-        public AddOrRemoveThreadToNotificationTableCommand AddThreadToNotificationTableCommand
-        {
-            get { return _addThreadToNotificationTableCommand; }
-            set { _addThreadToNotificationTableCommand = value; }
-        }
+        public AddOrRemoveThreadToNotificationTableCommand AddThreadToNotificationTableCommand { get; set; } = new AddOrRemoveThreadToNotificationTableCommand();
 
-        public NavigateToMainForumPageCommand NavigateToMainForumPageCommand
-        {
-            get { return _navigateToMainForumPageCommand; }
-            set { _navigateToMainForumPageCommand = value; }
-        }
+        public NavigateToMainForumPageCommand NavigateToMainForumPageCommand { get; set; } = new NavigateToMainForumPageCommand();
 
-        public RefreshBookmarkListCommand RefreshBookmarkListCommand
-        {
-            get { return _refreshBookmarkListCommand; }
-            set { _refreshBookmarkListCommand = value; }
-        }
+        public RefreshBookmarkListCommand RefreshBookmarkListCommand { get; set; } = new RefreshBookmarkListCommand();
 
         public AddOrRemoveBookmarkCommand AddOrRemoveBookmark
         {

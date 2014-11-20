@@ -174,7 +174,7 @@
                                         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                                             <TextBlock Margin="0,0,2,0" FontSize="15" x:Name="ReplyCount"
                                                    Foreground="{Binding RepliesSinceLastOpened, Converter={StaticResource RepliesSinceLastOpenedColorConverter}}"
-                                                   Text="{Binding RepliesSinceLastOpened}" />
+                                                   Text="{Binding RepliesSinceLastOpened, Mode=TwoWay}" />
                                         </StackPanel>
                                     </Border>
                                 </Grid>

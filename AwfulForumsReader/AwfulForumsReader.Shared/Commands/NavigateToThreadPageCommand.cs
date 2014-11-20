@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Common;
@@ -23,7 +24,6 @@ namespace AwfulForumsReader.Commands
             var thread = args.ClickedItem as ForumThreadEntity;
             if (thread == null)
                 return;
-
             var tabManager = new TabManager();
             await tabManager.RemoveAllThreadsFromTabList();
             await tabManager.AddThreadToTabListAsync(thread);
