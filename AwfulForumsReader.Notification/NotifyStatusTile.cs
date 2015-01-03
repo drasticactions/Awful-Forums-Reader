@@ -48,7 +48,7 @@ namespace AwfulForumsReader.Notification
             string imageName = string.Empty;
             if (string.IsNullOrEmpty(imageName))
             {
-                imageName = @"Assets/Logo.scale-100.png";
+                imageName = forumThread.ImageIconLocation;
             }
             imageElement[0].Attributes[1].NodeValue = imageName;
             IXmlNode toastNode = notificationXml.SelectSingleNode("/toast");
