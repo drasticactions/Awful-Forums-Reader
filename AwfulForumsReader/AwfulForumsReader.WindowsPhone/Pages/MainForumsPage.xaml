@@ -9,6 +9,7 @@
     xmlns:tools="using:AwfulForumsReader.Tools"
     xmlns:triggers="using:WinRT.Triggers"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:controls="using:Ika.Controls"
     mc:Ignorable="d"
     x:Name="pageRoot"
     DataContext="{Binding Source={StaticResource Locator}, Path=MainForumsPageVm}"
@@ -91,7 +92,8 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <ProgressBar HorizontalAlignment="Stretch" VerticalAlignment="Top" IsIndeterminate="True" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                <ListView
+                <controls:PullToRefreshPanel PullContent="Pull to Refresh" RefreshContent="Refresh Forums List" Grid.Row="1" PullToRefresh="PullToRefreshPanel_OnPullToRefresh">
+                    <ListView
                             Grid.Row="1"
                 AutomationProperties.AutomationId="ItemGridView"
                 AutomationProperties.Name="Grouped Items"
@@ -122,6 +124,7 @@
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </ListView>
+                </controls:PullToRefreshPanel>
             </Grid>
         </Grid>
     </Grid>

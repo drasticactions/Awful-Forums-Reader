@@ -11,6 +11,7 @@
     xmlns:tools="using:AwfulForumsReader.Tools"
     xmlns:userControls="using:AwfulForumsReader.UserControls"
     xmlns:triggers="using:WinRT.Triggers"
+    xmlns:controls="using:Ika.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
@@ -118,7 +119,8 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <ProgressBar IsIndeterminate="True" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                <ListView  x:Name="ForumThreadList"
+                <controls:PullToRefreshPanel Grid.Row="1" PullContent="Pull to Refresh" RefreshContent="Refresh Bookmarks">
+                                    <ListView  x:Name="ForumThreadList"
                       HorizontalAlignment="Stretch"          
                        ItemTemplate="{StaticResource ForumThreadTemplate}"
                       IsSwipeEnabled="True" Grid.Row="1"
@@ -136,6 +138,12 @@
                         </Style>
                     </ListView.ItemContainerStyle>
                 </ListView>
+                <triggers:Interactions.Triggers>
+                    <triggers:EventTrigger EventName="PullToRefresh">
+                        <triggers:InvokeCommandAction Command="{Binding RefreshBookmarkListCommand}"/>
+                    </triggers:EventTrigger>
+                </triggers:Interactions.Triggers>
+                </controls:PullToRefreshPanel>
             </Grid>
         </Grid>
     </Grid>

@@ -11,6 +11,7 @@
     xmlns:tools="using:AwfulForumsReader.Tools"
     xmlns:userControls="using:AwfulForumsReader.UserControls"
     xmlns:triggers="using:WinRT.Triggers"
+    xmlns:controls="using:Ika.Controls"
     x:Name="PageRoot"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -142,7 +143,8 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <ProgressBar IsIndeterminate="True" Visibility="{Binding ForumPageScrollingCollection.IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                        <ListView  x:Name="ForumThreadList"
+                        <controls:PullToRefreshPanel PullContent="Pull to Refresh" RefreshContent="Refresh Threads" Grid.Row="1">
+                                                    <ListView  x:Name="ForumThreadList"
                       HorizontalAlignment="Stretch"          
                        ItemTemplate="{StaticResource ForumThreadTemplate}"
                       IsSwipeEnabled="True" Grid.Row="1"
@@ -160,6 +162,12 @@
                                 </Style>
                             </ListView.ItemContainerStyle>
                         </ListView>
+                <triggers:Interactions.Triggers>
+                    <triggers:EventTrigger EventName="PullToRefresh">
+                        <triggers:InvokeCommandAction Command="{Binding RefreshThreadListCommand}"/>
+                    </triggers:EventTrigger>
+                </triggers:Interactions.Triggers>
+                        </controls:PullToRefreshPanel>
                     </Grid>
                 </PivotItem>
                 <PivotItem Header="SubForums">

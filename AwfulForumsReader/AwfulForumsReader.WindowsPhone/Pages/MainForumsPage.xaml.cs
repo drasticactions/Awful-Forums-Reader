@@ -107,5 +107,10 @@ namespace AwfulForumsReader.Pages
         }
 
         #endregion
+
+        private void PullToRefreshPanel_OnPullToRefresh(object sender, EventArgs e)
+        {
+            Locator.ViewModels.MainForumsPageVm.Initialize();
+        }
     }
 }
