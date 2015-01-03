@@ -223,18 +223,18 @@
     </Reference>
     <Reference Include="EntityFramework, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\EntityFramework.7.0.0-beta2-11628\lib\portable-net451+win81+wpa81\EntityFramework.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.7.0.0-beta2-11614\lib\portable-net451+win81+wpa81\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.Migrations">
-      <HintPath>..\..\packages\EntityFramework.Migrations.7.0.0-beta2-11628\lib\portable-net451+win81+wpa81\EntityFramework.Migrations.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.Migrations.7.0.0-beta2-11614\lib\portable-net451+win81+wpa81\EntityFramework.Migrations.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.Relational">
-      <HintPath>..\..\packages\EntityFramework.Relational.7.0.0-beta2-11628\lib\portable-net451+win81+wpa81\EntityFramework.Relational.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.Relational.7.0.0-beta2-11614\lib\portable-net451+win81+wpa81\EntityFramework.Relational.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SQLite">
-      <HintPath>..\..\packages\EntityFramework.SQLite.7.0.0-beta2-11628\lib\portable-net451+win81+wpa81\EntityFramework.SQLite.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.SQLite.7.0.0-beta2-11614\lib\portable-net451+win81+wpa81\EntityFramework.SQLite.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="HtmlAgilityPack-PCL, Version=1.4.6.0, Culture=neutral, processorArchitecture=MSIL">
@@ -243,26 +243,26 @@
     </Reference>
     <Reference Include="Microsoft.Data.SQLite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Microsoft.Data.SQLite.1.0.0-beta2-10553\lib\portable-net451+win81+wpa81\Microsoft.Data.SQLite.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.Data.SQLite.1.0.0-beta2-10578\lib\portable-net451+win81+wpa81\Microsoft.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Framework.ConfigurationModel">
-      <HintPath>..\..\packages\Microsoft.Framework.ConfigurationModel.1.0.0-beta2-10555\lib\portable-net451+win81+wpa81\Microsoft.Framework.ConfigurationModel.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.Framework.ConfigurationModel.1.0.0-beta2-10547\lib\portable-net451+win81+wpa81\Microsoft.Framework.ConfigurationModel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Framework.DependencyInjection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Microsoft.Framework.DependencyInjection.1.0.0-beta2-10579\lib\portable-net451+win81+wpa81\Microsoft.Framework.DependencyInjection.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.Framework.DependencyInjection.1.0.0-beta2-10571\lib\portable-net451+win81+wpa81\Microsoft.Framework.DependencyInjection.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Framework.Logging">
-      <HintPath>..\..\packages\Microsoft.Framework.Logging.1.0.0-beta2-10562\lib\portable-net451+win81+wpa81\Microsoft.Framework.Logging.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.Framework.Logging.1.0.0-beta2-10553\lib\portable-net451+win81+wpa81\Microsoft.Framework.Logging.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Framework.Logging.Interfaces">
-      <HintPath>..\..\packages\Microsoft.Framework.Logging.Interfaces.1.0.0-beta2-10562\lib\portable-net451+win81+wpa81\Microsoft.Framework.Logging.Interfaces.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.Framework.Logging.Interfaces.1.0.0-beta2-10553\lib\portable-net451+win81+wpa81\Microsoft.Framework.Logging.Interfaces.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Framework.OptionsModel">
-      <HintPath>..\..\packages\Microsoft.Framework.OptionsModel.1.0.0-beta2-10557\lib\portable-net451+win81+wpa81\Microsoft.Framework.OptionsModel.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.Framework.OptionsModel.1.0.0-beta2-10550\lib\portable-net451+win81+wpa81\Microsoft.Framework.OptionsModel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MvvmHelpers.Bootstrap, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -299,7 +299,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.Common">
-      <HintPath>..\..\packages\System.Data.Common.1.0.0-beta2-10531\lib\portable-net451+win81+wpa81\System.Data.Common.dll</HintPath>
+      <HintPath>..\..\packages\System.Data.Common.1.0.0-beta2-10523\lib\portable-net451+win81+wpa81\System.Data.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Interactive.Async, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -314,7 +314,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\AwfulFormsReader.Database\AwfulForumsReader.Database.csproj">
@@ -340,9 +342,6 @@
     </SDKReference>
     <SDKReference Include="Microsoft.VCLibs, Version=12.0">
       <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Phone</Name>
-    </SDKReference>
-    <SDKReference Include="SQLite.WP81, Version=3.8.7.1">
-      <Name>SQLite for Windows Phone 8.1</Name>
     </SDKReference>
   </ItemGroup>
   <ItemGroup>

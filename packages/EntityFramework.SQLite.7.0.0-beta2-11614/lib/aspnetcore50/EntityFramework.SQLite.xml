@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EntityFramework.SQLite</name>
+    </assembly>
+    <members>
+        <member name="M:Microsoft.Data.Entity.SQLite.SQLiteBatchExecutor.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SQLite.SQLiteConnection.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SQLite.SQLiteDataStoreCreator.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SQLite.SQLiteMigrator.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SQLite.SQLiteModificationCommandBatchFactory.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SQLite.Strings.ArgumentIsEmpty(System.Object)">
+            <summary>
+            The string argument '{argumentName}' cannot be empty.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SQLite.Strings.InvalidEnumValue(System.Object,System.Object)">
+            <summary>
+            The value provided for argument '{argumentName}' must be a valid value of enum type '{enumType}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SQLite.Strings.MigrationOperationNotSupported(System.Object,System.Object)">
+            <summary>
+            '{generatorType}' does not support migration operations of type '{operationType}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.SQLite.Strings.SQLiteNotInUse">
+            <summary>
+            SQLite-specific methods can only be used when the context is using a SQLite data store.
+            </summary>
+        </member>
+    </members>
+</doc>

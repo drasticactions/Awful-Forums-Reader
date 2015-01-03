@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EntityFramework.Migrations</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Data.Entity.Migrations.IMigrationsEnabledDatabaseInternals">
+            <summary>
+                This interface provides access to the underlying services of the
+                <see cref="T:Microsoft.Data.Entity.Migrations.MigrationsEnabledDatabase" /> facade API such that extension methods written
+                for this service can use the underlying services without these details showing up in the
+                API used by application developers.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.MigrationOperationProcessor.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Data.Entity.Migrations.MigrationOperationSqlGenerator">
+            <summary>
+                Default migration operation SQL generator, outputs best-effort ANSI-99 compliant SQL.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.MigrationOperationSqlGenerator.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Infrastructure.HistoryRepository.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Infrastructure.MigrationAssembly.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Infrastructure.Migrator.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.InvalidEnumValue(System.Object,System.Object)">
+            <summary>
+            The value provided for argument '{argumentName}' must be a valid value of enum type '{enumType}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.UnknownOperation(System.Object,System.Object)">
+            <summary>
+            The current migration SQL generator '{sqlGeneratorType}' is unable to generate SQL for operations of type '{operationType}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.TargetMigrationNotFound(System.Object)">
+            <summary>
+            The target migration '{targetMigrationName}' was not found.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.LocalMigrationNotFound(System.Object)">
+            <summary>
+            The history repository includes a migration with the identifier '{migrationId}' but the migration assembly does not contain the corresponding migration class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.InvalidMigrationId(System.Object)">
+            <summary>
+            '{migrationId}' is not a valid migration identifier.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.MissingMigrationMetadata(System.Object)">
+            <summary>
+            '{migrationType}' does not implement IMigrationMetadata.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Migrations.Strings.MigratorLoggerCreatingHistoryTable">
+            <summary>
+            Creating migration history table.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Migrations.Strings.MigratorLoggerDroppingHistoryTable">
+            <summary>
+            Dropping migration history table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.MigratorLoggerApplyingMigration(System.Object)">
+            <summary>
+            Applying migration '{migrationId}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.MigratorLoggerRevertingMigration(System.Object)">
+            <summary>
+            Reverting migration '{migrationId}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Migrations.Strings.MigratorLoggerUpToDate">
+            <summary>
+            The database is up to date.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Migrations.Strings.MigrationsNotInUse">
+            <summary>
+            Migrations-specific methods can only be used when the context is using a migrations-enabled data store.
+            </summary>
+        </member>
+    </members>
+</doc>
