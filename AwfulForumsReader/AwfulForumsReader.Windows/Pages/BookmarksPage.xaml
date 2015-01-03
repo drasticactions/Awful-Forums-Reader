@@ -13,6 +13,7 @@
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:tools="using:AwfulForumsReader.Tools"
     xmlns:triggers="using:WinRT.Triggers"
+    xmlns:controls="using:Ika.Controls"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -85,7 +86,13 @@
                     <ProgressRing VerticalAlignment="Center" Height="50"/>
                     <Rectangle Fill="White" Opacity=".5"/>
                 </Grid>
-                <ListView x:Name="ForumThreadList"
+                <controls:PullToRefreshPanel PullContent="Pull to Refresh" RefreshContent="Refresh Bookmarks">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="PullToRefresh">
+                            <triggers:InvokeCommandAction PassEventArgsToCommand="True" Command="{Binding RefreshBookmarkListCommand}"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                    <ListView x:Name="ForumThreadList"
                       Padding="10,0,0,0"
                       HorizontalAlignment="Stretch" 
                       IsSwipeEnabled="True" Grid.Column="1"
@@ -195,6 +202,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                </controls:PullToRefreshPanel>
             </Grid>
             
         </Grid>
