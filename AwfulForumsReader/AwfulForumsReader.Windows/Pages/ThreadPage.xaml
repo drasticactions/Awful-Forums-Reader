@@ -15,6 +15,7 @@
     xmlns:awfulForumsReader="using:AwfulForumsReader"
     xmlns:userControls="using:AwfulForumsReader.UserControls"
     xmlns:behaviors="using:JulMar.Behaviors"
+    xmlns:controls1="using:Ika.Controls"
     mc:Ignorable="d">
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
@@ -195,13 +196,20 @@
                     <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Height="50"/>
                     <Rectangle Fill="White" Opacity=".5"/>
                 </Grid>
-                <WebView IsRightTapEnabled="True"  tools:WebViewHelper.Html="{Binding Html}"  Grid.Column="1" x:Name="ThreadFullView">
+                <controls1:PullToRefreshPanel PullContent="Pull To Refresh..." RefreshContent="Refresh Thread...">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="PullToRefresh">
+                            <triggers:InvokeCommandAction Command="{Binding RefreshThreadPageCommand}" PassEventArgsToCommand="True"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                    <WebView IsRightTapEnabled="True"  tools:WebViewHelper.Html="{Binding Html}"  Grid.Column="1" x:Name="ThreadFullView">
                     <triggers:Interactions.Triggers>
                         <triggers:EventTrigger EventName="NavigationCompleted">
                             <triggers:InvokeCommandAction CommandParameter="{Binding Source, Source={StaticResource ThreadWebView}}" PassEventArgsToCommand="True" Command="{Binding ThreadDomContentLoadedCommand}"/>
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </WebView>
+                </controls1:PullToRefreshPanel>
             </Grid>
         </Grid>
     </Grid>
