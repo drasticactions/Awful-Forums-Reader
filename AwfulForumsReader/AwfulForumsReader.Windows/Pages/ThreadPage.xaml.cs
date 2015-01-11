@@ -108,5 +108,49 @@ namespace AwfulForumsReader.Pages
 
         #endregion
 
+        #region PageCommands
+        private async void FontIncrease_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                _zoomSize += 1;
+                await ThreadFullView.InvokeScriptAsync("ResizeWebviewFont", new[] { _zoomSize.ToString() });
+                _localSettings.Values["zoomSize"] = _zoomSize;
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception);
+            }
+        }
+
+        private async void FontDecrease_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                _zoomSize -= 1;
+                await ThreadFullView.InvokeScriptAsync("ResizeWebviewFont", new[] { _zoomSize.ToString() });
+                _localSettings.Values["zoomSize"] = _zoomSize;
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception);
+            }
+        }
+
+        private async void RemoveStyle_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                _zoomSize = 14;
+                await ThreadFullView.InvokeScriptAsync("RemoveCustomStyle", null);
+                _localSettings.Values["zoomSize"] = null;
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception);
+            }
+        }
+        #endregion
+
     }
 }

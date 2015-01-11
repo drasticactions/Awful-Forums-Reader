@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
@@ -26,6 +27,7 @@ namespace AwfulForumsReader.Commands
     {
         private static int _zoomSize;
         private static readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
+
         public static async void WebView_ScriptNotify(object sender, NotifyEventArgs e)
         {
             var webview = sender as WebView;
@@ -155,5 +157,6 @@ namespace AwfulForumsReader.Commands
                 Debug.WriteLine(ex);
             }
         }
+
     }
 }
