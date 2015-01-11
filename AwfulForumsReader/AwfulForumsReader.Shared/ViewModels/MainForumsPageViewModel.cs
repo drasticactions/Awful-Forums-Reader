@@ -21,27 +21,13 @@ namespace AwfulForumsReader.ViewModels
         private ObservableCollection<ForumCategoryEntity> _forumGroupList;
         private ObservableCollection<ForumCategoryEntity> _favoriteForumGroupList;
         private bool _isLoading;
-        private NavigateToSettingsCommand _navigateToSettingsCommand = new NavigateToSettingsCommand();
-        private LogoutCommand _logoutCommand = new LogoutCommand();
-        private NavigateToPrivateMessageListPageCommand _navigateToPrivateMessageListPageCommand = new NavigateToPrivateMessageListPageCommand();
 
-        public NavigateToPrivateMessageListPageCommand NavigateToPrivateMessageListPageCommand
-        {
-            get { return _navigateToPrivateMessageListPageCommand; }
-            set { _navigateToPrivateMessageListPageCommand = value; }
-        }
+        public NavigateToUserProfilePageCommand NavigateToUserProfilePageCommand { get; set; } = new NavigateToUserProfilePageCommand();
+        public NavigateToPrivateMessageListPageCommand NavigateToPrivateMessageListPageCommand { get; set; } = new NavigateToPrivateMessageListPageCommand();
 
-        public LogoutCommand LogoutCommand
-        {
-            get { return _logoutCommand; }
-            set { _logoutCommand = value; }
-        }
+        public LogoutCommand LogoutCommand { get; set; } = new LogoutCommand();
 
-        public NavigateToSettingsCommand NavigateToSettingsCommand
-        {
-            get { return _navigateToSettingsCommand; }
-            set { _navigateToSettingsCommand = value; }
-        }
+        public NavigateToSettingsCommand NavigateToSettingsCommand { get; set; } = new NavigateToSettingsCommand();
 
         public MainForumsPageViewModel()
         {

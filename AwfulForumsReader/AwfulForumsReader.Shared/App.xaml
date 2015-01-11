@@ -25,5 +25,6 @@
         <tools:NotifyThreadTextConverter x:Key="NotifyThreadTextConverter" />
         <tools:NewThreadReplyTitleConverter x:Key="NewThreadReplyTitleConverter" />
         <tools:NewThreadTitleConverter x:Key="NewThreadTitleConverter" />
+        <tools:ForumDateJoinedConverter x:Key="ForumDateJoinedConverter" />
     </Application.Resources>
 </Application>

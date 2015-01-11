@@ -47,6 +47,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToSmiliesPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToThreadListPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToThreadPageCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToUserProfilePageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\PickPostIconCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\PostNewThreadCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\PostThreadReplyCommand.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BookmarkSorting.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BookmarkTextConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BooleanToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\ForumDateJoinedConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\ForwardButtonEnableConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\HasSeenThreadConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\HtmlButtonBuilder.cs" />
@@ -103,6 +105,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BbCodeListPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BookmarksPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ForumUserPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LastPostPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainForumsPageViewModel.cs" />
@@ -727,8 +730,5 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Assets\Website\Javascript\" />
   </ItemGroup>
 </Project>

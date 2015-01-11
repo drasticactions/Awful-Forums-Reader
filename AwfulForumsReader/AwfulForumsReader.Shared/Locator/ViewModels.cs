@@ -17,75 +17,34 @@ namespace AwfulForumsReader.Locator
                 App.Container = AutoFacConfiguration.Configure();
             }
         }
+        public static ForumUserPageViewModel UserPageVm => App.Container.Resolve<ForumUserPageViewModel>();
+        public static NewPrivateMessageViewModel NewPrivateMessagePageVm => App.Container.Resolve<NewPrivateMessageViewModel>();
 
-        public static NewPrivateMessageViewModel NewPrivateMessagePageVm
-        {
-            get { return App.Container.Resolve<NewPrivateMessageViewModel>(); }
-        }
+        public static PrivateMessagePageViewModel PrivateMessagePageVm => App.Container.Resolve<PrivateMessagePageViewModel>();
 
-        public static PrivateMessagePageViewModel PrivateMessagePageVm
-        {
-            get { return App.Container.Resolve<PrivateMessagePageViewModel>(); }
-        }
+        public static SmiliesPageViewModel SmiliesPageVm => App.Container.Resolve<SmiliesPageViewModel>();
 
-        public static SmiliesPageViewModel SmiliesPageVm
-        {
-            get { return App.Container.Resolve<SmiliesPageViewModel>(); }
-        }
+        public static LastPostPageViewModel LastPostPageVm => App.Container.Resolve<LastPostPageViewModel>();
 
-        public static LastPostPageViewModel LastPostPageVm
-        {
-            get { return App.Container.Resolve<LastPostPageViewModel>(); }
-        }
+        public static MainForumsPageViewModel MainForumsPageVm => App.Container.Resolve<MainForumsPageViewModel>();
 
-        public static MainForumsPageViewModel MainForumsPageVm
-        {
-            get { return App.Container.Resolve<MainForumsPageViewModel>(); }
-        }
-
-        public static PreviewThreadPageViewModel PreviewThreadPageVm
-        {
-            get { return App.Container.Resolve<PreviewThreadPageViewModel>(); }
-        }
+        public static PreviewThreadPageViewModel PreviewThreadPageVm => App.Container.Resolve<PreviewThreadPageViewModel>();
 
 
-        public static BbCodeListPageViewModel BbCodeListVm
-        {
-            get { return App.Container.Resolve<BbCodeListPageViewModel>(); }
-        }
-        public static NewThreadReplyPageViewModel NewThreadReplyVm
-        {
-            get { return App.Container.Resolve<NewThreadReplyPageViewModel>(); }
-        }
+        public static BbCodeListPageViewModel BbCodeListVm => App.Container.Resolve<BbCodeListPageViewModel>();
 
-        public static PostIconListPageViewModel PostIconListPageVm
-        {
-            get { return App.Container.Resolve<PostIconListPageViewModel>(); }
-        }
+        public static NewThreadReplyPageViewModel NewThreadReplyVm => App.Container.Resolve<NewThreadReplyPageViewModel>();
 
-        public static NewThreadPageViewModel NewThreadVm
-        {
-            get { return App.Container.Resolve<NewThreadPageViewModel>(); }
-        }
+        public static PostIconListPageViewModel PostIconListPageVm => App.Container.Resolve<PostIconListPageViewModel>();
 
-        public static ThreadListPageViewModel ThreadListPageVm
-        {
-            get { return App.Container.Resolve<ThreadListPageViewModel>(); }
-        }
+        public static NewThreadPageViewModel NewThreadVm => App.Container.Resolve<NewThreadPageViewModel>();
 
-        public static BookmarksPageViewModel BookmarksPageVm
-        {
-            get { return App.Container.Resolve<BookmarksPageViewModel>(); }
-        }
+        public static ThreadListPageViewModel ThreadListPageVm => App.Container.Resolve<ThreadListPageViewModel>();
 
-        public static PrivateMessageListViewModel PrivateMessageVm
-        {
-            get { return App.Container.Resolve<PrivateMessageListViewModel>(); }
-        }
+        public static BookmarksPageViewModel BookmarksPageVm => App.Container.Resolve<BookmarksPageViewModel>();
 
-        public static ThreadPageViewModel ThreadPageVm
-        {
-            get { return App.Container.Resolve<ThreadPageViewModel>(); }
-        }
+        public static PrivateMessageListViewModel PrivateMessageVm => App.Container.Resolve<PrivateMessageListViewModel>();
+
+        public static ThreadPageViewModel ThreadPageVm => App.Container.Resolve<ThreadPageViewModel>();
     }
 }

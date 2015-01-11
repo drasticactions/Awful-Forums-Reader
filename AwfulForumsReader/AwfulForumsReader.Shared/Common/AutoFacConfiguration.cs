@@ -28,7 +28,7 @@ namespace AwfulForumsReader.Common
             builder.RegisterType<PostIconListPageViewModel>().SingleInstance();
             builder.RegisterType<BbCodeListPageViewModel>().SingleInstance();
             builder.RegisterType<PreviewThreadPageViewModel>().SingleInstance();
-
+            builder.RegisterType<ForumUserPageViewModel>().SingleInstance();
             builder.RegisterType<MainForumsPage>();
             return builder.Build();
         }
