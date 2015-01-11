@@ -157,6 +157,20 @@
                         </Flyout>
                     </AppBarButton.Flyout>
                 </AppBarButton>
+                <AppBarButton Label="Change Font Size">
+                    <Button.Flyout>
+                        <Flyout Placement="Left">
+                            <StackPanel HorizontalAlignment="Stretch">
+                                <TextBlock Margin="5"  FontSize="{StaticResource TextStyleExtraLargeFontSize}" Text="Change Font Size"/>
+                                <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal">
+                                    <Button Margin="5" Click="FontIncrease_Click" Content="Increase"/>
+                                    <Button Margin="5" Click="FontDecrease_Click" Content="Decrease"/>
+                                    <Button Margin="5" Click="RemoveStyle_Click" Content="Default"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Flyout>
+                    </Button.Flyout>
+                </AppBarButton>
             </CommandBar.SecondaryCommands>
             <AppBarButton Label="Back" Icon="Back" IsEnabled="{Binding ForumThreadEntity, Converter={StaticResource BackButtonEnableConverter} }">
                 <triggers:Interactions.Triggers>

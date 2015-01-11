@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
+using Windows.Storage;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -28,7 +29,8 @@ namespace AwfulForumsReader.Pages
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
-
+        private int _zoomSize = 14;
+        private ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
         public ThreadPage()
         {
             this.InitializeComponent();
@@ -109,5 +111,26 @@ namespace AwfulForumsReader.Pages
         }
 
         #endregion
+
+        private void FontIncrease_Click(object sender, RoutedEventArgs e)
+        {
+            _zoomSize += 1;
+            ThreadFullView.InvokeScriptAsync("ResizeWebviewFont", new[] { _zoomSize.ToString() });
+            _localSettings.Values["zoomSize"] = _zoomSize;
+        }
+
+        private void FontDecrease_Click(object sender, RoutedEventArgs e)
+        {
+            _zoomSize -= 1;
+            ThreadFullView.InvokeScriptAsync("ResizeWebviewFont", new[] { _zoomSize.ToString() });
+            _localSettings.Values["zoomSize"] = _zoomSize;
+        }
+
+        private void RemoveStyle_Click(object sender, RoutedEventArgs e)
+        {
+            _zoomSize = 14;
+            ThreadFullView.InvokeScriptAsync("RemoveCustomStyle", null);
+            _localSettings.Values["zoomSize"] = null;
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace AwfulForumsReader.Pages
     public sealed partial class ThreadPage : Page
     {
         private ThreadPageViewModel _vm;
-        private int _zoomSize;
+        private int _zoomSize = 14;
         private NavigationHelper navigationHelper;
         private ThreadManager _threadManager = new ThreadManager();
         private ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
