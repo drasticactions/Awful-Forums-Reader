@@ -100,7 +100,10 @@
                     </ListView.ItemContainerStyle>
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Background="#FFF1F1F1">
+                            <Grid>
+                                <Grid.Background>
+                                    <SolidColorBrush Color="#F1F1F1" Opacity="{Binding Converter={StaticResource BackgroundWallpaperOpacityConverter}}"></SolidColorBrush>
+                                </Grid.Background>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="*" />

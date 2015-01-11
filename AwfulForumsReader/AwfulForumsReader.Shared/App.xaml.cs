@@ -9,7 +9,9 @@ using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
+using Windows.Storage.Streams;
 using Windows.System;
+using Windows.UI;
 using Windows.UI.Popups;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Tools;
@@ -24,6 +26,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using Autofac;
 using AwfulForumsReader.Common;
@@ -46,7 +49,7 @@ namespace AwfulForumsReader
         private TransitionCollection transitions;
 #endif
         public static IContainer Container;
-
+        private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
         public static Frame RootFrame;
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -58,6 +61,9 @@ namespace AwfulForumsReader
             this.Suspending += this.OnSuspending;
 #if WINDOWS_APP
             RequestedTheme = ApplicationTheme.Light;
+#endif
+#if WINDOWS_PHONE_APP
+            RequestedTheme = ApplicationTheme.Dark;
 #endif
             using (var db = new MainForumListContext())
             {
@@ -93,6 +99,12 @@ namespace AwfulForumsReader
             }
 
             // Return to Reply Page with image.
+
+            var settingsPage = rootFrame.Content as SettingsPage;
+            if (settingsPage != null && args is FileOpenPickerContinuationEventArgs)
+            {
+                settingsPage.ContinueFileOpenPicker(args as FileOpenPickerContinuationEventArgs);
+            }
 
             var replyPage = rootFrame.Content as NewThreadReplyPage;
             if (replyPage != null && args is FileOpenPickerContinuationEventArgs)
@@ -215,6 +227,56 @@ namespace AwfulForumsReader
                 RootFrame.ContentTransitions = null;
                 RootFrame.Navigated += this.RootFrame_FirstNavigated;
 #endif
+                if (_localSettings.Values.ContainsKey(Constants.BackgroundWallpaper))
+                {
+                    var hasWallpaper = (bool) _localSettings.Values[Constants.BackgroundWallpaper];
+                    if (hasWallpaper)
+                    {
+                        var storageFolder = ApplicationData.Current.LocalFolder;
+                        var result = await StorageFolderExtensions.FileExistsAsync(storageFolder, Constants.WallpaperFilename);
+                        StorageFile file;
+                        if (result)
+                        {
+                            file = await storageFolder.GetFileAsync(Constants.WallpaperFilename);
+                            
+                        }
+                        else
+                        {
+                            string CountriesFile = @"Assets\Login\Dontrel-Awful2.png";
+                            StorageFolder InstallationFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+                            file = await InstallationFolder.GetFileAsync(CountriesFile);
+                        }
+
+                        using (IRandomAccessStream fileStream = await file.OpenAsync(FileAccessMode.Read))
+                        {
+                            var bitmapImage = new BitmapImage();
+                            var brush = new ImageBrush();
+                            await bitmapImage.SetSourceAsync(fileStream);
+                            brush.ImageSource = bitmapImage;
+                            brush.Stretch = Stretch.UniformToFill;
+                            RootFrame.Background = brush;
+                        }
+                    }
+                    else
+                    {
+#if WINDOWS_APP
+                        App.RootFrame.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
+#endif
+#if WINDOWS_PHONE_APP
+                        App.RootFrame.Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
+#endif
+                    }
+                }
+                else
+                {
+#if WINDOWS_APP
+                        App.RootFrame.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
+#endif
+#if WINDOWS_PHONE_APP
+                    App.RootFrame.Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
+#endif
+                }
+
                 var localStorageManager = new LocalStorageManager();
                 CookieContainer cookieTest = await localStorageManager.LoadCookie(Constants.CookieFile);
                 if (cookieTest.Count <= 0)
@@ -229,9 +291,8 @@ namespace AwfulForumsReader
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    var localSettings = ApplicationData.Current.LocalSettings;
-                    if (localSettings.Values.ContainsKey(Constants.BookmarkStartup) &&
-                        (bool)localSettings.Values[Constants.BookmarkStartup])
+                    if (_localSettings.Values.ContainsKey(Constants.BookmarkStartup) &&
+                        (bool)_localSettings.Values[Constants.BookmarkStartup])
                     {
                         var command = new NavigateToBookmarksCommand();
                         command.Execute(null);

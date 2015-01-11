@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
+using Windows.Storage.Pickers;
+using Windows.Storage.Streams;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using AwfulForumsReader.Core.Entity;
 using AwfulForumsReader.Core.Tools;
 
 // The Settings Flyout item template is documented at http://go.microsoft.com/fwlink/?LinkId=273769
@@ -29,6 +35,10 @@ namespace AwfulForumsReader.Pages
         {
             InitializeComponent();
             _localSettings = ApplicationData.Current.LocalSettings;
+            if (_localSettings.Values.ContainsKey(Constants.BackgroundWallpaper))
+            {
+                BackgroundWallPaperSwitch.IsOn = (bool)_localSettings.Values[Constants.BackgroundWallpaper];
+            }
             if (_localSettings.Values.ContainsKey(Constants.BookmarkBackground))
             {
                 BookmarkLiveTiles.IsOn = (bool)_localSettings.Values[Constants.BookmarkBackground];
@@ -124,6 +134,52 @@ namespace AwfulForumsReader.Pages
             else
             {
                 _localSettings.Values[Constants.AutoRefresh] = false;
+            }
+        }
+
+        private void BackgroundWallPaperSwitch_OnToggled(object sender, RoutedEventArgs e)
+        {
+            var toggleSwitch = sender as ToggleSwitch;
+            if (toggleSwitch == null) return;
+            if (toggleSwitch.IsOn)
+            {
+                _localSettings.Values[Constants.BackgroundWallpaper] = true;
+            }
+            else
+            {
+                _localSettings.Values[Constants.BackgroundWallpaper] = false;
+            }
+        }
+
+        private async void ChangeBackground_OnClicked(object sender, RoutedEventArgs e)
+        {
+            var openPicker = new FileOpenPicker
+            {
+                ViewMode = PickerViewMode.Thumbnail,
+                SuggestedStartLocation = PickerLocationId.PicturesLibrary
+            };
+            openPicker.FileTypeFilter.Add(".jpg");
+            openPicker.FileTypeFilter.Add(".jpeg");
+            openPicker.FileTypeFilter.Add(".png");
+            openPicker.FileTypeFilter.Add(".gif");
+            StorageFile file = await openPicker.PickSingleFileAsync();
+            if (file == null) return;
+            try
+            {
+                IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.Read);
+                BitmapImage bitmapImage = new BitmapImage();
+                ImageBrush brush = new ImageBrush();
+                await bitmapImage.SetSourceAsync(stream);
+                brush.ImageSource = bitmapImage;
+                brush.Stretch = Stretch.None;
+                App.RootFrame.Background = brush;
+                var img = await ConvertImage.ConvertImagetoByte(file);
+                await ImageTools.SaveWallpaper(img);
+            }
+            catch (Exception ex)
+            {
+                var msgDlg = new MessageDialog("Something went wrong settings the background. :-(.");
+                msgDlg.ShowAsync();
             }
         }
     }

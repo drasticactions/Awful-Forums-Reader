@@ -18,6 +18,10 @@ namespace AwfulForumsReader.Core.Tools
 
         public const string AutoRefresh = "AutoRefresh";
 
+        public const string BackgroundWallpaper = "BackgroundWallpaper";
+
+        public const string WallpaperFilename = "wp.jpg";
+
         public const string BaseUrl = "http://forums.somethingawful.com/";
 
         public const string BookmarksUrl = BaseUrl + "bookmarkthreads.php?perage=40&sortorder=desc&sortfield=";

@@ -12,8 +12,10 @@
     xmlns:userControls="using:AwfulForumsReader.UserControls"
     xmlns:triggers="using:WinRT.Triggers"
     xmlns:controls="using:Ika.Controls"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
+        <Page.Background>
+        <SolidColorBrush Color="Black" Opacity=".65"/>
+    </Page.Background>
     <Page.Resources>
         <DataTemplate x:Key="ForumThreadTemplate">
             <Grid Margin="3" RequestedTheme="Light" Background="{Binding HasSeen, Converter={StaticResource HasSeenThreadConverter}}">
@@ -148,7 +150,7 @@
         </Grid>
     </Grid>
     <Page.BottomAppBar>
-        <CommandBar>
+        <CommandBar Opacity="{Binding Converter={StaticResource BackgroundWallpaperOpacityConverter}}">
             <AppBarButton Label="Refresh" x:Name="RefreshButton" Icon="Refresh">
                 <triggers:Interactions.Triggers>
                     <triggers:EventTrigger EventName="Click">

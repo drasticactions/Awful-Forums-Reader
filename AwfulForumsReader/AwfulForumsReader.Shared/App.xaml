@@ -26,5 +26,6 @@
         <tools:NewThreadReplyTitleConverter x:Key="NewThreadReplyTitleConverter" />
         <tools:NewThreadTitleConverter x:Key="NewThreadTitleConverter" />
         <tools:ForumDateJoinedConverter x:Key="ForumDateJoinedConverter" />
+        <tools:BackgroundWallpaperOpacityConverter x:Key="BackgroundWallpaperOpacityConverter" />
     </Application.Resources>
 </Application>

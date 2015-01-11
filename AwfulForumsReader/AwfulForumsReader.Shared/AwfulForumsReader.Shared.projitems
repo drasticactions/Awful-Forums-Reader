@@ -72,14 +72,17 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\AwfulDebugger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BackButtonEnableConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BackgroundTaskUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\BackgroundWallpaperOpacityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BookmarkSorting.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BookmarkTextConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\BooleanToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\ConvertImage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\ForumDateJoinedConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\ForwardButtonEnableConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\HasSeenThreadConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\HtmlButtonBuilder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\HtmlFormater.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\ImageTools.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\InvertBooleanConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\LinqExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\NewThreadTitleConverter.cs" />
@@ -91,6 +94,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\RatingVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\RepliesSinceLastOpenedColorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\ReplyBoxLocation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\StorageFolderExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\SubforumBodyColorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\SubforumFontColorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\SubforumHeaderColorConverter.cs" />

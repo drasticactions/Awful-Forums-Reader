@@ -28,11 +28,15 @@
             ItemsPath="ForumList" />
         <DataTemplate x:Key="ForumTemplate">
             <Grid HorizontalAlignment="Left" Width="400" Height="60">
-                <Border Background="{Binding Converter={StaticResource SubforumHeaderColorConverter}}">
-                    <Image Source="{Binding ImagePath}" Stretch="UniformToFill"
-                                       AutomationProperties.Name="{Binding Title}" />
-                </Border>
-                <StackPanel VerticalAlignment="Bottom" Background="#FFF0F0F0">
+                <Grid.Background>
+                    <SolidColorBrush Opacity="{Binding Converter={StaticResource BackgroundWallpaperOpacityConverter}}" Color="#F0F0F0"/>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="8"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Fill="{Binding Converter={StaticResource SubforumHeaderColorConverter}}" Grid.Row="0"/>
+                <StackPanel Margin="0,5,0,0" Grid.Row="1" VerticalAlignment="Bottom">
                     <TextBlock Text="{Binding Name}" TextAlignment="Left" Foreground="Black"
                                            Style="{StaticResource TitleTextBlockStyle}" Height="20" Margin="15,0,15,30" />
                 </StackPanel>
@@ -59,7 +63,10 @@
             </Grid>
         </DataTemplate>
     </Page.Resources>
-    <Grid x:Name="MainGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid x:Name="MainGrid">
+        <Grid.Background>
+            <SolidColorBrush Color="White" Opacity=".65"/>
+        </Grid.Background>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState x:Name="DefaultLayout">
@@ -186,9 +193,15 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid IsRightTapEnabled="True" HorizontalAlignment="Stretch" Height="60">
-                            <Border Background="{Binding Converter={StaticResource SubforumHeaderColorConverter}}">
-                            </Border>
-                            <StackPanel  VerticalAlignment="Bottom" Background="#FFF0F0F0">
+                                            <Grid.Background>
+                    <SolidColorBrush Opacity="{Binding Converter={StaticResource BackgroundWallpaperOpacityConverter}}" Color="#F0F0F0"/>
+                </Grid.Background>
+                             <Grid.RowDefinitions>
+                    <RowDefinition Height="8"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Rectangle Fill="{Binding Converter={StaticResource SubforumHeaderColorConverter}}" Grid.Row="0"/>
+                            <StackPanel Grid.Row="1" VerticalAlignment="Bottom" >
                                 <TextBlock Text="{Binding Name}" TextAlignment="Left" Foreground="Black"
                                            Style="{StaticResource TitleTextBlockStyle}" Height="20" Margin="15,0,15,30" />
                             </StackPanel>

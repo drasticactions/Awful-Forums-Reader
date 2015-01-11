@@ -16,8 +16,21 @@
         <!-- The StackPanel(s) below define individual content sections -->
 
         <StackPanel Style="{StaticResource SettingsFlyoutSectionStyle}">
+            
+            <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Enable Background Wallpaper" />
 
-            <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Enable Bookmark Live Tiles" />
+            <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
+                <TextBlock.Text>
+                    If enabled and set, a background image will be set for the forum and thread list pages.
+                    You can then wave your anime freak flag high for all the world to see.
+                </TextBlock.Text>
+            </TextBlock>
+            
+            <ToggleSwitch x:Name="BackgroundWallPaperSwitch" Toggled="BackgroundWallPaperSwitch_OnToggled" />
+            
+            <Button Content="Change Background Wallpaper" Click="ChangeBackground_OnClicked" />
+
+            <TextBlock Style="{StaticResource TitleTextBlockStyle}" Margin="0,20,0,0" Text="Enable Bookmark Live Tiles" />
 
             <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
                 <TextBlock.Text>

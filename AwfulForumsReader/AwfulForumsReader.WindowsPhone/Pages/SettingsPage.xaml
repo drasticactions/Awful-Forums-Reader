@@ -5,9 +5,10 @@
     xmlns:local="using:AwfulForumsReader.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    mc:Ignorable="d">
+    <Page.Background>
+        <SolidColorBrush Color="Black" Opacity=".65"/>
+    </Page.Background>
     <Grid x:Name="LayoutRoot">
 
         <Grid.ChildrenTransitions>
@@ -32,6 +33,20 @@
         <Grid Grid.Row="1" x:Name="ContentRoot">
             <ScrollViewer>
                 <StackPanel Margin="15">
+                    
+                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Enable Background Wallpaper" />
+
+            <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
+                <TextBlock.Text>
+                    If enabled and set, a background image will be set for the forum and thread list pages.
+                    You can then wave your anime freak flag high for all the world to see.
+                </TextBlock.Text>
+            </TextBlock>
+            
+            <ToggleSwitch x:Name="BackgroundWallPaperSwitch" Toggled="BackgroundWallPaperSwitch_OnToggled" />
+            
+            <Button Content="Change Background Wallpaper" Click="ChangeBackground_OnClicked" />
+
 
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Enable Bookmark Live Tiles" />
 

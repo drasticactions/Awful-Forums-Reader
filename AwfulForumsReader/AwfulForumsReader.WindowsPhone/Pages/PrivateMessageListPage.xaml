@@ -8,8 +8,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:userControls="using:AwfulForumsReader.UserControls"
     xmlns:triggers="using:WinRT.Triggers"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
+        <Page.Background>
+        <SolidColorBrush Color="Black" Opacity=".65"/>
+    </Page.Background>
     <Page.Transitions>
         <TransitionCollection>
             <NavigationThemeTransition>
@@ -60,7 +62,10 @@
                     </ListView.ItemContainerStyle>
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Background="#FFF1F1F1">
+                            <Grid>
+                                <Grid.Background>
+                                    <SolidColorBrush Color="#F1F1F1" Opacity="{Binding Converter={StaticResource BackgroundWallpaperOpacityConverter}}"></SolidColorBrush>
+                                </Grid.Background>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="*" />
@@ -104,7 +109,7 @@
         </Grid>
     </Grid>
     <Page.BottomAppBar>
-        <CommandBar>
+        <CommandBar Opacity="{Binding Converter={StaticResource BackgroundWallpaperOpacityConverter}}">
             <AppBarButton x:Name="AddThreadButton" Icon="Add" Label="New Thread">
                 <triggers:Interactions.Triggers>
                     <triggers:EventTrigger EventName="Click">
