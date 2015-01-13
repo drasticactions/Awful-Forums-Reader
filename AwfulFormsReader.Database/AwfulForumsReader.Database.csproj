@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\BookmarkManager.cs" />
+    <Compile Include="Commands\MainForumsManager.cs" />
     <Compile Include="Commands\NotificationManager.cs" />
     <Compile Include="Commands\TabManager.cs" />
     <Compile Include="Context\LinkedThreadListContext.cs" />

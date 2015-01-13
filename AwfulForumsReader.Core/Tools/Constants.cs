@@ -24,6 +24,8 @@ namespace AwfulForumsReader.Core.Tools
 
         public const string BaseUrl = "http://forums.somethingawful.com/";
 
+        public const string SearchUrl = BaseUrl + "query.php";
+
         public const string BookmarksUrl = BaseUrl + "bookmarkthreads.php?perage=40&sortorder=desc&sortfield=";
 
         public const string CookieFile = "SACookie2.txt";
@@ -99,9 +101,6 @@ namespace AwfulForumsReader.Core.Tools
         public const string LoginUrl = "http://forums.somethingawful.com/account.php?";
 
         public const string SAclopediaBase = BaseUrl + "dictionary.php/";
-
-        // SA only seems to accept a limit of 30, so we'll hard code it.
-        public const string SearchUrl = BaseUrl + "/f/json/usercomplete?q={0}&limit=30&timestamp=0";
 
         public const string Ascii2 = @"☆ *　. 　☆ 
 　　☆　. ∧＿∧　∩　* ☆ 

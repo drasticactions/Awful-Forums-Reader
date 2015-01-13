@@ -8,7 +8,11 @@
     xmlns:locator="using:AwfulForumsReader.Locator">
 
     <Application.Resources>
-        <tools:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+             <tools:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <locator:ViewModels x:Name="Locator" />
         <SolidColorBrush x:Key="AwfulBlue" Color="#FF1E72C9"/>
         <tools:SubforumHeaderColorConverter x:Key="SubforumHeaderColorConverter" />
@@ -27,5 +31,6 @@
         <tools:NewThreadTitleConverter x:Key="NewThreadTitleConverter" />
         <tools:ForumDateJoinedConverter x:Key="ForumDateJoinedConverter" />
         <tools:BackgroundWallpaperOpacityConverter x:Key="BackgroundWallpaperOpacityConverter" />
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
