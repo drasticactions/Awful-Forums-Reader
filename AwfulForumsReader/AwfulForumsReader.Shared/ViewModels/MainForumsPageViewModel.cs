@@ -21,7 +21,7 @@ namespace AwfulForumsReader.ViewModels
         private ObservableCollection<ForumCategoryEntity> _forumGroupList;
         private ObservableCollection<ForumCategoryEntity> _favoriteForumGroupList;
         private bool _isLoading;
-
+        public NavigateToSearchPageCommand NavigateToSearchPageCommand { get; set; } = new NavigateToSearchPageCommand();
         public NavigateToUserProfilePageCommand NavigateToUserProfilePageCommand { get; set; } = new NavigateToUserProfilePageCommand();
         public NavigateToPrivateMessageListPageCommand NavigateToPrivateMessageListPageCommand { get; set; } = new NavigateToPrivateMessageListPageCommand();
 

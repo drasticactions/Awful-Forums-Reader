@@ -129,6 +129,13 @@
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>
+                <AppBarButton Icon="Zoom" Label="Search">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="Click">
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToSearchPageCommand}"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                </AppBarButton>
                 <AppBarButton Icon="Setting" Label="Settings">
                     <triggers:Interactions.Triggers>
                         <triggers:EventTrigger EventName="Click">

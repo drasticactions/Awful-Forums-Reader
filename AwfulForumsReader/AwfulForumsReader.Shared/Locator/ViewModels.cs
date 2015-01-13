@@ -17,6 +17,7 @@ namespace AwfulForumsReader.Locator
                 App.Container = AutoFacConfiguration.Configure();
             }
         }
+        public static SearchPageViewModel SearchPageVm => App.Container.Resolve<SearchPageViewModel>();
         public static ForumUserPageViewModel UserPageVm => App.Container.Resolve<ForumUserPageViewModel>();
         public static NewPrivateMessageViewModel NewPrivateMessagePageVm => App.Container.Resolve<NewPrivateMessageViewModel>();
 
