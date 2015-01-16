@@ -57,6 +57,21 @@ namespace AwfulForumsReader.Database.Commands
             }
         }
 
+        public bool IsBookmark(long threadId)
+        {
+            using (var db = new MainForumListContext())
+            {
+                return db.BookmarkThreads.Any(node => node.ThreadId == threadId);
+            }
+        }
+
+        public Task<List<ForumThreadEntity>> GetBookmarkedThreadsFromDb()
+        {
+            using (var db = new MainForumListContext())
+            {
+                return db.BookmarkThreads.ToListAsync();
+            }
+        }
         private async Task<List<ForumThreadEntity>> GetBookmarkedThreadsAsync()
         {
             var bookmarkThreads = new List<ForumThreadEntity>();
@@ -84,6 +99,30 @@ namespace AwfulForumsReader.Database.Commands
                 }
             }
             return bookmarkThreads;
+        }
+
+        public async Task AddBookmarkThreads(List<ForumThreadEntity> bookmarkedThreads)
+        {
+            foreach (ForumThreadEntity t in bookmarkedThreads)
+            {
+                using (var db = new MainForumListContext())
+                {
+
+                    await db.BookmarkThreads.AddAsync(t);
+
+                    await db.SaveChangesAsync();
+                }
+            }
+        }
+
+        public async Task RemoveBookmarkThreads()
+        {
+            using (var db = new MainForumListContext())
+            {
+                var all = from c in db.BookmarkThreads select c;
+                db.BookmarkThreads.RemoveRange(all);
+                await db.SaveChangesAsync();
+            }
         }
     }
 }

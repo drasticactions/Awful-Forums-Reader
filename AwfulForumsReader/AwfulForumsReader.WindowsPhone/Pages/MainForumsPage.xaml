@@ -97,8 +97,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <ProgressBar HorizontalAlignment="Stretch" VerticalAlignment="Top" IsIndeterminate="True" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                <controls:PullToRefreshPanel PullContent="Pull to Refresh" RefreshContent="Refresh Forums List" Grid.Row="1" PullToRefresh="PullToRefreshPanel_OnPullToRefresh">
-                    <ListView
+<ListView
                             Grid.Row="1"
                 AutomationProperties.AutomationId="ItemGridView"
                 AutomationProperties.Name="Grouped Items"
@@ -129,7 +128,6 @@
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </ListView>
-                </controls:PullToRefreshPanel>
             </Grid>
         </Grid>
     </Grid>

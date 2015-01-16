@@ -8,6 +8,7 @@ using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Database.Context;
 using AwfulForumsReader.Core.Entity;
+using AwfulForumsReader.Database.Commands;
 using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.ViewModels
@@ -104,13 +105,11 @@ namespace AwfulForumsReader.ViewModels
             SubForumEntities = new ObservableCollection<ForumEntity>();
             ForumEntity = forumEntity;
             Refresh();
-            using (var db = new MainForumListContext())
+            var forumManager = new MainForumsManager();
+            var forumList = forumManager.GetSubforums(forumEntity.ForumId);
+            foreach (var forum in forumList)
             {
-                var forumList = db.Forums.Where(node => node.ParentForumId == forumEntity.ForumId).ToList();
-                foreach (var forum in forumList)
-                {
-                    SubForumEntities.Add(forum);
-                }
+                SubForumEntities.Add(forum);
             }
 
         }

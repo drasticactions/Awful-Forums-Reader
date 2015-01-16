@@ -12,6 +12,7 @@ using AwfulForumsReader.Database.Context;
 using AwfulForumsReader.Core.Entity;
 using AwfulForumsReader.Core.Manager;
 using AwfulForumsReader.Core.Tools;
+using AwfulForumsReader.Database.Commands;
 using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.ViewModels
@@ -136,16 +137,16 @@ namespace AwfulForumsReader.ViewModels
                 var dateString = (string)_localSettings.Values["RefreshBookmarks"];
                 refreshDate = DateTime.Parse(dateString);
             }
-            using (var db = new MainForumListContext())
-            {
-                BookmarkedThreads = db.BookmarkThreads.ToObservableCollection();
-            }
+            var bookmarks = await _bookmarkManager.GetBookmarkedThreadsFromDb();
+            BookmarkedThreads = bookmarks.ToObservableCollection();
             if ((!BookmarkedThreads.Any() || refreshDate < (DateTime.UtcNow.AddHours(-1.00))) || AutoRefresh)
             {
                 await Refresh();
             }
             IsLoading = false;
         }
+
+        private readonly BookmarkManager _bookmarkManager = new BookmarkManager();
 
         public async Task Refresh()
         {
@@ -162,23 +163,8 @@ namespace AwfulForumsReader.ViewModels
             }
 
             BookmarkedThreads = updatedBookmarkList.ToObservableCollection();
-
-            using (var db = new MainForumListContext())
-            {
-                var all = from c in db.BookmarkThreads select c;
-                db.BookmarkThreads.RemoveRange(all);
-                await db.SaveChangesAsync();
-            }
-            foreach (ForumThreadEntity t in BookmarkedThreads)
-            {
-                using (var db = new MainForumListContext())
-                {
-
-                    await db.BookmarkThreads.AddAsync(t);
-
-                    await db.SaveChangesAsync();
-                }
-            }
+            await _bookmarkManager.RemoveBookmarkThreads();
+            await _bookmarkManager.AddBookmarkThreads(BookmarkedThreads.ToList());
             _localSettings.Values["RefreshBookmarks"] = DateTime.UtcNow.ToString();
             IsLoading = false;
         }

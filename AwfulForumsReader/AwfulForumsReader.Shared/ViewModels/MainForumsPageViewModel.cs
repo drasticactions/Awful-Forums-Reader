@@ -11,6 +11,7 @@ using AwfulForumsReader.Core.Entity;
 using AwfulForumsReader.Core.Manager;
 using AwfulForumsReader.Core.Tools;
 using AwfulForumsReader.Tools;
+using AwfulForumsReader.Database.Commands;
 
 namespace AwfulForumsReader.ViewModels
 {
@@ -98,10 +99,8 @@ namespace AwfulForumsReader.ViewModels
         public async Task GetFavoriteForums()
         {
             List<ForumEntity> forumEntities;
-            using (var db = new MainForumListContext())
-            {
-                forumEntities = await db.Forums.Where(node => node.IsBookmarks).ToListAsync();
-            }
+            var mainForumsManager = new MainForumsManager();
+            forumEntities = mainForumsManager.GetFavoriteForums();
             var favorites = ForumGroupList.FirstOrDefault(node => node.Name.Equals("Favorites"));
             if (!forumEntities.Any())
             {
@@ -134,44 +133,23 @@ namespace AwfulForumsReader.ViewModels
 
         private async Task GetMainPageForumsAsync()
         {
-            using (var db = new MainForumListContext())
+            var mainForumsManager = new MainForumsManager();
+            var forumCategoryEntities = mainForumsManager.GetMainForumsList();
+            if(forumCategoryEntities.Any())
             {
-                db.Forums.ToList();
-                var forumCategoryEntities = db.ForumCategories.ToList();
-                if (forumCategoryEntities.Any())
-                {
-                    foreach (var forumCategoryEntity in forumCategoryEntities)
-                    {
-                        var testForumList = new List<ForumEntity>();
-                        foreach (var forum in forumCategoryEntity.ForumList.Where(node => node.ParentForum == null))
-                        {
-                            testForumList.Add(forum);
-                            ForumEntity forum1 = forum;
-                            testForumList.AddRange(forumCategoryEntity.ForumList.Where(node => node.ParentForum == forum1));
-                        }
-                        forumCategoryEntity.ForumList = testForumList;
-                        ForumGroupList.Add(forumCategoryEntity);
-                    }
-                    return;
-                }
-               
-                forumCategoryEntities = await _forumManager.GetForumCategoryMainPage();
                 foreach (var forumCategoryEntity in forumCategoryEntities)
                 {
                     ForumGroupList.Add(forumCategoryEntity);
                 }
-                foreach (var forumGroup in ForumGroupList)
-                {
-                    foreach (var forumEntity in forumGroup.ForumList)
-                    {
-                        db.Add(forumEntity);
-                    }
-                    db.Add(forumGroup);
-                }
-
-                await db.SaveChangesAsync();
+                return;
             }
 
+               forumCategoryEntities = await _forumManager.GetForumCategoryMainPage();
+                foreach (var forumCategoryEntity in forumCategoryEntities)
+                {
+                    ForumGroupList.Add(forumCategoryEntity);
+                }
+            await mainForumsManager.SaveMainForumsList(ForumGroupList.ToList());
         }
 
         internal async void Initialize()

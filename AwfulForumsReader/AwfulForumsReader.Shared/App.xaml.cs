@@ -37,6 +37,7 @@ using AwfulForumsReader.Core;
 using AwfulForumsReader.Core.Manager;
 using AwfulForumsReader.Core.Tools;
 using AwfulForumsReader.Pages;
+using HockeyApp;
 
 namespace AwfulForumsReader
 {
@@ -65,6 +66,7 @@ namespace AwfulForumsReader
 #if WINDOWS_PHONE_APP
             RequestedTheme = ApplicationTheme.Dark;
 #endif
+            //HockeyClient.Current.Configure("4e570f666ab005f8526946c71f5f4824");
             using (var db = new MainForumListContext())
             {
                 // Migrations are not yet enabled in EF7, so use an
@@ -309,6 +311,10 @@ namespace AwfulForumsReader
 
             // Ensure the current window is active
             Window.Current.Activate();
+            //await HockeyClient.Current.SendCrashesAsync();
+#if WINDOWS_PHONE_APP
+            //await HockeyClient.Current.CheckForAppUpdateAsync();
+#endif
         }
 
 #if WINDOWS_PHONE_APP

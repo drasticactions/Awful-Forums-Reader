@@ -192,6 +192,7 @@
   <AccountPackageIdentityNames>
     <MainPackageIdentityName>52978DrasticActions.AwfulMusic</MainPackageIdentityName>
     <MainPackageIdentityName>52978DrasticActions.FoulPlayTheUnofficialPlayStati</MainPackageIdentityName>
+    <MainPackageIdentityName>52978DrasticActions.PSNMessenger</MainPackageIdentityName>
     <MainPackageIdentityName>52978DrasticActions.Slowbeef</MainPackageIdentityName>
     <MainPackageIdentityName>52978DrasticActions.388975AE0B893</MainPackageIdentityName>
   </AccountPackageIdentityNames>
@@ -200,17 +201,17 @@
       <PackageInfo>
         <OsMinVersion>6.3.0.0</OsMinVersion>
         <PackageArchitecture></PackageArchitecture>
-        <PackageMaxArchitectureVersion>1.5.2.9</PackageMaxArchitectureVersion>
+        <PackageMaxArchitectureVersion>4.5.0.9</PackageMaxArchitectureVersion>
       </PackageInfo>
       <PackageInfo>
         <OsMinVersion>6.3.0.0</OsMinVersion>
-        <PackageArchitecture>neutral</PackageArchitecture>
-        <PackageMaxArchitectureVersion>1.5.2.9</PackageMaxArchitectureVersion>
+        <PackageArchitecture>arm</PackageArchitecture>
+        <PackageMaxArchitectureVersion>4.5.0.9</PackageMaxArchitectureVersion>
       </PackageInfo>
       <PackageInfo>
         <OsMinVersion>6.3.0.0</OsMinVersion>
         <PackageArchitecture></PackageArchitecture>
-        <PackageMaxArchitectureVersion>1.5.2.9</PackageMaxArchitectureVersion>
+        <PackageMaxArchitectureVersion>4.5.0.9</PackageMaxArchitectureVersion>
       </PackageInfo>
     </BundleInfo>
   </PackageInfoList>

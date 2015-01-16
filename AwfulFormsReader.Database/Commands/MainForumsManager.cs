@@ -34,5 +34,50 @@ namespace AwfulForumsReader.Database.Commands
             }
 
         }
+
+        public List<ForumEntity> GetSubforums(int forumId)
+        {
+            using (var db = new MainForumListContext())
+            {
+                return db.Forums.Where(node => node.ParentForumId == forumId).ToList();
+            }
+        }
+
+        public async Task SaveMainForumsList(List<ForumCategoryEntity> forumGroupList)
+        {
+            using (var db = new MainForumListContext())
+            {
+                foreach (var forumGroup in forumGroupList)
+                {
+                    foreach (var forumEntity in forumGroup.ForumList)
+                    {
+                        db.Add(forumEntity);
+                    }
+                    db.Add(forumGroup);
+                }
+
+                await db.SaveChangesAsync();
+            }
+        }
+
+        public static async Task RemoveForums()
+        {
+            using (var db = new MainForumListContext())
+            {
+                var entries = db.ForumCategories;
+                var forums = db.Forums;
+                db.ForumCategories.RemoveRange(entries);
+                db.Forums.RemoveRange(forums);
+                await db.SaveChangesAsync();
+            }
+        }
+
+        public List<ForumEntity> GetFavoriteForums()
+        {
+            using (var db = new MainForumListContext())
+            {
+                return db.Forums.Where(node => node.IsBookmarks).ToList();
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@ using AwfulForumsReader.Database.Context;
 using AwfulForumsReader.Core.Entity;
 using System.ComponentModel;
 using AwfulForumsReader.Core.Manager;
+using AwfulForumsReader.Database.Commands;
 
 namespace AwfulForumsReader.Tools
 {
@@ -27,6 +28,8 @@ namespace AwfulForumsReader.Tools
         {
             return LoadDataAsync(count).AsAsyncOperation();
         }
+
+        private readonly BookmarkManager _bookmarkManager = new BookmarkManager();
 
         public async Task<LoadMoreItemsResult> LoadDataAsync(uint count)
         {
@@ -46,12 +49,9 @@ namespace AwfulForumsReader.Tools
 
             foreach (ForumThreadEntity forumThreadEntity in forumThreadEntities.Where(forumThreadEntity => !forumThreadEntity.IsAnnouncement))
             {
-                using (var db = new MainForumListContext())
+                if (_bookmarkManager.IsBookmark(forumThreadEntity.ThreadId))
                 {
-                    if (db.BookmarkThreads.Any(node => node.ThreadId == forumThreadEntity.ThreadId))
-                    {
-                        forumThreadEntity.IsBookmark = true;
-                    }
+                    forumThreadEntity.IsBookmark = true;
                 }
                 Add(forumThreadEntity);
             }

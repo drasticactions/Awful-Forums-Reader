@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using AwfulForumsReader.Database.Commands;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -108,8 +109,9 @@ namespace AwfulForumsReader.Pages
 
         #endregion
 
-        private void PullToRefreshPanel_OnPullToRefresh(object sender, EventArgs e)
+        private async void PullToRefreshPanel_OnPullToRefresh(object sender, EventArgs e)
         {
+            await MainForumsManager.RemoveForums();
             Locator.ViewModels.MainForumsPageVm.Initialize();
         }
     }
