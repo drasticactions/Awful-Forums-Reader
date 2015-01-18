@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.22310.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AwfulForumsReader", "AwfulForumsReader", "{26510CF5-7441-4362-AACF-812DF128B583}"
-	ProjectSection(SolutionItems) = preProject
-		..\awfulmetro\AwfulMetro\App.xaml.cs = ..\awfulmetro\AwfulMetro\App.xaml.cs
-	EndProjectSection
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AwfulForumsReader.Shared", "AwfulForumsReader\AwfulForumsReader.Shared\AwfulForumsReader.Shared.shproj", "{64FE7E36-B93C-47D1-AA99-D91908025ECA}"
 EndProject

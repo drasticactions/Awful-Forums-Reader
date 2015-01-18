@@ -9,6 +9,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     RequestedTheme="Light"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:triggers="using:WinRT.Triggers"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -53,7 +54,7 @@
                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Center" />
         </Grid>
         <Grid Grid.Row="1">
-            <GridView ItemsSource="{Binding SearchResultsEntities}">
+            <GridView IsItemClickEnabled="True" ItemsSource="{Binding SearchResultsEntities}">
                 <GridView.ItemTemplate>
                     <DataTemplate>
                         <Grid Width="500">
@@ -76,6 +77,12 @@
                         </Grid>
                     </DataTemplate>
                 </GridView.ItemTemplate>
+                                                        <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="ItemClick">
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToThreadPageViaSearchResult}"
+                                                  PassEventArgsToCommand="True" />
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
             </GridView>
         </Grid>
     </Grid>

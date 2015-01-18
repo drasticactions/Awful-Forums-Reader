@@ -66,10 +66,10 @@ namespace AwfulForumsReader
 #endif
 #if WINDOWS_PHONE_APP
             RequestedTheme = ApplicationTheme.Dark;
-#endif
-            var type = typeof(Microsoft.Data.Entity.Relational.RelationalDatabase).GetTypeInfo()
+                        var type = typeof(Microsoft.Data.Entity.Relational.RelationalDatabase).GetTypeInfo()
                 .Assembly.GetType("Microsoft.Data.Entity.Relational.Strings");
             WindowsRuntimeResourceManager.InjectIntoResxGeneratedApplicationResourcesClass(type);
+#endif
             //HockeyClient.Current.Configure("4e570f666ab005f8526946c71f5f4824");
             try
             {
