@@ -96,6 +96,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\RatingVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\RepliesSinceLastOpenedColorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\ReplyBoxLocation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\SearchPageScrollingCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\StorageFolderExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\SubforumBodyColorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\SubforumFontColorConverter.cs" />

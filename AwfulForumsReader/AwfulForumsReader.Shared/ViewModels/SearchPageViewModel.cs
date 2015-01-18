@@ -18,10 +18,21 @@ namespace AwfulForumsReader.ViewModels
         private bool _isLoading;
         private SearchManager _searchManager;
         private string _searchTerms;
-        private List<SearchEntity> _searchResultsEntities; 
         private List<ForumCategoryEntity> _forumCategoryEntities;
         public NavigateToThreadPageViaSearchResult NavigateToThreadPageViaSearchResult { get; set; } = new NavigateToThreadPageViaSearchResult();
         public NavigateToSearchResultsCommand NavigateToSearchResultsCommand { get; set; } = new NavigateToSearchResultsCommand();
+        public NavigateToSearchResultsFromListViewCommand NavigateToSearchResultsFromListViewCommand { get; set; } = new NavigateToSearchResultsFromListViewCommand();
+        private SearchPageScrollingCollection _searchPageScrollingCollection;
+        public SearchPageScrollingCollection SearchPageScrollingCollection
+        {
+            get { return _searchPageScrollingCollection; }
+            set
+            {
+                SetProperty(ref _searchPageScrollingCollection, value);
+                OnPropertyChanged();
+            }
+        }
+
         public List<ForumCategoryEntity> ForumCategoryEntities
         {
             get { return _forumCategoryEntities; }
@@ -31,15 +42,7 @@ namespace AwfulForumsReader.ViewModels
                 OnPropertyChanged();
             }
         }
-        public List<SearchEntity> SearchResultsEntities
-        {
-            get { return _searchResultsEntities; }
-            set
-            {
-                SetProperty(ref _searchResultsEntities, value);
-                OnPropertyChanged();
-            }
-        }
+       
         public string SearchTerms
         {
             get { return _searchTerms; }
@@ -81,11 +84,8 @@ namespace AwfulForumsReader.ViewModels
             IsLoading = true;
             try
             {
-                SearchResultsEntities = await _searchManager.GetSearchQueryResults(forumIds, SearchTerms);
-                if (SearchResultsEntities.Any())
-                {
-                    App.RootFrame.Navigate(typeof (SearchResultsPage));
-                }
+                SearchPageScrollingCollection = new SearchPageScrollingCollection(forumIds, SearchTerms);
+                App.RootFrame.Navigate(typeof(SearchResultsPage));
             }
             catch (Exception ex)
             {

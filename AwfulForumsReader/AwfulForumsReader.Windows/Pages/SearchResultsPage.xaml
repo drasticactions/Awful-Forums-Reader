@@ -54,7 +54,8 @@
                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Center" />
         </Grid>
         <Grid Grid.Row="1">
-            <GridView IsItemClickEnabled="True" ItemsSource="{Binding SearchResultsEntities}">
+            <ProgressBar IsIndeterminate="True" VerticalAlignment="Top" Visibility="{Binding SearchPageScrollingCollection.IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <GridView IsItemClickEnabled="True" ItemsSource="{Binding SearchPageScrollingCollection}">
                 <GridView.ItemTemplate>
                     <DataTemplate>
                         <Grid Width="500">
@@ -72,6 +73,7 @@
                                     <TextBlock FontWeight="Bold" TextTrimming="WordEllipsis" TextWrapping="NoWrap" Text="{Binding ThreadTitle}"/>
                                     <TextBlock Text="{Binding Username}"/>
                                     <TextBlock Text="{Binding ForumName}"/>
+                                     <TextBlock TextTrimming="WordEllipsis" TextWrapping="NoWrap" Margin="0,5,0,0" Text="{Binding Blurb}"/>
                                 </StackPanel>
                             </Grid>
                         </Grid>

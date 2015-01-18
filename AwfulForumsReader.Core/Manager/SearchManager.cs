@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using AwfulForumsReader.Core.Entity;
 using AwfulForumsReader.Core.Exceptions;
@@ -28,7 +29,7 @@ namespace AwfulForumsReader.Core.Manager
         {
         }
 
-        public async Task<List<SearchEntity>> GetSearchQueryResults(List<int> forumIds, string query)
+        public async Task<SearchEntityObject> GetSearchQueryResults(List<int> forumIds, string query)
         {
             if (string.IsNullOrEmpty(query))
             {
@@ -58,8 +59,30 @@ namespace AwfulForumsReader.Core.Manager
                     string html = reader.ReadToEnd();
                     var doc = new HtmlDocument();
                     doc.LoadHtml(html);
-                    return ParseSearchHtml(doc);
+                    var result = ParseSearchHtml(doc);
+                    return new SearchEntityObject()
+                    {
+                        SearchEntities = result,
+                        LinkUrl = response.RequestMessage.RequestUri.ToString()
+                    };
                 }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to get search results", ex);
+            }
+        }
+
+        public async Task<SearchEntityObject> GetSearchQueryResultsViaRedirect(string redirect)
+        {
+            try
+            {
+                var response = await _webManager.GetData(redirect);
+                var result = ParseSearchHtml(response.Document);
+                return new SearchEntityObject()
+                {
+                    SearchEntities = result
+                };
             }
             catch (Exception ex)
             {
@@ -74,7 +97,8 @@ namespace AwfulForumsReader.Core.Manager
                     .FirstOrDefault(node => node.GetAttributeValue("id", string.Empty).Equals("search_results"));
             if (forumNode == null)
             {
-                throw new Exception("Failed to get search results");
+                // No search results!
+                return new List<SearchEntity>();
             }
             IEnumerable<HtmlNode> searchNodes = forumNode.Descendants("li").Where(node => node.GetAttributeValue("class", string.Empty).Equals("search_result"));
             return searchNodes.Select(ParseSearchNode).ToList();
@@ -101,6 +125,11 @@ namespace AwfulForumsReader.Core.Manager
                     .First(node => node.GetAttributeValue("class", string.Empty).Equals("forumtitle"));
 
             searchEntity.ForumName = WebUtility.HtmlDecode(resultNode.InnerText);
+
+            resultNode = searchNode.Descendants("div")
+                    .First(node => node.GetAttributeValue("class", string.Empty).Equals("blurb"));
+
+            searchEntity.Blurb = Regex.Replace(resultNode.InnerText, @"\t|\n|\r", "");
             return searchEntity;
         }
     }

@@ -20,4 +20,11 @@ namespace AwfulForumsReader.Core.Entity
 
         public string Blurb { get; set; }
     }
+
+    public class SearchEntityObject
+    {
+        public List<SearchEntity> SearchEntities { get; set; }
+    
+        public string LinkUrl { get; set; } 
+    }
 }

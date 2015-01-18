@@ -54,7 +54,7 @@ namespace AwfulForumsReader.Commands
             Locator.ViewModels.ThreadPageVm.IsLoading = true;
             var newThreadEntity = new ForumThreadEntity()
             {
-                Location = thread.ThreadLink,
+                Location = Constants.BaseUrl + thread.ThreadLink,
                 ImageIconLocation = "/Assets/ThreadTags/noicon.png"
             };
             Locator.ViewModels.ThreadPageVm.ForumThreadEntity = newThreadEntity;

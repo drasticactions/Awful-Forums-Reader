@@ -37,7 +37,10 @@
         <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
         <ProgressBar IsIndeterminate="True" Visibility="{Binding SearchPageScrollingCollection.IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Top"/>
         <Grid>
-            <ListView ItemsSource="{Binding SearchPageScrollingCollection}">
+            <Grid Visibility="{Binding SearchPageScrollingCollection.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, Mode=TwoWay}">
+                <TextBox FontSize="25" Foreground="White" TextWrapping="Wrap" Text="No Results Found!"/>
+            </Grid>
+            <ListView IsItemClickEnabled="True" ItemsSource="{Binding SearchPageScrollingCollection}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid Margin="3">

@@ -82,7 +82,7 @@
                  <Button HorizontalAlignment="Center" Margin="0,15,0,0" Content="Search">
                    <triggers:Interactions.Triggers>
                         <triggers:EventTrigger EventName="Click">
-                            <triggers:InvokeCommandAction Command="{Binding NavigateToSearchResultsCommand}" CommandParameter="{Binding Source, Source={StaticResource MainForumList}}" PassEventArgsToCommand="True"/>
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToSearchResultsFromListViewCommand}" CommandParameter="{Binding Source, Source={StaticResource MainForumList}}" PassEventArgsToCommand="True"/>
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                  </Button>
