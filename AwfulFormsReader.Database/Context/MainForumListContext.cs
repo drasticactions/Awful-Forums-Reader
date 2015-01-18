@@ -1,6 +1,8 @@
-﻿using AwfulForumsReader.Core.Entity;
+﻿using System.Resources;
+using AwfulForumsReader.Core.Entity;
 using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Metadata;
+
 
 namespace AwfulForumsReader.Database.Context
 {

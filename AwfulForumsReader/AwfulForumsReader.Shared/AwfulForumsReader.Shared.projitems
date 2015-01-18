@@ -106,6 +106,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\TotalPageConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\UploadManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\WebViewHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\WindowsRuntimeResourceManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UserControls\ImageLoader.xaml.cs">
       <DependentUpon>ImageLoader.xaml</DependentUpon>
     </Compile>

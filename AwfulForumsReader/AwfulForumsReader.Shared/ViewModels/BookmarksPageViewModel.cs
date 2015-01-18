@@ -126,22 +126,32 @@ namespace AwfulForumsReader.ViewModels
         public async Task Initialize()
         {
             IsLoading = true;
-            BookmarkedThreads = new ObservableCollection<ForumThreadEntity>();
-            DateTime refreshDate = DateTime.UtcNow;
-            if (_localSettings.Values.ContainsKey(Constants.AutoRefresh))
+            try
             {
-                AutoRefresh = (bool)_localSettings.Values[Constants.AutoRefresh];
+                BookmarkedThreads = new ObservableCollection<ForumThreadEntity>();
+                DateTime refreshDate = DateTime.UtcNow;
+                if (_localSettings.Values.ContainsKey(Constants.AutoRefresh))
+                {
+                    AutoRefresh = (bool)_localSettings.Values[Constants.AutoRefresh];
+                }
+                if (_localSettings.Values.ContainsKey("RefreshBookmarks"))
+                {
+                    var dateString = (string)_localSettings.Values["RefreshBookmarks"];
+                    refreshDate = DateTime.Parse(dateString);
+                }
+                var bookmarks = await _bookmarkManager.GetBookmarkedThreadsFromDb();
+                if (bookmarks != null && bookmarks.Any())
+                {
+                    BookmarkedThreads = bookmarks.ToObservableCollection();
+                }
+                if ((!BookmarkedThreads.Any() || refreshDate < (DateTime.UtcNow.AddHours(-1.00))) || AutoRefresh)
+                {
+                    await Refresh();
+                }
             }
-            if (_localSettings.Values.ContainsKey("RefreshBookmarks"))
+            catch (Exception ex)
             {
-                var dateString = (string)_localSettings.Values["RefreshBookmarks"];
-                refreshDate = DateTime.Parse(dateString);
-            }
-            var bookmarks = await _bookmarkManager.GetBookmarkedThreadsFromDb();
-            BookmarkedThreads = bookmarks.ToObservableCollection();
-            if ((!BookmarkedThreads.Any() || refreshDate < (DateTime.UtcNow.AddHours(-1.00))) || AutoRefresh)
-            {
-                await Refresh();
+                AwfulDebugger.SendMessageDialogAsync("Failed to get Bookmarks (Potential EF Issue!)", ex);
             }
             IsLoading = false;
         }

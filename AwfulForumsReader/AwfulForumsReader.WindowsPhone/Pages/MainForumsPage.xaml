@@ -153,6 +153,13 @@
                     </triggers:EventTrigger>
                 </triggers:Interactions.Triggers>
             </AppBarButton>
+            <AppBarButton Icon="Zoom" x:Name="SearchButton" Label="Search">
+                <triggers:Interactions.Triggers>
+                    <triggers:EventTrigger EventName="Click">
+                        <triggers:InvokeCommandAction Command="{Binding NavigateToSearchPageCommand}"/>
+                    </triggers:EventTrigger>
+                </triggers:Interactions.Triggers>
+            </AppBarButton>
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="Refresh Forum List" x:Name="RefreshButton" Icon="Refresh"/>
                 <AppBarButton Label="Settings">

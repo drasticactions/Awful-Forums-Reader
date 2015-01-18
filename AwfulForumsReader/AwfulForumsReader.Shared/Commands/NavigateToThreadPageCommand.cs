@@ -5,6 +5,7 @@ using System.Text;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Core.Entity;
+using AwfulForumsReader.Core.Tools;
 using AwfulForumsReader.Database.Commands;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
@@ -34,6 +35,34 @@ namespace AwfulForumsReader.Commands
             Locator.ViewModels.ThreadPageVm.Html = null;
             App.RootFrame.Navigate(typeof (ThreadPage));
             await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
+        }
+    }
+
+    public class NavigateToThreadPageViaSearchResult : AlwaysExecutableCommand
+    {
+        public async override void Execute(object parameter)
+        {
+            var args = parameter as ItemClickEventArgs;
+            if (args == null)
+            {
+                AwfulDebugger.SendMessageDialogAsync("Thread navigation failed!:(", new Exception("Arguments are null"));
+                return;
+            }
+            var thread = args.ClickedItem as SearchEntity;
+            if (thread == null)
+                return;
+            Locator.ViewModels.ThreadPageVm.IsLoading = true;
+            var newThreadEntity = new ForumThreadEntity()
+            {
+                Location = thread.ThreadLink,
+                ImageIconLocation = "/Assets/ThreadTags/noicon.png"
+            };
+            Locator.ViewModels.ThreadPageVm.ForumThreadEntity = newThreadEntity;
+            App.RootFrame.Navigate(typeof (ThreadPage));
+            await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
+            var tabManager = new TabManager();
+            await tabManager.AddThreadToTabListAsync(newThreadEntity);
+            Locator.ViewModels.ThreadPageVm.LinkedThreads.Add(newThreadEntity);
         }
     }
 

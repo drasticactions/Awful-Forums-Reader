@@ -5,9 +5,13 @@
     xmlns:local="using:AwfulForumsReader.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:triggers="using:WinRT.Triggers"
+    RequestedTheme="Light"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+     DataContext="{Binding Source={StaticResource Locator}, Path=SearchPageVm}">
+    <Page.Background>
+        <SolidColorBrush Color="Black" Opacity=".65"/>
+    </Page.Background>
     <Grid x:Name="LayoutRoot">
 
         <Grid.ChildrenTransitions>
@@ -20,16 +24,56 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
+        <!-- TitlePanel -->
+        <Grid Background="#FF1E72C9" RequestedTheme="Dark" Grid.Row="0">
+            <StackPanel VerticalAlignment="Center" Grid.Row="0">
+                <TextBlock Margin="5" Text="{Binding SearchTerms}" Style="{ThemeResource TitleTextBlockStyle}" TextTrimming="CharacterEllipsis" Typography.Capitals="SmallCaps"/>
+            </StackPanel>
+        </Grid>
 
-        <!-- Title Panel -->
-        <StackPanel Grid.Row="0" Margin="19,0,0,0">
-            <TextBlock Text="MY APPLICATION" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
-            <TextBlock Text="page title" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
-        </StackPanel>
 
         <!--TODO: Content should be placed within the following grid-->
         <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
-
+        <ProgressBar IsIndeterminate="True" Visibility="{Binding SearchPageScrollingCollection.IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Top"/>
+        <Grid>
+            <ListView ItemsSource="{Binding SearchPageScrollingCollection}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="3">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Rectangle Fill="#415B64" Grid.Row="0"/>
+                                <Grid MaxHeight="200" Grid.Row="1">
+                                    <Grid.Background>
+                                        <SolidColorBrush Opacity="{Binding Converter={StaticResource BackgroundWallpaperOpacityConverter}}" Color="#F0F0F0"/>
+                                    </Grid.Background>
+                                    <StackPanel Margin="2">
+                                        <TextBlock FontWeight="Bold" Text="{Binding ResultNumber}"/>
+                                        <TextBlock FontWeight="Bold" TextTrimming="WordEllipsis" TextWrapping="NoWrap" Text="{Binding ThreadTitle}"/>
+                                        <TextBlock Text="{Binding Username}"/>
+                                        <TextBlock Text="{Binding ForumName}"/>
+                                        <TextBlock TextTrimming="WordEllipsis" TextWrapping="NoWrap" Margin="0,5,0,0" Text="{Binding Blurb}"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="ItemClick">
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToThreadPageViaSearchResult}"
+                                                  PassEventArgsToCommand="True" />
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                </Style>
+                            </ListView.ItemContainerStyle>
+            </ListView>
+        </Grid>
         </Grid>
     </Grid>
 </Page>

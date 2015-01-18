@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using AwfulForumsReader.Core.Entity;
 using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Metadata;
-
 namespace AwfulForumsReader.Database.Context
 {
     public class NotifyThreadListContext : DbContext

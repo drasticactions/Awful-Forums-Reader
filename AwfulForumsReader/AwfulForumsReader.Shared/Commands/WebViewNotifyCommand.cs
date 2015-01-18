@@ -122,7 +122,7 @@ namespace AwfulForumsReader.Commands
                         }
                         break;
                     case "openThread":
-                         var query = Extensions.ParseQueryString(command.Id);
+                        var query = Extensions.ParseQueryString(command.Id);
                         if (query.ContainsKey("action") && query["action"].Equals("showPost"))
                         {
                             //var postManager = new PostManager();

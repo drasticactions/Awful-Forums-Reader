@@ -20,6 +20,7 @@ namespace AwfulForumsReader.ViewModels
         private string _searchTerms;
         private List<SearchEntity> _searchResultsEntities; 
         private List<ForumCategoryEntity> _forumCategoryEntities;
+        public NavigateToThreadPageViaSearchResult NavigateToThreadPageViaSearchResult { get; set; } = new NavigateToThreadPageViaSearchResult();
         public NavigateToSearchResultsCommand NavigateToSearchResultsCommand { get; set; } = new NavigateToSearchResultsCommand();
         public List<ForumCategoryEntity> ForumCategoryEntities
         {

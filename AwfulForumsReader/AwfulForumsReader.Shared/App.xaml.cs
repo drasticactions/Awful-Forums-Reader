@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -66,26 +67,53 @@ namespace AwfulForumsReader
 #if WINDOWS_PHONE_APP
             RequestedTheme = ApplicationTheme.Dark;
 #endif
+            var type = typeof(Microsoft.Data.Entity.Relational.RelationalDatabase).GetTypeInfo()
+                .Assembly.GetType("Microsoft.Data.Entity.Relational.Strings");
+            WindowsRuntimeResourceManager.InjectIntoResxGeneratedApplicationResourcesClass(type);
             //HockeyClient.Current.Configure("4e570f666ab005f8526946c71f5f4824");
-            using (var db = new MainForumListContext())
+            try
             {
-                // Migrations are not yet enabled in EF7, so use an
-                // API to create the database if it doesn't exist
-                db.Database.EnsureCreated();
+                using (var db = new MainForumListContext())
+                {
+                    // Migrations are not yet enabled in EF7, so use an
+                    // API to create the database if it doesn't exist
+                    db.Database.EnsureCreated();
+                }
+            }
+            catch (Exception)
+            {
+
+            
             }
 
-            using (var db = new NotifyThreadListContext())
+            try
             {
-                // Migrations are not yet enabled in EF7, so use an
-                // API to create the database if it doesn't exist
-                db.Database.EnsureCreated();
+                using (var db = new NotifyThreadListContext())
+                {
+                    // Migrations are not yet enabled in EF7, so use an
+                    // API to create the database if it doesn't exist
+                    db.Database.EnsureCreated();
+                }
+            }
+            catch (Exception)
+            {
+
+             
             }
 
-            using (var db = new LinkedThreadListContext())
+            try
             {
-                // Migrations are not yet enabled in EF7, so use an
-                // API to create the database if it doesn't exist
-                db.Database.EnsureCreated();
+                using (var db = new LinkedThreadListContext())
+                {
+                    // Migrations are not yet enabled in EF7, so use an
+                    // API to create the database if it doesn't exist
+                    db.Database.EnsureCreated();
+                }
+            }
+            catch (Exception)
+            {
+
+                
             }
 
             Container = AutoFacConfiguration.Configure();

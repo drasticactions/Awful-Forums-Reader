@@ -12,10 +12,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("AwfulFormsReader.Database")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-[assembly: NeutralResourcesLanguage("en")]
-
+[assembly: NeutralResourcesLanguage("en-US")]
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version

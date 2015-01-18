@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
@@ -9,7 +10,6 @@ using AwfulForumsReader.Core.Manager;
 using AwfulForumsReader.Core.Tools;
 using AwfulForumsReader.Database.Context;
 using Remotion.Linq.Parsing;
-
 namespace AwfulForumsReader.Database.Commands
 {
     public class BookmarkManager
