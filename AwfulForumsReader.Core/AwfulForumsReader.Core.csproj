@@ -56,6 +56,9 @@
     <Compile Include="Entity\PostIconCategoryEntity.cs" />
     <Compile Include="Entity\PostIconEntity.cs" />
     <Compile Include="Entity\PrivateMessageEntity.cs" />
+    <Compile Include="Entity\SaclopediaEntity.cs" />
+    <Compile Include="Entity\SaclopediaNavigationEntity.cs" />
+    <Compile Include="Entity\SaclopediaNavigationTopicEntity.cs" />
     <Compile Include="Entity\SearchEntity.cs" />
     <Compile Include="Entity\SmileCategoryEntity.cs" />
     <Compile Include="Exceptions\ForumListParsingFailedException.cs" />
@@ -73,6 +76,7 @@
     <Compile Include="Manager\PostManager.cs" />
     <Compile Include="Manager\PrivateMessageManager.cs" />
     <Compile Include="Manager\ReplyManager.cs" />
+    <Compile Include="Manager\SaclopediaManager.cs" />
     <Compile Include="Manager\SearchManager.cs" />
     <Compile Include="Manager\SmileManager.cs" />
     <Compile Include="Manager\ThreadManager.cs" />

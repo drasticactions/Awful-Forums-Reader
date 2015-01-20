@@ -354,6 +354,7 @@
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
+    <MainPackageIdentityName>52978DrasticActions.AwfulForumsReaderBeta</MainPackageIdentityName>
     <MainPackageIdentityName>52978DrasticActions.AwfulMusic</MainPackageIdentityName>
     <MainPackageIdentityName>52978DrasticActions.FoulPlayTheUnofficialPlayStati</MainPackageIdentityName>
     <MainPackageIdentityName>52978DrasticActions.PSNMessenger</MainPackageIdentityName>
@@ -365,27 +366,27 @@
       <PackageInfo>
         <OsMinVersion>6.3.0.0</OsMinVersion>
         <PackageArchitecture>X86</PackageArchitecture>
-        <PackageMaxArchitectureVersion>3.1.0.7</PackageMaxArchitectureVersion>
+        <PackageMaxArchitectureVersion>3.5.0.10</PackageMaxArchitectureVersion>
       </PackageInfo>
       <PackageInfo>
         <OsMinVersion>6.3.0.0</OsMinVersion>
         <PackageArchitecture>X64</PackageArchitecture>
-        <PackageMaxArchitectureVersion>3.1.0.7</PackageMaxArchitectureVersion>
+        <PackageMaxArchitectureVersion>3.5.0.10</PackageMaxArchitectureVersion>
       </PackageInfo>
       <PackageInfo>
         <OsMinVersion>6.3.0.0</OsMinVersion>
         <PackageArchitecture>Neutral</PackageArchitecture>
-        <PackageMaxArchitectureVersion>3.1.0.7</PackageMaxArchitectureVersion>
+        <PackageMaxArchitectureVersion>3.5.0.10</PackageMaxArchitectureVersion>
       </PackageInfo>
       <PackageInfo>
         <OsMinVersion>6.3.0.0</OsMinVersion>
         <PackageArchitecture>Neutral</PackageArchitecture>
-        <PackageMaxArchitectureVersion>3.1.0.7</PackageMaxArchitectureVersion>
+        <PackageMaxArchitectureVersion>3.5.0.10</PackageMaxArchitectureVersion>
       </PackageInfo>
       <PackageInfo>
         <OsMinVersion>6.3.0.0</OsMinVersion>
         <PackageArchitecture>ARM</PackageArchitecture>
-        <PackageMaxArchitectureVersion>3.1.0.7</PackageMaxArchitectureVersion>
+        <PackageMaxArchitectureVersion>3.5.0.10</PackageMaxArchitectureVersion>
       </PackageInfo>
     </BundleInfo>
   </PackageInfoList>

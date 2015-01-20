@@ -19,6 +19,30 @@ namespace AwfulForumsReader.Tools
             return string.Format("<div class=\"postbody\">{0}</div>", forumPostEntity.PostHtml);
         }
 
+        public static async Task<string> FormatSaclopediaEntry(string body, PlatformIdentifier platformIdentifier)
+        {
+            string html = await PathIO.ReadTextAsync("ms-appx:///Assets/Website/saclopedia.html");
+
+            var doc2 = new HtmlDocument();
+
+            doc2.LoadHtml(html);
+
+            HtmlNode head = doc2.DocumentNode.Descendants("head").FirstOrDefault();
+
+            switch (platformIdentifier)
+            {
+                case PlatformIdentifier.WindowsPhone:
+                    head.InnerHtml += "<link href=\"ms-appx-web:///Assets/Website/CSS/WindowsPhone-Default.css\" type=\"text/css\" media=\"all\" rel=\"stylesheet\">";
+                    break;
+            }
+
+            HtmlNode bodyNode = doc2.DocumentNode.Descendants("body").FirstOrDefault();
+
+            bodyNode.InnerHtml = WebUtility.HtmlDecode(body);
+
+            return doc2.DocumentNode.OuterHtml;
+        }
+
         public static async Task<string> FormatThreadHtml(ForumThreadEntity forumThreadEntity, List<ForumPostEntity> postEntities)
         {
             string html = await PathIO.ReadTextAsync("ms-appx:///Assets/Website/thread.html");

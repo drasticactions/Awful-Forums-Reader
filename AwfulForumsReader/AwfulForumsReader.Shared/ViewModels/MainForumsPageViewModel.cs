@@ -27,7 +27,7 @@ namespace AwfulForumsReader.ViewModels
         public NavigateToPrivateMessageListPageCommand NavigateToPrivateMessageListPageCommand { get; set; } = new NavigateToPrivateMessageListPageCommand();
 
         public LogoutCommand LogoutCommand { get; set; } = new LogoutCommand();
-
+        public NavigateToSaclopedia NavigateToSaclopedia { get; set; } = new NavigateToSaclopedia();
         public NavigateToSettingsCommand NavigateToSettingsCommand { get; set; } = new NavigateToSettingsCommand();
 
         public MainForumsPageViewModel()

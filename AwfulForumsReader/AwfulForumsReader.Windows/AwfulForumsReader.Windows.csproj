@@ -19,7 +19,7 @@
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
-    <PackageCertificateThumbprint>BAFC09B34550B09FC42FBB277B70B5E8ED939D6E</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>3BFC17650E86879166B4985B432FD980632CF4DD</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -153,6 +153,9 @@
     <Compile Include="Pages\PrivateMessagePage.xaml.cs">
       <DependentUpon>PrivateMessagePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SaclopediaPage.xaml.cs">
+      <DependentUpon>SaclopediaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SearchPage.xaml.cs">
       <DependentUpon>SearchPage.xaml</DependentUpon>
     </Compile>
@@ -259,6 +262,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PrivateMessagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SaclopediaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

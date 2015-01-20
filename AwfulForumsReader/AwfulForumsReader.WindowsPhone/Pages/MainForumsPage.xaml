@@ -160,6 +160,13 @@
                     </triggers:EventTrigger>
                 </triggers:Interactions.Triggers>
             </AppBarButton>
+            <AppBarButton Icon="Setting" x:Name="SaclopediaButton" Label="SAclopedia">
+                <triggers:Interactions.Triggers>
+                    <triggers:EventTrigger EventName="Click">
+                        <triggers:InvokeCommandAction Command="{Binding NavigateToSaclopedia}"/>
+                    </triggers:EventTrigger>
+                </triggers:Interactions.Triggers>
+            </AppBarButton>
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="Refresh Forum List" x:Name="RefreshButton" Icon="Refresh"/>
                 <AppBarButton Label="Settings">

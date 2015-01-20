@@ -55,7 +55,7 @@ namespace AwfulForumsReader.Core.Manager
 
             if (title != null)
             {
-                threadEntity.Name = title.InnerText.Replace(" - The Something Awful Forums", string.Empty);
+                threadEntity.Name = WebUtility.HtmlDecode(title.InnerText.Replace(" - The Something Awful Forums", string.Empty));
             }
 
             var threadIdNode = threadDocument.DocumentNode.Descendants("body").First();

@@ -100,13 +100,20 @@
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>
+                <AppBarButton Icon="Setting"  Label="SAclopedia">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="Click">
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToSaclopedia}"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                    </AppBarButton>
                 <AppBarButton Icon="Setting" Label="Settings">
                     <triggers:Interactions.Triggers>
                         <triggers:EventTrigger EventName="Click">
                             <triggers:InvokeCommandAction Command="{Binding NavigateToSettingsCommand}"/>
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
-                    </AppBarButton>
+                </AppBarButton>
                 <AppBarButton  x:Name="LogoutButton" Label="Logout" Icon="Remove">
                     <triggers:Interactions.Triggers>
                         <triggers:EventTrigger EventName="Click">

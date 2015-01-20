@@ -100,7 +100,7 @@ namespace AwfulForumsReader.Core.Tools
 
         public const string LoginUrl = "http://forums.somethingawful.com/account.php?";
 
-        public const string SAclopediaBase = BaseUrl + "dictionary.php/";
+        public const string SAclopediaBase = BaseUrl + "dictionary.php";
 
         public const string Ascii2 = @"☆ *　. 　☆ 
 　　☆　. ∧＿∧　∩　* ☆ 

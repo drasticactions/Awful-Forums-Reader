@@ -126,6 +126,12 @@
     <Compile Include="Pages\PrivateMessagePage.xaml.cs">
       <DependentUpon>PrivateMessagePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SaclopediaEntryPage.xaml.cs">
+      <DependentUpon>SaclopediaEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SaclopediaPage.xaml.cs">
+      <DependentUpon>SaclopediaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SearchPage.xaml.cs">
       <DependentUpon>SearchPage.xaml</DependentUpon>
     </Compile>
@@ -206,6 +212,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PrivateMessagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SaclopediaEntryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SaclopediaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
