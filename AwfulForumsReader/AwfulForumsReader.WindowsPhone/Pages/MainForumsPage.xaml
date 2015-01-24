@@ -176,13 +176,6 @@
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>
-                <AppBarButton Label="View your Profile" IsCompact="True">
-                    <triggers:Interactions.Triggers>
-                        <triggers:EventTrigger EventName="Click">
-                            <triggers:InvokeCommandAction Command="{Binding NavigateToUserProfilePageCommand}"/>
-                        </triggers:EventTrigger>
-                    </triggers:Interactions.Triggers>
-                </AppBarButton>
                 <AppBarButton Label="Fulfill Your Dreams" IsCompact="True">
                     <triggers:Interactions.Triggers>
                         <triggers:EventTrigger EventName="Click">
