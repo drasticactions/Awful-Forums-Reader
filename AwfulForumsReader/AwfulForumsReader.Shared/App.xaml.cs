@@ -38,7 +38,6 @@ using AwfulForumsReader.Core;
 using AwfulForumsReader.Core.Manager;
 using AwfulForumsReader.Core.Tools;
 using AwfulForumsReader.Pages;
-using HockeyApp;
 
 namespace AwfulForumsReader
 {

@@ -277,12 +277,6 @@
       <HintPath>..\..\packages\EntityFramework.SQLite.7.0.0-beta2-11614\lib\portable-net451+win81+wpa81\EntityFramework.SQLite.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="HockeyApp">
-      <HintPath>..\..\packages\HockeySDK.WINRT.2.2.1\lib\portable-wpa81\HockeyApp.dll</HintPath>
-    </Reference>
-    <Reference Include="HockeyAppPCL">
-      <HintPath>..\..\packages\HockeySDK.Core.2.2.0\lib\portable-net45+win8+wp8+wpa81+win81\HockeyAppPCL.dll</HintPath>
-    </Reference>
     <Reference Include="HtmlAgilityPack-PCL, Version=1.4.6.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\HtmlAgilityPack-PCL.1.4.6\lib\HtmlAgilityPack-PCL.dll</HintPath>
@@ -393,7 +387,7 @@
     <SDKReference Include="Microsoft.VCLibs, Version=12.0">
       <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Phone</Name>
     </SDKReference>
-    <SDKReference Include="SQLite.WP81, Version=3.8.7.4">
+    <SDKReference Include="SQLite.WP81, Version=3.8.8.1">
       <Name>SQLite for Windows Phone 8.1</Name>
     </SDKReference>
   </ItemGroup>
