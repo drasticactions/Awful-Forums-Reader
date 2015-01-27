@@ -9,9 +9,9 @@ using Windows.UI.Xaml.Automation.Peers;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Database.Context;
-using AwfulForumsReader.Core.Entity;
-using AwfulForumsReader.Core.Manager;
-using AwfulForumsReader.Core.Tools;
+using AwfulForumsLibrary.Entity;
+using AwfulForumsLibrary.Manager;
+using AwfulForumsLibrary.Tools;
 using AwfulForumsReader.Database.Commands;
 using AwfulForumsReader.Tools;
 

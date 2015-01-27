@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.UI.Xaml.Data;
 using AwfulForumsReader.Database.Context;
-using AwfulForumsReader.Core.Entity;
+using AwfulForumsLibrary.Entity;
 using System.ComponentModel;
-using AwfulForumsReader.Core.Manager;
+using AwfulForumsLibrary.Manager;
 using AwfulForumsReader.Database.Commands;
 
 namespace AwfulForumsReader.Tools

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Core.Manager;
+using AwfulForumsLibrary.Manager;
 
 namespace AwfulForumsReader.Commands
 {

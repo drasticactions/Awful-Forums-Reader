@@ -7,7 +7,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage.Streams;
-using AwfulForumsReader.Core.Entity;
+using AwfulForumsLibrary.Entity;
 using Newtonsoft.Json;
 
 namespace AwfulForumsReader.Tools

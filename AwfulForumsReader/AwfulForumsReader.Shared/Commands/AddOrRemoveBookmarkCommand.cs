@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Windows.UI.Popups;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Core.Entity;
-using AwfulForumsReader.Core.Manager;
-using AwfulForumsReader.Core.Tools;
+using AwfulForumsLibrary.Entity;
+using AwfulForumsLibrary.Manager;
+using AwfulForumsLibrary.Tools;
 
 namespace AwfulForumsReader.Commands
 {

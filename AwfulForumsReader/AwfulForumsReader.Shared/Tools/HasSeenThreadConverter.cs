@@ -5,7 +5,7 @@ using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
-using AwfulForumsReader.Core.Tools;
+using AwfulForumsLibrary.Tools;
 
 namespace AwfulForumsReader.Tools
 {

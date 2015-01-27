@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Core.Entity;
-using AwfulForumsReader.Core.Manager;
-using AwfulForumsReader.Core.Tools;
+using AwfulForumsLibrary.Entity;
+using AwfulForumsLibrary.Manager;
+using AwfulForumsLibrary.Tools;
 using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.ViewModels

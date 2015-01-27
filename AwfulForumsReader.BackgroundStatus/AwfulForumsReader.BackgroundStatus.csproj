@@ -51,10 +51,6 @@
       <Project>{bec97e80-260d-4908-a190-0c193d80190e}</Project>
       <Name>AwfulForumsReader.Database</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AwfulForumsReader.Core\AwfulForumsReader.Core.csproj">
-      <Project>{bd27a175-04ec-42fe-a9c1-006458e2bb41}</Project>
-      <Name>AwfulForumsReader.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AwfulForumsReader.Notification\AwfulForumsReader.Notification.csproj">
       <Project>{47409eab-ffbd-49c9-8296-e39b47f4ea74}</Project>
       <Name>AwfulForumsReader.Notification</Name>
@@ -67,6 +63,14 @@
   <ItemGroup>
     <Compile Include="BackgroundNotifyStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="AwfulForumsLibrary">
+      <HintPath>..\packages\AwfulForumsLibrary.0.0.2\lib\AwfulForumsLibrary.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

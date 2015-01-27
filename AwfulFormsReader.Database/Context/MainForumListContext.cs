@@ -1,5 +1,5 @@
 ﻿using System.Resources;
-using AwfulForumsReader.Core.Entity;
+using AwfulForumsLibrary.Entity;
 using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Metadata;
 

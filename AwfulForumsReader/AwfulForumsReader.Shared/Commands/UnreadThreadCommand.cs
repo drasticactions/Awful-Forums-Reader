@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Core.Entity;
-using AwfulForumsReader.Core.Manager;
+using AwfulForumsLibrary.Entity;
+using AwfulForumsLibrary.Manager;
 
 namespace AwfulForumsReader.Commands
 {

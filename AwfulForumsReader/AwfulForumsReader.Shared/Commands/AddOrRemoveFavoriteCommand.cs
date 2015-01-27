@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using AwfulForumsReader.Database.Context;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Core.Entity;
+using AwfulForumsLibrary.Entity;
 
 namespace AwfulForumsReader.Commands
 {

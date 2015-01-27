@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Core.Entity;
-using AwfulForumsReader.Core.Manager;
+using AwfulForumsLibrary.Entity;
+using AwfulForumsLibrary.Manager;
 using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.ViewModels

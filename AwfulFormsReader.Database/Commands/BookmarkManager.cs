@@ -5,9 +5,9 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
-using AwfulForumsReader.Core.Entity;
-using AwfulForumsReader.Core.Manager;
-using AwfulForumsReader.Core.Tools;
+using AwfulForumsLibrary.Entity;
+using AwfulForumsLibrary.Manager;
+using AwfulForumsLibrary.Tools;
 using AwfulForumsReader.Database.Context;
 using Remotion.Linq.Parsing;
 namespace AwfulForumsReader.Database.Commands

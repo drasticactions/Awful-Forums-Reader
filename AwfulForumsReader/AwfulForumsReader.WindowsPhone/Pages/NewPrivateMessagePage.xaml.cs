@@ -21,7 +21,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using AwfulForumsReader.Core.Entity;
+using AwfulForumsLibrary.Entity;
 using AwfulForumsReader.Tools;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556

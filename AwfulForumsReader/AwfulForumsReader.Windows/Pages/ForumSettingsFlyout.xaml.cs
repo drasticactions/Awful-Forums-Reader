@@ -19,8 +19,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
-using AwfulForumsReader.Core.Entity;
-using AwfulForumsReader.Core.Tools;
+using AwfulForumsLibrary.Entity;
+using AwfulForumsLibrary.Tools;
 
 // The Settings Flyout item template is documented at http://go.microsoft.com/fwlink/?LinkId=273769
 using AwfulForumsReader.Tools;

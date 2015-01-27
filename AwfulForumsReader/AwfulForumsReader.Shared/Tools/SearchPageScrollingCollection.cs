@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.UI.Xaml.Data;
-using AwfulForumsReader.Core.Entity;
+using AwfulForumsLibrary.Entity;
 using System.ComponentModel;
 using System.Linq;
-using AwfulForumsReader.Core.Manager;
+using AwfulForumsLibrary.Manager;
 
 namespace AwfulForumsReader.Tools
 {

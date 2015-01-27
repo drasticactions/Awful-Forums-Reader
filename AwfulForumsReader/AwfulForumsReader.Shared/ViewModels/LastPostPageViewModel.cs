@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Core.Entity;
-using AwfulForumsReader.Core.Manager;
+using AwfulForumsLibrary.Entity;
+using AwfulForumsLibrary.Manager;
 using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.ViewModels

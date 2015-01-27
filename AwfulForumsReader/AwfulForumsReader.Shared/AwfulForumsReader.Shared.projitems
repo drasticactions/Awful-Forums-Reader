@@ -720,9 +720,16 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\219.css" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\26.css" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bbcode.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bootstrap-theme.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bootstrap-theme.min.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bootstrap.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bootstrap.min.css" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\forum-thread.css" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\ui-light-new.css" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\WindowsPhone-Default.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Website\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Website\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Website\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Website\saclopedia.html" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Website\thread.html" />
   </ItemGroup>
@@ -730,8 +737,15 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\jquery.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="$(MSBuildThisFileDirectory)Assets\bootstrap.js" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\bootstrap.min.js" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\npm.js" />
     <None Include="$(MSBuildThisFileDirectory)Assets\ThreadRatings\rating.psd" />
     <None Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\README.md" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bootstrap-theme.css.map" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bootstrap.css.map" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\Website\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\Website\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="$(MSBuildThisFileDirectory)local\jquery.min.js" />
   </ItemGroup>
   <ItemGroup>

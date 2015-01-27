@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using Windows.Storage;
-using AwfulForumsReader.Core.Tools;
+using AwfulForumsLibrary.Tools;
 using Windows.UI.Xaml.Data;
 
 namespace AwfulForumsReader.Tools

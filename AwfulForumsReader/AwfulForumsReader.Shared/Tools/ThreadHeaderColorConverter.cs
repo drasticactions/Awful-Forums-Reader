@@ -4,7 +4,7 @@ using System.Text;
 using Windows.UI;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
-using AwfulForumsReader.Core.Entity;
+using AwfulForumsLibrary.Entity;
 
 namespace AwfulForumsReader.Tools
 {

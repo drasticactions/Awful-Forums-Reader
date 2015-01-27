@@ -6,7 +6,7 @@ using System.Text;
 using Windows.Data.Xml.Dom;
 using Windows.Networking.Connectivity;
 using Windows.UI.Notifications;
-using AwfulForumsReader.Core.Entity;
+using AwfulForumsLibrary.Entity;
 
 namespace AwfulForumsReader.Notification
 {

@@ -5,8 +5,8 @@ using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Core.Manager;
-using AwfulForumsReader.Core.Tools;
+using AwfulForumsLibrary.Manager;
+using AwfulForumsLibrary.Tools;
 using AwfulForumsReader.Pages;
 
 namespace AwfulForumsReader.Commands

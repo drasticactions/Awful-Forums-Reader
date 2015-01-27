@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Core.Entity;
+using AwfulForumsLibrary.Entity;
 using AwfulForumsReader.Database.Commands;
 using AwfulForumsReader.Notification;
 using AwfulForumsReader.Tools;

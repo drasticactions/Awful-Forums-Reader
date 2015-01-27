@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Core.Entity;
-using AwfulForumsReader.Core.Tools;
+using AwfulForumsLibrary.Entity;
+using AwfulForumsLibrary.Tools;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
 

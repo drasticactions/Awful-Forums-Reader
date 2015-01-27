@@ -161,7 +161,7 @@
                     </triggers:Interactions.Triggers>
                 </AppBarButton>
                 
-                <AppBarButton x:Name="BackButton" IsEnabled="{Binding ForumThreadEntity, Converter={StaticResource BackButtonEnableConverter}, Mode=TwoWay }" Label="Back Page"
+                <AppBarButton x:Name="BackButton" IsEnabled="{Binding ForumThreadEntity, Converter={StaticResource BackButtonEnableConverter} }" Label="Back Page"
                               Icon="Back">
                     <triggers:Interactions.Triggers>
                         <triggers:EventTrigger EventName="Click">
@@ -169,7 +169,7 @@
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>
-                <AppBarButton x:Name="ForwardButton" IsEnabled="{Binding ForumThreadEntity, Converter={StaticResource ForwardButtonEnableConverter}, Mode=TwoWay}" Label="Forward Page"
+                <AppBarButton x:Name="ForwardButton" IsEnabled="{Binding ForumThreadEntity, Converter={StaticResource ForwardButtonEnableConverter}}" Label="Forward Page"
                               Icon="Forward">
                     <triggers:Interactions.Triggers>
                         <triggers:EventTrigger EventName="Click">

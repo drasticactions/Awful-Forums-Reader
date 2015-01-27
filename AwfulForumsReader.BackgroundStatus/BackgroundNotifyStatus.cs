@@ -8,9 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Windows.ApplicationModel.Background;
-using AwfulForumsReader.Core.Entity;
-using AwfulForumsReader.Core.Manager;
-using AwfulForumsReader.Core.Tools;
+using AwfulForumsLibrary.Entity;
+using AwfulForumsLibrary.Manager;
 using AwfulForumsReader.Database.Commands;
 using AwfulForumsReader.Notification;
 

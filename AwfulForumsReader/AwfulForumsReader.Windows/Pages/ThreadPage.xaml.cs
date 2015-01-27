@@ -17,8 +17,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using AwfulForumsReader.Commands;
-using AwfulForumsReader.Core.Entity;
-using AwfulForumsReader.Core.Manager;
+using AwfulForumsLibrary.Entity;
+using AwfulForumsLibrary.Manager;
 using AwfulForumsReader.Notification;
 using AwfulForumsReader.Tools;
 

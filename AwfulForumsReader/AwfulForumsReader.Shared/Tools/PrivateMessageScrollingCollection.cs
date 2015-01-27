@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.UI.Xaml.Data;
-using AwfulForumsReader.Core.Entity;
-using AwfulForumsReader.Core.Manager;
+using AwfulForumsLibrary.Entity;
+using AwfulForumsLibrary.Manager;
 
 namespace AwfulForumsReader.Tools
 {

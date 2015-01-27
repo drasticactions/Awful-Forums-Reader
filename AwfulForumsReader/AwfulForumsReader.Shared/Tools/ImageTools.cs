@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.Storage.Streams;
-using AwfulForumsReader.Core.Tools;
+using AwfulForumsLibrary.Tools;
 
 namespace AwfulForumsReader.Tools
 {

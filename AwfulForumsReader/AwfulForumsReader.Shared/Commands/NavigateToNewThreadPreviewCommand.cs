@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Core.Manager;
+using AwfulForumsLibrary.Manager;
 using AwfulForumsReader.Pages;
 
 namespace AwfulForumsReader.Commands

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Core.Exceptions;
-using AwfulForumsReader.Core.Interface;
-using AwfulForumsReader.Core.Manager;
+using AwfulForumsLibrary.Exceptions;
+using AwfulForumsLibrary.Interface;
+using AwfulForumsLibrary.Manager;
 using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.ViewModels

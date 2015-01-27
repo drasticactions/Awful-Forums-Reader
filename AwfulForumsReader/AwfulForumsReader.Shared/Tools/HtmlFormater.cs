@@ -6,8 +6,9 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
-using AwfulForumsReader.Core.Entity;
-using AwfulForumsReader.Core.Tools;
+using AwfulForumsLibrary;
+using AwfulForumsLibrary.Entity;
+using AwfulForumsLibrary.Tools;
 using HtmlAgilityPack;
 
 namespace AwfulForumsReader.Tools

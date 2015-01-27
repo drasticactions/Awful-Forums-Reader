@@ -32,11 +32,11 @@ using Windows.UI.Xaml.Navigation;
 using Autofac;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Database.Context;
-using AwfulForumsReader.Core;
+using AwfulForumsLibrary;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
-using AwfulForumsReader.Core.Manager;
-using AwfulForumsReader.Core.Tools;
+using AwfulForumsLibrary.Manager;
+using AwfulForumsLibrary.Tools;
 using AwfulForumsReader.Pages;
 
 namespace AwfulForumsReader

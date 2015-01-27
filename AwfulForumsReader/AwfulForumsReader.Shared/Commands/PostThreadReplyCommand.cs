@@ -5,7 +5,7 @@ using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Core.Manager;
+using AwfulForumsLibrary.Manager;
 
 namespace AwfulForumsReader.Commands
 {
