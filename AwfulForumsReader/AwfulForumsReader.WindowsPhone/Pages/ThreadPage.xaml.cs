@@ -36,7 +36,6 @@ namespace AwfulForumsReader.Pages
             this.InitializeComponent();
 
             this.navigationHelper = new NavigationHelper(this);
-            ThreadFullView.ScriptNotify += WebViewNotifyCommand.WebView_ScriptNotify;
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
         }
@@ -102,11 +101,13 @@ namespace AwfulForumsReader.Pages
         /// handlers that cannot cancel the navigation request.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            ThreadFullView.ScriptNotify += WebViewNotifyCommand.WebView_ScriptNotify;
             this.navigationHelper.OnNavigatedTo(e);
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            ThreadFullView.ScriptNotify -= WebViewNotifyCommand.WebView_ScriptNotify;
             this.navigationHelper.OnNavigatedFrom(e);
         }
 

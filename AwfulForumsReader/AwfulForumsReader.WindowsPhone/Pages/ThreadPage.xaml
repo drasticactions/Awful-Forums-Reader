@@ -9,6 +9,7 @@
     xmlns:tools="using:AwfulForumsReader.Tools"
     xmlns:triggers="using:WinRT.Triggers"
     xmlns:behaviors="using:JulMar.Behaviors"
+    NavigationCacheMode="Disabled"
     xmlns:userControls="using:AwfulForumsReader.UserControls"
     xmlns:controls="using:Ika.Controls"
     mc:Ignorable="d"
@@ -145,11 +146,11 @@
                                                     </Grid.ColumnDefinitions>
                                                     <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}"
                                         Grid.Column="0" Margin="5" Width="60" Height="60">
-                                                        <userControls:ImageLoader Source="{Binding ImageIconLocation}"
+                                                        <Image Source="{Binding ImageIconLocation}"
                                            AutomationProperties.Name="{Binding Title}" />
                                                     </Border>
                                                     <Grid Grid.Column="1" >
-                                                        <userControls:ImageLoader Margin="0,0,10,0" Source="{Binding StoreImageIconLocation}"
+                                                        <Image Margin="0,0,10,0" Source="{Binding StoreImageIconLocation}"
                                            AutomationProperties.Name="{Binding Title}" />
                                                     </Grid>
                                                     <StackPanel Grid.Column="2">

@@ -33,6 +33,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\LogoutCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToBbCodePageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToBookmarksCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToLastForumPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToLastPostPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToMainForumPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToNewPrivateMessagePageCommand.cs" />

@@ -49,7 +49,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton"
-                    Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+                    Command="{Binding NavigateToLastForumPageCommand}"
                     Style="{StaticResource NavigationBackButtonNormalStyle}"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
@@ -93,6 +93,12 @@
             <GridView x:Name="SubForumList" Margin="15,0,0,0" Grid.Column="1"
                       ItemsSource="{Binding Source={StaticResource SubforumViewSource}}" SelectionMode="None"
                       IsItemClickEnabled="True">
+                <triggers:Interactions.Triggers>
+                    <triggers:EventTrigger EventName="ItemClick">
+                        <triggers:InvokeCommandAction Command="{Binding NavigateToThreadListPageCommand}"
+                                                                  PassEventArgsToCommand="True" />
+                    </triggers:EventTrigger>
+                </triggers:Interactions.Triggers>
                 <GridView.ItemTemplate>
                     <DataTemplate>
                         <Grid>

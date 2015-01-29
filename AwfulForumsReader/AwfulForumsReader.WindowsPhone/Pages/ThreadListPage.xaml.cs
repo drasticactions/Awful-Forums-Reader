@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
+using Windows.Phone.UI.Input;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -15,6 +16,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using AwfulForumsReader.Commands;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -27,14 +29,23 @@ namespace AwfulForumsReader.Pages
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
+        RelayCommand _checkedGoBackCommand;
 
         public ThreadListPage()
         {
             this.InitializeComponent();
-
+            _checkedGoBackCommand = new RelayCommand(
+                                    this.NavigateToLastPage
+                                );
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
+            this.navigationHelper.GoBackCommand = _checkedGoBackCommand;
+        }
+
+        private void NavigateToLastPage()
+        {
+            Locator.ViewModels.ThreadListPageVm.NavigateToLastForumPageCommand.Execute(null);
         }
 
         /// <summary>

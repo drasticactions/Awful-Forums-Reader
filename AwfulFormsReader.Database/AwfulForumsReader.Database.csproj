@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -51,7 +52,9 @@
     <Compile Include="Commands\BookmarkManager.cs" />
     <Compile Include="Commands\MainForumsManager.cs" />
     <Compile Include="Commands\NotificationManager.cs" />
+    <Compile Include="Commands\SubforumManager.cs" />
     <Compile Include="Commands\TabManager.cs" />
+    <Compile Include="Context\LinkedSubforumContext.cs" />
     <Compile Include="Context\LinkedThreadListContext.cs" />
     <Compile Include="Context\MainForumListContext.cs" />
     <Compile Include="Context\NotifyThreadListContext.cs" />

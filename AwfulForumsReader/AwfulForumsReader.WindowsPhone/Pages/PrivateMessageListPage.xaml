@@ -80,7 +80,7 @@
                                     </Grid.ColumnDefinitions>
                                     <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}"
                                         Grid.Column="0" Width="16" Height="16">
-                                        <userControls:ImageLoader Source="{Binding Status}"
+                                        <Image Source="{Binding Status}"
                                            AutomationProperties.Name="{Binding Title}" />
                                     </Border>
                                     <Border Background="Transparent"

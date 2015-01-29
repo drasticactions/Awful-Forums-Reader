@@ -25,7 +25,8 @@ namespace AwfulForumsReader.ViewModels
         private NavigateToNewThreadCommand _navigateToNewThreadCommand = new NavigateToNewThreadCommand();
         private NavigateToThreadPageCommand _navigateToThreadPageCommand = new NavigateToThreadPageCommand();
         private NavigateToLastPageInThreadPageCommand _navigateToLastPageInThreadPageCommand = new NavigateToLastPageInThreadPageCommand();
-
+        public NavigateToLastForumPageCommand NavigateToLastForumPageCommand { get; set; } = new NavigateToLastForumPageCommand();
+        public NavigateToSubforumThreadListPageCommand NavigateToThreadListPageCommand { get; set; }  = new NavigateToSubforumThreadListPageCommand();
         public NavigateToLastPageInThreadPageCommand NavigateToLastPageInThreadPageCommand
         {
             get { return _navigateToLastPageInThreadPageCommand; }

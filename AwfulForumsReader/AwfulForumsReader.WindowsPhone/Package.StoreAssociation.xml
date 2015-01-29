@@ -202,17 +202,17 @@
       <PackageInfo>
         <OsMinVersion>6.3.0.0</OsMinVersion>
         <PackageArchitecture></PackageArchitecture>
-        <PackageMaxArchitectureVersion>4.7.8.8</PackageMaxArchitectureVersion>
+        <PackageMaxArchitectureVersion>4.7.9.9</PackageMaxArchitectureVersion>
       </PackageInfo>
       <PackageInfo>
         <OsMinVersion>6.3.0.0</OsMinVersion>
         <PackageArchitecture>arm</PackageArchitecture>
-        <PackageMaxArchitectureVersion>4.7.8.8</PackageMaxArchitectureVersion>
+        <PackageMaxArchitectureVersion>4.7.9.9</PackageMaxArchitectureVersion>
       </PackageInfo>
       <PackageInfo>
         <OsMinVersion>6.3.0.0</OsMinVersion>
         <PackageArchitecture></PackageArchitecture>
-        <PackageMaxArchitectureVersion>4.7.8.8</PackageMaxArchitectureVersion>
+        <PackageMaxArchitectureVersion>4.7.9.9</PackageMaxArchitectureVersion>
       </PackageInfo>
     </BundleInfo>
   </PackageInfoList>

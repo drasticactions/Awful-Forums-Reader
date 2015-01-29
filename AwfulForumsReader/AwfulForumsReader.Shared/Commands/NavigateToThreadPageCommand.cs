@@ -25,6 +25,7 @@ namespace AwfulForumsReader.Commands
             var thread = args.ClickedItem as ForumThreadEntity;
             if (thread == null)
                 return;
+            App.RootFrame.Navigate(typeof(ThreadPage));
             var tabManager = new TabManager();
             await tabManager.RemoveAllThreadsFromTabList();
             await tabManager.AddThreadToTabListAsync(thread);
@@ -33,7 +34,6 @@ namespace AwfulForumsReader.Commands
 
             Locator.ViewModels.ThreadPageVm.ForumThreadEntity = thread;
             Locator.ViewModels.ThreadPageVm.Html = null;
-            App.RootFrame.Navigate(typeof (ThreadPage));
             await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
         }
     }
@@ -51,6 +51,7 @@ namespace AwfulForumsReader.Commands
             var thread = args.ClickedItem as SearchEntity;
             if (thread == null)
                 return;
+            App.RootFrame.Navigate(typeof(ThreadPage));
             Locator.ViewModels.ThreadPageVm.IsLoading = true;
             var newThreadEntity = new ForumThreadEntity()
             {
@@ -58,7 +59,6 @@ namespace AwfulForumsReader.Commands
                 ImageIconLocation = "/Assets/ThreadTags/noicon.png"
             };
             Locator.ViewModels.ThreadPageVm.ForumThreadEntity = newThreadEntity;
-            App.RootFrame.Navigate(typeof (ThreadPage));
             await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
             var tabManager = new TabManager();
             await tabManager.AddThreadToTabListAsync(newThreadEntity);
@@ -77,6 +77,7 @@ namespace AwfulForumsReader.Commands
                 return;
             }
 
+            App.RootFrame.Navigate(typeof(ThreadPage));
             var tabManager = new TabManager();
             await tabManager.RemoveAllThreadsFromTabList();
             await tabManager.AddThreadToTabListAsync(thread);
@@ -86,7 +87,6 @@ namespace AwfulForumsReader.Commands
             thread.CurrentPage = thread.TotalPages;
             Locator.ViewModels.ThreadPageVm.ForumThreadEntity = thread;
             Locator.ViewModels.ThreadPageVm.Html = null;
-            App.RootFrame.Navigate(typeof(ThreadPage));
             await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
         }
     }
@@ -102,6 +102,7 @@ namespace AwfulForumsReader.Commands
                 return;
             }
 
+            App.RootFrame.Navigate(typeof(ThreadPage));
             var tabManager = new TabManager();
             await tabManager.RemoveAllThreadsFromTabList();
             await tabManager.AddThreadToTabListAsync(thread);
@@ -110,7 +111,6 @@ namespace AwfulForumsReader.Commands
 
             Locator.ViewModels.ThreadPageVm.ForumThreadEntity = thread;
             Locator.ViewModels.ThreadPageVm.Html = null;
-            App.RootFrame.Navigate(typeof(ThreadPage));
             await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
         }
     }

@@ -99,18 +99,18 @@ namespace AwfulForumsReader.ViewModels
                 Location = Constants.UserCp
             };
             var pageNumber = 1;
-            var hasItems = false;
-            while (!hasItems)
+            var hasNoItems = false;
+            while (!hasNoItems)
             {
                 var bookmarks = await threadManager.GetBookmarksAsync(forum, pageNumber);
                 bookmarkThreads.AddRange(bookmarks);
                 if (bookmarks.Any())
                 {
-                    hasItems = true;
+                    pageNumber++;
                 }
                 else
                 {
-                    pageNumber++;
+                    hasNoItems = true;
                 }
             }
 
@@ -125,6 +125,10 @@ namespace AwfulForumsReader.ViewModels
 
         public async Task Initialize()
         {
+            if (BookmarkedThreads != null && BookmarkedThreads.Any())
+            {
+                return;
+            }
             IsLoading = true;
             try
             {

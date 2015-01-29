@@ -11,6 +11,7 @@
     xmlns:tools="using:AwfulForumsReader.Tools"
     xmlns:userControls="using:AwfulForumsReader.UserControls"
     xmlns:triggers="using:WinRT.Triggers"
+    NavigationCacheMode="Enabled"
     xmlns:controls="using:Ika.Controls"
     mc:Ignorable="d">
         <Page.Background>
@@ -42,7 +43,7 @@
                                         Visibility="{Binding RatingImage, Converter={StaticResource RatingVisibilityConverter}}"
                                         Margin="0,0,0,5"  Background="Transparent" Width="60"
                                         Height="26">
-                            <userControls:ImageLoader Source="{Binding RatingImage}" />
+                            <Image Source="{Binding RatingImage}" />
                         </Border>
                     </StackPanel>
                     <Grid Grid.Column="1" >
@@ -113,9 +114,8 @@
             </StackPanel>
         </Grid>
 
-        <!--TODO: Content should be placed within the following grid-->
-        <Grid Grid.Row="1" Margin="19,9.5,19,0" x:Name="ContentRoot">
-            <Grid>
+           <Grid Grid.Row="1" x:Name="ContentRoot">
+             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="15"/>
                     <RowDefinition Height="*"/>
@@ -128,24 +128,24 @@
                       IsSwipeEnabled="True" Grid.Row="1"
                       ItemsSource="{Binding BookmarkedThreads}" SelectionMode="None"
                       IsItemClickEnabled="True">
-                    <triggers:Interactions.Triggers>
-                        <triggers:EventTrigger EventName="ItemClick">
-                            <triggers:InvokeCommandAction Command="{Binding NavigateToThreadPageCommand}"
+                            <triggers:Interactions.Triggers>
+                                <triggers:EventTrigger EventName="ItemClick">
+                                    <triggers:InvokeCommandAction Command="{Binding NavigateToThreadPageCommand}"
                                                                   PassEventArgsToCommand="True" />
-                        </triggers:EventTrigger>
-                    </triggers:Interactions.Triggers>
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="ListViewItem">
-                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                        </Style>
-                    </ListView.ItemContainerStyle>
-                </ListView>
+                                </triggers:EventTrigger>
+                            </triggers:Interactions.Triggers>
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                        </ListView>
                 <triggers:Interactions.Triggers>
                     <triggers:EventTrigger EventName="PullToRefresh">
                         <triggers:InvokeCommandAction Command="{Binding RefreshBookmarkListCommand}"/>
                     </triggers:EventTrigger>
                 </triggers:Interactions.Triggers>
-                </controls:PullToRefreshPanel>
+                        </controls:PullToRefreshPanel>
             </Grid>
         </Grid>
     </Grid>

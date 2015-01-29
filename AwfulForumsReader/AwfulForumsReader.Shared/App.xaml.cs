@@ -115,6 +115,21 @@ namespace AwfulForumsReader
                 
             }
 
+            try
+            {
+                using (var db = new LinkedSubforumContext())
+                {
+                    // Migrations are not yet enabled in EF7, so use an
+                    // API to create the database if it doesn't exist
+                    db.Database.EnsureCreated();
+                }
+            }
+            catch (Exception)
+            {
+
+
+            }
+
             Container = AutoFacConfiguration.Configure();
         }
 #if WINDOWS_PHONE_APP

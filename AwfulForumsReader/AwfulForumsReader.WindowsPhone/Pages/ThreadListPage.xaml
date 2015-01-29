@@ -43,7 +43,7 @@
                                         Visibility="{Binding RatingImage, Converter={StaticResource RatingVisibilityConverter}}"
                                         Margin="0,0,0,5"  Background="Transparent" Width="60"
                                         Height="26">
-                            <userControls:ImageLoader Source="{Binding RatingImage}" />
+                            <Image Source="{Binding RatingImage}" />
                         </Border>
                     </StackPanel>
                     <Grid Grid.Column="1" >
@@ -183,6 +183,12 @@
                 ItemTemplate="{StaticResource ForumTemplate}"
                 IsItemClickEnabled="True"
                >
+                <triggers:Interactions.Triggers>
+                    <triggers:EventTrigger EventName="ItemClick">
+                        <triggers:InvokeCommandAction Command="{Binding NavigateToThreadListPageCommand}"
+                                                                  PassEventArgsToCommand="True" />
+                    </triggers:EventTrigger>
+                </triggers:Interactions.Triggers>
                         <ListView.ItemContainerStyle>
                             <Style TargetType="ListViewItem">
                                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />

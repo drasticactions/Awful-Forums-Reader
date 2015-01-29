@@ -23,9 +23,15 @@ namespace AwfulForumsReader.BackgroundStatus
         {
             //
             BackgroundTaskDeferral deferral = taskInstance.GetDeferral();
-            if (NotifyStatusTile.IsInternet())
+            try
             {
-                await Update(taskInstance);
+                if (NotifyStatusTile.IsInternet())
+                {
+                    await Update(taskInstance);
+                }
+            }
+            catch (Exception)
+            {
             }
             deferral.Complete();
         }
