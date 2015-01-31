@@ -19,6 +19,7 @@
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>arm</AppxBundlePlatforms>
     <EnableProjectNCompatibleProfile>true</EnableProjectNCompatibleProfile>
+    <EnableDotNetNativeCompatibleProfile>false</EnableDotNetNativeCompatibleProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
