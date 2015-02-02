@@ -66,3 +66,14 @@ background-repeat: repeat!important;
 .postCount2 {
     background-color: black;
 }
+
+#threadView .av
+{
+   width: 92px;
+   height: 92px;
+   margin-right: 25px;
+}
+
+.postbody {
+    padding: 20px;
+}

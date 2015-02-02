@@ -130,24 +130,22 @@ img.timg.peewee { border: 0; }
     font-size: 21px;
 }
 
-#threadView header
+#threadView
 {
-    overflow: auto;
-    width: 100%;
+    overflow: hidden;
     padding-bottom: 25px;
     border-bottom: 1px solid green;
 }
 
 #threadView h2 {
-    font-size: 150%;
+    font-size: 120%;
 }
 
-#threadView header .av
+#threadView .av
 {
    width: 92px;
    height: 92px;
    margin-right: 25px;
-   float: left;
 }
 
 input[type=submit]{
@@ -172,6 +170,10 @@ input[type=submit]{
     background-color: rgb(232, 232, 232);
 }
 
+.postbody {
+    padding: 10px;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -183,4 +185,14 @@ footer {
 
 .SAclopedia {
     background-color: transparent;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+}
+
+#showPosts {
+    list-style-type: none;
 }

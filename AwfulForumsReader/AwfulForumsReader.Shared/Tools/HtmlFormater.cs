@@ -72,7 +72,7 @@ namespace AwfulForumsReader.Tools
 
             }
 
-            HtmlNode bodyNode = doc2.DocumentNode.Descendants("body").FirstOrDefault();
+            HtmlNode bodyNode = doc2.DocumentNode.Descendants("div").FirstOrDefault(node => node.GetAttributeValue("class", string.Empty).Contains("row clearfix"));
 
             if (postEntities == null) return WebUtility.HtmlDecode(WebUtility.HtmlDecode(doc2.DocumentNode.OuterHtml));
 
@@ -119,11 +119,11 @@ namespace AwfulForumsReader.Tools
                         "\" alt=\"\" class=\"av\" border=\"0\">");
                 string username =
                     string.Format(
-                        "<h2 class=\"text article-title win-type-ellipsis\"><span class=\"author\">{0}</span><h2>",
+                        "<h2 class=\"text article-title win-type-ellipsis\"><span class=\"author\">{0}</span></h2>",
                         post.User.Username);
                 string postData =
                     string.Format(
-                        "<h4 class=\"text article-title win-type-ellipsis\"><span class=\"registered\">{0}</span><h4>",
+                        "<h4 class=\"text article-title win-type-ellipsis\"><span class=\"registered\">{0}</span></h4>",
                         post.PostDate);
                 string postBody = string.Format("<div id=\"{1}\" class=\"postbody\">{0}</div>", post.PostHtml, post.PostId);
                 string userInfo = string.Format("<div class=\"userinfo\">{0}{1}</div>", username, postData);
@@ -136,7 +136,23 @@ namespace AwfulForumsReader.Tools
                 }
                 threadHtml +=
                     string.Format(
-                        "<div class={6} id={4}><div id={5}><div id=\"threadView\"><header>{0}{1}</header><article><div class=\"article-content\">{2}</div></article><footer>{3}</footer></div></div></div>",
+                        "<div class={6} id={4}>" +
+                        "<div id={5}>" +
+                        "<div class=\"row clearfix\">" +
+                        "<div class=\"col-md-2 column\">" +
+                        "<div id=\"threadView\">" +
+                        "{0}{1}" +
+                        "</div>" +
+                        "</div>" +
+                        "<div style=\"padding: 15px;\" class=\"col-md-10 column\">" +
+                        "<div class=\"article-content\">" +
+                        "{2}" +
+                        "<footer>{3}</footer>" +
+                        "</div>" +
+                        "</div>" +
+                        "</div>" +
+                        "</div>" +
+                        "</div>",
                         userAvatar, userInfo, postBody, footer, string.Concat("\"pti", index + 1, "\""), string.Concat("\"postId", post.PostId, "\""), string.Concat("\"", hasSeen, "\""));
             }
             return threadHtml;
