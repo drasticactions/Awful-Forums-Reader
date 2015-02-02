@@ -19,7 +19,6 @@
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>arm</AppxBundlePlatforms>
     <EnableProjectNCompatibleProfile>true</EnableProjectNCompatibleProfile>
-    <EnableDotNetNativeCompatibleProfile>false</EnableDotNetNativeCompatibleProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -50,7 +49,6 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
-    <UseDotNetNativeToolchain>false</UseDotNetNativeToolchain>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
     <OutputPath>bin\ARM\Release\</OutputPath>
@@ -266,7 +264,7 @@
     </Reference>
     <Reference Include="AwfulForumsLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\AwfulForumsLibrary.0.0.2\lib\AwfulForumsLibrary.dll</HintPath>
+      <HintPath>..\..\packages\AwfulForumsLibrary.0.0.3\lib\AwfulForumsLibrary.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -369,9 +367,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\..\..\Program Files %28x86%29\MSBuild\Microsoft\.NetNative\NextSteps.mht">
-      <Link>NextSteps.mht</Link>
-    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -380,10 +375,6 @@
     <ProjectReference Include="..\..\AwfulFormsReader.Database\AwfulForumsReader.Database.csproj">
       <Project>{bec97e80-260d-4908-a190-0c193d80190e}</Project>
       <Name>AwfulForumsReader.Database</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\AwfulForumsReader.BackgroundStatus\AwfulForumsReader.BackgroundStatus.csproj">
-      <Project>{07569af0-5c62-4048-8834-0cc376db77f5}</Project>
-      <Name>AwfulForumsReader.BackgroundStatus</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\AwfulForumsReader.Notification\AwfulForumsReader.Notification.csproj">
       <Project>{47409eab-ffbd-49c9-8296-e39b47f4ea74}</Project>
@@ -415,7 +406,6 @@
     <Content Include="Assets\StoreLogo.scale-240.png" />
     <Content Include="Assets\Website\CSS\forum-thread.css" />
     <Content Include="Assets\WideLogo.scale-240.png" />
-    <Content Include="default.rd.xml" />
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup />

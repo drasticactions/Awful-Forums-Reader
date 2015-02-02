@@ -14,6 +14,7 @@
     xmlns:tools="using:AwfulForumsReader.Tools"
     xmlns:triggers="using:WinRT.Triggers"
     xmlns:controls="using:Ika.Controls"
+    NavigationCacheMode="Enabled"
     mc:Ignorable="d">
 
     <Page.Resources>

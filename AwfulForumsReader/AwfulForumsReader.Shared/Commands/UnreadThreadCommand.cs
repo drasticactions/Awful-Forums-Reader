@@ -17,8 +17,6 @@ namespace AwfulForumsReader.Commands
             thread.HasBeenViewed = false;
             thread.HasSeen = false;
             thread.ReplyCount = 0;
-            Locator.ViewModels.ThreadListPageVm.UpdateThreadList();
-            Locator.ViewModels.BookmarksPageVm.UpdateThreadList();
         }
     }
 }

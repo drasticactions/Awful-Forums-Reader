@@ -192,6 +192,9 @@ IsLoading = true;
                 await AwfulDebugger.SendMessageDialogAsync("Failed to get thread posts.", new Exception(errorMessage));
                 return;
             }
+
+            var count = postList.Count(node => !node.HasSeen);
+            ForumThreadEntity.RepliesSinceLastOpened -= count;  
 #if WINDOWS_PHONE_APP
             ForumThreadEntity.PlatformIdentifier = PlatformIdentifier.WindowsPhone;
 #else

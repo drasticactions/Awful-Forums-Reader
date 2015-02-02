@@ -418,10 +418,6 @@
       <Project>{bec97e80-260d-4908-a190-0c193d80190e}</Project>
       <Name>AwfulForumsReader.Database</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\AwfulForumsReader.BackgroundStatus\AwfulForumsReader.BackgroundStatus.csproj">
-      <Project>{07569af0-5c62-4048-8834-0cc376db77f5}</Project>
-      <Name>AwfulForumsReader.BackgroundStatus</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\AwfulForumsReader.Notification\AwfulForumsReader.Notification.csproj">
       <Project>{47409eab-ffbd-49c9-8296-e39b47f4ea74}</Project>
       <Name>AwfulForumsReader.Notification</Name>

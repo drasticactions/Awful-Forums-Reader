@@ -14,6 +14,7 @@ using Windows.Storage.Streams;
 using Windows.System;
 using Windows.UI;
 using Windows.UI.Popups;
+using Windows.UI.ViewManagement;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Tools;
 using Newtonsoft.Json;
@@ -201,7 +202,7 @@ namespace AwfulForumsReader
 
         public static void ShowAppSettingsFlyout()
         {
-           ForumSettingsFlyout flyout = new ForumSettingsFlyout();
+            ForumSettingsFlyout flyout = new ForumSettingsFlyout();
             flyout.Show();
         }
 #endif
@@ -221,10 +222,13 @@ namespace AwfulForumsReader
             }
 #endif
 #if WINDOWS_APP
+            ApplicationView.GetForCurrentView().TitleBar.ForegroundColor = Color.FromArgb(255, 255, 255, 255);
+            ApplicationView.GetForCurrentView().TitleBar.BackgroundColor = Color.FromArgb(255, 30, 104, 201);
+            ApplicationView.GetForCurrentView().TitleBar.ButtonBackgroundColor = Color.FromArgb(255, 30, 104, 201);
+            ApplicationView.GetForCurrentView().TitleBar.ButtonForegroundColor = Color.FromArgb(255, 255, 255, 255);
             SettingsPane.GetForCurrentView().CommandsRequested += SettingCharmManager_CommandsRequested;
 #endif
             RootFrame = Window.Current.Content as Frame;
-
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
             if (RootFrame == null)

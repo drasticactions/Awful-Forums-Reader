@@ -299,7 +299,7 @@ button, input[type=button], input[type=reset], input[type=submit] {
     font-size: 11pt;
     font-weight: 600;
     line-height: 1.3636; /* 20px when font-size is 11pt */
-    min-height: 32px; /* content (20px) + padding + border */
+    min-height: 10px; /* content (20px) + padding + border */
     min-width: 75px;
     padding: 4px 8px;
 }

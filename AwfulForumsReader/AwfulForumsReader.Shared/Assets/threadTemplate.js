@@ -26,8 +26,8 @@ var ScrollToDiv = function (pti) {
 };
 
 var ShowHiddenPosts = function() {
-    $('#showPosts').hide();
-    $('#hiddenPosts').show('slow');
+    $('#showPosts').fadeOut();
+    $('#hiddenPosts').fadeIn();
 };
 
 var ScrollToTable = function (pti) {
@@ -45,7 +45,7 @@ var AddPostToThread = function(postId, postHtml) {
 
 var OpenLink = function(link) {
     var hostname = $.url('hostname', link);
-    if (hostname == "about") {
+    if (hostname === "about") {
         ForumCommand('openPost', link);
         return false;
     }
@@ -66,7 +66,7 @@ var OpenLink = function(link) {
             ForumCommand('openForum', link);
             break;
         case 'search.php':
-            if ($.url('?action', link) == 'do_search_posthistory') {
+            if ($.url('?action', link) === 'do_search_posthistory') {
                 ForumCommand('post_history', $.url('?userid', link));
             }
             break;
@@ -76,8 +76,30 @@ var OpenLink = function(link) {
     return false;
 };
 
-var ResizeWebviewFont = function(value) {
+var ResizeWebviewFont = function (value) {
+
+    if (value >= 16) {
+        $('.av').each(function () {
+            $(this).css('width', 92);
+            $(this).css('height', 92);
+        });
+    }
+    else if (value <= 15 && value >= 10) {
+        $('.av').each(function () {
+            $(this).css('width', 64);
+            $(this).css('height', 64);
+        });
+    }
+    else if (value < 10) {
+        $('.av').each(function () {
+            $(this).css('width', 32);
+            $(this).css('height', 32);
+        });
+    }
+
     $('body').css('font-size', value + 'px');
+    $('h4').css('font-size', value + 'px');
+    $('input').css('font-size', value + 'px');
     $('a').css('font-size', value + 'px');
     $('div').css('font-size', value + 'px');
     $('tr').css('font-size', value + 'px');
@@ -88,6 +110,8 @@ var ResizeWebviewFont = function(value) {
 
 var RemoveCustomStyle = function() {
     $('body').removeAttr('style');
+    $('h4').removeAttr('style');
+    $('input').removeAttr('style');
     $('a').removeAttr('style');
     $('div').removeAttr('style');
     $('tr').removeAttr('style');

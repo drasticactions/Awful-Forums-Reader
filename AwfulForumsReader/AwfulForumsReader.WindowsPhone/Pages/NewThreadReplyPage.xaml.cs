@@ -150,7 +150,7 @@ namespace AwfulForumsReader.Pages
             if (result == null)
             {
                 var msgDlg = new MessageDialog("Something went wrong with the upload. My heart bleeds for you.");
-                msgDlg.ShowAsync();
+                await msgDlg.ShowAsync();
                 LoadingProgressBar.Visibility = Visibility.Collapsed;
                 return;
             }

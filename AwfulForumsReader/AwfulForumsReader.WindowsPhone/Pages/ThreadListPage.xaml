@@ -12,6 +12,7 @@
     xmlns:userControls="using:AwfulForumsReader.UserControls"
     xmlns:triggers="using:WinRT.Triggers"
     xmlns:controls="using:Ika.Controls"
+    NavigationCacheMode="Enabled"
     x:Name="PageRoot"
     mc:Ignorable="d">
         <Page.Background>
