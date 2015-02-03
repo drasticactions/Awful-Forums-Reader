@@ -85,6 +85,7 @@ namespace AwfulForumsReader.Commands
             Locator.ViewModels.ThreadPageVm.LinkedThreads = tabThreads.ToObservableCollection();
             
             thread.CurrentPage = thread.TotalPages;
+            thread.RepliesSinceLastOpened = 0;
             Locator.ViewModels.ThreadPageVm.ForumThreadEntity = thread;
             Locator.ViewModels.ThreadPageVm.Html = null;
             await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();

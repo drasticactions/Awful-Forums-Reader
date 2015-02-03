@@ -45,12 +45,6 @@
         <Grid Grid.Row="1" x:Name="ContentRoot">
             <ProgressRing  IsActive="{Binding IsLoading}" Height="100" Width="100" Canvas.ZIndex="5"/>
             <Rectangle Canvas.ZIndex="1" Fill="{StaticResource PhoneBackgroundBrush}" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-            <controls:PullToRefreshPanel PullContent="Pull To Refresh..." RefreshContent="Refresh Thread...">
-                 <triggers:Interactions.Triggers>
-                        <triggers:EventTrigger EventName="PullToRefresh">
-                            <triggers:InvokeCommandAction Command="{Binding RefreshThreadPageCommand}" PassEventArgsToCommand="True"/>
-                        </triggers:EventTrigger>
-                    </triggers:Interactions.Triggers>
             <WebView x:Name="ThreadFullView" tools:WebViewHelper.Html="{Binding Html}">
                 <triggers:Interactions.Triggers>
                     <triggers:EventTrigger EventName="NavigationCompleted">
@@ -58,7 +52,6 @@
                     </triggers:EventTrigger>
                 </triggers:Interactions.Triggers>
             </WebView>
-            </controls:PullToRefreshPanel>
         </Grid>
     </Grid>
     <Page.BottomAppBar>

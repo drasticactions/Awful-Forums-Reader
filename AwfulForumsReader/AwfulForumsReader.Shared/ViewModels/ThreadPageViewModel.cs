@@ -194,7 +194,10 @@ IsLoading = true;
             }
 
             var count = postList.Count(node => !node.HasSeen);
-            ForumThreadEntity.RepliesSinceLastOpened -= count;  
+            if (ForumThreadEntity.RepliesSinceLastOpened > 0)
+            {
+                ForumThreadEntity.RepliesSinceLastOpened -= count;
+            }
 #if WINDOWS_PHONE_APP
             ForumThreadEntity.PlatformIdentifier = PlatformIdentifier.WindowsPhone;
 #else
