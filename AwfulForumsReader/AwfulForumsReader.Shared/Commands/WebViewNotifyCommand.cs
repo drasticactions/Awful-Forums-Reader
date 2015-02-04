@@ -1,14 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
+using System.IO;
+using System.Net.Http;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
+using Windows.Graphics.Imaging;
 using Windows.Storage;
+using Windows.Storage.Streams;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media.Imaging;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsLibrary.Manager;
 using AwfulForumsLibrary.Tools;
+using AwfulForumsReader.Common;
 using AwfulForumsReader.Database.Commands;
 using AwfulForumsReader.Notification;
 using AwfulForumsReader.Pages;
@@ -27,6 +33,7 @@ namespace AwfulForumsReader.Commands
     {
         private static int _zoomSize;
         private static readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
+        private static string _url;
 
         public static async void WebView_ScriptNotify(object sender, NotifyEventArgs e)
         {
@@ -43,6 +50,18 @@ namespace AwfulForumsReader.Commands
                 var command = JsonConvert.DeserializeObject<ThreadCommand>(stringJson);
                 switch (command.Command)
                 {
+                    case "downloadImage":
+                        _url = command.Id;
+                        var message = string.Format("Do you want to download this image?{0}{1}", Environment.NewLine, command.Id);
+                        var msgBox =
+                            new MessageDialog(message,
+                                "Download Image");
+                        var okButton = new UICommand("Yes") { Invoked = PictureOkButtonClick };
+                        var cancelButton = new UICommand("No") { Invoked = PictureCancelButtonClick };
+                        msgBox.Commands.Add(okButton);
+                        msgBox.Commands.Add(cancelButton);
+                        await msgBox.ShowAsync();
+                        break;
                     case "showPosts":
                         await webview.InvokeScriptAsync("ShowHiddenPosts", new[] {string.Empty});
                         break;
@@ -158,5 +177,40 @@ namespace AwfulForumsReader.Commands
             }
         }
 
+        private static void PictureCancelButtonClick(IUICommand command)
+        {
+
+        }
+
+        private static async void PictureOkButtonClick(IUICommand command)
+        {
+            var result = await DownloadImageAsync(_url);
+            if (result)
+            {
+                var msgBox = new MessageDialog("Image downloaded! Check your camera roll!", "Download Image");
+                await msgBox.ShowAsync();
+                return;
+            }
+
+            var msgBox2 = new MessageDialog("Image download failed! :(", "Download Image");
+            await msgBox2.ShowAsync();
+        }
+
+        private static async Task<bool> DownloadImageAsync(string url)
+        {
+            try
+            {
+                var fileName = Path.GetFileName(new Uri(url).AbsolutePath);
+                var client = new HttpClient();
+                var stream = await client.GetStreamAsync(url);
+                await FileAccessCommands.SaveStreamToCameraRoll(stream, fileName);
+            }
+            catch (Exception ex)
+            {
+                AwfulDebugger.SendMessageDialogAsync("Failed to download image", ex.InnerException);
+                return false;
+            }
+            return true;
+        }
     }
 }

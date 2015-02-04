@@ -9,6 +9,7 @@
         <script type="text/javascript" async="" src="ms-appx-web:///Assets/forumThread.js"></script>
         <script type="text/javascript" async="" src="ms-appx-web:///Assets/threadTemplate.js"></script>
         <script type="text/javascript" async="" src="ms-appx-web:///Assets/url.min.js"></script>
+        <script type="text/javascript" async="" src="ms-appx-web:///Assets/taphold.js"></script>
         <script type="text/javascript" async="">
             
             window.onload = function () {
@@ -20,6 +21,10 @@
                 $(".standard a").click(function () {
                     var bool = window.OpenLink(this.href);
                     return bool;
+                });
+
+                $("img").on("dblclick", function () {
+                    ForumCommand('downloadImage', this.src);
                 });
 
                 ForumCommand('setFont', null);

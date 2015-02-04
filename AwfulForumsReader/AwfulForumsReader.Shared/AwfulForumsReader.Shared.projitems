@@ -71,6 +71,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\AlwaysExecutableCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\AsyncDelegateCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\AutoFacConfiguration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\FileAccessCommands.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\NotifierBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Locator\ViewModels.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\AddOrRemoveFavoriteTextConverter.cs" />
@@ -741,6 +742,7 @@
     <None Include="$(MSBuildThisFileDirectory)Assets\bootstrap.js" />
     <None Include="$(MSBuildThisFileDirectory)Assets\bootstrap.min.js" />
     <None Include="$(MSBuildThisFileDirectory)Assets\npm.js" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\taphold.js" />
     <None Include="$(MSBuildThisFileDirectory)Assets\ThreadRatings\rating.psd" />
     <None Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\README.md" />
     <None Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bootstrap-theme.css.map" />
