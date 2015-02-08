@@ -10,8 +10,10 @@ namespace AwfulForumsReader.Commands
     {
         public async override void Execute(object parameter)
         {
-            await Locator.ViewModels.UserPageVm.Initialize(149831);
+            var value = (long) parameter;
+            Locator.ViewModels.UserPageVm.ForumUserEntity = null;
             App.RootFrame.Navigate(typeof (UserProfilePage));
+            await Locator.ViewModels.UserPageVm.Initialize(value);
         }
     }
 }

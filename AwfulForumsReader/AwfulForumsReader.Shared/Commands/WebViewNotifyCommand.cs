@@ -50,6 +50,10 @@ namespace AwfulForumsReader.Commands
                 var command = JsonConvert.DeserializeObject<ThreadCommand>(stringJson);
                 switch (command.Command)
                 {
+                    case "userProfile":
+                        var navUser = new NavigateToUserProfilePageCommand();
+                        navUser.Execute(Convert.ToInt64(command.Id));
+                        break;
                     case "downloadImage":
                         _url = command.Id;
                         var message = string.Format("Do you want to download this image?{0}{1}", Environment.NewLine, command.Id);

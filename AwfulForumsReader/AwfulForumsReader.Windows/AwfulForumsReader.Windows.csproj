@@ -401,6 +401,9 @@
     <Reference Include="WinRTXamlToolkit">
       <HintPath>..\..\packages\WinRTXamlToolkit.Windows.1.7.4.0\lib\netcore451\WinRTXamlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="XamlAnimatedGif">
+      <HintPath>..\..\packages\XamlAnimatedGif.1.0.0-alpha6\lib\portable-win81+wpa81\XamlAnimatedGif.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">

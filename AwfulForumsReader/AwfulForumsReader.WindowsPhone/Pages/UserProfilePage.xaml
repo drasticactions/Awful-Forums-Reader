@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:userControls="using:AwfulForumsReader.UserControls"
+    xmlns:xamlAnimatedGif="using:XamlAnimatedGif"
     mc:Ignorable="d"
     DataContext="{Binding Source={StaticResource Locator}, Path=UserPageVm}"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -30,7 +31,7 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <StackPanel Margin="0,15,0,0" Grid.Row="0">
-                        <userControls:ImageLoader Width="140" Height="140" Source="{Binding ForumUserEntity.AvatarLink}"/>
+                        <Image Source="{Binding ForumUserEntity.AvatarLink}"  Width="140" Height="140"/>
                         <TextBlock Margin="0,15,0,0" FontSize="30" FontWeight="Thin" TextAlignment="Center" Text="{Binding ForumUserEntity.Username}"/>
                     </StackPanel>
                     <StackPanel Grid.Row="1">
@@ -57,7 +58,6 @@
                         <TextBlock Margin="5,5,0,0" FontSize="18" Text="{Binding ForumUserEntity.Location}"/>
                     </StackPanel>
                     </StackPanel>
-                    
             </Grid>
 </Grid>
         </ScrollViewer>

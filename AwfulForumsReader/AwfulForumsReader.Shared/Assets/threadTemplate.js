@@ -50,7 +50,7 @@ var OpenLink = function(link) {
         return false;
     }
     // If the link is not for another SA thread, open it in IE.
-    if (hostname != 'forums.somethingawful.com' && hostname != "") {
+    if (hostname !== 'forums.somethingawful.com' && hostname !== "") {
         return true;
     }
     var file = $.url('file', link);

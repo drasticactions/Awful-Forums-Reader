@@ -115,7 +115,7 @@ namespace AwfulForumsReader.Tools
                 seenCount++;
                 string userAvatar = string.Empty;
                 if (!string.IsNullOrEmpty(post.User.AvatarLink))
-                    userAvatar = string.Concat("<img src=\"", post.User.AvatarLink,
+                    userAvatar = string.Concat("<img data-user-id=\"", post.User.Id, "\" src=\"", post.User.AvatarLink,
                         "\" alt=\"\" class=\"av\" border=\"0\">");
                 string username =
                     string.Format(

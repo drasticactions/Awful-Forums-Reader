@@ -23,6 +23,10 @@
                     return bool;
                 });
 
+                $(".av").on("click", function () {
+                    ForumCommand('userProfile', $(this).attr('data-user-id'));
+                });
+
                 $("img").on("dblclick", function () {
                     ForumCommand('downloadImage', this.src);
                 });
