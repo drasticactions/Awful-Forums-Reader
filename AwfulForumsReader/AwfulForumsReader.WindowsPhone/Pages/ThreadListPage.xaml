@@ -131,7 +131,7 @@
         <!-- Title Panel -->
         <Grid Background="#FF1E72C9" RequestedTheme="Dark" Grid.Row="0">
             <StackPanel VerticalAlignment="Center" Grid.Row="0">
-                <TextBlock Margin="5" Text="{Binding ForumEntity.Name}" Style="{ThemeResource TitleTextBlockStyle}" TextTrimming="CharacterEllipsis" Typography.Capitals="SmallCaps"/>
+                <TextBlock Margin="5" Text="{Binding ForumTitle}" Style="{ThemeResource TitleTextBlockStyle}" TextTrimming="CharacterEllipsis" Typography.Capitals="SmallCaps"/>
             </StackPanel>
         </Grid>
 

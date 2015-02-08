@@ -30,7 +30,7 @@
                 <StackPanel Width="300">
                     <TextBox x:Name="Username" PlaceholderText="Username" Margin="0,0,0,15"
                          Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
-                    <PasswordBox x:Name="Password" PlaceholderText="Password" Margin="0,0,0,15"
+                    <PasswordBox IsPasswordRevealButtonEnabled="True" x:Name="Password" PlaceholderText="Password" Margin="0,0,0,15"
                              Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                     <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Center"
                         Command="{Binding ClickLoginButtonCommand}" />

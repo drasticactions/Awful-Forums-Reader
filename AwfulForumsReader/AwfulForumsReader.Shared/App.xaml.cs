@@ -222,10 +222,10 @@ namespace AwfulForumsReader
             }
 #endif
 #if WINDOWS_APP
-            ApplicationView.GetForCurrentView().TitleBar.ForegroundColor = Color.FromArgb(255, 255, 255, 255);
-            ApplicationView.GetForCurrentView().TitleBar.BackgroundColor = Color.FromArgb(255, 30, 104, 201);
-            ApplicationView.GetForCurrentView().TitleBar.ButtonBackgroundColor = Color.FromArgb(255, 30, 104, 201);
-            ApplicationView.GetForCurrentView().TitleBar.ButtonForegroundColor = Color.FromArgb(255, 255, 255, 255);
+            //ApplicationView.GetForCurrentView().TitleBar.ForegroundColor = Color.FromArgb(255, 255, 255, 255);
+            //ApplicationView.GetForCurrentView().TitleBar.BackgroundColor = Color.FromArgb(255, 30, 104, 201);
+            //ApplicationView.GetForCurrentView().TitleBar.ButtonBackgroundColor = Color.FromArgb(255, 30, 104, 201);
+            //ApplicationView.GetForCurrentView().TitleBar.ButtonForegroundColor = Color.FromArgb(255, 255, 255, 255);
             SettingsPane.GetForCurrentView().CommandsRequested += SettingCharmManager_CommandsRequested;
 #endif
             RootFrame = Window.Current.Content as Frame;

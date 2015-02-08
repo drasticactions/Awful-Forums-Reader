@@ -305,7 +305,7 @@
     </Reference>
     <Reference Include="AwfulForumsLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\AwfulForumsLibrary.0.0.2\lib\AwfulForumsLibrary.dll</HintPath>
+      <HintPath>..\..\packages\AwfulForumsLibrary.0.0.3\lib\AwfulForumsLibrary.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\..\packages\EntityFramework.7.0.0-beta2-11614\lib\portable-net451+win81+wpa81\EntityFramework.dll</HintPath>

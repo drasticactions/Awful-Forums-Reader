@@ -16,6 +16,7 @@ namespace AwfulForumsReader.ViewModels
     public class ThreadListPageViewModel : NotifierBase
     {
         public ForumEntity ForumEntity { get; set; }
+        private string _forumTitle;
         private ObservableCollection<ForumEntity> _subForumEntities;
         private PageScrollingCollection _forumPageScrollingCollection;
         private AddOrRemoveBookmarkCommand _addOrRemoveBookmarkCommand = new AddOrRemoveBookmarkCommand();
@@ -49,6 +50,16 @@ namespace AwfulForumsReader.ViewModels
         {
             get { return _refreshThreadListCommand; }
             set { _refreshThreadListCommand = value; }
+        }
+
+        public string ForumTitle
+        {
+            get { return _forumTitle; }
+            set
+            {
+                SetProperty(ref _forumTitle, value);
+                OnPropertyChanged();
+            }
         }
 
         public AddOrRemoveBookmarkCommand AddOrRemoveBookmark
@@ -105,6 +116,7 @@ namespace AwfulForumsReader.ViewModels
         {
             SubForumEntities = new ObservableCollection<ForumEntity>();
             ForumEntity = forumEntity;
+            ForumTitle = forumEntity.Name;
             Refresh();
             var forumManager = new MainForumsManager();
             var forumList = forumManager.GetSubforums(forumEntity.ForumId);

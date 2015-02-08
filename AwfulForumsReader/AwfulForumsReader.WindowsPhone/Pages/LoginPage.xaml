@@ -29,7 +29,7 @@
             <StackPanel VerticalAlignment="Top" Margin="15">
                 <ProgressBar IsIndeterminate="True" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter} }"></ProgressBar>
                 <TextBox Name="Username" Header="Username" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-                <PasswordBox  Name="Password" Header="Password" Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <PasswordBox  IsPasswordRevealButtonEnabled="True" Name="Password" Header="Password" Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
                 <Button Command="{Binding ClickLoginButtonCommand}" x:Name="LoginButton" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Content="Login"/>
                 <Grid Margin="15">
                     <TextBlock HorizontalAlignment="Center" Style="{StaticResource HeaderTextBlockStyle}"  TextAlignment="Center" TextWrapping="WrapWholeWords"
