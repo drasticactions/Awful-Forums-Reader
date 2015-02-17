@@ -31,6 +31,17 @@
                     ForumCommand('downloadImage', this.src);
                 });
 
+                $('.bbc-block').each(function () {
+                    $(this).click(function () {
+                        if ($('blockquote', this).is(":visible")) {
+                            $('blockquote', this).fadeOut();
+                        }
+                        else {
+                            $('blockquote', this).fadeIn();
+                        }
+                    });
+                });
+
                 ForumCommand('setFont', null);
             };
         </script>
