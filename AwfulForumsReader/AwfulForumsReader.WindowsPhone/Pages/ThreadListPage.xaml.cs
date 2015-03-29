@@ -34,18 +34,14 @@ namespace AwfulForumsReader.Pages
         public ThreadListPage()
         {
             this.InitializeComponent();
-            _checkedGoBackCommand = new RelayCommand(
-                                    this.NavigateToLastPage
-                                );
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
-            this.navigationHelper.GoBackCommand = _checkedGoBackCommand;
         }
 
         private void NavigateToLastPage()
         {
-            Locator.ViewModels.ThreadListPageVm.NavigateToLastForumPageCommand.Execute(null);
+            //Locator.ViewModels.ThreadListPageVm.NavigateToLastForumPageCommand.Execute(null);
         }
 
         /// <summary>

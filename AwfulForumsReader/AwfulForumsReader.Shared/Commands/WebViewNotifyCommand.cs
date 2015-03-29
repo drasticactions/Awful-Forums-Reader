@@ -15,11 +15,11 @@ using AwfulForumsLibrary.Entity;
 using AwfulForumsLibrary.Manager;
 using AwfulForumsLibrary.Tools;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Database.Commands;
 using AwfulForumsReader.Notification;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
 using Newtonsoft.Json;
+using AwfulForumsReader.Database;
 
 namespace AwfulForumsReader.Commands
 {
@@ -162,7 +162,7 @@ namespace AwfulForumsReader.Commands
 
                         await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
 
-                        var tabManager = new TabManager();
+                        var tabManager = new MainForumsDatabase();
                         await tabManager.AddThreadToTabListAsync(newThreadEntity);
                         Locator.ViewModels.ThreadPageVm.LinkedThreads.Add(newThreadEntity);
                         break;

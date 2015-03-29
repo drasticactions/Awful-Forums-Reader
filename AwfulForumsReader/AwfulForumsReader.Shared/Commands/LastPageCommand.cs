@@ -5,7 +5,6 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Common;
 using AwfulForumsLibrary.Entity;
-using AwfulForumsReader.Database.Commands;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
 

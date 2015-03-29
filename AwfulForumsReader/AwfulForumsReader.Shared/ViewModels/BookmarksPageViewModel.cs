@@ -8,12 +8,11 @@ using Windows.Storage;
 using Windows.UI.Xaml.Automation.Peers;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Database.Context;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsLibrary.Manager;
 using AwfulForumsLibrary.Tools;
-using AwfulForumsReader.Database.Commands;
 using AwfulForumsReader.Tools;
+using AwfulForumsReader.Database;
 
 namespace AwfulForumsReader.ViewModels
 {
@@ -29,9 +28,6 @@ namespace AwfulForumsReader.ViewModels
         public NavigateToLastPageInThreadPageCommand NavigateToLastPageInThreadPageCommand { get; set; } = new NavigateToLastPageInThreadPageCommand();
 
         public NavigateToThreadPageCommand NavigateToThreadPageCommand { get; set; } = new NavigateToThreadPageCommand();
-
-
-        public AddOrRemoveThreadToNotificationTableCommand AddThreadToNotificationTableCommand { get; set; } = new AddOrRemoveThreadToNotificationTableCommand();
 
         public NavigateToMainForumPageCommand NavigateToMainForumPageCommand { get; set; } = new NavigateToMainForumPageCommand();
 
@@ -160,7 +156,7 @@ namespace AwfulForumsReader.ViewModels
             IsLoading = false;
         }
 
-        private readonly BookmarkManager _bookmarkManager = new BookmarkManager();
+        private readonly MainForumsDatabase _bookmarkManager = new MainForumsDatabase();
 
         public async Task Refresh()
         {

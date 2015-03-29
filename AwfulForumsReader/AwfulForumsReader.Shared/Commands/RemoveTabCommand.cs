@@ -6,8 +6,8 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Common;
 using AwfulForumsLibrary.Entity;
-using AwfulForumsReader.Database.Commands;
 using AwfulForumsReader.Tools;
+using AwfulForumsReader.Database;
 
 namespace AwfulForumsReader.Commands
 {
@@ -32,7 +32,7 @@ namespace AwfulForumsReader.Commands
             var thread = appButton.DataContext as ForumThreadEntity;
             if (thread == null)
                 return;
-            var tabManager = new TabManager();
+            var tabManager = new MainForumsDatabase();
             if (Locator.ViewModels.ThreadPageVm.LinkedThreads.Count <= 1)
             {
                 App.RootFrame.GoBack();

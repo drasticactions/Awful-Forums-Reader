@@ -32,12 +32,12 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using Autofac;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Database.Context;
 using AwfulForumsLibrary;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 using AwfulForumsLibrary.Manager;
 using AwfulForumsLibrary.Tools;
+using AwfulForumsReader.Database;
 using AwfulForumsReader.Pages;
 
 namespace AwfulForumsReader
@@ -70,66 +70,12 @@ namespace AwfulForumsReader
                 .Assembly.GetType("Microsoft.Data.Entity.Relational.Strings");
             WindowsRuntimeResourceManager.InjectIntoResxGeneratedApplicationResourcesClass(type);
 #endif
-            //HockeyClient.Current.Configure("4e570f666ab005f8526946c71f5f4824");
-            try
-            {
-                using (var db = new MainForumListContext())
-                {
-                    // Migrations are not yet enabled in EF7, so use an
-                    // API to create the database if it doesn't exist
-                    db.Database.EnsureCreated();
-                }
-            }
-            catch (Exception)
-            {
-
-            
-            }
-
-            try
-            {
-                using (var db = new NotifyThreadListContext())
-                {
-                    // Migrations are not yet enabled in EF7, so use an
-                    // API to create the database if it doesn't exist
-                    db.Database.EnsureCreated();
-                }
-            }
-            catch (Exception)
-            {
-
-             
-            }
-
-            try
-            {
-                using (var db = new LinkedThreadListContext())
-                {
-                    // Migrations are not yet enabled in EF7, so use an
-                    // API to create the database if it doesn't exist
-                    db.Database.EnsureCreated();
-                }
-            }
-            catch (Exception)
-            {
-
-                
-            }
-
-            try
-            {
-                using (var db = new LinkedSubforumContext())
-                {
-                    // Migrations are not yet enabled in EF7, so use an
-                    // API to create the database if it doesn't exist
-                    db.Database.EnsureCreated();
-                }
-            }
-            catch (Exception)
-            {
-
-
-            }
+            DataSource ds = new DataSource();
+            BookmarkDataSource bds = new BookmarkDataSource();
+            ds.InitDatabase();
+            ds.CreateDatabase();
+            bds.InitDatabase();
+            bds.CreateDatabase();
 
             Container = AutoFacConfiguration.Configure();
         }

@@ -6,9 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Database.Context;
 using AwfulForumsLibrary.Entity;
-using AwfulForumsReader.Database.Commands;
 using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.ViewModels
@@ -26,7 +24,6 @@ namespace AwfulForumsReader.ViewModels
         private NavigateToNewThreadCommand _navigateToNewThreadCommand = new NavigateToNewThreadCommand();
         private NavigateToThreadPageCommand _navigateToThreadPageCommand = new NavigateToThreadPageCommand();
         private NavigateToLastPageInThreadPageCommand _navigateToLastPageInThreadPageCommand = new NavigateToLastPageInThreadPageCommand();
-        public NavigateToLastForumPageCommand NavigateToLastForumPageCommand { get; set; } = new NavigateToLastForumPageCommand();
         public NavigateToSubforumThreadListPageCommand NavigateToThreadListPageCommand { get; set; }  = new NavigateToSubforumThreadListPageCommand();
         public NavigateToLastPageInThreadPageCommand NavigateToLastPageInThreadPageCommand
         {
@@ -118,13 +115,6 @@ namespace AwfulForumsReader.ViewModels
             ForumEntity = forumEntity;
             ForumTitle = forumEntity.Name;
             Refresh();
-            var forumManager = new MainForumsManager();
-            var forumList = forumManager.GetSubforums(forumEntity.ForumId);
-            foreach (var forum in forumList)
-            {
-                SubForumEntities.Add(forum);
-            }
-
         }
 
         public void Refresh()

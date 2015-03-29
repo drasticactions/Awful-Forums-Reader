@@ -8,11 +8,10 @@ using Windows.UI.Xaml.Controls;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsLibrary.Manager;
 using AwfulForumsLibrary.Tools;
-using AwfulForumsReader.Database.Commands;
-using AwfulForumsReader.Notification;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
 using Newtonsoft.Json;
+using AwfulForumsReader.Notification;
 
 namespace AwfulForumsReader.Commands
 {

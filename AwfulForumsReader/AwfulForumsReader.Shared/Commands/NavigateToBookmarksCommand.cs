@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Database.Commands;
+using AwfulForumsReader.Database;
 using AwfulForumsReader.Pages;
 
 namespace AwfulForumsReader.Commands
@@ -19,7 +19,7 @@ namespace AwfulForumsReader.Commands
                     App.RootFrame.Navigate(typeof(BookmarksPage));
                 }
                 var threadId = (long) parameter;
-                var bookmarkManager = new BookmarkManager();
+                var bookmarkManager = new MainForumsDatabase();
                 var thread = await bookmarkManager.GetBookmarkThreadAsync(threadId);
                 var command = new NavigateToThreadPageViaToastCommand();
                 command.Execute(thread);

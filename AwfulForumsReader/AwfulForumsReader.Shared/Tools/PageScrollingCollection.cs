@@ -6,11 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.UI.Xaml.Data;
-using AwfulForumsReader.Database.Context;
 using AwfulForumsLibrary.Entity;
 using System.ComponentModel;
 using AwfulForumsLibrary.Manager;
-using AwfulForumsReader.Database.Commands;
+using AwfulForumsReader.Database;
 
 namespace AwfulForumsReader.Tools
 {
@@ -28,8 +27,6 @@ namespace AwfulForumsReader.Tools
         {
             return LoadDataAsync(count).AsAsyncOperation();
         }
-
-        private readonly BookmarkManager _bookmarkManager = new BookmarkManager();
 
         public async Task<LoadMoreItemsResult> LoadDataAsync(uint count)
         {
@@ -49,10 +46,6 @@ namespace AwfulForumsReader.Tools
 
             foreach (ForumThreadEntity forumThreadEntity in forumThreadEntities.Where(forumThreadEntity => !forumThreadEntity.IsAnnouncement))
             {
-                if (_bookmarkManager.IsBookmark(forumThreadEntity.ThreadId))
-                {
-                    forumThreadEntity.IsBookmark = true;
-                }
                 Add(forumThreadEntity);
             }
             if (forumThreadEntities.Any(node => !node.IsAnnouncement))

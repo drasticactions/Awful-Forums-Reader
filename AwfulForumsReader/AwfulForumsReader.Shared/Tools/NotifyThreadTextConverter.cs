@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using Windows.UI.Xaml.Data;
 using AwfulForumsLibrary.Entity;
-using AwfulForumsReader.Database.Commands;
 
 namespace AwfulForumsReader.Tools
 {
@@ -16,8 +15,7 @@ namespace AwfulForumsReader.Tools
             {
                 return string.Empty;
             }
-            var notificationManager = new NotificationManager();
-            var result = notificationManager.IsInList(thread);
+            var result = true;
             return result ? "Remove from Notification List" : "Add To Notification List";
         }
 

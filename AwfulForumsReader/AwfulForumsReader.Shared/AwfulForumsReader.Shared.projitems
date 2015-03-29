@@ -22,7 +22,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddIgnoredUserPostCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveBookmarkCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveFavoriteCommand.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Commands\AddOrRemoveThreadToNotificationTableCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AddSmilieToTextBoxCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\BackThreadPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\ChangePageThreadCommand.cs" />
@@ -33,7 +32,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\LogoutCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToBbCodePageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToBookmarksCommand.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToLastForumPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToLastPostPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToMainForumPageCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\NavigateToNewPrivateMessagePageCommand.cs" />
@@ -73,6 +71,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\AutoFacConfiguration.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\FileAccessCommands.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\NotifierBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\BookmarkDataSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\DatabaseHelpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\DataSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\MainForumsDatabase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\Repository.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Locator\ViewModels.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\AddOrRemoveFavoriteTextConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\AwfulDebugger.cs" />

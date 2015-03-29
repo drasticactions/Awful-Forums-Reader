@@ -6,18 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Database.Context;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsLibrary.Manager;
 using AwfulForumsLibrary.Tools;
+using AwfulForumsReader.Database;
 using AwfulForumsReader.Tools;
-using AwfulForumsReader.Database.Commands;
 
 namespace AwfulForumsReader.ViewModels
 {
     public class MainForumsPageViewModel : NotifierBase
     {
         private readonly ForumManager _forumManager = new ForumManager();
+        private MainForumsDatabase _db = new MainForumsDatabase();
         private ForumCategoryEntity _favoritesEntity;
         private ObservableCollection<ForumCategoryEntity> _forumGroupList;
         private ObservableCollection<ForumCategoryEntity> _favoriteForumGroupList;
@@ -98,9 +98,7 @@ namespace AwfulForumsReader.ViewModels
 
         public async Task GetFavoriteForums()
         {
-            List<ForumEntity> forumEntities;
-            var mainForumsManager = new MainForumsManager();
-            forumEntities = mainForumsManager.GetFavoriteForums();
+            var forumEntities = await _db.GetFavoriteForumsAsync();
             var favorites = ForumGroupList.FirstOrDefault(node => node.Name.Equals("Favorites"));
             if (!forumEntities.Any())
             {
@@ -133,9 +131,8 @@ namespace AwfulForumsReader.ViewModels
 
         private async Task GetMainPageForumsAsync()
         {
-            var mainForumsManager = new MainForumsManager();
-            var forumCategoryEntities = mainForumsManager.GetMainForumsList();
-            if(forumCategoryEntities.Any())
+            var forumCategoryEntities = await _db.GetMainForumsList();
+            if (forumCategoryEntities.Any())
             {
                 foreach (var forumCategoryEntity in forumCategoryEntities)
                 {
@@ -144,12 +141,12 @@ namespace AwfulForumsReader.ViewModels
                 return;
             }
 
-               forumCategoryEntities = await _forumManager.GetForumCategoryMainPage();
-                foreach (var forumCategoryEntity in forumCategoryEntities)
-                {
-                    ForumGroupList.Add(forumCategoryEntity);
-                }
-            await mainForumsManager.SaveMainForumsList(ForumGroupList.ToList());
+            forumCategoryEntities = await _forumManager.GetForumCategoryMainPage();
+            foreach (var forumCategoryEntity in forumCategoryEntities)
+            {
+                ForumGroupList.Add(forumCategoryEntity);
+            }
+            await _db.SaveMainForumsList(ForumGroupList.ToList());
         }
 
         internal async void Initialize()

@@ -6,9 +6,9 @@ using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Common;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsLibrary.Tools;
-using AwfulForumsReader.Database.Commands;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
+using AwfulForumsReader.Database;
 
 namespace AwfulForumsReader.Commands
 {
@@ -26,7 +26,7 @@ namespace AwfulForumsReader.Commands
             if (thread == null)
                 return;
             App.RootFrame.Navigate(typeof(ThreadPage));
-            var tabManager = new TabManager();
+            var tabManager = new MainForumsDatabase();
             await tabManager.RemoveAllThreadsFromTabList();
             await tabManager.AddThreadToTabListAsync(thread);
             var tabThreads = await tabManager.GetAllTabThreads();
@@ -60,7 +60,7 @@ namespace AwfulForumsReader.Commands
             };
             Locator.ViewModels.ThreadPageVm.ForumThreadEntity = newThreadEntity;
             await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
-            var tabManager = new TabManager();
+            var tabManager = new MainForumsDatabase();
             await tabManager.AddThreadToTabListAsync(newThreadEntity);
             Locator.ViewModels.ThreadPageVm.LinkedThreads.Add(newThreadEntity);
         }
@@ -78,7 +78,7 @@ namespace AwfulForumsReader.Commands
             }
 
             App.RootFrame.Navigate(typeof(ThreadPage));
-            var tabManager = new TabManager();
+            var tabManager = new MainForumsDatabase();
             await tabManager.RemoveAllThreadsFromTabList();
             await tabManager.AddThreadToTabListAsync(thread);
             var tabThreads = await tabManager.GetAllTabThreads();
@@ -104,7 +104,7 @@ namespace AwfulForumsReader.Commands
             }
 
             App.RootFrame.Navigate(typeof(ThreadPage));
-            var tabManager = new TabManager();
+            var tabManager = new MainForumsDatabase();
             await tabManager.RemoveAllThreadsFromTabList();
             await tabManager.AddThreadToTabListAsync(thread);
             var tabThreads = await tabManager.GetAllTabThreads();

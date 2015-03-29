@@ -5,9 +5,7 @@ using System.Linq;
 using System.Text;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Common;
-using AwfulForumsReader.Database.Context;
 using AwfulForumsLibrary.Entity;
-using AwfulForumsReader.Database.Commands;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
 
@@ -29,8 +27,6 @@ namespace AwfulForumsReader.Commands
                 var threadViewModel = Locator.ViewModels.ThreadListPageVm;
                 threadViewModel.Initialize(forumEntity);
                 App.RootFrame.Navigate(typeof(ThreadListPage));
-                var subforumManager = new SubforumManager();
-                await subforumManager.RemoveAllEntries();
             }
             catch (Exception ex)
             {
@@ -56,8 +52,6 @@ namespace AwfulForumsReader.Commands
                 var threadViewModel = Locator.ViewModels.ThreadListPageVm;
                 threadViewModel.Initialize(forumEntity);
                 App.RootFrame.Navigate(typeof(ThreadListPage));
-                var subforumManager = new SubforumManager();
-                await subforumManager.AddForumToHistoryListAsync(lastForum);
             }
             catch (Exception ex)
             {

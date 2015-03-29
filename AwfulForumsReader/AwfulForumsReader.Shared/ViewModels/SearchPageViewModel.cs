@@ -7,9 +7,9 @@ using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsLibrary.Manager;
-using AwfulForumsReader.Database.Commands;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
+using AwfulForumsReader.Database;
 
 namespace AwfulForumsReader.ViewModels
 {
@@ -63,14 +63,14 @@ namespace AwfulForumsReader.ViewModels
             }
         }
 
-        public void Initialize()
+        public async Task Initialize()
         {
             IsLoading = true;
             try
             {
                 _searchManager = new SearchManager();
-                var mainForumsManager = new MainForumsManager();
-                ForumCategoryEntities = mainForumsManager.GetMainForumsList();
+                var mainForumsManager = new MainForumsDatabase();
+                ForumCategoryEntities = await mainForumsManager.GetMainForumsList();
             }
             catch (Exception ex)
             {
