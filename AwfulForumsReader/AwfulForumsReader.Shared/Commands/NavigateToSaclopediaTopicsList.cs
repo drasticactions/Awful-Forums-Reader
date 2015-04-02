@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Common;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsLibrary.Tools;
+using AwfulForumsReader.Database;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
 
@@ -24,8 +26,24 @@ namespace AwfulForumsReader.Commands
             try
             {
                 var navEntity = (SaclopediaNavigationEntity)args.ClickedItem;
+
+                var db = new SaclopediaDatabase();
+                var navTopicList = await db.GetTopicList(navEntity);
+                if (!navTopicList.Any())
+                {
+                    navTopicList =
+                        await
+                            Locator.ViewModels.SaclopediaPageVm.SaclopediaManager.GetSaclopediaTopics(
+                                Constants.BaseUrl + navEntity.Link);
+                    foreach (var item in navTopicList)
+                    {
+                        item.ParentNavId = navEntity.Id;
+                        item.ParentNav = navEntity;
+                    }
+                    await db.SaveTopicList(navTopicList);
+                }
                 Locator.ViewModels.SaclopediaPageVm.SaclopediaNavigationTopicEntities =
-                    await Locator.ViewModels.SaclopediaPageVm.SaclopediaManager.GetSaclopediaTopics(Constants.BaseUrl + navEntity.Link);
+                    navTopicList;
 
             }
             catch (Exception ex)

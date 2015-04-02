@@ -76,6 +76,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Database\DataSource.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Database\MainForumsDatabase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Database\Repository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\SaclopediaDatabase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\SaclopediaDataSource.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Locator\ViewModels.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\AddOrRemoveFavoriteTextConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\AwfulDebugger.cs" />

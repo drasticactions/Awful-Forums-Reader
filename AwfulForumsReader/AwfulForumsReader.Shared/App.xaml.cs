@@ -71,12 +71,14 @@ namespace AwfulForumsReader
             WindowsRuntimeResourceManager.InjectIntoResxGeneratedApplicationResourcesClass(type);
 #endif
             DataSource ds = new DataSource();
+            SaclopediaDataSource sds = new SaclopediaDataSource();
             BookmarkDataSource bds = new BookmarkDataSource();
             ds.InitDatabase();
             ds.CreateDatabase();
             bds.InitDatabase();
             bds.CreateDatabase();
-
+            sds.InitDatabase();
+            sds.CreateDatabase();
             Container = AutoFacConfiguration.Configure();
         }
 #if WINDOWS_PHONE_APP
