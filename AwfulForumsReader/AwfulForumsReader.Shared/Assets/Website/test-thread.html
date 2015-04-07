@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, user-scalable=no"/>
-        <link href="Items/bbcode.css" media="all" rel="stylesheet" type="text/css">
-        <link href="Items/ui-light-new.css" media="all" rel="stylesheet" type="text/css">
-        <link href="Items/forum-thread.css" media="all" rel="stylesheet" type="text/css">
-        <script type="text/javascript" async="" src="Items/jquery.min.js"></script>
-        <script type="text/javascript" async="" src="Items/forumThread.js"></script>
-        <script type="text/javascript" async="" src="Items/threadTemplate.js"></script>
-        <script type="text/javascript" async="" src="Items/url.min.js"></script>
-        <script type="text/javascript">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link href="CSS/bootstrap-winjs.css" media="all" rel="stylesheet" type="text/css">
+        <link href="CSS/forum-thread.css" media="all" rel="stylesheet" type="text/css">
+        <script type="text/javascript" async="" src="../jquery.js"></script>
+        <script type="text/javascript" async="" src="../forumThread.js"></script>
+        <script type="text/javascript" async="" src="../threadTemplate.js"></script>
+        <script type="text/javascript" async="" src="../url.min.js"></script>
+        <script type="text/javascript" async="" src="../taphold.js"></script>
+        <script type="text/javascript" async="">
+            
             window.onload = function () {
                 $(".postbody a").click(function () {
                     var bool = window.OpenLink(this.href);
@@ -20,19 +21,238 @@
                     var bool = window.OpenLink(this.href);
                     return bool;
                 });
+
+                $(".av").on("click", function () {
+                    ForumCommand('userProfile', $(this).attr('data-user-id'));
+                });
+
+                $("img").on("dblclick", function () {
+                    ForumCommand('downloadImage', this.src);
+                });
+
+                $('.bbc-block').each(function () {
+                    $(this).click(function () {
+                        if ($('blockquote', this).is(":visible")) {
+                            $('blockquote', this).fadeOut();
+                        }
+                        else {
+                            $('blockquote', this).fadeIn();
+                        }
+                    });
+                });
+
+                ForumCommand('setFont', null);
             };
         </script>
         <title>Forum Thread</title>
     </head>
 <body id="thread">
-<ul id="posts">
-			<li><p class="byline">Posted by <a href="member.php?action=getinfo&amp;userid=17782">frumpsnake</a> on June 23, 2004 </p>
-<p>Miss M is one of the original drama whores from DPPH. She posted a number of pics and videos before it was revealed that she was underage. She briefly returned to DPPH v2.0 once hitting legal age but then stopped posting altogether.<br>
+    <div class="container-fluid">
+        <div class="row clearfix"><div class="seen1" id="pti1"><div id="postId443739448"><div class="row clearfix"><div class="col-md-2"><div id="threadView"><img data-user-id="149831" src="http://fi.somethingawful.com/safs/titles/10/cc/00149831.0002.gif" alt="" class="av" border="0"><div class="userinfo"><p class="text article-title win-type-ellipsis"><span class="author">Drastic Actions</span></p><p class="text article-title text-muted win-type-caption-alt"><span class="registered">Apr  6, 2015 22:47</span></p></div></div></div><div style="padding: 15px;" class="col-md-10"><div class="article-content"><div id="443739448" class="postbody">
+		<!-- BeginContentMarker -->
+		<!-- google_ad_section_start -->
+		<div class="bbc-block"><h4><a class="quote_link" rel="nofollow" href="javascript:void(0)" onclick="window.ForumCommand('scrollToPost', '443739107')">pokeyman posted:</a></h4><blockquote>
+Again, I'm not announcing Something.app or anything (yet) but it's a possibility and y'all should feel free to dream.<br>
+</blockquote></div>
+
 <br>
-Miss M is not to be confused with Miss Maynard, who also has pics of the non-clothed variety.</p>
-</li><li><p class="byline">Posted by <a href="member.php?action=getinfo&amp;userid=141455">Ask Phoebe!</a> on November 4, 2009 </p>
-<p>Also not to be confused with "The Divine Miss M," Bette Midler.</p>
-</li>
-		</ul>
+<img src="http://i.imgur.com/fJl8ZP9.jpg" alt="" class="timg" border="0"><br>
+<br>
+Oh I'm working on that. Give me a month or two and I'll have something(.app) worth showing. <img src="http://fi.somethingawful.com/safs/smilies/f/0/getin.001.gif" border="0" alt="" title=":getin:">
+		<!-- google_ad_section_end -->
+		<!-- EndContentMarker -->
+
+
+		<p class="editedby">
+	</div><footer><tr class="postbar"><td class="postlinks"><ul class="profilelinks"><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('quote', '443739448')" ;="">Quote</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('markAsLastRead', '7041')" ;="">Last Read</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('edit', '443739448')" ;="">Edit</button></li></ul></td></tr></footer></div></div></div></div></div><div class="seen2" id="pti2"><div id="postId443739775"><div class="row clearfix"><div class="col-md-2"><div id="threadView"><div class="userinfo"><p class="text article-title win-type-ellipsis"><span class="author">Josh Lyman</span></p><p class="text article-title text-muted win-type-caption-alt"><span class="registered">Apr  6, 2015 22:56</span></p></div></div></div><div style="padding: 15px;" class="col-md-10"><div class="article-content"><div id="443739775" class="postbody">
+		<!-- BeginContentMarker -->
+		<!-- google_ad_section_start -->
+		Obviously it should be called Awful2. <img src="http://i.somethingawful.com/forumsystem/emoticons/emot-colbert.gif" border="0" alt="" title=":colbert:">
+		<!-- google_ad_section_end -->
+		<!-- EndContentMarker -->
+
+
+		<p class="editedby">
+	</div><footer><tr class="postbar"><td class="postlinks"><ul class="profilelinks"><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('quote', '443739775')" ;="">Quote</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('markAsLastRead', '7042')" ;="">Last Read</button></li></ul></td></tr></footer></div></div></div></div></div><div data-sr="enter bottom, roll 45deg, over 2s" class="seen1" id="pti3"><div id="postId443741129"><div data-sr="enter bottom, roll 45deg, over 2s" class="row clearfix"><div class="col-md-2"><div id="threadView"><img data-user-id="42375" src="http://fi.somethingawful.com/safs/titles/12/bc/00042375.0001.gif" alt="" class="av" border="0"><div class="userinfo"><p class="text article-title win-type-ellipsis"><span class="author">NyetscapeNavigator</span></p><p class="text article-title text-muted win-type-caption-alt"><span class="registered">Apr  6, 2015 23:43</span></p></div></div></div><div style="padding: 15px;" class="col-md-10"><div class="article-content"><div id="443741129" class="postbody">
+		<!-- BeginContentMarker -->
+		<!-- google_ad_section_start -->
+		Awful does not need to be some web3.0 wankfest. It just needs to not be as useless as using the site in Safari.
+		<!-- google_ad_section_end -->
+		<!-- EndContentMarker -->
+
+
+		<p class="editedby">
+	</div><footer><tr class="postbar"><td class="postlinks"><ul class="profilelinks"><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('quote', '443741129')" ;="">Quote</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('markAsLastRead', '7043')" ;="">Last Read</button></li></ul></td></tr></footer></div></div></div></div></div><div class="seen2" id="pti4"><div id="postId443741952"><div class="row clearfix"><div class="col-md-2"><div id="threadView"><div class="userinfo"><p class="text article-title win-type-ellipsis"><span class="author">Josh Lyman</span></p><p class="text article-title text-muted win-type-caption-alt"><span class="registered">Apr  7, 2015 00:12</span></p></div></div></div><div style="padding: 15px;" class="col-md-10"><div class="article-content"><div id="443741952" class="postbody">
+		<!-- BeginContentMarker -->
+		<!-- google_ad_section_start -->
+		<div class="bbc-block"><h4><a class="quote_link" rel="nofollow" href="javascript:void(0)" onclick="window.ForumCommand('scrollToPost', '443741129')">NyetscapeNavigator posted:</a></h4><blockquote>
+Awful does not need to be some web3.0 wankfest. It just needs to not be as useless as using the site in Safari.<br>
+</blockquote></div>
+
+Dear god yes. The forums are primarily text, and Web 3.0 is all about wasting space + bolded titles.
+		<!-- google_ad_section_end -->
+		<!-- EndContentMarker -->
+
+
+		<p class="editedby">
+	</div><footer><tr class="postbar"><td class="postlinks"><ul class="profilelinks"><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('quote', '443741952')" ;="">Quote</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('markAsLastRead', '7044')" ;="">Last Read</button></li></ul></td></tr></footer></div></div></div></div></div><div class="seen1" id="pti5"><div id="postId443742095"><div class="row clearfix"><div class="col-md-2"><div id="threadView"><img data-user-id="148096" src="http://fi.somethingawful.com/safs/titles/5e/46/00148096.0001.png" alt="" class="av" border="0"><div class="userinfo"><p class="text article-title win-type-ellipsis"><span class="author">xzzy</span></p><p class="text article-title text-muted win-type-caption-alt"><span class="registered">Apr  7, 2015 00:18</span></p></div></div></div><div style="padding: 15px;" class="col-md-10"><div class="article-content"><div id="443742095" class="postbody">
+		<!-- BeginContentMarker -->
+		<!-- google_ad_section_start -->
+		I don't know, the quality of conversation might improve around here if some google ai routine is writing all the posts. <img src="http://fi.somethingawful.com/images/smilies/emot-v.gif" border="0" alt="" title=":v:">
+		<!-- google_ad_section_end -->
+		<!-- EndContentMarker -->
+
+
+		<p class="editedby">
+	</div><footer><tr class="postbar"><td class="postlinks"><ul class="profilelinks"><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('quote', '443742095')" ;="">Quote</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('markAsLastRead', '7045')" ;="">Last Read</button></li></ul></td></tr></footer></div></div></div></div></div><div class="seen2" id="pti6"><div id="postId443742292"><div class="row clearfix"><div class="col-md-2"><div id="threadView"><img data-user-id="183069" src="http://fi.somethingawful.com/safs/titles/14/5a/00183069.0002.gif" alt="" class="av" border="0"><div class="userinfo"><p class="text article-title win-type-ellipsis"><span class="author">The Devil Tesla</span></p><p class="text article-title text-muted win-type-caption-alt"><span class="registered">Apr  7, 2015 00:26</span></p></div></div></div><div style="padding: 15px;" class="col-md-10"><div class="article-content"><div id="443742292" class="postbody">
+		<!-- BeginContentMarker -->
+		<!-- google_ad_section_start -->
+		The only thing I'd change about Awful would be Safari style UI hiding while you scroll and search. If it was just me this was for I'd go all the way and turn it into something like Unread, which is a feed reader that hides everything but feed content, but that's me.
+		<!-- google_ad_section_end -->
+		<!-- EndContentMarker -->
+
+
+		<p class="editedby">
+	</div><footer><tr class="postbar"><td class="postlinks"><ul class="profilelinks"><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('quote', '443742292')" ;="">Quote</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('markAsLastRead', '7046')" ;="">Last Read</button></li></ul></td></tr></footer></div></div></div></div></div><div data-sr="enter bottom, roll 45deg, over 2s" class="seen1" id="pti7"><div id="postId443742733"><div class="row clearfix"><div class="col-md-2"><div id="threadView"><img data-user-id="147372" src="http://fi.somethingawful.com/safs/titles/72/7a/00147372.0001.jpg" alt="" class="av" border="0"><div class="userinfo"><p class="text article-title win-type-ellipsis"><span class="author">zachol</span></p><p class="text article-title text-muted win-type-caption-alt"><span class="registered">Apr  7, 2015 00:43</span></p></div></div></div><div style="padding: 15px;" class="col-md-10"><div class="article-content"><div id="443742733" class="postbody">
+		<!-- BeginContentMarker -->
+		<!-- google_ad_section_start -->
+		That design takes up way too much space for avatars and usernames. I know people like things looking nice, but that's straight up a waste of vertical space.
+		<!-- google_ad_section_end -->
+		<!-- EndContentMarker -->
+
+
+		<p class="editedby">
+	</div><footer><tr class="postbar"><td class="postlinks"><ul class="profilelinks"><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('quote', '443742733')" ;="">Quote</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('markAsLastRead', '7047')" ;="">Last Read</button></li></ul></td></tr></footer></div></div></div></div></div><div class="seen2" id="pti8"><div id="postId443744911"><div class="row clearfix"><div class="col-md-2"><div id="threadView"><div class="userinfo"><p class="text article-title win-type-ellipsis"><span class="author">awesome-express</span></p><p class="text article-title text-muted win-type-caption-alt"><span class="registered">Apr  7, 2015 02:58</span></p></div></div></div><div style="padding: 15px;" class="col-md-10"><div class="article-content"><div id="443744911" class="postbody">
+		<!-- BeginContentMarker -->
+		<!-- google_ad_section_start -->
+		<div class="bbc-block"><h4><a class="quote_link" rel="nofollow" href="javascript:void(0)" onclick="window.ForumCommand('scrollToPost', '443739107')">pokeyman posted:</a></h4><blockquote>
+Do you have straight-on fullscreen mocks instead of these angled far-away things? I can't really comment on them because I can't see them.<br>
+<br>
+<br>
+</blockquote></div>
+
+<br>
+Sure do! I'll post a link to my dropbox once I'm at my office.<br>
+<br>
+Edit: here's the initial psd+jpg file, will add more stuff later tonight<br>
+<br>
+<a href="https://www.dropbox.com/sh/2bk90b2otl4s1e1/AABb_pPUEn_DCpVT03Zkfqipa?dl=0" target="_blank" rel="nofollow">https://www.dropbox.com/sh/2bk90b2o...T03Zkfqipa?dl=0</a>
+		<!-- google_ad_section_end -->
+		<!-- EndContentMarker -->
+
+
+		<p class="editedby"><span>awesome-express fucked around with this message at Apr  7, 2015 around 05:20</span>
+	</div><footer><tr class="postbar"><td class="postlinks"><ul class="profilelinks"><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('quote', '443744911')" ;="">Quote</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('markAsLastRead', '7048')" ;="">Last Read</button></li></ul></td></tr></footer></div></div></div></div></div><div class="seen1" id="pti9"><div id="postId443747268"><div class="row clearfix"><div class="col-md-2"><div id="threadView"><img data-user-id="106125" src="http://fi.somethingawful.com/safs/titles/3f/7c/00106125.0003.gif" alt="" class="av" border="0"><div class="userinfo"><p class="text article-title win-type-ellipsis"><span class="author">pokeyman</span></p><p class="text article-title text-muted win-type-caption-alt"><span class="registered">Apr  7, 2015 06:57</span></p></div></div></div><div style="padding: 15px;" class="col-md-10"><div class="article-content"><div id="443747268" class="postbody">
+		<!-- BeginContentMarker -->
+		<!-- google_ad_section_start -->
+		<div class="bbc-block"><h4><a class="quote_link" rel="nofollow" href="javascript:void(0)" onclick="window.ForumCommand('scrollToPost', '443744911')">awesome-express posted:</a></h4><blockquote>
+Sure do! I'll post a link to my dropbox once I'm at my office.<br>
+<br>
+Edit: here's the initial psd+jpg file, will add more stuff later tonight<br>
+<br>
+<a href="https://www.dropbox.com/sh/2bk90b2otl4s1e1/AABb_pPUEn_DCpVT03Zkfqipa?dl=0" target="_blank" rel="nofollow">https://www.dropbox.com/sh/2bk90b2o...T03Zkfqipa?dl=0</a><br>
+</blockquote></div>
+
+<br>
+My main question for these is: How do I know when I'm at the end of a thread, or at the end of a page? That's something we've struggled with a lot in Awful, with no satisfactory resolution so far.
+		<!-- google_ad_section_end -->
+		<!-- EndContentMarker -->
+
+
+		<p class="editedby">
+	</div><footer><tr class="postbar"><td class="postlinks"><ul class="profilelinks"><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('quote', '443747268')" ;="">Quote</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('markAsLastRead', '7049')" ;="">Last Read</button></li></ul></td></tr></footer></div></div></div></div></div><div class="seen2" id="pti10"><div id="postId443750236"><div class="row clearfix"><div class="col-md-2"><div id="threadView"><img data-user-id="29235" src="http://fi.somethingawful.com/safs/titles/bd/a4/00029235.0001.gif" alt="" class="av" border="0"><div class="userinfo"><p class="text article-title win-type-ellipsis"><span class="author">chaosbreather</span></p><p class="text article-title text-muted win-type-caption-alt"><span class="registered">Apr  7, 2015 09:08</span></p></div></div></div><div style="padding: 15px;" class="col-md-10"><div class="article-content"><div id="443750236" class="postbody">
+		<!-- BeginContentMarker -->
+		<!-- google_ad_section_start -->
+		I think the real question is how is the Watch app going?
+		<!-- google_ad_section_end -->
+		<!-- EndContentMarker -->
+
+
+		<p class="editedby">
+	</div><footer><tr class="postbar"><td class="postlinks"><ul class="profilelinks"><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('quote', '443750236')" ;="">Quote</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('markAsLastRead', '7050')" ;="">Last Read</button></li></ul></td></tr></footer></div></div></div></div></div><div class="seen1" id="pti11"><div id="postId443750514"><div class="row clearfix"><div class="col-md-2"><div id="threadView"><img data-user-id="41741" src="http://fi.somethingawful.com/customtitles/title-the_dave-2.gif" alt="" class="av" border="0"><div class="userinfo"><p class="text article-title win-type-ellipsis"><span class="author">The Dave</span></p><p class="text article-title text-muted win-type-caption-alt"><span class="registered">Apr  7, 2015 09:18</span></p></div></div></div><div style="padding: 15px;" class="col-md-10"><div class="article-content"><div id="443750514" class="postbody">
+		<!-- BeginContentMarker -->
+		<!-- google_ad_section_start -->
+		<div class="bbc-block"><h4><a class="quote_link" rel="nofollow" href="javascript:void(0)" onclick="window.ForumCommand('scrollToPost', '443739448')">Drastic Actions posted:</a></h4><blockquote>
+<img src="http://i.imgur.com/fJl8ZP9.jpg" alt="" class="timg" border="0"><br>
+<br>
+Oh I'm working on that. Give me a month or two and I'll have something(.app) worth showing. <img src="http://fi.somethingawful.com/safs/smilies/f/0/getin.001.gif" border="0" alt="" title=":getin:"><br>
+</blockquote></div>
+
+<br>
+Are you actually working on some secret new awful? Only because working with pokeyman on whatever code base is probably waaayyyyyy more beneficial then this lone wolf stuff.
+		<!-- google_ad_section_end -->
+		<!-- EndContentMarker -->
+
+
+		<p class="editedby">
+	</div><footer><tr class="postbar"><td class="postlinks"><ul class="profilelinks"><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('quote', '443750514')" ;="">Quote</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('markAsLastRead', '7051')" ;="">Last Read</button></li></ul></td></tr></footer></div></div></div></div></div><div class="seen2" id="pti12"><div id="postId443750882"><div class="row clearfix"><div class="col-md-2"><div id="threadView"><img data-user-id="55370" src="http://fi.somethingawful.com/customtitles/title-snuffman.jpg" alt="" class="av" border="0"><div class="userinfo"><p class="text article-title win-type-ellipsis"><span class="author">Snuffman</span></p><p class="text article-title text-muted win-type-caption-alt"><span class="registered">Apr  7, 2015 09:29</span></p></div></div></div><div style="padding: 15px;" class="col-md-10"><div class="article-content"><div id="443750882" class="postbody">
+		<!-- BeginContentMarker -->
+		<!-- google_ad_section_start -->
+		<div class="bbc-block"><h4><a class="quote_link" rel="nofollow" href="javascript:void(0)" onclick="window.ForumCommand('scrollToPost', '443739107')">pokeyman posted:</a></h4><blockquote>
+This is what's pushing me towards a rewrite. And to be fair, the technical debt is 98% my doing, I've made some pretty dumb decisions because "it's a free app that is critical to nobody's mission, so who cares what breaks" is too often my first thought. But if we're going to seriously look at some new design, I don't want to untangle Awful to make it happen, and if it scares you off too then that's another good reason to look seriously at a rewrite.<br>
+<br>
+Again, I'm not announcing Something.app or anything (yet) but it's a possibility and y'all should feel free to dream.<br>
+</blockquote></div>
+
+<br>
+I like Awful.app visually as it is. <img src="http://fi.somethingawful.com/images/smilies/frown.gif" border="0" alt="" title=":("><br>
+<br>
+Please don't look to Alien Blue for inspiration, its ugly. <br>
+<br>
+I like the cold, functional feel of Awful. It does the job well as is. The bars disappearing ala Safari while scrolling would be nice, but otherwise its good.
+		<!-- google_ad_section_end -->
+		<!-- EndContentMarker -->
+
+
+		<p class="editedby">
+	</div><footer><tr class="postbar"><td class="postlinks"><ul class="profilelinks"><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('quote', '443750882')" ;="">Quote</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('markAsLastRead', '7052')" ;="">Last Read</button></li></ul></td></tr></footer></div></div></div></div></div><div class="seen1" id="pti13"><div id="postId443751001"><div class="row clearfix"><div class="col-md-2"><div id="threadView"><img data-user-id="103253" src="http://fi.somethingawful.com/safs/titles/c2/6f/00103253.0001.gif" alt="" class="av" border="0"><div class="userinfo"><p class="text article-title win-type-ellipsis"><span class="author">Subjunctive</span></p><p class="text article-title text-muted win-type-caption-alt"><span class="registered">Apr  7, 2015 09:33</span></p></div></div></div><div style="padding: 15px;" class="col-md-10"><div class="article-content"><div id="443751001" class="postbody">
+		<!-- BeginContentMarker -->
+		<!-- google_ad_section_start -->
+		How feasible is it to pull the scraping/pseudo-API stuff out into its own library? That would give me less reason to put off my React Native experiment.
+		<!-- google_ad_section_end -->
+		<!-- EndContentMarker -->
+
+
+		<p class="editedby">
+	</div><footer><tr class="postbar"><td class="postlinks"><ul class="profilelinks"><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('quote', '443751001')" ;="">Quote</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('markAsLastRead', '7053')" ;="">Last Read</button></li></ul></td></tr></footer></div></div></div></div></div><div class="seen2" id="pti14"><div id="postId443751094"><div class="row clearfix"><div class="col-md-2"><div id="threadView"><img data-user-id="148096" src="http://fi.somethingawful.com/safs/titles/5e/46/00148096.0001.png" alt="" class="av" border="0"><div class="userinfo"><p class="text article-title win-type-ellipsis"><span class="author">xzzy</span></p><p class="text article-title text-muted win-type-caption-alt"><span class="registered">Apr  7, 2015 09:36</span></p></div></div></div><div style="padding: 15px;" class="col-md-10"><div class="article-content"><div id="443751094" class="postbody">
+		<!-- BeginContentMarker -->
+		<!-- google_ad_section_start -->
+		<div class="bbc-block"><h4><a class="quote_link" rel="nofollow" href="javascript:void(0)" onclick="window.ForumCommand('scrollToPost', '443750882')">Snuffman posted:</a></h4><blockquote>
+Please don't look to Alien Blue for inspiration, its ugly. <br>
+</blockquote></div>
+
+<br>
+It's also a lot of crazy ideas that are super progressive and experimental that make the app really clumsy to use. Experimenting with UI design is fine and all, but you can't throw away everything familiar without really good justification.<br>
+<br>
+I like Awful because it works like the forum and fits in well with the iOS ecosystem. There's no surprises which I guess might not be super exciting to program for but in terms of usability it's about as good as it gets.
+		<!-- google_ad_section_end -->
+		<!-- EndContentMarker -->
+
+
+		<p class="editedby">
+	</div><footer><tr class="postbar"><td class="postlinks"><ul class="profilelinks"><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('quote', '443751094')" ;="">Quote</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('markAsLastRead', '7054')" ;="">Last Read</button></li></ul></td></tr></footer></div></div></div></div></div><div class="seen1" id="pti15"><div id="postId443751969"><div class="row clearfix"><div class="col-md-2"><div id="threadView"><img data-user-id="149831" src="http://fi.somethingawful.com/safs/titles/10/cc/00149831.0002.gif" alt="" class="av" border="0"><div class="userinfo"><p class="text article-title win-type-ellipsis"><span class="author">Drastic Actions</span></p><p class="text article-title text-muted win-type-caption-alt"><span class="registered">Apr  7, 2015 10:01</span></p></div></div></div><div style="padding: 15px;" class="col-md-10"><div class="article-content"><div id="443751969" class="postbody">
+		<!-- BeginContentMarker -->
+		<!-- google_ad_section_start -->
+		<div class="bbc-block"><h4><a class="quote_link" rel="nofollow" href="javascript:void(0)" onclick="window.ForumCommand('scrollToPost', '443750514')">The Dave posted:</a></h4><blockquote>
+Are you actually working on some secret new awful? Only because working with pokeyman on whatever code base is probably waaayyyyyy more beneficial then this lone wolf stuff.<br>
+</blockquote></div>
+
+<br>
+Kinda. I have a .NET <a href="http://forums.somethingawful.com/showthread.php?threadid=3699547" target="_blank" rel="nofollow">forums</a> library that I'm working on, and I want to see it running on every platform I can. That's why I made that <a href="https://itunes.apple.com/app/awful-encyclopedia/id966050239?l=en&amp;amp;mt=8" target="_blank" rel="nofollow">SAclopedia</a> app awhile back (which I'm also kinda rewriting, this time with a native UI). The biggest issue with an iOS Awful Forums Reader at the moment is setting up the UI and handling the web views, since that stuff is actually specific to the platform. The rest is handled by my library.<br>
+<br>
+It's built on C#, with a PCL underbelly so I can share as much code as I can across platforms. The new Webviews I'm working on are going to be templates on top of Bootstrap, so it can be used across tablets and phones. <br>
+<br>
+<img src="http://i.imgur.com/QoTwlb1.gif" alt="" class="img" border="0"><br>
+<br>
+Note that it looks like shit at the moment and needs a lot of work.<br>
+<br>
+The iOS and potentially Android versions are build with Xamarin, and again, it's in C#. So there's nothing you can really use from it. Unless you guys really want to start writing C#, in which case I'm glad to help <img src="http://fi.somethingawful.com/images/smilies/wink.gif" border="0" alt="" title=";)">.
+		<!-- google_ad_section_end -->
+		<!-- EndContentMarker -->
+
+
+		<p class="editedby">
+	</div><footer><tr class="postbar"><td class="postlinks"><ul class="profilelinks"><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('quote', '443751969')" ;="">Quote</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('markAsLastRead', '7055')" ;="">Last Read</button></li><li><button class="btn" id="" type="submit" onclick="window.ForumCommand('edit', '443751969')" ;="">Edit</button></li></ul></td></tr></footer></div></div></div></div></div></div>
+    </div>
 </body>
 </html>

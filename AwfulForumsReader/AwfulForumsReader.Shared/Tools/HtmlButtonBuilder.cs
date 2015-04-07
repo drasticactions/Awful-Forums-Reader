@@ -17,7 +17,7 @@ namespace AwfulForumsReader.Tools
         {
             return WebUtility.HtmlDecode(
                        string.Format(
-                           "<li><input id=\"{2}\" type=\"submit\" value=\"{0}\" onclick=\"{1}\";></input></li>",
+                           "<li><button class=\"btn\" id=\"{2}\" type=\"submit\" onclick=\"{1}\";>{0}</button></li>",
                            buttonName, buttonClick, id));
         }
     }

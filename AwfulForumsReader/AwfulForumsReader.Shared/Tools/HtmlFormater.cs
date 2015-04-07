@@ -72,7 +72,7 @@ namespace AwfulForumsReader.Tools
 
             }
 
-            HtmlNode bodyNode = doc2.DocumentNode.Descendants("body").FirstOrDefault();
+            HtmlNode bodyNode = doc2.DocumentNode.Descendants("div").FirstOrDefault(node => node.GetAttributeValue("class", string.Empty).Contains("row clearfix"));
 
             if (postEntities == null) return WebUtility.HtmlDecode(WebUtility.HtmlDecode(doc2.DocumentNode.OuterHtml));
 
@@ -82,9 +82,10 @@ namespace AwfulForumsReader.Tools
             {
                 threadHtml = "<div><div id=\"showPosts\">";
 
-                var clickHandler = string.Format("window.ForumCommand('showPosts', '{0}')", "true");
+                var clickHandler = $"window.ForumCommand('showPosts', '{"true"}')";
 
-                string showThreadsButton = HtmlButtonBuilder.CreateSubmitButton(string.Format("Show {0} Previous Posts", forumThreadEntity.ScrollToPost), clickHandler, "showHiddenPostsButton");
+                string showThreadsButton = HtmlButtonBuilder.CreateSubmitButton(
+                    $"Show {forumThreadEntity.ScrollToPost} Previous Posts", clickHandler, "showHiddenPostsButton");
 
                 threadHtml += showThreadsButton;
 
@@ -118,25 +119,37 @@ namespace AwfulForumsReader.Tools
                     userAvatar = string.Concat("<img data-user-id=\"", post.User.Id, "\" src=\"", post.User.AvatarLink,
                         "\" alt=\"\" class=\"av\" border=\"0\">");
                 string username =
-                    string.Format(
-                        "<h2 class=\"text article-title win-type-ellipsis\"><span class=\"author\">{0}</span><h2>",
-                        post.User.Username);
+                    $"<p class=\"text article-title win-type-ellipsis\"><span class=\"author\">{post.User.Username}</span></p>";
                 string postData =
-                    string.Format(
-                        "<h4 class=\"text article-title win-type-ellipsis\"><span class=\"registered\">{0}</span><h4>",
-                        post.PostDate);
+                    $"<p class=\"text article-title text-muted win-type-caption-alt\"><span class=\"registered\">{post.PostDate}</span></p>";
                 string postBody = string.Format("<div id=\"{1}\" class=\"postbody\">{0}</div>", post.PostHtml, post.PostId);
-                string userInfo = string.Format("<div class=\"userinfo\">{0}{1}</div>", username, postData);
+                string userInfo = $"<div class=\"userinfo\">{username}{postData}</div>";
                 string postButtons = CreateButtons(post);
 
                 string footer = string.Empty;
                 if (!isPrivateMessage)
                 {
-                    footer = string.Format("<tr class=\"postbar\"><td class=\"postlinks\">{0}</td></tr>", postButtons);
+                    footer = $"<tr class=\"postbar\"><td class=\"postlinks\">{postButtons}</td></tr>";
                 }
                 threadHtml +=
                     string.Format(
-                        "<div class={6} id={4}><div id={5}><div id=\"threadView\"><header>{0}{1}</header><article><div class=\"article-content\">{2}</div></article><footer>{3}</footer></div></div></div>",
+                        "<div class={6} id={4}>" +
+                        "<div id={5}>" +
+                        "<div class=\"row clearfix\">" +
+                        "<div class=\"col-md-2\">" +
+                        "<div id=\"threadView\">" +
+                        "{0}{1}" +
+                        "</div>" +
+                        "</div>" +
+                        "<div style=\"padding: 15px;\" class=\"col-md-10\">" +
+                        "<div class=\"article-content\">" +
+                        "{2}" +
+                        "<footer>{3}</footer>" +
+                        "</div>" +
+                        "</div>" +
+                        "</div>" +
+                        "</div>" +
+                        "</div>",
                         userAvatar, userInfo, postBody, footer, string.Concat("\"pti", index + 1, "\""), string.Concat("\"postId", post.PostId, "\""), string.Concat("\"", hasSeen, "\""));
             }
             return threadHtml;
@@ -144,15 +157,15 @@ namespace AwfulForumsReader.Tools
 
         private static string CreateButtons(ForumPostEntity post)
         {
-            var clickHandler = string.Format("window.ForumCommand('quote', '{0}')", post.PostId);
+            var clickHandler = $"window.ForumCommand('quote', '{post.PostId}')";
 
             string quoteButton = HtmlButtonBuilder.CreateSubmitButton("Quote", clickHandler, string.Empty);
 
-            clickHandler = string.Format("window.ForumCommand('edit', '{0}')", post.PostId);
+            clickHandler = $"window.ForumCommand('edit', '{post.PostId}')";
 
             string editButton = HtmlButtonBuilder.CreateSubmitButton("Edit", clickHandler, string.Empty);
 
-            clickHandler = string.Format("window.ForumCommand('markAsLastRead', '{0}')", post.PostIndex);
+            clickHandler = $"window.ForumCommand('markAsLastRead', '{post.PostIndex}')";
 
             string markAsLastReadButton = HtmlButtonBuilder.CreateSubmitButton("Last Read", clickHandler, string.Empty);
 

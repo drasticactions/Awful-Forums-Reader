@@ -729,6 +729,7 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bbcode.css" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bootstrap-theme.css" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bootstrap-theme.min.css" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bootstrap-winjs.css" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bootstrap.css" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bootstrap.min.css" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\forum-thread.css" />
@@ -746,11 +747,13 @@
     </Content>
     <None Include="$(MSBuildThisFileDirectory)Assets\bootstrap.js" />
     <None Include="$(MSBuildThisFileDirectory)Assets\bootstrap.min.js" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\forums.js" />
     <None Include="$(MSBuildThisFileDirectory)Assets\npm.js" />
     <None Include="$(MSBuildThisFileDirectory)Assets\taphold.js" />
     <None Include="$(MSBuildThisFileDirectory)Assets\ThreadRatings\rating.psd" />
     <None Include="$(MSBuildThisFileDirectory)Assets\ThreadTags\README.md" />
     <None Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bootstrap-theme.css.map" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bootstrap-winjs.css.map" />
     <None Include="$(MSBuildThisFileDirectory)Assets\Website\CSS\bootstrap.css.map" />
     <None Include="$(MSBuildThisFileDirectory)Assets\Website\fonts\glyphicons-halflings-regular.svg" />
     <None Include="$(MSBuildThisFileDirectory)Assets\Website\fonts\glyphicons-halflings-regular.woff2" />
