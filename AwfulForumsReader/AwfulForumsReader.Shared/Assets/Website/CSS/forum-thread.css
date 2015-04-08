@@ -184,3 +184,90 @@ footer {
 .SAclopedia {
     background-color: transparent;
 }
+
+
+#threadView div.userinfo span.platinum {
+    padding-left: 20px!important;
+    line-height: 16px!important;
+    background-position: left center!important;
+    background-repeat: no-repeat!important;
+    background-image: url(http://downloads.somethingawful.com/misc/gren-left.svg);
+    background-size: 11px;
+}
+
+#threadView div.userinfo span.role-mod {
+    padding-left: 20px!important;
+    line-height: 16px!important;
+    background-position: left center!important;
+    background-repeat: no-repeat!important;
+    background-image: url(http://downloads.somethingawful.com/misc/blue_star.svg);
+    background-size: 15px;
+}
+
+#threadView div.userinfo span.role-admin {
+    padding-left: 20px!important;
+    line-height: 16px!important;
+    background-position: left center!important;
+    background-repeat: no-repeat!important;
+    background-image: url(http://downloads.somethingawful.com/misc/red_star.svg);
+    background-size: 15px;
+}
+
+#threadView div.userinfo span.coder {
+    padding-left: 20px!important;
+    line-height: 16px!important;
+    background-position: left center!important;
+    background-repeat: no-repeat!important;
+    background-image: url(http://i.somethingawful.com/images/image-coder.png);
+}
+
+#threadView div.userinfo span.idiotking {
+    padding-left: 20px!important;
+    line-height: 16px!important;
+    background-position: left center!important;
+    background-repeat: no-repeat!important;
+    background-image: url(http://i.somethingawful.com/images/ik.png);
+}
+
+#threadView div.userinfo span.diamond {
+    padding-left: 20px!important;
+    line-height: 16px!important;
+    background-position: left center!important;
+    background-repeat: no-repeat!important;
+    background-image: url(http://i.somethingawful.com/images/diamond-icon.png);
+}
+
+#threadView div.userinfo span.redpill {
+    padding-left: 20px!important;
+    line-height: 16px!important;
+    background-position: left center!important;
+    background-repeat: no-repeat!important;
+    background-image: url(http://i.somethingawful.com/images/redpill.png);
+}
+
+#threadView div.userinfo span.award {
+    padding-left: 20px!important;
+    line-height: 16px!important;
+    background-position: left center!important;
+    background-repeat: no-repeat!important;
+    background-image: url(http://i.somethingawful.com/images/award.png);
+}
+
+#threadView div.userinfo span.impzoneik {
+    padding-left: 20px!important;
+    line-height: 16px!important;
+    background-position: left center!important;
+    background-repeat: no-repeat!important;
+    background-image: url(http://i.somethingawful.com/images/permaik.png);
+}
+
+#threadView div.userinfo span.tflcspotter {
+    padding-left: 20px!important;
+    line-height: 16px!important;
+    background-position: left center!important;
+    background-repeat: no-repeat!important;
+    background-image: url(http://fi.somethingawful.com/images/avatars/ylls-spotter.png);
+}
+
+#threadView div.userinfo span.lowtax {
+}
