@@ -100,12 +100,12 @@
                     <SymbolIcon/>
                 </AppBarButton.Icon>
             </AppBarButton>
-            <AppBarButton x:Name="BBcodeButton" Label="BBcode">
+            <AppBarButton Click="BBCodeButton_OnClick" x:Name="BBcodeButton" Label="BBcode">
                 <AppBarButton.Icon>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE8DC;" />
                 </AppBarButton.Icon>
             </AppBarButton>
-            <AppBarButton x:Name="PreviewButton" Label="Preview">
+            <AppBarButton Click="PreviewButton_OnClick" x:Name="PreviewButton" Label="Preview">
                 <AppBarButton.Icon>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE89B;" />
                 </AppBarButton.Icon>

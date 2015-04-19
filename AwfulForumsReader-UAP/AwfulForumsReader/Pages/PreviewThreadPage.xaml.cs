@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using AwfulForumsReader.Commands;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -51,6 +52,14 @@ namespace AwfulForumsReader.Pages
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
+            ThreadFullView.NavigationCompleted += WebView_OnNavigationCompleted;
+            ThreadFullView.ScriptNotify += WebViewNotifyCommand.WebView_ScriptNotify;
+        }
+
+        private void WebView_OnNavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
+        {
+            var command = new ThreadDomContentLoadedCommand();
+            command.Execute(ThreadFullView);
         }
 
         /// <summary>

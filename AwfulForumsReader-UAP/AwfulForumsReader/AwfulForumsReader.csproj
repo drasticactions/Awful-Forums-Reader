@@ -185,6 +185,9 @@
     <Compile Include="Pages\NewPrivateMessagePage.xaml.cs">
       <DependentUpon>NewPrivateMessagePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\NewThreadPage.xaml.cs">
+      <DependentUpon>NewThreadPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\NewThreadReplyPage.xaml.cs">
       <DependentUpon>NewThreadReplyPage.xaml</DependentUpon>
     </Compile>
@@ -936,6 +939,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\NewThreadPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\NewThreadReplyPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -985,9 +992,6 @@
     <Reference Include="Autofac">
       <HintPath>..\packages\Autofac.3.5.2\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="AwfulForumsLibrary">
-      <HintPath>..\packages\AwfulForumsLibrary.0.0.9\lib\AwfulForumsLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="HtmlAgilityPack-PCL">
       <HintPath>..\packages\HtmlAgilityPack-PCL.1.4.6\lib\HtmlAgilityPack-PCL.dll</HintPath>
     </Reference>
@@ -1032,6 +1036,12 @@
     <SDKReference Include="Windows Mobile, Version=10.0.0.1">
       <Name>Windows Mobile Extension SDK</Name>
     </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\AwfulForumsLibrary\AwfulForumsLibrary\AwfulForumsLibrary.csproj">
+      <Project>{02db53cb-7539-4ec0-a7cf-36070640193f}</Project>
+      <Name>AwfulForumsLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

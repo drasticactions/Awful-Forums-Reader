@@ -62,7 +62,14 @@ namespace AwfulForumsReader.Pages
         {
             Locator.ViewModels.NewThreadReplyVm.NavigateToSmiliesPageCommand.Execute(ReplyText);
         }
-
+        private void BBCodeButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Locator.ViewModels.NewThreadReplyVm.NavigateToBbCodePageCommand.Execute(ReplyText);
+        }
+        private void PreviewButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Locator.ViewModels.NewThreadReplyVm.NavigateToPreviewThreadCommand.Execute(ReplyText);
+        }
         private void ImgurButton_OnClick(object sender, RoutedEventArgs e)
         {
             Locator.ViewModels.NewThreadReplyVm.ImgurAddImageCommand.Execute(ReplyText);

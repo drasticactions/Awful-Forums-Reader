@@ -118,7 +118,7 @@
                                            AutomationProperties.Name="{Binding Title}" />
                                 </Border>
                                 <TextBlock Text="{Binding Title}" Foreground="Black"
-                                           Style="{StaticResource TitleTextBlockStyle}" Height="60" Margin="15,0,15,0" />
+                                           Height="60" Margin="15,0,15,0" />
                             </StackPanel>
                         </Grid>
                     </DataTemplate>

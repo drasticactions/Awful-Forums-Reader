@@ -45,7 +45,7 @@ namespace AwfulForumsReader.ViewModels
                 {
                     Icon = "\uE91C",
                     Name = "Private Messages",
-                    Command = new NavigateToBookmarksCommand()
+                    Command = new NavigateToPrivateMessageListPageCommand()
                 },
                 new MenuItem()
                 {
