@@ -1,7 +1,21 @@
 ﻿#showHiddenPostsButton {
     width: 100%;
 }
-
+@media screen and (max-width: 992px) {
+    .col-md-2 #threadView {
+    height: 80px;
+}
+.col-md-2 #threadView .av {
+    float: left;
+    height: 75px;
+}
+.col-md-2 #threadView .userinfo {
+    margin-left: 95px;
+}
+.col-md-2 #threadView .userinfo p {
+    font-size: 80%;
+}
+}
 div.jump_top {
     display: none;
     position: fixed;

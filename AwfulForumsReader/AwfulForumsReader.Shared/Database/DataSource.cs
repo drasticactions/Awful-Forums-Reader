@@ -14,7 +14,7 @@ namespace AwfulForumsReader.Database
 {
     public class DataSource : IDisposable
     {
-        private const string DBFILENAME = "App.db";
+        private const string DBFILENAME = "App4321.db";
         protected StorageFolder UserFolder { get; set; }
         protected SQLiteAsyncConnection Db { get; set; }
 
@@ -28,11 +28,7 @@ namespace AwfulForumsReader.Database
         public DataSource()
         {
             UserFolder = ApplicationData.Current.LocalFolder;
-#if WINDOWS_APP
             var dbPath = Path.Combine(UserFolder.Path, DBFILENAME);
-#else
-            var dbPath = "AppDB";
-#endif
             var connectionFactory = new Func<SQLiteConnectionWithLock>(() => new SQLiteConnectionWithLock(new SQLitePlatformWinRT(), new SQLiteConnectionString(dbPath, storeDateTimeAsTicks: false)));
             Db = new SQLiteAsyncConnection(connectionFactory);
 

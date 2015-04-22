@@ -529,7 +529,7 @@ abbr[title], abbr[data-original-title] {
 blockquote {
   padding: 11.5px 23px;
   margin: 0 0 23px;
-  font-size: 18.75px;
+  font-size: 15.75px;
   border-left: 5px solid rgba(0, 0, 0, 0.1); }
   blockquote p:last-child, blockquote ul:last-child, blockquote ol:last-child {
     margin-bottom: 0; }
@@ -1151,7 +1151,6 @@ pre {
     margin-left: 95.83333%; }
   .col-sm-offset-24 {
     margin-left: 100%; } }
-
 @media (min-width: 992px) {
   .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md-13, .col-md-14, .col-md-15, .col-md-16, .col-md-17, .col-md-18, .col-md-19, .col-md-20, .col-md-21, .col-md-22, .col-md-23, .col-md-24 {
     float: left; }

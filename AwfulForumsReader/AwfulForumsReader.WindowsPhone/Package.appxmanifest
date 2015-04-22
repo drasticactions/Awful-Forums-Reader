@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="52978DrasticActions.AwfulForumsReaderBeta" Publisher="CN=49056560-3A92-41D0-8509-DF4FE44F646C" Version="1.5.0.1" />
-  <mp:PhoneIdentity PhoneProductId="6ced2b45-bcc4-4ecb-a89b-6f6789c5d648" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="52978DrasticActions.AwfulForumsReader" Publisher="CN=49056560-3A92-41D0-8509-DF4FE44F646C" Version="6.5.6.3" />
+  <mp:PhoneIdentity PhoneProductId="3dd5d052-853b-47d2-abf6-7e3583847ba5" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>Awful Forums Reader (Beta)</DisplayName>
+    <DisplayName>Awful Forums Reader</DisplayName>
     <PublisherDisplayName>ティム・ミラー</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -16,7 +16,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="AwfulForumsReader.WindowsPhone.App">
-      <m3:VisualElements DisplayName="Awful Forums Reader (Beta)" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="Awful Forums Reader" ForegroundText="light" BackgroundColor="transparent" ToastCapable="true">
+      <m3:VisualElements DisplayName="Awful Forums Reader" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="Awful Forums Reader" ForegroundText="light" BackgroundColor="transparent" ToastCapable="true">
         <m3:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\BadgeLogo.png" />
         <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png">
         </m3:DefaultTile>

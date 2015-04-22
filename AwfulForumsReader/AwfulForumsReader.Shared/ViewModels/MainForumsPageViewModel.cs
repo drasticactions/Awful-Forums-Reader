@@ -160,7 +160,7 @@ namespace AwfulForumsReader.ViewModels
             }
             catch (Exception ex)
             {
-                //AwfulDebugger.SendMessageDialogAsync("Error getting the main forums dialog", ex);
+                AwfulDebugger.SendMessageDialogAsync("Error getting the main forums dialog", ex);
             }
             IsLoading = false;
         }

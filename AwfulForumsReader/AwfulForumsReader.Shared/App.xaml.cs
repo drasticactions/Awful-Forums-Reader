@@ -66,19 +66,23 @@ namespace AwfulForumsReader
 #endif
 #if WINDOWS_PHONE_APP
             RequestedTheme = ApplicationTheme.Dark;
-                        var type = typeof(Microsoft.Data.Entity.Relational.RelationalDatabase).GetTypeInfo()
-                .Assembly.GetType("Microsoft.Data.Entity.Relational.Strings");
-            WindowsRuntimeResourceManager.InjectIntoResxGeneratedApplicationResourcesClass(type);
 #endif
-            DataSource ds = new DataSource();
-            SaclopediaDataSource sds = new SaclopediaDataSource();
-            BookmarkDataSource bds = new BookmarkDataSource();
-            ds.InitDatabase();
-            ds.CreateDatabase();
-            bds.InitDatabase();
-            bds.CreateDatabase();
-            sds.InitDatabase();
-            sds.CreateDatabase();
+            try
+            {
+                DataSource ds = new DataSource();
+                SaclopediaDataSource sds = new SaclopediaDataSource();
+                BookmarkDataSource bds = new BookmarkDataSource();
+                ds.InitDatabase();
+                ds.CreateDatabase();
+                bds.InitDatabase();
+                bds.CreateDatabase();
+                sds.InitDatabase();
+                sds.CreateDatabase();
+            }
+            catch
+            {
+                
+            }
             Container = AutoFacConfiguration.Configure();
         }
 #if WINDOWS_PHONE_APP

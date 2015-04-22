@@ -184,35 +184,35 @@
     <Language Code="vi-vn" InMinimumRequirementSet="true" />
   </SupportedLocales>
   <ProductReservedInfo>
-    <MainPackageIdentityName>52978DrasticActions.AwfulForumsReaderBeta</MainPackageIdentityName>
+    <MainPackageIdentityName>52978DrasticActions.AwfulForumsReader</MainPackageIdentityName>
     <ReservedNames>
-      <ReservedName>Awful Forums Reader (Beta)</ReservedName>
+      <ReservedName>Awful Forums Reader</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
-    <MainPackageIdentityName>52978DrasticActions.AwfulForumsReader</MainPackageIdentityName>
+    <MainPackageIdentityName>52978DrasticActions.AwfulForumsReaderBeta</MainPackageIdentityName>
     <MainPackageIdentityName>52978DrasticActions.AwfulMusic</MainPackageIdentityName>
     <MainPackageIdentityName>52978DrasticActions.FoulPlayTheUnofficialPlayStati</MainPackageIdentityName>
     <MainPackageIdentityName>52978DrasticActions.PSNMessenger</MainPackageIdentityName>
     <MainPackageIdentityName>52978DrasticActions.Slowbeef</MainPackageIdentityName>
     <MainPackageIdentityName>52978DrasticActions.388975AE0B893</MainPackageIdentityName>
   </AccountPackageIdentityNames>
-  <PackageInfoList LandingUrl="https://dev.windowsphone.com/AppSubmission/AssociationLanding?windowsProductId=d1c0c34d-d8cd-45cf-8b25-8c7907c5afa8">
+  <PackageInfoList LandingUrl="https://dev.windowsphone.com/AppSubmission/AssociationLanding?windowsProductId=996e798f-f73b-4b52-b86a-b28e64ec9324">
     <BundleInfo>
       <PackageInfo>
         <OsMinVersion>6.3.0.0</OsMinVersion>
         <PackageArchitecture></PackageArchitecture>
-        <PackageMaxArchitectureVersion>1.1.0.0</PackageMaxArchitectureVersion>
-      </PackageInfo>
-      <PackageInfo>
-        <OsMinVersion>6.3.0.0</OsMinVersion>
-        <PackageArchitecture>arm</PackageArchitecture>
-        <PackageMaxArchitectureVersion>1.1.0.0</PackageMaxArchitectureVersion>
+        <PackageMaxArchitectureVersion>6.5.5.2</PackageMaxArchitectureVersion>
       </PackageInfo>
       <PackageInfo>
         <OsMinVersion>6.3.0.0</OsMinVersion>
         <PackageArchitecture></PackageArchitecture>
-        <PackageMaxArchitectureVersion>1.1.0.0</PackageMaxArchitectureVersion>
+        <PackageMaxArchitectureVersion>6.5.5.2</PackageMaxArchitectureVersion>
+      </PackageInfo>
+      <PackageInfo>
+        <OsMinVersion>6.3.0.0</OsMinVersion>
+        <PackageArchitecture>arm</PackageArchitecture>
+        <PackageMaxArchitectureVersion>6.5.5.2</PackageMaxArchitectureVersion>
       </PackageInfo>
     </BundleInfo>
   </PackageInfoList>
