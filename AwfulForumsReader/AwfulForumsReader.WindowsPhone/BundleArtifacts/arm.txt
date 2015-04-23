@@ -1,4 +1,4 @@
-MainPackage=C:\Users\Xamarin\Documents\Other-Apps\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.WindowsPhone\bin\ARM\Release\AwfulForumsReader.WindowsPhone_6.5.6.3_ARM.appx
-SymbolPackage=C:\Users\Xamarin\Documents\Other-Apps\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.WindowsPhone\AppPackages\AwfulForumsReader.WindowsPhone_6.5.6.3_Test\AwfulForumsReader.WindowsPhone_6.5.6.3_ARM.appxsym
-ResourcePack=C:\Users\Xamarin\Documents\Other-Apps\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.WindowsPhone\bin\ARM\Release\AwfulForumsReader.WindowsPhone_6.5.6.3_scale-100.appx
-ResourcePack=C:\Users\Xamarin\Documents\Other-Apps\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.WindowsPhone\bin\ARM\Release\AwfulForumsReader.WindowsPhone_6.5.6.3_scale-140.appx
+MainPackage=C:\Users\Timothy\Documents\Apps\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.WindowsPhone\bin\ARM\Release\AwfulForumsReader.WindowsPhone_6.5.7.4_ARM.appx
+SymbolPackage=C:\Users\Timothy\Documents\Apps\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.WindowsPhone\AppPackages\AwfulForumsReader.WindowsPhone_6.5.7.4_Test\AwfulForumsReader.WindowsPhone_6.5.7.4_ARM.appxsym
+ResourcePack=C:\Users\Timothy\Documents\Apps\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.WindowsPhone\bin\ARM\Release\AwfulForumsReader.WindowsPhone_6.5.7.4_scale-100.appx
+ResourcePack=C:\Users\Timothy\Documents\Apps\Awful-Forums-Reader\AwfulForumsReader\AwfulForumsReader.WindowsPhone\bin\ARM\Release\AwfulForumsReader.WindowsPhone_6.5.7.4_scale-140.appx

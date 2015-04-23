@@ -102,7 +102,7 @@
             </StackPanel>
             <FlyoutBase.AttachedFlyout>
                 <MenuFlyout>
-                    <MenuFlyoutItem Command="{Binding DataContext.AddAsFavorite, ElementName=MainGrid}"  CommandParameter="{Binding}" Text="{Binding Converter={StaticResource AddOrRemoveFavoriteTextConverter}}"/>
+                    <MenuFlyoutItem Command="{Binding DataContext.AddOrRemoveFavorite, ElementName=MainGrid}"  CommandParameter="{Binding}" Text="{Binding Converter={StaticResource AddOrRemoveFavoriteTextConverter}}"/>
                 </MenuFlyout>
             </FlyoutBase.AttachedFlyout>
         </Grid>

@@ -1,36 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text;
 using Windows.Storage;
+using SQLite.Net.Async;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using AwfulForumsLibrary.Entity;
 using SQLite.Net;
-using SQLite.Net.Async;
 using SQLite.Net.Platform.WinRT;
 
 namespace AwfulForumsReader.Database
 {
-    public class SaclopediaDataSource : IDisposable
+    public class DataSource : IDisposable
     {
-        private const string DBFILENAME = "Saclopedia.db";
+        private const string DBFILENAME = "App4321.db";
         protected StorageFolder UserFolder { get; set; }
         protected SQLiteAsyncConnection Db { get; set; }
 
-        public Repository<SaclopediaNavigationEntity> SaclopediaNavigationRepository { get; set; }
+        public Repository<ForumCategoryEntity> ForumCategoryRepository { get; set; }
 
-        public Repository<SaclopediaNavigationTopicEntity> SaclopediaNavigationTopicRepository { get; set; }
+        public Repository<ForumEntity> ForumRepository { get; set; }
 
-        public SaclopediaDataSource()
+        public Repository<ForumThreadEntity> TabRepository { get; set; } 
+
+
+        public DataSource()
         {
             UserFolder = ApplicationData.Current.LocalFolder;
             var dbPath = Path.Combine(UserFolder.Path, DBFILENAME);
             var connectionFactory = new Func<SQLiteConnectionWithLock>(() => new SQLiteConnectionWithLock(new SQLitePlatformWinRT(), new SQLiteConnectionString(dbPath, storeDateTimeAsTicks: false)));
             Db = new SQLiteAsyncConnection(connectionFactory);
 
-            SaclopediaNavigationRepository = new Repository<SaclopediaNavigationEntity>(Db);
+            ForumCategoryRepository = new Repository<ForumCategoryEntity>(Db);
 
-            SaclopediaNavigationTopicRepository = new Repository<SaclopediaNavigationTopicEntity>(Db);
+            ForumRepository = new Repository<ForumEntity>(Db);
+
+            TabRepository = new Repository<ForumThreadEntity>(Db);
         }
 
         public void InitDatabase()
@@ -55,14 +61,19 @@ namespace AwfulForumsReader.Database
                   .GetAwaiter()
                   .GetResult();
 
-            if (existingTables.Any(x => x.name == "SaclopediaNavigationEntity") != true)
+            if (existingTables.Any(x => x.name == "ForumEntity") != true)
             {
-                Db.CreateTableAsync<SaclopediaNavigationEntity>().GetAwaiter().GetResult();
+                Db.CreateTableAsync<ForumEntity>().GetAwaiter().GetResult();
             }
 
-            if (existingTables.Any(x => x.name == "SaclopediaNavigationTopicEntity") != true)
+            if (existingTables.Any(x => x.name == "ForumCategoryEntity") != true)
             {
-                Db.CreateTableAsync<SaclopediaNavigationTopicEntity>().GetAwaiter().GetResult();
+                Db.CreateTableAsync<ForumCategoryEntity>().GetAwaiter().GetResult();
+            }
+
+            if (existingTables.Any(x => x.name == "ForumThreadEntity") != true)
+            {
+                Db.CreateTableAsync<ForumThreadEntity>().GetAwaiter().GetResult();
             }
         }
 

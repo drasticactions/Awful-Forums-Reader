@@ -23,6 +23,7 @@ using Windows.UI.Xaml.Navigation;
 using Autofac;
 using AwfulForumsLibrary.Manager;
 using AwfulForumsReader.Common;
+using AwfulForumsReader.Database;
 using AwfulForumsReader.Pages;
 using Microsoft.ApplicationInsights;
 
@@ -50,6 +51,22 @@ namespace AwfulForumsReader
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            try
+            {
+                DataSource ds = new DataSource();
+                SaclopediaDataSource sds = new SaclopediaDataSource();
+                BookmarkDataSource bds = new BookmarkDataSource();
+                ds.InitDatabase();
+                ds.CreateDatabase();
+                bds.InitDatabase();
+                bds.CreateDatabase();
+                sds.InitDatabase();
+                sds.CreateDatabase();
+            }
+            catch
+            {
+
+            }
             Container = AutoFacConfiguration.Configure();
         }
 

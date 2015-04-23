@@ -51,7 +51,7 @@ namespace AwfulForumsReader.ViewModels
                 {
                     Icon = "\uE8A1",
                     Name = "SAclopedia",
-                    Command = new NavigateToBookmarksCommand()
+                    Command = new NavigateToSaclopedia()
                 },
                 new MenuItem()
                 {

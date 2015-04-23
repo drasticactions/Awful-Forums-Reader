@@ -10,6 +10,7 @@ using AwfulForumsLibrary.Manager;
 using AwfulForumsLibrary.Tools;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
+using AwfulForumsReader.Database;
 using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.ViewModels
@@ -135,7 +136,15 @@ namespace AwfulForumsReader.ViewModels
                     var dateString = (string)_localSettings.Values["RefreshBookmarks"];
                     refreshDate = DateTime.Parse(dateString);
                 }
-                await Refresh();
+                var bookmarks = await _bookmarkManager.GetBookmarkedThreadsFromDb();
+                if (bookmarks != null && bookmarks.Any())
+                {
+                    BookmarkedThreads = bookmarks.ToObservableCollection();
+                }
+                if ((!BookmarkedThreads.Any() || refreshDate < (DateTime.UtcNow.AddHours(-1.00))) || AutoRefresh)
+                {
+                    await Refresh();
+                }
             }
             catch (Exception ex)
             {
@@ -144,7 +153,7 @@ namespace AwfulForumsReader.ViewModels
             IsLoading = false;
         }
 
-        //private readonly MainForumsDatabase _bookmarkManager = new MainForumsDatabase();
+        private readonly MainForumsDatabase _bookmarkManager = new MainForumsDatabase();
 
         public async Task Refresh()
         {
@@ -161,8 +170,8 @@ namespace AwfulForumsReader.ViewModels
             }
 
             BookmarkedThreads = updatedBookmarkList.ToObservableCollection();
-            //await _bookmarkManager.RemoveBookmarkThreads();
-            //await _bookmarkManager.AddBookmarkThreads(BookmarkedThreads.ToList());
+            await _bookmarkManager.RemoveBookmarkThreads();
+            await _bookmarkManager.AddBookmarkThreads(BookmarkedThreads.ToList());
             _localSettings.Values["RefreshBookmarks"] = DateTime.UtcNow.ToString();
             IsLoading = false;
         }
