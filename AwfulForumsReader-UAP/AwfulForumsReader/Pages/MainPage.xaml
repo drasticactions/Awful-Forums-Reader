@@ -6,10 +6,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:AwfulForumsReader.Pages"
     xmlns:common="using:AwfulForumsReader.Common"
+    xmlns:tools="using:AwfulForumsReader.Tools"
+xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    <interactivity:Interaction.Behaviors>
+        <tools:StatusBarBehavior IsVisible="True" 
+                                 BackgroundColor="#FF1E72C9"
+                                 ForegroundColor="White"/>
+    </interactivity:Interaction.Behaviors>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>

@@ -30,7 +30,7 @@ namespace AwfulForumsReader.Common
             builder.RegisterType<BbCodeListPageViewModel>().SingleInstance();
             builder.RegisterType<SmiliesPageViewModel>().SingleInstance();
             builder.RegisterType<PreviewThreadPageViewModel>().SingleInstance();
-            //builder.RegisterType<ForumUserPageViewModel>().SingleInstance();
+            builder.RegisterType<ForumUserPageViewModel>().SingleInstance();
             builder.RegisterType<SaclopediaPageViewModel>().SingleInstance();
             //builder.RegisterType<MainPage>();
             return builder.Build();

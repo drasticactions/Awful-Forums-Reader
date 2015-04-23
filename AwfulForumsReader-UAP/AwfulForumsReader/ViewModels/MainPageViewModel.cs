@@ -63,7 +63,7 @@ namespace AwfulForumsReader.ViewModels
                 {
                     Icon = "\uE713",
                     Name = "Settings",
-                    Command = new NavigateToBookmarksCommand()
+                    Command = new NavigateToSettingsCommand()
                 }
             };
         }

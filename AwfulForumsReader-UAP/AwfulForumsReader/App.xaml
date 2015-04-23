@@ -32,6 +32,7 @@
             <tools:BackButtonEnableConverter x:Key="BackButtonEnableConverter" />
             <tools:NewThreadTitleConverter x:Key="NewThreadTitleConverter" />
             <tools:NewThreadReplyTitleConverter x:Key="NewThreadReplyTitleConverter" />
+            <tools:ForumDateJoinedConverter x:Key="ForumDateJoinedConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

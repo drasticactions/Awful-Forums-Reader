@@ -15,6 +15,8 @@ using AwfulForumsLibrary.Entity;
 using AwfulForumsLibrary.Manager;
 using AwfulForumsLibrary.Tools;
 using AwfulForumsReader.Common;
+using AwfulForumsReader.Database;
+using AwfulForumsReader.Notification;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
 using Newtonsoft.Json;
@@ -49,8 +51,8 @@ namespace AwfulForumsReader.Commands
                 switch (command.Command)
                 {
                     case "userProfile":
-                        //var navUser = new NavigateToUserProfilePageCommand();
-                        //navUser.Execute(Convert.ToInt64(command.Id));
+                        var navUser = new NavigateToUserProfilePageCommand();
+                        navUser.Execute(Convert.ToInt64(command.Id));
                         break;
                     case "downloadImage":
                         _url = command.Id;
@@ -124,7 +126,7 @@ namespace AwfulForumsReader.Commands
                             await threadManager.MarkPostAsLastReadAs(Locator.ViewModels.ThreadPageVm.ForumThreadEntity, Convert.ToInt32(command.Id));
                             int nextPost = Convert.ToInt32(command.Id) + 1;
                             await webview.InvokeScriptAsync("ScrollToDiv", new[] { string.Concat("#postId", nextPost.ToString()) });
-                            //NotifyStatusTile.CreateToastNotification("Last Read", "Post marked as last read.");
+                            NotifyStatusTile.CreateToastNotification("Last Read", "Post marked as last read.");
                         }
                         catch (Exception ex)
                         {
@@ -160,8 +162,8 @@ namespace AwfulForumsReader.Commands
 
                         await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
 
-                        //var tabManager = new MainForumsDatabase();
-                        //await tabManager.AddThreadToTabListAsync(newThreadEntity);
+                        var tabManager = new MainForumsDatabase();
+                        await tabManager.AddThreadToTabListAsync(newThreadEntity);
                         Locator.ViewModels.ThreadPageVm.LinkedThreads.Add(newThreadEntity);
                         break;
                     default:

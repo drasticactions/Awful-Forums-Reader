@@ -19,7 +19,7 @@ namespace AwfulForumsReader.Locator
         }
         public static SaclopediaPageViewModel SaclopediaPageVm => App.Container.Resolve<SaclopediaPageViewModel>();
         public static SearchPageViewModel SearchPageVm => App.Container.Resolve<SearchPageViewModel>();
-        //public static ForumUserPageViewModel UserPageVm => App.Container.Resolve<ForumUserPageViewModel>();
+        public static ForumUserPageViewModel UserPageVm => App.Container.Resolve<ForumUserPageViewModel>();
         public static NewPrivateMessageViewModel NewPrivateMessagePageVm => App.Container.Resolve<NewPrivateMessageViewModel>();
 
         public static PrivateMessagePageViewModel PrivateMessagePageVm => App.Container.Resolve<PrivateMessagePageViewModel>();

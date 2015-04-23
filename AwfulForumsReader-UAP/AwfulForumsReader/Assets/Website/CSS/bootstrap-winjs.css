@@ -2209,6 +2209,7 @@ textarea.input-lg, .input-group-lg > textarea.form-control, .input-group-lg > te
 
 .btn-xs, .btn-group-xs > .btn {
   padding: 1px 5px;
+    max-width: 120px;
   font-size: 12px;
   line-height: 1.5625;
   border-radius: 0px; }
@@ -5156,14 +5157,15 @@ h6, .h6, .win-type-caption, .text-caption {
   font-size: 15px;
   font-weight: 400;
   line-height: 1.333;
-  min-width: 120px;
   border-style: solid;
   border-width: 2px; }
   .btn, .btn:focus {
     color: rgba(0, 0, 0, 0.8);
     background-color: rgba(0, 0, 0, 0.1);
     border-color: transparent; }
-
+  .btn-previous {
+      min-width: 120px;
+  }
 .btn-primary, .btn-primary:focus {
   color: #fff;
   background-color: #0078d7; }

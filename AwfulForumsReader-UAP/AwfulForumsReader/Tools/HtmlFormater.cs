@@ -85,7 +85,7 @@ namespace AwfulForumsReader.Tools
                 var clickHandler = $"window.ForumCommand('showPosts', '{"true"}')";
 
                 string showThreadsButton = HtmlButtonBuilder.CreateSubmitButton(
-                    $"Show {forumThreadEntity.ScrollToPost} Previous Posts", clickHandler, "showHiddenPostsButton");
+                    $"Show {forumThreadEntity.ScrollToPost} Previous Posts", clickHandler, "showHiddenPostsButton", false);
 
                 threadHtml += showThreadsButton;
 

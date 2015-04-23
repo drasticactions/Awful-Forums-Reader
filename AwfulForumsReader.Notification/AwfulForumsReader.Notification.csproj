@@ -52,15 +52,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="AwfulForumsLibrary">
-      <HintPath>..\packages\AwfulForumsLibrary.0.0.6\lib\AwfulForumsLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="HtmlAgilityPack-PCL">
       <HintPath>..\packages\HtmlAgilityPack-PCL.1.4.6\lib\HtmlAgilityPack-PCL.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\AwfulForumsLibrary\AwfulForumsLibrary\AwfulForumsLibrary.csproj">
+      <Project>{02db53cb-7539-4ec0-a7cf-36070640193f}</Project>
+      <Name>AwfulForumsLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

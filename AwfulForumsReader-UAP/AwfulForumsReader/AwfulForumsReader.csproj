@@ -19,6 +19,8 @@
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>AwfulForumsReader_TemporaryKey.pfx</PackageCertificateKeyFile>
     <NuGetPackageImportStamp>c17d1dda</NuGetPackageImportStamp>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -139,8 +141,10 @@
     <Compile Include="Commands\NavigateToSaclopediaTopicsList.cs" />
     <Compile Include="Commands\NavigateToSearchPageCommand.cs" />
     <Compile Include="Commands\NavigateToSearchResultsCommand.cs" />
+    <Compile Include="Commands\NavigateToSettingsCommand.cs" />
     <Compile Include="Commands\NavigateToSmiliesPageCommand.cs" />
     <Compile Include="Commands\NavigateToThreadPageCommand.cs" />
+    <Compile Include="Commands\NavigateToUserProfilePageCommand.cs" />
     <Compile Include="Commands\PickPostIconCommand.cs" />
     <Compile Include="Commands\PostNewThreadCommand.cs" />
     <Compile Include="Commands\PostThreadReplyCommand.cs" />
@@ -225,6 +229,9 @@
     <Compile Include="Pages\SearchResultsPage.xaml.cs">
       <DependentUpon>SearchResultsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SmiliesPage.xaml.cs">
       <DependentUpon>SmiliesPage.xaml</DependentUpon>
     </Compile>
@@ -234,6 +241,9 @@
     <Compile Include="Pages\ThreadPage.xaml.cs">
       <DependentUpon>ThreadPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\UserProfilePage.xaml.cs">
+      <DependentUpon>UserProfilePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\AddOrRemoveFavoriteTextConverter.cs" />
     <Compile Include="Tools\AwfulDebugger.cs" />
@@ -241,10 +251,13 @@
     <Compile Include="Tools\BackgroundWallpaperOpacityConverter.cs" />
     <Compile Include="Tools\BookmarkSorting.cs" />
     <Compile Include="Tools\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Tools\ConvertImage.cs" />
+    <Compile Include="Tools\ForumDateJoinedConverter.cs" />
     <Compile Include="Tools\ForwardButtonEnableConverter.cs" />
     <Compile Include="Tools\HasSeenThreadConverter.cs" />
     <Compile Include="Tools\HtmlButtonBuilder.cs" />
     <Compile Include="Tools\HtmlFormater.cs" />
+    <Compile Include="Tools\ImageTools.cs" />
     <Compile Include="Tools\LinqExtensions.cs" />
     <Compile Include="Tools\NewThreadReplyTitleConverter.cs" />
     <Compile Include="Tools\NewThreadTitleConverter.cs" />
@@ -255,6 +268,7 @@
     <Compile Include="Tools\RepliesSinceLastOpenedColorConverter.cs" />
     <Compile Include="Tools\ReplyBoxLocation.cs" />
     <Compile Include="Tools\SearchPageScrollingCollection.cs" />
+    <Compile Include="Tools\StatusBarBehavior.cs" />
     <Compile Include="Tools\SubforumBodyColorConverter.cs" />
     <Compile Include="Tools\SubforumFontColorConverter.cs" />
     <Compile Include="Tools\SubforumHeaderColorConverter.cs" />
@@ -264,6 +278,7 @@
     <Compile Include="Tools\WebViewHelper.cs" />
     <Compile Include="ViewModels\BbCodeListPageViewModel.cs" />
     <Compile Include="ViewModels\BookmarksPageViewModel.cs" />
+    <Compile Include="ViewModels\ForumUserPageViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\MainForumsPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
@@ -995,6 +1010,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\SmiliesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1006,6 +1025,10 @@
     <Page Include="Pages\ThreadPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UserProfilePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="styles\styles.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -1020,7 +1043,7 @@
       <HintPath>..\packages\HtmlAgilityPack-PCL.1.4.6\lib\HtmlAgilityPack-PCL.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ApplicationInsights">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.0.13.0-build26067\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.winmd</HintPath>
+      <HintPath>..\packages\Microsoft.ApplicationInsights.0.15.0-build00179\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry">
       <HintPath>..\packages\Microsoft.ApplicationInsights.RuntimeTelemetry.0.13.0-build26067\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.winmd</HintPath>
@@ -1029,7 +1052,7 @@
       <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsStore.0.13.0-build26067\lib\win81\Microsoft.ApplicationInsights.Extensibility.Windows.winmd</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\netcore45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\netcore45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PCLStorage">
       <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-win8+wpa81\PCLStorage.dll</HintPath>
@@ -1048,7 +1071,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="SQLiteNetExtensions">
-      <HintPath>..\packages\SQLiteNetExtensions.1.2.3\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\SQLiteNetExtensions.dll</HintPath>
+      <HintPath>..\packages\SQLiteNetExtensions.1.2.5\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\SQLiteNetExtensions.dll</HintPath>
     </Reference>
     <Reference Include="SQLiteNetExtensionsAsync">
       <HintPath>..\packages\SQLiteNetExtensions.Async.1.2.4\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\SQLiteNetExtensionsAsync.dll</HintPath>
@@ -1076,20 +1099,24 @@
       <Project>{02db53cb-7539-4ec0-a7cf-36070640193f}</Project>
       <Name>AwfulForumsLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\AwfulForumsReader.Notification\AwfulForumsReader.Notification.csproj">
+      <Project>{47409eab-ffbd-49c9-8296-e39b47f4ea74}</Project>
+      <Name>AwfulForumsReader.Notification</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-  <Import Project="..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.14-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets" Condition="Exists('..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.14-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets')" />
+  <Import Project="..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.16-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets" Condition="Exists('..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.16-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.14-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.14-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.0.13.0-build26067\build\portable-win81+wpa81\Microsoft.ApplicationInsights.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.0.13.0-build26067\build\portable-win81+wpa81\Microsoft.ApplicationInsights.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.16-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.16-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.0.15.0-build00179\build\portable-win81+wpa81\Microsoft.ApplicationInsights.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.0.15.0-build00179\build\portable-win81+wpa81\Microsoft.ApplicationInsights.targets'))" />
   </Target>
-  <Import Project="..\packages\Microsoft.ApplicationInsights.0.13.0-build26067\build\portable-win81+wpa81\Microsoft.ApplicationInsights.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.0.13.0-build26067\build\portable-win81+wpa81\Microsoft.ApplicationInsights.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.0.15.0-build00179\build\portable-win81+wpa81\Microsoft.ApplicationInsights.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.0.15.0-build00179\build\portable-win81+wpa81\Microsoft.ApplicationInsights.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

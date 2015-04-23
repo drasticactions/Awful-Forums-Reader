@@ -98,4 +98,15 @@
             </ListView>
         </Grid>
     </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="RefreshButton" Icon="Refresh" Label="Refresh">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="Click">
+                    <core:InvokeCommandAction Command="{Binding RefreshBookmarkListCommand}" />
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+            </AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>
