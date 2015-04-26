@@ -84,6 +84,18 @@
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>
+                <AppBarButton Label="Archives" Icon="World">
+                    <AppBarButton.Flyout>
+                        <Flyout Placement="Right">
+                            <StackPanel>
+                                <DatePicker Header="Archive Dates:"
+                DayFormat="{}{day.integer} {dayofweek.full}"
+                Margin="5" Date="{Binding ArchiveDateTime, Mode=TwoWay, Converter={StaticResource NativeTypeConverter}, ConverterParameter=DateTime}" />
+                                <Button Command="{Binding ClickArchiveButtonCommand}" HorizontalAlignment="Stretch" Content="Enable Archives"/>
+                            </StackPanel>
+                        </Flyout>
+                    </AppBarButton.Flyout>
+                </AppBarButton>
                 <AppBarButton x:Name="NotificationButton" Visibility="Collapsed"
                               IsEnabled="False" Label="Add to Notifications" Icon="SolidStar" />
                 <AppBarButton x:Name="RemoveNotificationsButton" Label="Remove all notifications." IsEnabled="True"
@@ -128,114 +140,125 @@
                         <EntranceThemeTransition/>
                     </TransitionCollection>
                 </Grid.ChildrenTransitions>
-                <Grid Canvas.ZIndex="1" Visibility="{Binding ForumPageScrollingCollection.IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" >
-                    <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Height="50"/>
-                    <Rectangle Fill="White" Opacity=".5"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Visibility="{Binding IsArchive, Converter={StaticResource BooleanToVisibilityConverter}}" Background="Red" Height="25">
+                    <TextBlock VerticalAlignment="Center" TextAlignment="Center" FontWeight="Thin" Foreground="White" FontSize="20" Text="Archive Mode Active: ">
+                        <Run Text="{Binding ArchiveDateTime}"/>
+                    </TextBlock>
                 </Grid>
-                <controls:PullToRefreshPanel PullContent="Pull to Refresh" RefreshContent="Refresh Threads">
-                    <ListView x:Name="ForumThreadList"
+                <Grid Grid.Row="1">
+                    <Grid Canvas.ZIndex="1" Visibility="{Binding ForumPageScrollingCollection.IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" >
+                        <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Height="50"/>
+                        <Rectangle Fill="White" Opacity=".5"/>
+                    </Grid>
+                    <controls:PullToRefreshPanel PullContent="Pull to Refresh" RefreshContent="Refresh Threads">
+                        <ListView x:Name="ForumThreadList"
                       HorizontalAlignment="Stretch" 
                       IsSwipeEnabled="True" 
                       ItemsSource="{Binding Source={StaticResource ForumThreadViewSource}}" SelectionMode="None"
                       IsItemClickEnabled="True">
-                    <triggers:Interactions.Triggers>
-                        <triggers:EventTrigger EventName="ItemClick">
-                            <triggers:InvokeCommandAction Command="{Binding NavigateToThreadPageCommand}"
+                            <triggers:Interactions.Triggers>
+                                <triggers:EventTrigger EventName="ItemClick">
+                                    <triggers:InvokeCommandAction Command="{Binding NavigateToThreadPageCommand}"
                                                                   PassEventArgsToCommand="True" />
-                        </triggers:EventTrigger>
-                    </triggers:Interactions.Triggers>
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="ListViewItem">
-                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                        </Style>
-                    </ListView.ItemContainerStyle>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid Background="{Binding HasSeen, Converter={StaticResource HasSeenThreadConverter}}">
-                                <Grid.Transitions>
-                                    <TransitionCollection>
-                                        <EntranceThemeTransition/>
-                                    </TransitionCollection>
-                                </Grid.Transitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="*" />
-                                </Grid.RowDefinitions>
-                                <Grid Grid.Row="0" Height="5"
+                                </triggers:EventTrigger>
+                            </triggers:Interactions.Triggers>
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Background="{Binding HasSeen, Converter={StaticResource HasSeenThreadConverter}}">
+                                        <Grid.Transitions>
+                                            <TransitionCollection>
+                                                <EntranceThemeTransition/>
+                                            </TransitionCollection>
+                                        </Grid.Transitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0" Height="5"
                                   Background="{Binding Converter={StaticResource ThreadHeaderColorConverter}}" />
-                                <Grid Grid.Row="1">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="80" />
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="60" />
-                                    </Grid.ColumnDefinitions>
-                                    <Grid Grid.Column="0">
-                                        <StackPanel Orientation="Vertical">
-                                            <Border Margin="0,5,0,0" Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}" Width="60" Height="60">
-                                                <userControls:ImageLoader Source="{Binding ImageIconLocation}" />
-                                            </Border>
-                                            <Border
+                                        <Grid Grid.Row="1">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="80" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="60" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.Column="0">
+                                                <StackPanel Orientation="Vertical">
+                                                    <Border Margin="0,5,0,0" Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}" Width="60" Height="60">
+                                                        <userControls:ImageLoader Source="{Binding ImageIconLocation}" />
+                                                    </Border>
+                                                    <Border
                                         Visibility="{Binding RatingImage, Converter={StaticResource RatingVisibilityConverter}}"
                                         HorizontalAlignment="Left" Margin="10,0,0,5"  Background="Transparent" Width="60"
                                         Height="26">
-                                                <userControls:ImageLoader Source="{Binding RatingImage}" />
-                                            </Border>
-                                        </StackPanel>
-                                    </Grid>
-                                    <Grid Grid.Column="1" >
-                                        <userControls:ImageLoader Margin="0,0,10,0" Source="{Binding StoreImageIconLocation}"
+                                                        <userControls:ImageLoader Source="{Binding RatingImage}" />
+                                                    </Border>
+                                                </StackPanel>
+                                            </Grid>
+                                            <Grid Grid.Column="1" >
+                                                <userControls:ImageLoader Margin="0,0,10,0" Source="{Binding StoreImageIconLocation}"
                                            AutomationProperties.Name="{Binding Title}" />
-                                    </Grid>
-                                    <StackPanel Grid.Column="2">
-                                        <TextBlock x:Name="ThreadTitle" FontWeight="Bold" TextWrapping="Wrap"
+                                            </Grid>
+                                            <StackPanel Grid.Column="2">
+                                                <TextBlock x:Name="ThreadTitle" FontWeight="Bold" TextWrapping="Wrap"
                                                Text="{Binding Name}" />
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="Pages:" />
-                                            <TextBlock x:Name="TotalPages" Margin="5,0,0,0" Text="{Binding TotalPages}" />
-                                        </StackPanel>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="Author:" Margin="0,0,0,0" />
-                                            <TextBlock Text="{Binding Author}" Margin="5,0,0,0" />
-                                        </StackPanel>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="Killed By:" Margin="0,0,0,0" />
-                                            <TextBlock Text="{Binding KilledBy}" Margin="5,0,0,0" />
-                                        </StackPanel>
-                                    </StackPanel>
-                                    <Border Margin="5" x:Name="ReplySinceLastOpenedCount"
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="Pages:" />
+                                                    <TextBlock x:Name="TotalPages" Margin="5,0,0,0" Text="{Binding TotalPages}" />
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="Author:" Margin="0,0,0,0" />
+                                                    <TextBlock Text="{Binding Author}" Margin="5,0,0,0" />
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="Killed By:" Margin="0,0,0,0" />
+                                                    <TextBlock Text="{Binding KilledBy}" Margin="5,0,0,0" />
+                                                </StackPanel>
+                                            </StackPanel>
+                                            <Border Margin="5" x:Name="ReplySinceLastOpenedCount"
                                         Visibility="{Binding HasBeenViewed, Converter={StaticResource BooleanToVisibilityConverter}}"
                                         BorderThickness="2" Height="25" MinWidth="50" VerticalAlignment="Center"
                                         HorizontalAlignment="Right" Grid.Column="3" BorderBrush="#FFCDCDCD">
-                                        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                                            <TextBlock Margin="0,0,2,0" FontSize="15" x:Name="ReplyCount"
+                                                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                                    <TextBlock Margin="0,0,2,0" FontSize="15" x:Name="ReplyCount"
                                                    Foreground="{Binding RepliesSinceLastOpened, Converter={StaticResource RepliesSinceLastOpenedColorConverter}}"
                                                    Text="{Binding RepliesSinceLastOpened}" />
-                                        </StackPanel>
-                                    </Border>
-                                </Grid>
-                                <interactivity:Interaction.Behaviors>
-                                    <core:EventTriggerBehavior EventName="RightTapped">
-                                        <tools:OpenMenuFlyoutAction />
-                                    </core:EventTriggerBehavior>
-                                </interactivity:Interaction.Behaviors>
-                                <FlyoutBase.AttachedFlyout>
-                                    <MenuFlyout>
-                                        <MenuFlyoutItem Command="{Binding DataContext.LastPage, ElementName=ForumThreadList}"  CommandParameter="{Binding}" Text="Go to Last Page"/>
-                                        <MenuFlyoutItem Command="{Binding DataContext.UnreadThread, ElementName=ForumThreadList}"  CommandParameter="{Binding}" Text="Unread"/>
-                                        <MenuFlyoutItem Command="{Binding DataContext.AddOrRemoveBookmark, ElementName=ForumThreadList}" CommandParameter="{Binding}" Text="{Binding IsBookmark, Converter={StaticResource BookmarkTextConverter}}"/>
-                                    </MenuFlyout>
-                                </FlyoutBase.AttachedFlyout>
-                            </Grid>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                    <triggers:Interactions.Triggers>
-                        <triggers:EventTrigger EventName="PullToRefresh">
-                            <triggers:InvokeCommandAction Command="{Binding RefreshThreadListCommand}"/>
-                        </triggers:EventTrigger>
-                    </triggers:Interactions.Triggers>
-                </controls:PullToRefreshPanel>
+                                                </StackPanel>
+                                            </Border>
+                                        </Grid>
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="RightTapped">
+                                                <tools:OpenMenuFlyoutAction />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
+                                        <FlyoutBase.AttachedFlyout>
+                                            <MenuFlyout>
+                                                <MenuFlyoutItem Command="{Binding DataContext.LastPage, ElementName=ForumThreadList}"  CommandParameter="{Binding}" Text="Go to Last Page"/>
+                                                <MenuFlyoutItem Command="{Binding DataContext.UnreadThread, ElementName=ForumThreadList}"  CommandParameter="{Binding}" Text="Unread"/>
+                                                <MenuFlyoutItem Command="{Binding DataContext.AddOrRemoveBookmark, ElementName=ForumThreadList}" CommandParameter="{Binding}" Text="{Binding IsBookmark, Converter={StaticResource BookmarkTextConverter}}"/>
+                                            </MenuFlyout>
+                                        </FlyoutBase.AttachedFlyout>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <triggers:Interactions.Triggers>
+                            <triggers:EventTrigger EventName="PullToRefresh">
+                                <triggers:InvokeCommandAction Command="{Binding RefreshThreadListCommand}"/>
+                            </triggers:EventTrigger>
+                        </triggers:Interactions.Triggers>
+                    </controls:PullToRefreshPanel>
+                </Grid>
             </Grid>
             
         </Grid>

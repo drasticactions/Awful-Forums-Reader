@@ -15,6 +15,7 @@ namespace AwfulForumsReader.ViewModels
     {
         public ForumEntity ForumEntity { get; set; }
         private string _forumTitle;
+        private bool _isArchive;
         private ObservableCollection<ForumEntity> _subForumEntities;
         private PageScrollingCollection _forumPageScrollingCollection;
         private AddOrRemoveBookmarkCommand _addOrRemoveBookmarkCommand = new AddOrRemoveBookmarkCommand();
@@ -29,6 +30,12 @@ namespace AwfulForumsReader.ViewModels
         {
             get { return _navigateToLastPageInThreadPageCommand; }
             set { _navigateToLastPageInThreadPageCommand = value; }
+        }
+        public AsyncDelegateCommand ClickArchiveButtonCommand { get; private set; }
+
+        public bool CanClickLoginButton
+        {
+            get { return true; }
         }
 
         public NavigateToThreadPageCommand NavigateToThreadPageCommand
@@ -47,6 +54,28 @@ namespace AwfulForumsReader.ViewModels
         {
             get { return _refreshThreadListCommand; }
             set { _refreshThreadListCommand = value; }
+        }
+
+        private DateTime _archiveDateTime;
+
+        public DateTime ArchiveDateTime
+        {
+            get { return _archiveDateTime; }
+            set
+            {
+                SetProperty(ref _archiveDateTime, value);
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsArchive
+        {
+            get { return _isArchive; }
+            set
+            {
+                SetProperty(ref _isArchive, value);
+                OnPropertyChanged();
+            }
         }
 
         public string ForumTitle
@@ -109,9 +138,18 @@ namespace AwfulForumsReader.ViewModels
             }
         }
 
+        public async Task ClickArchiveButton()
+        {
+            IsArchive = true;
+            ForumPageScrollingCollection = new PageScrollingCollection(ForumEntity, 1, ArchiveDateTime, IsArchive);
+        }
+
         public void Initialize(ForumEntity forumEntity)
         {
             SubForumEntities = new ObservableCollection<ForumEntity>();
+            ArchiveDateTime = DateTime.UtcNow;
+            ClickArchiveButtonCommand = new AsyncDelegateCommand(async o => { await ClickArchiveButton(); },
+                o => CanClickLoginButton);
             ForumEntity = forumEntity;
             ForumTitle = forumEntity.Name;
             Refresh();
@@ -119,7 +157,7 @@ namespace AwfulForumsReader.ViewModels
 
         public void Refresh()
         {
-            ForumPageScrollingCollection = new PageScrollingCollection(ForumEntity, 1);
+            ForumPageScrollingCollection = new PageScrollingCollection(ForumEntity, 1, ArchiveDateTime, IsArchive);
         }
 
         public void UpdateThreadList()

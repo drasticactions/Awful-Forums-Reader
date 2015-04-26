@@ -15,13 +15,19 @@ namespace AwfulForumsReader.Tools
 {
     public class PageScrollingCollection : ObservableCollection<ForumThreadEntity>, ISupportIncrementalLoading
     {
-        public PageScrollingCollection(ForumEntity forumEntity, int pageCount)
+        public PageScrollingCollection(ForumEntity forumEntity, int pageCount, DateTime date, bool isArchive = false)
         {
             HasMoreItems = true;
             IsLoading = false;
             PageCount = pageCount;
             ForumEntity = forumEntity;
+            IsArchive = isArchive;
+            ArchiveDateTime = date;
         }
+
+        public DateTime ArchiveDateTime { get; set; }
+
+        public bool IsArchive { get; set; }
 
         public IAsyncOperation<LoadMoreItemsResult> LoadMoreItemsAsync(uint count)
         {
@@ -31,17 +37,31 @@ namespace AwfulForumsReader.Tools
         public async Task<LoadMoreItemsResult> LoadDataAsync(uint count)
         {
             IsLoading = true;
+            if (IsArchive)
+            {
+                await GetArchiveThreads();
+            }
+            else
+            {
+                await GetThreads();
+            }
+            IsLoading = false;
+            return new LoadMoreItemsResult { Count = count };
+        }
+
+        public async Task GetArchiveThreads()
+        {
             var threadManager = new ThreadManager();
             ObservableCollection<ForumThreadEntity> forumThreadEntities;
             try
             {
-                forumThreadEntities = await threadManager.GetForumThreadsAsync(ForumEntity, PageCount);
+                forumThreadEntities = await threadManager.GetArchiveForumThreadsAsync(ForumEntity, PageCount, ArchiveDateTime.Day, ArchiveDateTime.Month, ArchiveDateTime.Year);
             }
             catch (Exception ex)
             {
                 HasMoreItems = false;
                 IsLoading = false;
-                return new LoadMoreItemsResult { Count = count };
+                return;
             }
 
             foreach (ForumThreadEntity forumThreadEntity in forumThreadEntities.Where(forumThreadEntity => !forumThreadEntity.IsAnnouncement))
@@ -57,9 +77,36 @@ namespace AwfulForumsReader.Tools
             {
                 HasMoreItems = false;
             }
+        }
 
-            IsLoading = false;
-            return new LoadMoreItemsResult { Count = count };
+        public async Task GetThreads()
+        {
+            var threadManager = new ThreadManager();
+            ObservableCollection<ForumThreadEntity> forumThreadEntities;
+            try
+            {
+                forumThreadEntities = await threadManager.GetForumThreadsAsync(ForumEntity, PageCount);
+            }
+            catch (Exception ex)
+            {
+                HasMoreItems = false;
+                IsLoading = false;
+                return;
+            }
+
+            foreach (ForumThreadEntity forumThreadEntity in forumThreadEntities.Where(forumThreadEntity => !forumThreadEntity.IsAnnouncement))
+            {
+                Add(forumThreadEntity);
+            }
+            if (forumThreadEntities.Any(node => !node.IsAnnouncement))
+            {
+                HasMoreItems = true;
+                PageCount++;
+            }
+            else
+            {
+                HasMoreItems = false;
+            }
         }
 
         private ForumEntity ForumEntity { get; set; }

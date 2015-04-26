@@ -96,6 +96,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\ImageTools.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\InvertBooleanConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\LinqExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\NativeTypeConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\NewThreadTitleConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\NewThreadReplyTitleConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\NotifyThreadTextConverter.cs" />

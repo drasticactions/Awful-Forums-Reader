@@ -145,31 +145,42 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <ProgressBar IsIndeterminate="True" Visibility="{Binding ForumPageScrollingCollection.IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                        <controls:PullToRefreshPanel PullContent="Pull to Refresh" RefreshContent="Refresh Threads" Grid.Row="1">
-                                                    <ListView  x:Name="ForumThreadList"
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Visibility="{Binding IsArchive, Converter={StaticResource BooleanToVisibilityConverter}}" Background="Red" Height="25">
+                                <TextBlock VerticalAlignment="Center" TextAlignment="Center" FontWeight="Thin" Foreground="White" FontSize="20" Text="Archive Mode Active: ">
+                        <Run Text="{Binding ArchiveDateTime}"/>
+                                </TextBlock>
+                            </Grid>
+                            <controls:PullToRefreshPanel PullContent="Pull to Refresh" RefreshContent="Refresh Threads" Grid.Row="1">
+                                <ListView  x:Name="ForumThreadList"
                       HorizontalAlignment="Stretch"          
                        ItemTemplate="{StaticResource ForumThreadTemplate}"
                       IsSwipeEnabled="True" Grid.Row="1"
                       ItemsSource="{Binding Source={StaticResource ForumThreadViewSource}}" SelectionMode="None"
                       IsItemClickEnabled="True">
-                            <triggers:Interactions.Triggers>
-                                <triggers:EventTrigger EventName="ItemClick">
-                                    <triggers:InvokeCommandAction Command="{Binding NavigateToThreadPageCommand}"
+                                    <triggers:Interactions.Triggers>
+                                        <triggers:EventTrigger EventName="ItemClick">
+                                            <triggers:InvokeCommandAction Command="{Binding NavigateToThreadPageCommand}"
                                                                   PassEventArgsToCommand="True" />
-                                </triggers:EventTrigger>
-                            </triggers:Interactions.Triggers>
-                            <ListView.ItemContainerStyle>
-                                <Style TargetType="ListViewItem">
-                                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                                </Style>
-                            </ListView.ItemContainerStyle>
-                        </ListView>
-                <triggers:Interactions.Triggers>
-                    <triggers:EventTrigger EventName="PullToRefresh">
-                        <triggers:InvokeCommandAction Command="{Binding RefreshThreadListCommand}"/>
-                    </triggers:EventTrigger>
-                </triggers:Interactions.Triggers>
-                        </controls:PullToRefreshPanel>
+                                        </triggers:EventTrigger>
+                                    </triggers:Interactions.Triggers>
+                                    <ListView.ItemContainerStyle>
+                                        <Style TargetType="ListViewItem">
+                                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                        </Style>
+                                    </ListView.ItemContainerStyle>
+                                </ListView>
+                                <triggers:Interactions.Triggers>
+                                    <triggers:EventTrigger EventName="PullToRefresh">
+                                        <triggers:InvokeCommandAction Command="{Binding RefreshThreadListCommand}"/>
+                                    </triggers:EventTrigger>
+                                </triggers:Interactions.Triggers>
+                            </controls:PullToRefreshPanel>
+                        </Grid>
                     </Grid>
                 </PivotItem>
                 <PivotItem Header="SubForums">
@@ -214,6 +225,18 @@
                         <triggers:InvokeCommandAction Command="{Binding RefreshThreadListCommand}"/>
                     </triggers:EventTrigger>
                 </triggers:Interactions.Triggers>
+            </AppBarButton>
+            <AppBarButton Label="Archives" Icon="World">
+                <AppBarButton.Flyout>
+                    <Flyout Placement="Right">
+                        <StackPanel>
+                            <DatePicker Header="Archive Dates:"
+                DayFormat="{}{day.integer} {dayofweek.full}"
+                Margin="5" Date="{Binding ArchiveDateTime, Mode=TwoWay, Converter={StaticResource NativeTypeConverter}, ConverterParameter=DateTime}" />
+                            <Button Command="{Binding ClickArchiveButtonCommand}" HorizontalAlignment="Stretch" Content="Enable Archives"/>
+                        </StackPanel>
+                    </Flyout>
+                </AppBarButton.Flyout>
             </AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>

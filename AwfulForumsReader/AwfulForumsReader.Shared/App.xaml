@@ -31,6 +31,7 @@
         <tools:NewThreadTitleConverter x:Key="NewThreadTitleConverter" />
         <tools:ForumDateJoinedConverter x:Key="ForumDateJoinedConverter" />
         <tools:BackgroundWallpaperOpacityConverter x:Key="BackgroundWallpaperOpacityConverter" />
+        <tools:NativeTypeConverter x:Key="NativeTypeConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>
