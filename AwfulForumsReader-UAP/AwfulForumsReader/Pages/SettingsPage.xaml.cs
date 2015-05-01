@@ -106,6 +106,7 @@ namespace AwfulForumsReader.Pages
             }
         }
 
+
         private void LoadBookmarksOnLoadSwitch_OnToggled(object sender, RoutedEventArgs e)
         {
             var toggleSwitch = sender as ToggleSwitch;
@@ -243,6 +244,7 @@ namespace AwfulForumsReader.Pages
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+
             navigationHelper.OnNavigatedTo(e);
         }
 
