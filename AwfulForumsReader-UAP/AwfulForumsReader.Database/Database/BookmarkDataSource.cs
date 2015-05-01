@@ -11,7 +11,7 @@ using SQLite.Net.Platform.WinRT;
 
 namespace AwfulForumsReader.Database
 {
-    class BookmarkDataSource : IDisposable
+    public class BookmarkDataSource : IDisposable
     {
         private const string DBFILENAME = "Bookmark.db";
         protected StorageFolder UserFolder { get; set; }

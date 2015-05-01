@@ -70,3 +70,4 @@
         <WebView Grid.Row="1" VerticalAlignment="Stretch" tools:WebViewHelper.Html="{Binding Body}"/>
     </Grid>
 </Page>
+
