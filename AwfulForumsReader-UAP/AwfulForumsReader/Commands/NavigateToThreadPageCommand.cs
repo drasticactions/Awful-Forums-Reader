@@ -24,7 +24,7 @@ namespace AwfulForumsReader.Commands
             var thread = args.ClickedItem as ForumThreadEntity;
             if (thread == null)
                 return;
-            App.RootFrame.Navigate(typeof(ThreadPage));
+            //App.RootFrame.Navigate(typeof(ThreadPage));
             //var tabManager = new MainForumsDatabase();
             //await tabManager.RemoveAllThreadsFromTabList();
             //await tabManager.AddThreadToTabListAsync(thread);

@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using AwfulForumsReader.Commands;
 
@@ -27,6 +28,15 @@ namespace AwfulForumsReader.Pages
 
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
+        public ThreadPage()
+        {
+            this.InitializeComponent();
+            this.navigationHelper = new NavigationHelper(this);
+            this.navigationHelper.LoadState += navigationHelper_LoadState;
+            this.navigationHelper.SaveState += navigationHelper_SaveState;
+            ThreadFullView.NavigationCompleted += WebView_OnNavigationCompleted;
+            ThreadFullView.ScriptNotify += WebViewNotifyCommand.WebView_ScriptNotify;
+        }
 
         /// <summary>
         /// This can be changed to a strongly typed view model.
@@ -45,16 +55,60 @@ namespace AwfulForumsReader.Pages
             get { return this.navigationHelper; }
         }
 
-
-        public ThreadPage()
+        void NavigateBackForWideState(bool useTransition)
         {
-            this.InitializeComponent();
-            this.navigationHelper = new NavigationHelper(this);
-            this.navigationHelper.LoadState += navigationHelper_LoadState;
-            this.navigationHelper.SaveState += navigationHelper_SaveState;
-            ThreadFullView.NavigationCompleted += WebView_OnNavigationCompleted;
-            ThreadFullView.ScriptNotify += WebViewNotifyCommand.WebView_ScriptNotify;
+            // Evict this page from the cache as we may not need it again.
+            NavigationCacheMode = NavigationCacheMode.Disabled;
+
+            if (useTransition)
+            {
+                Frame.GoBack(new EntranceNavigationTransitionInfo());
+            }
+            else
+            {
+                Frame.GoBack(new SuppressNavigationTransitionInfo());
+            }
         }
+
+        private void PageRoot_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (ShouldGoToWideState())
+            {
+                // We shouldn't see this page since we are in "wide master-detail" mode.
+                // Play a transition as we are navigating from a separate page.
+                NavigateBackForWideState(useTransition: true);
+            }
+            else
+            {
+                // Realize the main page content.
+                FindName("RootPanel");
+            }
+
+            Window.Current.SizeChanged += Window_SizeChanged;
+        }
+
+        private void PageRoot_Unloaded(object sender, RoutedEventArgs e)
+        {
+            Window.Current.SizeChanged -= Window_SizeChanged;
+        }
+
+        private void Window_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
+        {
+            if (ShouldGoToWideState())
+            {
+                // Make sure we are no longer listening to window change events.
+                Window.Current.SizeChanged -= Window_SizeChanged;
+
+                // We shouldn't see this page since we are in "wide master-detail" mode.
+                NavigateBackForWideState(useTransition: false);
+            }
+        }
+
+        private bool ShouldGoToWideState()
+        {
+            return Window.Current.Bounds.Width >= 800;
+        }
+
 
         private void WebView_OnNavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
         {

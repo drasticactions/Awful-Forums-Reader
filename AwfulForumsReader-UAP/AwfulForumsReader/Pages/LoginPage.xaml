@@ -8,11 +8,17 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="using:AwfulForumsReader.ViewModels"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:tools="using:AwfulForumsReader.Tools"
     mc:Ignorable="d">
     <Page.DataContext>
         <viewModels:LoginPageViewModel />
     </Page.DataContext>
-
+    <interactivity:Interaction.Behaviors>
+        <tools:StatusBarBehavior IsVisible="True" 
+                                 BackgroundColor="#FF1E72C9"
+                                 ForegroundColor="White"/>
+    </interactivity:Interaction.Behaviors>
     <Grid   Background="#f4f4f4">
         <ProgressBar VerticalAlignment="Top" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" IsIndeterminate="True"/>
         <ScrollViewer ZoomMode="Disabled">
@@ -23,10 +29,12 @@
                 <StackPanel Width="300">
                     <TextBox x:Name="Username" IsSpellCheckEnabled="False" PlaceholderText="Username" Margin="0,0,0,15"
                          Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
-                    <PasswordBox IsPasswordRevealButtonEnabled="True" x:Name="Password" PlaceholderText="Password" Margin="0,0,0,15"
+                    <PasswordBox PasswordRevealMode="Peek" x:Name="Password" PlaceholderText="Password" Margin="0,0,0,15"
                              Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                     <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Center"
                         Command="{Binding ClickLoginButtonCommand}" />
+                    
+                    <Image  Margin="25" Source="../Assets/Login/Icon2.png"/>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

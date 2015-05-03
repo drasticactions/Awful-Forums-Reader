@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Models;
@@ -12,7 +13,6 @@ namespace AwfulForumsReader.ViewModels
     public class MainPageViewModel : NotifierBase
     {
         private bool _isLoading;
-
         public bool IsLoading
         {
             get { return _isLoading; }
@@ -22,11 +22,33 @@ namespace AwfulForumsReader.ViewModels
                 OnPropertyChanged();
             }
         }
+        public SplitView MainPageSplitView { get; set; }
+        public AsyncDelegateCommand ClickBackButtonCommand { get; private set; }
+        private bool _canClickBack;
+        public bool CanClickBack
+        {
+            get { return _canClickBack; }
+            set
+            {
+                if (_canClickBack == value) return;
+                _canClickBack = value;
+                OnPropertyChanged();
+                ClickBackButtonCommand.RaiseCanExecuteChanged();
+            }
+        }
 
+        public bool CanClickBackButton => App.RootFrame.CanGoBack;
         public List<MenuItem> MenuItems { get; set; }
+
+        public async Task ClickBackButton()
+        {
+            App.RootFrame.GoBack();
+        }
 
         public MainPageViewModel()
         {
+            ClickBackButtonCommand = new AsyncDelegateCommand(async o => { await ClickBackButton(); },
+               o => CanClickBackButton);
             MenuItems = new List<MenuItem>()
             {
                 new MenuItem()

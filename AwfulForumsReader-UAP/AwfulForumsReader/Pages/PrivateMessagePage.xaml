@@ -47,7 +47,7 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -58,7 +58,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton"
-                    Width="120"
+                    Width="60"
                     Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
                     Style="{StaticResource NavigationBackButtonNormalStyle}"
                     VerticalAlignment="Center"
@@ -66,7 +66,7 @@
                     AutomationProperties.Name="Back"
                     AutomationProperties.AutomationId="BackButton"
                     AutomationProperties.ItemType="Navigation Button" RequestedTheme="Dark" />
-            <TextBlock Margin="5,0,0,0" x:Name="pageTitle" Text="{Binding PrivateMessageEntity.Title}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1"
+            <TextBlock FontSize="25" Margin="5,0,0,0" x:Name="pageTitle" Text="{Binding PrivateMessageEntity.Title}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1"
                        IsHitTestVisible="false" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
         </Grid>
         <Grid Grid.Row="1">

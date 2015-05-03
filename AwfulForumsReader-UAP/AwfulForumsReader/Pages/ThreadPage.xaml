@@ -11,6 +11,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    NavigationCacheMode="Enabled"
+    Loaded="PageRoot_Loaded"
+    Unloaded="PageRoot_Unloaded"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -24,31 +27,10 @@
         * Row 1 contains the rest of the page layout
     -->
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState x:Name="wideState">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="641" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="backButton.Visibility" Value="120"/>
-                        <Setter Target="pageTitle.FontSize" Value="50"/>
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="narrowState">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="0" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="backButton.Width" Value="0"/>
-                        <Setter Target="pageTitle.FontSize" Value="30"/>
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <!-- Back button and page title -->
@@ -58,7 +40,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton"
-                    Width="120"
+                    Width="60"
                     Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
                     Style="{StaticResource NavigationBackButtonNormalStyle}"
                     VerticalAlignment="Center"
@@ -66,7 +48,7 @@
                     AutomationProperties.Name="Back"
                     AutomationProperties.AutomationId="BackButton"
                     AutomationProperties.ItemType="Navigation Button" RequestedTheme="Dark" />
-            <TextBlock Margin="5,0,0,0" x:Name="pageTitle" d:Text="{Binding ForumThreadEntity.Name, Source={d:DesignData /SampleData/ThreadListPageViewModelSampleData.xaml}}" Text="{Binding ForumThreadEntity.Name}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1"
+            <TextBlock FontSize="25" Margin="10,0,0,0" x:Name="pageTitle" d:Text="{Binding ForumThreadEntity.Name, Source={d:DesignData /SampleData/ThreadListPageViewModelSampleData.xaml}}" Text="{Binding ForumThreadEntity.Name}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1"
                        IsHitTestVisible="false" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
         </Grid>
         
@@ -82,9 +64,8 @@
             </Grid>
             <WebView Canvas.ZIndex="0" IsRightTapEnabled="True"  tools:WebViewHelper.Html="{Binding Html}"  Grid.Column="1" x:Name="ThreadFullView"/>
         </Grid>
-    </Grid>
-    <Page.BottomAppBar>
-        <CommandBar>
+        <Grid Grid.Row="2">
+              <CommandBar>
             <AppBarButton Label="Back Page" Icon="Back" IsEnabled="{Binding ForumThreadEntity, Converter={StaticResource BackButtonEnableConverter} }">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
@@ -118,6 +99,7 @@
                 <AppBarButton Label="Go To Last Post On Page" Icon="Download"></AppBarButton>
             </CommandBar.SecondaryCommands>
         </CommandBar>
-    </Page.BottomAppBar>
+        </Grid>
+    </Grid>
 </Page>
 

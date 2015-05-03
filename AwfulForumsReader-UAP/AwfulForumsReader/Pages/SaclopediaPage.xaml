@@ -23,30 +23,8 @@
         * Row 1 contains the rest of the page layout
     -->
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState x:Name="wideState">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="641" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="backButton.Visibility" Value="Visible"/>
-                        <Setter Target="pageTitle.FontSize" Value="50"/>
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="narrowState">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="0" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="backButton.Visibility" Value="Collapsed"/>
-                        <Setter Target="pageTitle.FontSize" Value="30"/>
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -57,7 +35,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton"
-                    Width="120"
+                    Width="60"
                     Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
                     Style="{StaticResource NavigationBackButtonNormalStyle}"
                     VerticalAlignment="Center"
@@ -65,7 +43,7 @@
                     AutomationProperties.Name="Back"
                     AutomationProperties.AutomationId="BackButton"
                     AutomationProperties.ItemType="Navigation Button" RequestedTheme="Dark" />
-            <TextBlock Margin="5,0,0,0" x:Name="pageTitle" d:Text="{Binding ForumEntity.Name, Source={d:DesignData /SampleData/ThreadListPageViewModelSampleData.xaml}}" Text="SAclopedia" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1"
+            <TextBlock FontSize="25" Margin="5,0,0,0" x:Name="pageTitle" d:Text="{Binding ForumEntity.Name, Source={d:DesignData /SampleData/ThreadListPageViewModelSampleData.xaml}}" Text="SAclopedia" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1"
                        IsHitTestVisible="false" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
         </Grid>
         <Grid Grid.Row="1">

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
+using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
 using AwfulForumsLibrary.Entity;
@@ -16,9 +17,23 @@ namespace AwfulForumsReader.ViewModels
 {
     public class ThreadPageViewModel : NotifierBase
     {
+        public ThreadPageViewModel()
+        {
+            ThreadNotSelected = true;
+        }
         private ForumThreadEntity _forumThreadEntity;
         private AddOrRemoveBookmarkCommand _addOrRemoveBookmarkCommand = new AddOrRemoveBookmarkCommand();
+        private bool _threadNotSelected;
 
+        public bool ThreadNotSelected
+        {
+            get { return _threadNotSelected; }
+            set
+            {
+                SetProperty(ref _threadNotSelected, value);
+                OnPropertyChanged();
+            }
+        }
         public AddOrRemoveBookmarkCommand AddOrRemoveBookmark
         {
             get { return _addOrRemoveBookmarkCommand; }
@@ -47,6 +62,12 @@ namespace AwfulForumsReader.ViewModels
         public RefreshThreadPageCommand RefreshThreadPageCommand { get; set; } = new RefreshThreadPageCommand();
 
         public BackThreadPageCommand BackThreadPageCommand { get; set; } = new BackThreadPageCommand();
+
+        public void WebView_OnNavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
+        {
+            var command = new ThreadDomContentLoadedCommand();
+            command.Execute(sender);
+        }
 
         public ForwardThreadPageCommand ForwardThreadPageCommand { get; set; } = new ForwardThreadPageCommand();
 
@@ -126,6 +147,7 @@ namespace AwfulForumsReader.ViewModels
                     new Exception("ForumThreadEntity is null."));
                 return;
             }
+            ThreadNotSelected = false;
 IsLoading = true;
             bool isSuccess;
             string errorMessage = string.Empty;

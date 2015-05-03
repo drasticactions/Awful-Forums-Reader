@@ -31,14 +31,26 @@
       </TransitionCollection>
     </Grid.ChildrenTransitions>
     <Grid.RowDefinitions>
-      <RowDefinition Height="50"/>
+      <RowDefinition Height="40"/>
       <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Background="#FF1E72C9" RequestedTheme="Dark" Grid.Row="0">
-            <StackPanel VerticalAlignment="Center" Grid.Row="0">
-                <TextBlock Margin="5" Text="Search" Style="{ThemeResource TitleTextBlockStyle}" TextTrimming="CharacterEllipsis" Typography.Capitals="SmallCaps"/>
-            </StackPanel>
+        <Grid x:Name="grid1" Background="{StaticResource AwfulBlue}" RequestedTheme="Dark">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton"
+                    Width="60"
+                    Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+                    Style="{StaticResource NavigationBackButtonNormalStyle}"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    AutomationProperties.Name="Back"
+                    AutomationProperties.AutomationId="BackButton"
+                    AutomationProperties.ItemType="Navigation Button" RequestedTheme="Dark" />
+            <TextBlock FontSize="25" Margin="5,0,0,0" x:Name="pageTitle" d:Text="{Binding ForumEntity.Name, Source={d:DesignData /SampleData/ThreadListPageViewModelSampleData.xaml}}" Text="Search" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1"
+                       IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Center" />
         </Grid>
         <Grid Grid.Row="1" Margin="19,9.5,19,0">
             <Grid.RowDefinitions>

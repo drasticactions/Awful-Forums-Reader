@@ -101,6 +101,11 @@ namespace AwfulForumsReader.Pages
             navigationHelper.OnNavigatedFrom(e);
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+           Locator.ViewModels.MainPageVm.MainPageSplitView.IsPaneOpen = (Locator.ViewModels.MainPageVm.MainPageSplitView.IsPaneOpen != true);
+        }
+
         #endregion
     }
 }

@@ -28,6 +28,14 @@ xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
                         <Setter Target="Splitter.DisplayMode" Value="CompactInline"/>
                     </VisualState.Setters>
                 </VisualState>
+                <VisualState x:Name="midState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="541" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Splitter.DisplayMode" Value="CompactInline"/>
+                    </VisualState.Setters>
+                </VisualState>
                 <VisualState x:Name="narrowState">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="0" />
@@ -38,13 +46,22 @@ xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <SplitView x:Name="Splitter" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <SplitView Grid.Row="1" x:Name="Splitter" VerticalAlignment="Stretch">
             <SplitView.Pane>
                 <RelativePanel RequestedTheme="Dark" VerticalAlignment="Stretch" Background="#FF1E72C9">
-                    <TextBlock x:Name="Title" Text="Awful Forums Reader" Style="{StaticResource SampleHeaderTextStyle}" Margin="60,30,0,0"/>
+          <ToggleButton x:Name="MenuButton" Grid.Column="0" Style="{StaticResource SymbolButton}" Click="Button_Click" VerticalAlignment="Top" Foreground="White" Margin="-9,-5,0,0">
+            <ToggleButton.Content>
+                <Border Background="Transparent" Width="40" Height="40">
+                    <FontIcon x:Name="Hamburger" FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;" />
+                </Border>
+            </ToggleButton.Content>
+        </ToggleButton>
                     <ListView ItemClick="MenuClick"  ItemsSource="{Binding MenuItems}" IsItemClickEnabled="True" 
-                 SelectionMode="None" HorizontalAlignment="Left"
-                 VerticalAlignment="Top" RelativePanel.Below="Title" Margin="0,20,0,0" >
+                 SelectionMode="None" RelativePanel.Below="MenuButton" HorizontalAlignment="Left"
+                 VerticalAlignment="Top" Margin="0,-5,0,0" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -64,12 +81,5 @@ xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
                 <Frame x:Name="MainFrame"/>
             </SplitView.Content>
         </SplitView>
-        <ToggleButton Style="{StaticResource SymbolButton}" Click="Button_Click" VerticalAlignment="Top" Foreground="White" Margin="-9,20,0,0">
-            <ToggleButton.Content>
-                <Border Background="Transparent" Width="40" Height="40">
-                    <FontIcon x:Name="Hamburger" FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;" />
-                </Border>
-            </ToggleButton.Content>
-        </ToggleButton>
     </Grid>
 </Page>

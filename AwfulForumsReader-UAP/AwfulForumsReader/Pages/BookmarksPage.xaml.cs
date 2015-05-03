@@ -12,7 +12,10 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using AwfulForumsLibrary.Entity;
+using AwfulForumsReader.Commands;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -23,6 +26,52 @@ namespace AwfulForumsReader.Pages
     /// </summary>
     public sealed partial class BookmarksPage : Page
     {
+        private ForumThreadEntity _lastSelectedItem;
+        private void Bookmark_OnClick(object sender, ItemClickEventArgs e)
+        {
+            var clickedItem = (ForumThreadEntity)e.ClickedItem;
+            _lastSelectedItem = clickedItem;
+            Locator.ViewModels.BookmarksPageVm.NavigateToThreadPageCommand.Execute(e);
+            if (AdaptiveStates.CurrentState == NarrowState)
+            {
+                // Use "drill in" transition for navigating from master list to detail view
+                Frame.Navigate(typeof(ThreadPage), null, new DrillInNavigationTransitionInfo());
+            }
+            else
+            {
+                // Play a refresh animation when the user switches detail items.
+                //EnableContentTransitions();
+            }
+        }
+
+        private void AdaptiveStates_CurrentStateChanged(object sender, VisualStateChangedEventArgs e)
+        {
+            UpdateForVisualState(e.NewState, e.OldState);
+        }
+
+        private void UpdateForVisualState(VisualState newState, VisualState oldState = null)
+        {
+            var isNarrow = newState == NarrowState;
+
+            if (isNarrow && oldState == DefaultState && _lastSelectedItem != null)
+            {
+                // Resize down to the detail item. Don't play a transition.
+                Frame.Navigate(typeof(ThreadPage), null, new SuppressNavigationTransitionInfo());
+            }
+
+            EntranceNavigationTransitionInfo.SetIsTargetElement(MasterListView, isNarrow);
+            if (DetailContentPresenter != null)
+            {
+                EntranceNavigationTransitionInfo.SetIsTargetElement(DetailContentPresenter, !isNarrow);
+            }
+        }
+
+
+        private void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Assure we are displaying the correct item. This is necessary in certain adaptive cases.
+            ForumThreadList.SelectedItem = _lastSelectedItem;
+        }
 
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
@@ -51,6 +100,14 @@ namespace AwfulForumsReader.Pages
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
+            ThreadFullView.NavigationCompleted += WebView_OnNavigationCompleted;
+            ThreadFullView.ScriptNotify += WebViewNotifyCommand.WebView_ScriptNotify;
+        }
+
+        private void WebView_OnNavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
+        {
+            var command = new ThreadDomContentLoadedCommand();
+            command.Execute(ThreadFullView);
         }
 
         /// <summary>
@@ -94,6 +151,12 @@ namespace AwfulForumsReader.Pages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             navigationHelper.OnNavigatedTo(e);
+
+            //UpdateForVisualState(AdaptiveStates.CurrentState);
+
+            // Don't play a content transition for first item load.
+            // Sometimes, this content will be animated as part of the page transition.
+           // DisableContentTransitions();
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)

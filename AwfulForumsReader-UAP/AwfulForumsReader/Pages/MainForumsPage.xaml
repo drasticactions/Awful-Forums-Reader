@@ -87,4 +87,13 @@
             </core:EventTriggerBehavior>
         </i:Interaction.Behaviors>
     </GridView>
+    <Page.BottomAppBar>
+        <CommandBar x:Name="BottomBar">
+            <AppBarButton Click="Button_Click">
+                <AppBarButton.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>
