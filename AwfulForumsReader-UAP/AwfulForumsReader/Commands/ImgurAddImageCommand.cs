@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
@@ -34,8 +35,21 @@ namespace AwfulForumsReader.Commands
             openPicker.FileTypeFilter.Add(".gif");
             StorageFile file = await openPicker.PickSingleFileAsync();
             if (file == null) return;
-            IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.Read);
-            ImgurEntity result = await UploadManager.UploadImgur(stream);
+            await AddImgurImage(file, replyText);
+        }
+
+        public async Task AddImgurImage(StorageFile file, TextBox replyText)
+        {
+            if (file == null)
+            {
+                return;
+            }
+            if (!file.ContentType.Contains("image"))
+            {
+                return;
+            }
+            var stream = await file.OpenAsync(FileAccessMode.Read);
+            var result = await UploadManager.UploadImgur(stream);
             if (result == null)
             {
                 var msgDlg = new MessageDialog("Something went wrong with the upload. :-(.");

@@ -33,6 +33,7 @@
             <tools:NewThreadTitleConverter x:Key="NewThreadTitleConverter" />
             <tools:NewThreadReplyTitleConverter x:Key="NewThreadReplyTitleConverter" />
             <tools:ForumDateJoinedConverter x:Key="ForumDateJoinedConverter"/>
+            <tools:BooleanInverter x:Key="BooleanInverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

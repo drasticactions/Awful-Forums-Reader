@@ -28,17 +28,8 @@ a, a:hover, a:visited{
     color: white;
 }
 
-body, tr, th, .postbody, p, li, blockquote, h4, .author,.breadcrumbs {
+body, tr, th, .postbody, p, li, blockquote, h4, .author,.breadcrumbs, .btn {
 	color: white !important;
-}
-
-.bbc-block {
-	background: transparent !important;
-    border-top: 1px solid #57FF57 !important;
-    border-bottom: 1px solid #57FF57 !important;
-    border-left: 0 !important;
-    border-right: 0 !important;
-    border-radius: 0 !important;
 }
 
 .registered, .postdate, .bbc-center {
@@ -65,4 +56,14 @@ background-repeat: repeat!important;
 
 .postCount2 {
     background-color: black;
+}
+
+.btn
+{
+background-color: rgba(0, 0, 0, 1);
+}
+
+blockquote
+{
+border-left: 5px solid rgba(87, 255, 87, 0.6);
 }

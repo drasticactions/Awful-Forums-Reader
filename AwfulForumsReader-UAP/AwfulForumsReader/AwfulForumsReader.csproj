@@ -243,6 +243,7 @@
     <Compile Include="Tools\BackButtonEnableConverter.cs" />
     <Compile Include="Tools\BackgroundWallpaperOpacityConverter.cs" />
     <Compile Include="Tools\BookmarkSorting.cs" />
+    <Compile Include="Tools\BooleanInverter.cs" />
     <Compile Include="Tools\BooleanToVisibilityConverter.cs" />
     <Compile Include="Tools\ConvertImage.cs" />
     <Compile Include="Tools\ForumDateJoinedConverter.cs" />
@@ -315,6 +316,8 @@
     <Content Include="Assets\test-thread.html" />
     <Content Include="Assets\threadTemplate.js" />
     <Content Include="Assets\url.min.js" />
+    <Content Include="Assets\Website\CSS\267.css" />
+    <Content Include="Assets\Website\CSS\268.css" />
     <Content Include="Assets\Website\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="Assets\Website\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Assets\Website\fonts\glyphicons-halflings-regular.woff2" />

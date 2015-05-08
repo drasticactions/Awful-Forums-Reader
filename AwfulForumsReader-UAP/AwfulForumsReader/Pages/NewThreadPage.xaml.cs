@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -51,6 +52,25 @@ namespace AwfulForumsReader.Pages
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
+        }
+
+        private async void Grid_OnDrop(object sender, DragEventArgs e)
+        {
+            Locator.ViewModels.NewThreadVm.IsLoading = true;
+            var d = e.GetDeferral();
+
+            var files = await e.DataView.GetStorageItemsAsync();
+            foreach (var file in files)
+            {
+                await Locator.ViewModels.NewThreadReplyVm.ImgurAddImageCommand.AddImgurImage(file as StorageFile, ReplyText);
+            }
+            d.Complete();
+            Locator.ViewModels.NewThreadVm.IsLoading = false;
+        }
+        private void Grid_DragOver(object sender, DragEventArgs e)
+        {
+            e.AcceptedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
+            e.Handled = true;
         }
 
         private void PostButton_OnClick(object sender, RoutedEventArgs e)

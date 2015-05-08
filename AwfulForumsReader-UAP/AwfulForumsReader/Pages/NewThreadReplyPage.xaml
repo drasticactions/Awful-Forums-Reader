@@ -23,28 +23,6 @@
         * Row 1 contains the rest of the page layout
     -->
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState x:Name="wideState">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="641" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="backButton.Visibility" Value="120"/>
-                        <Setter Target="pageTitle.FontSize" Value="50"/>
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="narrowState">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="0" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="backButton.Width" Value="0"/>
-                        <Setter Target="pageTitle.FontSize" Value="30"/>
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
@@ -69,26 +47,27 @@
                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Center" />
         </Grid>
         
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Drop="Grid_OnDrop" DragOver="Grid_DragOver" AllowDrop="True">
             <Grid.ChildrenTransitions>
                 <TransitionCollection>
                     <EntranceThemeTransition/>
                 </TransitionCollection>
             </Grid.ChildrenTransitions>
             <Grid>
-                <Grid Canvas.ZIndex="1" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Canvas.ZIndex="1" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" >
                     <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Height="50"/>
                     <Rectangle Fill="White" Opacity=".5"/>
                 </Grid>
-                <Grid>
+                <Grid Grid.Row="0">
                     <TextBox Text="{Binding PostBody, Mode=TwoWay}" IsSpellCheckEnabled="True" AcceptsReturn="True" Grid.Row="1"
                              HorizontalAlignment="Stretch" Margin="15" FontSize="20" x:Name="ReplyText" TextWrapping="Wrap" />
                 </Grid>
-            </Grid>
-        </Grid>
-    </Grid>
-    <Page.BottomAppBar>
-        <CommandBar>
+                <Grid Grid.Row="1">
+                    <CommandBar>
             <AppBarButton Click="PostButton_OnClick" x:Name="PostButton" Label="Post">
                 <AppBarButton.Icon>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE89B;" />
@@ -116,5 +95,8 @@
                 </AppBarButton.Icon>
             </AppBarButton>
         </CommandBar>
-    </Page.BottomAppBar>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
 </Page>

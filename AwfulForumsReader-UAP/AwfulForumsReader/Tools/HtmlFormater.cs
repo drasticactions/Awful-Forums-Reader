@@ -68,8 +68,14 @@ namespace AwfulForumsReader.Tools
                     head.InnerHtml += "<link href=\"ms-appx-web:///Assets/Website/CSS/219.css\" type=\"text/css\" media=\"all\" rel=\"stylesheet\">";
                     break;
                 case 26:
+                    head.InnerHtml += "<link href=\"ms-appx-web:///Assets/Website/CSS/26.css\" type=\"text/css\" media=\"all\" rel=\"stylesheet\">";
                     break;
-
+                case 267:
+                    head.InnerHtml += "<link href=\"ms-appx-web:///Assets/Website/CSS/267.css\" type=\"text/css\" media=\"all\" rel=\"stylesheet\">";
+                    break;
+                case 268:
+                    head.InnerHtml += "<link href=\"ms-appx-web:///Assets/Website/CSS/268.css\" type=\"text/css\" media=\"all\" rel=\"stylesheet\">";
+                    break;
             }
 
             HtmlNode bodyNode = doc2.DocumentNode.Descendants("div").FirstOrDefault(node => node.GetAttributeValue("class", string.Empty).Contains("row clearfix"));

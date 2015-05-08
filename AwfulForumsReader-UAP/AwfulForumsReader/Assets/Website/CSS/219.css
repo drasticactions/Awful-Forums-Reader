@@ -66,15 +66,6 @@ body, tr, th, .postbody, p, li, blockquote, h4, .author,.breadcrumbs {
 	font: normal normal normal 15px "consolas", "monaco", monospace !important;
 }
 
-.bbc-block {
-	background: transparent !important;
-    border-top: 1px solid #57FF57 !important;
-    border-bottom: 1px solid #57FF57 !important;
-    border-left: 0 !important;
-    border-right: 0 !important;
-    border-radius: 0 !important;
-}
-
 .registered, .postdate, .bbc-center {
 	color: #57FF57 !important;
 }
@@ -105,4 +96,12 @@ background-repeat: repeat!important;
     background-color: black;
 }
 
-.bbc-block{background: transparent!important;border-top:1px solid #57FF57!important;border-bottom:1px solid #57FF57!important;border-left:0!important;border-right:0!important;border-radius:0!important;}
+.btn
+{
+background-color: rgba(87, 255, 87, 0.8);
+}
+
+blockquote
+{
+border-left: 5px solid rgba(87, 255, 87, 0.6);
+}

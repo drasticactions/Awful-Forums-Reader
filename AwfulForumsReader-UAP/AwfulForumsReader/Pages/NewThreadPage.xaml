@@ -77,7 +77,7 @@
                     <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Height="50"/>
                     <Rectangle Fill="White" Opacity=".5"/>
                 </Grid>
-                <Grid>
+                <Grid Drop="Grid_OnDrop" DragOver="Grid_DragOver" AllowDrop="True">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="140"/>
                         <RowDefinition Height="*"/>
