@@ -12,7 +12,9 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using AwfulForumsLibrary.Entity;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -24,6 +26,7 @@ namespace AwfulForumsReader.Pages
     public sealed partial class PrivateMessageListPage : Page
     {
 
+        private PrivateMessageEntity _lastSelectedItem;
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
@@ -42,6 +45,50 @@ namespace AwfulForumsReader.Pages
         public NavigationHelper NavigationHelper
         {
             get { return this.navigationHelper; }
+        }
+
+        private void Thread_OnClick(object sender, ItemClickEventArgs e)
+        {
+            var clickedItem = (PrivateMessageEntity)e.ClickedItem;
+            _lastSelectedItem = clickedItem;
+            Locator.ViewModels.PrivateMessageVm.NavigateToPrivateMessagePageCommand.Execute(e);
+            if (AdaptiveStates.CurrentState == NarrowState)
+            {
+                // Use "drill in" transition for navigating from master list to detail view
+                Frame.Navigate(typeof(PrivateMessagePage), null, new DrillInNavigationTransitionInfo());
+            }
+            else
+            {
+                // Play a refresh animation when the user switches detail items.
+                //EnableContentTransitions();
+            }
+        }
+
+        private void AdaptiveStates_CurrentStateChanged(object sender, VisualStateChangedEventArgs e)
+        {
+            UpdateForVisualState(e.NewState, e.OldState);
+        }
+
+        private void UpdateForVisualState(VisualState newState, VisualState oldState = null)
+        {
+            var isNarrow = newState == NarrowState;
+
+            if (isNarrow && oldState == DefaultState && _lastSelectedItem != null)
+            {
+                // Resize down to the detail item. Don't play a transition.
+                Frame.Navigate(typeof(PrivateMessagePage), null, new SuppressNavigationTransitionInfo());
+            }
+
+            EntranceNavigationTransitionInfo.SetIsTargetElement(MasterListView, isNarrow);
+            if (DetailContentPresenter != null)
+            {
+                EntranceNavigationTransitionInfo.SetIsTargetElement(DetailContentPresenter, !isNarrow);
+            }
+        }
+        private void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Assure we are displaying the correct item. This is necessary in certain adaptive cases.
+            PrivateMessageList.SelectedItem = _lastSelectedItem;
         }
 
 

@@ -24,28 +24,6 @@
         * Row 1 contains the rest of the page layout
     -->
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState x:Name="wideState">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="641" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="backButton.Visibility" Value="Visible"/>
-                        <Setter Target="pageTitle.FontSize" Value="50"/>
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="narrowState">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="0" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="backButton.Visibility" Value="Collapsed"/>
-                        <Setter Target="pageTitle.FontSize" Value="30"/>
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
@@ -75,13 +53,13 @@
                     <EntranceThemeTransition/>
                 </TransitionCollection>
             </Grid.ChildrenTransitions>
-            <WebView IsRightTapEnabled="True"  tools:WebViewHelper.Html="{Binding Html}"  x:Name="ThreadFullView">
-                
-            </WebView>
-        </Grid>
-    </Grid>
-    <Page.BottomAppBar>
-        <CommandBar>
+           <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <WebView IsRightTapEnabled="True"  tools:WebViewHelper.Html="{Binding Html}"  x:Name="ThreadFullView"/>
+                    <Grid Grid.Row="1">
+                        <CommandBar>
             <AppBarButton Label="Reply" Icon="Add">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
@@ -90,5 +68,7 @@
                 </interactivity:Interaction.Behaviors>
             </AppBarButton>
         </CommandBar>
-    </Page.BottomAppBar>
+                        </Grid>
+        </Grid>
+    </Grid>
 </Page>

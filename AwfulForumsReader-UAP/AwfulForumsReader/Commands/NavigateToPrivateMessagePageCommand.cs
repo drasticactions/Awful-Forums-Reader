@@ -22,8 +22,7 @@ namespace AwfulForumsReader.Commands
             var thread = args.ClickedItem as PrivateMessageEntity;
             if (thread == null)
                 return;
-
-            App.RootFrame.Navigate(typeof (PrivateMessagePage));
+           
             var vm = Locator.ViewModels.PrivateMessagePageVm;
             vm.IsLoading = true;
             vm.PrivateMessageEntity = thread;
