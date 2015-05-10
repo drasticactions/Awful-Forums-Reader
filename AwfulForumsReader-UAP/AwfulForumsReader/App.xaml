@@ -34,6 +34,7 @@
             <tools:NewThreadReplyTitleConverter x:Key="NewThreadReplyTitleConverter" />
             <tools:ForumDateJoinedConverter x:Key="ForumDateJoinedConverter"/>
             <tools:BooleanInverter x:Key="BooleanInverter" />
+            <tools:NotifyThreadTextConverter x:Key="NotifyThreadTextConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -20,6 +20,10 @@ namespace AwfulForumsReader.ViewModels
         private ObservableCollection<ForumThreadEntity> _bookmarkedThreads;
         private bool _isLoading;
         private AddOrRemoveBookmarkCommand _addOrRemoveBookmarkCommand = new AddOrRemoveBookmarkCommand();
+        public AddThreadToNotificationTable AddThreadToNotificationTableCommand { get; set; } = new AddThreadToNotificationTable();
+
+        public NavigateToThreadPageViaToastCommand NavigateToThreadPageViaToastCommand { get; set; } =
+            new NavigateToThreadPageViaToastCommand();
         private UnreadThreadCommand _unreadThreadCommand = new UnreadThreadCommand();
         private LastPageCommand _lastPageCommand = new LastPageCommand();
         private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
@@ -158,20 +162,8 @@ namespace AwfulForumsReader.ViewModels
         public async Task Refresh()
         {
             IsLoading = true;
-            List<ForumThreadEntity> updatedBookmarkList;
-            try
-            {
-                updatedBookmarkList = await GetBookmarkedThreadsAsync();
-            }
-            catch (Exception ex)
-            {
-                AwfulDebugger.SendMessageDialogAsync("Could not get bookmarks", ex);
-                return;
-            }
-
-            BookmarkedThreads = updatedBookmarkList.ToObservableCollection();
-            await _bookmarkManager.RemoveBookmarkThreads();
-            await _bookmarkManager.AddBookmarkThreads(BookmarkedThreads.ToList());
+            var test = await _bookmarkManager.RefreshBookmarkedThreads();
+            BookmarkedThreads = test.ToObservableCollection();
             _localSettings.Values["RefreshBookmarks"] = DateTime.UtcNow.ToString();
             IsLoading = false;
         }

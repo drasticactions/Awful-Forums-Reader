@@ -90,21 +90,19 @@
                 <ProgressRing VerticalAlignment="Center" Height="50"/>
                 <Rectangle Fill="White" Opacity=".5"/>
             </Grid>
-            
-            
-            <ListView ItemContainerTransitions="{x:Null}" x:Name="ForumThreadList"
+            <ListView Grid.Row="0" ItemContainerTransitions="{x:Null}" x:Name="ForumThreadList"
                       HorizontalAlignment="Stretch"
                       ItemClick="Bookmark_OnClick"
                       IsSwipeEnabled="True" Grid.Column="1"
                       ItemTemplate="{StaticResource ThreadTemplate}"
                       ItemsSource="{Binding  BookmarkedThreads}"
                       IsItemClickEnabled="True">
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                    </Style>
-                </ListView.ItemContainerStyle>
-            </ListView>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
                         <Grid Grid.Row="1">
             <CommandBar>
             <AppBarButton Icon="Refresh" Label="Refresh">

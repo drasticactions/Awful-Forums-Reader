@@ -12,7 +12,7 @@ namespace AwfulForumsReader.Commands
     {
         public async override void Execute(object parameter)
         {
-            App.RootFrame.Navigate(typeof(BookmarksPage));
+            App.RootFrame.Navigate(typeof(BookmarksPage), parameter);
             await Locator.ViewModels.BookmarksPageVm.Initialize();
         }
     }

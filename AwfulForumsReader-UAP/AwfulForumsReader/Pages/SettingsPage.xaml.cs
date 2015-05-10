@@ -97,6 +97,12 @@ namespace AwfulForumsReader.Pages
             {
                 // Run bookmark live tile creator every 15 minutes.
                 // TODO: Change 15 to user selectable value.
+                BackgroundTaskUtils.UnregisterBackgroundTasks(BackgroundTaskUtils.BackgroundTaskName);
+                var task = await
+                    BackgroundTaskUtils.RegisterBackgroundTask(BackgroundTaskUtils.BackgroundTaskEntryPoint,
+                        BackgroundTaskUtils.BackgroundTaskName,
+                        new TimeTrigger(15, false),
+                        null);
                 _localSettings.Values[Constants.BookmarkBackground] = true;
             }
             else
@@ -104,6 +110,7 @@ namespace AwfulForumsReader.Pages
                 //BackgroundTaskUtils.UnregisterBackgroundTasks(BackgroundTaskUtils.BackgroundTaskName);
                 _localSettings.Values[Constants.BookmarkBackground] = false;
             }
+
         }
 
 

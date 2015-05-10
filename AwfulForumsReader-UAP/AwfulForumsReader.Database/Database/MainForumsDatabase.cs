@@ -38,6 +38,13 @@ namespace AwfulForumsReader.Database
 
         }
 
+        public async Task SetThreadNotified(ForumThreadEntity thread)
+        {
+            var bds = new BookmarkDataSource();
+            thread.IsNotified = !thread.IsNotified;
+            await bds.BookmarkForumRepository.Update(thread);
+        }
+
         public async Task SaveMainForumsList(List<ForumCategoryEntity> forumGroupList)
         {
             var ds = new DataSource();
@@ -59,7 +66,10 @@ namespace AwfulForumsReader.Database
 
         public async Task<List<ForumThreadEntity>> RefreshBookmarkedThreads()
         {
+            var dbs = new BookmarkDataSource();
             List<ForumThreadEntity> updatedBookmarkList;
+            var notifyThreads = await dbs.BookmarkForumRepository.Items.Where(node => node.IsNotified).ToListAsync();
+            var notifyThreadIds = notifyThreads.Select(thread => thread.ThreadId).ToList();
             try
             {
                 updatedBookmarkList = await GetBookmarkedThreadsAsync();
@@ -70,10 +80,13 @@ namespace AwfulForumsReader.Database
             }
 
             await RemoveBookmarkThreads();
-            var dbs = new BookmarkDataSource();
             foreach (ForumThreadEntity t in updatedBookmarkList)
             {
-                dbs.BookmarkForumRepository.CreateWithChildren(t);
+                if (notifyThreadIds.Contains(t.ThreadId))
+                {
+                    t.IsNotified = true;
+                }
+                await dbs.BookmarkForumRepository.CreateWithChildren(t);
             }
             _localSettings.Values["RefreshBookmarks"] = DateTime.UtcNow.ToString();
 

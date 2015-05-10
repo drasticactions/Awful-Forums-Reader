@@ -118,6 +118,7 @@
     <Compile Include="Commands\AddIgnoredUserPostCommand.cs" />
     <Compile Include="Commands\AddOrRemoveBookmarkCommand.cs" />
     <Compile Include="Commands\AddOrRemoveFavoriteCommand.cs" />
+    <Compile Include="Commands\AddThreadToNotificationTable.cs" />
     <Compile Include="Commands\BackThreadPageCommand.cs" />
     <Compile Include="Commands\BookmarkTextConverter.cs" />
     <Compile Include="Commands\ChangePageThreadCommand.cs" />
@@ -241,6 +242,7 @@
     <Compile Include="Tools\AddOrRemoveFavoriteTextConverter.cs" />
     <Compile Include="Tools\AwfulDebugger.cs" />
     <Compile Include="Tools\BackButtonEnableConverter.cs" />
+    <Compile Include="Tools\BackgroundTaskUtils.cs" />
     <Compile Include="Tools\BackgroundWallpaperOpacityConverter.cs" />
     <Compile Include="Tools\BookmarkSorting.cs" />
     <Compile Include="Tools\BooleanInverter.cs" />
@@ -255,6 +257,7 @@
     <Compile Include="Tools\LinqExtensions.cs" />
     <Compile Include="Tools\NewThreadReplyTitleConverter.cs" />
     <Compile Include="Tools\NewThreadTitleConverter.cs" />
+    <Compile Include="Tools\NotifyThreadTextConverter.cs" />
     <Compile Include="Tools\OpenMenuFlyoutAction.cs" />
     <Compile Include="Tools\PageScrollingCollection.cs" />
     <Compile Include="Tools\PrivateMessageScrollingCollection.cs" />
@@ -268,6 +271,7 @@
     <Compile Include="Tools\SubforumHeaderColorConverter.cs" />
     <Compile Include="Tools\ThreadCommand.cs" />
     <Compile Include="Tools\ThreadHeaderColorConverter.cs" />
+    <Compile Include="Tools\ToastNotificationArgs.cs" />
     <Compile Include="Tools\UploadManager.cs" />
     <Compile Include="Tools\WebViewHelper.cs" />
     <Compile Include="ViewModels\BbCodeListPageViewModel.cs" />
@@ -304,6 +308,9 @@
     <None Include="Assets\Website\CSS\bootstrap-winjs.css.map" />
     <None Include="Assets\Website\CSS\bootstrap.css.map" />
     <None Include="Assets\Website\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\BadgeLogo.scale-100.png" />
+    <Content Include="Assets\BadgeLogo.scale-140.png" />
+    <Content Include="Assets\BadgeLogo.scale-180.png" />
     <Content Include="Assets\bootstrap.js" />
     <Content Include="Assets\bootstrap.min.js" />
     <Content Include="Assets\forums.js" />
@@ -311,7 +318,9 @@
     <Content Include="Assets\jquery.js" />
     <Content Include="Assets\jquery.min.js" />
     <Content Include="Assets\Login\Icon2.png" />
+    <Content Include="Assets\Logo.scale-180.png" />
     <Content Include="Assets\npm.js" />
+    <Content Include="Assets\SmallLogo.scale-180.png" />
     <Content Include="Assets\taphold.js" />
     <Content Include="Assets\test-thread.html" />
     <Content Include="Assets\threadTemplate.js" />
@@ -928,6 +937,8 @@
     <Content Include="Assets\Website\saclopedia.html" />
     <Content Include="Assets\Website\test-thread.html" />
     <Content Include="Assets\Website\thread.html" />
+    <Content Include="Assets\WideLogo.scale-140.png" />
+    <Content Include="Assets\WideLogo.scale-180.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />

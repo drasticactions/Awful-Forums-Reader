@@ -37,6 +37,8 @@ namespace AwfulForumsReader.Commands
         }
     }
 
+
+
     public class NavigateToThreadPageViaSearchResult : AlwaysExecutableCommand
     {
         public async override void Execute(object parameter)
@@ -76,7 +78,7 @@ namespace AwfulForumsReader.Commands
                 return;
             }
 
-            App.RootFrame.Navigate(typeof(ThreadPage));
+            //App.RootFrame.Navigate(typeof(ThreadPage));
             //var tabManager = new MainForumsDatabase();
             //await tabManager.RemoveAllThreadsFromTabList();
             //await tabManager.AddThreadToTabListAsync(thread);
@@ -101,14 +103,11 @@ namespace AwfulForumsReader.Commands
                 AwfulDebugger.SendMessageDialogAsync("Thread navigation failed!:(", new Exception("Arguments are null"));
                 return;
             }
-
-            App.RootFrame.Navigate(typeof(ThreadPage));
             //var tabManager = new MainForumsDatabase();
             //await tabManager.RemoveAllThreadsFromTabList();
             //await tabManager.AddThreadToTabListAsync(thread);
             //var tabThreads = await tabManager.GetAllTabThreads();
             //Locator.ViewModels.ThreadPageVm.LinkedThreads = tabThreads.ToObservableCollection();
-
             Locator.ViewModels.ThreadPageVm.ForumThreadEntity = thread;
             Locator.ViewModels.ThreadPageVm.Html = null;
             await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();

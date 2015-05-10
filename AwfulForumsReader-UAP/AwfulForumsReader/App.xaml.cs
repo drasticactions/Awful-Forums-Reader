@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Background;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
@@ -22,9 +23,11 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Autofac;
 using AwfulForumsLibrary.Manager;
+using AwfulForumsLibrary.Tools;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Database;
 using AwfulForumsReader.Pages;
+using AwfulForumsReader.Tools;
 using Microsoft.ApplicationInsights;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=402347&clcid=0x409
@@ -111,7 +114,17 @@ namespace AwfulForumsReader
                 Window.Current.Content = RootFrame;
             }
 
-            var localStorageManager = new LocalStorageManager();
+            if (_localSettings.Values.ContainsKey(Constants.BookmarkBackground) && (bool)_localSettings.Values[Constants.BookmarkBackground])
+            {
+                BackgroundTaskUtils.UnregisterBackgroundTasks(BackgroundTaskUtils.BackgroundTaskName);
+                var task = await
+                    BackgroundTaskUtils.RegisterBackgroundTask(BackgroundTaskUtils.BackgroundTaskEntryPoint,
+                        BackgroundTaskUtils.BackgroundTaskName,
+                        new TimeTrigger(15, false),
+                        null);
+            }
+
+                var localStorageManager = new LocalStorageManager();
             CookieContainer cookieTest = await localStorageManager.LoadCookie("SACookies2.txt");
             if (cookieTest.Count <= 0)
             {

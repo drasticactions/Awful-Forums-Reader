@@ -12,7 +12,10 @@
 -->
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:tools="using:AwfulForumsReader.Tools">
 
     <DataTemplate x:Key="ThreadTemplate">
         <Grid Background="{Binding HasSeen, Converter={StaticResource HasSeenThreadConverter}}">
@@ -80,10 +83,16 @@
             <FlyoutBase.AttachedFlyout>
                 <MenuFlyout>
                     <MenuFlyoutItem Command="{Binding DataContext.LastPage, ElementName=ForumThreadList}"  CommandParameter="{Binding}" Text="Go to Last Page"/>
+                    <MenuFlyoutItem Visibility="{Binding IsBookmark, Converter={StaticResource BooleanToVisibilityConverter}}" Command="{Binding DataContext.AddThreadToNotificationTableCommand, ElementName=ForumThreadList}"  CommandParameter="{Binding}" Text="{Binding Converter={StaticResource NotifyThreadTextConverter}}"/>
                     <MenuFlyoutItem Command="{Binding DataContext.UnreadThread, ElementName=ForumThreadList}"  CommandParameter="{Binding}" Text="Unread"/>
                     <MenuFlyoutItem Command="{Binding DataContext.AddOrRemoveBookmark, ElementName=ForumThreadList}" CommandParameter="{Binding}" Text="{Binding IsBookmark, Converter={StaticResource BookmarkTextConverter}}"/>
                 </MenuFlyout>
             </FlyoutBase.AttachedFlyout>
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="RightTapped">
+                    <tools:OpenMenuFlyoutAction />
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
         </Grid>
     </DataTemplate>
 

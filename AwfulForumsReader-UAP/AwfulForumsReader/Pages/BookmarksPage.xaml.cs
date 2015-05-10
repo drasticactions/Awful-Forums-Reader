@@ -16,6 +16,8 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsReader.Commands;
+using AwfulForumsReader.Tools;
+using Newtonsoft.Json;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -123,6 +125,15 @@ namespace AwfulForumsReader.Pages
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            if (e.NavigationParameter == null)
+            {
+                return;
+            }
+            var threadId = (long) e.NavigationParameter;
+            _lastSelectedItem =
+                Locator.ViewModels.BookmarksPageVm.BookmarkedThreads.FirstOrDefault(node => node.ThreadId == threadId);
+            if(_lastSelectedItem != null)
+                Locator.ViewModels.BookmarksPageVm.NavigateToThreadPageViaToastCommand.Execute(_lastSelectedItem);
         }
 
         /// <summary>
