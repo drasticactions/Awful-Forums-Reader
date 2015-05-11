@@ -30,7 +30,7 @@
     -->
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -42,9 +42,10 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton"
                     Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+                    Visibility="{Binding Converter={StaticResource ShowBackButtonConverter}}"
                     Style="{StaticResource NavigationBackButtonNormalStyle}"
                     VerticalAlignment="Center"
-                    Width="60"
+                    Width="40"
                     HorizontalAlignment="Center"
                     AutomationProperties.Name="Back"
                     AutomationProperties.AutomationId="BackButton"

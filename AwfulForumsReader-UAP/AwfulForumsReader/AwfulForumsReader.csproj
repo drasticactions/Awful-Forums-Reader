@@ -265,6 +265,7 @@
     <Compile Include="Tools\RepliesSinceLastOpenedColorConverter.cs" />
     <Compile Include="Tools\ReplyBoxLocation.cs" />
     <Compile Include="Tools\SearchPageScrollingCollection.cs" />
+    <Compile Include="Tools\ShowBackButtonConverter.cs" />
     <Compile Include="Tools\StatusBarBehavior.cs" />
     <Compile Include="Tools\SubforumBodyColorConverter.cs" />
     <Compile Include="Tools\SubforumFontColorConverter.cs" />

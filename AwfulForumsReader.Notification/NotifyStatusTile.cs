@@ -14,10 +14,14 @@ namespace AwfulForumsReader.Notification
     {
         public static bool IsInternet()
         {
-            ConnectionProfile connections = NetworkInformation.GetInternetConnectionProfile();
+#if DEBUG
+            return true;
+#else
+                        ConnectionProfile connections = NetworkInformation.GetInternetConnectionProfile();
             bool internet = connections != null &&
                             connections.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess;
             return internet;
+#endif
         }
 
         public static void CreateBookmarkLiveTile(ForumThreadEntity forumThread)

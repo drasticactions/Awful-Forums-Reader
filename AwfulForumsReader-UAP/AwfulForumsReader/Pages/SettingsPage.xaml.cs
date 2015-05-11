@@ -74,6 +74,11 @@ namespace AwfulForumsReader.Pages
                 AutoReloadSwitch.IsOn = (bool)_localSettings.Values[Constants.AutoRefresh];
             }
 
+            if (_localSettings.Values.ContainsKey(Constants.OpenInBrowser))
+            {
+                InternetEnable.IsOn = (bool)_localSettings.Values[Constants.OpenInBrowser];
+            }
+
             if (_localSettings.Values.ContainsKey(Constants.DarkMode))
             {
                 DarkLightThemeSwitch.IsOn = (bool)_localSettings.Values[Constants.DarkMode];
@@ -109,6 +114,21 @@ namespace AwfulForumsReader.Pages
             {
                 //BackgroundTaskUtils.UnregisterBackgroundTasks(BackgroundTaskUtils.BackgroundTaskName);
                 _localSettings.Values[Constants.BookmarkBackground] = false;
+            }
+
+        }
+
+        private void InternetEnable_Toggled(object sender, RoutedEventArgs e)
+        {
+            var toggleSwitch = sender as ToggleSwitch;
+            if (toggleSwitch == null) return;
+            if (toggleSwitch.IsOn)
+            {
+                _localSettings.Values[Constants.OpenInBrowser] = true;
+            }
+            else
+            {
+                _localSettings.Values[Constants.OpenInBrowser] = false;
             }
 
         }
@@ -176,6 +196,7 @@ namespace AwfulForumsReader.Pages
                 _localSettings.Values[Constants.BackgroundWallpaper] = false;
             }
         }
+
 
         private async void ChangeBackground_OnClicked(object sender, RoutedEventArgs e)
         {

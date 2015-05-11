@@ -6,6 +6,8 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -15,6 +17,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using AwfulForumsLibrary.Entity;
+using AwfulForumsLibrary.Tools;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Tools;
 using Newtonsoft.Json;
@@ -123,18 +126,32 @@ namespace AwfulForumsReader.Pages
         /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested and
         /// a dictionary of state preserved by this page during an earlier
         /// session. The state will be null the first time a page is visited.</param>
-        private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
+        private async void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
             if (e.NavigationParameter == null)
             {
                 return;
             }
             var threadId = (long) e.NavigationParameter;
-            _lastSelectedItem =
-                Locator.ViewModels.BookmarksPageVm.BookmarkedThreads.FirstOrDefault(node => node.ThreadId == threadId);
-            if(_lastSelectedItem != null)
-                Locator.ViewModels.BookmarksPageVm.NavigateToThreadPageViaToastCommand.Execute(_lastSelectedItem);
+            if (threadId <= 0)
+                return;
+
+            if (_localSettings.Values.ContainsKey(Constants.OpenInBrowser) &&
+                (bool) _localSettings.Values[Constants.OpenInBrowser])
+            {
+                await Launcher.LaunchUriAsync(new Uri(
+                    $"http://forums.somethingawful.com/showthread.php?threadid={threadId}&goto=newpost"));
+            }
+            else
+            {
+                _lastSelectedItem =
+               Locator.ViewModels.BookmarksPageVm.BookmarkedThreads.FirstOrDefault(node => node.ThreadId == threadId);
+                if (_lastSelectedItem != null)
+                    Locator.ViewModels.BookmarksPageVm.NavigateToThreadPageViaToastCommand.Execute(_lastSelectedItem);
+            }
         }
+
+        private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
 
         /// <summary>
         /// Preserves state associated with this page in case the application is suspended or the

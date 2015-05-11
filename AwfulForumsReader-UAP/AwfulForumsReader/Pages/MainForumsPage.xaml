@@ -34,8 +34,37 @@
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
     -->
-    <GridView
-                Grid.Column="1"
+    <Grid>
+                <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="midState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="450" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HeaderGrid.Visibility" Value="Collapsed"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="narrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HeaderGrid.Visibility" Value="Visible"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="HeaderGrid"  Background="{StaticResource AwfulBlue}" RequestedTheme="Dark" Grid.Row="0">
+            <TextBlock FontSize="25" Text="Awful Forums Reader" Margin="50,0,0,0" x:Name="pageTitle" Style="{StaticResource HeaderTextBlockStyle}"
+                       IsHitTestVisible="false" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
+        </Grid>
+            <GridView
+                Grid.Row="1"
                 x:Name="MainForumListFull"
                 AutomationProperties.AutomationId="ItemGridView"
                 AutomationProperties.Name="Grouped Items"
@@ -87,13 +116,5 @@
             </core:EventTriggerBehavior>
         </i:Interaction.Behaviors>
     </GridView>
-    <Page.BottomAppBar>
-        <CommandBar x:Name="BottomBar">
-            <AppBarButton Click="Button_Click">
-                <AppBarButton.Icon>
-                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;" />
-                </AppBarButton.Icon>
-            </AppBarButton>
-        </CommandBar>
-    </Page.BottomAppBar>
+    </Grid>
 </Page>

@@ -57,7 +57,8 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton"
-                    Width="60"
+                    Width="40"
+                    Visibility="{Binding Converter={StaticResource ShowBackButtonConverter}}"
                     Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
                     Style="{StaticResource NavigationBackButtonNormalStyle}"
                     VerticalAlignment="Center"

@@ -13,7 +13,9 @@ using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
 using Windows.Phone.UI.Input;
 using Windows.Storage;
+using Windows.System;
 using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -24,11 +26,13 @@ using Windows.UI.Xaml.Navigation;
 using Autofac;
 using AwfulForumsLibrary.Manager;
 using AwfulForumsLibrary.Tools;
+using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Database;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
 using Microsoft.ApplicationInsights;
+using Newtonsoft.Json;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=402347&clcid=0x409
 
