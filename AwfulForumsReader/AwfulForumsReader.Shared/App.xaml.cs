@@ -47,6 +47,11 @@ namespace AwfulForumsReader
     /// </summary>
     public sealed partial class App : Application
     {
+        /// <summary>
+        /// Allows tracking page views, exceptions and other telemetry through the Microsoft Application Insights service.
+        /// </summary>
+        public static Microsoft.ApplicationInsights.TelemetryClient TelemetryClient;
+
 #if WINDOWS_PHONE_APP
         private TransitionCollection transitions;
 #endif
@@ -59,6 +64,8 @@ namespace AwfulForumsReader
         /// </summary>
         public App()
         {
+            TelemetryClient = new Microsoft.ApplicationInsights.TelemetryClient();
+
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
 #if WINDOWS_APP

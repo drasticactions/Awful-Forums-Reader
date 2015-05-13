@@ -121,7 +121,14 @@ namespace AwfulForumsReader.ViewModels
 
         public async Task Initialize()
         {
-            if (BookmarkedThreads != null && BookmarkedThreads.Any())
+            try
+            {
+                if (BookmarkedThreads != null && BookmarkedThreads.Any())
+                {
+                    return;
+                }
+            }
+            catch (Exception)
             {
                 return;
             }
@@ -151,7 +158,7 @@ namespace AwfulForumsReader.ViewModels
             }
             catch (Exception ex)
             {
-                AwfulDebugger.SendMessageDialogAsync("Failed to get Bookmarks (Potential EF Issue!)", ex);
+                AwfulDebugger.SendMessageDialogAsync("Failed to get Bookmarks", ex);
             }
             IsLoading = false;
         }
@@ -161,21 +168,28 @@ namespace AwfulForumsReader.ViewModels
         public async Task Refresh()
         {
             IsLoading = true;
-            List<ForumThreadEntity> updatedBookmarkList;
             try
             {
-                updatedBookmarkList = await GetBookmarkedThreadsAsync();
-            }
-            catch (Exception ex)
-            {
-                AwfulDebugger.SendMessageDialogAsync("Could not get bookmarks", ex);
-                return;
-            }
+                List<ForumThreadEntity> updatedBookmarkList;
+                try
+                {
+                    updatedBookmarkList = await GetBookmarkedThreadsAsync();
+                }
+                catch (Exception ex)
+                {
+                    AwfulDebugger.SendMessageDialogAsync("Could not get bookmarks", ex);
+                    return;
+                }
 
-            BookmarkedThreads = updatedBookmarkList.ToObservableCollection();
-            await _bookmarkManager.RemoveBookmarkThreads();
-            await _bookmarkManager.AddBookmarkThreads(BookmarkedThreads.ToList());
-            _localSettings.Values["RefreshBookmarks"] = DateTime.UtcNow.ToString();
+                BookmarkedThreads = updatedBookmarkList.ToObservableCollection();
+                await _bookmarkManager.RemoveBookmarkThreads();
+                await _bookmarkManager.AddBookmarkThreads(BookmarkedThreads.ToList());
+                _localSettings.Values["RefreshBookmarks"] = DateTime.UtcNow.ToString();
+            }
+            catch (Exception)
+            {
+               
+            }
             IsLoading = false;
         }
 

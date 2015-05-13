@@ -9,7 +9,14 @@ namespace AwfulForumsReader.Commands
     {
         public async override void Execute(object parameter)
         {
-            await Locator.ViewModels.BookmarksPageVm.Refresh();
+            try
+            {
+                await Locator.ViewModels.BookmarksPageVm.Refresh();
+            }
+            catch (Exception)
+            {
+                return;
+            }
         }
     }
 }

@@ -299,6 +299,9 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="app.config" />
+    <None Include="ApplicationInsights.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Assets\Login\Thumbs.db" />
     <None Include="Assets\MainForumsPage\Thumbs.db" />
     <None Include="Assets\ThreadRatings\rating.psd" />
