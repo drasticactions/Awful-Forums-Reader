@@ -14,6 +14,10 @@ namespace AwfulForumsReader.Notification
     {
         public static bool IsInternet()
         {
+
+#if DEBUG
+            return true;
+#endif
             ConnectionProfile connections = NetworkInformation.GetInternetConnectionProfile();
             bool internet = connections != null &&
                             connections.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess;

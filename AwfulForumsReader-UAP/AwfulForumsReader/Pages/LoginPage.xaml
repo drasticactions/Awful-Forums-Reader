@@ -21,22 +21,24 @@
     </interactivity:Interaction.Behaviors>
     <Grid   Background="#f4f4f4">
         <ProgressBar VerticalAlignment="Top" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" IsIndeterminate="True"/>
-        <ScrollViewer ZoomMode="Disabled">
-            <StackPanel VerticalAlignment="Center">
-                <TextBlock HorizontalAlignment="Center" Style="{StaticResource HeaderTextBlockStyle}" FontWeight="Thin" Foreground="Black" TextAlignment="Center" TextWrapping="WrapWholeWords"
-                       Text="Awful Forums Reader"
-                       FontSize="50" Margin="0,0,0,25" VerticalAlignment="Center" />
-                <StackPanel Width="300">
-                    <TextBox x:Name="Username" IsSpellCheckEnabled="False" PlaceholderText="Username" Margin="0,0,0,15"
+        <Grid VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock FontSize="30" FontWeight="Thin" Margin="0,25,0,0" HorizontalAlignment="Center" Text="Awful Forums Reader"></TextBlock>
+                 <Grid Grid.Row="1">
+                    <StackPanel Margin="0,25,0,0" Width="300">
+                     <TextBox x:Name="Username" IsSpellCheckEnabled="False" PlaceholderText="Username" Margin="0,0,0,15"
                          Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                     <PasswordBox PasswordRevealMode="Peek" x:Name="Password" PlaceholderText="Password" Margin="0,0,0,15"
                              Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                     <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Center"
                         Command="{Binding ClickLoginButtonCommand}" />
-                    
-                    <Image  Margin="25" Source="../Assets/Login/Icon2.png"/>
-                </StackPanel>
-            </StackPanel>
-        </ScrollViewer>
+                    </StackPanel>
+                </Grid>
+                <Image VerticalAlignment="Bottom" Grid.Row="2"  Margin="25" Source="../Assets/Login/Icon2.png"/>
+        </Grid>
     </Grid>
 </Page>

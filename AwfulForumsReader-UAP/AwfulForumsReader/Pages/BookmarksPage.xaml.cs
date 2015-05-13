@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsReader.Commands;
+using AwfulForumsReader.Database;
 using AwfulForumsReader.Tools;
 using Newtonsoft.Json;
 
@@ -67,7 +68,6 @@ namespace AwfulForumsReader.Pages
                 EntranceNavigationTransitionInfo.SetIsTargetElement(DetailContentPresenter, !isNarrow);
             }
         }
-
 
         private void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
         {
@@ -123,17 +123,25 @@ namespace AwfulForumsReader.Pages
         /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested and
         /// a dictionary of state preserved by this page during an earlier
         /// session. The state will be null the first time a page is visited.</param>
-        private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
+        private async void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
             if (e.NavigationParameter == null)
             {
                 return;
             }
             var threadId = (long) e.NavigationParameter;
-            _lastSelectedItem =
-                Locator.ViewModels.BookmarksPageVm.BookmarkedThreads.FirstOrDefault(node => node.ThreadId == threadId);
-            if(_lastSelectedItem != null)
+            var bookmarkdata = new BookmarkDataSource();
+            _lastSelectedItem = await 
+              bookmarkdata.BookmarkForumRepository.Items.Where(node => node.ThreadId == threadId).FirstOrDefaultAsync();
+            if (_lastSelectedItem != null)
+            {
                 Locator.ViewModels.BookmarksPageVm.NavigateToThreadPageViaToastCommand.Execute(_lastSelectedItem);
+
+                if (AdaptiveStates.CurrentState == NarrowState)
+                {
+                    Frame.Navigate(typeof(ThreadPage), null, new DrillInNavigationTransitionInfo());
+                }
+            }
         }
 
         /// <summary>
