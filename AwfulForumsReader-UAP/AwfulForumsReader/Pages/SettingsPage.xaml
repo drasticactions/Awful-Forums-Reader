@@ -72,6 +72,17 @@
                     </TextBlock>
 
                     <ToggleSwitch x:Name="BookmarkLiveTiles" Toggled="BookmarkLiveTiles_Toggled" />
+                    
+                    <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Open Bookmark Notifications in Browser" />
+
+                    <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
+                        <TextBlock.Text>
+                            Instead of opening bookmark notifications in Awful Forums Reader, you can set it to open in your web browser
+                            instead. Great if you're on the Desktop and want notifications, but don't want to use the app webview.
+                        </TextBlock.Text>
+                    </TextBlock>
+
+                    <ToggleSwitch x:Name="InternetEnable" Toggled="InternetEnable_Toggled" />
 
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Launch Bookmarks Page On Startup" />
 

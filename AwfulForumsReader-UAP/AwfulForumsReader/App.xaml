@@ -35,6 +35,7 @@
             <tools:ForumDateJoinedConverter x:Key="ForumDateJoinedConverter"/>
             <tools:BooleanInverter x:Key="BooleanInverter" />
             <tools:NotifyThreadTextConverter x:Key="NotifyThreadTextConverter"/>
+            <tools:ShowBackButtonConverter x:Key="ShowBackButtonConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

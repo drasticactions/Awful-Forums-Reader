@@ -18,7 +18,7 @@
     xmlns:tools="using:AwfulForumsReader.Tools">
 
     <DataTemplate x:Key="ThreadTemplate">
-        <Grid Background="{Binding HasSeen, Converter={StaticResource HasSeenThreadConverter}}">
+        <Grid Margin="5" Background="{Binding HasSeen, Converter={StaticResource HasSeenThreadConverter}}">
             <Grid.Transitions>
                 <TransitionCollection>
                     <EntranceThemeTransition/>

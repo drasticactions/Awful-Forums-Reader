@@ -48,7 +48,7 @@
         </VisualStateManager.VisualStateGroups>
         
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -56,11 +56,12 @@
         <!-- Back button and page title -->
         <Grid x:Name="grid1" Background="{StaticResource AwfulBlue}" RequestedTheme="Dark">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="40" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton"
-                    Width="60"
+                    Width="40"
+                    Visibility="{Binding Converter={StaticResource ShowBackButtonConverter}}"
                     Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
                     Style="{StaticResource NavigationBackButtonNormalStyle}"
                     VerticalAlignment="Center"
