@@ -101,14 +101,28 @@ namespace AwfulForumsReader.Pages
         /// handlers that cannot cancel the navigation request.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            ThreadFullView.ScriptNotify += WebViewNotifyCommand.WebView_ScriptNotify;
-            this.navigationHelper.OnNavigatedTo(e);
+            try
+            {
+                ThreadFullView.ScriptNotify += WebViewNotifyCommand.WebView_ScriptNotify;
+                this.navigationHelper.OnNavigatedTo(e);
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            ThreadFullView.ScriptNotify -= WebViewNotifyCommand.WebView_ScriptNotify;
-            this.navigationHelper.OnNavigatedFrom(e);
+            try
+            {
+                ThreadFullView.ScriptNotify -= WebViewNotifyCommand.WebView_ScriptNotify;
+                this.navigationHelper.OnNavigatedFrom(e);
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         #endregion

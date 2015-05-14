@@ -344,7 +344,14 @@ namespace AwfulForumsReader.Common
                 // from cache
                 if (this.LoadState != null)
                 {
-                    this.LoadState(this, new LoadStateEventArgs(e.Parameter, (Dictionary<String, Object>)frameState[this._pageKey]));
+                    try
+                    {
+                        this.LoadState(this, new LoadStateEventArgs(e.Parameter, (Dictionary<String, Object>)frameState[this._pageKey]));
+                    }
+                    catch (Exception)
+                    {
+
+                    }
                 }
             }
         }
@@ -362,7 +369,14 @@ namespace AwfulForumsReader.Common
             var pageState = new Dictionary<String, Object>();
             if (this.SaveState != null)
             {
-                this.SaveState(this, new SaveStateEventArgs(pageState));
+                try
+                {
+                    this.SaveState(this, new SaveStateEventArgs(pageState));
+                }
+                catch (Exception)
+                {
+
+                }
             }
             frameState[_pageKey] = pageState;
         }

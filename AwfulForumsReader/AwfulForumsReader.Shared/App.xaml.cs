@@ -302,7 +302,7 @@ namespace AwfulForumsReader
                         (bool)_localSettings.Values[Constants.BookmarkStartup])
                     {
                         var command = new NavigateToBookmarksCommand();
-                        command.Execute(null);
+                        command.Execute(e);
                     }
                     else
                     {

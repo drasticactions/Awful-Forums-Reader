@@ -72,7 +72,7 @@ namespace AwfulForumsReader.Commands
                     await Locator.ViewModels.SaclopediaPageVm.SaclopediaManager.GetSaclopediaEntity(Constants.BaseUrl + navEntity.Link);
                 Locator.ViewModels.SaclopediaPageVm.Title = result.Title;
                  var platformIdentifier = PlatformIdentifier.Windows8;
-                 App.RootFrame.Navigate(typeof (SaclopediaEntryPage));
+                 //App.RootFrame.Navigate(typeof (SaclopediaEntryPage));
 
                 Locator.ViewModels.SaclopediaPageVm.Body = await HtmlFormater.FormatSaclopediaEntry(result.Body, platformIdentifier);
             }

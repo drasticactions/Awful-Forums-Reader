@@ -105,12 +105,25 @@ namespace AwfulForumsReader.Pages
         /// handlers that cannot cancel the navigation request.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            this.navigationHelper.OnNavigatedTo(e);
+            try
+            {
+                this.navigationHelper.OnNavigatedTo(e);
+            }
+            catch (Exception)
+            {
+                
+            }
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            this.navigationHelper.OnNavigatedFrom(e);
+            try
+            {
+                this.navigationHelper.OnNavigatedFrom(e);
+            }
+            catch (Exception)
+            {
+            }
         }
 
         #endregion

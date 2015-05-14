@@ -12,7 +12,9 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using AwfulForumsLibrary.Entity;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -26,7 +28,7 @@ namespace AwfulForumsReader.Pages
 
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
-
+        private SaclopediaNavigationTopicEntity _lastSelectedItem;
         /// <summary>
         /// This can be changed to a strongly typed view model.
         /// </summary>
@@ -51,6 +53,45 @@ namespace AwfulForumsReader.Pages
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
+        }
+
+        private void AdaptiveStates_CurrentStateChanged(object sender, VisualStateChangedEventArgs e)
+        {
+            UpdateForVisualState(e.NewState, e.OldState);
+        }
+
+        private void UpdateForVisualState(VisualState newState, VisualState oldState = null)
+        {
+            var isNarrow = newState == NarrowState;
+
+            if (isNarrow && oldState == DefaultState && _lastSelectedItem != null)
+            {
+                // Resize down to the detail item. Don't play a transition.
+                Frame.Navigate(typeof(SaclopediaEntryPage), null, new SuppressNavigationTransitionInfo());
+            }
+
+            EntranceNavigationTransitionInfo.SetIsTargetElement(MasterListView, isNarrow);
+            if (DetailContentPresenter != null)
+            {
+                EntranceNavigationTransitionInfo.SetIsTargetElement(DetailContentPresenter, !isNarrow);
+            }
+        }
+
+        private void Item_OnClick(object sender, ItemClickEventArgs e)
+        {
+            var clickedItem = (SaclopediaNavigationTopicEntity)e.ClickedItem;
+            _lastSelectedItem = clickedItem;
+            Locator.ViewModels.SaclopediaPageVm.NavigateToSaclopediaTopic.Execute(e);
+            if (AdaptiveStates.CurrentState == NarrowState)
+            {
+                // Use "drill in" transition for navigating from master list to detail view
+                Frame.Navigate(typeof(SaclopediaEntryPage), null, new DrillInNavigationTransitionInfo());
+            }
+            else
+            {
+                // Play a refresh animation when the user switches detail items.
+                //EnableContentTransitions();
+            }
         }
 
         /// <summary>
