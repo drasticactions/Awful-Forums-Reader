@@ -62,7 +62,7 @@ namespace AwfulForumsReader.Pages
             var files = await e.DataView.GetStorageItemsAsync();
             foreach (var file in files)
             {
-                await Locator.ViewModels.NewThreadReplyVm.ImgurAddImageCommand.AddImgurImage(file as StorageFile, ReplyText);
+                await Locator.ViewModels.NewThreadVm.ImgurAddImageCommand.AddImgurImage(file as StorageFile, ReplyText);
             }
             d.Complete();
             Locator.ViewModels.NewThreadVm.IsLoading = false;

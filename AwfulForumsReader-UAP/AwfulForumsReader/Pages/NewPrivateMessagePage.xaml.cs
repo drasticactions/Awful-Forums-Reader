@@ -62,16 +62,39 @@ namespace AwfulForumsReader.Pages
             var files = await e.DataView.GetStorageItemsAsync();
             foreach (var file in files)
             {
-               //await Locator.ViewModels.NewThreadReplyVm.ImgurAddImageCommand.AddImgurImage(file as StorageFile, ReplyText);
+                await Locator.ViewModels.NewPrivateMessagePageVm.ImgurAddImageCommand.AddImgurImage(file as StorageFile, ReplyText);
             }
             d.Complete();
             Locator.ViewModels.NewPrivateMessagePageVm.IsLoading = false;
         }
-
         private void Grid_DragOver(object sender, DragEventArgs e)
         {
             e.AcceptedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
             e.Handled = true;
+        }
+
+        private void PostButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Locator.ViewModels.NewPrivateMessagePageVm.SendPrivateMessageCommand.Execute(ReplyText);
+        }
+
+        private void PostIconButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Locator.ViewModels.NewPrivateMessagePageVm.NavigateToPostIconPageCommand.Execute(ReplyText);
+        }
+
+        private void BBCodeButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Locator.ViewModels.NewPrivateMessagePageVm.NavigateToBbCodePageCommand.Execute(ReplyText);
+        }
+
+        private void SmileButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Locator.ViewModels.NewPrivateMessagePageVm.NavigateToSmiliesPageCommand.Execute(ReplyText);
+        }
+        private void ImgurButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Locator.ViewModels.NewPrivateMessagePageVm.ImgurAddImageCommand.Execute(ReplyText);
         }
 
         /// <summary>
