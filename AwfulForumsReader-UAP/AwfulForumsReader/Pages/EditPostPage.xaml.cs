@@ -56,21 +56,43 @@ namespace AwfulForumsReader.Pages
 
         private async void Grid_OnDrop(object sender, DragEventArgs e)
         {
-            //Locator.ViewModels.NewThreadVm.IsLoading = true;
+            Locator.ViewModels.NewThreadVm.IsLoading = true;
             var d = e.GetDeferral();
 
             var files = await e.DataView.GetStorageItemsAsync();
             foreach (var file in files)
             {
-                //await Locator.ViewModels.NewThreadReplyVm.ImgurAddImageCommand.AddImgurImage(file as StorageFile, ReplyText);
+                await Locator.ViewModels.NewThreadReplyVm.ImgurAddImageCommand.AddImgurImage(file as StorageFile, ReplyText);
             }
             d.Complete();
-            //Locator.ViewModels.NewThreadVm.IsLoading = false;
+            Locator.ViewModels.NewThreadVm.IsLoading = false;
         }
         private void Grid_DragOver(object sender, DragEventArgs e)
         {
             e.AcceptedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
             e.Handled = true;
+        }
+
+        private void PostButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Locator.ViewModels.NewThreadReplyVm.EditThreadReplyCommand.Execute(ReplyText);
+        }
+
+        private void SmileButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Locator.ViewModels.NewThreadReplyVm.NavigateToSmiliesPageCommand.Execute(ReplyText);
+        }
+        private void BBCodeButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Locator.ViewModels.NewThreadReplyVm.NavigateToBbCodePageCommand.Execute(ReplyText);
+        }
+        private void PreviewButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Locator.ViewModels.NewThreadReplyVm.NavigateToPreviewThreadCommand.Execute(ReplyText);
+        }
+        private void ImgurButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Locator.ViewModels.NewThreadReplyVm.ImgurAddImageCommand.Execute(ReplyText);
         }
 
         /// <summary>
