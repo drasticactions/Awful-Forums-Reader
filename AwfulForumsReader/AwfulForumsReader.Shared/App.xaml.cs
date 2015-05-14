@@ -330,7 +330,7 @@ namespace AwfulForumsReader
         /// <param name="e">Details about the navigation event.</param>
         private void RootFrame_FirstNavigated(object sender, NavigationEventArgs e)
         {
-            var RootFrame = sender as Frame;
+            RootFrame = sender as Frame;
             RootFrame.ContentTransitions = this.transitions ?? new TransitionCollection() { new NavigationThemeTransition() };
             RootFrame.Navigated -= this.RootFrame_FirstNavigated;
         }

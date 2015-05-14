@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="52978DrasticActions.AwfulForumsReader" Publisher="CN=49056560-3A92-41D0-8509-DF4FE44F646C" Version="6.9.9.5" />
+  <Identity Name="52978DrasticActions.AwfulForumsReader" Publisher="CN=49056560-3A92-41D0-8509-DF4FE44F646C" Version="6.9.9.6" />
   <mp:PhoneIdentity PhoneProductId="3dd5d052-853b-47d2-abf6-7e3583847ba5" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Awful Forums Reader</DisplayName>

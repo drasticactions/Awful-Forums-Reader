@@ -13,7 +13,7 @@ namespace AwfulForumsReader.Database
 {
     public class SaclopediaDataSource : IDisposable
     {
-        private const string DBFILENAME = "Saclopedia.db";
+        private const string DBFILENAME = "SaclopediaNew.db";
         protected StorageFolder UserFolder { get; set; }
         protected SQLiteAsyncConnection Db { get; set; }
 

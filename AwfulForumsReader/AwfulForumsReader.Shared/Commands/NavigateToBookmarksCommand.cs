@@ -11,7 +11,6 @@ namespace AwfulForumsReader.Commands
     {
         public async override void Execute(object parameter)
         {
-            
             if (parameter != null)
             {
                 if (App.RootFrame.BackStackDepth < 0)
