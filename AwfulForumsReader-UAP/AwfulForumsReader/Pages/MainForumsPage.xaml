@@ -56,11 +56,11 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid x:Name="HeaderGrid"  Background="{StaticResource AwfulBlue}" RequestedTheme="Dark" Grid.Row="0">
-            <TextBlock FontSize="25" Text="Awful Forums Reader" Margin="50,0,0,0" x:Name="pageTitle" Style="{StaticResource HeaderTextBlockStyle}"
+            <TextBlock Text="Awful Forums Reader" Margin="50,0,0,0" x:Name="pageTitle" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}"
                        IsHitTestVisible="false" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
         </Grid>
             <GridView

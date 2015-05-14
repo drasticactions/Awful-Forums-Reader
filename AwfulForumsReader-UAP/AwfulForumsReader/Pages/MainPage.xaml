@@ -74,7 +74,7 @@ xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
                 <Frame x:Name="MainFrame"/>
             </SplitView.Content>
         </SplitView>
-        <ToggleButton x:Name="MenuButton" Grid.Column="0" Style="{StaticResource SymbolButton}" Click="Button_Click" VerticalAlignment="Top" Foreground="White" Margin="-9,-5,0,0">
+        <ToggleButton x:Name="MenuButton" Grid.Column="0" Style="{StaticResource SymbolButton}" Click="Button_Click" VerticalAlignment="Top" Foreground="White" Margin="-9,-1,0,0">
             <ToggleButton.Content>
                 <Border Background="Transparent" Width="40" Height="40">
                     <FontIcon x:Name="Hamburger" FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;" />

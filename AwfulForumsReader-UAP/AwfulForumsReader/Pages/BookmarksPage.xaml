@@ -48,7 +48,7 @@
         </VisualStateManager.VisualStateGroups>
         
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -69,7 +69,7 @@
                     AutomationProperties.Name="Back"
                     AutomationProperties.AutomationId="BackButton"
                     AutomationProperties.ItemType="Navigation Button" RequestedTheme="Dark" />
-            <TextBlock FontSize="25" Margin="5,0,0,0" x:Name="pageTitle" d:Text="{Binding ForumThreadEntity.Name, Source={d:DesignData /SampleData/ThreadListPageViewModelSampleData.xaml}}" Text="Bookmarks" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1"
+            <TextBlock Margin="5,0,0,0" x:Name="pageTitle" d:Text="{Binding ForumThreadEntity.Name, Source={d:DesignData /SampleData/ThreadListPageViewModelSampleData.xaml}}" Text="Bookmarks" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"
                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Center" />
         </Grid>
         <Grid x:Name="MasterListView"  Grid.Row="1">

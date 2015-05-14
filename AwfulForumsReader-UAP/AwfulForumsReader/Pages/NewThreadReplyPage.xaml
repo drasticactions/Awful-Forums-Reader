@@ -24,14 +24,14 @@
     -->
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!-- Back button and page title -->
         <Grid x:Name="grid1" Background="{StaticResource AwfulBlue}" RequestedTheme="Dark">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="40"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton"
@@ -44,7 +44,7 @@
                     AutomationProperties.Name="Back"
                     AutomationProperties.AutomationId="BackButton"
                     AutomationProperties.ItemType="Navigation Button" />
-            <TextBlock FontSize="25" x:Name="pageTitle" Margin="5,0,0,0" Text="{Binding Converter={StaticResource NewThreadReplyTitleConverter}}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1"
+            <TextBlock x:Name="pageTitle" Margin="5,0,0,0" Text="{Binding Converter={StaticResource NewThreadReplyTitleConverter}}" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"
                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Center" />
         </Grid>
         
