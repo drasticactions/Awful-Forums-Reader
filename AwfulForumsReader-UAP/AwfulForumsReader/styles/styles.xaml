@@ -106,9 +106,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Rectangle Fill="{Binding Converter={StaticResource SubforumHeaderColorConverter}}" Grid.Row="0"/>
-            <StackPanel Margin="0,5,0,0" Grid.Row="1" VerticalAlignment="Bottom">
-                <TextBlock Text="{Binding Name}" TextAlignment="Left" Foreground="Black" Height="20" Margin="15,0,15,30" />
-            </StackPanel>
+            <TextBlock Grid.Row="1" Text="{Binding Name}" TextWrapping="Wrap" TextAlignment="Left" Foreground="Black" Margin="15,5,15,0" />
             <FlyoutBase.AttachedFlyout>
                 <MenuFlyout>
                     <MenuFlyoutItem Command="{Binding DataContext.AddOrRemoveFavorite, ElementName=MainGrid}"  CommandParameter="{Binding}" Text="{Binding Converter={StaticResource AddOrRemoveFavoriteTextConverter}}"/>
@@ -117,7 +115,7 @@
         </Grid>
     </DataTemplate>
     <DataTemplate x:Key="HeaderTemplate">
-        <Grid Margin="5,0,0,5" Width="225">
+        <Grid Margin="5,0,0,5" Width="300">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
