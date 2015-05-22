@@ -1,2 +1,2 @@
-# Awful-Forums-Reader
+# Awful Forums Reader
 
