@@ -114,57 +114,58 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Commands\AddBbCodeToTextboxCommand.cs" />
-    <Compile Include="Commands\AddIgnoredUserPostCommand.cs" />
-    <Compile Include="Commands\AddOrRemoveBookmarkCommand.cs" />
-    <Compile Include="Commands\AddOrRemoveFavoriteCommand.cs" />
-    <Compile Include="Commands\AddThreadToNotificationTable.cs" />
-    <Compile Include="Commands\BackThreadPageCommand.cs" />
-    <Compile Include="Commands\BookmarkTextConverter.cs" />
-    <Compile Include="Commands\ChangePageThreadCommand.cs" />
-    <Compile Include="Commands\ChangeTabsCommand.cs" />
-    <Compile Include="Commands\ForwardThreadPageCommand.cs" />
-    <Compile Include="Commands\ImgurAddImageCommand.cs" />
-    <Compile Include="Commands\LastPageCommand.cs" />
-    <Compile Include="Commands\NavigateToBbCodePageCommand.cs" />
-    <Compile Include="Commands\NavigateToBookmarksCommand.cs" />
-    <Compile Include="Commands\NavigateToLastPostPageCommand.cs" />
-    <Compile Include="Commands\NavigateToMainForumsPage.cs" />
-    <Compile Include="Commands\NavigateToNewPrivateMessagePageCommand.cs" />
-    <Compile Include="Commands\NavigateToNewReplyCommand.cs" />
-    <Compile Include="Commands\NavigateToNewThreadCommand.cs" />
-    <Compile Include="Commands\NavigateToNewThreadPreviewCommand.cs" />
-    <Compile Include="Commands\NavigateToPostIconPageCommand.cs" />
-    <Compile Include="Commands\NavigateToPrivateMessageListPageCommand.cs" />
-    <Compile Include="Commands\NavigateToPrivateMessagePageCommand.cs" />
-    <Compile Include="Commands\NavigateToReplyPrivateMessagePageCommand.cs" />
-    <Compile Include="Commands\NavigateToSaclopedia.cs" />
-    <Compile Include="Commands\NavigateToSaclopediaTopicsList.cs" />
-    <Compile Include="Commands\NavigateToSearchPageCommand.cs" />
-    <Compile Include="Commands\NavigateToSearchResultsCommand.cs" />
-    <Compile Include="Commands\NavigateToSettingsCommand.cs" />
-    <Compile Include="Commands\NavigateToSmiliesPageCommand.cs" />
-    <Compile Include="Commands\NavigateToThreadPageCommand.cs" />
-    <Compile Include="Commands\NavigateToUserProfilePageCommand.cs" />
-    <Compile Include="Commands\PickPostIconCommand.cs" />
-    <Compile Include="Commands\PostNewThreadCommand.cs" />
-    <Compile Include="Commands\PostThreadReplyCommand.cs" />
-    <Compile Include="Commands\RefreshBookmarkListCommand.cs" />
-    <Compile Include="Commands\RefreshPrivateMessageListCommand.cs" />
-    <Compile Include="Commands\RefreshThreadListCommand.cs" />
-    <Compile Include="Commands\RefreshThreadPageCommand.cs" />
-    <Compile Include="Commands\RemoveTabCommand.cs" />
-    <Compile Include="Commands\ScrollToBottomThreadPageCommand.cs" />
-    <Compile Include="Commands\SendPrivateMessageCommand.cs" />
-    <Compile Include="Commands\SmiliesFilterOnSuggestedQuery.cs" />
-    <Compile Include="Commands\ThreadDomContentLoadedCommand.cs" />
-    <Compile Include="Commands\UnreadThreadCommand.cs" />
-    <Compile Include="Commands\WebViewNotifyCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToAboutPage.cs" />
+    <Compile Include="Commands\Posts\AddBbCodeToTextboxCommand.cs" />
+    <Compile Include="Commands\Threads\AddIgnoredUserPostCommand.cs" />
+    <Compile Include="Commands\Bookmarks\AddOrRemoveBookmarkCommand.cs" />
+    <Compile Include="Commands\Threads\AddOrRemoveFavoriteCommand.cs" />
+    <Compile Include="Commands\Threads\AddThreadToNotificationTable.cs" />
+    <Compile Include="Commands\Threads\BackThreadPageCommand.cs" />
+    <Compile Include="Commands\Bookmarks\BookmarkTextConverter.cs" />
+    <Compile Include="Commands\Threads\ChangePageThreadCommand.cs" />
+    <Compile Include="Commands\Threads\ChangeTabsCommand.cs" />
+    <Compile Include="Commands\Threads\ForwardThreadPageCommand.cs" />
+    <Compile Include="Commands\Posts\ImgurAddImageCommand.cs" />
+    <Compile Include="Commands\Threads\LastPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToBbCodePageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToBookmarksCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToLastPostPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToMainForumsPage.cs" />
+    <Compile Include="Commands\Navigation\NavigateToNewPrivateMessagePageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToNewReplyCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToNewThreadCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToNewThreadPreviewCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToPostIconPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToPrivateMessageListPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToPrivateMessagePageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToReplyPrivateMessagePageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToSaclopedia.cs" />
+    <Compile Include="Commands\Navigation\NavigateToSaclopediaTopicsList.cs" />
+    <Compile Include="Commands\Navigation\NavigateToSearchPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToSearchResultsCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToSettingsCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToSmiliesPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToThreadPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToUserProfilePageCommand.cs" />
+    <Compile Include="Commands\Threads\PickPostIconCommand.cs" />
+    <Compile Include="Commands\Posts\PostNewThreadCommand.cs" />
+    <Compile Include="Commands\Posts\PostThreadReplyCommand.cs" />
+    <Compile Include="Commands\Bookmarks\RefreshBookmarkListCommand.cs" />
+    <Compile Include="Commands\PrivateMessages\RefreshPrivateMessageListCommand.cs" />
+    <Compile Include="Commands\Threads\RefreshThreadListCommand.cs" />
+    <Compile Include="Commands\Threads\RefreshThreadPageCommand.cs" />
+    <Compile Include="Commands\Threads\RemoveTabCommand.cs" />
+    <Compile Include="Commands\Posts\ScrollToBottomThreadPageCommand.cs" />
+    <Compile Include="Commands\PrivateMessages\SendPrivateMessageCommand.cs" />
+    <Compile Include="Commands\Posts\SmiliesFilterOnSuggestedQuery.cs" />
+    <Compile Include="Commands\Posts\ThreadDomContentLoadedCommand.cs" />
+    <Compile Include="Commands\Threads\UnreadThreadCommand.cs" />
+    <Compile Include="Commands\Threads\WebViewNotifyCommand.cs" />
     <Compile Include="Common\AlwaysExecutableCommand.cs" />
     <Compile Include="Common\AsyncDelegateCommand.cs" />
     <Compile Include="Common\AutoFacConfiguration.cs" />
     <Compile Include="Common\FileAccessCommands.cs" />
-    <Compile Include="Commands\NavigateToThreadListPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToThreadListPageCommand.cs" />
     <Compile Include="Common\NavigationHelper.cs" />
     <Compile Include="Common\NotifierBase.cs" />
     <Compile Include="Common\ObservableDictionary.cs" />
@@ -172,6 +173,9 @@
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="Locator\ViewModels.cs" />
     <Compile Include="Models\MenuItem.cs" />
+    <Compile Include="Pages\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BbCodeListPage.xaml.cs">
       <DependentUpon>BbCodeListPage.xaml</DependentUpon>
     </Compile>
@@ -955,6 +959,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Pages\AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\BbCodeListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1123,6 +1131,7 @@
       <Name>AwfulForumsReader.Database</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

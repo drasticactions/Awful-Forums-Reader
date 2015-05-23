@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsReader.Commands;
+using AwfulForumsReader.Commands.Bookmarks;
+using AwfulForumsReader.Commands.Navigation;
+using AwfulForumsReader.Commands.Threads;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Tools;
 

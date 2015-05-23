@@ -4,6 +4,8 @@ using System.Text;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
 using AwfulForumsLibrary.Entity;
+using AwfulForumsReader.Commands.Navigation;
+using AwfulForumsReader.Commands.Posts;
 using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.ViewModels

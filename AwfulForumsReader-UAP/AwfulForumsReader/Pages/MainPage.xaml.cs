@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using AwfulForumsReader.Commands;
+using AwfulForumsReader.Commands.Navigation;
 using AwfulForumsReader.Models;
 using AwfulForumsReader.Tools;
 using Newtonsoft.Json;

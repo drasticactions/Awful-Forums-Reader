@@ -6,7 +6,8 @@
     xmlns:tools="using:AwfulForumsReader.Tools"
     
     RequestedTheme="Light"
-    xmlns:locator="using:AwfulForumsReader.Locator">
+    xmlns:locator="using:AwfulForumsReader.Locator"
+    xmlns:bookmarks="using:AwfulForumsReader.Commands.Bookmarks">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -27,7 +28,7 @@
             <tools:ThreadHeaderColorConverter x:Key="ThreadHeaderColorConverter" />
             <tools:RatingVisibilityConverter x:Key="RatingVisibilityConverter" />
             <tools:RepliesSinceLastOpenedColorConverter x:Key="RepliesSinceLastOpenedColorConverter" />
-            <tools:BookmarkTextConverter x:Key="BookmarkTextConverter" />
+            <bookmarks:BookmarkTextConverter x:Key="BookmarkTextConverter" />
             <tools:ForwardButtonEnableConverter x:Key="ForwardButtonEnableConverter" />
             <tools:BackButtonEnableConverter x:Key="BackButtonEnableConverter" />
             <tools:NewThreadTitleConverter x:Key="NewThreadTitleConverter" />

@@ -11,6 +11,10 @@ using AwfulForumsReader.Common;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsLibrary.Manager;
 using AwfulForumsLibrary.Tools;
+using AwfulForumsReader.Commands.Bookmarks;
+using AwfulForumsReader.Commands.Navigation;
+using AwfulForumsReader.Commands.Posts;
+using AwfulForumsReader.Commands.Threads;
 using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.ViewModels

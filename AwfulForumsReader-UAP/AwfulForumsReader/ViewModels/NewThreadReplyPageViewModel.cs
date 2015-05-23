@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsReader.Commands;
+using AwfulForumsReader.Commands.Navigation;
+using AwfulForumsReader.Commands.Posts;
 using AwfulForumsReader.Common;
 
 namespace AwfulForumsReader.ViewModels

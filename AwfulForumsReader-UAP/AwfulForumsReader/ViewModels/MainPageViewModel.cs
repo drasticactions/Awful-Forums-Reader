@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Commands;
+using AwfulForumsReader.Commands.Navigation;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Models;
 
@@ -86,6 +87,13 @@ namespace AwfulForumsReader.ViewModels
                     Icon = "\uE713",
                     Name = "Settings",
                     Command = new NavigateToSettingsCommand()
+                }
+                ,
+                new MenuItem()
+                {
+                    Icon = "\uE77B",
+                    Name = "About",
+                    Command = new NavigateToAboutPage()
                 }
             };
         }

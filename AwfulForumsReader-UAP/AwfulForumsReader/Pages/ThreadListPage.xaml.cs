@@ -16,6 +16,8 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsReader.Commands;
+using AwfulForumsReader.Commands.Posts;
+using AwfulForumsReader.Commands.Threads;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 

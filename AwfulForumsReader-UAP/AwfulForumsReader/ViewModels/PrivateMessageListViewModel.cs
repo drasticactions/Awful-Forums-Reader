@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using AwfulForumsReader.Commands;
+using AwfulForumsReader.Commands.Navigation;
+using AwfulForumsReader.Commands.PrivateMessages;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Tools;
 

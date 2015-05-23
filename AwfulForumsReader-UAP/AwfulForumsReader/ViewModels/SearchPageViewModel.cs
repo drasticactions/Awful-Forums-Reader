@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsLibrary.Manager;
 using AwfulForumsReader.Commands;
+using AwfulForumsReader.Commands.Navigation;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;

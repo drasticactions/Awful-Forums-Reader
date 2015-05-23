@@ -9,6 +9,7 @@ using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsLibrary.Manager;
+using AwfulForumsReader.Commands.Threads;
 using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.ViewModels

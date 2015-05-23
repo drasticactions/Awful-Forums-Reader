@@ -8,6 +8,8 @@ using AwfulForumsLibrary.Entity;
 using AwfulForumsLibrary.Manager;
 using AwfulForumsLibrary.Tools;
 using AwfulForumsReader.Commands;
+using AwfulForumsReader.Commands.Navigation;
+using AwfulForumsReader.Commands.Threads;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Database;
 using AwfulForumsReader.Tools;
