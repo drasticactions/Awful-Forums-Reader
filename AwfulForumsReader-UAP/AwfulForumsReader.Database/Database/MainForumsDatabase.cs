@@ -163,20 +163,44 @@ namespace AwfulForumsReader.Database
 
         public async Task AddThreadToTabListAsync(ForumThreadEntity thread)
         {
-            var db = new DataSource();
-            await db.TabRepository.Create(thread);
+            using (var db = new DataSource())
+            {
+                await db.TabRepository.Create(thread);
+            }
+        }
+
+        public async Task RemoveThreadFromTabListAsync(ForumThreadEntity thread)
+        {
+            using (var db = new DataSource())
+            {
+                await db.TabRepository.Delete(thread);
+            }
         }
 
         public async Task<List<ForumThreadEntity>> GetAllTabThreads()
         {
-            var ds = new DataSource();
-            return await ds.TabRepository.GetAllWithChildren();
+            using (var db = new DataSource())
+            {
+                return await db.TabRepository.GetAllWithChildren();
+            }
+        }
+
+        public async Task<bool> DoesTabExist(ForumThreadEntity thread)
+        {
+            using (var db = new DataSource())
+            {
+                var thread2 = db.TabRepository.Items.Where(node => node.ThreadId == thread.ThreadId);
+                var test = await thread2.FirstOrDefaultAsync();
+                return test != null;
+            }
         }
 
         public async Task RemoveAllThreadsFromTabList()
         {
-            var db = new DataSource();
-            await db.TabRepository.RemoveAll();
+            using (var db = new DataSource())
+            {
+               await db.TabRepository.RemoveAll();
+            }
         }
 
         public async Task RemoveBookmarkThreads()

@@ -37,6 +37,8 @@ namespace AwfulForumsReader.ViewModels
 
         public RefreshBookmarkListCommand RefreshBookmarkListCommand { get; set; } = new RefreshBookmarkListCommand();
 
+        public AddToThreadTabs AddToTabs { get; set; } = new AddToThreadTabs();
+
         public AddOrRemoveBookmarkCommand AddOrRemoveBookmark
         {
             get { return _addOrRemoveBookmarkCommand; }
@@ -155,7 +157,7 @@ namespace AwfulForumsReader.ViewModels
             }
             catch (Exception ex)
             {
-                AwfulDebugger.SendMessageDialogAsync("Failed to get Bookmarks (Potential EF Issue!)", ex);
+                AwfulDebugger.SendMessageDialogAsync("Failed to get Bookmarks", ex);
             }
             IsLoading = false;
         }

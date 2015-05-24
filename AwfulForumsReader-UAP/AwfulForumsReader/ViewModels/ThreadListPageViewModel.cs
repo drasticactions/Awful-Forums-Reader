@@ -45,6 +45,8 @@ namespace AwfulForumsReader.ViewModels
 
         public LastPageCommand LastPage { get; set; } = new LastPageCommand();
 
+        public AddToThreadTabs AddToTabs { get; set; } = new AddToThreadTabs();
+
         public PageScrollingCollection ForumPageScrollingCollection
         {
             get { return _forumPageScrollingCollection; }

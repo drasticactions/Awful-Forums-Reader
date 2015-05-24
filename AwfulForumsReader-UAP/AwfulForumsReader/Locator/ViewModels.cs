@@ -26,7 +26,7 @@ namespace AwfulForumsReader.Locator
 
         public static SmiliesPageViewModel SmiliesPageVm => App.Container.Resolve<SmiliesPageViewModel>();
 
-        //public static LastPostPageViewModel LastPostPageVm => App.Container.Resolve<LastPostPageViewModel>();
+        public static TabPageViewModel TabPageVm => App.Container.Resolve<TabPageViewModel>();
 
         public static MainForumsPageViewModel MainForumsPageVm => App.Container.Resolve<MainForumsPageViewModel>();
 

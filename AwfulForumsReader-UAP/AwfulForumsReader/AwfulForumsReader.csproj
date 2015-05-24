@@ -115,11 +115,13 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Commands\Navigation\NavigateToAboutPage.cs" />
+    <Compile Include="Commands\Navigation\NavigateToTabPageCommand.cs" />
     <Compile Include="Commands\Posts\AddBbCodeToTextboxCommand.cs" />
     <Compile Include="Commands\Threads\AddIgnoredUserPostCommand.cs" />
     <Compile Include="Commands\Bookmarks\AddOrRemoveBookmarkCommand.cs" />
     <Compile Include="Commands\Threads\AddOrRemoveFavoriteCommand.cs" />
     <Compile Include="Commands\Threads\AddThreadToNotificationTable.cs" />
+    <Compile Include="Commands\Threads\AddToThreadTabs.cs" />
     <Compile Include="Commands\Threads\BackThreadPageCommand.cs" />
     <Compile Include="Commands\Bookmarks\BookmarkTextConverter.cs" />
     <Compile Include="Commands\Threads\ChangePageThreadCommand.cs" />
@@ -233,6 +235,9 @@
     <Compile Include="Pages\SmiliesPage.xaml.cs">
       <DependentUpon>SmiliesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\TabPage.xaml.cs">
+      <DependentUpon>TabPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ThreadListPage.xaml.cs">
       <DependentUpon>ThreadListPage.xaml</DependentUpon>
     </Compile>
@@ -251,6 +256,7 @@
     <Compile Include="Tools\BookmarkSorting.cs" />
     <Compile Include="Tools\BooleanInverter.cs" />
     <Compile Include="Tools\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Tools\BooleanToVisibilityInverter.cs" />
     <Compile Include="Tools\ConvertImage.cs" />
     <Compile Include="Tools\ForumDateJoinedConverter.cs" />
     <Compile Include="Tools\ForwardButtonEnableConverter.cs" />
@@ -295,6 +301,7 @@
     <Compile Include="ViewModels\SaclopediaPageViewModel.cs" />
     <Compile Include="ViewModels\SearchPageViewModel.cs" />
     <Compile Include="ViewModels\SmiliesPageViewModel.cs" />
+    <Compile Include="ViewModels\TabPageViewModel.cs" />
     <Compile Include="ViewModels\ThreadListPageViewModel.cs" />
     <Compile Include="ViewModels\ThreadPageViewModel.cs" />
   </ItemGroup>
@@ -1036,6 +1043,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\SmiliesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TabPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

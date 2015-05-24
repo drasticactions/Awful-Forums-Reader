@@ -3,6 +3,7 @@ using Windows.UI.Xaml.Controls;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsLibrary.Tools;
 using AwfulForumsReader.Common;
+using AwfulForumsReader.Database;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
 
@@ -22,10 +23,13 @@ namespace AwfulForumsReader.Commands.Navigation
             if (thread == null)
                 return;
             //App.RootFrame.Navigate(typeof(ThreadPage));
-            //var tabManager = new MainForumsDatabase();
-            //await tabManager.RemoveAllThreadsFromTabList();
-            //await tabManager.AddThreadToTabListAsync(thread);
-            //var tabThreads = await tabManager.GetAllTabThreads();
+            var tabManager = new MainForumsDatabase();
+            var test = await tabManager.DoesTabExist(thread);
+            if (!thread.IsBookmark && !test)
+            {
+                await tabManager.AddThreadToTabListAsync(thread);
+            }
+
             //Locator.ViewModels.ThreadPageVm.LinkedThreads = tabThreads.ToObservableCollection();
 
             Locator.ViewModels.ThreadPageVm.ForumThreadEntity = thread;

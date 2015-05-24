@@ -78,15 +78,14 @@
                 </interactivity:Interaction.Behaviors>
             </AppBarButton>
             <CommandBar.SecondaryCommands>
-                <AppBarButton Label="Reply" Icon="Upload">
-                    <interactivity:Interaction.Behaviors>
-                        <core:EventTriggerBehavior EventName="Click">
-                            <core:InvokeCommandAction Command="{Binding NavigateToNewReplyCommand}" />
-                        </core:EventTriggerBehavior>
-                    </interactivity:Interaction.Behaviors>
-                </AppBarButton>
-                <AppBarButton Label="Thread Tabs" Icon="World"></AppBarButton>
-                <AppBarButton Label="Go To Last Post On Page" Icon="Download"></AppBarButton>
+                    <AppBarButton Label="Reply" Icon="Upload">
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="Click">
+                                <core:InvokeCommandAction Command="{Binding NavigateToNewReplyCommand}" />
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                    </AppBarButton>
+                    <AppBarButton Label="Go To Last Post On Page" Icon="Download"></AppBarButton>
             </CommandBar.SecondaryCommands>
         </CommandBar>
         </Grid>

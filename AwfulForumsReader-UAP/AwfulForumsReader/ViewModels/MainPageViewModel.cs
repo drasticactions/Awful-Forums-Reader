@@ -63,6 +63,13 @@ namespace AwfulForumsReader.ViewModels
                     Icon = "\uE8F1",
                     Name = "Bookmarks",
                     Command = new NavigateToBookmarksCommand()
+                }
+                ,
+                new MenuItem()
+                {
+                    Icon = "\uE77B",
+                    Name = "Tabs",
+                    Command = new NavigateToTabPageCommand()
                 },
                 new MenuItem()
                 {

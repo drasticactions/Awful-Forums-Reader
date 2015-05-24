@@ -1,18 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+using System.Text;
+using System.Threading.Tasks;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Database;
 using AwfulForumsReader.Tools;
-using AwfulForumsReader.ViewModels;
 
 namespace AwfulForumsReader.Commands.Threads
 {
-    public class RemoveTabCommand : AlwaysExecutableCommand
+    public class AddToThreadTabs : AlwaysExecutableCommand
     {
-        
         public async override void Execute(object parameter)
         {
             var args = parameter as ForumThreadEntity;
@@ -22,17 +21,12 @@ namespace AwfulForumsReader.Commands.Threads
                 return;
             }
 
-            Locator.ViewModels.TabPageVm.TabThreads.Remove(args);
-
             var tabManager = new MainForumsDatabase();
-            await tabManager.RemoveThreadFromTabListAsync(args);
-
-            var tabs = await tabManager.GetAllTabThreads();
-            if (tabs.Any())
+            var test = await tabManager.DoesTabExist(args);
+            if (!args.IsBookmark && !test)
             {
-                return;
+                await tabManager.AddThreadToTabListAsync(args);
             }
-            Locator.ViewModels.TabPageVm.IsEmpty = true;
         }
     }
 }

@@ -158,7 +158,11 @@ namespace AwfulForumsReader.Commands.Threads
                         await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
 
                         var tabManager = new MainForumsDatabase();
-                        await tabManager.AddThreadToTabListAsync(newThreadEntity);
+                        var test2 = await tabManager.DoesTabExist(newThreadEntity);
+                        if (!newThreadEntity.IsBookmark && test2)
+                        {
+                            await tabManager.AddThreadToTabListAsync(newThreadEntity);
+                        }
                         Locator.ViewModels.ThreadPageVm.LinkedThreads.Add(newThreadEntity);
                         break;
                     default:

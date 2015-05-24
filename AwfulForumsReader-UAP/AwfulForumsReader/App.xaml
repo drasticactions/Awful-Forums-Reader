@@ -37,6 +37,7 @@
             <tools:BooleanInverter x:Key="BooleanInverter" />
             <tools:NotifyThreadTextConverter x:Key="NotifyThreadTextConverter"/>
             <tools:ShowBackButtonConverter x:Key="ShowBackButtonConverter" />
+            <tools:BooleanToVisibilityInverter x:Key="BooleanToVisibilityInverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>
