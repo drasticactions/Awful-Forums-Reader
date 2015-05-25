@@ -85,7 +85,15 @@
                             </core:EventTriggerBehavior>
                         </interactivity:Interaction.Behaviors>
                     </AppBarButton>
-                    <AppBarButton Label="Go To Last Post On Page" Icon="Download"></AppBarButton>
+                    <AppBarButton Label="Add to Thread Tabs">
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="Click">
+                                <core:InvokeCommandAction Command="{Binding AddToTabs}" />
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                    </AppBarButton>
+                    <AppBarButton Label="Go To Last Post On Page" Icon="Download">
+                    </AppBarButton>
             </CommandBar.SecondaryCommands>
         </CommandBar>
         </Grid>

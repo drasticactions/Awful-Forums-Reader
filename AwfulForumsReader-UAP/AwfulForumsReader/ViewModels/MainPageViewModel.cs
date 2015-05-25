@@ -67,7 +67,7 @@ namespace AwfulForumsReader.ViewModels
                 ,
                 new MenuItem()
                 {
-                    Icon = "\uE77B",
+                    Icon = "\uE15C",
                     Name = "Tabs",
                     Command = new NavigateToTabPageCommand()
                 },

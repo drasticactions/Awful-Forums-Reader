@@ -14,12 +14,8 @@ namespace AwfulForumsReader.Commands.Threads
     {
         public async override void Execute(object parameter)
         {
-            var args = parameter as ForumThreadEntity;
-            if (args == null)
-            {
-                await AwfulDebugger.SendMessageDialogAsync("Thread navigation failed!:(", new Exception("Arguments are null"));
-                return;
-            }
+            var args = parameter as ForumThreadEntity ?? Locator.ViewModels.ThreadPageVm.ForumThreadEntity;
+            if (args == null) return;
 
             var tabManager = new MainForumsDatabase();
             var test = await tabManager.DoesTabExist(args);

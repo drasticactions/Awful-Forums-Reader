@@ -22,15 +22,6 @@ namespace AwfulForumsReader.Commands.Navigation
             var thread = args.ClickedItem as ForumThreadEntity;
             if (thread == null)
                 return;
-            //App.RootFrame.Navigate(typeof(ThreadPage));
-            var tabManager = new MainForumsDatabase();
-            var test = await tabManager.DoesTabExist(thread);
-            if (!thread.IsBookmark && !test)
-            {
-                await tabManager.AddThreadToTabListAsync(thread);
-            }
-
-            //Locator.ViewModels.ThreadPageVm.LinkedThreads = tabThreads.ToObservableCollection();
 
             Locator.ViewModels.ThreadPageVm.ForumThreadEntity = thread;
             Locator.ViewModels.ThreadPageVm.Html = null;
@@ -62,9 +53,6 @@ namespace AwfulForumsReader.Commands.Navigation
             };
             Locator.ViewModels.ThreadPageVm.ForumThreadEntity = newThreadEntity;
             await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
-            //var tabManager = new MainForumsDatabase();
-            //await tabManager.AddThreadToTabListAsync(newThreadEntity);
-            Locator.ViewModels.ThreadPageVm.LinkedThreads.Add(newThreadEntity);
         }
     }
 
@@ -79,13 +67,6 @@ namespace AwfulForumsReader.Commands.Navigation
                 return;
             }
 
-            //App.RootFrame.Navigate(typeof(ThreadPage));
-            //var tabManager = new MainForumsDatabase();
-            //await tabManager.RemoveAllThreadsFromTabList();
-            //await tabManager.AddThreadToTabListAsync(thread);
-            //var tabThreads = await tabManager.GetAllTabThreads();
-            //Locator.ViewModels.ThreadPageVm.LinkedThreads = tabThreads.ToObservableCollection();
-            
             thread.CurrentPage = thread.TotalPages;
             thread.RepliesSinceLastOpened = 0;
             Locator.ViewModels.ThreadPageVm.ForumThreadEntity = thread;
@@ -104,11 +85,7 @@ namespace AwfulForumsReader.Commands.Navigation
                 AwfulDebugger.SendMessageDialogAsync("Thread navigation failed!:(", new Exception("Arguments are null"));
                 return;
             }
-            //var tabManager = new MainForumsDatabase();
-            //await tabManager.RemoveAllThreadsFromTabList();
-            //await tabManager.AddThreadToTabListAsync(thread);
-            //var tabThreads = await tabManager.GetAllTabThreads();
-            //Locator.ViewModels.ThreadPageVm.LinkedThreads = tabThreads.ToObservableCollection();
+
             Locator.ViewModels.ThreadPageVm.ForumThreadEntity = thread;
             Locator.ViewModels.ThreadPageVm.Html = null;
             await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();

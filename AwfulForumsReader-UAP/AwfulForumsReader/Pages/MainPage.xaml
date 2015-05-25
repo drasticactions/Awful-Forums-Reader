@@ -54,7 +54,7 @@ xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
                 <RelativePanel RequestedTheme="Dark" VerticalAlignment="Stretch" Background="#FF1E72C9">
                     <ListView ItemClick="MenuClick"  ItemsSource="{Binding MenuItems}" IsItemClickEnabled="True" 
                  SelectionMode="None" HorizontalAlignment="Left"
-                 VerticalAlignment="Top" Margin="0,40,0,0" >
+                 VerticalAlignment="Top" Margin="-2,40,0,0" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>

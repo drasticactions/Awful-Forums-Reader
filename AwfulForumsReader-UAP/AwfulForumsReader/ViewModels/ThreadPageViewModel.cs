@@ -27,6 +27,7 @@ namespace AwfulForumsReader.ViewModels
         }
         private ForumThreadEntity _forumThreadEntity;
         private AddOrRemoveBookmarkCommand _addOrRemoveBookmarkCommand = new AddOrRemoveBookmarkCommand();
+        public AddToThreadTabs AddToTabs { get; set; } = new AddToThreadTabs();
         private bool _threadNotSelected;
 
         public bool ThreadNotSelected

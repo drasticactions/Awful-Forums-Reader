@@ -14,6 +14,7 @@ namespace AwfulForumsReader.ViewModels
 {
     public class TabPageViewModel : NotifierBase
     {
+        public AddToThreadTabs AddToTabs { get; set; } = new AddToThreadTabs();
         private ObservableCollection<ForumThreadEntity> _tabThreads;
 
         public ObservableCollection<ForumThreadEntity> TabThreads
