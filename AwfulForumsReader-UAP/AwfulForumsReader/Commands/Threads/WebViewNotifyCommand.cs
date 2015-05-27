@@ -159,7 +159,7 @@ namespace AwfulForumsReader.Commands.Threads
 
                         var tabManager = new MainForumsDatabase();
                         var test2 = await tabManager.DoesTabExist(newThreadEntity);
-                        if (!newThreadEntity.IsBookmark && test2)
+                        if (!test2)
                         {
                             await tabManager.AddThreadToTabListAsync(newThreadEntity);
                         }
