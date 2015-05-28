@@ -30,6 +30,8 @@ namespace AwfulForumsReader.ViewModels
         public NavigateToSaclopedia NavigateToSaclopedia { get; set; } = new NavigateToSaclopedia();
         public NavigateToSettingsCommand NavigateToSettingsCommand { get; set; } = new NavigateToSettingsCommand();
 
+        public NavigateToAboutPage NavigateToAboutPage { get; set; } = new NavigateToAboutPage();
+
         public MainForumsPageViewModel()
         {
             if (ForumGroupList != null) return;

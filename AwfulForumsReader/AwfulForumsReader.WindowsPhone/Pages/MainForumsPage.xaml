@@ -160,7 +160,7 @@
                     </triggers:EventTrigger>
                 </triggers:Interactions.Triggers>
             </AppBarButton>
-            <AppBarButton Icon="Setting" x:Name="SaclopediaButton" Label="SAclopedia">
+            <AppBarButton Icon="List" x:Name="SaclopediaButton" Label="SAclopedia">
                 <triggers:Interactions.Triggers>
                     <triggers:EventTrigger EventName="Click">
                         <triggers:InvokeCommandAction Command="{Binding NavigateToSaclopedia}"/>
@@ -173,6 +173,13 @@
                     <triggers:Interactions.Triggers>
                         <triggers:EventTrigger EventName="Click">
                             <triggers:InvokeCommandAction Command="{Binding NavigateToSettingsCommand}"/>
+                        </triggers:EventTrigger>
+                    </triggers:Interactions.Triggers>
+                </AppBarButton>
+                <AppBarButton Label="About This App" IsCompact="True">
+                    <triggers:Interactions.Triggers>
+                        <triggers:EventTrigger EventName="Click">
+                            <triggers:InvokeCommandAction Command="{Binding NavigateToAboutPage}"/>
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                 </AppBarButton>

@@ -46,7 +46,6 @@ namespace AwfulForumsReader
         /// <summary>
         /// Allows tracking page views, exceptions and other telemetry through the Microsoft Application Insights service.
         /// </summary>
-        public TelemetryClient TelemetryClient = new TelemetryClient();
         public static IContainer Container;
         private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
         public static Frame RootFrame;
