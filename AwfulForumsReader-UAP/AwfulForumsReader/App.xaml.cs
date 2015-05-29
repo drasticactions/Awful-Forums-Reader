@@ -46,6 +46,8 @@ namespace AwfulForumsReader
         /// <summary>
         /// Allows tracking page views, exceptions and other telemetry through the Microsoft Application Insights service.
         /// </summary>
+        /// 
+        public static Microsoft.ApplicationInsights.TelemetryClient TelemetryClient;
         public static IContainer Container;
         private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
         public static Frame RootFrame;
@@ -55,6 +57,9 @@ namespace AwfulForumsReader
         /// </summary>
         public App()
         {
+            TelemetryClient = new Microsoft.ApplicationInsights.TelemetryClient();
+
+            TelemetryClient = new TelemetryClient();
             this.InitializeComponent();
             this.Suspending += OnSuspending;
             try
