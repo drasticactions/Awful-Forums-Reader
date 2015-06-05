@@ -143,9 +143,15 @@
             </Grid.RowDefinitions>
             <Rectangle Fill="{Binding Converter={StaticResource SubforumHeaderColorConverter}}" Grid.Row="0"/>
             <TextBlock Grid.Row="1" Text="{Binding Name}" TextWrapping="Wrap" TextAlignment="Left" Foreground="Black" Margin="15,5,15,0" />
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="RightTapped">
+                    <tools:OpenMenuFlyoutAction />
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
             <FlyoutBase.AttachedFlyout>
                 <MenuFlyout>
                     <MenuFlyoutItem Command="{Binding DataContext.AddOrRemoveFavorite, ElementName=MainGrid}"  CommandParameter="{Binding}" Text="{Binding Converter={StaticResource AddOrRemoveFavoriteTextConverter}}"/>
+                    <MenuFlyoutItem Command="{Binding DataContext.CreateForumTile, ElementName=MainGrid}"  CommandParameter="{Binding}" Text="Add as Tile to Start Screen"/>
                 </MenuFlyout>
             </FlyoutBase.AttachedFlyout>
         </Grid>

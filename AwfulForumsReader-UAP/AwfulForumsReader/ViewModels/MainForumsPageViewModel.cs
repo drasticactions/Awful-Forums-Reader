@@ -8,6 +8,7 @@ using AwfulForumsLibrary.Entity;
 using AwfulForumsLibrary.Manager;
 using AwfulForumsLibrary.Tools;
 using AwfulForumsReader.Commands;
+using AwfulForumsReader.Commands.Forums;
 using AwfulForumsReader.Commands.Navigation;
 using AwfulForumsReader.Commands.Threads;
 using AwfulForumsReader.Common;
@@ -61,6 +62,8 @@ namespace AwfulForumsReader.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public CreateForumTileCommand CreateForumTile { get; set; } = new CreateForumTileCommand();
 
         public AddOrRemoveFavoriteCommand AddOrRemoveFavorite { get; set; } = new AddOrRemoveFavoriteCommand();
 

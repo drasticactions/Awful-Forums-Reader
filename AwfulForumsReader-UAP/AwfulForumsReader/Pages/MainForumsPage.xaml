@@ -34,7 +34,7 @@
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
     -->
-    <Grid>
+    <Grid x:Name="MainGrid">
                 <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState x:Name="midState">
@@ -85,10 +85,10 @@
             </GroupStyle>
         </GridView.GroupStyle>
         <i:Interaction.Behaviors>
-            <core:EventTriggerBehavior EventName="ItemClick">
-                <core:InvokeCommandAction Command="{Binding NavigateToThreadListPageCommand}" />
-            </core:EventTriggerBehavior>
-        </i:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="ItemClick">
+                    <core:InvokeCommandAction Command="{Binding NavigateToThreadListPageCommand}" />
+                </core:EventTriggerBehavior>
+            </i:Interaction.Behaviors>
     </GridView>
     </Grid>
 </Page>

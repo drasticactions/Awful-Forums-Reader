@@ -116,6 +116,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Commands\Forums\CreateForumTileCommand.cs" />
     <Compile Include="Commands\Navigation\NavigateToAboutPage.cs" />
     <Compile Include="Commands\Navigation\NavigateToTabPageCommand.cs" />
     <Compile Include="Commands\Posts\AddBbCodeToTextboxCommand.cs" />

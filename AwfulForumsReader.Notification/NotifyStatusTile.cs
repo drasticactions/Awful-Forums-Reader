@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 using Windows.Data.Xml.Dom;
 using Windows.Networking.Connectivity;
 using Windows.UI.Notifications;
+using Windows.UI.StartScreen;
 using AwfulForumsLibrary.Entity;
+using Newtonsoft.Json;
 
 namespace AwfulForumsReader.Notification
 {
@@ -22,6 +25,20 @@ namespace AwfulForumsReader.Notification
             bool internet = connections != null &&
                             connections.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess;
             return internet;
+        }
+
+        public static async Task<bool> CreateSecondaryForumLinkTile(ForumEntity forumEntity)
+        {
+            var tileId = forumEntity.ForumId;
+            var pinned = SecondaryTile.Exists(tileId.ToString());
+            if (pinned)
+                return true;
+            var tile = new SecondaryTile(tileId.ToString())
+            {
+                DisplayName = forumEntity.Name,
+                Arguments = JsonConvert.SerializeObject(forumEntity)
+            };
+            return await tile.RequestCreateAsync();
         }
 
         public static void CreateBookmarkLiveTile(ForumThreadEntity forumThread)
