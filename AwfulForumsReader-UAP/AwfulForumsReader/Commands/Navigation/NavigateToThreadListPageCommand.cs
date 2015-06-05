@@ -30,4 +30,29 @@ namespace AwfulForumsReader.Commands.Navigation
             }
         }
     }
+
+    public class NavigateToThreadListPageCommandViaTile : AlwaysExecutableCommand
+    {
+        public override void Execute(object parameter)
+        {
+            var forumEntity = parameter as ForumEntity;
+            if (forumEntity == null)
+            {
+                AwfulDebugger.SendMessageDialogAsync("Thread navigation failed!:(", new Exception("Arguments are null"));
+                return;
+            }
+            try
+            {
+                var threadViewModel = Locator.ViewModels.ThreadListPageVm;
+                threadViewModel.Initialize(forumEntity);
+                App.RootFrame.Navigate(typeof(ThreadListPage));
+            }
+            catch (Exception ex)
+            {
+                AwfulDebugger.SendMessageDialogAsync("Thread navigation failed!:(", ex);
+            }
+        }
+    }
+
+
 }

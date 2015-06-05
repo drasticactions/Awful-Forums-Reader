@@ -33,10 +33,14 @@ namespace AwfulForumsReader.Notification
             var pinned = SecondaryTile.Exists(tileId.ToString());
             if (pinned)
                 return true;
+
+            Uri square150X150Logo = new Uri("ms-appx:///Assets/Logo.png");
+
             var tile = new SecondaryTile(tileId.ToString())
             {
                 DisplayName = forumEntity.Name,
-                Arguments = JsonConvert.SerializeObject(forumEntity)
+                Arguments = JsonConvert.SerializeObject(forumEntity),
+                VisualElements = { Square150x150Logo = square150X150Logo, ShowNameOnSquare150x150Logo = true},
             };
             return await tile.RequestCreateAsync();
         }

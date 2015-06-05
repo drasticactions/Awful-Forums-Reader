@@ -15,6 +15,7 @@ using Windows.Phone.UI.Input;
 using Windows.Storage;
 using Windows.System;
 using Windows.UI;
+using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -94,12 +95,7 @@ namespace AwfulForumsReader
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
-            var ns = "Windows.Phone.UI.Input.HardwareButtons";
-            if (ApiInformation.IsTypePresent(ns))
-            {
-                
-                HardwareButtons.BackPressed += Back_BackPressed;
-            }
+            SystemNavigationManager.GetForCurrentView().BackRequested += BackPressed;
             RootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -152,7 +148,7 @@ namespace AwfulForumsReader
             Window.Current.Activate();
         }
 
-        private void Back_BackPressed(object sender, BackPressedEventArgs e)
+        private void BackPressed(object sender, BackRequestedEventArgs e)
         {
             if (RootFrame == null)
             {

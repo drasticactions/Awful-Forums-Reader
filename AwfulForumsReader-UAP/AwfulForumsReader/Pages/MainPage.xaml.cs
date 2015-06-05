@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using AwfulForumsLibrary.Entity;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Commands.Navigation;
 using AwfulForumsReader.Models;
@@ -75,6 +76,13 @@ namespace AwfulForumsReader.Pages
                 {
                     var bookmarkCommand = new NavigateToBookmarksCommand();
                     bookmarkCommand.Execute(arguments.threadId);
+                }
+
+                var forumEntity = JsonConvert.DeserializeObject<ForumEntity>(launchString);
+                if (forumEntity != null)
+                {
+                    var navigateCommand = new NavigateToThreadListPageCommandViaTile();
+                    navigateCommand.Execute(forumEntity);
                 }
             }
         }
