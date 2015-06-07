@@ -157,18 +157,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\AwfulForumsLibrary\AwfulForumsLibrary\AwfulForumsLibrary.csproj">
-      <Project>{02db53cb-7539-4ec0-a7cf-36070640193f}</Project>
-      <Name>AwfulForumsLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <SDKReference Include="Microsoft.VCLibs.AppLocal, version=14.0">
       <Name>Microsoft Visual C++  AppLocal Runtime Package for Windows UAP</Name>
     </SDKReference>
     <SDKReference Include="SQLite.UAP.2015, Version=3.8.10">
       <Name>SQLite for Universal App Platform</Name>
     </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\AwfulForumsLibrary\AwfulForumsLibrary\AwfulForumsLibrary.csproj">
+      <Project>{02db53cb-7539-4ec0-a7cf-36070640193f}</Project>
+      <Name>AwfulForumsLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
