@@ -208,5 +208,39 @@ namespace AwfulForumsReader.Database
             var dbs = new BookmarkDataSource();
             await dbs.BookmarkForumRepository.RemoveAll();
         }
+
+        public async Task SaveThreadReplyDraft(string replyText, ForumThreadEntity thread)
+        {
+            using (var db = new DataSource())
+            {
+                var savedDraft =
+                    await db.DraftRepository.Items.Where(node => node.ThreadId == thread.ThreadId).FirstOrDefaultAsync();
+                if (savedDraft == null)
+                {
+                    savedDraft = new DraftEntity()
+                    {
+                        ThreadId = thread.ThreadId,
+                        Draft = replyText,
+                        ForumId = thread.ForumId,
+                        NewThread = false,
+                        Id = thread.ThreadId
+                    };
+                    await db.DraftRepository.Create(savedDraft);
+                    return;
+                }
+
+                savedDraft.Draft = replyText;
+                await db.DraftRepository.Update(savedDraft);
+
+            }
+        }
+
+        public async Task<DraftEntity> LoadThreadDraftEntity(ForumThreadEntity thread)
+        {
+            using (var db = new DataSource())
+            {
+                return await db.DraftRepository.Items.Where(node => node.ThreadId == thread.ThreadId).FirstOrDefaultAsync();
+            }
+        }
     }
 }

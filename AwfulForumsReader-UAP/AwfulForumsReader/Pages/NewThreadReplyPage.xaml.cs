@@ -96,6 +96,16 @@ namespace AwfulForumsReader.Pages
             Locator.ViewModels.NewThreadReplyVm.ImgurAddImageCommand.Execute(ReplyText);
         }
 
+        private void SaveThreadDraft_OnClick(object sender, RoutedEventArgs e)
+        {
+            Locator.ViewModels.NewThreadReplyVm.SaveThreadDraft.Execute(ReplyText);
+        }
+
+        private void LoadThreadDraft_OnClick(object sender, RoutedEventArgs e)
+        {
+            Locator.ViewModels.NewThreadReplyVm.LoadDraft.Execute(ReplyText);
+        }
+
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also
         /// provided when recreating a page from a prior session.

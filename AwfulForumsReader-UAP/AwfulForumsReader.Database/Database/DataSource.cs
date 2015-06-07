@@ -24,6 +24,8 @@ namespace AwfulForumsReader.Database
 
         public Repository<ForumThreadEntity> TabRepository { get; set; } 
 
+        public Repository<DraftEntity> DraftRepository { get; set; } 
+
 
         public DataSource()
         {
@@ -37,6 +39,8 @@ namespace AwfulForumsReader.Database
             ForumRepository = new Repository<ForumEntity>(Db);
 
             TabRepository = new Repository<ForumThreadEntity>(Db);
+
+            DraftRepository = new Repository<DraftEntity>(Db);
         }
 
         public void InitDatabase()
@@ -74,6 +78,11 @@ namespace AwfulForumsReader.Database
             if (existingTables.Any(x => x.name == "ForumThreadEntity") != true)
             {
                 Db.CreateTableAsync<ForumThreadEntity>().GetAwaiter().GetResult();
+            }
+
+            if (existingTables.Any(x => x.name == "DraftEntity") != true)
+            {
+                Db.CreateTableAsync<DraftEntity>().GetAwaiter().GetResult();
             }
         }
 

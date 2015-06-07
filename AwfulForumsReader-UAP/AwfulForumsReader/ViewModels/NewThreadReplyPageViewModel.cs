@@ -18,6 +18,10 @@ namespace AwfulForumsReader.ViewModels
 
         public NavigateToEditThreadPreviewCommand NavigateToEditThreadPreviewCommand { get; set; } = new NavigateToEditThreadPreviewCommand();
 
+        public SaveThreadDraftCommand SaveThreadDraft { get; set; } = new SaveThreadDraftCommand();
+
+        public LoadDraftCommand LoadDraft { get; set; } = new LoadDraftCommand();
+
         public EditThreadReplyCommand EditThreadReplyCommand { get; set; } = new EditThreadReplyCommand();
 
         public bool IsEdit { get; set; }

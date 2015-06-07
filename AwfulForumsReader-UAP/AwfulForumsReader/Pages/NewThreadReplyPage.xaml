@@ -85,6 +85,10 @@
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE950;" />
                 </AppBarButton.Icon>
             </AppBarButton>
+                        <CommandBar.SecondaryCommands>
+                            <AppBarButton Click="SaveThreadDraft_OnClick" Label="Save Draft"/>
+                            <AppBarButton Click="LoadThreadDraft_OnClick" Label="Load Draft"/>
+                        </CommandBar.SecondaryCommands>
         </CommandBar>
                 </Grid>
             </Grid>

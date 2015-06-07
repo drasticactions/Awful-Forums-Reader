@@ -129,6 +129,7 @@
     <Compile Include="Commands\Bookmarks\BookmarkTextConverter.cs" />
     <Compile Include="Commands\Threads\ChangePageThreadCommand.cs" />
     <Compile Include="Commands\Threads\ChangeTabsCommand.cs" />
+    <Compile Include="Commands\Posts\DraftCommands.cs" />
     <Compile Include="Commands\Threads\ForwardThreadPageCommand.cs" />
     <Compile Include="Commands\Posts\ImgurAddImageCommand.cs" />
     <Compile Include="Commands\Threads\LastPageCommand.cs" />
