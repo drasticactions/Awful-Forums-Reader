@@ -125,7 +125,7 @@
                 </MenuFlyout>
             </FlyoutBase.AttachedFlyout>
             <interactivity:Interaction.Behaviors>
-                <core:EventTriggerBehavior EventName="RightTapped">
+                <core:EventTriggerBehavior EventName="Holding">
                     <tools:OpenMenuFlyoutAction />
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
