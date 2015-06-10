@@ -58,8 +58,6 @@ namespace AwfulForumsReader
         /// </summary>
         public App()
         {
-            TelemetryClient = new Microsoft.ApplicationInsights.TelemetryClient();
-
             TelemetryClient = new TelemetryClient();
             this.InitializeComponent();
             this.Suspending += OnSuspending;
