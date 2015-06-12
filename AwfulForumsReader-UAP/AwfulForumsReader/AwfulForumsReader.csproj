@@ -273,6 +273,7 @@
     <Compile Include="Tools\NewThreadTitleConverter.cs" />
     <Compile Include="Tools\NotifyThreadTextConverter.cs" />
     <Compile Include="Tools\OpenMenuFlyoutAction.cs" />
+    <Compile Include="Tools\PageNumberConverter.cs" />
     <Compile Include="Tools\PageScrollingCollection.cs" />
     <Compile Include="Tools\PrivateMessageScrollingCollection.cs" />
     <Compile Include="Tools\RatingVisibilityConverter.cs" />
