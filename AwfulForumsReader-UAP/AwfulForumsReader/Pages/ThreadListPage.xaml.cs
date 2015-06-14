@@ -39,7 +39,7 @@ namespace AwfulForumsReader.Pages
             if (AdaptiveStates.CurrentState == NarrowState)
             {
                 // Use "drill in" transition for navigating from master list to detail view
-                Frame.Navigate(typeof(ThreadPage), null, new DrillInNavigationTransitionInfo());
+                App.RootFrame.Navigate(typeof(ThreadPage), null, new DrillInNavigationTransitionInfo());
             }
             else
             {
@@ -60,7 +60,7 @@ namespace AwfulForumsReader.Pages
             if (isNarrow && oldState == DefaultState && _lastSelectedItem != null)
             {
                 // Resize down to the detail item. Don't play a transition.
-                Frame.Navigate(typeof(ThreadPage), null, new SuppressNavigationTransitionInfo());
+                App.RootFrame.Navigate(typeof(ThreadPage), null, new SuppressNavigationTransitionInfo());
             }
 
             EntranceNavigationTransitionInfo.SetIsTargetElement(MasterListView, isNarrow);

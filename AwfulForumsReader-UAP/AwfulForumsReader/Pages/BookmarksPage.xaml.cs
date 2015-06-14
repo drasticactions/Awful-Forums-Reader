@@ -40,7 +40,7 @@ namespace AwfulForumsReader.Pages
             if (AdaptiveStates.CurrentState == NarrowState)
             {
                 // Use "drill in" transition for navigating from master list to detail view
-                Frame.Navigate(typeof(ThreadPage), null, new DrillInNavigationTransitionInfo());
+                App.RootFrame.Navigate(typeof(ThreadPage), null, new DrillInNavigationTransitionInfo());
             }
             else
             {
