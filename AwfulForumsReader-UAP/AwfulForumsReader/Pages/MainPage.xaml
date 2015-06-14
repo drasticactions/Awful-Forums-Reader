@@ -63,7 +63,7 @@ xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Grid.Column="0" FontSize="25"  FontFamily="Segoe MDL2 Assets" Text="{Binding Icon}" />
-                                    <TextBlock Padding="25,0,0,0" FontSize="20"  TextAlignment="Left" Grid.Column="1" Text="{Binding Name}" />
+                                    <TextBlock Padding="25,3,0,0" FontSize="15" Style="{StaticResource TagLineTextStyle}"  TextAlignment="Left" Grid.Column="1" Text="{Binding Name}" />
                                 </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>
