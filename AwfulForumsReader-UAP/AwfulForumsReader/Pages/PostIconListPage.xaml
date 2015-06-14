@@ -30,7 +30,7 @@
         <!-- Back button and page title -->
         <Grid x:Name="grid1" Background="{StaticResource AwfulBlue}" RequestedTheme="Dark">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="40"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <TextBlock x:Name="pageTitle" Margin="5,0,0,0" Text="Post Icon" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"

@@ -53,7 +53,7 @@
         <!-- Back button and page title -->
         <Grid Background="{StaticResource AwfulBlue}" RequestedTheme="Dark">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="40" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <TextBlock Margin="5,0,0,0" x:Name="pageTitle" Text="Private Messages" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"

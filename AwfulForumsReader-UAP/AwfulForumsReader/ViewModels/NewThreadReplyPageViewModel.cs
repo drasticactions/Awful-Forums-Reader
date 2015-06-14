@@ -68,7 +68,7 @@ namespace AwfulForumsReader.ViewModels
 
         public NavigateToBbCodePageCommand NavigateToBbCodePageCommand { get; set; } = new NavigateToBbCodePageCommand();
 
-        public NavigateToNewThreadPreviewCommand NavigateToPreviewThreadCommand { get; set; } = new NavigateToNewThreadPreviewCommand();
+        public NavigateToEditThreadPreviewCommand NavigateToPreviewThreadCommand { get; set; } = new NavigateToEditThreadPreviewCommand();
 
         public NavigateToPostIconPageCommand NavigateToPostIconPageCommand { get; set; } = new NavigateToPostIconPageCommand();
 
