@@ -1,2 +1,0 @@
-# Awful Forums Reader
-
