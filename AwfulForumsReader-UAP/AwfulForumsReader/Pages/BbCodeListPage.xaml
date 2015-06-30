@@ -33,13 +33,25 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="DefaultState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HamburgerPlacement.Width" Value="0" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <!-- Back button and page title -->
         <Grid RequestedTheme="Dark" Background="{StaticResource AwfulBlue}">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40" />
+                <ColumnDefinition x:Name="HamburgerPlacement" Width="40" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            
             <TextBlock Margin="5,0,0,0" x:Name="pageTitle" Text="BB Code" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"
                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Center" />
         </Grid>

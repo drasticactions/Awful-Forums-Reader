@@ -14,9 +14,11 @@ xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     mc:Ignorable="d">
     <interactivity:Interaction.Behaviors>
         <tools:StatusBarBehavior IsVisible="True" 
+                                 BackgroundOpacity="1"
                                  BackgroundColor="#FF1E72C9"
                                  ForegroundColor="White"/>
     </interactivity:Interaction.Behaviors>
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>

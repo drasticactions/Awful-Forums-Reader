@@ -11,6 +11,7 @@
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:tools="using:AwfulForumsReader.Tools"
+    xmlns:scrollViewer="using:AwfulForumsReader.ScrollViewer"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -31,6 +32,9 @@
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="800" />
                     </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HamburgerPlacement.Width" Value="0" />
+                    </VisualState.Setters>
                 </VisualState>
 
                 <VisualState x:Name="NarrowState">
@@ -53,7 +57,7 @@
         <!-- Back button and page title -->
         <Grid Background="{StaticResource AwfulBlue}" RequestedTheme="Dark">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40" />
+                <ColumnDefinition x:Name="HamburgerPlacement" Width="40" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <TextBlock Margin="5,0,0,0" x:Name="pageTitle" Text="Private Messages" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"
@@ -73,59 +77,67 @@
                 <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Height="50"/>
                 <Rectangle Fill="White" Opacity=".5"/>
             </Grid>
-                <ListView Grid.Row="0" RequestedTheme="Light"  x:Name="PrivateMessageList" ItemsSource="{Binding PrivateMessageScrollingCollection}"
+                <scrollViewer:PullToRefreshScrollViewer
+            Grid.Row="0"
+            RefreshCommand="{Binding RefreshPrivateMessageListCommand}"
+            ArrowColor="#004050"
+            RefreshText="Release to refresh"
+            PullText="Pull to refresh">
+                    <ListView Grid.Row="0" RequestedTheme="Light"  x:Name="PrivateMessageList" ItemsSource="{Binding PrivateMessageScrollingCollection}"
                       HorizontalAlignment="Stretch" ItemClick="Thread_OnClick" IsSwipeEnabled="True" Grid.Column="0" SelectionMode="Single"
                       IsItemClickEnabled="True">
-                    <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                    </Style>
-                </ListView.ItemContainerStyle>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.Background>
-                                <SolidColorBrush Color="#F1F1F1" Opacity="{Binding Converter={StaticResource BackgroundWallpaperOpacityConverter}}"></SolidColorBrush>
-                            </Grid.Background>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0" Height="5"
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.Background>
+                                        <SolidColorBrush Color="#F1F1F1" Opacity="{Binding Converter={StaticResource BackgroundWallpaperOpacityConverter}}"></SolidColorBrush>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0" Height="5"
                                   Background="Black" />
-                            <Grid Grid.Row="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="30" />
-                                    <ColumnDefinition Width="80" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}"
+                                    <Grid Grid.Row="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30" />
+                                            <ColumnDefinition Width="80" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}"
                                         Grid.Column="0" Width="16" Height="16">
-                                    <Image Source="{Binding Status}"
+                                            <Image Source="{Binding Status}"
                                            AutomationProperties.Name="{Binding Title}" />
-                                </Border>
-                                <Border Background="Transparent"
+                                        </Border>
+                                        <Border Background="Transparent"
                                         Grid.Column="1" Width="60" Height="60">
-                                    <Image Source="{Binding Icon}"
+                                            <Image Source="{Binding Icon}"
                                            AutomationProperties.Name="{Binding Title}" />
-                                </Border>
-                                <StackPanel Grid.Column="2">
-                                    <TextBlock x:Name="ThreadTitle" FontWeight="Bold" TextWrapping="Wrap"
+                                        </Border>
+                                        <StackPanel Grid.Column="2">
+                                            <TextBlock x:Name="ThreadTitle" FontWeight="Bold" TextWrapping="Wrap"
                                                Text="{Binding Title}" />
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Sender:" />
-                                        <TextBlock x:Name="TotalPages" Margin="5,0,0,0" Text="{Binding Sender}" />
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Date:" Margin="0,0,0,0" />
-                                        <TextBlock Text="{Binding Date}" Margin="5,0,0,0" />
-                                    </StackPanel>
-                                </StackPanel>
-                            </Grid>
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Sender:" />
+                                                <TextBlock x:Name="TotalPages" Margin="5,0,0,0" Text="{Binding Sender}" />
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Date:" Margin="0,0,0,0" />
+                                                <TextBlock Text="{Binding Date}" Margin="5,0,0,0" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </scrollViewer:PullToRefreshScrollViewer>
+                   
             <Grid Grid.Row="1">
                <CommandBar>
             <AppBarButton Label="New PM" Icon="Add">

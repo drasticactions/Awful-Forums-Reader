@@ -34,10 +34,21 @@
       <RowDefinition Height="50"/>
       <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="DefaultState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HamburgerPlacement.Width" Value="0" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid x:Name="grid1" Background="{StaticResource AwfulBlue}" RequestedTheme="Dark">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40" />
+                <ColumnDefinition x:Name="HamburgerPlacement" Width="40" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <TextBlock Margin="5,0,0,0" x:Name="pageTitle" d:Text="{Binding ForumEntity.Name, Source={d:DesignData /SampleData/ThreadListPageViewModelSampleData.xaml}}" Text="Search" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"

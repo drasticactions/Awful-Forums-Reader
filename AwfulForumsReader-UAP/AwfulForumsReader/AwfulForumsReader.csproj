@@ -177,6 +177,7 @@
     <Compile Include="Common\ObservableDictionary.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="ScrollViewer\PullToRefreshScrollViewer.cs" />
     <Compile Include="Locator\ViewModels.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Pages\AboutPage.xaml.cs">
@@ -1068,6 +1069,11 @@
     <Page Include="styles\styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
   </ItemGroup>
   <ItemGroup>

@@ -16,6 +16,7 @@
                     Styles that define common aspects of the platform look and feel
                     Required by Visual Studio project and item templates
                  -->
+            <ResourceDictionary Source="/Themes/Generic.xaml"/>
             <ResourceDictionary Source="/Styles/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <locator:ViewModels x:Name="Locator" />

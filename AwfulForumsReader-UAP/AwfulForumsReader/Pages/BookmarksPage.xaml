@@ -11,6 +11,7 @@
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:tools="using:AwfulForumsReader.Tools"
+    xmlns:scrollViewer="using:AwfulForumsReader.ScrollViewer"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -31,6 +32,9 @@
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="800" />
                     </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HamburgerPlacement.Width" Value="0" />
+                    </VisualState.Setters>
                 </VisualState>
                 
                 <VisualState x:Name="NarrowState">
@@ -56,7 +60,7 @@
         <!-- Back button and page title -->
         <Grid x:Name="grid1" Background="{StaticResource AwfulBlue}" RequestedTheme="Dark">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40" />
+                <ColumnDefinition x:Name="HamburgerPlacement" Width="40" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <TextBlock Margin="5,0,0,0" x:Name="pageTitle" d:Text="{Binding ForumThreadEntity.Name, Source={d:DesignData /SampleData/ThreadListPageViewModelSampleData.xaml}}" Text="Bookmarks" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"
@@ -81,20 +85,28 @@
                 <ProgressRing VerticalAlignment="Center" Height="50"/>
                 <Rectangle Fill="White" Opacity=".5"/>
             </Grid>
-            <ListView Grid.Row="0" ItemContainerTransitions="{x:Null}" x:Name="ForumThreadList"
+                <scrollViewer:PullToRefreshScrollViewer
+            Grid.Row="0"
+            RefreshCommand="{Binding RefreshBookmarkListCommand}"
+            ArrowColor="#004050"
+            RefreshText="Release to refresh"
+            PullText="Pull to refresh">
+                    <ListView Grid.Row="0" ItemContainerTransitions="{x:Null}" x:Name="ForumThreadList"
                       HorizontalAlignment="Stretch"
                       ItemClick="Bookmark_OnClick"
+                             
                       IsSwipeEnabled="True" Grid.Column="1"
                       ItemTemplate="{StaticResource ThreadTemplate}"
                       ItemsSource="{Binding  BookmarkedThreads}"
                       IsItemClickEnabled="True">
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="ListViewItem">
-                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                        </Style>
-                    </ListView.ItemContainerStyle>
-                </ListView>
-                        <Grid Grid.Row="1">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                    </ListView>
+                </scrollViewer:PullToRefreshScrollViewer>
+                <Grid Grid.Row="1">
             <CommandBar>
             <AppBarButton Icon="Refresh" Label="Refresh">
             <interactivity:Interaction.Behaviors>
