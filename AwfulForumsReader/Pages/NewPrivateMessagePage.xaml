@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <!-- Back button and page title -->
-        <Grid x:Name="grid1" Background="{StaticResource AwfulBlue}" RequestedTheme="Dark">
+        <Grid x:Name="grid1" Background="{StaticResource AwfulBlue}" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="40"/>
                 <ColumnDefinition Width="*"/>

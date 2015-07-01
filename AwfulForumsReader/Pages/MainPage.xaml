@@ -1,4 +1,4 @@
-﻿<Page
+﻿<themeManagerRt:ThemeEnabledPage 
     x:Name="pageRoot"
     x:Class="AwfulForumsReader.Pages.MainPage"
     DataContext="{Binding Source={StaticResource Locator}, Path=MainPageVm}"
@@ -7,15 +7,15 @@
     xmlns:local="using:AwfulForumsReader.Pages"
     xmlns:common="using:AwfulForumsReader.Common"
     xmlns:tools="using:AwfulForumsReader.Tools"
-xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
-
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:themeManagerRt="using:ThemeManagerRt"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <interactivity:Interaction.Behaviors>
         <tools:StatusBarBehavior IsVisible="True" 
                                  BackgroundOpacity="1"
-                                 BackgroundColor="#FF1E72C9"
+                                 BackgroundColor="{StaticResource AwfulStatusBar}"
                                  ForegroundColor="White"/>
     </interactivity:Interaction.Behaviors>
     
@@ -53,7 +53,7 @@ xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
         </Grid.RowDefinitions>
         <SplitView Grid.Row="1" x:Name="Splitter" VerticalAlignment="Stretch">
             <SplitView.Pane>
-                <RelativePanel RequestedTheme="Dark" VerticalAlignment="Stretch" Background="#FF1E72C9">
+                <RelativePanel  VerticalAlignment="Stretch" Background="#FF1E72C9">
                     <ListView ItemClick="MenuClick"  ItemsSource="{Binding MenuItems}" IsItemClickEnabled="True" 
                  SelectionMode="None" HorizontalAlignment="Left"
                  VerticalAlignment="Top" Margin="-2,40,0,0" >
@@ -84,4 +84,4 @@ xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
             </ToggleButton.Content>
         </ToggleButton>
     </Grid>
-</Page>
+</themeManagerRt:ThemeEnabledPage>

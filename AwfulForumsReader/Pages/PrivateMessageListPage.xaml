@@ -55,7 +55,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <!-- Back button and page title -->
-        <Grid Background="{StaticResource AwfulBlue}" RequestedTheme="Dark">
+        <Grid Background="{StaticResource AwfulBlue}" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="HamburgerPlacement" Width="40" />
                 <ColumnDefinition Width="*" />

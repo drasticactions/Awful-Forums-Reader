@@ -34,6 +34,7 @@ using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
 using Microsoft.ApplicationInsights;
 using Newtonsoft.Json;
+using ThemeManagerRt;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=402347&clcid=0x409
 
@@ -93,6 +94,7 @@ namespace AwfulForumsReader
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
+            ThemeManager.SetThemeManager(ElementTheme.Light);
             SystemNavigationManager.GetForCurrentView().BackRequested += BackPressed;
             RootFrame = Window.Current.Content as Frame;
 

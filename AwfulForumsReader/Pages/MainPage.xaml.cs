@@ -29,7 +29,7 @@ namespace AwfulForumsReader.Pages
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class MainPage
     {
 
         private NavigationHelper navigationHelper;

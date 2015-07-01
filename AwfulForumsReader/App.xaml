@@ -4,10 +4,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:AwfulForumsReader"
     xmlns:tools="using:AwfulForumsReader.Tools"
-    
     RequestedTheme="Light"
     xmlns:locator="using:AwfulForumsReader.Locator"
-    xmlns:bookmarks="using:AwfulForumsReader.Commands.Bookmarks">
+    xmlns:bookmarks="using:AwfulForumsReader.Commands.Bookmarks"
+    xmlns:themeManagerRt="using:ThemeManagerRt">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -19,7 +19,20 @@
             <ResourceDictionary Source="/Themes/Generic.xaml"/>
             <ResourceDictionary Source="/Styles/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Dark">
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="/Themes/Dark.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Light">
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="/Themes/Light.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
             <locator:ViewModels x:Name="Locator" />
+            <themeManagerRt:ThemeManager x:Key="ThemeManager" />
             <SolidColorBrush x:Key="AwfulBlue" Color="#FF1E72C9"/>
             <tools:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
             <tools:SubforumHeaderColorConverter x:Key="SubforumHeaderColorConverter" />

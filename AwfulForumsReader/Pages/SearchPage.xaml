@@ -46,7 +46,7 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <Grid x:Name="grid1" Background="{StaticResource AwfulBlue}" RequestedTheme="Dark">
+        <Grid x:Name="grid1" Background="{StaticResource AwfulBlue}" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="HamburgerPlacement" Width="40" />
                 <ColumnDefinition Width="*" />

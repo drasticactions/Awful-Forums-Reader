@@ -46,7 +46,7 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <!-- Back button and page title -->
-        <Grid RequestedTheme="Dark" Background="{StaticResource AwfulBlue}">
+        <Grid  Background="{StaticResource AwfulBlue}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="HamburgerPlacement" Width="40" />
                 <ColumnDefinition Width="*" />
