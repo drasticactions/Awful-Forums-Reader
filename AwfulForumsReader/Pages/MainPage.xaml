@@ -53,7 +53,7 @@
         </Grid.RowDefinitions>
         <SplitView Grid.Row="1" x:Name="Splitter" VerticalAlignment="Stretch">
             <SplitView.Pane>
-                <RelativePanel  VerticalAlignment="Stretch" Background="#FF1E72C9">
+                <RelativePanel  VerticalAlignment="Stretch" Background="{StaticResource AwfulHeader}">
                     <ListView ItemClick="MenuClick"  ItemsSource="{Binding MenuItems}" IsItemClickEnabled="True" 
                  SelectionMode="None" HorizontalAlignment="Left"
                  VerticalAlignment="Top" Margin="-2,40,0,0" >

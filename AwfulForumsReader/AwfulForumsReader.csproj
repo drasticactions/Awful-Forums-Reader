@@ -350,6 +350,7 @@
     <None Include="Assets\Website\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Assets\Website\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="AwfulForumsReader_TemporaryKey.pfx" />
+    <Content Include="Fonts\clacon.ttf" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -958,6 +959,7 @@
     <Content Include="Assets\Website\thread.html" />
     <Content Include="Assets\WideLogo.scale-140.png" />
     <Content Include="Assets\WideLogo.scale-180.png" />
+    <Content Include="Fonts\FontReadme.txt" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />

@@ -3,5 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:AwfulForumsReader.Themes">
     <SolidColorBrush x:Key="AwfulHeader" Color="#000000"/>
+    <FontFamily x:Key="DefaultFont">/Fonts/clacon.ttf#Classic Console</FontFamily>
     <Color x:Key="AwfulStatusBar">#000000</Color>
 </ResourceDictionary>

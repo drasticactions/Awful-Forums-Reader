@@ -162,7 +162,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <TextBlock Text="{Binding Name}" Style="{StaticResource SubheaderTextBlockStyle}" Foreground="Black" VerticalAlignment="Center"/>
+            <TextBlock FontFamily="{StaticResource DefaultFont}" Text="{Binding Name}" FontSize="30" VerticalAlignment="Center"/>
             <Rectangle Grid.Row="1" Fill="GreenYellow" Height="1" Margin="0,7,0,0"/>
         </Grid>
     </DataTemplate>

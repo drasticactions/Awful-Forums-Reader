@@ -4,9 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:AwfulForumsReader"
     xmlns:tools="using:AwfulForumsReader.Tools"
-    RequestedTheme="Light"
     xmlns:locator="using:AwfulForumsReader.Locator"
     xmlns:bookmarks="using:AwfulForumsReader.Commands.Bookmarks"
+    RequestedTheme="Dark"
     xmlns:themeManagerRt="using:ThemeManagerRt">
     <Application.Resources>
         <ResourceDictionary>
