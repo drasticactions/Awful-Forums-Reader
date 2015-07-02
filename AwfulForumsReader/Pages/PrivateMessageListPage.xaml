@@ -55,15 +55,15 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <!-- Back button and page title -->
-        <Grid Background="{StaticResource AwfulBlue}" >
+        <Grid Background="{StaticResource AwfulHeader}" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="HamburgerPlacement" Width="40" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <TextBlock Margin="5,0,0,0" x:Name="pageTitle" Text="Private Messages" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"
+            <TextBlock Foreground="{StaticResource TitleFontColor}" Margin="5,0,0,0" x:Name="pageTitle" Text="Private Messages" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"
                        IsHitTestVisible="false" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
         </Grid>
-        <Grid x:Name="MasterListView" Grid.Row="1">
+        <Grid Background="{StaticResource MainPageBackground}" x:Name="MasterListView" Grid.Row="1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition x:Name="MasterColumn" Width="450" />
             <ColumnDefinition x:Name="DetailColumn" Width="*" />
@@ -83,7 +83,7 @@
             ArrowColor="#004050"
             RefreshText="Release to refresh"
             PullText="Pull to refresh">
-                    <ListView Grid.Row="0" RequestedTheme="Light"  x:Name="PrivateMessageList" ItemsSource="{Binding PrivateMessageScrollingCollection}"
+                    <ListView Grid.Row="0" x:Name="PrivateMessageList" ItemsSource="{Binding PrivateMessageScrollingCollection}"
                       HorizontalAlignment="Stretch" ItemClick="Thread_OnClick" IsSwipeEnabled="True" Grid.Column="0" SelectionMode="Single"
                       IsItemClickEnabled="True">
                         <ListView.ItemContainerStyle>
@@ -93,10 +93,7 @@
                         </ListView.ItemContainerStyle>
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <Grid>
-                                    <Grid.Background>
-                                        <SolidColorBrush Color="#F1F1F1" Opacity="{Binding Converter={StaticResource BackgroundWallpaperOpacityConverter}}"></SolidColorBrush>
-                                    </Grid.Background>
+                                <Grid Background="{StaticResource ThreadColor}">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="*" />
@@ -120,15 +117,15 @@
                                            AutomationProperties.Name="{Binding Title}" />
                                         </Border>
                                         <StackPanel Grid.Column="2">
-                                            <TextBlock x:Name="ThreadTitle" FontWeight="Bold" TextWrapping="Wrap"
+                                            <TextBlock Style="{StaticResource ForumThreadBox}" FontFamily="{StaticResource DefaultFont}" x:Name="ThreadTitle" FontWeight="Bold" TextWrapping="Wrap"
                                                Text="{Binding Title}" />
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock Text="Sender:" />
-                                                <TextBlock x:Name="TotalPages" Margin="5,0,0,0" Text="{Binding Sender}" />
+                                            <StackPanel  Orientation="Horizontal">
+                                                <TextBlock Style="{StaticResource ForumThreadBox}" FontFamily="{StaticResource DefaultFont}" Text="Sender:" />
+                                                <TextBlock Style="{StaticResource ForumThreadBox}" FontFamily="{StaticResource DefaultFont}" x:Name="TotalPages" Margin="5,0,0,0" Text="{Binding Sender}" />
                                             </StackPanel>
                                             <StackPanel Orientation="Horizontal">
-                                                <TextBlock Text="Date:" Margin="0,0,0,0" />
-                                                <TextBlock Text="{Binding Date}" Margin="5,0,0,0" />
+                                                <TextBlock Style="{StaticResource ForumThreadBox}" FontFamily="{StaticResource DefaultFont}" Text="Date:" Margin="0,0,0,0" />
+                                                <TextBlock Style="{StaticResource ForumThreadBox}" FontFamily="{StaticResource DefaultFont}" Text="{Binding Date}" Margin="5,0,0,0" />
                                             </StackPanel>
                                         </StackPanel>
                                     </Grid>

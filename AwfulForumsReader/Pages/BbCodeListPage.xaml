@@ -46,16 +46,16 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <!-- Back button and page title -->
-        <Grid  Background="{StaticResource AwfulBlue}">
+        <Grid  Background="{StaticResource AwfulHeader}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="HamburgerPlacement" Width="40" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            
-            <TextBlock Margin="5,0,0,0" x:Name="pageTitle" Text="BB Code" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"
+
+            <TextBlock Foreground="{StaticResource TitleFontColor}" Margin="5,0,0,0" x:Name="pageTitle" Text="BB Code" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"
                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Center" />
         </Grid>
-        <Grid Grid.Row="1">
+        <Grid Background="{StaticResource MainPageBackground}" Grid.Row="1">
             <GridView
                 x:Name="ItemGridView"
                 Margin="15"

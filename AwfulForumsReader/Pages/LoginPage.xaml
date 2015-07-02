@@ -19,7 +19,7 @@
                                  BackgroundColor="#FF1E72C9"
                                  ForegroundColor="White"/>
     </interactivity:Interaction.Behaviors>
-    <Grid   Background="#f4f4f4">
+    <Grid  Background="{StaticResource MainPageBackground}">
         <ProgressBar VerticalAlignment="Top" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" IsIndeterminate="True"/>
         <Grid VerticalAlignment="Center">
             <Grid.RowDefinitions>

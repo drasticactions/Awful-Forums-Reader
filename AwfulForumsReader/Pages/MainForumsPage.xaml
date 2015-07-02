@@ -59,8 +59,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid x:Name="HeaderGrid" Height="50"  Background="{StaticResource AwfulBlue}"  Grid.Row="0">
-            <TextBlock Text="Awful Forums Reader" Margin="50,0,0,0" x:Name="pageTitle" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}"
+        <Grid x:Name="HeaderGrid" Height="50"  Background="{StaticResource MainPageBackground}"  Grid.Row="0">
+            <TextBlock Foreground="{StaticResource TitleFontColor}" Text="Awful Forums Reader" Margin="50,0,0,0" x:Name="pageTitle" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}"
                        IsHitTestVisible="false" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
         </Grid>
             <GridView

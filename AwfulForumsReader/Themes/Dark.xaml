@@ -5,4 +5,22 @@
     <SolidColorBrush x:Key="AwfulHeader" Color="#0D3359"/>
     <Color x:Key="AwfulStatusBar">#0D3359</Color>
     <FontFamily x:Key="DefaultFont">Segoe UI</FontFamily>
+    <SolidColorBrush x:Key="MainPageBackground" Color="#1E1E1E"/>
+    <SolidColorBrush x:Key="ForumBackground" Opacity="{Binding Converter={StaticResource BackgroundWallpaperOpacityConverter}}" Color="#252526"/>
+    <SolidColorBrush x:Key="ForumFontColor" Color="White"/>
+    <SolidColorBrush x:Key="TitleFontColor" Color="#ffffff"/>
+    <SolidColorBrush x:Key="ThreadColor" Color="#232323"/>
+    <SolidColorBrush x:Key="HasSeenThreadColor" Color="#5C7AB7"/>
+    <SolidColorBrush x:Key="TransparentThreadColor" Color="#9B232323"/>
+    <SolidColorBrush x:Key="TransparentHasSeenThreadColor" Color="#9B5C7AB7"/>
+    <Style x:Key="ForumThreadBox" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+    <Style x:Key="ForumTitleThreadBox" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <Style x:Key="ForumReplyThreadBox" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
 </ResourceDictionary>

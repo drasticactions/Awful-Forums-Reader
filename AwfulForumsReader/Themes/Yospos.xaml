@@ -5,4 +5,25 @@
     <SolidColorBrush x:Key="AwfulHeader" Color="#000000"/>
     <FontFamily x:Key="DefaultFont">/Fonts/clacon.ttf#Classic Console</FontFamily>
     <Color x:Key="AwfulStatusBar">#000000</Color>
+    <SolidColorBrush x:Key="MainPageBackground" Color="#000000"/>
+    <SolidColorBrush x:Key="ForumBackground" Opacity="{Binding Converter={StaticResource BackgroundWallpaperOpacityConverter}}" Color="#232323"/>
+    <SolidColorBrush x:Key="ForumFontColor" Color="LimeGreen"/>
+    <SolidColorBrush x:Key="TitleFontColor" Color="#ffffff"/>
+    <SolidColorBrush x:Key="ThreadColor" Color="#232323"/>
+    <SolidColorBrush x:Key="HasSeenThreadColor" Color="#31BD31"/>
+    <SolidColorBrush x:Key="TransparentThreadColor" Color="#9B232323"/>
+    <SolidColorBrush x:Key="TransparentHasSeenThreadColor" Color="#9B31BD31"/>
+    <Style x:Key="ForumThreadBox" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFont}"/>
+    </Style>
+    <Style x:Key="ForumTitleThreadBox" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFont}"/>
+    </Style>
+    <Style x:Key="ForumReplyThreadBox" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFont}"/>
+    </Style>
 </ResourceDictionary>

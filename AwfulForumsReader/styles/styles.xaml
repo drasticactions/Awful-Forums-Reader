@@ -17,7 +17,7 @@
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </AppBarButton>
-            <Grid Grid.Column="1" Background="#F1F1F1">
+            <Grid Grid.Column="1" Background="{StaticResource ThreadColor}">
                 <Grid.Transitions>
                     <TransitionCollection>
                         <EntranceThemeTransition/>
@@ -45,7 +45,7 @@
                                            AutomationProperties.Name="{Binding Title}" />
                     </Grid>
                     <StackPanel Grid.Column="2">
-                        <TextBlock x:Name="ThreadTitle" TextWrapping="Wrap"
+                        <TextBlock Style="{StaticResource ForumThreadBox}" FontFamily="{StaticResource DefaultFont}" x:Name="ThreadTitle" TextWrapping="Wrap"
                                                Text="{Binding Name}" />
                     </StackPanel>
                 </Grid>
@@ -89,19 +89,19 @@
                     <Image Margin="0,0,10,0" Source="{Binding StoreImageIconLocation}" />
                 </Grid>
                 <StackPanel Grid.Column="2">
-                    <TextBlock x:Name="ThreadTitle" FontWeight="Bold" TextWrapping="Wrap"
+                    <TextBlock Style="{StaticResource ForumTitleThreadBox}" FontFamily="{StaticResource DefaultFont}" x:Name="ThreadTitle" TextWrapping="Wrap"
                                                Text="{Binding Name}" />
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Pages:" />
-                        <TextBlock x:Name="TotalPages" Margin="5,0,0,0" Text="{Binding TotalPages}" />
+                        <TextBlock Style="{StaticResource ForumThreadBox}" FontFamily="{StaticResource DefaultFont}" Text="Pages:" />
+                        <TextBlock Style="{StaticResource ForumThreadBox}" FontFamily="{StaticResource DefaultFont}" x:Name="TotalPages" Margin="5,0,0,0" Text="{Binding TotalPages}" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Author:" Margin="0,0,0,0" />
-                        <TextBlock Text="{Binding Author}" Margin="5,0,0,0" />
+                        <TextBlock Style="{StaticResource ForumThreadBox}" FontFamily="{StaticResource DefaultFont}" Text="Author:" Margin="0,0,0,0" />
+                        <TextBlock Style="{StaticResource ForumThreadBox}" FontFamily="{StaticResource DefaultFont}" Text="{Binding Author}" Margin="5,0,0,0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Killed By:" Margin="0,0,0,0" />
-                        <TextBlock Text="{Binding KilledBy}" Margin="5,0,0,0" />
+                        <TextBlock Style="{StaticResource ForumThreadBox}" FontFamily="{StaticResource DefaultFont}" Text="Killed By:" Margin="0,0,0,0" />
+                        <TextBlock Style="{StaticResource ForumThreadBox}" FontFamily="{StaticResource DefaultFont}" Text="{Binding KilledBy}" Margin="5,0,0,0" />
                     </StackPanel>
                 </StackPanel>
                 <Border Margin="5" x:Name="ReplySinceLastOpenedCount"
@@ -109,7 +109,7 @@
                                         BorderThickness="2" Height="25" MinWidth="50" VerticalAlignment="Center"
                                         HorizontalAlignment="Right" Grid.Column="3" BorderBrush="#FFCDCDCD">
                     <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                        <TextBlock Margin="0,0,2,0" FontSize="15" x:Name="ReplyCount"
+                        <TextBlock Style="{StaticResource ForumReplyThreadBox}" FontFamily="{StaticResource DefaultFont}" Margin="0,0,2,0" x:Name="ReplyCount"
                                                    Foreground="{Binding RepliesSinceLastOpened, Converter={StaticResource RepliesSinceLastOpenedColorConverter}}"
                                                    Text="{Binding RepliesSinceLastOpened}" />
                     </StackPanel>
@@ -133,16 +133,13 @@
     </DataTemplate>
 
     <DataTemplate x:Key="ForumTemplate">
-        <Grid HorizontalAlignment="Left" Width="400" Height="60">
-            <Grid.Background>
-                <SolidColorBrush Opacity="{Binding Converter={StaticResource BackgroundWallpaperOpacityConverter}}" Color="#F0F0F0"/>
-            </Grid.Background>
+        <Grid HorizontalAlignment="Left" Background="{StaticResource ForumBackground}" Width="400" Height="60">
             <Grid.RowDefinitions>
                 <RowDefinition Height="8"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Rectangle Fill="{Binding Converter={StaticResource SubforumHeaderColorConverter}}" Grid.Row="0"/>
-            <TextBlock Grid.Row="1" Text="{Binding Name}" TextWrapping="Wrap" TextAlignment="Left" Foreground="Black" Margin="15,5,15,0" />
+            <TextBlock Style="{StaticResource ForumThreadBox}" Foreground="{StaticResource ForumFontColor}" Grid.Row="1" Text="{Binding Name}" FontFamily="{StaticResource DefaultFont}" TextWrapping="Wrap" TextAlignment="Left" Margin="15,5,15,0" />
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="RightTapped">
                     <tools:OpenMenuFlyoutAction />
@@ -162,7 +159,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <TextBlock FontFamily="{StaticResource DefaultFont}" Text="{Binding Name}" FontSize="30" VerticalAlignment="Center"/>
+            <TextBlock Foreground="{StaticResource ForumFontColor}" FontFamily="{StaticResource DefaultFont}" Text="{Binding Name}" FontSize="30" VerticalAlignment="Center"/>
             <Rectangle Grid.Row="1" Fill="GreenYellow" Height="1" Margin="0,7,0,0"/>
         </Grid>
     </DataTemplate>

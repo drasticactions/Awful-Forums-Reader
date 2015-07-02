@@ -54,15 +54,15 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <!-- Back button and page title -->
-        <Grid x:Name="grid1" Background="{StaticResource AwfulBlue}" >
+        <Grid x:Name="grid1" Background="{StaticResource AwfulHeader}" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="HamburgerPlacement" Width="40" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <TextBlock  Margin="5,0,0,0" x:Name="pageTitle" d:Text="{Binding ForumEntity.Name, Source={d:DesignData /SampleData/ThreadListPageViewModelSampleData.xaml}}" Text="SAclopedia" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"
+            <TextBlock Foreground="{StaticResource TitleFontColor}" Margin="5,0,0,0" x:Name="pageTitle" d:Text="{Binding ForumEntity.Name, Source={d:DesignData /SampleData/ThreadListPageViewModelSampleData.xaml}}" Text="SAclopedia" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"
                        IsHitTestVisible="false" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
         </Grid>
-        <Grid x:Name="MasterListView" Grid.Row="1">
+        <Grid Background="{StaticResource MainPageBackground}" x:Name="MasterListView" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="MasterColumn" Width="450" />
                 <ColumnDefinition x:Name="DetailColumn" Width="*" />
@@ -98,7 +98,7 @@
                     <ListView IsItemClickEnabled="True" ItemClick="Item_OnClick" ItemsSource="{Binding SaclopediaNavigationTopicEntities}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock TextWrapping="WrapWholeWords" Margin="15" Foreground="Black" FontSize="25" FontWeight="Thin" Text="{Binding Topic}"/>
+                                <TextBlock TextWrapping="WrapWholeWords" Margin="15" FontSize="25" FontWeight="Thin" Text="{Binding Topic}"/>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>

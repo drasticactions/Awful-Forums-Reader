@@ -18,8 +18,8 @@
                                  BackgroundColor="{StaticResource AwfulStatusBar}"
                                  ForegroundColor="White"/>
     </interactivity:Interaction.Behaviors>
-    
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="{StaticResource MainPageBackground}">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState x:Name="wideState">
@@ -64,8 +64,8 @@
                                         <ColumnDefinition Width="25"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" FontSize="25"  FontFamily="Segoe MDL2 Assets" Text="{Binding Icon}" />
-                                    <TextBlock Padding="25,3,0,0" FontSize="15" Style="{StaticResource TagLineTextStyle}"  TextAlignment="Left" Grid.Column="1" Text="{Binding Name}" />
+                                    <TextBlock Grid.Column="0" Foreground="{StaticResource TitleFontColor}" FontSize="25"  FontFamily="Segoe MDL2 Assets" Text="{Binding Icon}" />
+                                    <TextBlock Padding="25,3,0,0" Foreground="{StaticResource TitleFontColor}" FontFamily="{StaticResource DefaultFont}" FontSize="20" Style="{StaticResource TagLineTextStyle}"  TextAlignment="Left" Grid.Column="1" Text="{Binding Name}" />
                                 </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>

@@ -29,12 +29,12 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <!-- Back button and page title -->
-        <Grid x:Name="grid1" Background="{StaticResource AwfulBlue}" >
+        <Grid x:Name="grid1" Background="{StaticResource AwfulHeader}" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="HamburgerPlacement" Width="40" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <TextBlock Margin="5,0,0,0" x:Name="pageTitle" d:Text="{Binding ForumEntity.Name, Source={d:DesignData /SampleData/ThreadListPageViewModelSampleData.xaml}}" Text="{Binding Title}" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"
+            <TextBlock Foreground="{StaticResource TitleFontColor}" Margin="5,0,0,0" x:Name="pageTitle" d:Text="{Binding ForumEntity.Name, Source={d:DesignData /SampleData/ThreadListPageViewModelSampleData.xaml}}" Text="{Binding Title}" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"
                        IsHitTestVisible="false" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
         </Grid>
         <WebView Grid.Row="1" VerticalAlignment="Stretch" tools:WebViewHelper.Html="{Binding Body}"/>

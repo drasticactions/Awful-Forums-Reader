@@ -94,8 +94,8 @@ namespace AwfulForumsReader
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
-            ThemeManager.SetThemeManager(ElementTheme.Dark);
-            ThemeManager.ChangeTheme(new Uri("ms-appx:///Themes/Yospos.xaml"));
+            ThemeManager.SetThemeManager(ElementTheme.Light);
+            //ThemeManager.ChangeTheme(new Uri("ms-appx:///Themes/Yospos.xaml"));
             SystemNavigationManager.GetForCurrentView().BackRequested += BackPressed;
             RootFrame = Window.Current.Content as Frame;
 

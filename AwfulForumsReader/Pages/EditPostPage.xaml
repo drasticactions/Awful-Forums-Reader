@@ -17,16 +17,16 @@
         </Grid.RowDefinitions>
 
         <!-- Back button and page title -->
-        <Grid x:Name="grid1" Background="{StaticResource AwfulBlue}" >
+        <Grid x:Name="grid1" Background="{StaticResource AwfulHeader}" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock x:Name="pageTitle" Margin="5,0,0,0" Text="{Binding Converter={StaticResource NewThreadReplyTitleConverter}}" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"
+            <TextBlock Foreground="{StaticResource TitleFontColor}" x:Name="pageTitle" Margin="5,0,0,0" Text="{Binding Converter={StaticResource NewThreadReplyTitleConverter}}" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"
                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Center" />
         </Grid>
 
-        <Grid Grid.Row="1" Drop="Grid_OnDrop" DragOver="Grid_DragOver" AllowDrop="True">
+        <Grid Background="{StaticResource MainPageBackground}" Grid.Row="1" Drop="Grid_OnDrop" DragOver="Grid_DragOver" AllowDrop="True">
             <Grid.ChildrenTransitions>
                 <TransitionCollection>
                     <EntranceThemeTransition/>

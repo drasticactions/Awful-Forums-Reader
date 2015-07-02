@@ -6,7 +6,6 @@
     xmlns:tools="using:AwfulForumsReader.Tools"
     xmlns:locator="using:AwfulForumsReader.Locator"
     xmlns:bookmarks="using:AwfulForumsReader.Commands.Bookmarks"
-    RequestedTheme="Dark"
     xmlns:themeManagerRt="using:ThemeManagerRt">
     <Application.Resources>
         <ResourceDictionary>
