@@ -79,6 +79,7 @@
             </Grid>
                 <scrollViewer:PullToRefreshScrollViewer
             Grid.Row="0"
+                    Foreground="{StaticResource ForumFontColor}"
             RefreshCommand="{Binding RefreshPrivateMessageListCommand}"
             ArrowColor="#004050"
             RefreshText="Release to refresh"

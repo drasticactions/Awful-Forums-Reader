@@ -89,6 +89,7 @@
             Grid.Row="0"
             RefreshCommand="{Binding RefreshBookmarkListCommand}"
             ArrowColor="#004050"
+            Foreground="{StaticResource ForumFontColor}"
             RefreshText="Release to refresh"
             PullText="Pull to refresh">
                     <ListView Grid.Row="0" ItemContainerTransitions="{x:Null}" x:Name="ForumThreadList"
