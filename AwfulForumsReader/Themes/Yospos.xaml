@@ -26,7 +26,7 @@
         <Setter Property="FontFamily" Value="{StaticResource DefaultFont}"/>
     </Style>
     <Style x:Key="ForumReplyThreadBox" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontSize" Value="22"/>
         <Setter Property="FontFamily" Value="{StaticResource DefaultFont}"/>
     </Style>
 </ResourceDictionary>

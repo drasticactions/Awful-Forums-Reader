@@ -10,9 +10,9 @@
     <SolidColorBrush x:Key="ForumFontColor" Color="Black"/>
     <SolidColorBrush x:Key="TitleFontColor" Color="#ffffff"/>
     <SolidColorBrush x:Key="ThreadColor" Color="#d4e1ee"/>
-    <SolidColorBrush x:Key="HasSeenThreadColor" Color="#7DA6F9"/>
+    <SolidColorBrush x:Key="HasSeenThreadColor" Color="#C6D8FB"/>
     <SolidColorBrush x:Key="TransparentThreadColor" Color="#9BD4E1EE"/>
-    <SolidColorBrush x:Key="TransparentHasSeenThreadColor" Color="#9B7DA6F9"/>
+    <SolidColorBrush x:Key="TransparentHasSeenThreadColor" Color="#9B94B1EC"/>
     <Style x:Key="ForumBox" TargetType="TextBlock">
         <Setter Property="FontSize" Value="15"/>
     </Style>
@@ -24,6 +24,6 @@
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
     <Style x:Key="ForumReplyThreadBox" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontSize" Value="13"/>
     </Style>
 </ResourceDictionary>

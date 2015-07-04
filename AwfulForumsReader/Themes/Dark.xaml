@@ -24,6 +24,6 @@
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
     <Style x:Key="ForumReplyThreadBox" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontSize" Value="13"/>
     </Style>
 </ResourceDictionary>
