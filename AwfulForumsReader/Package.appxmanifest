@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="bd82ca34-1742-41a7-98cc-5ba1e33b3260" Publisher="CN=Timothy" Version="1.0.0.2" />
+  <Identity Name="bd82ca34-1742-41a7-98cc-5ba1e33b3260" Publisher="CN=t_mil" Version="1.0.1.0" />
   <mp:PhoneIdentity PhoneProductId="bd82ca34-1742-41a7-98cc-5ba1e33b3260" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>AwfulForumsReader</DisplayName>
+    <DisplayName>Awful Forums Reader</DisplayName>
     <PublisherDisplayName>Timothy</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
-    <TargetPlatform Name="Windows.Universal" MinVersion="10.0.10042.0" MaxVersionTested="10.0.10042.0" />
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10069.0" MaxVersionTested="10.0.10069.0" />
   </Dependencies>
   <Resources>
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="AwfulForumsReader.App">
-      <uap:VisualElements DisplayName="AwfulForumsReader" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="AwfulForumsReader" ForegroundText="light" BackgroundColor="transparent">
-        <uap:DefaultTile ShortName="Awful Forums Reader" Wide310x150Logo="Assets\WideLogo.scale-100.png"/>
+      <uap:VisualElements DisplayName="Awful Forums Reader" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="AwfulForumsReader" BackgroundColor="transparent">
+        <uap:DefaultTile ShortName="Awful Forums Reader" Wide310x150Logo="Assets\WideLogo.scale-100.png" />
         <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="transparent" />
       </uap:VisualElements>
       <Extensions>

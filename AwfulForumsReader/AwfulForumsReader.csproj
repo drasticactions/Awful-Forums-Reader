@@ -349,8 +349,9 @@
     <Content Include="Assets\Website\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="Assets\Website\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Assets\Website\fonts\glyphicons-halflings-regular.woff2" />
-    <None Include="AwfulForumsReader_TemporaryKey.pfx" />
     <Content Include="Fonts\clacon.ttf" />
+    <None Include="AwfulForumsReader_TemporaryKey.pfx" />
+    <None Include="New.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1191,6 +1192,12 @@
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>New.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.16-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets" Condition="Exists('..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.16-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets')" />
