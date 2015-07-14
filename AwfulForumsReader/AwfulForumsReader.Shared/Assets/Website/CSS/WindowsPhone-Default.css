@@ -2,6 +2,9 @@ body {
 	background-color: black;
 	color: black;
 }
+iframe {
+    max-width: 100%;
+}
 
 a, a:hover, a:visited{
     color: #C6D9FB;
