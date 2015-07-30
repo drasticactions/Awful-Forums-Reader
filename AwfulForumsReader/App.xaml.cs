@@ -3,20 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Background;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.Foundation.Metadata;
-using Windows.Phone.UI.Input;
 using Windows.Storage;
-using Windows.System;
-using Windows.UI;
 using Windows.UI.Core;
-using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -27,39 +21,29 @@ using Windows.UI.Xaml.Navigation;
 using Autofac;
 using AwfulForumsLibrary.Manager;
 using AwfulForumsLibrary.Tools;
-using AwfulForumsReader.Commands;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Database;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
-using Microsoft.ApplicationInsights;
-using Newtonsoft.Json;
-using ThemeManagerRt;
-
-// The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=402347&clcid=0x409
 
 namespace AwfulForumsReader
 {
     /// <summary>
-    /// Provides application-specific behavior to supplement the default Application class.
+    /// 既定の Application クラスを補完するアプリケーション固有の動作を提供します。
     /// </summary>
     sealed partial class App : Application
     {
-        /// <summary>
-        /// Allows tracking page views, exceptions and other telemetry through the Microsoft Application Insights service.
-        /// </summary>
-        /// 
-        public static Microsoft.ApplicationInsights.TelemetryClient TelemetryClient;
         public static IContainer Container;
         private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
         public static Frame RootFrame;
+
         /// <summary>
-        /// Initializes the singleton application object.  This is the first line of authored code
-        /// executed, and as such is the logical equivalent of main() or WinMain().
+        /// 単一アプリケーション オブジェクトを初期化します。これは、実行される作成したコードの
+        ///最初の行であるため、main() または WinMain() と論理的に等価です。
         /// </summary>
         public App()
         {
-            TelemetryClient = new TelemetryClient();
+            Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync();
             this.InitializeComponent();
             this.Suspending += OnSuspending;
             try
@@ -81,19 +65,33 @@ namespace AwfulForumsReader
             Container = AutoFacConfiguration.Configure();
         }
 
+        private void BackPressed(object sender, BackRequestedEventArgs e)
+        {
+            if (RootFrame == null)
+            {
+                return;
+            }
+
+            if (!RootFrame.CanGoBack) return;
+            RootFrame.GoBack();
+            e.Handled = true;
+        }
+
         /// <summary>
-        /// Invoked when the application is launched normally by the end user.  Other entry points
-        /// will be used such as when the application is launched to open a specific file.
+        /// アプリケーションがエンド ユーザーによって正常に起動されたときに呼び出されます。他のエントリ ポイントは、
+        /// アプリケーションが特定のファイルを開くために起動されたときなどに使用されます。
         /// </summary>
-        /// <param name="e">Details about the launch request and process.</param>
+        /// <param name="e">起動の要求とプロセスの詳細を表示します。</param>
         protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
+
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
+
             //ThemeManager.SetThemeManager(ElementTheme.Dark);
             //ThemeManager.ChangeTheme(new Uri("ms-appx:///Themes/Yospos.xaml"));
             SystemNavigationManager.GetForCurrentView().BackRequested += BackPressed;
@@ -129,7 +127,7 @@ namespace AwfulForumsReader
                         null);
             }
 
-                var localStorageManager = new LocalStorageManager();
+            var localStorageManager = new LocalStorageManager();
             CookieContainer cookieTest = await localStorageManager.LoadCookie("SACookies2.txt");
             if (cookieTest.Count <= 0)
             {
@@ -149,39 +147,27 @@ namespace AwfulForumsReader
             Window.Current.Activate();
         }
 
-        private void BackPressed(object sender, BackRequestedEventArgs e)
-        {
-            if (RootFrame == null)
-            {
-                return;
-            }
-
-            if (!RootFrame.CanGoBack) return;
-            RootFrame.GoBack();
-            e.Handled = true;
-        }
-
         /// <summary>
-        /// Invoked when Navigation to a certain page fails
+        /// 特定のページへの移動が失敗したときに呼び出されます
         /// </summary>
-        /// <param name="sender">The Frame which failed navigation</param>
-        /// <param name="e">Details about the navigation failure</param>
+        /// <param name="sender">移動に失敗したフレーム</param>
+        /// <param name="e">ナビゲーション エラーの詳細</param>
         void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
 
         /// <summary>
-        /// Invoked when application execution is being suspended.  Application state is saved
-        /// without knowing whether the application will be terminated or resumed with the contents
-        /// of memory still intact.
+        /// アプリケーションの実行が中断されたときに呼び出されます。
+        /// アプリケーションが終了されるか、メモリの内容がそのままで再開されるかに
+        /// かかわらず、アプリケーションの状態が保存されます。
         /// </summary>
-        /// <param name="sender">The source of the suspend request.</param>
-        /// <param name="e">Details about the suspend request.</param>
+        /// <param name="sender">中断要求の送信元。</param>
+        /// <param name="e">中断要求の詳細。</param>
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
-            //TODO: Save application state and stop any background activity
+            //TODO: アプリケーションの状態を保存してバックグラウンドの動作があれば停止します
             deferral.Complete();
         }
     }

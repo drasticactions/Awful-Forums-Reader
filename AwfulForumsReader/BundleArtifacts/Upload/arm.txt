@@ -1,0 +1,5 @@
+MainPackage=C:\Users\DrasticActions\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\bin\ARM\Release\Upload\AwfulForumsReader_10.0.4.0_ARM.appx
+SymbolPackage=C:\Users\DrasticActions\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\AppPackages\AwfulForumsReader_10.0.4.0\AwfulForumsReader_10.0.4.0_ARM.appxsym
+ResourcePack=C:\Users\DrasticActions\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\_scale-100.appx
+ResourcePack=C:\Users\DrasticActions\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\_scale-125.appx
+ResourcePack=C:\Users\DrasticActions\Documents\GitHub\AwfulForumsReader\AwfulForumsReader\_scale-150.appx

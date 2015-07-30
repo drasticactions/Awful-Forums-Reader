@@ -7,7 +7,7 @@ using SQLiteNetExtensionsAsync.Extensions;
 
 namespace AwfulForumsReader.Database
 {
-    public class Repository<T> where T : new()
+    public class Repository<T> where T : class, new()
     {
         private readonly SQLiteAsyncConnection _db;
         public Repository(SQLiteAsyncConnection db)

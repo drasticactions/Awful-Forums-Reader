@@ -49,9 +49,9 @@
                         </TextBlock.Text>
                     </TextBlock>
 
-                    <ToggleSwitch x:Name="BackgroundWallPaperSwitch" Toggled="BackgroundWallPaperSwitch_OnToggled" />
+                    <ToggleSwitch IsEnabled="False" x:Name="BackgroundWallPaperSwitch" Toggled="BackgroundWallPaperSwitch_OnToggled" />
 
-                    <Button Content="Change Background Wallpaper" Click="ChangeBackground_OnClicked" />
+                    <Button IsEnabled="False" Content="Change Background Wallpaper" Click="ChangeBackground_OnClicked" />
 
 
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Enable Bookmark Live Tiles" />

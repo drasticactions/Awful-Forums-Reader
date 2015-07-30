@@ -3,50 +3,31 @@
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EADC72AC-ECB2-47F7-A17B-185C514C6DD8}</ProjectGuid>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{4B008FEF-4E11-4F3F-9E0C-98FAF83A15CE}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AwfulForumsReader</RootNamespace>
     <AssemblyName>AwfulForumsReader</AssemblyName>
-    <DefaultLanguage>en-US</DefaultLanguage>
+    <DefaultLanguage>en-us</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.10166.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10166.0</TargetPlatformMinVersion>
+    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>AwfulForumsReader_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <PackageCertificateKeyFile>AwfulForumsReader_StoreKey.pfx</PackageCertificateKeyFile>
+    <ApplicationInsightsResourceId>/subscriptions/ee65c5cf-1c76-4f5e-a25d-414deaec77f4/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/AwfulForumsReader-UAP</ApplicationInsightsResourceId>
+    <PackageCertificateThumbprint>1CA84399AA4968F6BFED1A5311AB3A350A7E2ADA</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
-    <ApplicationInsightsResourceId>/subscriptions/ee65c5cf-1c76-4f5e-a25d-414deaec77f4/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/AwfulForumsReader</ApplicationInsightsResourceId>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UAP</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UAP</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\ARM\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UAP</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <NoWarn>;2008</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>ARM</PlatformTarget>
@@ -56,7 +37,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
     <OutputPath>bin\ARM\Release\</OutputPath>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UAP</DefineConstants>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <Optimize>true</Optimize>
     <NoWarn>;2008</NoWarn>
     <DebugType>pdbonly</DebugType>
@@ -69,7 +50,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UAP</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <NoWarn>;2008</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
@@ -79,7 +60,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UAP</DefineConstants>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <Optimize>true</Optimize>
     <NoWarn>;2008</NoWarn>
     <DebugType>pdbonly</DebugType>
@@ -92,7 +73,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UAP</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <NoWarn>;2008</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -102,7 +83,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UAP</DefineConstants>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <Optimize>true</Optimize>
     <NoWarn>;2008</NoWarn>
     <DebugType>pdbonly</DebugType>
@@ -113,252 +94,27 @@
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Commands\Forums\CreateForumTileCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToAboutPage.cs" />
-    <Compile Include="Commands\Navigation\NavigateToTabPageCommand.cs" />
-    <Compile Include="Commands\Posts\AddBbCodeToTextboxCommand.cs" />
-    <Compile Include="Commands\Threads\AddIgnoredUserPostCommand.cs" />
-    <Compile Include="Commands\Bookmarks\AddOrRemoveBookmarkCommand.cs" />
-    <Compile Include="Commands\Threads\AddOrRemoveFavoriteCommand.cs" />
-    <Compile Include="Commands\Threads\AddThreadToNotificationTable.cs" />
-    <Compile Include="Commands\Threads\AddToThreadTabs.cs" />
-    <Compile Include="Commands\Threads\BackThreadPageCommand.cs" />
-    <Compile Include="Commands\Bookmarks\BookmarkTextConverter.cs" />
-    <Compile Include="Commands\Threads\ChangePageThreadCommand.cs" />
-    <Compile Include="Commands\Threads\ChangeTabsCommand.cs" />
-    <Compile Include="Commands\Posts\DraftCommands.cs" />
-    <Compile Include="Commands\Threads\ForwardThreadPageCommand.cs" />
-    <Compile Include="Commands\Posts\ImgurAddImageCommand.cs" />
-    <Compile Include="Commands\Threads\LastPageCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToBbCodePageCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToBookmarksCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToLastPostPageCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToMainForumsPage.cs" />
-    <Compile Include="Commands\Navigation\NavigateToNewPrivateMessagePageCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToNewReplyCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToNewThreadCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToNewThreadPreviewCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToPostIconPageCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToPrivateMessageListPageCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToPrivateMessagePageCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToReplyPrivateMessagePageCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToSaclopedia.cs" />
-    <Compile Include="Commands\Navigation\NavigateToSaclopediaTopicsList.cs" />
-    <Compile Include="Commands\Navigation\NavigateToSearchPageCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToSearchResultsCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToSettingsCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToSmiliesPageCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToThreadPageCommand.cs" />
-    <Compile Include="Commands\Navigation\NavigateToUserProfilePageCommand.cs" />
-    <Compile Include="Commands\Threads\PickPostIconCommand.cs" />
-    <Compile Include="Commands\Posts\PostNewThreadCommand.cs" />
-    <Compile Include="Commands\Posts\PostThreadReplyCommand.cs" />
-    <Compile Include="Commands\Bookmarks\RefreshBookmarkListCommand.cs" />
-    <Compile Include="Commands\PrivateMessages\RefreshPrivateMessageListCommand.cs" />
-    <Compile Include="Commands\Threads\RefreshThreadListCommand.cs" />
-    <Compile Include="Commands\Threads\RefreshThreadPageCommand.cs" />
-    <Compile Include="Commands\Threads\RemoveTabCommand.cs" />
-    <Compile Include="Commands\Posts\ScrollToBottomThreadPageCommand.cs" />
-    <Compile Include="Commands\PrivateMessages\SendPrivateMessageCommand.cs" />
-    <Compile Include="Commands\Posts\SmiliesFilterOnSuggestedQuery.cs" />
-    <Compile Include="Commands\Posts\ThreadDomContentLoadedCommand.cs" />
-    <Compile Include="Commands\Threads\UnreadThreadCommand.cs" />
-    <Compile Include="Commands\Threads\WebViewNotifyCommand.cs" />
-    <Compile Include="Common\AlwaysExecutableCommand.cs" />
-    <Compile Include="Common\AsyncDelegateCommand.cs" />
-    <Compile Include="Common\AutoFacConfiguration.cs" />
-    <Compile Include="Common\FileAccessCommands.cs" />
-    <Compile Include="Commands\Navigation\NavigateToThreadListPageCommand.cs" />
-    <Compile Include="Common\NavigationHelper.cs" />
-    <Compile Include="Common\NotifierBase.cs" />
-    <Compile Include="Common\ObservableDictionary.cs" />
-    <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="Common\SuspensionManager.cs" />
-    <Compile Include="ScrollViewer\PullToRefreshScrollViewer.cs" />
-    <Compile Include="Locator\ViewModels.cs" />
-    <Compile Include="Models\MenuItem.cs" />
-    <Compile Include="Pages\AboutPage.xaml.cs">
-      <DependentUpon>AboutPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\BbCodeListPage.xaml.cs">
-      <DependentUpon>BbCodeListPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\BookmarksPage.xaml.cs">
-      <DependentUpon>BookmarksPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\EditPostPage.xaml.cs">
-      <DependentUpon>EditPostPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\MainForumsPage.xaml.cs">
-      <DependentUpon>MainForumsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\NewPrivateMessagePage.xaml.cs">
-      <DependentUpon>NewPrivateMessagePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\NewThreadPage.xaml.cs">
-      <DependentUpon>NewThreadPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\NewThreadReplyPage.xaml.cs">
-      <DependentUpon>NewThreadReplyPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PostIconListPage.xaml.cs">
-      <DependentUpon>PostIconListPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PreviewThreadPage.xaml.cs">
-      <DependentUpon>PreviewThreadPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PrivateMessageListPage.xaml.cs">
-      <DependentUpon>PrivateMessageListPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PrivateMessagePage.xaml.cs">
-      <DependentUpon>PrivateMessagePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SaclopediaEntryPage.xaml.cs">
-      <DependentUpon>SaclopediaEntryPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SaclopediaPage.xaml.cs">
-      <DependentUpon>SaclopediaPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SearchPage.xaml.cs">
-      <DependentUpon>SearchPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SearchResultsPage.xaml.cs">
-      <DependentUpon>SearchResultsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SettingsPage.xaml.cs">
-      <DependentUpon>SettingsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SmiliesPage.xaml.cs">
-      <DependentUpon>SmiliesPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\TabPage.xaml.cs">
-      <DependentUpon>TabPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ThreadListPage.xaml.cs">
-      <DependentUpon>ThreadListPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ThreadPage.xaml.cs">
-      <DependentUpon>ThreadPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\UserProfilePage.xaml.cs">
-      <DependentUpon>UserProfilePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tools\AddOrRemoveFavoriteTextConverter.cs" />
-    <Compile Include="Tools\AwfulDebugger.cs" />
-    <Compile Include="Tools\BackButtonEnableConverter.cs" />
-    <Compile Include="Tools\BackgroundTaskUtils.cs" />
-    <Compile Include="Tools\BackgroundWallpaperOpacityConverter.cs" />
-    <Compile Include="Tools\BookmarkSorting.cs" />
-    <Compile Include="Tools\BooleanInverter.cs" />
-    <Compile Include="Tools\BooleanToVisibilityConverter.cs" />
-    <Compile Include="Tools\BooleanToVisibilityInverter.cs" />
-    <Compile Include="Tools\ConvertImage.cs" />
-    <Compile Include="Tools\ForumDateJoinedConverter.cs" />
-    <Compile Include="Tools\ForwardButtonEnableConverter.cs" />
-    <Compile Include="Tools\HasSeenThreadConverter.cs" />
-    <Compile Include="Tools\HtmlButtonBuilder.cs" />
-    <Compile Include="Tools\HtmlFormater.cs" />
-    <Compile Include="Tools\ImageTools.cs" />
-    <Compile Include="Tools\LinqExtensions.cs" />
-    <Compile Include="Tools\NewThreadReplyTitleConverter.cs" />
-    <Compile Include="Tools\NewThreadTitleConverter.cs" />
-    <Compile Include="Tools\NotifyThreadTextConverter.cs" />
-    <Compile Include="Tools\OpenMenuFlyoutAction.cs" />
-    <Compile Include="Tools\PageNumberConverter.cs" />
-    <Compile Include="Tools\PageScrollingCollection.cs" />
-    <Compile Include="Tools\PrivateMessageScrollingCollection.cs" />
-    <Compile Include="Tools\RatingVisibilityConverter.cs" />
-    <Compile Include="Tools\RepliesSinceLastOpenedColorConverter.cs" />
-    <Compile Include="Tools\ReplyBoxLocation.cs" />
-    <Compile Include="Tools\SearchPageScrollingCollection.cs" />
-    <Compile Include="Tools\ShowBackButtonConverter.cs" />
-    <Compile Include="Tools\StatusBarBehavior.cs" />
-    <Compile Include="Tools\SubforumBodyColorConverter.cs" />
-    <Compile Include="Tools\SubforumFontColorConverter.cs" />
-    <Compile Include="Tools\SubforumHeaderColorConverter.cs" />
-    <Compile Include="Tools\ThreadCommand.cs" />
-    <Compile Include="Tools\ThreadHeaderColorConverter.cs" />
-    <Compile Include="Tools\ToastNotificationArgs.cs" />
-    <Compile Include="Tools\UploadManager.cs" />
-    <Compile Include="Tools\WebViewHelper.cs" />
-    <Compile Include="ViewModels\BbCodeListPageViewModel.cs" />
-    <Compile Include="ViewModels\BookmarksPageViewModel.cs" />
-    <Compile Include="ViewModels\ForumUserPageViewModel.cs" />
-    <Compile Include="ViewModels\LoginPageViewModel.cs" />
-    <Compile Include="ViewModels\MainForumsPageViewModel.cs" />
-    <Compile Include="ViewModels\MainPageViewModel.cs" />
-    <Compile Include="ViewModels\NewPrivateMessageViewModel.cs" />
-    <Compile Include="ViewModels\NewThreadPageViewModel.cs" />
-    <Compile Include="ViewModels\NewThreadReplyPageViewModel.cs" />
-    <Compile Include="ViewModels\PostIconListPageViewModel.cs" />
-    <Compile Include="ViewModels\PreviewThreadPageViewModel.cs" />
-    <Compile Include="ViewModels\PrivateMessageListViewModel.cs" />
-    <Compile Include="ViewModels\PrivateMessagePageViewModel.cs" />
-    <Compile Include="ViewModels\SaclopediaPageViewModel.cs" />
-    <Compile Include="ViewModels\SearchPageViewModel.cs" />
-    <Compile Include="ViewModels\SmiliesPageViewModel.cs" />
-    <Compile Include="ViewModels\TabPageViewModel.cs" />
-    <Compile Include="ViewModels\ThreadListPageViewModel.cs" />
-    <Compile Include="ViewModels\ThreadPageViewModel.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <AppxManifest Include="Package.appxmanifest">
-      <SubType>Designer</SubType>
-    </AppxManifest>
-    <None Include="app.config" />
-    <None Include="ApplicationInsights.config" />
-    <None Include="Assets\Login\Thumbs.db" />
-    <None Include="Assets\MainForumsPage\Thumbs.db" />
-    <None Include="Assets\ThreadRatings\rating.psd" />
-    <None Include="Assets\ThreadRatings\Thumbs.db" />
-    <None Include="Assets\ThreadTags\README.md" />
-    <None Include="Assets\ThreadTags\Thumbs.db" />
-    <None Include="Assets\Website\CSS\bootstrap-theme.css.map" />
-    <None Include="Assets\Website\CSS\bootstrap-winjs.css.map" />
-    <None Include="Assets\Website\CSS\bootstrap.css.map" />
-    <None Include="Assets\Website\fonts\glyphicons-halflings-regular.eot" />
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\BadgeLogo.scale-100.png" />
-    <Content Include="Assets\BadgeLogo.scale-140.png" />
-    <Content Include="Assets\BadgeLogo.scale-180.png" />
-    <Content Include="Assets\bootstrap.js" />
-    <Content Include="Assets\bootstrap.min.js" />
-    <Content Include="Assets\forums.js" />
-    <Content Include="Assets\forumThread.js" />
-    <Content Include="Assets\jquery.js" />
-    <Content Include="Assets\jquery.min.js" />
-    <Content Include="Assets\Login\Icon2.png" />
-    <Content Include="Assets\Logo.scale-180.png" />
-    <Content Include="Assets\npm.js" />
-    <Content Include="Assets\SmallLogo.scale-180.png" />
-    <Content Include="Assets\taphold.js" />
-    <Content Include="Assets\test-thread.html" />
-    <Content Include="Assets\threadTemplate.js" />
-    <Content Include="Assets\url.min.js" />
-    <Content Include="Assets\Website\CSS\267.css" />
-    <Content Include="Assets\Website\CSS\268.css" />
-    <Content Include="Assets\Website\fonts\glyphicons-halflings-regular.ttf" />
-    <None Include="Assets\Website\fonts\glyphicons-halflings-regular.woff" />
-    <None Include="Assets\Website\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Fonts\clacon.ttf" />
-    <None Include="AwfulForumsReader_TemporaryKey.pfx" />
-    <None Include="New.snk" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\Login\Dontrel-Awful2.png" />
+    <Content Include="Assets\Login\Icon2.png" />
     <Content Include="Assets\MainForumsPage\bookmarkicon3 - big.png" />
     <Content Include="Assets\MainForumsPage\bookmarkicon3.png" />
     <Content Include="Assets\MainForumsPage\grenadesm.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square310x310Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Square71x71Logo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\ThreadRatings\1stars.png" />
     <Content Include="Assets\ThreadRatings\2stars.png" />
     <Content Include="Assets\ThreadRatings\3stars.png" />
@@ -945,6 +701,8 @@
     <Content Include="Assets\ThreadTags\yp-tubes296.png" />
     <Content Include="Assets\Website\CSS\219.css" />
     <Content Include="Assets\Website\CSS\26.css" />
+    <Content Include="Assets\Website\CSS\267.css" />
+    <Content Include="Assets\Website\CSS\268.css" />
     <Content Include="Assets\Website\CSS\bbcode.css" />
     <Content Include="Assets\Website\CSS\bootstrap-theme.css" />
     <Content Include="Assets\Website\CSS\bootstrap-theme.min.css" />
@@ -955,219 +713,257 @@
     <Content Include="Assets\Website\CSS\ui-light-new.css" />
     <Content Include="Assets\Website\CSS\WindowsPhone-Default.css" />
     <Content Include="Assets\Website\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\Website\rap-sheet-test.html" />
     <Content Include="Assets\Website\saclopedia.html" />
     <Content Include="Assets\Website\test-thread.html" />
     <Content Include="Assets\Website\thread.html" />
-    <Content Include="Assets\WideLogo.scale-140.png" />
-    <Content Include="Assets\WideLogo.scale-180.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Fonts\clacon.ttf" />
+    <None Include="Assets\ThreadRatings\rating.psd" />
+    <None Include="Assets\ThreadTags\README.md" />
+    <None Include="Assets\Website\CSS\bootstrap-theme.css.map" />
+    <None Include="Assets\Website\CSS\bootstrap-winjs.css.map" />
+    <None Include="Assets\Website\CSS\bootstrap.css.map" />
+    <None Include="Assets\Website\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\Website\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Assets\Website\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Assets\Website\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="AwfulForumsReader_StoreKey.pfx" />
+    <None Include="project.json" />
+    <None Include="Service References\Application Insights\ConnectedService.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Bookmarks\AddOrRemoveBookmarkCommand.cs" />
+    <Compile Include="Commands\Bookmarks\BookmarkTextConverter.cs" />
+    <Compile Include="Commands\Bookmarks\RefreshBookmarkListCommand.cs" />
+    <Compile Include="Commands\Forums\CreateForumTileCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToAboutPage.cs" />
+    <Compile Include="Commands\Navigation\NavigateToBbCodePageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToBookmarksCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToLastPostPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToMainForumsPage.cs" />
+    <Compile Include="Commands\Navigation\NavigateToNewPrivateMessagePageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToNewReplyCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToNewThreadCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToNewThreadPreviewCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToPostIconPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToPrivateMessageListPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToPrivateMessagePageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToReplyPrivateMessagePageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToSaclopedia.cs" />
+    <Compile Include="Commands\Navigation\NavigateToSaclopediaTopicsList.cs" />
+    <Compile Include="Commands\Navigation\NavigateToSearchPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToSearchResultsCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToSettingsCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToSmiliesPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToTabPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToThreadListPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToThreadPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToUserProfilePageCommand.cs" />
+    <Compile Include="Commands\Posts\AddBbCodeToTextboxCommand.cs" />
+    <Compile Include="Commands\Posts\DraftCommands.cs" />
+    <Compile Include="Commands\Posts\ImgurAddImageCommand.cs" />
+    <Compile Include="Commands\Posts\PostNewThreadCommand.cs" />
+    <Compile Include="Commands\Posts\PostThreadReplyCommand.cs" />
+    <Compile Include="Commands\Posts\ScrollToBottomThreadPageCommand.cs" />
+    <Compile Include="Commands\Posts\SmiliesFilterOnSuggestedQuery.cs" />
+    <Compile Include="Commands\Posts\ThreadDomContentLoadedCommand.cs" />
+    <Compile Include="Commands\PrivateMessages\RefreshPrivateMessageListCommand.cs" />
+    <Compile Include="Commands\PrivateMessages\SendPrivateMessageCommand.cs" />
+    <Compile Include="Commands\Threads\AddIgnoredUserPostCommand.cs" />
+    <Compile Include="Commands\Threads\AddOrRemoveFavoriteCommand.cs" />
+    <Compile Include="Commands\Threads\AddThreadToNotificationTable.cs" />
+    <Compile Include="Commands\Threads\AddToThreadTabs.cs" />
+    <Compile Include="Commands\Threads\BackThreadPageCommand.cs" />
+    <Compile Include="Commands\Threads\ChangePageThreadCommand.cs" />
+    <Compile Include="Commands\Threads\ChangeTabsCommand.cs" />
+    <Compile Include="Commands\Threads\ForwardThreadPageCommand.cs" />
+    <Compile Include="Commands\Threads\LastPageCommand.cs" />
+    <Compile Include="Commands\Threads\PickPostIconCommand.cs" />
+    <Compile Include="Commands\Threads\RefreshThreadListCommand.cs" />
+    <Compile Include="Commands\Threads\RefreshThreadPageCommand.cs" />
+    <Compile Include="Commands\Threads\RemoveTabCommand.cs" />
+    <Compile Include="Commands\Threads\UnreadThreadCommand.cs" />
+    <Compile Include="Commands\Threads\WebViewNotifyCommand.cs" />
+    <Compile Include="Common\AlwaysExecutableCommand.cs" />
+    <Compile Include="Common\AsyncDelegateCommand.cs" />
+    <Compile Include="Common\AutoFacConfiguration.cs" />
+    <Compile Include="Common\FileAccessCommands.cs" />
+    <Compile Include="Common\NavigationHelper.cs" />
+    <Compile Include="Common\NotifierBase.cs" />
+    <Compile Include="Common\ObservableDictionary.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Locator\ViewModels.cs" />
+    <Compile Include="Models\MenuItem.cs" />
+    <Compile Include="Pages\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BbCodeListPage.xaml.cs">
+      <DependentUpon>BbCodeListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BookmarksPage.xaml.cs">
+      <DependentUpon>BookmarksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditPostPage.xaml.cs">
+      <DependentUpon>EditPostPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainForumsPage.xaml.cs">
+      <DependentUpon>MainForumsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewPrivateMessagePage.xaml.cs">
+      <DependentUpon>NewPrivateMessagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewThreadPage.xaml.cs">
+      <DependentUpon>NewThreadPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewThreadReplyPage.xaml.cs">
+      <DependentUpon>NewThreadReplyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PostIconListPage.xaml.cs">
+      <DependentUpon>PostIconListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PreviewThreadPage.xaml.cs">
+      <DependentUpon>PreviewThreadPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PrivateMessageListPage.xaml.cs">
+      <DependentUpon>PrivateMessageListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PrivateMessagePage.xaml.cs">
+      <DependentUpon>PrivateMessagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SaclopediaEntryPage.xaml.cs">
+      <DependentUpon>SaclopediaEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SaclopediaPage.xaml.cs">
+      <DependentUpon>SaclopediaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SearchPage.xaml.cs">
+      <DependentUpon>SearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SearchResultsPage.xaml.cs">
+      <DependentUpon>SearchResultsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SmiliesPage.xaml.cs">
+      <DependentUpon>SmiliesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TabPage.xaml.cs">
+      <DependentUpon>TabPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ThreadListPage.xaml.cs">
+      <DependentUpon>ThreadListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ThreadPage.xaml.cs">
+      <DependentUpon>ThreadPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserProfilePage.xaml.cs">
+      <DependentUpon>UserProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScrollViewer\PullToRefreshScrollViewer.cs" />
+    <Compile Include="Tools\AddOrRemoveFavoriteTextConverter.cs" />
+    <Compile Include="Tools\AwfulDebugger.cs" />
+    <Compile Include="Tools\BackButtonEnableConverter.cs" />
+    <Compile Include="Tools\BackgroundTaskUtils.cs" />
+    <Compile Include="Tools\BackgroundWallpaperOpacityConverter.cs" />
+    <Compile Include="Tools\BookmarkSorting.cs" />
+    <Compile Include="Tools\BooleanInverter.cs" />
+    <Compile Include="Tools\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Tools\BooleanToVisibilityInverter.cs" />
+    <Compile Include="Tools\ConvertImage.cs" />
+    <Compile Include="Tools\ForumDateJoinedConverter.cs" />
+    <Compile Include="Tools\ForwardButtonEnableConverter.cs" />
+    <Compile Include="Tools\HasSeenThreadConverter.cs" />
+    <Compile Include="Tools\HtmlButtonBuilder.cs" />
+    <Compile Include="Tools\HtmlFormater.cs" />
+    <Compile Include="Tools\ImageTools.cs" />
+    <Compile Include="Tools\LinqExtensions.cs" />
+    <Compile Include="Tools\NewThreadReplyTitleConverter.cs" />
+    <Compile Include="Tools\NewThreadTitleConverter.cs" />
+    <Compile Include="Tools\NotifyThreadTextConverter.cs" />
+    <Compile Include="Tools\OpenMenuFlyoutAction.cs" />
+    <Compile Include="Tools\PageNumberConverter.cs" />
+    <Compile Include="Tools\PageScrollingCollection.cs" />
+    <Compile Include="Tools\PrivateMessageScrollingCollection.cs" />
+    <Compile Include="Tools\RatingVisibilityConverter.cs" />
+    <Compile Include="Tools\RepliesSinceLastOpenedColorConverter.cs" />
+    <Compile Include="Tools\ReplyBoxLocation.cs" />
+    <Compile Include="Tools\SearchPageScrollingCollection.cs" />
+    <Compile Include="Tools\ShowBackButtonConverter.cs" />
+    <Compile Include="Tools\StatusBarBehavior.cs" />
+    <Compile Include="Tools\SubforumBodyColorConverter.cs" />
+    <Compile Include="Tools\SubforumFontColorConverter.cs" />
+    <Compile Include="Tools\SubforumHeaderColorConverter.cs" />
+    <Compile Include="Tools\ThreadCommand.cs" />
+    <Compile Include="Tools\ThreadHeaderColorConverter.cs" />
+    <Compile Include="Tools\ToastNotificationArgs.cs" />
+    <Compile Include="Tools\UploadManager.cs" />
+    <Compile Include="Tools\WebViewHelper.cs" />
+    <Compile Include="ViewModels\BbCodeListPageViewModel.cs" />
+    <Compile Include="ViewModels\BookmarksPageViewModel.cs" />
+    <Compile Include="ViewModels\ForumUserPageViewModel.cs" />
+    <Compile Include="ViewModels\LoginPageViewModel.cs" />
+    <Compile Include="ViewModels\MainForumsPageViewModel.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\NewPrivateMessageViewModel.cs" />
+    <Compile Include="ViewModels\NewThreadPageViewModel.cs" />
+    <Compile Include="ViewModels\NewThreadReplyPageViewModel.cs" />
+    <Compile Include="ViewModels\PostIconListPageViewModel.cs" />
+    <Compile Include="ViewModels\PreviewThreadPageViewModel.cs" />
+    <Compile Include="ViewModels\PrivateMessageListViewModel.cs" />
+    <Compile Include="ViewModels\PrivateMessagePageViewModel.cs" />
+    <Compile Include="ViewModels\RapSheetPageViewModel.cs" />
+    <Compile Include="ViewModels\SaclopediaPageViewModel.cs" />
+    <Compile Include="ViewModels\SearchPageViewModel.cs" />
+    <Compile Include="ViewModels\SmiliesPageViewModel.cs" />
+    <Compile Include="ViewModels\TabPageViewModel.cs" />
+    <Compile Include="ViewModels\ThreadListPageViewModel.cs" />
+    <Compile Include="ViewModels\ThreadPageViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="AwfulForumsReader_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\bootstrap.js" />
+    <Content Include="Assets\bootstrap.min.js" />
+    <Content Include="Assets\forums.js" />
+    <Content Include="Assets\forumThread.js" />
+    <Content Include="Assets\jquery.js" />
+    <Content Include="Assets\jquery.min.js" />
+    <Content Include="Assets\npm.js" />
+    <Content Include="Assets\taphold.js" />
+    <Content Include="Assets\test-thread.html" />
+    <Content Include="Assets\threadTemplate.js" />
+    <Content Include="Assets\url.min.js" />
     <Content Include="Fonts\FontReadme.txt" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
-    <Content Include="Assets\Logo.scale-100.png" />
-    <Content Include="Assets\SmallLogo.scale-100.png" />
-    <Content Include="Assets\SplashScreen.scale-100.png" />
-    <Content Include="Assets\StoreLogo.scale-100.png" />
-    <Content Include="Assets\WideLogo.scale-100.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Pages\AboutPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\BbCodeListPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\BookmarksPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\EditPostPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\LoginPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\MainForumsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\NewPrivateMessagePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\NewThreadPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\NewThreadReplyPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\PostIconListPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\PreviewThreadPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\PrivateMessageListPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\PrivateMessagePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\SaclopediaEntryPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\SaclopediaPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\SearchPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\SearchResultsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\SettingsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\SmiliesPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\TabPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\ThreadListPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\ThreadPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\UserProfilePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="styles\styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Dark.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Page>
-    <Page Include="Themes\Generic.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Page>
-    <Page Include="Themes\Light.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Page>
-    <Page Include="Themes\Yospos.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Autofac">
-      <HintPath>..\packages\Autofac.3.5.2\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="HtmlAgilityPack-PCL">
-      <HintPath>..\packages\HtmlAgilityPack-PCL.1.4.6\lib\HtmlAgilityPack-PCL.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationInsights, Version=0.17.0.576, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.0.17.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.RuntimeTelemetry.0.13.0-build26067\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.winmd</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationInsights.Extensibility.Windows, Version=0.14.3.177, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsApps.0.14.3-build00177\lib\win81\Microsoft.ApplicationInsights.Extensibility.Windows.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationInsights.PersistenceChannel, Version=0.14.3.186, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.PersistenceChannel.0.14.3-build00177\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.PersistenceChannel.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\netcore45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="PCLStorage">
-      <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-win8+wpa81\PCLStorage.dll</HintPath>
-    </Reference>
-    <Reference Include="PCLStorage.Abstractions">
-      <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-win8+wpa81\PCLStorage.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="PropertyChanged, Version=1.50.1.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\ThemeManagerRt\PropertyChanged.dll</HintPath>
-    </Reference>
-    <Reference Include="SQLite.Net, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SQLite.Net-PCL.2.5.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SQLite.Net.Async, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SQLite.Net.Async-PCL.2.5.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.Async.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SQLite.Net.Platform.WinRT">
-      <HintPath>..\lib\portable-win81+wpa81\SQLite.Net.Platform.WinRT.dll</HintPath>
-    </Reference>
-    <Reference Include="SQLite.WinRT, Version=3.8.5649.24645, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SQLite.WinRT.3.8.11.3\lib\portable-net45+win81+wpa81+wp8\SQLite.WinRT.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SQLiteNetExtensions">
-      <HintPath>..\packages\SQLiteNetExtensions.1.2.5\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\SQLiteNetExtensions.dll</HintPath>
-    </Reference>
-    <Reference Include="SQLiteNetExtensionsAsync">
-      <HintPath>..\packages\SQLiteNetExtensions.Async.1.2.4\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\SQLiteNetExtensionsAsync.dll</HintPath>
-    </Reference>
-    <Reference Include="ThemeManagerRt, Version=1.0.1.6, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\ThemeManagerRt\ThemeManagerRt.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
-      <Name>Behaviors SDK %28XAML%29</Name>
-    </SDKReference>
-    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
-      <Name>Microsoft Visual C++ 2015 Runtime Package for Windows Universal</Name>
-    </SDKReference>
-    <SDKReference Include="WindowsDesktop, Version=10.0.10166.0">
-      <Name>Windows Desktop Extensions for the UWP</Name>
-    </SDKReference>
-    <SDKReference Include="WindowsMobile, Version=10.0.10166.0">
-      <Name>Windows Mobile Extensions for the UWP</Name>
-    </SDKReference>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\AwfulForumsLibrary\AwfulForumsLibrary\AwfulForumsLibrary.csproj">
@@ -1175,42 +971,164 @@
       <Name>AwfulForumsLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\AwfulForumsReader.BackgroundNotify\AwfulForumsReader.BackgroundNotify.csproj">
-      <Project>{08316e7a-c1b7-4c75-b5cf-34fc87c1a5a4}</Project>
+      <Project>{7dc031fb-176e-4cf2-8c86-57d9da15b755}</Project>
       <Name>AwfulForumsReader.BackgroundNotify</Name>
     </ProjectReference>
     <ProjectReference Include="..\AwfulForumsReader.Database\AwfulForumsReader.Database.csproj">
-      <Project>{79ece96b-4248-4d5a-b2b7-90e9c7d38ec6}</Project>
+      <Project>{8D732328-1CAE-405A-879D-7A81985C3FDE}</Project>
       <Name>AwfulForumsReader.Database</Name>
     </ProjectReference>
     <ProjectReference Include="..\AwfulForumsReader.Notification\AwfulForumsReader.Notification.csproj">
-      <Project>{47409eab-ffbd-49c9-8296-e39b47f4ea74}</Project>
+      <Project>{a5331d72-a2fd-4e96-b9ee-c9c3a2ee4116}</Project>
       <Name>AwfulForumsReader.Notification</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\Tiles\" />
+    <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
+      <Name>Behaviors SDK %28XAML%29</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.UAP.2015, Version=3.8.11.1">
+      <Name>SQLite for Universal App Platform</Name>
+    </SDKReference>
+    <SDKReference Include="WindowsMobile, Version=10.0.10240.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PCLStorage.WinRT_UWP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\PCLStorage\PCLStorage.WinRT_UWP.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyChanged">
+      <HintPath>..\lib\ThemeManagerRt\PropertyChanged.dll</HintPath>
+    </Reference>
+    <Reference Include="ThemeManagerRt">
+      <HintPath>..\lib\ThemeManagerRt\ThemeManagerRt.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Pages\AboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BbCodeListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BookmarksPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\EditPostPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\LoginPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\MainForumsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\NewPrivateMessagePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\NewThreadPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\NewThreadReplyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PostIconListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PreviewThreadPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PrivateMessageListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PrivateMessagePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SaclopediaEntryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SaclopediaPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SearchResultsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SmiliesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\TabPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ThreadListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ThreadPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\UserProfilePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="styles\styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Dark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Light.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Yospos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>New.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-  <Import Project="..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.16-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets" Condition="Exists('..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.16-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.16-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.16-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets'))" />
-    <Error Condition="!Exists('..\packages\SQLite.Core.Universal.3.8.11.2\build\win81\SQLite.Core.Universal.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLite.Core.Universal.3.8.11.2\build\win81\SQLite.Core.Universal.targets'))" />
-    <Error Condition="!Exists('..\packages\SQLite.WinRT.UAP.3.8.11.3\build\win81\SQLite.WinRT.UAP.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLite.WinRT.UAP.3.8.11.3\build\win81\SQLite.WinRT.UAP.targets'))" />
-  </Target>
-  <Import Project="..\packages\SQLite.Core.Universal.3.8.11.2\build\win81\SQLite.Core.Universal.targets" Condition="Exists('..\packages\SQLite.Core.Universal.3.8.11.2\build\win81\SQLite.Core.Universal.targets')" />
-  <Import Project="..\packages\SQLite.WinRT.UAP.3.8.11.3\build\win81\SQLite.WinRT.UAP.targets" Condition="Exists('..\packages\SQLite.WinRT.UAP.3.8.11.3\build\win81\SQLite.WinRT.UAP.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

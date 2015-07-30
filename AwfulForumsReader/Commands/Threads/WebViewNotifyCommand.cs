@@ -45,6 +45,9 @@ namespace AwfulForumsReader.Commands.Threads
                 var command = JsonConvert.DeserializeObject<ThreadCommand>(stringJson);
                 switch (command.Command)
                 {
+                    case "openLink":
+                        await Windows.System.Launcher.LaunchUriAsync(new Uri(command.Id));
+                        break;
                     case "userProfile":
                         var navUser = new NavigateToUserProfilePageCommand();
                         navUser.Execute(Convert.ToInt64(command.Id));

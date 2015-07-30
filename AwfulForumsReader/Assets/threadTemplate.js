@@ -51,7 +51,8 @@ var OpenLink = function(link) {
     }
     // If the link is not for another SA thread, open it in IE.
     if (hostname !== 'forums.somethingawful.com' && hostname !== "") {
-        return true;
+        ForumCommand('openLink', link);
+        return false;
     }
     var file = $.url('file', link);
     switch(file)
