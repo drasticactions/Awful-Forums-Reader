@@ -417,6 +417,7 @@
     <Content Include="Assets\ThreadTags\lan-midwest.png" />
     <Content Include="Assets\ThreadTags\lan-ne.png" />
     <Content Include="Assets\ThreadTags\lan-nw.png" />
+    <Content Include="Assets\ThreadTags\lan-south2.png" />
     <Content Include="Assets\ThreadTags\lan-south.png" />
     <Content Include="Assets\ThreadTags\lan-sw.png" />
     <Content Include="Assets\ThreadTags\lan-west.png" />
@@ -499,6 +500,7 @@
     <Content Include="Assets\ThreadTags\nmd-tour.png" />
     <Content Include="Assets\ThreadTags\nmd-us.png" />
     <Content Include="Assets\ThreadTags\nmd-world.png" />
+    <Content Include="Assets\ThreadTags\rsf-cloudy.png" />
     <Content Include="Assets\ThreadTags\noicon.png" />
     <Content Include="Assets\ThreadTags\ouya.png" />
     <Content Include="Assets\ThreadTags\phiz-ant.png" />
