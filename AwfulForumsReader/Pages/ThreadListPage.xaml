@@ -112,7 +112,14 @@
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
             </AppBarButton>
-        </CommandBar>
+                        <AppBarButton Icon="Add" Label="Post Thread">
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="Click">
+                                    <core:InvokeCommandAction Command="{Binding NavigateToNewThreadCommand}" />
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </AppBarButton>
+                    </CommandBar>
         </Grid>
         </Grid>
             <Grid

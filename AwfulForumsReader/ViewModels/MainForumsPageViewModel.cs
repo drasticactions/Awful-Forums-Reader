@@ -102,6 +102,7 @@ namespace AwfulForumsReader.ViewModels
                 ForumGroupList.RemoveAt(0);
                 ForumGroupList.Insert(0, _favoritesEntity);
             }
+
             OnPropertyChanged("ForumGroupList");
         }
 
@@ -114,6 +115,9 @@ namespace AwfulForumsReader.ViewModels
                 {
                     ForumGroupList.Add(forumCategoryEntity);
                 }
+#if DEBUG
+                ForumGroupList[3].ForumList.Add(ForumManager.AddDebugForum());
+#endif
                 return;
             }
 
