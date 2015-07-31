@@ -89,6 +89,11 @@ namespace AwfulForumsReader.Pages
                 DarkLightThemeSwitch.IsOn = false;
             }
 
+            if (_localSettings.Values.ContainsKey(Constants.ThemeDefault))
+            {
+                ThemeComboBox.SelectedIndex = (int)_localSettings.Values[Constants.ThemeDefault];
+            }
+
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
@@ -282,5 +287,12 @@ namespace AwfulForumsReader.Pages
         }
 
         #endregion
+
+        private void ThemeComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ThemeComboBox == null) return;
+            // TODO: Make Enum.
+            _localSettings.Values[Constants.ThemeDefault] = ThemeComboBox.SelectedIndex;
+        }
     }
 }

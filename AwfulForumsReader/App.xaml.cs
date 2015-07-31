@@ -25,6 +25,7 @@ using AwfulForumsReader.Common;
 using AwfulForumsReader.Database;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
+using ThemeManagerRt;
 
 namespace AwfulForumsReader
 {
@@ -46,6 +47,23 @@ namespace AwfulForumsReader
             Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync();
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            if (_localSettings.Values.ContainsKey(Constants.ThemeDefault))
+            {
+                var themeType = (ThemeTypes)_localSettings.Values[Constants.ThemeDefault];
+                switch (themeType)
+                {
+                    case ThemeTypes.Light:
+                        RequestedTheme = ApplicationTheme.Dark;
+                        break;
+                    case ThemeTypes.Dark:
+                        RequestedTheme = ApplicationTheme.Dark;
+                        break;
+                    case ThemeTypes.YOSPOS:
+                        RequestedTheme = ApplicationTheme.Dark;
+                        break;
+                }
+            }
+
             try
             {
                 DataSource ds = new DataSource();
@@ -84,16 +102,23 @@ namespace AwfulForumsReader
         /// <param name="e">起動の要求とプロセスの詳細を表示します。</param>
         protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
-
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
-
-            //ThemeManager.SetThemeManager(ElementTheme.Dark);
-            //ThemeManager.ChangeTheme(new Uri("ms-appx:///Themes/Yospos.xaml"));
+            if (_localSettings.Values.ContainsKey(Constants.ThemeDefault))
+            {
+                var themeType = (ThemeTypes)_localSettings.Values[Constants.ThemeDefault];
+                switch (themeType)
+                {
+                    case ThemeTypes.YOSPOS:
+                        ThemeManager.SetThemeManager(ElementTheme.Dark);
+                        ThemeManager.ChangeTheme(new Uri("ms-appx:///Themes/Yospos.xaml"));
+                        break;
+                }
+            }
             SystemNavigationManager.GetForCurrentView().BackRequested += BackPressed;
             RootFrame = Window.Current.Content as Frame;
 

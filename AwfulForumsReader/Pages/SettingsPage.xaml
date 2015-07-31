@@ -40,6 +40,20 @@
             <ScrollViewer>
                 <StackPanel Margin="15">
 
+                    <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Change Theme" />
+
+                    <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
+                        <TextBlock.Text>
+                            Change the current theme to either dark or light.
+                        </TextBlock.Text>
+                    </TextBlock>
+
+                    <ComboBox HorizontalAlignment="Stretch" x:Name="ThemeComboBox"  SelectedIndex="0" SelectionChanged="ThemeComboBox_OnSelectionChanged" Grid.Row="2">
+                        <ComboBoxItem Content="Light"/>
+                        <ComboBoxItem Content="Dark"/>
+                        <ComboBoxItem Content="YOSPOS"/>
+                    </ComboBox>
+
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Enable Background Wallpaper" />
 
                     <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
