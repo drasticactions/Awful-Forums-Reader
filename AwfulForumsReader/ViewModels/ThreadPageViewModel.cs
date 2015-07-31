@@ -178,7 +178,14 @@ IsLoading = true;
             var count = postList.Count(node => !node.HasSeen);
             if (ForumThreadEntity.RepliesSinceLastOpened > 0)
             {
-                ForumThreadEntity.RepliesSinceLastOpened -= count;
+                if (ForumThreadEntity.RepliesSinceLastOpened - count < 0)
+                {
+                    ForumThreadEntity.RepliesSinceLastOpened = 0;
+                }
+                else
+                {
+                    ForumThreadEntity.RepliesSinceLastOpened -= count;
+                }
             }
 #if WINDOWS_PHONE_APP
             ForumThreadEntity.PlatformIdentifier = PlatformIdentifier.WindowsPhone;
