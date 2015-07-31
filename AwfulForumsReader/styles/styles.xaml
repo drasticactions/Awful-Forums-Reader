@@ -106,7 +106,7 @@
             </Grid>
             <FlyoutBase.AttachedFlyout>
                 <MenuFlyout>
-                    <MenuFlyoutItem Command="{Binding DataContext.LastPage, ElementName=ForumThreadList}"  CommandParameter="{Binding}" Text="Go to Last Page"/>
+                    <MenuFlyoutItem Command="{Binding DataContext.NavigateToLastPageInThreadPageCommand, ElementName=ForumThreadList}"  CommandParameter="{Binding}" Text="Go to Last Page"/>
                     <MenuFlyoutItem Command="{Binding DataContext.AddToTabs, ElementName=ForumThreadList}"  CommandParameter="{Binding}" Text="Add to Thread Tabs"/>
                     <MenuFlyoutItem Visibility="{Binding IsBookmark, Converter={StaticResource BooleanToVisibilityConverter}}" Command="{Binding DataContext.AddThreadToNotificationTableCommand, ElementName=ForumThreadList}"  CommandParameter="{Binding}" Text="{Binding Converter={StaticResource NotifyThreadTextConverter}}"/>
                     <MenuFlyoutItem Command="{Binding DataContext.UnreadThread, ElementName=ForumThreadList}"  CommandParameter="{Binding}" Text="Unread"/>
