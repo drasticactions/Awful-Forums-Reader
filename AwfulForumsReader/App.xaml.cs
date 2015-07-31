@@ -37,7 +37,7 @@ namespace AwfulForumsReader
         public static IContainer Container;
         private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
         public static Frame RootFrame;
-
+        public static ApplicationTheme SelectedTheme { get; set; }
         /// <summary>
         /// 単一アプリケーション オブジェクトを初期化します。これは、実行される作成したコードの
         ///最初の行であるため、main() または WinMain() と論理的に等価です。
@@ -53,7 +53,7 @@ namespace AwfulForumsReader
                 switch (themeType)
                 {
                     case ThemeTypes.Light:
-                        RequestedTheme = ApplicationTheme.Dark;
+                        RequestedTheme = ApplicationTheme.Light;
                         break;
                     case ThemeTypes.Dark:
                         RequestedTheme = ApplicationTheme.Dark;
@@ -63,7 +63,7 @@ namespace AwfulForumsReader
                         break;
                 }
             }
-
+            SelectedTheme = RequestedTheme;
             try
             {
                 DataSource ds = new DataSource();
