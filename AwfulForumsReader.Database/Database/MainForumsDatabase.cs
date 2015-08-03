@@ -129,7 +129,7 @@ namespace AwfulForumsReader.Database
             {
                 var bookmarks = await threadManager.GetBookmarksAsync(forum, pageNumber);
                 bookmarkThreads.AddRange(bookmarks);
-                if (bookmarks.Any())
+                if (!bookmarks.Any())
                 {
                     hasItems = true;
                 }
