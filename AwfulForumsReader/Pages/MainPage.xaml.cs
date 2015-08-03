@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -16,6 +17,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using AwfulForumsLibrary.Entity;
+using AwfulForumsLibrary.Tools;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Commands.Navigation;
 using AwfulForumsReader.Models;
@@ -33,6 +35,7 @@ namespace AwfulForumsReader.Pages
     {
 
         private NavigationHelper navigationHelper;
+        private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
 
         public MainPage()
         {
@@ -40,8 +43,25 @@ namespace AwfulForumsReader.Pages
             App.RootFrame = MainFrame;
             App.RootFrame.Navigated += RootFrameOnNavigated;
             Locator.ViewModels.MainPageVm.MainPageSplitView = Splitter;
-            var test = new NavigateToMainForumsPage();
-            test.Execute(null);
+            if (_localSettings.Values.ContainsKey(Constants.BookmarkStartup))
+            {
+                if ((bool) _localSettings.Values[Constants.BookmarkStartup])
+                {
+                    var test = new NavigateToBookmarksCommand();
+                    test.Execute(null);
+                }
+                else
+                {
+                    var test2 = new NavigateToMainForumsPage();
+                    test2.Execute(null);
+                }
+            }
+            else
+            {
+                var test3 = new NavigateToMainForumsPage();
+                test3.Execute(null);
+            }
+
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
