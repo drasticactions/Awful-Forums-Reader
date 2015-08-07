@@ -9,4 +9,12 @@ namespace AwfulForumsReader.Commands.Threads
             Locator.ViewModels.ThreadListPageVm.Refresh();
         }
     }
+
+    public class RefreshForumListCommand : AlwaysExecutableCommand
+    {
+        public override void Execute(object parameter)
+        {
+            Locator.ViewModels.MainForumsPageVm.Refresh();
+        }
+    }
 }

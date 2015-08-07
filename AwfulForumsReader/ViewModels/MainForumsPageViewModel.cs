@@ -63,6 +63,8 @@ namespace AwfulForumsReader.ViewModels
             }
         }
 
+        public RefreshForumListCommand RefreshForumList { get; set; } = new RefreshForumListCommand();
+
         public CreateForumTileCommand CreateForumTile { get; set; } = new CreateForumTileCommand();
 
         public AddOrRemoveFavoriteCommand AddOrRemoveFavorite { get; set; } = new AddOrRemoveFavoriteCommand();
@@ -70,6 +72,30 @@ namespace AwfulForumsReader.ViewModels
         public void SetFavoriteForums(ObservableCollection<ForumCategoryEntity> favoriteList)
         {
             FavoriteForumGroupList = favoriteList;
+        }
+
+        public async Task Refresh()
+        {
+            IsLoading = true;
+            try
+            {
+                ForumGroupList = new ObservableCollection<ForumCategoryEntity>();
+                await _db.RemoveMainForumsList();
+                var forumCategoryEntities = await _forumManager.GetForumCategoryMainPage();
+                foreach (var forumCategoryEntity in forumCategoryEntities)
+                {
+                    ForumGroupList.Add(forumCategoryEntity);
+                }
+                await _db.SaveMainForumsList(ForumGroupList.ToList());
+            }
+            catch (Exception)
+            {
+                // TODO: There is an "error" saving the main forums page the first time, but they do get saved correctly.
+                // And the exception is not helpful at all... Figure out what's going on and fix it. :\
+                //AwfulDebugger.SendMessageDialogAsync("Error getting the main forums dialog", ex);
+            }
+            IsLoading = false;
+            OnPropertyChanged("ForumGroupList");
         }
 
         public async Task GetFavoriteForums()

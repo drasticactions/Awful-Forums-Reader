@@ -16,100 +16,117 @@ namespace AwfulForumsReader.Database
 
         public async Task<List<ForumCategoryEntity>> GetMainForumsList()
         {
-            var ds = new DataSource();
-
-            var list = new List<ForumCategoryEntity>();
-            var dbForumsCategories = await ds.ForumCategoryRepository.GetAllWithChildren();
-            if (!dbForumsCategories.Any()) return list;
-            var result = dbForumsCategories.OrderBy(node => node.Order);
-            foreach (var forumCategoryEntity in result)
+            using (var ds = new DataSource())
             {
-                var testForumList = new List<ForumEntity>();
-                foreach (var forum in forumCategoryEntity.ForumList.Where(node => node.ParentForum == null))
+                var list = new List<ForumCategoryEntity>();
+                var dbForumsCategories = await ds.ForumCategoryRepository.GetAllWithChildren();
+                if (!dbForumsCategories.Any()) return list;
+                var result = dbForumsCategories.OrderBy(node => node.Order);
+                foreach (var forumCategoryEntity in result)
                 {
-                    testForumList.Add(forum);
-                    ForumEntity forum1 = forum;
-                    testForumList.AddRange(forumCategoryEntity.ForumList.Where(node => node.ParentForum == forum1));
+                    var testForumList = new List<ForumEntity>();
+                    foreach (var forum in forumCategoryEntity.ForumList.Where(node => node.ParentForum == null))
+                    {
+                        testForumList.Add(forum);
+                        ForumEntity forum1 = forum;
+                        testForumList.AddRange(forumCategoryEntity.ForumList.Where(node => node.ParentForum == forum1));
+                    }
+                    forumCategoryEntity.ForumList = testForumList;
+                    list.Add(forumCategoryEntity);
                 }
-                forumCategoryEntity.ForumList = testForumList;
-                list.Add(forumCategoryEntity);
+                return list;
             }
-            return list;
-
         }
 
         public async Task SetThreadNotified(ForumThreadEntity thread)
         {
-            var bds = new BookmarkDataSource();
-            thread.IsNotified = !thread.IsNotified;
-            await bds.BookmarkForumRepository.Update(thread);
+            using (var bds = new BookmarkDataSource())
+            {
+                thread.IsNotified = !thread.IsNotified;
+                await bds.BookmarkForumRepository.Update(thread);
+            }
         }
 
         public async Task SaveMainForumsList(List<ForumCategoryEntity> forumGroupList)
         {
-            var ds = new DataSource();
-            var items = await ds.ForumCategoryRepository.Items.ToListAsync();
-            if (items.Any())
+            using (var ds = new DataSource())
             {
+                var count = 1;
                 foreach (var item in forumGroupList)
                 {
-                    await ds.ForumCategoryRepository.UpdateWithChildren(item);
+                    foreach (var forum in item.ForumList)
+                    {
+                        forum.Id = count;
+                        count++;
+                    }
+                    await ds.ForumCategoryRepository.CreateWithChildren(item);
                 }
-                return;
             }
+        }
 
-            foreach (var item in forumGroupList)
+        public async Task RemoveMainForumsList()
+        {
+            using (var ds = new DataSource())
             {
-                await ds.ForumCategoryRepository.CreateWithChildren(item);
+                await ds.ForumCategoryRepository.RemoveAll();
+                await ds.ForumRepository.RemoveAll();
             }
         }
 
         public async Task<List<ForumThreadEntity>> RefreshBookmarkedThreads()
         {
-            var dbs = new BookmarkDataSource();
-            List<ForumThreadEntity> updatedBookmarkList;
-            var notifyThreads = await dbs.BookmarkForumRepository.Items.Where(node => node.IsNotified).ToListAsync();
-            var notifyThreadIds = notifyThreads.Select(thread => thread.ThreadId).ToList();
-            try
+            using (var dbs = new BookmarkDataSource())
             {
-                updatedBookmarkList = await GetBookmarkedThreadsAsync();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Could not get bookmarks", ex);
-            }
-
-            await RemoveBookmarkThreads();
-            foreach (ForumThreadEntity t in updatedBookmarkList)
-            {
-                if (notifyThreadIds.Contains(t.ThreadId))
+                List<ForumThreadEntity> updatedBookmarkList;
+                var notifyThreads = await dbs.BookmarkForumRepository.Items.Where(node => node.IsNotified).ToListAsync();
+                var notifyThreadIds = notifyThreads.Select(thread => thread.ThreadId).ToList();
+                try
                 {
-                    t.IsNotified = true;
+                    updatedBookmarkList = await GetBookmarkedThreadsAsync();
                 }
-                await dbs.BookmarkForumRepository.CreateWithChildren(t);
-            }
-            _localSettings.Values["RefreshBookmarks"] = DateTime.UtcNow.ToString();
+                catch (Exception ex)
+                {
+                    throw new Exception("Could not get bookmarks", ex);
+                }
 
-            return updatedBookmarkList;
+                await RemoveBookmarkThreads();
+                foreach (ForumThreadEntity t in updatedBookmarkList)
+                {
+                    if (notifyThreadIds.Contains(t.ThreadId))
+                    {
+                        t.IsNotified = true;
+                    }
+                    await dbs.BookmarkForumRepository.CreateWithChildren(t);
+                }
+                _localSettings.Values["RefreshBookmarks"] = DateTime.UtcNow.ToString();
+
+                return updatedBookmarkList;
+            }
         }
 
         public async Task<ForumThreadEntity> GetBookmarkThreadAsync(long threadId)
         {
-            var bds = new BookmarkDataSource();
-            return await bds.BookmarkForumRepository.Items.Where(node => node.ThreadId == threadId).FirstOrDefaultAsync();
+            using (var bds = new BookmarkDataSource())
+            {
+                return await bds.BookmarkForumRepository.Items.Where(node => node.ThreadId == threadId).FirstOrDefaultAsync();
+            }
         }
 
         public async Task<bool> IsBookmark(long threadId)
         {
-            var bds = new BookmarkDataSource();
-            var result = await bds.BookmarkForumRepository.Items.Where(node => node.ThreadId == threadId).ToListAsync();
-            return result.Count > 0;
+            using (var bds = new BookmarkDataSource())
+            {
+                var result = await bds.BookmarkForumRepository.Items.Where(node => node.ThreadId == threadId).ToListAsync();
+                return result.Count > 0;
+            }
         }
 
         public async Task<List<ForumThreadEntity>> GetBookmarkedThreadsFromDb()
         {
-            var bds = new BookmarkDataSource();
-            return await bds.BookmarkForumRepository.Items.ToListAsync();
+            using (var bds = new BookmarkDataSource())
+            {
+                return await bds.BookmarkForumRepository.Items.ToListAsync();
+            }
         }
 
         private async Task<List<ForumThreadEntity>> GetBookmarkedThreadsAsync()
@@ -143,13 +160,14 @@ namespace AwfulForumsReader.Database
 
         public async Task<List<ForumEntity>> GetFavoriteForumsAsync()
         {
-            var ds = new DataSource();
-
-            var list = new List<ForumEntity>();
-            var dbForumsCategories = await ds.ForumRepository.GetAllWithChildren();
-            if (!dbForumsCategories.Any()) return list;
-            list.AddRange(dbForumsCategories.Where(node => node.IsBookmarks));
-            return list;
+            using (var ds = new DataSource())
+            {
+                var list = new List<ForumEntity>();
+                var dbForumsCategories = await ds.ForumRepository.GetAllWithChildren();
+                if (!dbForumsCategories.Any()) return list;
+                list.AddRange(dbForumsCategories.Where(node => node.IsBookmarks));
+                return list;
+            }
         }
 
         public async Task AddBookmarkThreads(List<ForumThreadEntity> bookmarkedThreads)

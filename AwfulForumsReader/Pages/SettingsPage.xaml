@@ -121,7 +121,7 @@
                         </TextBlock.Text>
                     </TextBlock>
 
-                    <ToggleSwitch x:Name="AutoReloadSwitch" Toggled="AutoReloadSwitch_OnToggled" />
+                    <ToggleSwitch x:Name="AutoReloadSwitch" IsEnabled="False" Toggled="AutoReloadSwitch_OnToggled" />
 
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Dark Mode" />
 

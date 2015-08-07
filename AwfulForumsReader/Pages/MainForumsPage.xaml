@@ -63,8 +63,13 @@
             <TextBlock Foreground="{StaticResource TitleFontColor}" Text="Awful Forums Reader" Margin="50,0,0,0" x:Name="pageTitle" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}"
                        IsHitTestVisible="false" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
         </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
             <GridView
-                Grid.Row="1"
+                Grid.Row="0"
                 x:Name="MainForumListFull"
                 AutomationProperties.AutomationId="ItemGridView"
                 AutomationProperties.Name="Grouped Items"
@@ -76,19 +81,29 @@
                 IsSwipeEnabled="True"
                 IsItemClickEnabled="True">
                 <GridView.GroupStyle>
-            <GroupStyle HeaderTemplate="{StaticResource HeaderTemplate}">
-                <GroupStyle.Panel>
-                    <ItemsPanelTemplate>
-                        <VariableSizedWrapGrid Orientation="Vertical" Margin="0,0,80,0"/>
-                    </ItemsPanelTemplate>
-                </GroupStyle.Panel>
-            </GroupStyle>
-        </GridView.GroupStyle>
-        <i:Interaction.Behaviors>
-                <core:EventTriggerBehavior EventName="ItemClick">
-                    <core:InvokeCommandAction Command="{Binding NavigateToThreadListPageCommand}" />
-                </core:EventTriggerBehavior>
-            </i:Interaction.Behaviors>
-    </GridView>
+                    <GroupStyle HeaderTemplate="{StaticResource HeaderTemplate}">
+                        <GroupStyle.Panel>
+                            <ItemsPanelTemplate>
+                                <VariableSizedWrapGrid Orientation="Vertical" Margin="0,0,80,0"/>
+                            </ItemsPanelTemplate>
+                        </GroupStyle.Panel>
+                    </GroupStyle>
+                </GridView.GroupStyle>
+                <i:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="ItemClick">
+                        <core:InvokeCommandAction Command="{Binding NavigateToThreadListPageCommand}" />
+                    </core:EventTriggerBehavior>
+                </i:Interaction.Behaviors>
+            </GridView>
+            <CommandBar Grid.Row="1">
+                <AppBarButton Icon="Refresh" Label="Refresh">
+                    <i:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Click">
+                            <core:InvokeCommandAction Command="{Binding RefreshForumList}" />
+                        </core:EventTriggerBehavior>
+                    </i:Interaction.Behaviors>
+                </AppBarButton>
+            </CommandBar>
+        </Grid>
     </Grid>
 </Page>
