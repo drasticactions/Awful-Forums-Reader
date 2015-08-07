@@ -89,40 +89,6 @@ namespace AwfulForumsReader.ViewModels
             }
         }
 
-        private async Task<List<ForumThreadEntity>> GetBookmarkedThreadsAsync()
-        {
-            var bookmarkThreads = new List<ForumThreadEntity>();
-            var threadManager = new ThreadManager();
-            var forum = new ForumEntity()
-            {
-                Name = "Bookmarks",
-                IsBookmarks = true,
-                IsSubforum = false,
-                Location = Constants.UserCp
-            };
-            var pageNumber = 1;
-            var hasNoItems = false;
-            while (!hasNoItems)
-            {
-                var bookmarks = await threadManager.GetBookmarksAsync(forum, pageNumber);
-                bookmarkThreads.AddRange(bookmarks);
-                if (bookmarks.Any())
-                {
-                    pageNumber++;
-                }
-                else
-                {
-                    hasNoItems = true;
-                }
-            }
-
-            if (!_localSettings.Values.ContainsKey(Constants.BookmarkDefault)) return bookmarkThreads;
-            var sorting = (BookmarkSorting)_localSettings.Values[Constants.BookmarkDefault];
-            if (sorting != BookmarkSorting.MostUnreadOnTop) return bookmarkThreads;
-            var newBookmarks = bookmarkThreads.OrderByDescending(node => node.RepliesSinceLastOpened);
-            return newBookmarks.ToList();
-        }
-
         public bool AutoRefresh { get; set; }
 
         public async Task Initialize()
@@ -167,9 +133,16 @@ namespace AwfulForumsReader.ViewModels
         public async Task Refresh()
         {
             IsLoading = true;
-            var test = await _bookmarkManager.RefreshBookmarkedThreads();
-            BookmarkedThreads = test.ToObservableCollection();
-            _localSettings.Values["RefreshBookmarks"] = DateTime.UtcNow.ToString();
+            try
+            {
+                var test = await _bookmarkManager.RefreshBookmarkedThreads();
+                BookmarkedThreads = test.ToObservableCollection();
+                _localSettings.Values["RefreshBookmarks"] = DateTime.UtcNow.ToString();
+            }
+            catch (Exception ex)
+            {
+                AwfulDebugger.SendMessageDialogAsync("Failed to get Bookmarks", ex);
+            }
             IsLoading = false;
         }
 

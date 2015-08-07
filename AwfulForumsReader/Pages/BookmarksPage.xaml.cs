@@ -131,18 +131,25 @@ namespace AwfulForumsReader.Pages
             {
                 return;
             }
-            var threadId = (long) e.NavigationParameter;
-            var bookmarkdata = new BookmarkDataSource();
-            _lastSelectedItem = await 
-              bookmarkdata.BookmarkForumRepository.Items.Where(node => node.ThreadId == threadId).FirstOrDefaultAsync();
-            if (_lastSelectedItem != null)
+            try
             {
-                Locator.ViewModels.BookmarksPageVm.NavigateToThreadPageViaToastCommand.Execute(_lastSelectedItem);
-
-                if (AdaptiveStates.CurrentState == NarrowState)
+                var threadId = (long)e.NavigationParameter;
+                var bookmarkdata = new BookmarkDataSource();
+                _lastSelectedItem = await
+                  bookmarkdata.BookmarkForumRepository.Items.Where(node => node.ThreadId == threadId).FirstOrDefaultAsync();
+                if (_lastSelectedItem != null)
                 {
-                    Frame.Navigate(typeof(ThreadPage), null, new DrillInNavigationTransitionInfo());
+                    Locator.ViewModels.BookmarksPageVm.NavigateToThreadPageViaToastCommand.Execute(_lastSelectedItem);
+
+                    if (AdaptiveStates.CurrentState == NarrowState)
+                    {
+                        Frame.Navigate(typeof(ThreadPage), null, new DrillInNavigationTransitionInfo());
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                AwfulDebugger.SendMessageDialogAsync("Failed to load Bookmarks page", ex);
             }
         }
 

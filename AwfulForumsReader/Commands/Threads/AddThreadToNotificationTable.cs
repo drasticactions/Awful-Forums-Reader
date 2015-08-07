@@ -20,7 +20,17 @@ namespace AwfulForumsReader.Commands.Threads
                 return;
             }
             var mfd = new MainForumsDatabase();
-            await mfd.SetThreadNotified(thread);
+            try
+            {
+                await mfd.SetThreadNotified(thread);
+            }
+            catch (Exception ex)
+            {
+                await
+                   AwfulDebugger.SendMessageDialogAsync(
+                       "Failed to save thread to notifications table",
+                       ex);
+            }
         }
     }
 }
