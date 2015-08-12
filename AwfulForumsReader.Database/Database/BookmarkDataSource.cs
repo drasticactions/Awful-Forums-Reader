@@ -13,7 +13,7 @@ namespace AwfulForumsReader.Database
 {
     public class BookmarkDataSource : IDisposable
     {
-        private const string DBFILENAME = "Bookmark.db";
+        private const string DBFILENAME = "Bookmarks.db";
         protected StorageFolder UserFolder { get; set; }
         protected SQLiteAsyncConnection Db { get; set; }
 

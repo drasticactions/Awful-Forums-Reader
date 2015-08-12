@@ -1,2 +1,2 @@
-MainPackage=C:\Users\t_mil\Documents\Other-Apps\Awful-Forums-Reader\AwfulForumsReader\bin\x86\Release\Upload\AwfulForumsReader_10.1.10.0_x86.appx
-SymbolPackage=C:\Users\t_mil\Documents\Other-Apps\Awful-Forums-Reader\AwfulForumsReader\AppPackages\AwfulForumsReader_10.1.10.0\AwfulForumsReader_10.1.10.0_x86.appxsym
+MainPackage=C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\bin\x86\Release\Upload\AwfulForumsReader_10.2.12.0_x86.appx
+SymbolPackage=C:\Users\DrasticActions\Documents\GitHub\Awful-Forums-Reader\AwfulForumsReader\AppPackages\AwfulForumsReader_10.2.12.0\AwfulForumsReader_10.2.12.0_x86.appxsym

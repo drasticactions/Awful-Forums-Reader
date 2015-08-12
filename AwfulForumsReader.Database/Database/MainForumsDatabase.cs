@@ -90,13 +90,16 @@ namespace AwfulForumsReader.Database
                 }
 
                 await RemoveBookmarkThreads();
+                var count = 0;
                 foreach (ForumThreadEntity t in updatedBookmarkList)
                 {
                     if (notifyThreadIds.Contains(t.ThreadId))
                     {
                         t.IsNotified = true;
                     }
+                    t.Id = count;
                     await dbs.BookmarkForumRepository.CreateWithChildren(t);
+                    count++;
                 }
                 _localSettings.Values["RefreshBookmarks"] = DateTime.UtcNow.ToString();
 

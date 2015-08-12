@@ -14,7 +14,7 @@ namespace AwfulForumsReader.Database
 {
     public class DataSource : IDisposable
     {
-        private const string DBFILENAME = "App4321.db";
+        private const string DBFILENAME = "App43210.db";
         protected StorageFolder UserFolder { get; set; }
         protected SQLiteAsyncConnection Db { get; set; }
 
