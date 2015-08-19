@@ -108,7 +108,7 @@ namespace AwfulForumsReader.Pages
 
         private bool ShouldGoToWideState()
         {
-            return Window.Current.Bounds.Width >= 800;
+            return Window.Current.Bounds.Width >= 600;
         }
 
 
