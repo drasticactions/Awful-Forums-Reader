@@ -195,7 +195,10 @@ IsLoading = true;
             try
             {
                 GetDarkModeSetting(ForumThreadEntity);
-                Html = await HtmlFormater.FormatThreadHtml(ForumThreadEntity, postList);
+                // Force Garbage Collection when navigating to webview. The web view has nasty memory leaks :/.
+                Locator.ViewModels.MainPageVm.MainWebView.NavigateToString(string.Empty);
+                GC.Collect();
+                Locator.ViewModels.MainPageVm.MainWebView.NavigateToString(await HtmlFormater.FormatThreadHtml(ForumThreadEntity, postList));
                 ForumThreadEntity = ForumThreadEntity;
                 PageNumbers = Enumerable.Range(1, ForumThreadEntity.TotalPages).ToArray();
             }

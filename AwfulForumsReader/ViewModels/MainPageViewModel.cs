@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Commands.Navigation;
+using AwfulForumsReader.Commands.Posts;
+using AwfulForumsReader.Commands.Threads;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Models;
+using AwfulForumsReader.Tools;
 
 namespace AwfulForumsReader.ViewModels
 {
@@ -37,6 +40,8 @@ namespace AwfulForumsReader.ViewModels
                 ClickBackButtonCommand.RaiseCanExecuteChanged();
             }
         }
+
+        public WebView MainWebView = new WebView();
 
         public bool CanClickBackButton => App.RootFrame.CanGoBack;
         public List<MenuItem> MenuItems { get; set; }
@@ -103,6 +108,15 @@ namespace AwfulForumsReader.ViewModels
                     Command = new NavigateToAboutPage()
                 }
             };
+
+            MainWebView.NavigationCompleted += WebView_OnNavigationCompleted;
+            MainWebView.ScriptNotify += WebViewNotifyCommand.WebView_ScriptNotify;
+        }
+
+        private void WebView_OnNavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
+        {
+            var command = new ThreadDomContentLoadedCommand();
+            command.Execute(MainWebView);
         }
     }
 }

@@ -36,8 +36,6 @@ namespace AwfulForumsReader.Pages
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            ThreadFullView.NavigationCompleted += WebView_OnNavigationCompleted;
-            ThreadFullView.ScriptNotify += WebViewNotifyCommand.WebView_ScriptNotify;
         }
 
         /// <summary>
@@ -112,12 +110,6 @@ namespace AwfulForumsReader.Pages
         }
 
 
-        private void WebView_OnNavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
-        {
-            var command = new ThreadDomContentLoadedCommand();
-            command.Execute(ThreadFullView);
-        }
-
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also
         /// provided when recreating a page from a prior session.
@@ -159,11 +151,13 @@ namespace AwfulForumsReader.Pages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             navigationHelper.OnNavigatedTo(e);
+            ThreadGrid.Children.Add(Locator.ViewModels.MainPageVm.MainWebView);
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             navigationHelper.OnNavigatedFrom(e);
+            ThreadGrid.Children.Remove(Locator.ViewModels.MainPageVm.MainWebView);
         }
 
         #endregion

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -106,6 +107,20 @@ namespace AwfulForumsReader.Tools
             }
 
             bodyNode.InnerHtml = threadHtml;
+
+            var images = bodyNode.Descendants("img").Where(node => node.GetAttributeValue("class", string.Empty) != "av");
+            foreach (var image in images)
+            {
+                var src = image.Attributes["src"].Value;
+                if (Path.GetExtension(src) != ".gif")
+                    continue;
+                if (src.Contains("emoticons"))
+                    continue;
+                if (src.Contains("smilies"))
+                    continue;
+                image.Attributes.Add("data-gifffer", image.Attributes["src"].Value);
+                image.Attributes.Remove("src");
+            }
             return doc2.DocumentNode.OuterHtml;
         }
 
@@ -132,7 +147,6 @@ namespace AwfulForumsReader.Tools
                 string postBody = string.Format("<div id=\"{1}\" class=\"postbody\">{0}</div>", post.PostHtml, post.PostId);
                 string userInfo = $"<div class=\"userinfo\">{username}{postData}</div>";
                 string postButtons = CreateButtons(post);
-
                 string footer = string.Empty;
                 if (!isPrivateMessage)
                 {

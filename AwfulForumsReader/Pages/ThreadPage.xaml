@@ -44,7 +44,7 @@
                        IsHitTestVisible="false" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
         </Grid>
 
-        <Grid Background="{StaticResource MainPageBackground}" Grid.Row="1">
+        <Grid x:Name="ThreadGrid" Background="{StaticResource MainPageBackground}" Grid.Row="1">
             <Grid.ChildrenTransitions>
                 <TransitionCollection>
                     <EntranceThemeTransition/>
@@ -54,7 +54,6 @@
                 <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Height="50"/>
                 <Rectangle Fill="White" Opacity=".5"/>
             </Grid>
-            <WebView Canvas.ZIndex="0" IsRightTapEnabled="True"  tools:WebViewHelper.Html="{Binding Html}"  Grid.Column="1" x:Name="ThreadFullView"/>
         </Grid>
         <Grid Grid.Row="2">
               <CommandBar>
