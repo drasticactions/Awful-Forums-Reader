@@ -150,8 +150,10 @@
                         <Image Grid.Row="1" Margin="5" Source="../Assets/Login/Icon2.png"/>
                         <TextBlock Grid.Row="2" TextAlignment="Center" Padding="0,5,0,0" FontWeight="Thin" FontSize="50" Text="Select a thread"/>
                 </Grid>
-                
-                    <CommandBar Visibility="{Binding ThreadNotSelected,
+
+                    <Grid Grid.Row="0" x:Name="WebViewGrid"/>
+
+                    <CommandBar Canvas.ZIndex="2" Visibility="{Binding ThreadNotSelected,
                     Converter={StaticResource BooleanToVisibilityInverter}}" Grid.Row="1">
                         <AppBarButton Label="Back Page" Icon="Back" IsEnabled="{Binding ForumThreadEntity, Converter={StaticResource BackButtonEnableConverter} }">
                 <interactivity:Interaction.Behaviors>

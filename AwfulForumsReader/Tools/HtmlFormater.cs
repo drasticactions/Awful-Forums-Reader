@@ -45,6 +45,29 @@ namespace AwfulForumsReader.Tools
             return doc2.DocumentNode.OuterHtml;
         }
 
+        public static string FormatVotePoll(PollGroupEntity pollGroup)
+        {
+            string poll = "<div class=\"col-lg-12\">"
+                + "<div class=\"panel panel-primary\">"
+                + "<div class=\"panel-heading\">"
+                + "<h3 class=\"panel-title\">"
+                + "<span class=\"glyphicon glyphicon-circle-arrow-right\">" + pollGroup.Title + "</span></h3></div>"
+                + "<div class=\"panel-body\">"
+                + "<ul class=\"list-group\">";
+
+            foreach (var item in pollGroup.PollList)
+            {
+                poll += "<li class=\"list-group-item\"><div class=\"checkbox\"><label><input type=\"checkbox\">" +
+                        item.Title + "</label></div></li>";
+            }
+               poll += "</ul></div>" + "<div class=\"panel-footer text-center\">" +
+                    "<button class=\"btn btn-primary btn-block btn-sm\">Vote</button>"
+                    + "<a class=\"small\" href=\"#\"</a></div></div></div>";
+
+
+            return poll;
+        }
+
         public static async Task<string> FormatThreadHtml(ForumThreadEntity forumThreadEntity, List<ForumPostEntity> postEntities)
         {
             string html = await PathIO.ReadTextAsync("ms-appx:///Assets/Website/thread.html");
@@ -85,9 +108,14 @@ namespace AwfulForumsReader.Tools
 
             string threadHtml = string.Empty;
 
+            if (forumThreadEntity.Poll != null)
+            {
+                //threadHtml += FormatVotePoll(forumThreadEntity.Poll);
+            }
+
             if (forumThreadEntity.ScrollToPost > 1)
             {
-                threadHtml = "<div><div id=\"showPosts\">";
+                threadHtml += "<div><div id=\"showPosts\">";
 
                 var clickHandler = $"window.ForumCommand('showPosts', '{"true"}')";
 
@@ -113,6 +141,8 @@ namespace AwfulForumsReader.Tools
             {
                 var src = image.Attributes["src"].Value;
                 if (Path.GetExtension(src) != ".gif")
+                    continue;
+                if (src.Contains("somethingawful.com"))
                     continue;
                 if (src.Contains("emoticons"))
                     continue;

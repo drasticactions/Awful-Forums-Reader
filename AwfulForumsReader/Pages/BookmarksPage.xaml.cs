@@ -171,7 +171,7 @@ namespace AwfulForumsReader.Pages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             navigationHelper.OnNavigatedTo(e);
-            DetailContentPresenter.Children.Add(Locator.ViewModels.MainPageVm.MainWebView);
+            WebViewGrid.Children.Add(Locator.ViewModels.MainPageVm.MainWebView);
             //UpdateForVisualState(AdaptiveStates.CurrentState);
 
             // Don't play a content transition for first item load.
@@ -182,7 +182,7 @@ namespace AwfulForumsReader.Pages
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             navigationHelper.OnNavigatedFrom(e);
-            DetailContentPresenter.Children.Remove(Locator.ViewModels.MainPageVm.MainWebView);
+            WebViewGrid.Children.Remove(Locator.ViewModels.MainPageVm.MainWebView);
         }
 
         #endregion
