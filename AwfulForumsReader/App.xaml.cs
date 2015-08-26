@@ -142,7 +142,7 @@ namespace AwfulForumsReader
                 Window.Current.Content = RootFrame;
             }
 
-            if (_localSettings.Values.ContainsKey(Constants.BookmarkBackground) && (bool)_localSettings.Values[Constants.BookmarkBackground])
+            if (_localSettings.Values.ContainsKey(Constants.BackgroundEnable) && (bool)_localSettings.Values[Constants.BackgroundEnable])
             {
                 BackgroundTaskUtils.UnregisterBackgroundTasks(BackgroundTaskUtils.BackgroundTaskName);
                 var task = await

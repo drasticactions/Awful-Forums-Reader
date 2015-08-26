@@ -56,9 +56,13 @@ namespace AwfulForumsReader.Pages
         public SettingsPage()
         {
             this.InitializeComponent();
-            if (_localSettings.Values.ContainsKey(Constants.BackgroundWallpaper))
+            if (_localSettings.Values.ContainsKey(Constants.BackgroundEnable))
             {
-                BackgroundWallPaperSwitch.IsOn = (bool)_localSettings.Values[Constants.BackgroundWallpaper];
+                BackgroundNotificationsSwitch.IsOn = (bool)_localSettings.Values[Constants.BackgroundEnable];
+            }
+            if (_localSettings.Values.ContainsKey(Constants.BookmarkNotifications))
+            {
+                BookmarkNotificationsSwitch.IsOn = (bool)_localSettings.Values[Constants.BookmarkNotifications];
             }
             if (_localSettings.Values.ContainsKey(Constants.BookmarkBackground))
             {
@@ -98,144 +102,6 @@ namespace AwfulForumsReader.Pages
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
         }
-
-        private async void BookmarkLiveTiles_Toggled(object sender, RoutedEventArgs e)
-        {
-            var toggleSwitch = sender as ToggleSwitch;
-            if (toggleSwitch == null) return;
-            if (toggleSwitch.IsOn)
-            {
-                // Run bookmark live tile creator every 15 minutes.
-                // TODO: Change 15 to user selectable value.
-                BackgroundTaskUtils.UnregisterBackgroundTasks(BackgroundTaskUtils.BackgroundTaskName);
-                var task = await
-                    BackgroundTaskUtils.RegisterBackgroundTask(BackgroundTaskUtils.BackgroundTaskEntryPoint,
-                        BackgroundTaskUtils.BackgroundTaskName,
-                        new TimeTrigger(15, false),
-                        null);
-                _localSettings.Values[Constants.BookmarkBackground] = true;
-            }
-            else
-            {
-                //BackgroundTaskUtils.UnregisterBackgroundTasks(BackgroundTaskUtils.BackgroundTaskName);
-                _localSettings.Values[Constants.BookmarkBackground] = false;
-            }
-
-        }
-
-        private void InternetEnable_Toggled(object sender, RoutedEventArgs e)
-        {
-            var toggleSwitch = sender as ToggleSwitch;
-            if (toggleSwitch == null) return;
-            if (toggleSwitch.IsOn)
-            {
-                _localSettings.Values[Constants.OpenInBrowser] = true;
-            }
-            else
-            {
-                _localSettings.Values[Constants.OpenInBrowser] = false;
-            }
-
-        }
-
-
-        private void LoadBookmarksOnLoadSwitch_OnToggled(object sender, RoutedEventArgs e)
-        {
-            var toggleSwitch = sender as ToggleSwitch;
-            if (toggleSwitch == null) return;
-            if (toggleSwitch.IsOn)
-            {
-                _localSettings.Values[Constants.BookmarkStartup] = true;
-            }
-            else
-            {
-                _localSettings.Values[Constants.BookmarkStartup] = false;
-            }
-        }
-
-        private void FilterComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (FilterComboBox == null) return;
-            // TODO: Make Enum.
-            _localSettings.Values[Constants.BookmarkDefault] = FilterComboBox.SelectedIndex;
-        }
-
-        private void DarkLightThemeSwitch_OnToggled(object sender, RoutedEventArgs e)
-        {
-            var toggleSwitch = sender as ToggleSwitch;
-            if (toggleSwitch == null) return;
-            if (toggleSwitch.IsOn)
-            {
-                _localSettings.Values[Constants.DarkMode] = true;
-            }
-            else
-            {
-                _localSettings.Values[Constants.DarkMode] = false;
-            }
-        }
-
-        private void AutoReloadSwitch_OnToggled(object sender, RoutedEventArgs e)
-        {
-            var toggleSwitch = sender as ToggleSwitch;
-            if (toggleSwitch == null) return;
-            if (toggleSwitch.IsOn)
-            {
-                _localSettings.Values[Constants.AutoRefresh] = true;
-            }
-            else
-            {
-                _localSettings.Values[Constants.AutoRefresh] = false;
-            }
-        }
-
-        private void BackgroundWallPaperSwitch_OnToggled(object sender, RoutedEventArgs e)
-        {
-            var toggleSwitch = sender as ToggleSwitch;
-            if (toggleSwitch == null) return;
-            if (toggleSwitch.IsOn)
-            {
-                _localSettings.Values[Constants.BackgroundWallpaper] = true;
-            }
-            else
-            {
-                _localSettings.Values[Constants.BackgroundWallpaper] = false;
-            }
-        }
-
-
-        private async void ChangeBackground_OnClicked(object sender, RoutedEventArgs e)
-        {
-            var openPicker = new FileOpenPicker
-            {
-                ViewMode = PickerViewMode.Thumbnail,
-                SuggestedStartLocation = PickerLocationId.PicturesLibrary
-            };
-            openPicker.FileTypeFilter.Add(".jpg");
-            openPicker.FileTypeFilter.Add(".jpeg");
-            openPicker.FileTypeFilter.Add(".png");
-            openPicker.FileTypeFilter.Add(".gif");
-            StorageFile file = await openPicker.PickSingleFileAsync();
-            if (file == null) return;
-            try
-            {
-                IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.Read);
-                BitmapImage bitmapImage = new BitmapImage();
-                ImageBrush brush = new ImageBrush();
-                await bitmapImage.SetSourceAsync(stream);
-                brush.ImageSource = bitmapImage;
-                brush.Stretch = Stretch.None;
-                App.RootFrame.Background = brush;
-                var img = await ConvertImage.ConvertImagetoByte(file);
-                await ImageTools.SaveWallpaper(img);
-            }
-            catch (Exception ex)
-            {
-                var msgDlg = new MessageDialog("Something went wrong settings the background. :-(.");
-                msgDlg.ShowAsync();
-            }
-
-        }
-
 
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also
@@ -288,11 +154,94 @@ namespace AwfulForumsReader.Pages
 
         #endregion
 
-        private void ThemeComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void SaveSettings_OnClick(object sender, RoutedEventArgs e)
         {
-            if (ThemeComboBox == null) return;
-            // TODO: Make Enum.
+
+            if (BackgroundNotificationsSwitch.IsOn)
+            {
+                BackgroundTaskUtils.UnregisterBackgroundTasks(BackgroundTaskUtils.BackgroundTaskName);
+                var task = await
+                    BackgroundTaskUtils.RegisterBackgroundTask(BackgroundTaskUtils.BackgroundTaskEntryPoint,
+                        BackgroundTaskUtils.BackgroundTaskName,
+                        new TimeTrigger(15, false),
+                        null);
+                _localSettings.Values[Constants.BackgroundEnable] = true;
+            }
+            else
+            {
+                try
+                {
+                    BackgroundTaskUtils.UnregisterBackgroundTasks(BackgroundTaskUtils.BackgroundTaskName);
+                }
+                catch (Exception)
+                {
+                   // TODO: Tell user background task failed to unregister :(
+                }
+                _localSettings.Values[Constants.BackgroundEnable] = false;
+            }
+
             _localSettings.Values[Constants.ThemeDefault] = ThemeComboBox.SelectedIndex;
+
+
+            if (BookmarkLiveTiles.IsOn)
+            {
+                // Run bookmark live tile creator every 15 minutes.
+                // TODO: Change 15 to user selectable value.
+                _localSettings.Values[Constants.BookmarkBackground] = true;
+            }
+            else
+            {
+                _localSettings.Values[Constants.BookmarkBackground] = false;
+            }
+
+            if (BookmarkNotificationsSwitch.IsOn)
+            {
+                // Run bookmark live tile creator every 15 minutes.
+                // TODO: Change 15 to user selectable value.
+                _localSettings.Values[Constants.BookmarkNotifications] = true;
+            }
+            else
+            {
+                _localSettings.Values[Constants.BookmarkNotifications] = false;
+            }
+
+            if (InternetEnable.IsOn)
+            {
+                _localSettings.Values[Constants.OpenInBrowser] = true;
+            }
+            else
+            {
+                _localSettings.Values[Constants.OpenInBrowser] = false;
+            }
+
+            if (LoadBookmarksOnLoadSwitch.IsOn)
+            {
+                _localSettings.Values[Constants.BookmarkStartup] = true;
+            }
+            else
+            {
+                _localSettings.Values[Constants.BookmarkStartup] = false;
+            }
+
+            _localSettings.Values[Constants.BookmarkDefault] = FilterComboBox.SelectedIndex;
+
+            if (DarkLightThemeSwitch.IsOn)
+            {
+                _localSettings.Values[Constants.DarkMode] = true;
+            }
+            else
+            {
+                _localSettings.Values[Constants.DarkMode] = false;
+            }
+
+            if (AutoReloadSwitch.IsOn)
+            {
+                _localSettings.Values[Constants.AutoRefresh] = true;
+            }
+            else
+            {
+                _localSettings.Values[Constants.AutoRefresh] = false;
+            }
         }
     }
 }

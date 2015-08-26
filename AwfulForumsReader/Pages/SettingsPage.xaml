@@ -37,8 +37,14 @@
                        IsHitTestVisible="false" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
         </Grid>
         <Grid Background="{StaticResource MainPageBackground}" Grid.Row="1">
-            <ScrollViewer>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Margin="15" Grid.Row="0" Content="Save Settings" Click="SaveSettings_OnClick"/>
+            <ScrollViewer Grid.Row="1">
                 <StackPanel Margin="15">
+
 
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Change Theme" />
 
@@ -48,37 +54,52 @@
                         </TextBlock.Text>
                     </TextBlock>
 
-                    <ComboBox HorizontalAlignment="Stretch" x:Name="ThemeComboBox"  SelectedIndex="0" SelectionChanged="ThemeComboBox_OnSelectionChanged" Grid.Row="2">
+                    <ComboBox HorizontalAlignment="Stretch" x:Name="ThemeComboBox"  SelectedIndex="0" Grid.Row="2">
                         <ComboBoxItem Content="Light"/>
                         <ComboBoxItem Content="Dark"/>
                         <ComboBoxItem Content="YOSPOS"/>
                     </ComboBox>
 
-                    <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Enable Background Wallpaper" />
+                    <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Dark Mode" />
 
                     <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
                         <TextBlock.Text>
-                            If enabled and set, a background image will be set for the forum and thread list pages.
-                    You can then wave your anime freak flag high for all the world to see.
+                            Enables the dark theme for forum threads.
                         </TextBlock.Text>
                     </TextBlock>
 
-                    <ToggleSwitch IsEnabled="False" x:Name="BackgroundWallPaperSwitch" Toggled="BackgroundWallPaperSwitch_OnToggled" />
+                    <ToggleSwitch x:Name="DarkLightThemeSwitch" />
 
-                    <Button IsEnabled="False" Content="Change Background Wallpaper" Click="ChangeBackground_OnClicked" />
+                    <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Enable Background Notifications" />
 
+                    <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
+                        <TextBlock.Text>
+                            If enabled, you'll be able to do things such as get notifications on thread updates, or thread live tiles.
+                        </TextBlock.Text>
+                    </TextBlock>
+
+                    <ToggleSwitch x:Name="BackgroundNotificationsSwitch" />
 
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Enable Bookmark Live Tiles" />
 
                     <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
                         <TextBlock.Text>
-                            If enabled, the bookmarks page will be scanned every 15 minutes for new
-                    posts, and update the Awful Forum Reader's live tile with the post count.
+                            If enabled (along with background updates), this will update the Awful Forum Reader's live tile with the post count.
                         </TextBlock.Text>
                     </TextBlock>
 
-                    <ToggleSwitch x:Name="BookmarkLiveTiles" Toggled="BookmarkLiveTiles_Toggled" />
-                    
+                    <ToggleSwitch x:Name="BookmarkLiveTiles" />
+
+                    <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Enable Bookmark Notifications" />
+
+                    <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
+                        <TextBlock.Text>
+                            If enabled (along with background updates), this will let you be notified when selected bookmarks are updated.
+                        </TextBlock.Text>
+                    </TextBlock>
+
+                    <ToggleSwitch x:Name="BookmarkNotificationsSwitch" />
+
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Open Bookmark Notifications in Browser" />
 
                     <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
@@ -88,7 +109,7 @@
                         </TextBlock.Text>
                     </TextBlock>
 
-                    <ToggleSwitch x:Name="InternetEnable" Toggled="InternetEnable_Toggled" />
+                    <ToggleSwitch x:Name="InternetEnable"  />
 
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Launch Bookmarks Page On Startup" />
 
@@ -98,7 +119,7 @@
                         </TextBlock.Text>
                     </TextBlock>
 
-                    <ToggleSwitch x:Name="LoadBookmarksOnLoadSwitch" Toggled="LoadBookmarksOnLoadSwitch_OnToggled" />
+                    <ToggleSwitch x:Name="LoadBookmarksOnLoadSwitch"  />
 
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Sort Bookmarks" />
 
@@ -108,7 +129,7 @@
                         </TextBlock.Text>
                     </TextBlock>
 
-                    <ComboBox HorizontalAlignment="Stretch" x:Name="FilterComboBox"  SelectedIndex="0" SelectionChanged="FilterComboBox_OnSelectionChanged" Grid.Row="2">
+                    <ComboBox HorizontalAlignment="Stretch" x:Name="FilterComboBox"  SelectedIndex="0" Grid.Row="2">
                         <ComboBoxItem Content="Forums Default"/>
                         <ComboBoxItem Content="Most Unread First"/>
                     </ComboBox>
@@ -121,19 +142,10 @@
                         </TextBlock.Text>
                     </TextBlock>
 
-                    <ToggleSwitch x:Name="AutoReloadSwitch" IsEnabled="False" Toggled="AutoReloadSwitch_OnToggled" />
+                    <ToggleSwitch IsEnabled="False" x:Name="AutoReloadSwitch" />
 
-                    <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Dark Mode" />
-
-                    <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
-                        <TextBlock.Text>
-                            Enables the dark theme for forum threads.
-                        </TextBlock.Text>
-                    </TextBlock>
-
-                    <ToggleSwitch x:Name="DarkLightThemeSwitch" Toggled="DarkLightThemeSwitch_OnToggled" />
                 </StackPanel>
             </ScrollViewer>
         </Grid>
-    </Grid>
+        </Grid>
 </Page>
