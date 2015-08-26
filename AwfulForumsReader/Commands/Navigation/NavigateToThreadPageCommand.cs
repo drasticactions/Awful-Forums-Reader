@@ -91,4 +91,21 @@ namespace AwfulForumsReader.Commands.Navigation
             await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
         }
     }
+
+    public class NavigateToBookmarkPageViaToastCommand : AlwaysExecutableCommand
+    {
+        public async override void Execute(object parameter)
+        {
+            var thread = parameter as ForumThreadEntity;
+            if (thread == null)
+            {
+                AwfulDebugger.SendMessageDialogAsync("Thread navigation failed!:(", new Exception("Arguments are null"));
+                return;
+            }
+
+            Locator.ViewModels.ThreadPageVm.ForumThreadEntity = thread;
+            Locator.ViewModels.ThreadPageVm.Html = null;
+            await Locator.ViewModels.ThreadPageVm.GetForumPostsAsync();
+        }
+    }
 }

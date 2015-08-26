@@ -97,6 +97,7 @@ namespace AwfulForumsReader.Pages
                 {
                     var bookmarkCommand = new NavigateToBookmarksCommand();
                     bookmarkCommand.Execute(arguments.threadId);
+                    return;
                 }
 
                 var forumEntity = JsonConvert.DeserializeObject<ForumEntity>(launchString);

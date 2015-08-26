@@ -12,6 +12,8 @@ namespace AwfulForumsReader.Tools
     {
         public const string BackgroundTaskEntryPoint = "AwfulForumsReader.BackgroundNotify.BackgroundNotifyStatus";
         public const string BackgroundTaskName = "BackgroundNotifyStatus";
+        public const string ToastBackgroundTaskEntryPoint = "AwfulForumsReader.BackgroundNotify.ToastNotificationBackgroundTask";
+        public const string ToastBackgroundTaskName = "ToastNotificationBackgroundTask";
         public static string BackgroundTaskProgress = string.Empty;
         public static bool BackgroundTaskRegistered = false;
 

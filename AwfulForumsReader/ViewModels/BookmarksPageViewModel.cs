@@ -25,8 +25,8 @@ namespace AwfulForumsReader.ViewModels
         private AddOrRemoveBookmarkCommand _addOrRemoveBookmarkCommand = new AddOrRemoveBookmarkCommand();
         public AddThreadToNotificationTable AddThreadToNotificationTableCommand { get; set; } = new AddThreadToNotificationTable();
 
-        public NavigateToThreadPageViaToastCommand NavigateToThreadPageViaToastCommand { get; set; } =
-            new NavigateToThreadPageViaToastCommand();
+        public NavigateToBookmarkPageViaToastCommand NavigateToThreadPageViaToastCommand { get; set; } =
+            new NavigateToBookmarkPageViaToastCommand();
         private UnreadThreadCommand _unreadThreadCommand = new UnreadThreadCommand();
         private LastPageCommand _lastPageCommand = new LastPageCommand();
         private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;

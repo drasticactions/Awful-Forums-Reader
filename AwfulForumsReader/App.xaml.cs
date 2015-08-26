@@ -11,6 +11,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.UI.Core;
+using Windows.UI.Notifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -19,12 +20,15 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Autofac;
+using AwfulForumsLibrary.Entity;
 using AwfulForumsLibrary.Manager;
 using AwfulForumsLibrary.Tools;
+using AwfulForumsReader.Commands.Navigation;
 using AwfulForumsReader.Common;
 using AwfulForumsReader.Database;
 using AwfulForumsReader.Pages;
 using AwfulForumsReader.Tools;
+using Newtonsoft.Json;
 using ThemeManagerRt;
 
 namespace AwfulForumsReader
@@ -38,6 +42,35 @@ namespace AwfulForumsReader
         private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
         public static Frame RootFrame;
         public static ApplicationTheme SelectedTheme { get; set; }
+
+        async protected override void OnActivated(IActivatedEventArgs args)
+        {
+            //Find out if this is activated from a toast;
+            if(args.Kind == ActivationKind.ToastNotification)
+            {
+                //Get the pre-defined arguments and user inputs from the eventargs;
+                var toastArgs = args as ToastNotificationActivatedEventArgs;
+                if (toastArgs == null)
+                    return;
+                var arguments = JsonConvert.DeserializeObject<ToastNotificationArgs>(toastArgs.Argument);
+                if (arguments != null && arguments.threadId > 0)
+                {
+                    var bookmarkCommand = new NavigateToBookmarksCommand();
+                    bookmarkCommand.Execute(arguments.threadId);
+                    return;
+                }
+
+                var forumEntity = JsonConvert.DeserializeObject<ForumEntity>(toastArgs.Argument);
+                if (forumEntity != null)
+                {
+                    var navigateCommand = new NavigateToThreadListPageCommandViaTile();
+                    navigateCommand.Execute(forumEntity);
+                }
+            }
+
+            //...
+        }
+
         /// <summary>
         /// 単一アプリケーション オブジェクトを初期化します。これは、実行される作成したコードの
         ///最初の行であるため、main() または WinMain() と論理的に等価です。
@@ -121,7 +154,7 @@ namespace AwfulForumsReader
             }
             SystemNavigationManager.GetForCurrentView().BackRequested += BackPressed;
             RootFrame = Window.Current.Content as Frame;
-
+            TileUpdateManager.CreateTileUpdaterForApplication().EnableNotificationQueue(true);
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
             if (RootFrame == null)
@@ -141,6 +174,12 @@ namespace AwfulForumsReader
                 // Place the frame in the current Window
                 Window.Current.Content = RootFrame;
             }
+
+            BackgroundTaskUtils.UnregisterBackgroundTasks(BackgroundTaskUtils.ToastBackgroundTaskName);
+            var task2 = await
+                BackgroundTaskUtils.RegisterBackgroundTask(BackgroundTaskUtils.ToastBackgroundTaskEntryPoint,
+                    BackgroundTaskUtils.ToastBackgroundTaskName, new ToastNotificationActionTrigger(),
+                    null);
 
             if (_localSettings.Values.ContainsKey(Constants.BackgroundEnable) && (bool)_localSettings.Values[Constants.BackgroundEnable])
             {
