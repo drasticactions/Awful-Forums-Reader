@@ -60,7 +60,9 @@ namespace AwfulForumsReader.Database
 
         public void Dispose()
         {
+            UserFolder = null;
             this.Db = null;
+            BookmarkForumRepository = null;
         }
     }
 }

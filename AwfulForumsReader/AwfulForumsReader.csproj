@@ -915,6 +915,7 @@
     <Compile Include="Tools\ThreadCommand.cs" />
     <Compile Include="Tools\ThreadHeaderColorConverter.cs" />
     <Compile Include="Tools\ToastNotificationArgs.cs" />
+    <Compile Include="Tools\UiHelpers.cs" />
     <Compile Include="Tools\UploadManager.cs" />
     <Compile Include="Tools\WebViewHelper.cs" />
     <Compile Include="ViewModels\BbCodeListPageViewModel.cs" />

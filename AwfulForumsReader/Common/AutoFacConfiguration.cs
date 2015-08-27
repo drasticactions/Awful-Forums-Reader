@@ -32,7 +32,8 @@ namespace AwfulForumsReader.Common
             builder.RegisterType<PreviewThreadPageViewModel>().SingleInstance();
             builder.RegisterType<ForumUserPageViewModel>().SingleInstance();
             builder.RegisterType<SaclopediaPageViewModel>().SingleInstance();
-            //builder.RegisterType<MainPage>();
+            builder.RegisterType<BookmarksPage>();
+            builder.RegisterType<ThreadListPage>();
             return builder.Build();
         }
     }

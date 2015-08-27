@@ -1,6 +1,7 @@
 ﻿<Page
     x:Name="pageRoot"
     x:Class="AwfulForumsReader.Pages.ThreadListPage"
+    NavigationCacheMode="Required"
     DataContext="{Binding Source={StaticResource Locator}, Path=ThreadListPageVm}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -140,7 +141,7 @@
                 <Grid Canvas.ZIndex="1" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" >
                 <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Height="50"/>
                 <Rectangle Fill="White" Opacity=".5"/>
-            </Grid>
+                    </Grid>
             
                 <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="{Binding ThreadNotSelected,
                     Converter={StaticResource BooleanToVisibilityConverter}}">
@@ -154,7 +155,8 @@
                         <TextBlock Grid.Row="2" TextAlignment="Center" Padding="0,5,0,0" FontWeight="Thin" FontSize="50" Text="Select a thread"/>
                 </Grid>
 
-                    <Grid Grid.Row="0" x:Name="WebViewGrid"/>
+                    <WebView Grid.Row="0" Canvas.ZIndex="0" IsRightTapEnabled="True"  tools:WebViewHelper.Html="{Binding Html}"  Grid.Column="1" x:Name="ThreadFullView"/>
+
 
                     <CommandBar Visibility="{Binding ThreadNotSelected,
                     Converter={StaticResource BooleanToVisibilityInverter}}" Grid.Row="1">

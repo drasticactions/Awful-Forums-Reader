@@ -98,6 +98,14 @@ namespace AwfulForumsReader.Pages
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
+            ThreadFullView.NavigationCompleted += WebView_OnNavigationCompleted;
+            ThreadFullView.ScriptNotify += WebViewNotifyCommand.WebView_ScriptNotify;
+        }
+
+        private void WebView_OnNavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
+        {
+            var command = new ThreadDomContentLoadedCommand();
+            command.Execute(ThreadFullView);
         }
 
 
@@ -142,13 +150,11 @@ namespace AwfulForumsReader.Pages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             navigationHelper.OnNavigatedTo(e);
-            WebViewGrid.Children.Add(Locator.ViewModels.MainPageVm.MainWebView);
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             navigationHelper.OnNavigatedFrom(e);
-            WebViewGrid.Children.Remove(Locator.ViewModels.MainPageVm.MainWebView);
         }
 
         #endregion

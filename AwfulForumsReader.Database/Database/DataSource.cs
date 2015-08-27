@@ -88,7 +88,12 @@ namespace AwfulForumsReader.Database
 
         public void Dispose()
         {
+            UserFolder = null;
             this.Db = null;
+            ForumCategoryRepository = null;
+            ForumRepository = null;
+            TabRepository = null;
+            DraftRepository = null;
         }
     }
 }
