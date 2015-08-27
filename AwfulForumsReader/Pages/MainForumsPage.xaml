@@ -1,5 +1,6 @@
 ﻿<Page
     x:Name="pageRoot"
+    NavigationCacheMode="Enabled"
     x:Class="AwfulForumsReader.Pages.MainForumsPage"
     DataContext="{Binding Source={StaticResource Locator}, Path=MainForumsPageVm}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"

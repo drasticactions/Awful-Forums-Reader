@@ -136,7 +136,13 @@ namespace AwfulForumsReader.ViewModels
             try
             {
                 var test = await _bookmarkManager.RefreshBookmarkedThreads();
-                BookmarkedThreads = test.ToObservableCollection();
+                BookmarkedThreads = new ObservableCollection<ForumThreadEntity>();
+                foreach (var item in test)
+                {
+                    BookmarkedThreads.Add(item);
+                }
+                test = null;
+                GC.Collect();
                 _localSettings.Values["RefreshBookmarks"] = DateTime.UtcNow.ToString();
             }
             catch (Exception ex)

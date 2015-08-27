@@ -389,7 +389,7 @@ namespace AwfulForumsReader.Common
         /// The parameter value passed to <see cref="Frame.Navigate(Type, Object)"/> 
         /// when this page was initially requested.
         /// </summary>
-        public Object NavigationParameter { get; private set; }
+        public Object NavigationParameter { get; set; }
         /// <summary>
         /// A dictionary of state preserved by this page during an earlier
         /// session.  This will be null the first time a page is visited.

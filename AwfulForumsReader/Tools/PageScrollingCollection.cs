@@ -56,7 +56,8 @@ namespace AwfulForumsReader.Tools
             {
                 HasMoreItems = false;
             }
-
+            forumThreadEntities = null;
+            GC.Collect();
             IsLoading = false;
             return new LoadMoreItemsResult { Count = count };
         }

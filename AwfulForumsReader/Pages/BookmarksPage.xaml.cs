@@ -147,6 +147,7 @@ namespace AwfulForumsReader.Pages
                         Frame.Navigate(typeof(ThreadPage), null, new DrillInNavigationTransitionInfo());
                     }
                 }
+                e.NavigationParameter = null;
             }
             catch (Exception ex)
             {
