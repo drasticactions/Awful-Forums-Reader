@@ -154,6 +154,15 @@ namespace AwfulForumsReader
             }
             SystemNavigationManager.GetForCurrentView().BackRequested += BackPressed;
             RootFrame = Window.Current.Content as Frame;
+            if (_localSettings.Values.ContainsKey(Constants.NavigateBack) &&
+                (bool) _localSettings.Values[Constants.NavigateBack])
+            {
+                if (RootFrame != null)
+                {
+                    return;
+                }
+            }
+
             TileUpdateManager.CreateTileUpdaterForApplication().EnableNotificationQueue(true);
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active

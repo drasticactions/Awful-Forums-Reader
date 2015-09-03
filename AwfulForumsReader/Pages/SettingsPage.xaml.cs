@@ -73,6 +73,12 @@ namespace AwfulForumsReader.Pages
                 LoadBookmarksOnLoadSwitch.IsOn = (bool)_localSettings.Values[Constants.BookmarkStartup];
             }
 
+            if (_localSettings.Values.ContainsKey(Constants.NavigateBack))
+            {
+                KeepCurrentViewSwitch.IsOn = (bool)_localSettings.Values[Constants.NavigateBack];
+            }
+
+
             if (_localSettings.Values.ContainsKey(Constants.AutoRefresh))
             {
                 AutoReloadSwitch.IsOn = (bool)_localSettings.Values[Constants.AutoRefresh];
@@ -203,6 +209,15 @@ namespace AwfulForumsReader.Pages
             else
             {
                 _localSettings.Values[Constants.BookmarkNotifications] = false;
+            }
+
+            if (KeepCurrentViewSwitch.IsOn)
+            {
+                _localSettings.Values[Constants.NavigateBack] = true;
+            }
+            else
+            {
+                _localSettings.Values[Constants.NavigateBack] = false;
             }
 
             if (InternetEnable.IsOn)

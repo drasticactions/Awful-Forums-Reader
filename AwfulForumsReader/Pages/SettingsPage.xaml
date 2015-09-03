@@ -80,6 +80,17 @@
 
                     <ToggleSwitch x:Name="BackgroundNotificationsSwitch" />
 
+                    <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Keep Current View When Entering App Via Tile" />
+
+                    <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
+                        <TextBlock.Text>
+                            If enabled, if you're already running the app and you enter it again through the live tile or start menu, it should show you what you were
+                            previously looking at, rather than going back to the main menu.
+                        </TextBlock.Text>
+                    </TextBlock>
+
+                    <ToggleSwitch x:Name="KeepCurrentViewSwitch" />
+
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Enable Bookmark Live Tiles" />
 
                     <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,25" TextWrapping="Wrap">
