@@ -195,6 +195,7 @@ IsLoading = true;
             try
             {
                 GetDarkModeSetting(ForumThreadEntity);
+                Html = string.Empty;
                 GC.Collect();
                 Html = await HtmlFormater.FormatThreadHtml(ForumThreadEntity, postList);
                 ForumThreadEntity = ForumThreadEntity;
