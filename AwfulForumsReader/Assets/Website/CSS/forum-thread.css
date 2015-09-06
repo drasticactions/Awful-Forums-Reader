@@ -10,7 +10,8 @@
 }
 .col-md-2 #threadView .av {
     float: left;
-    height: 75px;
+    max-height: 75px;
+    max-width: 75px;
 }
 .col-md-2 #threadView .userinfo {
     margin-left: 95px;
@@ -161,8 +162,8 @@ img.timg.peewee { border: 0; }
 
 #threadView header .av
 {
-   width: 92px;
-   height: 92px;
+   max-width: 92px;
+   max-height: 92px;
    margin-right: 25px;
    float: left;
 }
