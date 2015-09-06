@@ -9,6 +9,7 @@ using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Background;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Foundation.Metadata;
 using Windows.Storage;
 using Windows.UI.Core;
 using Windows.UI.Notifications;
@@ -162,8 +163,13 @@ namespace AwfulForumsReader
                     return;
                 }
             }
+            var isIoT = ApiInformation.IsTypePresent("Windows.Devices.Gpio.GpioController");
 
-            TileUpdateManager.CreateTileUpdaterForApplication().EnableNotificationQueue(true);
+            if (!isIoT)
+            {
+                TileUpdateManager.CreateTileUpdaterForApplication().EnableNotificationQueue(true);
+            }
+
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
             if (RootFrame == null)
@@ -183,21 +189,23 @@ namespace AwfulForumsReader
                 // Place the frame in the current Window
                 Window.Current.Content = RootFrame;
             }
-
-            BackgroundTaskUtils.UnregisterBackgroundTasks(BackgroundTaskUtils.ToastBackgroundTaskName);
-            var task2 = await
-                BackgroundTaskUtils.RegisterBackgroundTask(BackgroundTaskUtils.ToastBackgroundTaskEntryPoint,
-                    BackgroundTaskUtils.ToastBackgroundTaskName, new ToastNotificationActionTrigger(),
-                    null);
-
-            if (_localSettings.Values.ContainsKey(Constants.BackgroundEnable) && (bool)_localSettings.Values[Constants.BackgroundEnable])
+            if (!isIoT)
             {
-                BackgroundTaskUtils.UnregisterBackgroundTasks(BackgroundTaskUtils.BackgroundTaskName);
-                var task = await
-                    BackgroundTaskUtils.RegisterBackgroundTask(BackgroundTaskUtils.BackgroundTaskEntryPoint,
-                        BackgroundTaskUtils.BackgroundTaskName,
-                        new TimeTrigger(15, false),
+                BackgroundTaskUtils.UnregisterBackgroundTasks(BackgroundTaskUtils.ToastBackgroundTaskName);
+                var task2 = await
+                    BackgroundTaskUtils.RegisterBackgroundTask(BackgroundTaskUtils.ToastBackgroundTaskEntryPoint,
+                        BackgroundTaskUtils.ToastBackgroundTaskName, new ToastNotificationActionTrigger(),
                         null);
+
+                if (_localSettings.Values.ContainsKey(Constants.BackgroundEnable) && (bool)_localSettings.Values[Constants.BackgroundEnable])
+                {
+                    BackgroundTaskUtils.UnregisterBackgroundTasks(BackgroundTaskUtils.BackgroundTaskName);
+                    var task = await
+                        BackgroundTaskUtils.RegisterBackgroundTask(BackgroundTaskUtils.BackgroundTaskEntryPoint,
+                            BackgroundTaskUtils.BackgroundTaskName,
+                            new TimeTrigger(15, false),
+                            null);
+                }
             }
 
             var localStorageManager = new LocalStorageManager();
