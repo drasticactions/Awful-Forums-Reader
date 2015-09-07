@@ -784,7 +784,7 @@ SA.thread = new function(e, f, a) {
             return null !== c ? (b = "post" + c.exec(b)[1], d(b)) : !0;
         };
     a(f).ready(function() {
-        var b = a('<div class="jump_top left">UP</div>'), c = a('<div class="jump_top right">UP</div>');
+        var b = a(''), c = a('');
         a(f).delegate("td.postbody a", "click", j);
         SA.utils.isMobile ? (a(".bbc-spoiler").bind("touchmove", function(a) {
             a.stopPropagation();
