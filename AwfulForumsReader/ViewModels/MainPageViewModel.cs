@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
+using AwfulForumsLibrary.Manager;
 using AwfulForumsReader.Commands;
 using AwfulForumsReader.Commands.Navigation;
 using AwfulForumsReader.Commands.Posts;
@@ -101,12 +102,11 @@ namespace AwfulForumsReader.ViewModels
                 ,
                 new MenuItem()
                 {
-                    Icon = "\uE77B",
+                    Icon = "\uEB68",
                     Name = "About",
                     Command = new NavigateToAboutPage()
                 }
             };
-          
         }
     }
 }

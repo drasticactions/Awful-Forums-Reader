@@ -77,7 +77,7 @@
             </AppBarButton>
             <AppBarButton Click="PreviewButton_OnClick" x:Name="PreviewButton" Label="Preview">
                 <AppBarButton.Icon>
-                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE89B;" />
+                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE25C;" />
                 </AppBarButton.Icon>
             </AppBarButton>
             <AppBarButton Click="ImgurButton_OnClick" x:Name="ImageUploadButton" Label="Imgur">
