@@ -749,6 +749,7 @@
     <Compile Include="Commands\Navigation\NavigateToBbCodePageCommand.cs" />
     <Compile Include="Commands\Navigation\NavigateToBookmarksCommand.cs" />
     <Compile Include="Commands\Navigation\NavigateToLastPostPageCommand.cs" />
+    <Compile Include="Commands\Navigation\NavigateToLoginPageCommand.cs" />
     <Compile Include="Commands\Navigation\NavigateToMainForumsPage.cs" />
     <Compile Include="Commands\Navigation\NavigateToNewPrivateMessagePageCommand.cs" />
     <Compile Include="Commands\Navigation\NavigateToNewReplyCommand.cs" />

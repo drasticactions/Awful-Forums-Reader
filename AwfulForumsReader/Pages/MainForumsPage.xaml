@@ -104,6 +104,15 @@
                         </core:EventTriggerBehavior>
                     </i:Interaction.Behaviors>
                 </AppBarButton>
+                <CommandBar.SecondaryCommands>
+                    <AppBarButton Icon="Account" Label="Logout">
+                        <i:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="Click">
+                                <core:InvokeCommandAction Command="{Binding NavigateToLoginPageCommand}" />
+                            </core:EventTriggerBehavior>
+                        </i:Interaction.Behaviors>
+                    </AppBarButton>
+                </CommandBar.SecondaryCommands>
             </CommandBar>
         </Grid>
     </Grid>

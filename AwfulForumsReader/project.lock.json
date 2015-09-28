@@ -19,6 +19,29 @@
           "lib/NetCore45/HtmlAgilityPack.dll": {}
         }
       },
+      "HybridWebApp.Framework/1.1.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/HybridWebApp.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HybridWebApp.Framework.dll": {}
+        }
+      },
+      "HybridWebApp.Toolkit/1.1.0": {
+        "dependencies": {
+          "HybridWebApp.Framework": "[1.1.0, )",
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/HybridWebApp.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HybridWebApp.Toolkit.dll": {}
+        }
+      },
       "Microsoft.ApplicationInsights/1.1.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
@@ -1678,6 +1701,29 @@
         },
         "runtime": {
           "lib/NetCore45/HtmlAgilityPack.dll": {}
+        }
+      },
+      "HybridWebApp.Framework/1.1.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/HybridWebApp.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HybridWebApp.Framework.dll": {}
+        }
+      },
+      "HybridWebApp.Toolkit/1.1.0": {
+        "dependencies": {
+          "HybridWebApp.Framework": "[1.1.0, )",
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/HybridWebApp.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HybridWebApp.Toolkit.dll": {}
         }
       },
       "Microsoft.ApplicationInsights/1.1.0": {
@@ -3431,6 +3477,29 @@
           "lib/NetCore45/HtmlAgilityPack.dll": {}
         }
       },
+      "HybridWebApp.Framework/1.1.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/HybridWebApp.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HybridWebApp.Framework.dll": {}
+        }
+      },
+      "HybridWebApp.Toolkit/1.1.0": {
+        "dependencies": {
+          "HybridWebApp.Framework": "[1.1.0, )",
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/HybridWebApp.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HybridWebApp.Toolkit.dll": {}
+        }
+      },
       "Microsoft.ApplicationInsights/1.1.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
@@ -5152,6 +5221,29 @@
         },
         "runtime": {
           "lib/NetCore45/HtmlAgilityPack.dll": {}
+        }
+      },
+      "HybridWebApp.Framework/1.1.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/HybridWebApp.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HybridWebApp.Framework.dll": {}
+        }
+      },
+      "HybridWebApp.Toolkit/1.1.0": {
+        "dependencies": {
+          "HybridWebApp.Framework": "[1.1.0, )",
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/HybridWebApp.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HybridWebApp.Toolkit.dll": {}
         }
       },
       "Microsoft.ApplicationInsights/1.1.0": {
@@ -6910,6 +7002,29 @@
           "lib/NetCore45/HtmlAgilityPack.dll": {}
         }
       },
+      "HybridWebApp.Framework/1.1.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/HybridWebApp.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HybridWebApp.Framework.dll": {}
+        }
+      },
+      "HybridWebApp.Toolkit/1.1.0": {
+        "dependencies": {
+          "HybridWebApp.Framework": "[1.1.0, )",
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/HybridWebApp.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HybridWebApp.Toolkit.dll": {}
+        }
+      },
       "Microsoft.ApplicationInsights/1.1.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
@@ -8631,6 +8746,29 @@
         },
         "runtime": {
           "lib/NetCore45/HtmlAgilityPack.dll": {}
+        }
+      },
+      "HybridWebApp.Framework/1.1.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/HybridWebApp.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HybridWebApp.Framework.dll": {}
+        }
+      },
+      "HybridWebApp.Toolkit/1.1.0": {
+        "dependencies": {
+          "HybridWebApp.Framework": "[1.1.0, )",
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/HybridWebApp.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HybridWebApp.Toolkit.dll": {}
         }
       },
       "Microsoft.ApplicationInsights/1.1.0": {
@@ -10387,6 +10525,29 @@
         },
         "runtime": {
           "lib/NetCore45/HtmlAgilityPack.dll": {}
+        }
+      },
+      "HybridWebApp.Framework/1.1.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/HybridWebApp.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HybridWebApp.Framework.dll": {}
+        }
+      },
+      "HybridWebApp.Toolkit/1.1.0": {
+        "dependencies": {
+          "HybridWebApp.Framework": "[1.1.0, )",
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/HybridWebApp.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HybridWebApp.Toolkit.dll": {}
         }
       },
       "Microsoft.ApplicationInsights/1.1.0": {
@@ -12147,6 +12308,36 @@
         "lib/sl5/HtmlAgilityPack.XML",
         "lib/sl3-wp/_._",
         "package/services/metadata/core-properties/43fdb80a5711487696f5a99b6d1418d0.psmdcp",
+        "[Content_Types].xml"
+      ]
+    },
+    "HybridWebApp.Framework/1.1.0": {
+      "sha512": "cKw4d6wwppP+mqJ+xBgwNPvVo7NMw+XXf9ezD/ZPobHKai841jL9ToN4CWC+3x7h9XlfzYjt5JfiRKrutyJkEQ==",
+      "type": "Package",
+      "files": [
+        "_rels/.rels",
+        "HybridWebApp.Framework.nuspec",
+        "lib/uap10.0/HybridWebApp.Framework.dll",
+        "lib/uap10.0/HybridWebApp.Framework/Properties/HybridWebApp.Framework.rd.xml",
+        "package/services/metadata/core-properties/ac55c99ef34e49e98262f2a5617b51ab.psmdcp",
+        "[Content_Types].xml"
+      ]
+    },
+    "HybridWebApp.Toolkit/1.1.0": {
+      "sha512": "x5pEYNj0zyA48Nd8UORT4/F2dUwGQ6wtE21f9pjwexLY9Ms6eP1TptUn8JRcurtEd5HJMSbT5QE/XT90xXMs5A==",
+      "type": "Package",
+      "files": [
+        "_rels/.rels",
+        "HybridWebApp.Toolkit.nuspec",
+        "lib/uap10.0/HybridWebApp.Toolkit/Audio/empty.mp3",
+        "lib/uap10.0/HybridWebApp.Toolkit/Controls/HybridWebView.xbf",
+        "lib/uap10.0/HybridWebApp.Toolkit/Views/LoadingOverlay.xbf",
+        "lib/uap10.0/HybridWebApp.Toolkit/Views/OfflineOverlay.xbf",
+        "lib/uap10.0/HybridWebApp.Toolkit/Properties/HybridWebApp.Toolkit.rd.xml",
+        "lib/uap10.0/HybridWebApp.Toolkit/HybridWebApp.Toolkit.xr.xml",
+        "lib/uap10.0/HybridWebApp.Toolkit.pri",
+        "lib/uap10.0/HybridWebApp.Toolkit.dll",
+        "package/services/metadata/core-properties/97dfad1d23df4b6694ec262ce26fc3c9.psmdcp",
         "[Content_Types].xml"
       ]
     },
@@ -15752,6 +15943,7 @@
     "": [
       "Autofac >= 3.5.2",
       "HtmlAgilityPack >= 1.4.9",
+      "HybridWebApp.Toolkit >= 1.1.0",
       "Microsoft.ApplicationInsights >= 1.1.0",
       "Microsoft.ApplicationInsights.PersistenceChannel >= 1.1.0",
       "Microsoft.ApplicationInsights.WindowsApps >= 1.1.0",

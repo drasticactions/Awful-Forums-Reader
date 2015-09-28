@@ -106,7 +106,6 @@ namespace AwfulForumsReader.Pages
             this.navigationHelper.SaveState += navigationHelper_SaveState;
             ThreadFullView.NavigationCompleted += WebView_OnNavigationCompleted;
             ThreadFullView.ScriptNotify += WebViewNotifyCommand.WebView_ScriptNotify;
-
         }
 
         private void WebView_OnNavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)

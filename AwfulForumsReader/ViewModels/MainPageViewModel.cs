@@ -27,6 +27,8 @@ namespace AwfulForumsReader.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public bool IsReloggingIn { get; set; } = false;
         public SplitView MainPageSplitView { get; set; }
         public AsyncDelegateCommand ClickBackButtonCommand { get; private set; }
         private bool _canClickBack;

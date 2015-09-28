@@ -35,8 +35,15 @@ namespace AwfulForumsReader.Pages
 
         private void OnLoginSuccessful(object sender, EventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
-            Frame.BackStack.Clear();
+            if (Locator.ViewModels.MainPageVm.IsReloggingIn)
+            {
+                App.RootFrame.Navigate(typeof (MainForumsPage));
+            }
+            else
+            {
+                Frame.Navigate(typeof(MainPage));
+                Frame.BackStack.Clear();
+            }
         }
 
         private static async void OnLoginFailed(object sender, EventArgs e)

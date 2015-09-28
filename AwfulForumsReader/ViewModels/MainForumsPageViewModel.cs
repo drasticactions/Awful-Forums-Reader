@@ -65,6 +65,8 @@ namespace AwfulForumsReader.ViewModels
 
         public RefreshForumListCommand RefreshForumList { get; set; } = new RefreshForumListCommand();
 
+        public NavigateToLoginPageCommand NavigateToLoginPageCommand { get; set; } = new NavigateToLoginPageCommand();
+
         public CreateForumTileCommand CreateForumTile { get; set; } = new CreateForumTileCommand();
 
         public AddOrRemoveFavoriteCommand AddOrRemoveFavorite { get; set; } = new AddOrRemoveFavoriteCommand();

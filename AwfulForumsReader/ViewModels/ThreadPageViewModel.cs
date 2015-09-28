@@ -197,6 +197,7 @@ IsLoading = true;
                 GetDarkModeSetting(ForumThreadEntity);
                 Html = string.Empty;
                 GC.Collect();
+                //await WebView.ClearTemporaryWebDataAsync();
                 Html = await HtmlFormater.FormatThreadHtml(ForumThreadEntity, postList);
                 ForumThreadEntity = ForumThreadEntity;
                 PageNumbers = Enumerable.Range(1, ForumThreadEntity.TotalPages).ToArray();
