@@ -209,8 +209,17 @@ namespace AwfulForumsReader
             }
 
             var localStorageManager = new LocalStorageManager();
-            CookieContainer cookieTest = await localStorageManager.LoadCookie("SACookies2.txt");
-            if (cookieTest.Count <= 0)
+            CookieContainer cookieContainer = await localStorageManager.LoadCookie("SACookies2.txt");
+            bool cookieTest = true;
+            foreach (Cookie cookie in cookieContainer.GetCookies(new Uri(Constants.CookieDomainUrl)))
+            {
+                if (cookie.Expired)
+                {
+                    cookieTest = false;
+                }
+            }
+
+            if (cookieContainer.Count <= 0)
             {
                 if (!RootFrame.Navigate(typeof(LoginPage)))
                 {
@@ -219,6 +228,14 @@ namespace AwfulForumsReader
             }
             else
             {
+                if (!cookieTest)
+                {
+                    if (!RootFrame.Navigate(typeof(LoginPage)))
+                    {
+                        throw new Exception("Failed to create initial page");
+                    }
+                }
+
                 if (!RootFrame.Navigate(typeof(MainPage), e.Arguments))
                 {
                     throw new Exception("Failed to create initial page");
