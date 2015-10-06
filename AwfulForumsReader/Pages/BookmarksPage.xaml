@@ -29,6 +29,15 @@
        <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="AdaptiveStates"
                               CurrentStateChanged="AdaptiveStates_CurrentStateChanged">
+                <VisualState x:Name="HiddenSidebarState">
+                    <VisualState.StateTriggers>
+                        <StateTrigger IsActive="{Binding Source={StaticResource Locator}, Path=MainPageVm.IsSidebarHidden}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MasterColumn.Width" Value="0" />
+                    </VisualState.Setters>
+                </VisualState>
+                
                 <VisualState x:Name="DefaultState">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="600" />
@@ -69,7 +78,7 @@
         </Grid>
         <Grid Background="{StaticResource MainPageBackground}" x:Name="MasterListView"  Grid.Row="1">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition x:Name="MasterColumn" Width="300" />
+                <ColumnDefinition x:Name="MasterColumn" Width="300"/>
             <ColumnDefinition x:Name="DetailColumn" Width="*" />
         </Grid.ColumnDefinitions>
             <Grid.ChildrenTransitions>

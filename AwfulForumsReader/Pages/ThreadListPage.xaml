@@ -38,6 +38,15 @@
 <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="AdaptiveStates"
                               CurrentStateChanged="AdaptiveStates_CurrentStateChanged">
+                <VisualState x:Name="HiddenSidebarState">
+                    <VisualState.StateTriggers>
+                        <StateTrigger IsActive="{Binding Source={StaticResource Locator}, Path=MainPageVm.IsSidebarHidden}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MasterColumn.Width" Value="0" />
+                    </VisualState.Setters>
+                </VisualState>
+                
                 <VisualState x:Name="DefaultState">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="600" />
