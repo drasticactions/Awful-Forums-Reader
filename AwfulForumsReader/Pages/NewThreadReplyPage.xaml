@@ -27,12 +27,23 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="AdaptiveStates">
+                <VisualState x:Name="DefaultState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HamburgerPlacement.Width" Value="0" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <!-- Back button and page title -->
         <Grid x:Name="grid1" Background="{StaticResource AwfulHeader}" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition x:Name="HamburgerPlacement" Width="40" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <TextBlock Foreground="{StaticResource TitleFontColor}" x:Name="pageTitle" Margin="5,0,0,0" Text="{Binding Converter={StaticResource NewThreadReplyTitleConverter}}" FontWeight="Bold" Style="{StaticResource TagLineTextStyle}" Grid.Column="1"
                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Center" />
