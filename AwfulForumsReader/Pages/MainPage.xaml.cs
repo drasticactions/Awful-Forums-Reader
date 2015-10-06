@@ -164,5 +164,11 @@ namespace AwfulForumsReader.Pages
             //Splitter.DisplayMode = (Splitter.DisplayMode == SplitViewDisplayMode.Inline) ? SplitViewDisplayMode.CompactInline : SplitViewDisplayMode.Inline;
             Splitter.IsPaneOpen = (Splitter.IsPaneOpen != true);
         }
+
+        private void Sidebar_Click(object sender, RoutedEventArgs e)
+        {
+            SidebarFontIcon.Glyph = Locator.ViewModels.MainPageVm.IsSidebarHidden ? "\uE127" : "\uE126";
+            Locator.ViewModels.MainPageVm.IsSidebarHidden = !Locator.ViewModels.MainPageVm.IsSidebarHidden;
+        }
     }
 }

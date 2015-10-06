@@ -28,6 +28,17 @@ namespace AwfulForumsReader.ViewModels
             }
         }
 
+        private bool _isSidebarHidden;
+        public bool IsSidebarHidden
+        {
+            get { return _isSidebarHidden; }
+            set
+            {
+                SetProperty(ref _isSidebarHidden, value);
+                OnPropertyChanged();
+            }
+        }
+
         public bool IsReloggingIn { get; set; } = false;
         public SplitView MainPageSplitView { get; set; }
         public AsyncDelegateCommand ClickBackButtonCommand { get; private set; }

@@ -70,6 +70,15 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                    <StackPanel x:Name="FooterPanel" Orientation="Vertical" RelativePanel.AlignBottomWithPanel="True">
+                        <ToggleButton Grid.Column="0" Style="{StaticResource SymbolButton}" Click="Sidebar_Click" VerticalAlignment="Top" Foreground="White" Margin="-9,-1,0,0">
+                            <ToggleButton.Content>
+                                <Border Background="Transparent" Width="40" Height="40">
+                                    <FontIcon x:Name="SidebarFontIcon" FontFamily="Segoe MDL2 Assets" Glyph="&#xE127;" />
+                                </Border>
+                            </ToggleButton.Content>
+                        </ToggleButton>
+                    </StackPanel>
                 </RelativePanel>
             </SplitView.Pane>
             <SplitView.Content>
