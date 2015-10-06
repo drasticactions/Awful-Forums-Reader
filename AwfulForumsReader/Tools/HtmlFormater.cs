@@ -175,7 +175,8 @@ namespace AwfulForumsReader.Tools
                 string postData =
                     $"<p class=\"text article-title text-muted win-type-caption-alt\"><span class=\"registered\">{post.PostDate}</span></p>";
                 string postBody = string.Format("<div id=\"{1}\" class=\"postbody\">{0}</div>", post.PostHtml, post.PostId);
-                string userInfo = $"<div class=\"userinfo\">{username}{postData}</div>";
+                string userInfoClass = string.IsNullOrEmpty(post.User.AvatarLink) ? "" : "userinfo";
+                string userInfo = $"<div class=\"{userInfoClass}\">{username}{postData}</div>";
                 string postButtons = CreateButtons(post);
                 string footer = string.Empty;
                 if (!isPrivateMessage)
