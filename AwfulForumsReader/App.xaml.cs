@@ -10,6 +10,7 @@ using Windows.ApplicationModel.Background;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
+using Windows.Media.SpeechRecognition;
 using Windows.Storage;
 using Windows.UI.Core;
 using Windows.UI.Notifications;
@@ -46,8 +47,22 @@ namespace AwfulForumsReader
 
         async protected override void OnActivated(IActivatedEventArgs args)
         {
+            Frame rootFrame = Window.Current.Content as Frame;
+
+            if (rootFrame == null)
+            {
+                CreateRootFrame();
+
+                if (!RootFrame.Navigate(typeof(MainPage)))
+                {
+                    throw new Exception("Failed to create initial page");
+                }
+
+                Window.Current.Activate();
+            }
+
             //Find out if this is activated from a toast;
-            if(args.Kind == ActivationKind.ToastNotification)
+            if (args.Kind == ActivationKind.ToastNotification)
             {
                 //Get the pre-defined arguments and user inputs from the eventargs;
                 var toastArgs = args as ToastNotificationActivatedEventArgs;
@@ -69,7 +84,53 @@ namespace AwfulForumsReader
                 }
             }
 
+            // Cortana
+            if (args.Kind == ActivationKind.VoiceCommand)
+            {
+                var commandArgs = args as VoiceCommandActivatedEventArgs;
+                HandleVoiceRequest(commandArgs);
+            }
+
             //...
+        }
+
+        private string SemanticInterpretation(string interpretationKey, SpeechRecognitionResult speechRecognitionResult)
+        {
+            return speechRecognitionResult.SemanticInterpretation.Properties[interpretationKey].FirstOrDefault();
+        }
+
+
+        public void HandleVoiceRequest(VoiceCommandActivatedEventArgs commandArgs)
+        {
+            Windows.Media.SpeechRecognition.SpeechRecognitionResult speechRecognitionResult = commandArgs.Result;
+
+            // Get the name of the voice command and the text spoken. See AdventureWorksCommands.xml for
+            // the <Command> tags this can be filled with.
+            string voiceCommandName = speechRecognitionResult.RulePath[0];
+            string textSpoken = speechRecognitionResult.Text;
+
+            // The commandMode is either "voice" or "text", and it indictes how the voice command
+            // was entered by the user.
+            // Apps should respect "text" mode by providing feedback in silent form.
+            string commandMode = this.SemanticInterpretation("commandMode", speechRecognitionResult);
+
+            switch (voiceCommandName)
+            {
+                case "openBookmarks":
+                    var bookmarkCommand = new NavigateToBookmarksCommand();
+                    bookmarkCommand.Execute(null);
+                    break;
+                case "openPrivateMessages":
+                    var pmCommand = new NavigateToPrivateMessageListPageCommand();
+                    pmCommand.Execute(null);
+                    break;
+                case "lowtaxIsAJerk":
+                    var lowtaxCommand = new NavigateToNewPrivateMessagePageLowtaxCommand();
+                    lowtaxCommand.Execute(null);
+                    break;
+                default:
+                    break;
+            }
         }
 
         /// <summary>
@@ -129,6 +190,19 @@ namespace AwfulForumsReader
             e.Handled = true;
         }
 
+        private void CreateRootFrame()
+        {
+            // Create a Frame to act as the navigation context and navigate to the first page
+            RootFrame = new Frame();
+            // Set the default language
+            RootFrame.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
+
+            RootFrame.NavigationFailed += OnNavigationFailed;
+
+            // Place the frame in the current Window
+            Window.Current.Content = RootFrame;
+        }
+
         /// <summary>
         /// アプリケーションがエンド ユーザーによって正常に起動されたときに呼び出されます。他のエントリ ポイントは、
         /// アプリケーションが特定のファイルを開くために起動されたときなどに使用されます。
@@ -174,20 +248,7 @@ namespace AwfulForumsReader
             // just ensure that the window is active
             if (RootFrame == null)
             {
-                // Create a Frame to act as the navigation context and navigate to the first page
-                RootFrame = new Frame();
-                // Set the default language
-                RootFrame.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
-
-                RootFrame.NavigationFailed += OnNavigationFailed;
-
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-                {
-                    //TODO: Load state from previously suspended application
-                }
-
-                // Place the frame in the current Window
-                Window.Current.Content = RootFrame;
+                CreateRootFrame();
             }
             if (!isIoT)
             {
@@ -243,6 +304,19 @@ namespace AwfulForumsReader
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
+            try
+            {
+                // Install the main VCD. Since there's no simple way to test that the VCD has been imported, or that it's your most recent
+                // version, it's not unreasonable to do this upon app load.
+                StorageFile vcdStorageFile = await Package.Current.InstalledLocation.GetFileAsync(@"SomethingAwfulCommands.xml");
+
+                await Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.InstallCommandDefinitionsFromStorageFileAsync(vcdStorageFile);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Installing Voice Commands Failed: " + ex.ToString());
+            }
         }
 
         /// <summary>

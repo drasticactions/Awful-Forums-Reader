@@ -724,6 +724,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Fonts\clacon.ttf" />
+    <Content Include="SomethingAwfulCommands.xml" />
     <None Include="Assets\ThreadRatings\rating.psd" />
     <None Include="Assets\ThreadTags\README.md" />
     <None Include="Assets\Website\CSS\bootstrap-theme.css.map" />
