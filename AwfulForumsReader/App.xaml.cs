@@ -107,6 +107,13 @@ namespace AwfulForumsReader
                     return;
                 }
 
+                if (arguments != null && arguments.openPrivateMessages)
+                {
+                    var openPms = new NavigateToPrivateMessageListPageCommand();
+                    openPms.Execute(null);
+                    return;
+                }
+
                 var forumEntity = JsonConvert.DeserializeObject<ForumEntity>(jsonTest);
                 if (forumEntity != null)
                 {

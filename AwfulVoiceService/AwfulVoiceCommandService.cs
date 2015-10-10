@@ -10,6 +10,7 @@ using Windows.ApplicationModel.Resources.Core;
 using Windows.ApplicationModel.VoiceCommands;
 using Windows.Storage;
 using AwfulForumsLibrary.Entity;
+using AwfulForumsLibrary.Manager;
 using AwfulForumsReader.Database;
 
 // ReSharper disable once CheckNamespace
@@ -89,6 +90,9 @@ namespace AwfulForumsReader.VoiceCommands
                         case "didMyThreadsUpdate":
                             await CheckForBookmarksForUpdates();
                             break;
+                        case "didMyPmUpdate":
+                            await CheckPmsForUpdates();
+                            break;
                         default:
                             // As with app activation VCDs, we need to handle the possibility that
                             // an app update may remove a voice command that is still registered.
@@ -106,6 +110,113 @@ namespace AwfulForumsReader.VoiceCommands
 
         private readonly ApplicationDataContainer _localSettings = ApplicationData.Current.LocalSettings;
         private readonly MainForumsDatabase _bookmarkManager = new MainForumsDatabase();
+        private readonly PrivateMessageManager _privateMessageManager = new PrivateMessageManager();
+        private async Task CheckPmsForUpdates()
+        {
+            string progressScreenString = "Checking for new private messages...";
+            await ShowProgressScreen(progressScreenString);
+            var privateMessages = await _privateMessageManager.GetPrivateMessages(0);
+            var userPrompt = new VoiceCommandUserMessage();
+
+            VoiceCommandResponse response;
+            
+            if (!privateMessages.Any())
+            {
+                var userMessage = new VoiceCommandUserMessage();
+                userMessage.DisplayMessage = userMessage.SpokenMessage = "You don't have any new private messages (because nobody likes you).";
+                response = VoiceCommandResponse.CreateResponse(userMessage);
+                await voiceServiceConnection.ReportSuccessAsync(response);
+                return;
+            }
+
+            var newPms = privateMessages.Where(
+                node =>
+                    !string.IsNullOrEmpty(node.Status) &&
+                    node.Status == "http://fi.somethingawful.com/images/newpm.gif");
+            if (!newPms.Any())
+            {
+                var userMessage = new VoiceCommandUserMessage();
+                userMessage.DisplayMessage = userMessage.SpokenMessage = "You don't have any new private messages (because nobody likes you).";
+                response = VoiceCommandResponse.CreateResponse(userMessage);
+                await voiceServiceConnection.ReportSuccessAsync(response);
+                return;
+            }
+
+            if (newPms.Count() == 1)
+            {
+                string newPmPrompt = string.Format("You have a new private message from {0}: \"{1}\", would you like to view it?",
+                    newPms.First().Sender, newPms.First().Title);
+                userPrompt.DisplayMessage = userPrompt.SpokenMessage = newPmPrompt;
+                var userReprompt = new VoiceCommandUserMessage();
+                string newPmPromptConfirm = "Would you like to view it?";
+                userReprompt.DisplayMessage = userReprompt.SpokenMessage = newPmPromptConfirm;
+
+                response = VoiceCommandResponse.CreateResponseForPrompt(userPrompt, userReprompt);
+
+                var voiceCommandConfirmation = await voiceServiceConnection.RequestConfirmationAsync(response);
+
+                if (voiceCommandConfirmation != null)
+                {
+                    if (voiceCommandConfirmation.Confirmed)
+                    {
+                        LaunchAppInForegroundPms();
+                    }
+                    else
+                    {
+                        // Confirm no action for the user.
+                        var userMessage = new VoiceCommandUserMessage();
+                        string dontShowAnythingMessage = string.Format("Well, {0} is going to be pretty mad you're blowing off his message. But I won't judge.", newPms.First().Sender);
+                        userMessage.DisplayMessage = userMessage.SpokenMessage = dontShowAnythingMessage;
+
+                        response = VoiceCommandResponse.CreateResponse(userMessage);
+                        await voiceServiceConnection.ReportSuccessAsync(response);
+                    }
+                }
+            }
+            else
+            {
+                var newPmsString = string.Format("You have {0} new messages. Would you like to view them?", newPms.Count());
+                userPrompt.DisplayMessage = userPrompt.SpokenMessage = newPmsString;
+                var userReprompt = new VoiceCommandUserMessage();
+                string newPmPromptConfirm = "Would you like to view them?";
+                userReprompt.DisplayMessage = userReprompt.SpokenMessage = newPmPromptConfirm;
+
+                response = VoiceCommandResponse.CreateResponseForPrompt(userPrompt, userReprompt);
+
+                var voiceCommandConfirmation = await voiceServiceConnection.RequestConfirmationAsync(response);
+
+                if (voiceCommandConfirmation != null)
+                {
+                    if (voiceCommandConfirmation.Confirmed)
+                    {
+                        LaunchAppInForegroundPms();
+                    }
+                    else
+                    {
+                        // Confirm no action for the user.
+                        var userMessage = new VoiceCommandUserMessage();
+                        string dontShowAnythingMessage = "Well those people are going to be pretty mad at you ignoring them. But whatever, that's fine...";
+                        userMessage.DisplayMessage = userMessage.SpokenMessage = dontShowAnythingMessage;
+
+                        response = VoiceCommandResponse.CreateResponse(userMessage);
+                        await voiceServiceConnection.ReportSuccessAsync(response);
+                    }
+                }
+
+            }
+        }
+
+        private async void LaunchAppInForegroundPms()
+        {
+            var userMessage = new VoiceCommandUserMessage();
+            userMessage.SpokenMessage = "Opening your private messages...";
+
+            var response = VoiceCommandResponse.CreateResponse(userMessage);
+            string test = "{type:'toast', openPrivateMessages:true}";
+            response.AppLaunchArgument = test;
+
+            await voiceServiceConnection.RequestAppLaunchAsync(response);
+        }
         private async Task CheckForBookmarksForUpdates()
         {
             // Begin loading data to search for the target store. If this operation is going to take a long time,
@@ -163,11 +274,15 @@ namespace AwfulForumsReader.VoiceCommands
             else
             {
                 string threadBookmarkPromptConfirm = "Would you like to open up this thread?";
+                var recentThread = threadsWithReplies.First();
+                var multipleThread = string.Format("You have {0} threads with unread replies.", threadsWithReplies.Count());
 
-                string multipleThreads =
-    string.Format(
-        "You have {0} threads with unread replies. The most recent is \"{1}\" with {2} unread replies. {3}",
-        threadsWithReplies.Count(), threadsWithReplies.First().Name, threadsWithReplies.First().RepliesSinceLastOpened, threadBookmarkPromptConfirm);
+                var multipleReplies = string.Format("The most recent is \"{0}\" with {1} unread replies.", recentThread.Name, recentThread.RepliesSinceLastOpened);
+                if (recentThread.RepliesSinceLastOpened == 1)
+                {
+                    multipleReplies = string.Format("The most recent is \"{0}\" with {1} unread reply.", recentThread.Name, recentThread.RepliesSinceLastOpened); ;
+                }
+                string multipleThreads = string.Format("{0} {1} {2}", multipleThread, multipleReplies, threadBookmarkPromptConfirm);
 
                 userPrompt.DisplayMessage = userPrompt.SpokenMessage = multipleThreads;
                 var userReprompt = new VoiceCommandUserMessage();
@@ -230,7 +345,7 @@ namespace AwfulForumsReader.VoiceCommands
         private async void LaunchAppInForeground()
         {
             var userMessage = new VoiceCommandUserMessage();
-            userMessage.SpokenMessage = cortanaResourceMap.GetValue("LaunchingAdventureWorks", cortanaContext).ValueAsString;
+            userMessage.SpokenMessage = "Launching Awful...";
 
             var response = VoiceCommandResponse.CreateResponse(userMessage);
 
