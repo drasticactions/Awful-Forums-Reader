@@ -91,6 +91,30 @@ namespace AwfulForumsReader
                 HandleVoiceRequest(commandArgs);
             }
 
+            if (args.Kind == ActivationKind.Protocol)
+            {
+                var commandArgs = args as ProtocolActivatedEventArgs;
+                Windows.Foundation.WwwFormUrlDecoder decoder =
+                  new Windows.Foundation.WwwFormUrlDecoder(commandArgs.Uri.Query);
+                var destination = decoder.GetFirstValueByName("LaunchContext");
+                var jsonTest = WebUtility.UrlDecode(destination);
+
+                var arguments = JsonConvert.DeserializeObject<ToastNotificationArgs>(jsonTest);
+                if (arguments != null && arguments.threadId > 0)
+                {
+                    var bookmarkCommand = new NavigateToBookmarksCommand();
+                    bookmarkCommand.Execute(arguments.threadId);
+                    return;
+                }
+
+                var forumEntity = JsonConvert.DeserializeObject<ForumEntity>(jsonTest);
+                if (forumEntity != null)
+                {
+                    var navigateCommand = new NavigateToThreadListPageCommandViaTile();
+                    navigateCommand.Execute(forumEntity);
+                }
+            }
+
             //...
         }
 

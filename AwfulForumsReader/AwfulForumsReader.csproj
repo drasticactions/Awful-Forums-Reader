@@ -1019,6 +1019,10 @@
       <Project>{a5331d72-a2fd-4e96-b9ee-c9c3a2ee4116}</Project>
       <Name>AwfulForumsReader.Notification</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AwfulVoiceService\AwfulForumsReader.VoiceCommands.csproj">
+      <Project>{b09aa9b9-3ae0-4b1a-bd20-0b9db8715fd9}</Project>
+      <Name>AwfulForumsReader.VoiceCommands</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">

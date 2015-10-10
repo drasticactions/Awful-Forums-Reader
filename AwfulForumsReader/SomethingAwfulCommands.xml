@@ -29,6 +29,14 @@
       <Feedback> Doing the needful </Feedback>
       <Navigate />
     </Command>
+
+    <Command Name="didMyThreadsUpdate">
+      <Example> Check my bookmarked threads for updates</Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> check [my] bookmarked threads for updates</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified"> check [my] {builtin:AppName} threads for updates </ListenFor>
+      <Feedback> Checking your bookmarks </Feedback>
+      <VoiceCommandService Target="AwfulVoiceCommandService"/>
+    </Command>
     
   </CommandSet>
 </VoiceCommands>
