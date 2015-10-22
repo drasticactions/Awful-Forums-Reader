@@ -15,7 +15,7 @@ namespace AwfulForumsReader.Tools
         /// <returns>HTML Submit Button String.</returns>
         public static string CreateSubmitButton(string buttonName, string buttonClick, string id, bool isSmall = true)
         {
-            string webClass = isSmall ? "btn btn-xs" : "btn btn-previous";
+            string webClass = isSmall ? "btn btn-sm" : "btn btn-previous";
             return WebUtility.HtmlDecode(
                        string.Format(
                            "<li><button class=\"{3}\" id=\"{2}\" type=\"submit\" onclick=\"{1}\";>{0}</button></li>",

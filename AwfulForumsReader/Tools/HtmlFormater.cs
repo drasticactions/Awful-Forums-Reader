@@ -176,9 +176,9 @@ namespace AwfulForumsReader.Tools
                     userAvatar = string.Concat("<img data-user-id=\"", post.User.Id, "\" src=\"", post.User.AvatarLink,
                         "\" alt=\"\" class=\"av\" border=\"0\">");
                 string username =
-                    $"<p class=\"text article-title win-type-ellipsis\"><span class=\"{post.User.Roles}\">{post.User.Username}</span></p>";
+                    $"<p style=\"padding: 0;\" class=\"text article-title win-type-ellipsis\"><span class=\"{post.User.Roles}\">{post.User.Username}</span></p>";
                 string postData =
-                    $"<p class=\"text article-title text-muted win-type-caption-alt\"><span class=\"registered\">{post.PostDate}</span></p>";
+                    $"<p class=\"text article-title win-type-caption-alt\"><span class=\"registered\">{post.PostDate}</span></p>";
                 string postBody = string.Format("<div id=\"{1}\" class=\"postbody\">{0}</div>", post.PostHtml, post.PostId);
                 string userInfoClass = string.IsNullOrEmpty(post.User.AvatarLink) ? "" : "userinfo";
                 string userInfo = $"<div class=\"{userInfoClass}\">{username}{postData}</div>";

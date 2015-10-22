@@ -61,6 +61,27 @@ namespace AwfulForumsReader
                 Window.Current.Activate();
             }
 
+            if (args.Kind == ActivationKind.Launch)
+            {
+                var toastArgs = args as LaunchActivatedEventArgs;
+                if (toastArgs == null)
+                    return;
+                var arguments = JsonConvert.DeserializeObject<ToastNotificationArgs>(toastArgs.Arguments);
+                if (arguments.openBookmarks)
+                {
+                    var bookmarkCommand = new NavigateToBookmarksCommand();
+                    bookmarkCommand.Execute(null);
+                    return;
+                }
+
+                if (arguments != null && arguments.openPrivateMessages)
+                {
+                    var openPms = new NavigateToPrivateMessageListPageCommand();
+                    openPms.Execute(null);
+                    return;
+                }
+            }
+
             //Find out if this is activated from a toast;
             if (args.Kind == ActivationKind.ToastNotification)
             {
@@ -247,6 +268,7 @@ namespace AwfulForumsReader
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
+            await JumpListCreator.CreateDefaultList();
             if (_localSettings.Values.ContainsKey(Constants.ThemeDefault))
             {
                 var themeType = (ThemeTypes)_localSettings.Values[Constants.ThemeDefault];
