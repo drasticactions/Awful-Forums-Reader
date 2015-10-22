@@ -108,6 +108,11 @@ namespace AwfulForumsReader.Tools
 
             string threadHtml = string.Empty;
 
+            if (!string.IsNullOrEmpty(forumThreadEntity.LoggedInUserName))
+            {
+                threadHtml += $"<div style=\"display:none;\" id=\"loggedinusername\">{forumThreadEntity.LoggedInUserName}</div>";
+            }
+
             if (forumThreadEntity.Poll != null)
             {
                 //threadHtml += FormatVotePoll(forumThreadEntity.Poll);

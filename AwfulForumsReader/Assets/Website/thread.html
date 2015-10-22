@@ -34,6 +34,13 @@
                     ForumCommand('downloadImage', this.src);
                 });
 
+                var b = RegExp("^" + $("#loggedinusername").text().replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1") + "\\s+posted:$");
+                $(".bbc-block h4").filter(function () {
+                    return b.test($(this).text());
+                }).map(function() {
+                    return $(this).closest(".bbc-block")[0];
+                }).addClass("userquoted");
+
                 //$('.bbc-block').each(function () {
                 //    $(this).click(function () {
                 //        if ($('blockquote', this).is(":visible")) {

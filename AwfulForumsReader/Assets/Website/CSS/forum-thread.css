@@ -1,4 +1,7 @@
-﻿iframe {
+﻿.userquoted {
+    background: #FFFEBA none repeat-x !important;
+}
+iframe {
     max-width: 100%;
 }
 #showHiddenPostsButton {
