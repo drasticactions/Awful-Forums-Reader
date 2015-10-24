@@ -5,7 +5,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Windows.Gaming.UI;
 using Windows.UI.StartScreen;
 using AwfulForumsReader.Tools;
 using Newtonsoft.Json;

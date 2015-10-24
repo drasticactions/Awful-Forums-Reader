@@ -8,18 +8,18 @@ iframe {
     width: 100%;
 }
 @media screen and (max-width: 992px) {
-    .col-md-2 #threadView {
+    .col-md-4 #threadView {
     height: 80px;
 }
-.col-md-2 #threadView .av {
+.col-md-4 #threadView .av {
     float: left;
     max-height: 75px;
     max-width: 75px;
 }
-.col-md-2 #threadView .userinfo {
+.col-md-4 #threadView .userinfo {
     margin-left: 95px;
 }
-.col-md-2 #threadView .userinfo p {
+.col-md-4 #threadView .userinfo p {
     font-size: 80%;
 }
 }

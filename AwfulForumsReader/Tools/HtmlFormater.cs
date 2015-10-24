@@ -193,12 +193,12 @@ namespace AwfulForumsReader.Tools
                         "<div class={6} id={4}>" +
                         "<div id={5}>" +
                         "<div class=\"row clearfix\">" +
-                        "<div class=\"col-md-2\">" +
+                        "<div class=\"col-md-4\">" +
                         "<div id=\"threadView\">" +
                         "{0}{1}" +
                         "</div>" +
                         "</div>" +
-                        "<div style=\"padding: 15px;\" class=\"col-md-10\">" +
+                        "<div style=\"padding: 15px;\" class=\"col-md-8\">" +
                         "<div class=\"article-content\">" +
                         "{2}" +
                         "<footer>{3}</footer>" +
