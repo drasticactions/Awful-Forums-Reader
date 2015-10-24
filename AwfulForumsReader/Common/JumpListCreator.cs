@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Gaming.UI;
 using Windows.UI.StartScreen;
 using AwfulForumsReader.Tools;
 using Newtonsoft.Json;
@@ -15,6 +16,7 @@ namespace AwfulForumsReader.Common
     {
         public static async Task CreateDefaultList()
         {
+            
             //if (JumpList.IsSupported())
             //{
             //    var jumplist = await JumpList.LoadCurrentAsync();
