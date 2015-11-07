@@ -60,7 +60,13 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <WebView IsRightTapEnabled="True"  tools:WebViewHelper.Html="{Binding Html}"  x:Name="ThreadFullView"/>
+            <Grid Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" Canvas.ZIndex="1">
+                <Grid.Background>
+                    <SolidColorBrush Color="Black" Opacity=".25"/>
+                </Grid.Background>
+                <ProgressRing Foreground="White" Width="50" Height="50" IsActive="{Binding IsLoading}" Style="{StaticResource WaveProgressRingStyle}" />
+            </Grid>
+            <WebView IsRightTapEnabled="True"  tools:WebViewHelper.Html="{Binding Html}"  x:Name="ThreadFullView"/>
                     <Grid Grid.Row="1">
                         <CommandBar>
             <AppBarButton Label="Reply" Icon="Add">

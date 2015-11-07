@@ -83,10 +83,12 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0" Canvas.ZIndex="1" Grid.Column="0" Visibility="{Binding PrivateMessageScrollingCollection.IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" >
-                <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Height="50"/>
-                <Rectangle Fill="White" Opacity=".5"/>
-            </Grid>
+                <Grid Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="{Binding PrivateMessageScrollingCollection.IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" Canvas.ZIndex="1">
+                    <Grid.Background>
+                        <SolidColorBrush Color="Black" Opacity=".25"/>
+                    </Grid.Background>
+                    <ProgressRing Foreground="White" Width="50" Height="50" IsActive="{Binding PrivateMessageScrollingCollection.IsLoading}" Style="{StaticResource WaveProgressRingStyle}" />
+                </Grid>
                 <scrollViewer:PullToRefreshScrollViewer
             Grid.Row="0"
                     Foreground="{StaticResource ForumFontColor}"
@@ -173,6 +175,12 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
+                    <Grid Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" Canvas.ZIndex="1">
+                        <Grid.Background>
+                            <SolidColorBrush Color="Black" Opacity=".25"/>
+                        </Grid.Background>
+                        <ProgressRing Foreground="White" Width="50" Height="50" IsActive="{Binding IsLoading}" Style="{StaticResource WaveProgressRingStyle}" />
+                    </Grid>
                     <WebView IsRightTapEnabled="True"  tools:WebViewHelper.Html="{Binding Html}"  x:Name="ThreadFullView"/>
                     <Grid Grid.Row="1">
                         <CommandBar>
