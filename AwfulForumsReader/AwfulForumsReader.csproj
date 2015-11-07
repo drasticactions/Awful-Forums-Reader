@@ -1149,6 +1149,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="styles\Spinkit.Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="styles\styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

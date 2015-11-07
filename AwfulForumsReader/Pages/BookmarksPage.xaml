@@ -91,10 +91,12 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Grid Canvas.ZIndex="1" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" >
-                <ProgressRing VerticalAlignment="Center" Height="50"/>
-                <Rectangle Fill="White" Opacity=".5"/>
-            </Grid>
+                <Grid Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" Canvas.ZIndex="1">
+                    <Grid.Background>
+                        <SolidColorBrush Color="Black" Opacity=".25"/>
+                    </Grid.Background>
+                    <ProgressRing Foreground="White" Width="50" Height="50" IsActive="{Binding IsLoading}" Style="{StaticResource WaveProgressRingStyle}" />
+                </Grid>
                 <scrollViewer:PullToRefreshScrollViewer
             Grid.Row="0"
             RefreshCommand="{Binding RefreshBookmarkListCommand}"
@@ -143,13 +145,15 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-            
-                <Grid Canvas.ZIndex="1" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" >
-                <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Height="50"/>
-                <Rectangle Fill="White" Opacity=".5"/>
+
+                    <Grid Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" Canvas.ZIndex="1">
+                        <Grid.Background>
+                            <SolidColorBrush Color="Black" Opacity=".25"/>
+                        </Grid.Background>
+                        <ProgressRing Foreground="White" Width="50" Height="50" IsActive="{Binding IsLoading}" Style="{StaticResource WaveProgressRingStyle}" />
                     </Grid>
-            
-                <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="{Binding ThreadNotSelected,
+
+                    <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="{Binding ThreadNotSelected,
                     Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>

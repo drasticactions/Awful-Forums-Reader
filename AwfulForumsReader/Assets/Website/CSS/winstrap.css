@@ -6740,7 +6740,7 @@ button.close {
   font-family: "Segoe UI Semilight", "Segoe UI", "Selawik Semilight", Tahoma, Verdana, Arial, sans-serif;
   letter-spacing: normal;
   line-height: 1.16667;
-  padding: 36px 0 4px; }
+  padding: 5px 0 4px; }
   @media (max-width: 767px) {
     .h4, .type-h4, h4 {
       font-size: 20px;
