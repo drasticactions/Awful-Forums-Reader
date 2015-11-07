@@ -54,7 +54,7 @@
         <SplitView Grid.Row="1" x:Name="Splitter" VerticalAlignment="Stretch">
             <SplitView.Pane>
                 <RelativePanel  VerticalAlignment="Stretch" Background="{StaticResource AwfulHeader}">
-                    <ListView x:Name="MenuListView" ItemClick="MenuClick" RelativePanel.AlignTopWithPanel="True" RelativePanel.Above="FooterPanel"  ItemsSource="{Binding MenuItems}" IsItemClickEnabled="True" 
+                    <ListView x:Name="MenuListView" Width="300" ItemClick="MenuClick" RelativePanel.AlignTopWithPanel="True" RelativePanel.Above="FooterPanel"  ItemsSource="{Binding MenuItems}" IsItemClickEnabled="True" 
                  SelectionMode="None" HorizontalAlignment="Left"
                  VerticalAlignment="Top" Margin="-2,40,0,0" >
                         <ListView.ItemTemplate>
