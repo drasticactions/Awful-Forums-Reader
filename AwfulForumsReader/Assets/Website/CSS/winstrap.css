@@ -1313,7 +1313,6 @@ abbr[data-original-title] {
 blockquote {
   padding: 11.5px 23px;
   margin: 0 0 23px;
-  font-size: 18.75px;
   border-left: 5px solid rgba(0, 0, 0, 0.1); }
   blockquote p:last-child,
   blockquote ul:last-child,
