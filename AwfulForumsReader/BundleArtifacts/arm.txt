@@ -1,5 +1,6 @@
-MainPackage=C:\Users\t_mil\Documents\Apps\Awful-Forums-Reader\AwfulForumsReader\bin\ARM\Debug\AwfulForumsReader_10.7.25.0_ARM_Debug.appx
-ResourcePack=C:\Users\t_mil\Documents\Apps\Awful-Forums-Reader\AwfulForumsReader\bin\ARM\Debug\AwfulForumsReader_10.7.25.0_scale-100.appx
-ResourcePack=C:\Users\t_mil\Documents\Apps\Awful-Forums-Reader\AwfulForumsReader\bin\ARM\Debug\AwfulForumsReader_10.7.25.0_scale-125.appx
-ResourcePack=C:\Users\t_mil\Documents\Apps\Awful-Forums-Reader\AwfulForumsReader\bin\ARM\Debug\AwfulForumsReader_10.7.25.0_scale-150.appx
-ResourcePack=C:\Users\t_mil\Documents\Apps\Awful-Forums-Reader\AwfulForumsReader\bin\ARM\Debug\AwfulForumsReader_10.7.25.0_scale-400.appx
+MainPackage=C:\Users\t_mil\Documents\Apps\Awful-Forums-Reader\AwfulForumsReader\bin\ARM\Debug\AwfulForumsReader_10.7.27.0_ARM_Debug.appx
+SymbolPackage=C:\Users\t_mil\Documents\Apps\Awful-Forums-Reader\AwfulForumsReader\AppPackages\AwfulForumsReader_10.7.27.0_Debug_Test\AwfulForumsReader_10.7.27.0_ARM_Debug.appxsym
+ResourcePack=C:\Users\t_mil\Documents\Apps\Awful-Forums-Reader\AwfulForumsReader\bin\ARM\Debug\AwfulForumsReader_10.7.27.0_scale-100.appx
+ResourcePack=C:\Users\t_mil\Documents\Apps\Awful-Forums-Reader\AwfulForumsReader\bin\ARM\Debug\AwfulForumsReader_10.7.27.0_scale-125.appx
+ResourcePack=C:\Users\t_mil\Documents\Apps\Awful-Forums-Reader\AwfulForumsReader\bin\ARM\Debug\AwfulForumsReader_10.7.27.0_scale-150.appx
+ResourcePack=C:\Users\t_mil\Documents\Apps\Awful-Forums-Reader\AwfulForumsReader\bin\ARM\Debug\AwfulForumsReader_10.7.27.0_scale-400.appx
