@@ -203,6 +203,8 @@
     <Language Code="ky-kg" InMinimumRequirementSet="true" />
     <Language Code="lb" InMinimumRequirementSet="true" />
     <Language Code="lb-lu" InMinimumRequirementSet="true" />
+    <Language Code="lo" InMinimumRequirementSet="true" />
+    <Language Code="lo-la" InMinimumRequirementSet="true" />
     <Language Code="lt" InMinimumRequirementSet="true" />
     <Language Code="lt-lt" InMinimumRequirementSet="true" />
     <Language Code="lv" InMinimumRequirementSet="true" />
@@ -366,6 +368,7 @@
     <MainPackageIdentityName>52978DrasticActions.AwfulMusic</MainPackageIdentityName>
     <MainPackageIdentityName>52978DrasticActions.FoulPlayTheUnofficialPlayStati</MainPackageIdentityName>
     <MainPackageIdentityName>52978DrasticActions.PSNMessenger</MainPackageIdentityName>
+    <MainPackageIdentityName>52978DrasticActions.PSN.appx</MainPackageIdentityName>
     <MainPackageIdentityName>52978DrasticActions.Slowbeef</MainPackageIdentityName>
     <MainPackageIdentityName>52978DrasticActions.388975AE0B893</MainPackageIdentityName>
   </AccountPackageIdentityNames>

@@ -9,7 +9,7 @@ using AwfulForumsReader.Notification;
 
 namespace AwfulForumsReader.Commands.Forums
 {
-    public class CreateForumTileCommand : AlwaysExecutableCommand
+    public class CreateForumJumplistItemCommand : AlwaysExecutableCommand
     {
         public override async void Execute(object parameter)
         {
@@ -19,7 +19,7 @@ namespace AwfulForumsReader.Commands.Forums
                 return;
             }
 
-            var result = await NotifyStatusTile.CreateSecondaryForumLinkTile(forumEntity);
+            await JumpListCreator.AddNewJumplistForum(forumEntity);
         }
     }
 }

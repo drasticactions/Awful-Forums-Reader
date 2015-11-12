@@ -140,7 +140,7 @@
             <FlyoutBase.AttachedFlyout>
                 <MenuFlyout>
                     <MenuFlyoutItem Command="{Binding DataContext.AddOrRemoveFavorite, ElementName=MainGrid}"  CommandParameter="{Binding}" Text="{Binding Converter={StaticResource AddOrRemoveFavoriteTextConverter}}"/>
-                    <MenuFlyoutItem Command="{Binding DataContext.CreateForumTile, ElementName=MainGrid}"  CommandParameter="{Binding}" Text="Add as Tile to Start Screen"/>
+                    <MenuFlyoutItem Command="{Binding DataContext.CreateForumJumplistItem, ElementName=MainGrid}"  CommandParameter="{Binding}" Text="Add to Jump List"/>
                 </MenuFlyout>
             </FlyoutBase.AttachedFlyout>
         </Grid>

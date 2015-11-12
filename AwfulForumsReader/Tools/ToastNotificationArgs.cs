@@ -11,8 +11,12 @@ namespace AwfulForumsReader.Tools
         public string type { get; set; }
         public long threadId { get; set; }
 
+        public long forumId { get; set; }
+
         public bool openPrivateMessages { get; set; }
 
         public bool openBookmarks { get; set; }
+
+        public bool openForum { get; set; }
     }
 }

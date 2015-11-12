@@ -93,6 +93,29 @@ namespace AwfulForumsReader.Pages
             if (!string.IsNullOrEmpty(launchString))
             {
                 var arguments = JsonConvert.DeserializeObject<ToastNotificationArgs>(launchString);
+
+                if (arguments != null && arguments.openBookmarks)
+                {
+                    var bookmarkCommand = new NavigateToBookmarksCommand();
+                    bookmarkCommand.Execute(null);
+                    return;
+                }
+
+                if (arguments != null && arguments.openPrivateMessages)
+                {
+                    var bookmarkCommand = new NavigateToPrivateMessageListPageCommand();
+                    bookmarkCommand.Execute(null);
+                    return;
+                }
+
+                if (arguments != null && arguments.openForum)
+                {
+                    var jumpCommand = new NavigateToThreadListPageCommandViaJumplist();
+                    jumpCommand.Execute(arguments.forumId);
+                    return;
+                }
+
+
                 if (arguments != null && arguments.threadId > 0)
                 {
                     var bookmarkCommand = new NavigateToBookmarksCommand();

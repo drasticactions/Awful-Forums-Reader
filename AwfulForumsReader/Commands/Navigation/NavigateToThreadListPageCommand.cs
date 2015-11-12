@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Windows.UI.Xaml.Controls;
 using AwfulForumsLibrary.Entity;
 using AwfulForumsReader.Common;
@@ -22,6 +23,31 @@ namespace AwfulForumsReader.Commands.Navigation
                 var forumEntity = (ForumEntity)args.ClickedItem;
                 var threadViewModel = Locator.ViewModels.ThreadListPageVm;
                 threadViewModel.Initialize(forumEntity);
+                App.RootFrame.Navigate(typeof(ThreadListPage));
+            }
+            catch (Exception ex)
+            {
+                AwfulDebugger.SendMessageDialogAsync("Thread navigation failed!:(", ex);
+            }
+        }
+    }
+
+    public class NavigateToThreadListPageCommandViaJumplist : AlwaysExecutableCommand
+    {
+        public override void Execute(object parameter)
+        {
+            var forumEntityId = (long)parameter;
+            if (forumEntityId == 0)
+            {
+                AwfulDebugger.SendMessageDialogAsync("Thread navigation failed!:(", new Exception("Arguments are null"));
+                return;
+            }
+            try
+            {
+                var forumList = Locator.ViewModels.MainForumsPageVm.ForumGroupList.SelectMany(node => node.ForumList);
+                var forum = forumList.First(node => node.Id == forumEntityId);
+                var threadViewModel = Locator.ViewModels.ThreadListPageVm;
+                threadViewModel.Initialize(forum);
                 App.RootFrame.Navigate(typeof(ThreadListPage));
             }
             catch (Exception ex)

@@ -776,6 +776,8 @@
     <Compile Include="Commands\Bookmarks\AddOrRemoveBookmarkCommand.cs" />
     <Compile Include="Commands\Bookmarks\BookmarkTextConverter.cs" />
     <Compile Include="Commands\Bookmarks\RefreshBookmarkListCommand.cs" />
+    <Compile Include="Commands\Forums\ClearJumpListCommand.cs" />
+    <Compile Include="Commands\Forums\CreateForumJumplistItemCommand.cs" />
     <Compile Include="Commands\Forums\CreateForumTileCommand.cs" />
     <Compile Include="Commands\Navigation\NavigateToAboutPage.cs" />
     <Compile Include="Commands\Navigation\NavigateToBbCodePageCommand.cs" />

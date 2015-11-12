@@ -105,6 +105,13 @@
                     </i:Interaction.Behaviors>
                 </AppBarButton>
                 <CommandBar.SecondaryCommands>
+                    <AppBarButton Icon="Favorite" Label="Clear Jump List">
+                        <i:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="Click">
+                                <core:InvokeCommandAction Command="{Binding ClearJumpList}" />
+                            </core:EventTriggerBehavior>
+                        </i:Interaction.Behaviors>
+                    </AppBarButton>
                     <AppBarButton Icon="Account" Label="Logout">
                         <i:Interaction.Behaviors>
                             <core:EventTriggerBehavior EventName="Click">

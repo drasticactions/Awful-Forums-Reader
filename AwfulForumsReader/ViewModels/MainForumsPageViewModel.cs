@@ -69,6 +69,10 @@ namespace AwfulForumsReader.ViewModels
 
         public CreateForumTileCommand CreateForumTile { get; set; } = new CreateForumTileCommand();
 
+        public CreateForumJumplistItemCommand CreateForumJumplistItem { get; set; } = new CreateForumJumplistItemCommand();
+
+        public ClearJumpListCommand ClearJumpList { get; set; } = new ClearJumpListCommand();
+
         public AddOrRemoveFavoriteCommand AddOrRemoveFavorite { get; set; } = new AddOrRemoveFavoriteCommand();
 
         public void SetFavoriteForums(ObservableCollection<ForumCategoryEntity> favoriteList)
