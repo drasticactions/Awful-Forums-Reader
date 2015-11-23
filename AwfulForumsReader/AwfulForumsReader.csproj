@@ -104,6 +104,7 @@
     <Content Include="Assets\BadgeLogo.scale-200.png" />
     <Content Include="Assets\BadgeLogo.scale-400.png" />
     <Content Include="Assets\gifffer.min.js" />
+    <Content Include="Assets\hammer.min.js" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\Login\Dontrel-Awful2.png" />
     <Content Include="Assets\Login\Icon2.png" />
@@ -741,6 +742,7 @@
     <Content Include="Assets\Website\CSS\bootstrap.css" />
     <Content Include="Assets\Website\CSS\bootstrap.min.css" />
     <Content Include="Assets\Website\CSS\forum-thread.css" />
+    <Content Include="Assets\Website\CSS\Swipe.css" />
     <Content Include="Assets\Website\CSS\ui-light-new.css" />
     <Content Include="Assets\Website\CSS\WindowsPhone-Default.css" />
     <Content Include="Assets\Website\CSS\winstrap.css" />
@@ -954,6 +956,9 @@
     <Compile Include="Tools\UiHelpers.cs" />
     <Compile Include="Tools\UploadManager.cs" />
     <Compile Include="Tools\WebViewHelper.cs" />
+    <Compile Include="UserControls\PullToRefresh.xaml.cs">
+      <DependentUpon>PullToRefresh.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\BbCodeListPageViewModel.cs" />
     <Compile Include="ViewModels\BookmarksPageViewModel.cs" />
     <Compile Include="ViewModels\ForumUserPageViewModel.cs" />
@@ -1172,6 +1177,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Yospos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\PullToRefresh.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

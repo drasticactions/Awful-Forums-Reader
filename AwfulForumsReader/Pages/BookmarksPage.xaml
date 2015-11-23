@@ -13,6 +13,8 @@
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:tools="using:AwfulForumsReader.Tools"
     xmlns:scrollViewer="using:AwfulForumsReader.ScrollViewer"
+    xmlns:uwp="using:PullToRefresh.UWP"
+    xmlns:userControls="using:AwfulForumsReader.UserControls"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -97,13 +99,26 @@
                     </Grid.Background>
                     <ProgressRing Foreground="White" Width="50" Height="50" IsActive="{Binding IsLoading}" Style="{StaticResource WaveProgressRingStyle}" />
                 </Grid>
-                <scrollViewer:PullToRefreshScrollViewer
-            Grid.Row="0"
-            RefreshCommand="{Binding RefreshBookmarkListCommand}"
-            ArrowColor="#004050"
-            Foreground="{StaticResource ForumFontColor}"
-            RefreshText="Release to refresh"
-            PullText="Pull to refresh">
+                <uwp:PullToRefreshBox RefreshInvoked="PullToRefreshBox_OnRefreshInvoked" RefreshThreshold="100">
+                    <uwp:PullToRefreshBox.TopIndicatorTemplate>
+                        <DataTemplate>
+                            <userControls:PullToRefresh PullProgress="{Binding}" Height="101"
+                                    VerticalAlignment="Bottom">
+                                <userControls:PullToRefresh.SymbolStyle>
+                                    <Style TargetType="SymbolIcon">
+                                        <Setter Property="Foreground"
+                            Value="{StaticResource ApplicationSecondaryForegroundThemeBrush}" />
+                                    </Style>
+                                </userControls:PullToRefresh.SymbolStyle>
+                                <userControls:PullToRefresh.TextStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground"
+                            Value="{StaticResource ApplicationSecondaryForegroundThemeBrush}" />
+                                    </Style>
+                                </userControls:PullToRefresh.TextStyle>
+                            </userControls:PullToRefresh>
+                        </DataTemplate>
+                    </uwp:PullToRefreshBox.TopIndicatorTemplate>
                     <ListView Grid.Row="0" ItemContainerTransitions="{x:Null}" x:Name="ForumThreadList"
                       HorizontalAlignment="Stretch"
                       ItemClick="Bookmark_OnClick"
@@ -118,7 +133,7 @@
                             </Style>
                         </ListView.ItemContainerStyle>
                     </ListView>
-                </scrollViewer:PullToRefreshScrollViewer>
+                </uwp:PullToRefreshBox>
                 <Grid Grid.Row="1">
             <CommandBar>
             <AppBarButton Icon="Refresh" Label="Refresh">

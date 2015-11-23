@@ -13,6 +13,8 @@
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:tools="using:AwfulForumsReader.Tools"
     xmlns:scrollViewer="using:AwfulForumsReader.ScrollViewer"
+    xmlns:uwp="using:PullToRefresh.UWP"
+    xmlns:userControls="using:AwfulForumsReader.UserControls"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -102,19 +104,41 @@
                     </Grid.Background>
                     <ProgressRing Foreground="White" Width="50" Height="50" IsActive="{Binding ForumPageScrollingCollection.IsLoading}" Style="{StaticResource WaveProgressRingStyle}" />
                 </Grid>
-                <ListView x:Name="ForumThreadList"
+                <uwp:PullToRefreshBox RefreshInvoked="PullToRefreshBox_OnRefreshInvoked" RefreshThreshold="100">
+                    <uwp:PullToRefreshBox.TopIndicatorTemplate>
+                        <DataTemplate>
+                            <userControls:PullToRefresh PullProgress="{Binding}" Height="101"
+                                    VerticalAlignment="Bottom">
+                                <userControls:PullToRefresh.SymbolStyle>
+                                    <Style TargetType="SymbolIcon">
+                                        <Setter Property="Foreground"
+                            Value="{StaticResource ApplicationSecondaryForegroundThemeBrush}" />
+                                    </Style>
+                                </userControls:PullToRefresh.SymbolStyle>
+                                <userControls:PullToRefresh.TextStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground"
+                            Value="{StaticResource ApplicationSecondaryForegroundThemeBrush}" />
+                                    </Style>
+                                </userControls:PullToRefresh.TextStyle>
+                            </userControls:PullToRefresh>
+                        </DataTemplate>
+                    </uwp:PullToRefreshBox.TopIndicatorTemplate>
+                    <ListView x:Name="ForumThreadList"
                       HorizontalAlignment="Stretch" 
                       IsSwipeEnabled="True" 
                       ItemTemplate="{StaticResource ThreadTemplate}"
                       ItemClick="Thread_OnClick"
                       ItemsSource="{Binding Source={StaticResource ForumThreadViewSource}}"
                       IsItemClickEnabled="True">
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="ListViewItem">
-                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                        </Style>
-                    </ListView.ItemContainerStyle>
-                </ListView>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                    </ListView>
+                </uwp:PullToRefreshBox>
+                
                 <Grid Grid.Row="1">
             <CommandBar>
             <AppBarButton Icon="Refresh" Label="Refresh">

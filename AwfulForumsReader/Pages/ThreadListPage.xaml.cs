@@ -158,5 +158,10 @@ namespace AwfulForumsReader.Pages
         }
 
         #endregion
+
+        private void PullToRefreshBox_OnRefreshInvoked(DependencyObject sender, object args)
+        {
+            Locator.ViewModels.ThreadListPageVm.Refresh();
+        }
     }
 }

@@ -193,5 +193,10 @@ namespace AwfulForumsReader.Pages
         }
 
         #endregion
+
+        private async void PullToRefreshBox_OnRefreshInvoked(DependencyObject sender, object args)
+        {
+            await Locator.ViewModels.BookmarksPageVm.Refresh();
+        }
     }
 }
