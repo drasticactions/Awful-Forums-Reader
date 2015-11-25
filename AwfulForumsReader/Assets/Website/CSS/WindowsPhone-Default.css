@@ -3,6 +3,10 @@ body {
 	color: black;
 }
 
+.userquoted {
+    background: rgba(255, 254, 186, 0.29) none repeat-x !important;
+}
+
 a, a:hover, a:visited{
     color: #C6D9FB;
 	text-decoration: underline;
