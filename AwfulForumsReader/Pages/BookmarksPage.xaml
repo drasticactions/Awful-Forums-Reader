@@ -180,7 +180,7 @@
                         <TextBlock Grid.Row="2" TextAlignment="Center" Padding="0,5,0,0" FontWeight="Thin" FontSize="50" Text="Select a thread"/>
                 </Grid>
 
-                    <WebView Grid.Row="0" Canvas.ZIndex="0"  IsRightTapEnabled="True" tools:WebViewHelper.Html="{Binding Html}"  Grid.Column="1" x:Name="ThreadFullView"/>
+                    <WebView DefaultBackgroundColor="{StaticResource AwfulWebBackground}" Grid.Row="0" Canvas.ZIndex="0"  IsRightTapEnabled="True" tools:WebViewHelper.Html="{Binding Html}"  Grid.Column="1" x:Name="ThreadFullView"/>
 
                     <CommandBar Canvas.ZIndex="2" Visibility="{Binding ThreadNotSelected,
                     Converter={StaticResource BooleanToVisibilityInverter}}" Grid.Row="1">

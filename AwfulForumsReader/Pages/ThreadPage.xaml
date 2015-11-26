@@ -56,7 +56,7 @@
                 </Grid.Background>
                 <ProgressRing Foreground="White" Width="50" Height="50" IsActive="{Binding IsLoading}" Style="{StaticResource WaveProgressRingStyle}" />
             </Grid>
-            <WebView Canvas.ZIndex="0" IsRightTapEnabled="True"  tools:WebViewHelper.Html="{Binding Html}"  Grid.Column="1" x:Name="ThreadFullView"/>
+            <WebView DefaultBackgroundColor="{StaticResource AwfulWebBackground}" ContainsFullScreenElementChanged="ThreadFullView_OnContainsFullScreenElementChanged"  Canvas.ZIndex="0" IsRightTapEnabled="True"  tools:WebViewHelper.Html="{Binding Html}"  Grid.Column="1" x:Name="ThreadFullView"/>
         </Grid>
         <Grid Grid.Row="2">
               <CommandBar>

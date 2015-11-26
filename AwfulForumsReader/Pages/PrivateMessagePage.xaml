@@ -66,7 +66,7 @@
                 </Grid.Background>
                 <ProgressRing Foreground="White" Width="50" Height="50" IsActive="{Binding IsLoading}" Style="{StaticResource WaveProgressRingStyle}" />
             </Grid>
-            <WebView IsRightTapEnabled="True"  tools:WebViewHelper.Html="{Binding Html}"  x:Name="ThreadFullView"/>
+            <WebView DefaultBackgroundColor="{StaticResource AwfulWebBackground}" IsRightTapEnabled="True"  tools:WebViewHelper.Html="{Binding Html}"  x:Name="ThreadFullView"/>
                     <Grid Grid.Row="1">
                         <CommandBar>
             <AppBarButton Label="Reply" Icon="Add">

@@ -168,5 +168,10 @@ namespace AwfulForumsReader.Pages
         }
 
         #endregion
+
+        private void ThreadFullView_OnContainsFullScreenElementChanged(WebView sender, object args)
+        {
+            //throw new NotImplementedException();
+        }
     }
 }

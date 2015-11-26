@@ -5,6 +5,7 @@
     <SolidColorBrush x:Key="AwfulHeader" Color="#000000"/>
     <FontFamily x:Key="DefaultFont">/Fonts/clacon.ttf#Classic Console</FontFamily>
     <Color x:Key="AwfulStatusBar">#000000</Color>
+    <Color x:Key="AwfulWebBackground">#000000</Color>
     <SolidColorBrush x:Key="MainPageBackground" Color="#000000"/>
     <SolidColorBrush x:Key="ForumBackground" Opacity="{Binding Converter={StaticResource BackgroundWallpaperOpacityConverter}}" Color="#232323"/>
     <SolidColorBrush x:Key="ForumFontColor" Color="LimeGreen"/>

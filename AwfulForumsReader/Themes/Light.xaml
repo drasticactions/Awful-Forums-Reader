@@ -4,6 +4,7 @@
     xmlns:local="using:AwfulForumsReader.Themes">
     <SolidColorBrush x:Key="AwfulHeader" Color="#FF1E72C9"/>
     <Color x:Key="AwfulStatusBar">#FF1E72C9</Color>
+    <Color x:Key="AwfulWebBackground">#FFFFFF</Color>
     <FontFamily x:Key="DefaultFont">Segoe UI</FontFamily>
     <SolidColorBrush x:Key="MainPageBackground" Color="#FFFFFF"/>
     <SolidColorBrush x:Key="ForumBackground" Opacity="{Binding Converter={StaticResource BackgroundWallpaperOpacityConverter}}" Color="#F0F0F0"/>
