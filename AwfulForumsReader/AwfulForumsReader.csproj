@@ -949,6 +949,7 @@
     <Compile Include="Tools\SubforumBodyColorConverter.cs" />
     <Compile Include="Tools\SubforumFontColorConverter.cs" />
     <Compile Include="Tools\SubforumHeaderColorConverter.cs" />
+    <Compile Include="Tools\SwipeableSplitView.cs" />
     <Compile Include="Tools\ThemeTypes.cs" />
     <Compile Include="Tools\ThreadCommand.cs" />
     <Compile Include="Tools\ThreadHeaderColorConverter.cs" />
@@ -1040,10 +1041,13 @@
     <SDKReference Include="SQLite.UAP.2015, Version=3.8.11.1">
       <Name>SQLite for Universal App Platform</Name>
     </SDKReference>
-    <SDKReference Include="WindowsIoT, Version=10.0.10240.0">
+    <SDKReference Include="WindowsDesktop, Version=10.0.10586.0">
+      <Name>Windows Desktop Extensions for the UWP</Name>
+    </SDKReference>
+    <SDKReference Include="WindowsIoT, Version=10.0.10586.0">
       <Name>Windows IoT Extensions for the UWP</Name>
     </SDKReference>
-    <SDKReference Include="WindowsMobile, Version=10.0.10240.0">
+    <SDKReference Include="WindowsMobile, Version=10.0.10586.0">
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
   </ItemGroup>

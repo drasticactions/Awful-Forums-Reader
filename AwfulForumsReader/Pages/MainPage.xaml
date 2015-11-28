@@ -51,11 +51,11 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <SplitView Grid.Row="1" x:Name="Splitter" VerticalAlignment="Stretch">
+        <tools:SwipeableSplitView Grid.Row="1" x:Name="Splitter" IsSwipeablePaneOpen="{Binding IsSplitViewPaneOpen, Mode=TwoWay}" VerticalAlignment="Stretch">
             <SplitView.Pane>
                 <RelativePanel  VerticalAlignment="Stretch" Background="{StaticResource AwfulHeader}">
                     <ListView x:Name="MenuListView" Width="300" ItemClick="MenuClick" RelativePanel.AlignTopWithPanel="True" RelativePanel.Above="FooterPanel"  ItemsSource="{Binding MenuItems}" IsItemClickEnabled="True" 
-                 SelectionMode="None" HorizontalAlignment="Left"
+                 SelectionMode="Single" HorizontalAlignment="Left" SelectionChanged="MenuSelection_Click"
                  VerticalAlignment="Top" Margin="-2,40,0,0" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -84,7 +84,7 @@
             <SplitView.Content>
                 <Frame x:Name="MainFrame"/>
             </SplitView.Content>
-        </SplitView>
+        </tools:SwipeableSplitView>
         <ToggleButton x:Name="MenuButton" Grid.Column="0" Style="{StaticResource SymbolButton}" Click="Button_Click" VerticalAlignment="Top" Foreground="White" Margin="-9,-1,0,0">
             <ToggleButton.Content>
                 <Border Background="Transparent" Width="40" Height="40">

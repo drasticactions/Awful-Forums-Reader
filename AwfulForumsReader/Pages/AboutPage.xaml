@@ -76,6 +76,8 @@
                         Json.NET
                         <LineBreak/>
                         Autofac
+                        <LineBreak/>
+                        SwipeableSplitView by JustinXinLiu
                     </TextBlock>
 
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Special Thanks:" />

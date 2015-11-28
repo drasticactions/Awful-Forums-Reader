@@ -39,6 +39,8 @@ namespace AwfulForumsReader.ViewModels
             }
         }
 
+        private bool _isSplitViewPaneOpen;
+
         public bool IsReloggingIn { get; set; } = false;
         public SplitView MainPageSplitView { get; set; }
         public AsyncDelegateCommand ClickBackButtonCommand { get; private set; }
@@ -52,6 +54,16 @@ namespace AwfulForumsReader.ViewModels
                 _canClickBack = value;
                 OnPropertyChanged();
                 ClickBackButtonCommand.RaiseCanExecuteChanged();
+            }
+        }
+
+        public bool IsSplitViewOpen
+        {
+            get { return _isSplitViewPaneOpen; }
+            set
+            {
+                SetProperty(ref _isSplitViewPaneOpen, value);
+                OnPropertyChanged();
             }
         }
 
