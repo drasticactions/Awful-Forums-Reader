@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Windows.Web.Http.Filters;
 using AwfulForumsReader.Common;
 using AwfulForumsLibrary.Exceptions;
 using AwfulForumsLibrary.Interface;
@@ -74,6 +75,13 @@ namespace AwfulForumsReader.ViewModels
             IsLoading = true;
             try
             {
+                var filter = new HttpBaseProtocolFilter();
+                var cookieManager = filter.CookieManager;
+                foreach (var cookie in cookieManager.GetCookies(new Uri("http://fake.forums.somethingawful.com")))
+                {
+                    cookieManager.DeleteCookie(cookie);
+                }
+
                 loginResult = await _authManager.Authenticate(UserName, Password);
             }
             catch (LoginFailedException ex)

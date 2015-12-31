@@ -147,7 +147,7 @@ namespace AwfulForumsReader.ViewModels
             }
             catch (Exception ex)
             {
-                AwfulDebugger.SendMessageDialogAsync("Failed to get Bookmarks", ex);
+                //AwfulDebugger.SendMessageDialogAsync("Failed to get Bookmarks", ex);
             }
             IsLoading = false;
         }
